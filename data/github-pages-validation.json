@@ -1,0 +1,106 @@
+{
+  "id": "github-pages-publication-2026-10-12",
+  "date": "2026-10-12",
+  "timezone": "America/Halifax",
+  "type": "engineering_validation",
+  "status": "passed_with_documented_limits",
+  "change": "Publish the reviewed static research website and its existing downloads to a dedicated public GitHub Pages repository. Keep the original Sites identity and audience. Label the local Lab entry explicitly and add a GitHub repository link.",
+  "url": "https://clsrwalker.github.io/conversation-agent-research/",
+  "repository": "https://github.com/Clsrwalker/conversation-agent-research",
+  "publishing_source": {
+    "branch": "main",
+    "path": "/",
+    "build_type": "legacy",
+    "https_enforced": true,
+    "nojekyll": true
+  },
+  "tested_revision": "9cbeb950707faec38e3c42f5c0024bb29af9224d",
+  "deployment_check": {
+    "workflow_run": "https://github.com/Clsrwalker/conversation-agent-research/actions/runs/38311741933",
+    "result": "success",
+    "scope": "Initial published website. A subsequent metadata update adds this record and its links without changing the interactive code."
+  },
+  "checks": [
+    {
+      "name": "Repository subpath compatibility",
+      "result": "pass",
+      "local_references_checked": 54,
+      "broken_references": [],
+      "scope": "Relative static assets and downloads; hash-based navigation; no origin-root resource dependency."
+    },
+    {
+      "name": "Export source parity",
+      "result": "pass",
+      "files_checked": 57,
+      "byte_mismatches": [],
+      "scope": "All 57 original dist files match the tested Git commit byte for byte. Git attributes prevent line-ending conversions."
+    },
+    {
+      "name": "Published HTTP assets and downloads",
+      "result": "pass",
+      "checks": [
+        {
+          "path": "index.html",
+          "http_status": 200,
+          "matches_source": true,
+          "sha256": "a9898b0fb78c7d09fc60a37beaedf010c7f0b017c1c17572c9f4156dd30319bd"
+        },
+        {
+          "path": "architecture.js",
+          "http_status": 200,
+          "matches_source": true,
+          "sha256": "641ff7f81cf4bbddb1a58211315b82cd0ba580de6c6e5948e21c49a57b951e4b"
+        },
+        {
+          "path": "assets/harness-architecture.svg",
+          "http_status": 200,
+          "matches_source": true,
+          "sha256": "5cdb990181e98068fc3f4ac3c3ad2780261b64f5b75bfb21d33c5a4144ba50fd"
+        },
+        {
+          "path": "data/harness-dashboard.json",
+          "http_status": 200,
+          "matches_source": true,
+          "sha256": "a5b42598e4753758a21fa513eeaf0b8a02bf45d92ab599dfe33221b8306f0619"
+        },
+        {
+          "path": "data/experiment-02-results.csv",
+          "http_status": 200,
+          "matches_source": true,
+          "sha256": "1b1ee4067e83706dd7f6eb546b72c7b3c63bb12be3a061ee23905e32a4ff7361"
+        },
+        {
+          "path": "data/baseline-source.zip",
+          "http_status": 200,
+          "matches_source": true,
+          "sha256": "8bf4867d484b56f16768df98586674a298f422d21d2216ea362edd7503357320"
+        }
+      ]
+    },
+    {
+      "name": "Published browser behavior",
+      "result": "pass",
+      "scope": [
+        "Overview and 18-component architecture render.",
+        "Execution logic tab changes the diagram and inspector.",
+        "Recorded dashboard switches to the ferry case and shows 5 model calls, 20067 tokens, 28.41 seconds and one active card.",
+        "Case explorer renders the original failure analysis.",
+        "Studies and tests index remains accessible.",
+        "No browser console errors observed."
+      ]
+    }
+  ],
+  "new_model_calls": 0,
+  "new_research_runs": 0,
+  "quality_evaluated": false,
+  "source_sha256": {
+    "scripts/publication/export_github_pages.py": "07d7e94057df5f71dd36584e7d19cb43c69424346809d9eeb50862983660a8fe"
+  },
+  "limits": [
+    "GitHub Pages serves the research website, interactive visualizations and saved evidence only. Python, Ollama and agent execution are not hosted there.",
+    "Local Lab and Monitor links refer to the visitor’s computer and need local services. No local-model integration run was repeated for this hosting change.",
+    "Updates require exporting the verified dist files and pushing the publication repository. GitHub then deploys main automatically; local filesystem edits are not automatically uploaded.",
+    "The independent website repository contains already exported evidence. Rebuilding evidence requires the original project records; no research builders run in Pages CI.",
+    "This engineering validation establishes publication and UI behavior, not assistance quality. Prior frozen study results and negative findings are unchanged."
+  ]
+}

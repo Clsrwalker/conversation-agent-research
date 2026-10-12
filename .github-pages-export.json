@@ -45,8 +45,8 @@
     },
     {
       "path": "data.js",
-      "sha256": "8ddf4d20fed5c0e046567c28011475791dfcd5afe86a2eb8ab53409d0c71e847",
-      "bytes": 166585
+      "sha256": "01e03053b5c40778f931635caa57e1f9ee94f8f8a7c0e354ae32e43c75581bc8",
+      "bytes": 166773
     },
     {
       "path": "data/analyze_harness_latency.py",
@@ -92,6 +92,11 @@
       "path": "data/failure-cases.json",
       "sha256": "3d4c224bb7f469eb9482a436c90f61da1dec938a6c352f773eec4ef1c5320d41",
       "bytes": 15121
+    },
+    {
+      "path": "data/github-pages-validation.json",
+      "sha256": "fe4f119e253e1cb286cb1ce2722475f770d3aa69a19155b99bc07d678389ff53",
+      "bytes": 4794
     },
     {
       "path": "data/harness-architecture-evidence.json",
@@ -175,8 +180,8 @@
     },
     {
       "path": "data/research-record.json",
-      "sha256": "dbeec53e5dbbcf63f9a627a8254a540583ff11fc27ebbe5d7c6b10c9956fcc8f",
-      "bytes": 242847
+      "sha256": "ba9e71baca9b3528a58de19f842b033f0c0deba1c36a8e5e203713dbf21f424b",
+      "bytes": 243082
     },
     {
       "path": "data/results.csv",
@@ -270,8 +275,8 @@
     },
     {
       "path": "index.html",
-      "sha256": "a9898b0fb78c7d09fc60a37beaedf010c7f0b017c1c17572c9f4156dd30319bd",
-      "bytes": 62796
+      "sha256": "8a0940e762aba75e5e7acf680ac788d8dda887793713a20ff65782da9088632d",
+      "bytes": 62895
     },
     {
       "path": "latency-data.js",
