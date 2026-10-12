@@ -1,0 +1,109 @@
+{
+  "id": "question-task-contract-v3-2026-10-10",
+  "date": "2026-10-10",
+  "timezone": "America/Halifax",
+  "type": "engineering_validation",
+  "status": "task_contract_passed_answer_quality_unresolved",
+  "problem": "The old service silently selected the conversation baseline. The first repair also left four web choices as conversation replays rather than question tests.",
+  "change": "All four new-run configurations now use a shared direct-question task and final-response delivery adapter. The UI requires protocol v3, blocks submission on older services and labels historical task types separately.",
+  "implementation": {
+    "native": "Selected native tools; no calculator; no event injection between model/tool steps.",
+    "agent-led": "Agent-led tools, calculator, and boundary event updates.",
+    "frozen-baseline": "Verified frozen source/tools/world with external question adapter and bounded durable failure recovery. Not an original frozen-baseline result.",
+    "progress": "Current recovery plus request-local progress facts including delivered source results."
+  },
+  "checks": [
+    {
+      "name": "HTTP, task mode, input fingerprints and final response projection",
+      "tests": 31,
+      "result": "pass"
+    },
+    {
+      "name": "Direct runtime, source handling, recovery, progress and checkpoint behavior",
+      "tests": 23,
+      "result": "pass"
+    },
+    {
+      "name": "Workers for all four choices, legacy alias, and original historical path",
+      "tests": 6,
+      "result": "pass"
+    },
+    {
+      "name": "JavaScript syntax and capability/task-mode boundary assertions",
+      "result": "pass"
+    }
+  ],
+  "python_checks_total": 60,
+  "new_model_runs": 6,
+  "v3_model_runs": 4,
+  "comparison_conditions": "All v3 runs use the same exact question, no supplied documents and the same fixed local model/profile. One run per configuration. Tools and orchestration differ. The earlier explicit-domain recheck changes the question and is diagnostic only.",
+  "result": "All four v3 runs receive direct input and deliver a final response. All four still fail the intended modern LLM-harness concept check. Response delivery is fixed; concept knowledge is not.",
+  "limitations": [
+    "The question is exposed development material; no held-out accuracy or latency improvement is established.",
+    "No domain tools or recovery feedback were used in the v3 concept runs. Scripted tests verify mechanics, not their benefit to answer quality.",
+    "Native tool capabilities differ from the agent-led variants; this is not an isolated ablation.",
+    "No live web retrieval or semantic quality gate. More prose is not evidence of a better answer.",
+    "Older server APIs still exist. The refreshed UI blocks their submissions; already-loaded old pages must be refreshed.",
+    "Historical records and frozen source remain unchanged; new adapted runs must not be merged into their original scores."
+  ],
+  "source_sha256": {
+    "lab.py": "98c1fe45332a7d27bd01ddbc6af9922b416bb7fc412ab0876a8ffa0ce0449a41",
+    "lab_worker.py": "61e791acbfc03daca5207893fb34e4387bee48bb438cba5775642a0ae1b9ad16",
+    "direct_request.py": "d3e45594c26914cad98bd94208ccd92769064899a79fde7a53c0906faca349d2",
+    "test_lab.py": "fed194fa918bb3cfbcb85f67274076c0bbe9beae331d44159654f08b1ae94099",
+    "test_lab_worker.py": "d2f8c389910a9aaef7feb7a78e921e781a5130534167712896c559c086754a55",
+    "test_direct_request.py": "329947b7cbbbeb89f6ce688bb683966d9509eee53c8b2665a6d9e41efce73a45",
+    "lab_ui/index.html": "db1829e7817bc59661834212272f801ada577ed954d080c80768067bad460f4d",
+    "lab_ui/lab.js": "c23addf3b0f5292af28f838df0601c845abb9daf12287ff950eac81419fb5974",
+    "lab_ui/lab.css": "63eb3278ccfb59b2027cdcb747a7f47d25e3e47d5997d4b344cb19f49c553dd7"
+  },
+  "evidence": "question-task-v3-diagnostics.json",
+  "source_download": "question-task-v3-source.zip",
+  "browser_checks": {
+    "date": "2026-10-10",
+    "timezone": "America/Halifax",
+    "result": "pass",
+    "checks": [
+      "Refreshed port 8768 shows the outdated-service notice, disables new submissions and preserves the historical replay label and output.",
+      "Port 8769 shows four direct-question choices with Agent-led selected by default and no compatibility warning.",
+      "Each of the four choices retains the Question or task label and an enabled Run test button after workers finish.",
+      "The progress run shows its recorded direct-task type, final response and actual visits to consider_recovery and deliver_response.",
+      "The same-question table shows four v3 runs and the matching older v2 run with their adapter hashes, excluding the original conversation replay.",
+      "No console errors in the reloaded v3 page.",
+      "The research-site preview preserves prior studies and displays all four diagnostic rows, failures, validation counts and evidence links."
+    ],
+    "limitations": [
+      "Default desktop viewport only.",
+      "UI checks do not validate answer quality or block direct API access to legacy services."
+    ]
+  },
+  "worker_ingress_followup": {
+    "date": "2026-10-10",
+    "timezone": "America/Halifax",
+    "id": "worker-ingress-guard",
+    "problem": "An already-loaded old browser page could still submit untyped jobs to an old service after the UI fix.",
+    "change": "The fresh worker rejects missing-mode and conversation-mode jobs before runner/model loading. Explicit historical plumbing replay requires --legacy-replay --scripted; the research runner and saved history remain unchanged.",
+    "checks": {
+      "worker_tests": 9,
+      "result": "pass",
+      "http_old_services_blocked": 2,
+      "current_service_direct_response": "pass",
+      "browser": "Current service displayed the latest direct response; stale-service update notice checked separately."
+    },
+    "new_model_calls": 2,
+    "answer_quality": "unresolved",
+    "source_sha256": {
+      "experiments/deep_conversation/lab_worker.py": "7cd40b318e0fb4fe3a5a5645f6170c8625484a40657fe13882c3c26301d7c35d",
+      "experiments/deep_conversation/test_lab_worker.py": "aaa50d7bd148cc52de2781353516dd25d4306b079fa1eefc7094817750fc00ff",
+      "scripts/research/diagnostics/check_lab_ingress.py": "530e246fe79c5c8e783953a8a963a323292938bc072937a3149fc6b1e7cfd4c3",
+      "scripts/research/diagnostics/check_concept_raw_model.py": "6c741e639335acc3fb6cd46f2456036363930e659b9d3de66a253ed5db20bece"
+    },
+    "evidence": "worker-ingress-diagnostics.json",
+    "source_download": "worker-ingress-source.zip",
+    "limitations": [
+      "Old pages show a generic worker failure until reloaded; old servers were not stopped.",
+      "New question entry and raw model both still failed this concept explanation.",
+      "No web retrieval, model change, semantic repair, held-out evaluation or latency benefit is claimed."
+    ]
+  }
+}

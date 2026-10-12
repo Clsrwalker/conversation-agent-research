@@ -1,0 +1,4 @@
+configuration,role,help_successes,help_cases,silence_successes,silence_cases,material_error_scenarios,model_calls,tokens,recovery_prompts
+native,native reference,2,5,1,1,0,73,337744,0
+agent-led,recovery-disabled comparison,3,5,1,1,1,63,338848,0
+agent-led-recovery,current research baseline,3,5,1,1,1,59,307804,0

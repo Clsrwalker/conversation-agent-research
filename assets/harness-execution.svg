@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="harness-execution-graphic" viewBox="0 0 1420 1360" width="1420" height="1360" aria-labelledby="execution-title execution-desc">
+<title id="execution-title">Agent-led Harness: execution and return paths</title>
+<desc id="execution-desc">The outer observe router manages events and the run lifetime. The inner investigator repeats model and tool batches. Ordinary prose and direct-return batches return to observe, while only deadline or budget boundaries finish the normal run.</desc>
+<defs><marker id="exec-arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--muted,#526279)"/></marker><marker id="exec-blue" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="var(--accent,#2847cf)"/></marker></defs>
+<style>
+.harness-execution-graphic text{font-family:Segoe UI,Arial,sans-serif;fill:var(--ink,#182238)}
+.exec-lane{fill:var(--bg,#f8f9fc);stroke:var(--line,#dfe4ed);stroke-width:1.5}
+.exec-lane-title{font-size:17px;font-weight:700;letter-spacing:1px;fill:var(--muted,#526279)}
+.exec-node>rect,.exec-node>path{fill:var(--panel,#fff);stroke:var(--line,#b7c3d4);stroke-width:2}
+.exec-node{cursor:pointer;outline:none}.exec-node:hover>rect,.exec-node:hover>path,.exec-node:focus>rect,.exec-node:focus>path,.exec-node.is-selected>rect,.exec-node.is-selected>path,.exec-node[aria-pressed="true"]>rect,.exec-node[aria-pressed="true"]>path{stroke:var(--accent,#2847cf);stroke-width:3}
+.exec-node.optional>path{stroke:var(--amber,#966018);stroke-dasharray:7 4}
+.exec-node.terminal>rect{stroke:var(--teal,#147a76);fill:var(--panel,#fff)}
+.exec-title{font-size:19px;font-weight:650}.exec-sub{font-size:16px;fill:var(--muted,#526279)}
+.exec-edge{fill:none;stroke:var(--muted,#526279);stroke-width:2;marker-end:url(#exec-arrow);stroke-linejoin:round}
+.exec-return{stroke:var(--accent,#2847cf);stroke-width:2.5;marker-end:url(#exec-blue)}
+.exec-label{font-size:16px;fill:var(--muted,#526279);paint-order:stroke;stroke:var(--bg,#f8f9fc);stroke-width:7;stroke-linejoin:round}
+.exec-note{font-size:16px;fill:var(--muted,#526279)}
+</style>
+<rect x="1" y="1" width="1418" height="1358" rx="12" fill="var(--panel,#fff)"/>
+<rect class="exec-lane" x="40" y="80" width="500" height="1190" rx="12"/>
+<rect class="exec-lane" x="595" y="80" width="775" height="1190" rx="12"/>
+<text class="exec-lane-title" x="65" y="115">01 / OUTER RUN LIFECYCLE</text>
+<text class="exec-lane-title" x="620" y="115">02 / INNER INVESTIGATOR LOOP</text>
+
+<path class="exec-edge" d="M270 265 V305"/>
+<text class="exec-label" x="303" y="290" text-anchor="middle">open</text>
+<path class="exec-edge" d="M95 205 H70 V1177 H110"/>
+<text class="exec-label" x="173" y="1080" text-anchor="middle">closed / exhausted</text>
+<path class="exec-edge" d="M270 425 V490"/>
+<text class="exec-label" x="292" y="460" text-anchor="middle">no</text>
+<path class="exec-edge" d="M430 365 H490 V955 H430"/>
+<text class="exec-label" x="510" y="405" text-anchor="middle">yes</text>
+<path class="exec-edge" d="M270 610 V700"/>
+<text class="exec-label" x="292" y="655" text-anchor="middle">no</text>
+<path class="exec-edge" d="M430 550 H460 V995 H430"/>
+<text class="exec-label" x="500" y="584" text-anchor="middle">eligible</text>
+<path class="exec-edge" d="M270 800 V925"/>
+<text class="exec-label" x="270" y="857" text-anchor="middle">event / result arrived</text>
+<path class="exec-edge" d="M110 750 H90 V1177 H110"/>
+<text class="exec-label" x="185" y="1110" text-anchor="middle">deadline reached</text>
+<path class="exec-edge exec-return" d="M270 1025 V1065 H650 V205 H770"/>
+<path class="exec-edge" d="M955 265 V340"/>
+<text class="exec-label" x="1000" y="308" text-anchor="middle">continue</text>
+<path class="exec-edge" d="M1140 205 H1280 V1145 H1115"/>
+<text class="exec-label" x="1190" y="181" text-anchor="middle">closed / exhausted</text>
+<path class="exec-edge" d="M955 465 V520"/>
+<path class="exec-edge" d="M955 640 V715"/>
+<text class="exec-label" x="1001" y="681" text-anchor="middle">tool calls</text>
+<path class="exec-edge" d="M1140 580 H1240 V1180 H1115"/>
+<text class="exec-label" x="1230" y="554" text-anchor="middle">no tools / prose</text>
+<path class="exec-edge" d="M955 830 V885"/>
+<path class="exec-edge" d="M955 1005 V1125"/>
+<text class="exec-label" x="978" y="1058" text-anchor="middle">yes</text>
+<path class="exec-edge exec-return" d="M770 945 H720 V205 H770"/>
+<text class="exec-label" x="632" y="790" transform="rotate(-90 632 790)">enter investigator</text>
+<text class="exec-label" x="703" y="720" transform="rotate(-90 703 720)">otherwise: next model boundary</text>
+<path class="exec-edge exec-return" d="M955 1225 V1305 H1400 V45 H270 V145"/>
+<text class="exec-label" x="777" y="30" text-anchor="middle">NEXT OBSERVATION · a finished turn is not a finished run</text>
+<circle cx="720" cy="205" r="4" fill="var(--accent,#2847cf)"/>
+<g class="exec-node" data-node="exec-observe" aria-label="Run boundary">
+<path d="M270.0 145 L445 205.0 L270.0 265 L95 205.0 Z"/>
+<text class="exec-title" x="270.0" y="198.0" text-anchor="middle">Run boundary</text>
+<text class="exec-sub" x="270.0" y="224.0" text-anchor="middle">Window / budget open?</text>
+</g>
+<g class="exec-node" data-node="exec-events" aria-label="Unread arrivals?">
+<path d="M270.0 305 L430 365.0 L270.0 425 L110 365.0 Z"/>
+<text class="exec-title" x="270.0" y="358.0" text-anchor="middle">Unread arrivals?</text>
+<text class="exec-sub" x="270.0" y="384.0" text-anchor="middle">Delivered events only</text>
+</g>
+<g class="exec-node optional" data-node="exec-recovery" aria-label="Recovery eligible?">
+<path d="M270.0 490 L430 550.0 L270.0 610 L110 550.0 Z"/>
+<text class="exec-title" x="270.0" y="543.0" text-anchor="middle">Recovery eligible?</text>
+<text class="exec-sub" x="270.0" y="569.0" text-anchor="middle">Optional recovery feedback</text>
+</g>
+<g class="exec-node" data-node="exec-advance" aria-label="Advance replay clock">
+<rect x="110" y="700" width="320" height="100" rx="10"/>
+<text class="exec-title" x="270.0" y="743.0" text-anchor="middle">Advance replay clock</text>
+<text class="exec-sub" x="270.0" y="769.0" text-anchor="middle">Next event, job or deadline</text>
+</g>
+<g class="exec-node" data-node="exec-observation" aria-label="Append observation">
+<rect x="110" y="925" width="320" height="100" rx="10"/>
+<text class="exec-title" x="270.0" y="968.0" text-anchor="middle">Append observation</text>
+<text class="exec-sub" x="270.0" y="994.0" text-anchor="middle">Or saved recovery feedback</text>
+</g>
+<g class="exec-node" data-node="exec-boundary" aria-label="Before-model boundary">
+<path d="M955.0 145 L1140 205.0 L955.0 265 L770 205.0 Z"/>
+<text class="exec-title" x="955.0" y="198.0" text-anchor="middle">Before-model boundary</text>
+<text class="exec-sub" x="955.0" y="224.0" text-anchor="middle">Still open? Batch paired?</text>
+</g>
+<g class="exec-node" data-node="exec-request" aria-label="Prepare &amp; call model">
+<rect x="770" y="340" width="370" height="125" rx="10"/>
+<text class="exec-title" x="955.0" y="382.5" text-anchor="middle">Prepare &amp; call model</text>
+<text class="exec-sub" x="955.0" y="408.5" text-anchor="middle">Context → optional progress</text>
+<text class="exec-sub" x="955.0" y="434.5" text-anchor="middle">Reserve → request → finish</text>
+</g>
+<g class="exec-node" data-node="exec-choice" aria-label="Model requests tools?">
+<path d="M955.0 520 L1140 580.0 L955.0 640 L770 580.0 Z"/>
+<text class="exec-title" x="955.0" y="573.0" text-anchor="middle">Model requests tools?</text>
+<text class="exec-sub" x="955.0" y="599.0" text-anchor="middle">Model chooses its next action</text>
+</g>
+<g class="exec-node" data-node="exec-tools" aria-label="Execute tool batch">
+<rect x="770" y="715" width="370" height="115" rx="10"/>
+<text class="exec-title" x="955.0" y="752.5" text-anchor="middle">Execute tool batch</text>
+<text class="exec-sub" x="955.0" y="778.5" text-anchor="middle">ACK / evidence / card outcome</text>
+<text class="exec-sub" x="955.0" y="804.5" text-anchor="middle">Pair results with tool calls</text>
+</g>
+<g class="exec-node" data-node="exec-direct" aria-label="All tools return direct?">
+<path d="M955.0 885 L1140 945.0 L955.0 1005 L770 945.0 Z"/>
+<text class="exec-title" x="955.0" y="938.0" text-anchor="middle">All tools return direct?</text>
+<text class="exec-sub" x="955.0" y="964.0" text-anchor="middle">wait-only versus mixed batch</text>
+</g>
+<g class="exec-node terminal" data-node="exec-turn-end" aria-label="Investigator turn ends">
+<rect x="795" y="1125" width="320" height="100" rx="10"/>
+<text class="exec-title" x="955.0" y="1168.0" text-anchor="middle">Investigator turn ends</text>
+<text class="exec-sub" x="955.0" y="1194.0" text-anchor="middle">Return to outer observe</text>
+</g>
+<g class="exec-node terminal" data-node="exec-run-end" aria-label="Run ends">
+<rect x="110" y="1130" width="320" height="95" rx="10"/>
+<text class="exec-title" x="270.0" y="1170.5" text-anchor="middle">Run ends</text>
+<text class="exec-sub" x="270.0" y="1196.5" text-anchor="middle">Window closed / budget used</text>
+</g>
+<text class="exec-note" x="45" y="1341">Side exits: exception → error · interruption with pending nodes → paused. Neither is a quality score.</text></svg>

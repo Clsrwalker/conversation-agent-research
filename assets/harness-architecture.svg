@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="harness-architecture-graphic" width="1300" height="990" viewBox="0 0 1300 990" role="img" aria-labelledby="arch-svg-title arch-svg-desc">
+  <title id="arch-svg-title">Current agent-led Harness architecture</title>
+  <desc id="arch-svg-desc">Eighteen source-level components show replay events and asynchronous jobs, the outer LangGraph observer and native Deep Agent, optional progress and recovery, model-selected tools, guarded help cards, separate persistence stores and shared accounting. Select a component on the website for its explanation.</desc>
+  <defs>
+    <marker id="arch-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8Z" fill="var(--diagram-muted,#5c6d83)"/></marker>
+    <marker id="arch-arrow-blue" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8Z" fill="var(--diagram-blue,#3655b5)"/></marker>
+    <marker id="arch-arrow-teal" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8Z" fill="var(--diagram-teal,#147a76)"/></marker>
+    <style>
+      .harness-architecture-graphic text{font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;fill:var(--diagram-ink,#182238);font-size:16px}
+      .harness-architecture-graphic .lane{fill:var(--diagram-lane,#f5f7fb);stroke:var(--diagram-line,#dce3ec);stroke-width:1}
+      .harness-architecture-graphic .lane-label{fill:var(--diagram-muted,#5c6d83);font-size:14px;font-weight:650;letter-spacing:1.25px}
+      .harness-architecture-graphic .node-frame{fill:var(--diagram-node,#fff);stroke:var(--diagram-line,#ced8e5);stroke-width:1.5}
+      .harness-architecture-graphic .node-title{font-size:18px;font-weight:600}
+      .harness-architecture-graphic .node-copy{font-size:15px;fill:var(--diagram-muted,#5c6d83)}
+      .harness-architecture-graphic .node-number{font-size:14px;fill:var(--diagram-teal,#147a76);font-weight:650}
+      .harness-architecture-graphic .optional .node-frame{stroke:var(--diagram-amber,#966018);stroke-dasharray:5 4}
+      .harness-architecture-graphic .optional .node-number{fill:var(--diagram-amber,#966018)}
+      .harness-architecture-graphic .primary .node-frame{stroke:var(--diagram-blue,#3655b5);stroke-width:2}
+      .harness-architecture-graphic .card .node-frame{stroke:var(--diagram-teal,#147a76);stroke-width:2}
+      .harness-architecture-graphic .edge{fill:none;stroke:var(--diagram-muted,#5c6d83);stroke-width:1.7;marker-end:url(#arch-arrow);stroke-linejoin:round;stroke-linecap:round}
+      .harness-architecture-graphic .edge-blue{stroke:var(--diagram-blue,#3655b5);marker-end:url(#arch-arrow-blue)}
+      .harness-architecture-graphic .edge-teal{stroke:var(--diagram-teal,#147a76);marker-end:url(#arch-arrow-teal)}
+      .harness-architecture-graphic .optional-edge{stroke-dasharray:5 5}
+      .harness-architecture-graphic .support-edge{stroke:var(--diagram-muted,#5c6d83);stroke-dasharray:3 5;opacity:.65}
+      .harness-architecture-graphic .edge-label{font-size:14px;fill:var(--diagram-muted,#5c6d83);paint-order:stroke;stroke:var(--diagram-lane,#f5f7fb);stroke-width:5px;stroke-linejoin:round}
+      .harness-architecture-graphic .blue-label{fill:var(--diagram-blue,#3655b5)}
+      .harness-architecture-graphic .teal-label{fill:var(--diagram-teal,#147a76)}
+      .harness-architecture-graphic .footer-copy{font-size:15px;fill:var(--diagram-muted,#5c6d83)}
+      .harness-architecture-graphic .note-frame{fill:var(--diagram-tint,#edf1fb);stroke:none}
+      .harness-architecture-graphic [data-node]{cursor:pointer}
+      .harness-architecture-graphic [data-node]:focus .node-frame,.harness-architecture-graphic [data-node]:hover .node-frame{stroke:var(--diagram-blue,#3655b5);stroke-width:3}
+    </style>
+  </defs>
+  <rect width="1300" height="990" fill="var(--diagram-bg,#fff)"/>
+  <rect class="lane" x="20" y="24" width="265" height="699" rx="10"/>
+  <rect class="lane" x="307" y="24" width="971" height="370" rx="10"/>
+  <rect class="lane" x="307" y="414" width="971" height="309" rx="10"/>
+  <rect class="lane" x="20" y="745" width="1258" height="165" rx="10"/>
+  <text class="lane-label" x="40" y="54">INPUTS + REPLAY WORLD</text>
+  <text class="lane-label" x="330" y="54">OUTER LANGGRAPH + NATIVE DEEP AGENT</text>
+  <text class="lane-label" x="330" y="440">MODEL-CHOSEN ACTIONS · NO FIXED TOOL SEQUENCE</text>
+  <text class="lane-label" x="40" y="773">DURABILITY, RESOURCE ACCOUNTING + OBSERVABILITY</text>
+
+  <!-- The principal investigation loop. -->
+  <path class="edge edge-blue" d="M260 302 H296 V156 H330"/>
+  <text class="edge-label blue-label" x="286" y="240" transform="rotate(-90 286 240)">arrived events</text>
+  <path class="edge edge-blue" d="M560 156 H630"/>
+  <text class="edge-label blue-label" x="582" y="143" text-anchor="middle">enter</text>
+  <path class="edge edge-blue" d="M865 156 H960"/>
+  <text class="edge-label blue-label" x="912" y="141" text-anchor="middle">prepare</text>
+  <path class="edge edge-blue" d="M960 175 H901 V275 H865"/>
+  <text class="edge-label blue-label" x="910" y="212">direct request</text>
+  <path class="edge optional-edge" d="M1090 202 V251"/>
+  <text class="edge-label" x="1106" y="232">if enabled</text>
+  <path class="edge optional-edge" d="M960 316 H865"/>
+  <text class="edge-label" x="911" y="339" text-anchor="middle">progress</text>
+  <path class="edge edge-blue" d="M630 281 H560"/>
+  <text class="edge-label blue-label" x="593" y="266" text-anchor="middle">tools</text>
+  <path class="edge edge-blue" d="M445 250 V223 H747 V203"/>
+  <text class="edge-label blue-label" x="496" y="218">paired batch → next model</text>
+  <path class="edge optional-edge" d="M630 316 H610 V83 H445 V110"/>
+  <text class="edge-label" x="619" y="80">no tool calls → return to observe</text>
+
+  <!-- Asynchronous jobs do not hold a tool batch open. -->
+  <path class="edge edge-teal" d="M150 202 V251"/>
+  <text class="edge-label teal-label" x="163" y="232">scheduled arrival</text>
+  <path class="edge edge-teal" d="M330 531 H273 V324 H260"/>
+  <text class="edge-label teal-label" x="272" y="541">queue a job</text>
+  <path class="edge" d="M330 486 H316 V318 H330"/>
+  <text class="edge-label" x="320" y="372">immediate receipt</text>
+
+  <!-- Native dispatch can choose any branch. -->
+  <path class="edge" d="M445 346 V459"/>
+  <text class="edge-label" x="456" y="405">search / read</text>
+  <path class="edge" d="M560 302 H582 V448 H747 V459"/>
+  <path class="edge" d="M560 329 H598 V401 H1090 V459"/>
+  <text class="edge-label" x="774" y="393">optional aids or card actions</text>
+  <path class="edge" d="M330 337 H298 V426 H150 V459"/>
+  <path class="edge edge-teal" d="M150 459 V355"/>
+  <text class="edge-label teal-label" x="59" y="398">wait / cancel</text>
+  <path class="edge optional-edge" d="M40 504 H30 V80 H445 V110"/>
+  <text class="edge-label" x="39" y="80">wait-only batch → observe</text>
+  <path class="edge edge-teal" d="M1090 555 V614"/>
+  <text class="edge-label teal-label" x="1105" y="589">accepted action</text>
+  <path class="edge optional-edge" d="M150 614 V591 H318 V188 H330"/>
+  <text class="edge-label" x="151" y="587">eligible feedback</text>
+  <path class="edge" d="M865 507 H929 V374 H535 V346"/>
+  <path class="edge" d="M960 529 H929 V374 H535 V346"/>
+  <text class="edge-label" x="604" y="369">receipts / conflicts → tool loop</text>
+
+  <!-- Persistence is supporting infrastructure, not a required reasoning stage. -->
+  <path class="edge support-edge" d="M307 380 H294 V737 H12 V834 H40"/>
+  <text class="edge-label" x="50" y="733">graph checkpoints</text>
+  <path class="edge support-edge" d="M1278 703 H1288 V733 H646 V860 H616"/>
+  <text class="edge-label" x="960" y="736">durable events + receipts</text>
+  <path class="edge" d="M675 834 H616"/>
+  <text class="edge-label" x="646" y="819" text-anchor="middle">record</text>
+  <path class="edge support-edge" d="M865 337 H888 V762 H795 V790"/>
+  <text class="edge-label" x="898" y="639" transform="rotate(-90 898 639)">model starts + completions</text>
+  <path class="edge" d="M915 834 H975"/>
+  <path class="edge support-edge" d="M168 877 V895 H1098 V877"/>
+  <path class="support-edge" fill="none" stroke-width="1.7" d="M483 877 V895"/>
+  <text class="edge-label" x="608" y="902" text-anchor="middle">read persisted execution + world state</text>
+
+  <g data-node="arch-input"><rect class="node-frame" x="40" y="110" width="220" height="92" rx="8"/><text class="node-number" x="56" y="133">01</text><text class="node-title" x="56" y="158">Replay events</text><text class="node-copy" x="56" y="182">Timestamped conversation</text></g>
+  <g data-node="arch-scheduler"><rect class="node-frame" x="40" y="251" width="220" height="104" rx="8"/><text class="node-number" x="56" y="275">02</text><text class="node-title" x="56" y="300">Clock + pending jobs</text><text class="node-copy" x="56" y="324">Advance virtual time;</text><text class="node-copy" x="56" y="344">deliver due results</text></g>
+  <g data-node="arch-observe" class="primary"><rect class="node-frame" x="330" y="110" width="230" height="92" rx="8"/><text class="node-number" x="346" y="133">03 · OUTER GRAPH</text><text class="node-title" x="346" y="158">Observe + route</text><text class="node-copy" x="346" y="182">Events / budget / deadline</text></g>
+  <g data-node="arch-boundary"><rect class="node-frame" x="630" y="110" width="235" height="92" rx="8"/><text class="node-number" x="646" y="133">04 · BEFORE INFERENCE</text><text class="node-title" x="646" y="158">EventBoundary</text><text class="node-copy" x="646" y="182">Verify pairing; inject arrivals</text></g>
+  <g data-node="arch-context"><rect class="node-frame" x="960" y="110" width="255" height="92" rx="8"/><text class="node-number" x="976" y="133">05 · DEEP AGENTS</text><text class="node-title" x="976" y="158">Native context preparation</text><text class="node-copy" x="976" y="182">History / summary policy</text></g>
+  <g data-node="arch-progress" class="optional"><rect class="node-frame" x="960" y="251" width="255" height="95" rx="8"/><text class="node-number" x="976" y="274">06 · EXPERIMENTAL</text><text class="node-title" x="976" y="299">Temporary progress record</text><text class="node-copy" x="976" y="324">Request only; same budget</text></g>
+  <g data-node="arch-model" class="primary"><rect class="node-frame" x="630" y="251" width="235" height="95" rx="8"/><text class="node-number" x="646" y="274">07 · SINGLE INVESTIGATOR</text><text class="node-title" x="646" y="299">Model chooses next action</text><text class="node-copy" x="646" y="324">Investigate / publish / yield</text></g>
+  <g data-node="arch-dispatch"><rect class="node-frame" x="330" y="251" width="230" height="95" rx="8"/><text class="node-number" x="346" y="274">08 · NATIVE TOOL LOOP</text><text class="node-title" x="346" y="299">Dispatch + pair receipts</text><text class="node-copy" x="346" y="324">Complete each tool batch</text></g>
+  <g data-node="arch-wait"><rect class="node-frame" x="40" y="459" width="220" height="96" rx="8"/><text class="node-number" x="56" y="483">09 · AGENT CHOICE</text><text class="node-title" x="56" y="509">Wait / cancel</text><text class="node-copy" x="56" y="533">Wait checks unread events</text></g>
+  <g data-node="arch-retrieval"><rect class="node-frame" x="330" y="459" width="230" height="96" rx="8"/><text class="node-number" x="346" y="483">10 · ASYNCHRONOUS</text><text class="node-title" x="346" y="509">Search / document read</text><text class="node-copy" x="346" y="533">Receipt now; evidence later</text></g>
+  <g data-node="arch-aids"><rect class="node-frame" x="630" y="459" width="235" height="96" rx="8"/><text class="node-number" x="646" y="483">11 · AGENT CHOICE</text><text class="node-title" x="646" y="509">Calculate / advice / notes</text><text class="node-copy" x="646" y="533">Advice is not permission</text></g>
+  <g data-node="arch-publish" class="card"><rect class="node-frame" x="960" y="459" width="255" height="96" rx="8"/><text class="node-number" x="976" y="483">12 · GUARDED SIDE EFFECT</text><text class="node-title" x="976" y="509">Publish / update / withdraw</text><text class="node-copy" x="976" y="533">Unread input / card conflicts</text></g>
+  <g data-node="arch-cards" class="card"><rect class="node-frame" x="960" y="614" width="255" height="74" rx="8"/><text class="node-number" x="976" y="638">13 · USER-VISIBLE OUTPUT</text><text class="node-title" x="976" y="667">Active help cards</text></g>
+  <g data-node="arch-recovery" class="optional"><rect class="node-frame" x="40" y="614" width="220" height="74" rx="8"/><text class="node-number" x="56" y="638">14 · OPTIONAL BRANCH</text><text class="node-title" x="56" y="667">Bounded recovery</text></g>
+
+  <rect class="note-frame" x="330" y="585" width="535" height="121" rx="7"/>
+  <text x="349" y="613" font-weight="600">What returns to the investigation?</text>
+  <text class="node-copy" x="349" y="641">Normal tool receipts → next model boundary.</text>
+  <text class="node-copy" x="349" y="664">Final prose or an all-direct batch → outer observe.</text>
+  <text class="node-copy" x="349" y="687">Pending jobs can remain in either case.</text>
+
+  <g data-node="arch-checkpoint"><rect class="node-frame" x="40" y="790" width="255" height="87" rx="8"/><text class="node-number" x="56" y="814">15 · EXECUTION STATE</text><text class="node-title" x="56" y="839">LangGraph checkpoints</text><text class="node-copy" x="56" y="860">Outer + investigator state</text></g>
+  <g data-node="arch-world"><rect class="node-frame" x="350" y="790" width="266" height="87" rx="8"/><text class="node-number" x="366" y="814">16 · WORLD TRANSACTIONS</text><text class="node-title" x="366" y="839">Events / jobs / cards / receipts</text><text class="node-copy" x="366" y="860">Separate SQLite ledger</text></g>
+  <g data-node="arch-accounting"><rect class="node-frame" x="675" y="790" width="240" height="87" rx="8"/><text class="node-number" x="691" y="814">17 · MODEL CALLBACKS</text><text class="node-title" x="691" y="839">Reserve → finish call</text><text class="node-copy" x="691" y="860">Usage / duration / errors</text></g>
+  <g data-node="arch-monitor"><rect class="node-frame" x="975" y="790" width="250" height="87" rx="8"/><text class="node-number" x="991" y="814">18 · READ-ONLY</text><text class="node-title" x="991" y="839">Monitor + public export</text><text class="node-copy" x="991" y="860">Observed state; no grading</text></g>
+  <text class="footer-copy" x="40" y="942">Deadline or known budget exhaustion ends the outer run. Pauses and execution errors are separate outcomes.</text>
+  <text class="footer-copy" x="40" y="970">Checkpoint and world writes are separate transactions. This diagram does not imply global exactly-once model execution.</text>
+</svg>

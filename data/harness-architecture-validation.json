@@ -1,0 +1,103 @@
+{
+  "id": "harness-architecture-2026-10-10",
+  "date": "2026-10-10",
+  "timezone": "America/Halifax",
+  "checked_at": "2026-10-10T00:25:54.588023-03:00",
+  "type": "engineering_validation",
+  "status": "passed_with_documented_limits",
+  "change": "Replace the three-stage homepage sketch with a source-mapped 18-component architecture and a separate 12-node execution decision diagram.",
+  "tested_revision": "Exact source bytes identified by SHA-256 below; deployment is recorded by Sites.",
+  "checks": [
+    {
+      "name": "Source fidelity review",
+      "result": "pass",
+      "detail": {
+        "source_files": 16,
+        "source_hashes_match": true,
+        "scope": "Current agent-led implementation and installed native routing source. Reviewer checked asynchronous acknowledgement versus evidence arrival, optional request progress, narrow recovery, direct-return batches, guarded card outcomes and separate persistence stores. Not a runtime re-test.",
+        "record": "harness-architecture-evidence.json"
+      }
+    },
+    {
+      "name": "Diagram and page integrity",
+      "result": "pass",
+      "detail": {
+        "diagram_node_counts": {
+          "harness-architecture.svg": 18,
+          "harness-execution.svg": 12
+        },
+        "execution_inspectors_match_svg": true,
+        "unique_html_ids": 99,
+        "preserved_routes": [
+          "overview",
+          "baseline",
+          "experiment-01",
+          "experiment-02",
+          "experiment-03",
+          "harness",
+          "methods"
+        ],
+        "no_code_blocks": true,
+        "removed_affiliations_absent": true,
+        "svg_styles_scoped": true
+      }
+    },
+    {
+      "name": "Asset delivery and syntax",
+      "result": "pass",
+      "detail": {
+        "local_files_200_and_byte_identical": 38,
+        "javascript_syntax_checked": [
+          "architecture.js",
+          "execution-nodes.js"
+        ],
+        "svg_xml_valid": true
+      }
+    },
+    {
+      "name": "Frozen evidence preservation",
+      "result": "pass",
+      "detail": {
+        "dashboard_and_study02_hashes_unchanged": true,
+        "dashboard_json_js_match": true
+      }
+    },
+    {
+      "name": "Browser interaction and responsive review",
+      "result": "pass",
+      "detail": [
+        "Architecture and Execution logic tabs rendered 18 and 12 selectable nodes.",
+        "Mouse selection showed guarded card behavior and optional progress details; Enter selected the direct-return decision; arrow-key tab switching worked.",
+        "Actual-size reset, zoom in/out and Fit worked; each diagram selected its matching SVG download URL.",
+        "Reviewed desktop 1365px and mobile 390px, light and dark themes. Mobile document client/scroll width both 375px; enlarged 1300px diagram stayed within its scroll viewport.",
+        "Architecture node text bounding boxes stayed inside node rectangles.",
+        "Recorded dashboard remained below the diagram and historical metrics were unchanged.",
+        "No new page console error observed during final reload checks; one earlier unattributed browser error is retained under limitations."
+      ]
+    }
+  ],
+  "new_model_runs": 0,
+  "limitations": [
+    "Diagrams map source-level components and control decisions; the architecture is not an exported node-for-node runtime graph.",
+    "No harness runtime, assistance-quality, real-ASR, human usability or remote-service test was run for this presentation change.",
+    "Phone Fit mode previews the whole diagram at small scale; actual-size and scroll controls expose readable detail.",
+    "Browser log retained one earlier unattributed TypeError concerning animation at 2026-10-10T03:15:50.777Z. It did not recur during final reload/interaction checks and no site JavaScript references animation; its origin was not established."
+  ],
+  "tested_source_sha256": {
+    "dist/index.html": "0223b3db7b706c05e74854a1c52f4b21f70032587533c01b5c9a1cb3ac379713",
+    "dist/architecture.css": "2162cd91d877d736d2ef8bc15e4a51191d98662b2cf62f06a42e38dc0bdb9006",
+    "dist/architecture.js": "641ff7f81cf4bbddb1a58211315b82cd0ba580de6c6e5948e21c49a57b951e4b",
+    "dist/execution-nodes.js": "7fb78c4d00a402adf7d8696e6bc14524d233dcb50f3114acbefcdcc9470bb77b",
+    "dist/assets/harness-architecture.svg": "5cdb990181e98068fc3f4ac3c3ad2780261b64f5b75bfb21d33c5a4144ba50fd",
+    "dist/assets/harness-execution.svg": "79661b0186708cc0ce62be97c8ceb9a7e579ee7b7982ee47fa6a0cdf609a2ba9",
+    "dist/overview.css": "ac03a31d29c7a3ab2eeadfd1afb774ca08d130221cf65e425297e13664439f21",
+    "architecture-section.html": "d2b6f2f1fa8a516fb10f44bc5004d654321babc87a114bf393973bb5db8bf486",
+    "overview-section.html": "9047344a9acb2f5e2f2bb4597cfe9dee4e650034db49b838b8b2df91408ce1bd",
+    "build_overview.py": "b004f023d93bb9e2834395928a3fb87f0c97a7284d368c037726ecee878b2db4",
+    "build_execution_diagram.py": "9900f5cc729d6307f751c8e9a3a967e8fede3d28bce3a77fa2542c83b9145702",
+    "methods-section.html": "9bfd0267657c8a1fdf85b0d3c7100446e8568ccb8ec28bc6f807b269c5c6a202",
+    "build_data.py": "a3ddcf90efeae25ba8f952b976202d8ee2280fdc69cde311592ff8107505ce42",
+    "README.md": "f798bbc04ac702cbda5f40898f0b3de386752379fa3f122f969bc83cb66b8732",
+    "dist/data/harness-architecture-evidence.json": "4a247a99d7dc2fd02b7f4a51badd7ab4ad13e08f543260562147616e848e5f29"
+  }
+}

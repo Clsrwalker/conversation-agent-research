@@ -1,0 +1,189 @@
+{
+  "id": "site-focus-2026-10-09",
+  "date": "2026-10-09",
+  "timezone": "America/Halifax",
+  "checked_at": "2026-10-09T23:45:26.919843-03:00",
+  "type": "engineering_validation",
+  "status": "passed_with_documented_limits",
+  "change": "Focus the research website on four navigation entries, one latest-study narrative and one-case-at-a-time exploration; keep original research results and archive routes.",
+  "tested_revision": "Site focus redesign; exact source bytes are identified by SHA-256 below.",
+  "validation_script": "work/verify_site_focus.py",
+  "new_model_runs": 0,
+  "checks": [
+    {
+      "name": "Navigation, routes and display structure",
+      "result": "pass",
+      "detail": {
+        "unique_html_ids": 62,
+        "main_navigation_entries": 4,
+        "preserved_routes": [
+          "baseline",
+          "experiment-01",
+          "experiment-02",
+          "experiment-03",
+          "harness",
+          "methods",
+          "overview"
+        ],
+        "preformatted_blocks": 0
+      }
+    },
+    {
+      "name": "Local assets and hash links",
+      "result": "pass",
+      "detail": {
+        "local_links_and_css_assets_checked": 51,
+        "pending_record_allowed": "data/site-focus-validation.json",
+        "scope": "Local static references and fragment targets; external HTTP links were not fetched."
+      }
+    },
+    {
+      "name": "Research export parity and frozen dashboard snapshot",
+      "result": "pass",
+      "detail": {
+        "research_json_js_equal": true,
+        "dashboard_json_js_equal": true,
+        "website_record_date": "2026-10-09",
+        "dashboard_snapshot_unchanged_from_prior_validation": true,
+        "dashboard_snapshot_sha256": "4309d50a3f3b8efbc712596148bd174d3bb4d29aba45788bed06e813ea8f6d34"
+      }
+    },
+    {
+      "name": "Frozen Study 02 results and source identity",
+      "result": "pass",
+      "detail": {
+        "source_analysis_sha256": "dfe8cf34b9cbc551c3780114506d9a57cdaa275edbeec881d864fe63cfa6796d",
+        "analysis_structural_equality": true,
+        "runs": 40,
+        "independent_scenarios": 10,
+        "help_per_arm": "5/14",
+        "silence_per_arm": "6/6",
+        "tokens_baseline_progress": [
+          745280,
+          620471
+        ],
+        "token_reduction_percent": 16.7,
+        "no_card_help_runs_baseline_progress": [
+          6,
+          8
+        ],
+        "material_error_runs_baseline_progress": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "name": "RillStat provenance, events, accounting and existing ratings",
+      "result": "pass",
+      "detail": {
+        "provenance_files_verified": 9,
+        "progress_runs_verified": 2,
+        "timeline_positions_verified": 18,
+        "baseline_context_rows_verified": 2,
+        "conversation_and_arrived_document_match": true,
+        "rating_rows_unchanged": true,
+        "tokens_per_repeat": [
+          29080,
+          28971
+        ],
+        "private_model_content_accessed": false
+      }
+    },
+    {
+      "name": "JavaScript syntax",
+      "result": "pass",
+      "detail": {
+        "node_check_passed": [
+          "app.js",
+          "harness.js"
+        ]
+      }
+    },
+    {
+      "name": "Local HTTP delivery",
+      "result": "pass",
+      "detail": {
+        "files": 22,
+        "all_status_200": true,
+        "response_bytes_match_dist": true
+      }
+    },
+    {
+      "name": "Browser interaction and responsive review",
+      "result": "pass",
+      "detail": {
+        "tool": "Codex in-app browser via cua_repl",
+        "viewport_overrides": [
+          {
+            "width": 390,
+            "height": 844
+          },
+          {
+            "width": 1365,
+            "height": 900
+          }
+        ],
+        "checks": [
+          "All four primary entries and the baseline, Study 01 and ASR archive routes opened with the expected content.",
+          "Study 02 useful-help, missing-card and token buttons displayed the source values; aggregate and scenario tables expanded.",
+          "Case explorer defaulted to the frozen ferry failure with the actual wrong card and the 17:57 versus 17:55 evidence comparison.",
+          "Browser-recording and engineering-run selection updated the case content; engineering results remained labeled separately.",
+          "Case analysis, Tool trace and Resource use tabs worked; ArrowLeft moved focus and selection from resources to tools.",
+          "Per-call token mode and call selection displayed the recorded call values; error-only filtering displayed an appropriate empty state for the ferry run.",
+          "Source disclosures opened; the engineering run rendered both saved execution graphs on demand.",
+          "Light and dark themes inspected on desktop; mobile overview, study tables, evidence disclosure and resource layout inspected.",
+          "No horizontal document overflow at inspected mobile overview, study and explorer states (375px content viewport) or desktop overview (1350px content viewport).",
+          "No browser console errors reported during this validation session."
+        ]
+      }
+    }
+  ],
+  "limitations": [
+    "This is engineering and evidence-consistency validation, not a new assistance-quality evaluation.",
+    "The RillStat case contains two repeats of one synthetic scenario; their replay times are not real response latency.",
+    "External HTTP links were not fetched by this static validation.",
+    "No private model requests or responses, new model runs, real ASR or user study were accessed or performed.",
+    "No usability or readability study was conducted; this validation establishes implemented behavior and consistency, not improved comprehension.",
+    "The hosted charts remain saved snapshots; the local live monitor was not re-tested by this information-hierarchy change."
+  ],
+  "tested_source_sha256": {
+    "sites/conversation-agent-research/dist/index.html": "299df26a15d95e610e288416b82f4a7c7618627c05cf44f5b3b2aa0dc939da77",
+    "sites/conversation-agent-research/dist/app.js": "393321bad40f38a3f4b7216fd3b211b1af1addf47e238fdc41769ab19298e11e",
+    "sites/conversation-agent-research/dist/harness.js": "78cf38fdb8d090b7670282272cc497dbcead392dabc1c50938c2f6472eeeca42",
+    "sites/conversation-agent-research/dist/harness.css": "bc9aba0004dc88f6fc7508e84fc3815ee539a89737125f78e4754217e456fa3a",
+    "sites/conversation-agent-research/dist/focus.css": "f92d184582a1d7ac1fb1e55c644845c479ee1803bd2247c2efb7f9692169b5a9",
+    "sites/conversation-agent-research/dist/style.css": "1dbf234605435256ab44c01c74c019ee768df30e5cfaaa6ece158450bf17b048",
+    "sites/conversation-agent-research/experiment-02.html": "5cbb8e0b4f3f97365889b2bcae693ba55ec4872d7045353e2f767e19dfdbc060",
+    "sites/conversation-agent-research/experiment-02-story.json": "1f627c8245c8ed86465eab9c1b06d643b391425687fd980c66dc14af8e047c8a",
+    "sites/conversation-agent-research/harness-section.html": "27f9b9d919a58c8a028a254655d26c2e71bf8f41b70611697c49448b596bb80c",
+    "sites/conversation-agent-research/dist/data/rillstat-case-study.json": "3203d36f0369d90ca72ea57232e0e1686a7fafe250f6b2ca97644b37ef88df27",
+    "sites/conversation-agent-research/dist/data/experiment-02.json": "0994eb6075028831f75e1de974f5c8127ff63ea50271499dba6a7af23060ae65",
+    "sites/conversation-agent-research/dist/data/harness-dashboard.json": "4309d50a3f3b8efbc712596148bd174d3bb4d29aba45788bed06e813ea8f6d34",
+    "sites/conversation-agent-research/README.md": "f2281c7a6b37a0b056374e4cb0480daa306c99cf7216d238c53d9109259d6ada",
+    "sites/conversation-agent-research/build_data.py": "eb599803a123dfa4f16579f0b6c4550ed6bdbd3b7512c487baa61302ce770bd2"
+  },
+  "publication_scope": "This report records pre-publication source checks. Sites stores deployment status separately for the exact packaged commit.",
+  "follow_up_changes": [
+    {
+      "date": "2026-10-09",
+      "timezone": "America/Halifax",
+      "checked_at": "2026-10-09T23:48:51.750754-03:00",
+      "change": "Remove the university and supervisor credits from the homepage and footer at the owner request.",
+      "type": "content_validation",
+      "status": "passed",
+      "checks": [
+        "Homepage affiliation byline removed.",
+        "Footer retains author name only.",
+        "The one-time page-generation script no longer reinserts these credits."
+      ],
+      "source_before_sha256": "299df26a15d95e610e288416b82f4a7c7618627c05cf44f5b3b2aa0dc939da77",
+      "source_after_sha256": "e6f2ca71454e849f16db28e1939848d9fa0a2884ab82094079dd9688ca2a80b7",
+      "tested_file": "dist/index.html",
+      "new_model_runs": 0,
+      "limitations": [
+        "Text removal only; interactive behavior and responsive layout were not re-tested for this edit. Previous validation fingerprints describe the earlier revision."
+      ]
+    }
+  ]
+}

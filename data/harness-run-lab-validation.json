@@ -1,0 +1,381 @@
+{
+  "id": "harness-run-lab-2026-10-10",
+  "date": "2026-10-10",
+  "timezone": "America/Halifax",
+  "checked_at": "2026-10-10T01:06:28.2365070-03:00",
+  "type": "engineering_validation",
+  "status": "passed_with_documented_limits",
+  "change": "Local browser Run Lab starts fixed-model jobs with four selectable harnesses, actual graph telemetry, provider text, tool receipts and comparison history.",
+  "tested_revision": "Exact source bytes are hashed below. Every real run also records the observer hashes in force at that run.",
+  "checks": [
+    {
+      "name": "Automated checks",
+      "result": "pass",
+      "count": 96,
+      "suites": {
+        "test_lab": 25,
+        "test_lab_output": 13,
+        "test_lab_worker": 5,
+        "test_monitor_runtime": 12,
+        "test_monitor_store": 27,
+        "test_monitor_server": 14
+      },
+      "scope": "HTTP boundaries, fixed settings, process ownership/restart/cancel, idempotency, comparison identity, bounded text streaming, real compiled graphs under the scripted plumbing model, preserved frozen baseline, existing read-only monitor regression."
+    },
+    {
+      "name": "Real local model integration",
+      "result": "pass",
+      "scope": "Two browser-submitted runs completed (frozen baseline and progress); one native-reference run cancelled from the browser. Same fictional question, supplied document, local model digest/runtime and fixed budgets. No quality scoring."
+    },
+    {
+      "name": "Browser UI",
+      "result": "pass",
+      "scope": "Observed active investigate/model nodes during generation, growing provider-output stream, measured charts, real tool returns, published cards, history, fingerprint-matched comparison, cancellation, node inspection, token chart toggle, desktop and narrow viewport layout, no console errors."
+    },
+    {
+      "name": "Frozen snapshot integrity",
+      "result": "pass",
+      "checked_files": 36,
+      "scope": "All preserved snapshot checksums still match. Frozen source is loaded with external observational callbacks; historical study scores and artifacts remain unchanged."
+    }
+  ],
+  "real_runs": [
+    {
+      "job_id": "176c2eb47289447a8901c79d15813515",
+      "harness": "native",
+      "preset": "native",
+      "status": "cancelled",
+      "exit_code": 1,
+      "input_sha256": "b136f1f93afa6c5f74bf1b48becdfc7fb8c3e7150510ed22bf2f97caa4e937b8",
+      "model_profile_sha256": "288f4167e1a49775a8c941c47fc68930874c0320e316d2b65d534e406f68c61f",
+      "model": {
+        "model": "qwen2.5:14b-instruct",
+        "digest": "7cdf5a0187d5c58cc5d369b255592f7841d1c4696d45a8c8a9489440385b22f6",
+        "ollama_version": "0.35.1",
+        "context_window": 16384
+      },
+      "run_record": "experiments/deep_conversation/runs/lab-176c2eb47289447a8901c79d15813515",
+      "model_calls_recorded": 4,
+      "finished_calls": 3,
+      "tokens": null,
+      "model_wall_ms": null,
+      "active_cards": null,
+      "stop_reason": "cancelled_by_browser",
+      "output_events": 276,
+      "output_delta_events": 266,
+      "runtime_events": 55,
+      "outer_graph_nodes": 4,
+      "investigator_graph_nodes": 6,
+      "quality_score": null,
+      "quality_evaluated": false,
+      "observers_at_run": {
+        "lab_worker.py": "4b7dce64b54671da47147fc8aeb800c9f19752367fd1c3d632f078f40aa81ed4",
+        "lab_output.py": "97f28f1165dbd22c569f1b67b2c50c55e31cc541b45e84e527bd9e7c8dadc364",
+        "monitor_runtime.py": "7088b0606fe98f67cd399fa07d20b3ed8fd8cd196ae6dcd07469340a944e2560"
+      },
+      "record_sha256": {
+        "manifest.json": "8ca0e33bba52b6fa526c30ee07d89dd39a49f861584144ff1c617c65549e0cbf",
+        "lab_provenance.json": "e02ce664ccbf0b79d29a2efbbc9078fdaf35fe258d9a32b9a6649d0ced0c86f8",
+        "graph.json": "fe942709c391d5b7e811d769d263128754f9b4e29bad02f5a08bab92a6d2449b",
+        "assistant_output.jsonl": "ad25f5ae35d88f9cc781275b9f63476bfd9ac143f926c8dbfb289bf4510d4fd5",
+        "monitor_events.jsonl": "764d85fce6f50b84d83b45ba6c395dc42b72c2562d6b54aaf476f59e141604a1"
+      }
+    },
+    {
+      "job_id": "7d94bdfbe864406da0cac481d14a7e32",
+      "harness": "frozen-baseline",
+      "preset": "agent-led-recovery",
+      "status": "completed",
+      "exit_code": 0,
+      "input_sha256": "b136f1f93afa6c5f74bf1b48becdfc7fb8c3e7150510ed22bf2f97caa4e937b8",
+      "model_profile_sha256": "288f4167e1a49775a8c941c47fc68930874c0320e316d2b65d534e406f68c61f",
+      "model": {
+        "model": "qwen2.5:14b-instruct",
+        "digest": "7cdf5a0187d5c58cc5d369b255592f7841d1c4696d45a8c8a9489440385b22f6",
+        "ollama_version": "0.35.1",
+        "context_window": 16384
+      },
+      "run_record": "experiments/deep_conversation/runs/lab-7d94bdfbe864406da0cac481d14a7e32",
+      "model_calls_recorded": 5,
+      "finished_calls": 5,
+      "tokens": {
+        "input_tokens": 17873,
+        "output_tokens": 420,
+        "total_tokens": 18293
+      },
+      "model_wall_ms": 16480.886,
+      "active_cards": 1,
+      "stop_reason": "window_closed",
+      "output_events": 279,
+      "output_delta_events": 265,
+      "runtime_events": 75,
+      "outer_graph_nodes": 4,
+      "investigator_graph_nodes": 6,
+      "quality_score": null,
+      "quality_evaluated": false,
+      "observers_at_run": {
+        "lab_worker.py": "ba58d49093806f2f22b3ba02a5b7e6ef81bc5c332d968ed1d178727a93fb7801",
+        "lab_output.py": "97f28f1165dbd22c569f1b67b2c50c55e31cc541b45e84e527bd9e7c8dadc364",
+        "monitor_runtime.py": "7088b0606fe98f67cd399fa07d20b3ed8fd8cd196ae6dcd07469340a944e2560"
+      },
+      "record_sha256": {
+        "manifest.json": "cd4d7e8388bd298edb4af6f4ad5ad97c734698594cc11ee94be636304801cb9b",
+        "lab_provenance.json": "2049edc6a4897d488010a9e24237539139da9bb16c00a7437c8602ac35333a13",
+        "graph.json": "812b190f8ccf6347eec09c90a4894bc61ad729434ed373968258e0b41e0e3565",
+        "assistant_output.jsonl": "5344c5e025e1cb58532a2b94370ea8beccb5a91920d59e10f178cdac9edaefbf",
+        "monitor_events.jsonl": "1c47a52fd024658e69c9ae331e34e0f08a6afaff0a78a3093eda2a40a3748090",
+        "summary.json": "4785f6a18cc3ff54b4467beb4b8f3e230662b6193c8c84468e7ab77a7a939426"
+      }
+    },
+    {
+      "job_id": "d5256e65afaf47e8870f14bb8a3e4b49",
+      "harness": "progress",
+      "preset": "agent-led-progress",
+      "status": "completed",
+      "exit_code": 0,
+      "input_sha256": "b136f1f93afa6c5f74bf1b48becdfc7fb8c3e7150510ed22bf2f97caa4e937b8",
+      "model_profile_sha256": "288f4167e1a49775a8c941c47fc68930874c0320e316d2b65d534e406f68c61f",
+      "model": {
+        "model": "qwen2.5:14b-instruct",
+        "digest": "7cdf5a0187d5c58cc5d369b255592f7841d1c4696d45a8c8a9489440385b22f6",
+        "ollama_version": "0.35.1",
+        "context_window": 16384
+      },
+      "run_record": "experiments/deep_conversation/runs/lab-d5256e65afaf47e8870f14bb8a3e4b49",
+      "model_calls_recorded": 4,
+      "finished_calls": 4,
+      "tokens": {
+        "input_tokens": 14770,
+        "output_tokens": 402,
+        "total_tokens": 15172
+      },
+      "model_wall_ms": 7660.265,
+      "active_cards": 0,
+      "stop_reason": "window_closed",
+      "output_events": 331,
+      "output_delta_events": 320,
+      "runtime_events": 65,
+      "outer_graph_nodes": 4,
+      "investigator_graph_nodes": 6,
+      "quality_score": null,
+      "quality_evaluated": false,
+      "observers_at_run": {
+        "lab_worker.py": "4b7dce64b54671da47147fc8aeb800c9f19752367fd1c3d632f078f40aa81ed4",
+        "lab_output.py": "97f28f1165dbd22c569f1b67b2c50c55e31cc541b45e84e527bd9e7c8dadc364",
+        "monitor_runtime.py": "7088b0606fe98f67cd399fa07d20b3ed8fd8cd196ae6dcd07469340a944e2560"
+      },
+      "record_sha256": {
+        "manifest.json": "4ce8b7233eff431dad06c802721a920f04ec449abdf415e3cd619d1c0a892063",
+        "lab_provenance.json": "90bed909b1383bff00156d11db74f2ffdc46785dc84bab09d7190a3c50a35566",
+        "graph.json": "f1dfe3d3aaee0a7eff3c9f9380141a841de961de9ca3ff60501664695c34d260",
+        "assistant_output.jsonl": "c3aef421a4082ed184de546ecc57035c71949d1ebfdfaa1e6eed9106179db901",
+        "monitor_events.jsonl": "73884879cfc7efb51f4cf1d453376c14125d500072a74b59934cc71a2504be6a",
+        "summary.json": "e2e7c2ada5ba9a221a4c92698d36096a454d1fbf6463b2c348a0d91067cd5415"
+      }
+    }
+  ],
+  "findings": [
+    "The browser can distinguish completed execution from delivery: the baseline example published one card; the progress example completed with zero cards.",
+    "The cancelled run is preserved as cancelled with potentially unfinished usage, not represented as completed or resumable.",
+    "These short engineering examples do not establish comparative assistance quality or a latency improvement. Cold/warm model state and observational overhead were not experimentally controlled."
+  ],
+  "limits": [
+    "Loopback on this computer only. The hosted research website links to the local Lab; it does not run Python or connect to the local model.",
+    "One initial conversation utterance, finite 45-second virtual replay, supplied-document search. No mid-run conversation edits, microphone, ASR or live web retrieval.",
+    "Live UI refreshes every 750 ms. Brief nodes can finish between polls; callback events preserve observed visits. Provider-exposed text is not hidden reasoning.",
+    "Source/profile fingerprints confirm matched inputs and model settings, not a preregistered causal experiment. Current source variants differ beyond the frozen snapshot.",
+    "Output and UI histories are bounded and truncation is labelled. Cancellation may leave a model call whose final provider usage is unknown. No automatic resume.",
+    "Backend stop/restart only manages owned workers. A surviving prior worker blocks new jobs until its exit can be verified.",
+    "Raw questions, supplied documents and model-output logs stay local; this validation exports aggregate counts, hashes and repository-relative provenance only."
+  ],
+  "source_sha256": {
+    "experiments/deep_conversation/lab.py": "e9ee5d63e987e689925b1b72c2f2195d5f14658f7fea1ff0a980794e5c9768a3",
+    "experiments/deep_conversation/lab_worker.py": "4b7dce64b54671da47147fc8aeb800c9f19752367fd1c3d632f078f40aa81ed4",
+    "experiments/deep_conversation/lab_output.py": "97f28f1165dbd22c569f1b67b2c50c55e31cc541b45e84e527bd9e7c8dadc364",
+    "experiments/deep_conversation/test_lab.py": "6c06c5d702370ab376228568cee369197c9ab0c76d1e5a6ee5a2c072435d4463",
+    "experiments/deep_conversation/test_lab_worker.py": "ea1c6524083aec1ee98c38a5cb0cef036d9e9cd6181f13f20773000f3b8abb1e",
+    "experiments/deep_conversation/test_lab_output.py": "71371504f7012bddf28869e68e01319d4cccec44167809bf9588864345571ae2",
+    "experiments/deep_conversation/lab_ui/index.html": "bf6bf375efab206dc25dd4c331f35b37a91cf22daa15a21684b329e730d0a764",
+    "experiments/deep_conversation/lab_ui/lab.js": "6e1b46307d87076afc70c92e6ef7991cf55e0e0a5bef1e4391ad72b1e1da8512",
+    "experiments/deep_conversation/lab_ui/lab.css": "fb78a87489bdc4b3720a0a4ffb3937882b33d163cc6e10911ba379d319434cca",
+    "experiments/deep_conversation/monitor_runtime.py": "7088b0606fe98f67cd399fa07d20b3ed8fd8cd196ae6dcd07469340a944e2560",
+    "experiments/deep_conversation/monitor_store.py": "d3be06421cbbe7f0482b8ff587dce19d451deb964ef7cd2a4cdc929933e50be0",
+    "sites/conversation-agent-research/overview-section.html": "da91129b833bfcd284b27603a6acb4c4603d3e6cd19c66c3bd962bc3cb263512",
+    "sites/conversation-agent-research/methods-section.html": "4192f0b86836daf690ffe724a014f9a024eb9bb905698a3a06fc2df57d8c17e2",
+    "sites/conversation-agent-research/build_data.py": "3c5a438945a1784e4d603c542f13046649c1fc03a64a72dc14731f42ce0b77f4"
+  },
+  "maintenance_updates": [
+    {
+      "id": "research-link-navigation-fix-2026-10-10",
+      "date": "2026-10-10",
+      "timezone": "America/Halifax",
+      "type": "engineering_validation",
+      "status": "passed_with_documented_limits",
+      "problem": "Cross-site document navigation from the hosted research link was rejected by the API access boundary.",
+      "change": "Allow user-activated top-level GET navigation to the static landing page. API reads/writes, framed loads and cross-site fetches remain restricted.",
+      "local_url": "http://127.0.0.1:8768/",
+      "checks": [
+        {
+          "name": "test_lab",
+          "result": "pass",
+          "tests": 28,
+          "new_regression_tests": 3,
+          "model_generation_calls": 0,
+          "detail": "Actual HTTP checks for activated document navigation; no job or model preflight while serving the shell; APIs/assets/framing/fetches/POST/Host/Origin remain protected."
+        }
+      ],
+      "browser_check": {
+        "result": "pass",
+        "path": "Published HTTPS research overview → Open local Run Lab → http://127.0.0.1:8768/",
+        "observed": [
+          "Web Run Lab rendered instead of error JSON",
+          "Connected to this computer",
+          "Local model available and Run question enabled",
+          "Saved history and completed baseline record loaded",
+          "No browser console errors or warnings"
+        ],
+        "new_model_runs": 0
+      },
+      "limits": [
+        "The prior service could not be automatically restarted because process termination was blocked by automatic approval policy. The repaired service uses port 8768; prior 8767 is not the current entry."
+      ],
+      "source_sha256": {
+        "experiments/deep_conversation/lab.py": "da981c47c6355d588ad95983a28f257114a8623cc803d38fca3c801fea1969f1",
+        "experiments/deep_conversation/test_lab.py": "8b53c206bc1856a36cf1b1fec8d67dfc314f15ca828ef15dcd95187c17733e0b",
+        "sites/conversation-agent-research/overview-section.html": "41df477f361fe41308dc2ecdfc4084859d0d0f87db866fcca6d8be4fce180bd6",
+        "sites/conversation-agent-research/methods-section.html": "e70b5003013ce9c7e4127b13a494ed4a85e60f7a4b838583769e06260c7d1bf5"
+      }
+    },
+    {
+      "id": "fixed-harness-architecture-2026-10-10",
+      "date": "2026-10-10",
+      "timezone": "America/Halifax",
+      "checked_at": "2026-10-10T14:34:37.320633-03:00",
+      "type": "engineering_validation",
+      "status": "passed_with_documented_limits",
+      "problem": "A run-generated graph did not explain each harness before execution or provide a stable architecture for live activity.",
+      "change": "Four source-mapped, fixed architectures are visible before a run. Actual callbacks overlay active nodes, observed transitions, visits, pending source jobs and errors without adding or moving nodes. Configuration and selected-run views are distinct.",
+      "local_url": "http://127.0.0.1:8769/",
+      "tested_revision": "Exact local UI and test source hashes below; research Site source base eea272b35a48c2e9f26183b6e4ebe65c5e6003ce.",
+      "templates": {
+        "direct_question_v3": {
+          "native": 12,
+          "agent-led": 13,
+          "frozen-baseline": 14,
+          "progress": 15
+        },
+        "historical_replay_variants": 4,
+        "mechanisms": "Native tools; agent-led event boundary and calculate; question-adapted frozen recovery; progress feedback. Shared components remain shared.",
+        "source_only_components": "Saved state, input and progress feedback lack separate activity callbacks and never receive fabricated execution highlights."
+      },
+      "checks": [
+        {
+          "name": "Node graph projection suite",
+          "result": "pass",
+          "passed": 41,
+          "failed": 0,
+          "skipped": 0,
+          "command": "node --test experiments/deep_conversation/tests/test_harness_graph.cjs",
+          "scope": "Variant mechanics, immutable topology, historical/direct real logs, session reset, deduplication, partial event windows, explicit graph-step transitions, tool-child dispatch, parallel siblings, errors, pending versus active, terminal and stale state."
+        },
+        {
+          "name": "Browser interaction",
+          "result": "pass",
+          "scope": "All four configuration previews show distinct fixed node sets with no active or flowing state; live model and tool routes animate; terminal activity stops; error node inspection, configuration/run selection, expand/Escape and zoom controls work; zero console errors."
+        },
+        {
+          "name": "Generated frontend",
+          "result": "pass",
+          "scope": "Bundled module and app via build_lab_ui.py; node --check lab.js; existing localhost service serves the static update without backend changes."
+        }
+      ],
+      "real_run": {
+        "job_id": "c2b585b28d7c4c2abd5891e3e67fb545",
+        "record": "experiments/deep_conversation/runs/lab-c2b585b28d7c4c2abd5891e3e67fb545",
+        "harness": "agent-led",
+        "input_mode": "direct_request",
+        "task_contract_version": 3,
+        "model": "qwen2.5:14b-instruct",
+        "model_digest": "7cdf5a0187d5c58cc5d369b255592f7841d1c4696d45a8c8a9489440385b22f6",
+        "new_model_runs": 1,
+        "model_calls": 3,
+        "execution_status": "completed",
+        "stop_reason": "window_closed",
+        "simulated_at_ms": 45000,
+        "token_usage": {
+          "input_tokens": 9094,
+          "output_tokens": 206,
+          "total_tokens": 9300
+        },
+        "model_wall_ms": 10119.827,
+        "tool_callback_starts": {
+          "read_document": 1,
+          "wait_for_event": 2,
+          "calculate": 2
+        },
+        "world_tool_receipts": {
+          "read_document": 1,
+          "wait": 2
+        },
+        "tool_validation_errors": 2,
+        "telemetry_errors": 0,
+        "unmapped_events": 0,
+        "direct_response_status": "no_response",
+        "quality_evaluated": false,
+        "finding": "The graph showed actual model activity, observed transitions and two Calculate errors. Execution reached its 45-second virtual boundary and delivered no final response. The visualization check passed; this was not a successful answer or a quality comparison.",
+        "record_sha256": {
+          "summary.json": "5b848af09f09aea4a1a729dc7f6b26caa26d0d3d5860fbbdb3f87a780af8947e",
+          "lab_provenance.json": "a66d7bd74eab232421114821c58f85cf4e2c95402f1156a8410468e85efe35d3",
+          "direct_response.json": "782065d84d204c7b978a9bb837d1e8c4ac0c7f21b557007763c66c0e473e042b",
+          "monitor_events.jsonl": "23cee91f873c4e267895ffb2e2fe40b5991fa430fb91ea9b24c7cb989bf13585",
+          "runtime_status.json": "d11cf76704afffa6eff35d304f1cd8e8578207a7fab2861edfda0a5a742dcf3c",
+          "tool_calls.json": "2e98b74f8009ddce5fa3a4074e253f4d6733139654bcf52e6866bbbdf978912a"
+        }
+      },
+      "limits": [
+        "Templates are maintained from reviewed source, not reconstructed from model output. New runtime mechanisms require updating the catalog and event mapping.",
+        "Transitions are conservatively inferred from compatible callback parentage and adjacent graph steps or explicit tool dispatch. Parallel siblings and unknown intervening nodes do not produce inferred connections.",
+        "The 750 ms polling interval can miss a brief active moment; observed visits and transitions remain recorded. No hidden reasoning is exposed.",
+        "Saved runs load as Recorded and do not replay animations. Disconnects and terminal states stop activity; reduced-motion disables moving animation.",
+        "Only Agent-led received a new live model integration run for this graph change. Other variants received source, fixture and configuration-preview checks; no new comparative quality experiment was performed.",
+        "Calculation parameter validation failed twice in the live example; no final response was delivered. This task changes visualization, not the underlying model/tool behavior.",
+        "Raw inputs and model-output logs remain local. Published records contain aggregate results, source paths and hashes. Frozen studies and earlier engineering findings are preserved."
+      ],
+      "source_sha256": {
+        "experiments/deep_conversation/lab_ui/harness-graph.js": "c7788d20db483d3362793cc6f5fdcfb29e347112fd4ef107065ff0e172300478",
+        "experiments/deep_conversation/lab_ui/lab-app.js": "d137faea9e611220b335b2e0a46e14abe8b767476b600792c7b6482f2395ec09",
+        "experiments/deep_conversation/lab_ui/lab.js": "cebc82691a54bbb9d0492d05955482a8f9a06ff714c110c8fb4caa7508b6160a",
+        "experiments/deep_conversation/lab_ui/lab.css": "03332423fd91cc3a396137cc893b99f7a623494421180e5a2c34b501c0052ce4",
+        "experiments/deep_conversation/lab_ui/index.html": "153c7a21100776889374ec579b433f7de175369d0b2257eee848c6c0e4615765",
+        "experiments/deep_conversation/build_lab_ui.py": "8fd5a2483ec5e55af262737d1497b12c647cd062d10efe42f48662bbe3098480",
+        "experiments/deep_conversation/tests/test_harness_graph.cjs": "bed9b359c3943dc8572f0b25a84bbd8629c6cf891afd8870e424ee50301a65a4",
+        "experiments/deep_conversation/README.md": "468204d95ae826d0884951557267609e70773ead944278a746fec0b29df6db40"
+      }
+    }
+  ],
+  "question_task_update": {
+    "date": "2026-10-10",
+    "record": "question-test-validation.json",
+    "result": "v2 delivers all five responses. The reported concept no longer produces clarification-only output, but remains only a partial match to the intended modern LLM-harness explanation. The source question now reads and uses the provided document. No exact deadline is fabricated.",
+    "service_url": "http://127.0.0.1:8769",
+    "original_checks_preserved": true
+  },
+  "current_task_contract": {
+    "version": 3,
+    "date": "2026-10-10",
+    "validation": "question-task-v3-validation.json",
+    "all_new_choices": "direct_request",
+    "default_harness": "agent-led",
+    "service_url": "http://127.0.0.1:8769",
+    "worker_ingress_guard": {
+      "date": "2026-10-10",
+      "evidence": "worker-ingress-diagnostics.json",
+      "reject_implicit_replay": true
+    }
+  },
+  "web_knowledge_followup": {
+    "date": "2026-10-10",
+    "record": "web-knowledge-validation.json",
+    "diagnostics": "web-knowledge-diagnostics.json"
+  }
+}

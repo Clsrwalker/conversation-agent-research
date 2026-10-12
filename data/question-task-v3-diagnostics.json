@@ -1,0 +1,532 @@
+{
+  "plan": {
+    "id": "question-task-contract-v3-2026-10-10",
+    "date": "2026-10-10",
+    "type": "engineering_validation",
+    "question": "what is concept of agent harness",
+    "documents": [],
+    "harnesses": [
+      "native",
+      "agent-led",
+      "frozen-baseline",
+      "progress"
+    ],
+    "repeats": 1,
+    "expected": "Every selected preset receives authenticated direct user input and delivers ordinary final response. Configuration-specific tool/boundary/recovery/progress behavior must remain verifiable. A nonempty response does not pass semantic quality.",
+    "semantic_review": "Check whether the response actually explains modern LLM model/tool execution rather than only requests clarification or guesses from component words. Inspect and retain every result.",
+    "model": "qwen2.5:14b-instruct",
+    "limitations": "Exposed development question; no held-out research comparison, no real-ASR or live-web evaluation. Mechanism benefit requires a matching failure/arrival event, not just presence in graph."
+  },
+  "earlier_recheck_plan": {
+    "id": "concept-entry-recheck-2026-10-10",
+    "type": "engineering_validation",
+    "cases": [
+      {
+        "id": "exact-report",
+        "question": "what is concept of agent harness",
+        "expected": "Provide a substantive definition rather than clarification-only. A generic software-agent answer is still only partial for modern LLM orchestration."
+      },
+      {
+        "id": "explicit-domain",
+        "question": "In LLM-based AI agents, what is an agent harness? Explain it with a simple example.",
+        "expected": "Explain model/tool execution control and give a concrete example, without inventing sources."
+      }
+    ],
+    "model": "qwen2.5:14b-instruct",
+    "change": "UI capability guard only; direct-request prompt/model unchanged",
+    "comparability": "The second question explicitly adds a domain, so it is diagnostic, not a same-input comparison. No quality-improvement claim."
+  },
+  "runs": [
+    {
+      "job_id": "6f84d55687ae495daa4ec9aa78dd8978",
+      "stage": "reported-old-service",
+      "question": "what is concept of agent harness",
+      "harness": "frozen-baseline",
+      "input_mode": "human_human_transcript",
+      "status": "completed",
+      "stop_reason": "window_closed",
+      "response_delivered": false,
+      "visible_output": "To understand the concept of an \"agent harness,\" we need to clarify the context, as this term is not a standard or widely recognized term in software engineering or any other field. It might be specific to a particular project, framework, or company. Could you provide more details or context about where you encountered this term?",
+      "semantic_review": "failed: clarification only; this was a conversation replay, not the direct-question adapter",
+      "model_calls": 1,
+      "total_tokens": 3244,
+      "model_wall_ms": 10684.667,
+      "domain_tool_counts": {},
+      "outer_graph_nodes": [
+        "__end__",
+        "__start__",
+        "investigate",
+        "observe"
+      ],
+      "task_adapter": null,
+      "model_identity": {
+        "model": "qwen2.5:14b-instruct",
+        "digest": "7cdf5a0187d5c58cc5d369b255592f7841d1c4696d45a8c8a9489440385b22f6",
+        "ollama_version": "0.35.1",
+        "context_window": 16384
+      },
+      "source_record": "experiments/deep_conversation/runs/lab-6f84d55687ae495daa4ec9aa78dd8978",
+      "record_sha256": {
+        "summary.json": "d2e0837802446c90bc1cfb3c68105b7387e5e8e137c149b2ae0eac8627fe43e6",
+        "model_calls.json": "a9b700199b71ac7453436f34fe3451d15befc677570bdc73d924bcb04528f940",
+        "lab_provenance.json": "53ab0d7d213ee2e6f4ac151e8fd03339a01a52dacfb09fe8e8aa5bb5bed35c4d",
+        "assistant_output.jsonl": "0caf456a537e000687a89dc97c17fa28077ffd842ca38e743d89723355fe3a04"
+      }
+    },
+    {
+      "job_id": "35003005b12347c0814463da313615f7",
+      "stage": "previous-adapter-recheck",
+      "question": "what is concept of agent harness",
+      "harness": "direct-help",
+      "input_mode": "direct_request",
+      "status": "completed",
+      "stop_reason": "response_delivered",
+      "response_delivered": true,
+      "visible_output": "The term \"agent harness\" isn't a standard or widely recognized concept in software engineering or computer science. It could be a specific term used within a particular context or organization. Without more context, it's challenging to provide an accurate definition.\n\nHowever, based on the term's components, we can make an educated guess:\n\n- **Agent**: In software, an agent typically refers to a software entity that acts on behalf of a user or another system, often autonomously or semi-autonomously. Agents can perform tasks such as monitoring, data collection, or executing specific actions based on predefined rules or user instructions.\n\n- **Harness**: In software development, a harness is a framework or tool that provides a way to run tests or integrate different components. It can also refer to a system that controls or manages other systems or components.\n\nCombining these ideas, an \"agent harness\" might refer to a framework or system designed to manage, control, or integrate multiple software agents. This could include functionalities such as:\n\n- **Deployment and Management**: Facilitating the deployment, configuration, and management of software agents.\n- **Communication**: Enabling communication between different agents or between agents and other systems.\n- **Monitoring and Control**: Providing tools to monitor the status and performance of agents and control their actions.\n- **Integration**: Integrating agents with other systems or services to create a cohesive solution.\n\nIf you have a specific context or domain in mind where you encountered the term \"agent harness,\" please provide more details so I can give a more precise explanation.",
+      "semantic_review": "failed: guesses from the component words and asks for context; does not explain modern LLM execution",
+      "model_calls": 1,
+      "total_tokens": 3020,
+      "model_wall_ms": 12043.128,
+      "domain_tool_counts": {},
+      "outer_graph_nodes": [
+        "__end__",
+        "__start__",
+        "deliver_response",
+        "investigate",
+        "observe",
+        "request_response"
+      ],
+      "task_adapter": {
+        "id": "direct-help-v2",
+        "sha256": "4162b008330e2004f31c5b6328406d8afeae949f0511d46217f2ac10130a93ec",
+        "changes": [
+          "Direct user-request prompt",
+          "Role-aware input",
+          "Provided-document ID/title inventory without body injection",
+          "Explicit ordinary-prose response delivery",
+          "One bounded continuation after empty model output"
+        ],
+        "tools_omitted": [
+          "publish_card",
+          "withdraw_card",
+          "evidence_check"
+        ],
+        "delivery_is_quality_score": false,
+        "limitations": [
+          "No live web retrieval",
+          "No semantic answer-quality gate",
+          "Not a frozen-baseline comparison"
+        ]
+      },
+      "model_identity": {
+        "model": "qwen2.5:14b-instruct",
+        "digest": "7cdf5a0187d5c58cc5d369b255592f7841d1c4696d45a8c8a9489440385b22f6",
+        "ollama_version": "0.35.1",
+        "context_window": 16384
+      },
+      "source_record": "experiments/deep_conversation/runs/lab-35003005b12347c0814463da313615f7",
+      "record_sha256": {
+        "summary.json": "c1a2d2da7e282fe92eef9ab3ba4f19246f75862b7f06ba9800dcfbafd17c4efd",
+        "model_calls.json": "94d3364b4114b304281df4e53fe04e5a73339ec2b9fb43ccc46da611bd13551d",
+        "lab_provenance.json": "af863bb1bc9003e9ca2de27dedfb917b738df336b3261e101344e237227028dd",
+        "assistant_output.jsonl": "21a309accdc22c432bb9c0f566966ad28fdb4f64b196b8a9c59bccd85229da4e"
+      }
+    },
+    {
+      "job_id": "1a77e22d82654c67b78f92103e4ab100",
+      "stage": "previous-adapter-recheck",
+      "question": "In LLM-based AI agents, what is an agent harness? Explain it with a simple example.",
+      "harness": "direct-help",
+      "input_mode": "direct_request",
+      "status": "completed",
+      "stop_reason": "response_delivered",
+      "response_delivered": true,
+      "visible_output": "In the context of LLM (Large Language Model)-based AI agents, an \"agent harness\" is a framework or tool that allows developers to easily integrate and manage AI agents within their applications or systems. It acts as a bridge between the AI agent and the application, providing a standardized way to interact with the agent's capabilities.\n\n### Example\n\nImagine you are building a customer service application that uses an AI agent to handle customer inquiries. The AI agent is powered by an LLM and can understand and respond to customer questions. However, you need a way to integrate this AI agent into your application's user interface and backend systems.\n\nHere's where an agent harness comes in:\n\n1. **Agent Harness Setup**: You set up an agent harness that knows how to communicate with the AI agent. This harness might handle tasks like sending requests to the AI agent, receiving responses, and formatting the data in a way that your application can understand.\n\n2. **Integration with Application**: You integrate the agent harness into your customer service application. This could involve setting up API endpoints that your application uses to send customer inquiries to the AI agent and receive responses back.\n\n3. **User Interaction**: When a customer sends a message through your application, the application sends the message to the agent harness. The harness then sends the message to the AI agent, which processes the message and generates a response.\n\n4. **Response Handling**: Once the AI agent has generated a response, the agent harness receives it and formats it appropriately. The harness then sends the response back to your application, which can then display it to the customer.\n\n### Simple Example Code\n\nHere's a very simplified example of how this might look in code:\n\n```python\nclass AgentHarness:\n    def send_message(self, message):\n        # Code to send the message to the AI agent\n        response = self.ai_agent.send(message)\n        return response\n\n    def receive_response(self, response):\n        # Code to format and return the response to the application\n        formatted_response = self.format_response(response)\n        return formatted_response\n\n# Example usage in a customer service application\nharness = AgentHarness()\ncustomer_message = \"How can I reset my password?\"\nresponse = harness.send_message(customer_message)\nprint(response)\n```\n\nIn this example, `AgentHarness` is the framework that handles communication with the AI agent, and the customer service application uses this framework to interact with the AI agent seamlessly.\n\nThis setup allows developers to focus on building their applications without worrying about the intricacies of how the AI agent works internally.",
+      "semantic_review": "partial: explicit LLM context produces an application-wrapper example, but omits the model/tool control loop",
+      "model_calls": 1,
+      "total_tokens": 3238,
+      "model_wall_ms": 8391.459,
+      "domain_tool_counts": {},
+      "outer_graph_nodes": [
+        "__end__",
+        "__start__",
+        "deliver_response",
+        "investigate",
+        "observe",
+        "request_response"
+      ],
+      "task_adapter": {
+        "id": "direct-help-v2",
+        "sha256": "4162b008330e2004f31c5b6328406d8afeae949f0511d46217f2ac10130a93ec",
+        "changes": [
+          "Direct user-request prompt",
+          "Role-aware input",
+          "Provided-document ID/title inventory without body injection",
+          "Explicit ordinary-prose response delivery",
+          "One bounded continuation after empty model output"
+        ],
+        "tools_omitted": [
+          "publish_card",
+          "withdraw_card",
+          "evidence_check"
+        ],
+        "delivery_is_quality_score": false,
+        "limitations": [
+          "No live web retrieval",
+          "No semantic answer-quality gate",
+          "Not a frozen-baseline comparison"
+        ]
+      },
+      "model_identity": {
+        "model": "qwen2.5:14b-instruct",
+        "digest": "7cdf5a0187d5c58cc5d369b255592f7841d1c4696d45a8c8a9489440385b22f6",
+        "ollama_version": "0.35.1",
+        "context_window": 16384
+      },
+      "source_record": "experiments/deep_conversation/runs/lab-1a77e22d82654c67b78f92103e4ab100",
+      "record_sha256": {
+        "summary.json": "6dc94c6d430200659bdc0c6af00e9aa41d99bbbb1c6ae267c1fd796c89cf3ab9",
+        "model_calls.json": "a434ccd453b7515162b895fd3bce2d64c0e0cafb25d7a24dfc11169f1390734b",
+        "lab_provenance.json": "d2c7d403e3d5cf825cfc34b98afb110a586e956386023e7259a26b147133c78f",
+        "assistant_output.jsonl": "1dedb9703ee7c0e9e8fa7254b07e0fd56d1733bd393ec05d73bb4cc483a1e603"
+      }
+    },
+    {
+      "job_id": "aa1813d147ee4537a7c119893b0f7bc5",
+      "stage": "unified-question-v3",
+      "question": "what is concept of agent harness",
+      "harness": "native",
+      "input_mode": "direct_request",
+      "status": "completed",
+      "stop_reason": "response_delivered",
+      "response_delivered": true,
+      "visible_output": "The term \"agent harness\" isn't a widely recognized standard term in software engineering or any other common domain. However, based on the context of software development and automation, an \"agent harness\" could refer to a framework or tool designed to manage and control software agents. Software agents are autonomous programs that perform tasks on behalf of a user or system with some level of independence.\n\nAn \"agent harness\" might serve the following purposes:\n- **Initialization and Configuration**: Setting up agents with necessary configurations and parameters.\n- **Monitoring and Control**: Providing a way to monitor the status and performance of agents and control their actions.\n- **Communication**: Facilitating communication between agents and other systems or components.\n- **Deployment and Management**: Managing the lifecycle of agents, including deployment, updates, and termination.\n\nIf you have a specific context or domain in mind where \"agent harness\" is used, please provide more details so I can give a more precise explanation.",
+      "semantic_review": "failed for the intended modern LLM concept: general software-agent interpretation, no model/tool loop",
+      "model_calls": 1,
+      "total_tokens": 2772,
+      "model_wall_ms": 9508.172,
+      "domain_tool_counts": {},
+      "outer_graph_nodes": [
+        "__end__",
+        "__start__",
+        "deliver_response",
+        "investigate",
+        "observe",
+        "request_response"
+      ],
+      "task_adapter": {
+        "id": "direct-question-v3",
+        "sha256": "d3e45594c26914cad98bd94208ccd92769064899a79fde7a53c0906faca349d2",
+        "task_contract_version": 3,
+        "changes": [
+          "Direct user-request prompt",
+          "Role-aware input",
+          "Provided-document ID/title inventory without body injection",
+          "Explicit ordinary-prose response delivery",
+          "One bounded continuation after empty model output"
+        ],
+        "selected_mechanisms": {
+          "boundary_input": false,
+          "worklog": false,
+          "release_check": false,
+          "orchestration": false,
+          "stage_acceptance": false,
+          "answer_contract": false,
+          "evidence_interface": false,
+          "agent_led": false,
+          "failure_recovery": false,
+          "investigation_progress": false
+        },
+        "capabilities": {
+          "boundary_input": false,
+          "calculate": false,
+          "failure_recovery": false,
+          "investigation_progress": false
+        },
+        "tools_omitted": [
+          "publish_card",
+          "withdraw_card"
+        ],
+        "selected_source": "current_with_external_task_adapter",
+        "source_overrides": [
+          "direct_request.py",
+          "lab_worker.py"
+        ],
+        "catalog_registration": "selected_world_method",
+        "delivery_is_quality_score": false,
+        "limitations": [
+          "No live web retrieval",
+          "No semantic answer-quality gate",
+          "Not a frozen-baseline comparison"
+        ]
+      },
+      "model_identity": {
+        "model": "qwen2.5:14b-instruct",
+        "digest": "7cdf5a0187d5c58cc5d369b255592f7841d1c4696d45a8c8a9489440385b22f6",
+        "ollama_version": "0.35.1",
+        "context_window": 16384
+      },
+      "source_record": "experiments/deep_conversation/runs/lab-aa1813d147ee4537a7c119893b0f7bc5",
+      "record_sha256": {
+        "summary.json": "7ed73060db64b49f0804dfc4813fb43108f9891891fd9a939c36616642473441",
+        "model_calls.json": "2a1acc23e2d5717083409efb1427aa38a1965d9bf27280ffbddcaca220e6c7bb",
+        "lab_provenance.json": "ae072b06c7f1d75a349c46aca352f79c5067a8bc2ddc032474de6ffff153c039",
+        "assistant_output.jsonl": "b2e43fa7f09613e0dfba4df188dcf3ee2306e74fafe5711302d683910cde238d"
+      }
+    },
+    {
+      "job_id": "5f7a0ebae99f45bdb593c5280e490342",
+      "stage": "unified-question-v3",
+      "question": "what is concept of agent harness",
+      "harness": "agent-led",
+      "input_mode": "direct_request",
+      "status": "completed",
+      "stop_reason": "response_delivered",
+      "response_delivered": true,
+      "visible_output": "The term \"agent harness\" isn't a widely recognized standard term in software engineering or any other common domain. However, based on the context of software development and automation, an \"agent harness\" could refer to a framework or tool designed to manage and control software agents. Software agents are autonomous programs that perform tasks on behalf of a user or system with some level of independence.\n\nIn this context, an \"agent harness\" might serve the following purposes:\n\n1. **Initialization and Configuration**: Setting up agents with necessary configurations and parameters.\n2. **Monitoring and Control**: Providing a way to monitor the status and performance of agents and control their actions.\n3. **Communication**: Facilitating communication between agents and other components of the system.\n4. **Deployment and Management**: Managing the lifecycle of agents, including deployment, updates, and termination.\n\nIf you have a specific context or domain in mind where \"agent harness\" is used, please provide more details so I can give a more precise explanation.",
+      "semantic_review": "failed for the intended modern LLM concept: general software-agent interpretation, no model/tool loop",
+      "model_calls": 1,
+      "total_tokens": 2910,
+      "model_wall_ms": 3581.069,
+      "domain_tool_counts": {},
+      "outer_graph_nodes": [
+        "__end__",
+        "__start__",
+        "deliver_response",
+        "investigate",
+        "observe",
+        "request_response"
+      ],
+      "task_adapter": {
+        "id": "direct-question-v3",
+        "sha256": "d3e45594c26914cad98bd94208ccd92769064899a79fde7a53c0906faca349d2",
+        "task_contract_version": 3,
+        "changes": [
+          "Direct user-request prompt",
+          "Role-aware input",
+          "Provided-document ID/title inventory without body injection",
+          "Explicit ordinary-prose response delivery",
+          "One bounded continuation after empty model output"
+        ],
+        "selected_mechanisms": {
+          "boundary_input": true,
+          "worklog": false,
+          "release_check": false,
+          "orchestration": false,
+          "stage_acceptance": false,
+          "answer_contract": false,
+          "evidence_interface": false,
+          "agent_led": true,
+          "failure_recovery": false,
+          "investigation_progress": false
+        },
+        "capabilities": {
+          "boundary_input": true,
+          "calculate": true,
+          "failure_recovery": false,
+          "investigation_progress": false
+        },
+        "tools_omitted": [
+          "publish_card",
+          "withdraw_card",
+          "evidence_check"
+        ],
+        "selected_source": "current_with_external_task_adapter",
+        "source_overrides": [
+          "direct_request.py",
+          "lab_worker.py"
+        ],
+        "catalog_registration": "selected_world_method",
+        "delivery_is_quality_score": false,
+        "limitations": [
+          "No live web retrieval",
+          "No semantic answer-quality gate",
+          "Not a frozen-baseline comparison"
+        ]
+      },
+      "model_identity": {
+        "model": "qwen2.5:14b-instruct",
+        "digest": "7cdf5a0187d5c58cc5d369b255592f7841d1c4696d45a8c8a9489440385b22f6",
+        "ollama_version": "0.35.1",
+        "context_window": 16384
+      },
+      "source_record": "experiments/deep_conversation/runs/lab-5f7a0ebae99f45bdb593c5280e490342",
+      "record_sha256": {
+        "summary.json": "114146dcd69d86d30a6097f6d6c945c19de19c95034f9b27d0b3b7466b759cec",
+        "model_calls.json": "7159798036d1558a8053306dd491a7324701490b97cb4036a0c8bd88817bae65",
+        "lab_provenance.json": "fa86f31f520d5c198b3954ed6feddb9c6f639c40c2142609e5687a1ffb783348",
+        "assistant_output.jsonl": "08e262247942781dc91ec94f1f296afb9a5e8cdd3c47c14fe58c2169bc7e2439"
+      }
+    },
+    {
+      "job_id": "01d5662400cb41939ece0e07c5a29fe8",
+      "stage": "unified-question-v3",
+      "question": "what is concept of agent harness",
+      "harness": "frozen-baseline",
+      "input_mode": "direct_request",
+      "status": "completed",
+      "stop_reason": "response_delivered",
+      "response_delivered": true,
+      "visible_output": "The term \"agent harness\" isn't a widely recognized standard term in software engineering or any other common domain. However, based on the context of software development and automation, an \"agent harness\" could refer to a framework or tool designed to manage and control software agents. Software agents are autonomous programs that perform tasks on behalf of a user or system with some level of independence.\n\nIn this context, an \"agent harness\" might serve the following purposes:\n\n1. **Initialization and Configuration**: Setting up agents with necessary configurations and parameters.\n2. **Monitoring and Control**: Providing a way to monitor the status and performance of agents and control their actions.\n3. **Communication**: Facilitating communication between agents and other components of the system.\n4. **Deployment and Management**: Managing the lifecycle of agents, including deployment, updates, and termination.\n\nIf you have a specific context or domain in mind where \"agent harness\" is used, please provide more details so I can give a more precise explanation.",
+      "semantic_review": "failed for the intended modern LLM concept: general software-agent interpretation, no model/tool loop",
+      "model_calls": 1,
+      "total_tokens": 2910,
+      "model_wall_ms": 3627.539,
+      "domain_tool_counts": {},
+      "outer_graph_nodes": [
+        "__end__",
+        "__start__",
+        "consider_recovery",
+        "deliver_response",
+        "investigate",
+        "observe",
+        "request_response"
+      ],
+      "task_adapter": {
+        "id": "direct-question-v3",
+        "sha256": "d3e45594c26914cad98bd94208ccd92769064899a79fde7a53c0906faca349d2",
+        "task_contract_version": 3,
+        "changes": [
+          "Direct user-request prompt",
+          "Role-aware input",
+          "Provided-document ID/title inventory without body injection",
+          "Explicit ordinary-prose response delivery",
+          "One bounded continuation after empty model output"
+        ],
+        "selected_mechanisms": {
+          "boundary_input": true,
+          "worklog": false,
+          "release_check": false,
+          "orchestration": false,
+          "stage_acceptance": false,
+          "answer_contract": false,
+          "evidence_interface": false,
+          "agent_led": true,
+          "failure_recovery": true
+        },
+        "capabilities": {
+          "boundary_input": true,
+          "calculate": true,
+          "failure_recovery": true,
+          "investigation_progress": false
+        },
+        "tools_omitted": [
+          "publish_card",
+          "withdraw_card",
+          "evidence_check"
+        ],
+        "selected_source": "verified_frozen_with_external_task_adapter",
+        "source_overrides": [
+          "direct_request.py",
+          "lab_worker.py"
+        ],
+        "catalog_registration": "external_adapter_transaction",
+        "delivery_is_quality_score": false,
+        "limitations": [
+          "No live web retrieval",
+          "No semantic answer-quality gate",
+          "Not a frozen-baseline comparison"
+        ]
+      },
+      "model_identity": {
+        "model": "qwen2.5:14b-instruct",
+        "digest": "7cdf5a0187d5c58cc5d369b255592f7841d1c4696d45a8c8a9489440385b22f6",
+        "ollama_version": "0.35.1",
+        "context_window": 16384
+      },
+      "source_record": "experiments/deep_conversation/runs/lab-01d5662400cb41939ece0e07c5a29fe8",
+      "record_sha256": {
+        "summary.json": "f7e751fc564fca2358fe737e49d7a94f7eb8f8b96df9f73a734895481d4fb2c6",
+        "model_calls.json": "e1e8cfca946ceb9e4d83521d57aae3d9369039890ba69db50859bf826906621d",
+        "lab_provenance.json": "a84f48783f518141383d6d682a1e53caf469be50fd4a9afe679485ceb34441db",
+        "assistant_output.jsonl": "2f952e0834acc47260ee6423f930a9ffbe74c25f37157fca1a973f09ccf81e99"
+      }
+    },
+    {
+      "job_id": "baa56a28a5f7486eb879dda252796f45",
+      "stage": "unified-question-v3",
+      "question": "what is concept of agent harness",
+      "harness": "progress",
+      "input_mode": "direct_request",
+      "status": "completed",
+      "stop_reason": "response_delivered",
+      "response_delivered": true,
+      "visible_output": "The term \"agent harness\" can refer to different concepts depending on the context. Without more context, I'll explain the most common interpretation:\n\nIn software engineering, particularly in the context of microservices or distributed systems, an \"agent harness\" might refer to a framework or tool that manages and orchestrates the execution of software agents. These agents are autonomous components that perform specific tasks, such as monitoring, data collection, or service management.\n\nThe harness provides the environment and infrastructure for these agents to operate, including:\n\n1. **Initialization and Configuration**: Setting up the agent with necessary configurations and dependencies.\n2. **Communication**: Facilitating communication between agents and other components of the system.\n3. **Monitoring and Logging**: Collecting and reporting performance metrics and logs.\n4. **Lifecycle Management**: Handling the start, stop, and restart of agents.\n5. **Security**: Ensuring agents operate within secure boundaries and follow security policies.\n\nIf you have a specific context or domain in mind, please provide more details so I can give a more precise explanation.",
+      "semantic_review": "failed for the intended modern LLM concept: general software-agent interpretation, no model/tool loop",
+      "model_calls": 1,
+      "total_tokens": 3078,
+      "model_wall_ms": 3475.332,
+      "domain_tool_counts": {},
+      "outer_graph_nodes": [
+        "__end__",
+        "__start__",
+        "consider_recovery",
+        "deliver_response",
+        "investigate",
+        "observe",
+        "request_response"
+      ],
+      "task_adapter": {
+        "id": "direct-question-v3",
+        "sha256": "d3e45594c26914cad98bd94208ccd92769064899a79fde7a53c0906faca349d2",
+        "task_contract_version": 3,
+        "changes": [
+          "Direct user-request prompt",
+          "Role-aware input",
+          "Provided-document ID/title inventory without body injection",
+          "Explicit ordinary-prose response delivery",
+          "One bounded continuation after empty model output"
+        ],
+        "selected_mechanisms": {
+          "boundary_input": true,
+          "worklog": false,
+          "release_check": false,
+          "orchestration": false,
+          "stage_acceptance": false,
+          "answer_contract": false,
+          "evidence_interface": false,
+          "agent_led": true,
+          "failure_recovery": true,
+          "investigation_progress": true
+        },
+        "capabilities": {
+          "boundary_input": true,
+          "calculate": true,
+          "failure_recovery": true,
+          "investigation_progress": true
+        },
+        "tools_omitted": [
+          "publish_card",
+          "withdraw_card",
+          "evidence_check"
+        ],
+        "selected_source": "current_with_external_task_adapter",
+        "source_overrides": [
+          "direct_request.py",
+          "lab_worker.py"
+        ],
+        "catalog_registration": "selected_world_method",
+        "delivery_is_quality_score": false,
+        "limitations": [
+          "No live web retrieval",
+          "No semantic answer-quality gate",
+          "Not a frozen-baseline comparison"
+        ]
+      },
+      "model_identity": {
+        "model": "qwen2.5:14b-instruct",
+        "digest": "7cdf5a0187d5c58cc5d369b255592f7841d1c4696d45a8c8a9489440385b22f6",
+        "ollama_version": "0.35.1",
+        "context_window": 16384
+      },
+      "source_record": "experiments/deep_conversation/runs/lab-baa56a28a5f7486eb879dda252796f45",
+      "record_sha256": {
+        "summary.json": "1a6bbe32db339d5eb307cc4aaca12865458244efbe859974bd6fcd51f24ea911",
+        "model_calls.json": "d0cd141624a0fbe6255f15606fa0c79b3016c30fed394d14d798c86fa1581819",
+        "lab_provenance.json": "17a9f43acbccefb6a402d2eb708891cda09b66d72097926c6a2b9a82bc609ebd",
+        "assistant_output.jsonl": "d7b923b2c9f645191b1672c9c6c4b6cc2300e86b014ea574c27845baf78a752f"
+      }
+    }
+  ],
+  "review_method": "Unblinded assistant inspection against the declared narrow expectations. These are development diagnostics, not frozen research scores."
+}

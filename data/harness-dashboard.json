@@ -1,0 +1,1299 @@
+{
+  "schema_version": 1,
+  "exported_at": "2026-10-10T17:29:10.635144+00:00",
+  "timezone": "America/Halifax",
+  "mode": "Read-only historical snapshots; this public website does not run models.",
+  "accounting": {
+    "tokens": "Sum of recorded per-call input_tokens and output_tokens, checked against the run summary.",
+    "wall_ms": "Sum of measured model-call wall time. Not scenario time, end-to-end response time or time to useful help.",
+    "tool_at_ms": "Simulated scenario time from each recorded tool event, not actual elapsed time.",
+    "tool_errors": "Tool results containing an error or error_code. This is distinct from failed model calls.",
+    "active_cards": "Count of cards present at run end; a card can still be factually incorrect."
+  },
+  "privacy": "Allowlisted numeric model-call records, tool acknowledgements, fictional arrived dialogue and evidence, and already-public final cards. Model requests, reasoning, private prose, notes, endpoints and private call/session identifiers are excluded.",
+  "runs": [
+    {
+      "id": "monitor-local14-validation-v1",
+      "title": "Monitor integration check",
+      "classification": "Engineering integration validation",
+      "recorded_at": "2026-10-08T02:48:11.427287+00:00",
+      "date": "2026-10-07",
+      "source_path": "experiments/deep_conversation/runs/monitor-local14-validation-v1",
+      "provider": "ollama",
+      "model": "qwen2.5:14b-instruct",
+      "snapshot_label": "Read-only historical snapshot",
+      "summary": {
+        "model_calls": 11,
+        "input_tokens": 52533,
+        "output_tokens": 1202,
+        "total_tokens": 53735,
+        "wall_ms": 31597.492,
+        "tool_calls": 12,
+        "tool_errors": 2,
+        "tool_counts": {
+          "search": 2,
+          "wait": 5,
+          "read_document": 5
+        },
+        "checkpoints": 65,
+        "active_cards": 0,
+        "stop_reason": "window_closed",
+        "simulated_at_ms": 45000,
+        "close_at_ms": 45000,
+        "token_budget_overshoot": 0
+      },
+      "model_calls": [
+        {
+          "ordinal": 1,
+          "input_tokens": 3221,
+          "output_tokens": 100,
+          "total_tokens": 3321,
+          "wall_ms": 10005.681199982064,
+          "outcome": "completed"
+        },
+        {
+          "ordinal": 2,
+          "input_tokens": 3337,
+          "output_tokens": 49,
+          "total_tokens": 3386,
+          "wall_ms": 931.6283999942243,
+          "outcome": "completed"
+        },
+        {
+          "ordinal": 3,
+          "input_tokens": 3547,
+          "output_tokens": 110,
+          "total_tokens": 3657,
+          "wall_ms": 2061.554000014439,
+          "outcome": "completed"
+        },
+        {
+          "ordinal": 4,
+          "input_tokens": 4010,
+          "output_tokens": 50,
+          "total_tokens": 4060,
+          "wall_ms": 1031.5387999871746,
+          "outcome": "completed"
+        },
+        {
+          "ordinal": 5,
+          "input_tokens": 4569,
+          "output_tokens": 107,
+          "total_tokens": 4676,
+          "wall_ms": 2175.842600001488,
+          "outcome": "completed"
+        },
+        {
+          "ordinal": 6,
+          "input_tokens": 4716,
+          "output_tokens": 51,
+          "total_tokens": 4767,
+          "wall_ms": 981.0274000046775,
+          "outcome": "completed"
+        },
+        {
+          "ordinal": 7,
+          "input_tokens": 5166,
+          "output_tokens": 270,
+          "total_tokens": 5436,
+          "wall_ms": 5166.005400009453,
+          "outcome": "completed"
+        },
+        {
+          "ordinal": 8,
+          "input_tokens": 5453,
+          "output_tokens": 44,
+          "total_tokens": 5497,
+          "wall_ms": 872.4349999974947,
+          "outcome": "completed"
+        },
+        {
+          "ordinal": 9,
+          "input_tokens": 6006,
+          "output_tokens": 81,
+          "total_tokens": 6087,
+          "wall_ms": 1694.2443000152707,
+          "outcome": "completed"
+        },
+        {
+          "ordinal": 10,
+          "input_tokens": 6110,
+          "output_tokens": 43,
+          "total_tokens": 6153,
+          "wall_ms": 845.2592999965418,
+          "outcome": "completed"
+        },
+        {
+          "ordinal": 11,
+          "input_tokens": 6398,
+          "output_tokens": 297,
+          "total_tokens": 6695,
+          "wall_ms": 5832.275900000241,
+          "outcome": "completed"
+        }
+      ],
+      "tools": [
+        {
+          "name": "search",
+          "at_ms": 250,
+          "args": {
+            "query": "VelaPack C20 specification sheet SableCam C1 power note"
+          },
+          "result": {
+            "status": "pending",
+            "job_started": true,
+            "job_id": "job-1",
+            "due_ms": 3250
+          },
+          "error": false
+        },
+        {
+          "name": "wait",
+          "at_ms": 900,
+          "args": {},
+          "result": {
+            "status": "event_arrived",
+            "at_ms": 900
+          },
+          "error": false
+        },
+        {
+          "name": "read_document",
+          "at_ms": 1150,
+          "args": {
+            "source_id": "source-1"
+          },
+          "result": {
+            "job_started": false,
+            "error": "The supplied source_id is not among the sources delivered so far. No read job was started.",
+            "error_code": "source_not_available",
+            "retryable": true
+          },
+          "error": true
+        },
+        {
+          "name": "read_document",
+          "at_ms": 1150,
+          "args": {
+            "source_id": "source-2"
+          },
+          "result": {
+            "job_started": false,
+            "error": "The supplied source_id is not among the sources delivered so far. No read job was started.",
+            "error_code": "source_not_available",
+            "retryable": true
+          },
+          "error": true
+        },
+        {
+          "name": "wait",
+          "at_ms": 3250,
+          "args": {},
+          "result": {
+            "status": "event_arrived",
+            "at_ms": 3250
+          },
+          "error": false
+        },
+        {
+          "name": "read_document",
+          "at_ms": 3500,
+          "args": {
+            "source_id": "sablecam-usb-power"
+          },
+          "result": {
+            "status": "pending",
+            "job_started": true,
+            "job_id": "job-2",
+            "due_ms": 4500
+          },
+          "error": false
+        },
+        {
+          "name": "read_document",
+          "at_ms": 3500,
+          "args": {
+            "source_id": "velapack-usb-specification"
+          },
+          "result": {
+            "status": "pending",
+            "job_started": true,
+            "job_id": "job-3",
+            "due_ms": 4500
+          },
+          "error": false
+        },
+        {
+          "name": "wait",
+          "at_ms": 4500,
+          "args": {},
+          "result": {
+            "status": "event_arrived",
+            "at_ms": 4500
+          },
+          "error": false
+        },
+        {
+          "name": "search",
+          "at_ms": 4750,
+          "args": {
+            "query": "VelaPack C20 output profile documentation for USB-C camera compatibility"
+          },
+          "result": {
+            "status": "pending",
+            "job_started": true,
+            "job_id": "job-4",
+            "due_ms": 7750
+          },
+          "error": false
+        },
+        {
+          "name": "wait",
+          "at_ms": 7750,
+          "args": {},
+          "result": {
+            "status": "event_arrived",
+            "at_ms": 7750
+          },
+          "error": false
+        },
+        {
+          "name": "read_document",
+          "at_ms": 8000,
+          "args": {
+            "source_id": "velapack-output-table-status"
+          },
+          "result": {
+            "status": "pending",
+            "job_started": true,
+            "job_id": "job-5",
+            "due_ms": 9000
+          },
+          "error": false
+        },
+        {
+          "name": "wait",
+          "at_ms": 9000,
+          "args": {},
+          "result": {
+            "status": "event_arrived",
+            "at_ms": 9000
+          },
+          "error": false
+        }
+      ],
+      "graph": {
+        "outer": {
+          "nodes": [
+            {
+              "id": "__start__",
+              "type": "runnable",
+              "name": "__start__"
+            },
+            {
+              "id": "observe",
+              "type": "runnable",
+              "name": "observe"
+            },
+            {
+              "id": "investigate",
+              "type": "runnable",
+              "name": "investigate"
+            },
+            {
+              "id": "__end__",
+              "type": null,
+              "name": "__end__"
+            }
+          ],
+          "edges": [
+            {
+              "source": "__start__",
+              "target": "observe"
+            },
+            {
+              "source": "investigate",
+              "target": "observe"
+            },
+            {
+              "source": "observe",
+              "target": "__end__",
+              "conditional": true
+            },
+            {
+              "source": "observe",
+              "target": "investigate",
+              "conditional": true
+            }
+          ]
+        },
+        "investigator": {
+          "nodes": [
+            {
+              "id": "__start__",
+              "type": "runnable",
+              "name": "__start__"
+            },
+            {
+              "id": "model",
+              "type": "runnable",
+              "name": "model"
+            },
+            {
+              "id": "tools",
+              "type": "runnable",
+              "name": "tools"
+            },
+            {
+              "id": "PatchToolCallsMiddleware.before_agent",
+              "type": "runnable",
+              "name": "PatchToolCallsMiddleware.before_agent"
+            },
+            {
+              "id": "EventBoundary.before_model",
+              "type": "runnable",
+              "name": "EventBoundary.before_model"
+            },
+            {
+              "id": "__end__",
+              "type": null,
+              "name": "__end__"
+            }
+          ],
+          "edges": [
+            {
+              "source": "EventBoundary.before_model",
+              "target": "__end__",
+              "conditional": true
+            },
+            {
+              "source": "EventBoundary.before_model",
+              "target": "model",
+              "conditional": true
+            },
+            {
+              "source": "PatchToolCallsMiddleware.before_agent",
+              "target": "EventBoundary.before_model"
+            },
+            {
+              "source": "__start__",
+              "target": "PatchToolCallsMiddleware.before_agent"
+            },
+            {
+              "source": "model",
+              "target": "EventBoundary.before_model",
+              "conditional": true
+            },
+            {
+              "source": "model",
+              "target": "__end__",
+              "conditional": true
+            },
+            {
+              "source": "model",
+              "target": "tools",
+              "conditional": true
+            },
+            {
+              "source": "tools",
+              "target": "EventBoundary.before_model",
+              "conditional": true
+            },
+            {
+              "source": "tools",
+              "target": "__end__",
+              "conditional": true
+            }
+          ]
+        }
+      },
+      "conversation": [
+        {
+          "speaker": "Rae",
+          "text": "For our tabletop recording, can this VelaPack C20 power bank directly run the SableCam C1 through USB-C? I have only the VelaPack specification sheet and the SableCam power note.",
+          "at_ms": 0
+        },
+        {
+          "speaker": "Owen",
+          "text": "We just need to know whether those documents establish compatibility. If a necessary specification is missing, tell us which one; we are not asking for shopping suggestions or an electrical experiment.",
+          "at_ms": 900
+        }
+      ],
+      "retrieved_evidence": [
+        {
+          "source_id": "sablecam-usb-power",
+          "title": "SableCam C1 continuous USB-C power requirement with a power bank",
+          "content_level": "excerpt",
+          "excerpt": "For continuous external operation, SableCam C1 requires a USB Power Delivery source that provides a 9 V output at 2 A or more. A USB-C connector alone",
+          "at_ms": 3250
+        },
+        {
+          "source_id": "velapack-usb-specification",
+          "title": "VelaPack C20 USB-C power bank specification and charging input",
+          "content_level": "excerpt",
+          "excerpt": "VelaPack C20 is a USB-C power bank with a rated capacity of 20000 mAh. Charging input: USB Power Delivery, including 9 V at 2 A. These figures describ",
+          "at_ms": 3250
+        },
+        {
+          "source_id": "velapack-output-table-status",
+          "title": "VelaPack C20 output profile documentation for USB-C camera compatibility",
+          "content_level": "excerpt",
+          "excerpt": "The VelaPack C20 output-profile table is not included in the currently supplied documentation. Input charging ratings and output supply ratings are se",
+          "at_ms": 3250
+        },
+        {
+          "source_id": "sablecam-usb-power",
+          "title": "SableCam C1 continuous USB-C power requirement with a power bank",
+          "content_level": "full",
+          "excerpt": "For continuous external operation, SableCam C1 requires a USB Power Delivery source that provides a 9 V output at 2 A or more. A USB-C connector alone does not establish this output profile. This note specifies what the camera needs; it does not list compatible power-bank models ",
+          "at_ms": 4500
+        },
+        {
+          "source_id": "velapack-usb-specification",
+          "title": "VelaPack C20 USB-C power bank specification and charging input",
+          "content_level": "full",
+          "excerpt": "VelaPack C20 is a USB-C power bank with a rated capacity of 20000 mAh. Charging input: USB Power Delivery, including 9 V at 2 A. These figures describe energy entering the power bank while it is being charged. This specification sheet does not list the USB Power Delivery voltage ",
+          "at_ms": 4500
+        },
+        {
+          "source_id": "velapack-output-table-status",
+          "title": "VelaPack C20 output profile documentation for USB-C camera compatibility",
+          "content_level": "full",
+          "excerpt": "The VelaPack C20 output-profile table is not included in the currently supplied documentation. Input charging ratings and output supply ratings are separate specifications; the input value does not establish which voltage and current the bank can supply. To assess a camera's stat",
+          "at_ms": 9000
+        }
+      ],
+      "cards": [],
+      "conclusion": "The monitor recorded 11 model calls and 12 tool calls, including two unavailable-source errors. The run ended with no active help card. This validates recorded telemetry, not assistance quality.",
+      "outcome_label": "Telemetry captured · no help card",
+      "limitations": [
+        "Separate instrumented integration run; not a replacement for the frozen Study 01 baseline.",
+        "No quality score was assigned. Completion and telemetry do not establish a successful answer.",
+        "The graph is the recorded compiled structure, not evidence that every node or edge executed.",
+        "Synthetic dialogue and documents; no real audio or ASR validation."
+      ],
+      "sources": [
+        {
+          "path": "experiments/deep_conversation/runs/monitor-local14-validation-v1/manifest.json",
+          "sha256": "a2a014db47a58e37fc8325de83e6aa439f7a77e47067741956bb69ecb1bdcb2d"
+        },
+        {
+          "path": "experiments/deep_conversation/runs/monitor-local14-validation-v1/summary.json",
+          "sha256": "79326f2ee502ae987eb834ea09e123283e2e9bc8093c66e2667d5b6f161c29bc"
+        },
+        {
+          "path": "experiments/deep_conversation/runs/monitor-local14-validation-v1/model_calls.json",
+          "sha256": "d7d3fbc7f77cd01bcde10dcbf354a94411765ca32bfa2493cf379262a6466b78"
+        },
+        {
+          "path": "experiments/deep_conversation/runs/monitor-local14-validation-v1/tool_calls.json",
+          "sha256": "bdeadfcd6f5293b6ad4bac15d4d17ceb34e740429f943302bec2ce391170324d"
+        },
+        {
+          "path": "experiments/deep_conversation/runs/monitor-local14-validation-v1/environment_log.json",
+          "sha256": "48b53e291a867b801090daa62709558bf56da573afd5da411cfab5d696c944c5"
+        },
+        {
+          "path": "experiments/deep_conversation/runs/monitor-local14-validation-v1/graph.json",
+          "sha256": "438a7ff16fbd0bad8d586b89fabfcb1399991e513b954f964780354a336e68b0"
+        }
+      ]
+    },
+    {
+      "id": "agent-led-recovery__orch-route-checkin-evidence-join__r1",
+      "title": "Study 01 · Ferry and shuttle",
+      "classification": "Study 01 · frozen development result",
+      "recorded_at": "2026-10-08T00:56:24.193394+00:00",
+      "date": "2026-10-07",
+      "source_path": "experiments/deep_conversation/benchmarks/results/local14-tool-recovery-paired-v1/agent-led-recovery__orch-route-checkin-evidence-join__r1",
+      "provider": "ollama",
+      "model": "qwen2.5:14b-instruct",
+      "snapshot_label": "Read-only historical snapshot",
+      "summary": {
+        "model_calls": 5,
+        "input_tokens": 19124,
+        "output_tokens": 943,
+        "total_tokens": 20067,
+        "wall_ms": 28411.924,
+        "tool_calls": 4,
+        "tool_errors": 0,
+        "tool_counts": {
+          "search": 1,
+          "wait": 2,
+          "publish_card": 1
+        },
+        "checkpoints": 32,
+        "active_cards": 1,
+        "stop_reason": "window_closed",
+        "simulated_at_ms": 45000,
+        "close_at_ms": 45000,
+        "token_budget_overshoot": 0
+      },
+      "model_calls": [
+        {
+          "ordinal": 1,
+          "input_tokens": 3224,
+          "output_tokens": 112,
+          "total_tokens": 3336,
+          "wall_ms": 11055.525400006445,
+          "outcome": "completed"
+        },
+        {
+          "ordinal": 2,
+          "input_tokens": 3359,
+          "output_tokens": 51,
+          "total_tokens": 3410,
+          "wall_ms": 1040.1947999780532,
+          "outcome": "completed"
+        },
+        {
+          "ordinal": 3,
+          "input_tokens": 3584,
+          "output_tokens": 93,
+          "total_tokens": 3677,
+          "wall_ms": 1955.6517000019085,
+          "outcome": "completed"
+        },
+        {
+          "ordinal": 4,
+          "input_tokens": 4196,
+          "output_tokens": 518,
+          "total_tokens": 4714,
+          "wall_ms": 10821.71799999196,
+          "outcome": "completed"
+        },
+        {
+          "ordinal": 5,
+          "input_tokens": 4761,
+          "output_tokens": 169,
+          "total_tokens": 4930,
+          "wall_ms": 3538.834000006318,
+          "outcome": "completed"
+        }
+      ],
+      "tools": [
+        {
+          "name": "search",
+          "at_ms": 250,
+          "args": {
+            "query": "Windmere ferry schedule and workshop shuttle timetable"
+          },
+          "result": {
+            "status": "pending",
+            "job_started": true,
+            "job_id": "job-1",
+            "due_ms": 3250
+          },
+          "error": false
+        },
+        {
+          "name": "wait",
+          "at_ms": 900,
+          "args": {},
+          "result": {
+            "status": "event_arrived",
+            "at_ms": 900
+          },
+          "error": false
+        },
+        {
+          "name": "wait",
+          "at_ms": 3250,
+          "args": {},
+          "result": {
+            "status": "event_arrived",
+            "at_ms": 3250
+          },
+          "error": false
+        },
+        {
+          "name": "publish_card",
+          "at_ms": 3500,
+          "args": {
+            "card_id": "agent-card-1",
+            "source_ids": [
+              "windmere-ferry-sailing",
+              "windmere-workshop-shuttle",
+              "windmere-workshop-checkin"
+            ]
+          },
+          "result": {
+            "status": "displayed",
+            "card_id": "agent-card-1"
+          },
+          "error": false
+        }
+      ],
+      "graph": null,
+      "conversation": [
+        {
+          "speaker": "Tess",
+          "text": "For the Windmere paper-craft workshop this Saturday, we booked the 17:10 Windmere ferry sailing and plan to take the workshop shuttle from the landing. Can that route get us there in time to check in?",
+          "at_ms": 0
+        },
+        {
+          "speaker": "Cal",
+          "text": "The workshop itself starts at 18:00. Please check the ferry timetable, the connecting shuttle and the workshop check-in rule together. For this question we mean that booked ferry-plus-shuttle route, not a taxi or another route.",
+          "at_ms": 900
+        }
+      ],
+      "retrieved_evidence": [
+        {
+          "source_id": "windmere-ferry-sailing",
+          "title": "Windmere Saturday 17:10 ferry sailing timetable for workshop visitors",
+          "content_level": "excerpt",
+          "excerpt": "The Saturday Windmere ferry sailing departing at 17:10 is scheduled to reach Windmere Landing at 17:40. The 17:40 time is passenger arrival at the lan",
+          "at_ms": 3250
+        },
+        {
+          "source_id": "windmere-workshop-checkin",
+          "title": "Windmere Saturday paper-craft workshop start time and check-in deadline",
+          "content_level": "excerpt",
+          "excerpt": "The Windmere Saturday paper-craft workshop begins at 18:00. Attendee check-in closes at 17:55 at the workshop entrance. Arrival after 17:55 does not s",
+          "at_ms": 3250
+        },
+        {
+          "source_id": "windmere-workshop-shuttle",
+          "title": "Windmere Saturday workshop shuttle from the ferry landing",
+          "content_level": "excerpt",
+          "excerpt": "The Windmere Saturday paper-craft workshop shuttle leaves the ferry landing at 17:45. Ferry passengers arriving at the landing at 17:40 can board this",
+          "at_ms": 3250
+        }
+      ],
+      "cards": [
+        {
+          "text": "Based on the ferry and shuttle schedules, you will be able to check in for the Windmere paper-craft workshop on time. The ferry sailing at 17:10 arrives at the landing at 17:40, and the shuttle departs at 17:45, arriving at the workshop location by 17:50, which is within the check-in window of 17:55.",
+          "source_ids": [
+            "windmere-ferry-sailing",
+            "windmere-workshop-shuttle",
+            "windmere-workshop-checkin"
+          ],
+          "updated_ms": 3500
+        }
+      ],
+      "conclusion": "The agent published a confident positive answer after one search. It did not request any full document. Its stated 17:50 arrival was unsupported; the 12-minute shuttle journey was outside the returned excerpt.",
+      "outcome_label": "Material error",
+      "limitations": [
+        "Frozen Study 01 development observation: one run per case and configuration; not a general success-rate estimate.",
+        "Synthetic dialogue and documents; no real audio, ASR accuracy or user-study result.",
+        "Compiled graph export was not recorded for this historical run; no topology is reconstructed."
+      ],
+      "sources": [
+        {
+          "path": "experiments/deep_conversation/benchmarks/results/local14-tool-recovery-paired-v1/agent-led-recovery__orch-route-checkin-evidence-join__r1/manifest.json",
+          "sha256": "530e05b5f4cc57fa116630242fe0f7d902c4005c14946a9c5ae1a88727c02f94"
+        },
+        {
+          "path": "experiments/deep_conversation/benchmarks/results/local14-tool-recovery-paired-v1/agent-led-recovery__orch-route-checkin-evidence-join__r1/summary.json",
+          "sha256": "e817bf64c92ef104cd4c0ace0865e68b8e7347c586c2a2e63b761c80c4b1cbba"
+        },
+        {
+          "path": "experiments/deep_conversation/benchmarks/results/local14-tool-recovery-paired-v1/agent-led-recovery__orch-route-checkin-evidence-join__r1/model_calls.json",
+          "sha256": "64df356787193ad3a75912e39f3fe83f0d870462cf0e529662a0ca5b3d48126d"
+        },
+        {
+          "path": "experiments/deep_conversation/benchmarks/results/local14-tool-recovery-paired-v1/agent-led-recovery__orch-route-checkin-evidence-join__r1/tool_calls.json",
+          "sha256": "8c7fbb6dc3dbd9b59368e65fde7c8751b3588f7dc63ca77ab3a78143870deaea"
+        },
+        {
+          "path": "experiments/deep_conversation/benchmarks/results/local14-tool-recovery-paired-v1/agent-led-recovery__orch-route-checkin-evidence-join__r1/environment_log.json",
+          "sha256": "f70d73561b0be82c21ea6496eaca8c0120ba65bf3425a6984dbe8a80e668a549"
+        },
+        {
+          "path": "sites/conversation-agent-research/dist/data/failure-cases.json",
+          "sha256": "3d4c224bb7f469eb9482a436c90f61da1dec938a6c352f773eec4ef1c5320d41"
+        }
+      ]
+    },
+    {
+      "id": "agent-led-recovery__orch-browser-recording-constraint__r1",
+      "title": "Study 01 · Browser recording",
+      "classification": "Study 01 · frozen development result",
+      "recorded_at": "2026-10-08T01:03:44.332790+00:00",
+      "date": "2026-10-07",
+      "source_path": "experiments/deep_conversation/benchmarks/results/local14-tool-recovery-paired-v1/agent-led-recovery__orch-browser-recording-constraint__r1",
+      "provider": "ollama",
+      "model": "qwen2.5:14b-instruct",
+      "snapshot_label": "Read-only historical snapshot",
+      "summary": {
+        "model_calls": 17,
+        "input_tokens": 118706,
+        "output_tokens": 2309,
+        "total_tokens": 121015,
+        "wall_ms": 59091.696,
+        "tool_calls": 29,
+        "tool_errors": 0,
+        "tool_counts": {
+          "search": 15,
+          "wait": 14
+        },
+        "checkpoints": 62,
+        "active_cards": 0,
+        "stop_reason": "budget_exhausted",
+        "simulated_at_ms": 23250,
+        "close_at_ms": 45000,
+        "token_budget_overshoot": 1015
+      },
+      "model_calls": [
+        {
+          "ordinal": 1,
+          "input_tokens": 3211,
+          "output_tokens": 129,
+          "total_tokens": 3340,
+          "wall_ms": 2778.145599993877,
+          "outcome": "completed"
+        },
+        {
+          "ordinal": 2,
+          "input_tokens": 3362,
+          "output_tokens": 54,
+          "total_tokens": 3416,
+          "wall_ms": 1142.5889999954961,
+          "outcome": "completed"
+        },
+        {
+          "ordinal": 3,
+          "input_tokens": 3654,
+          "output_tokens": 77,
+          "total_tokens": 3731,
+          "wall_ms": 1649.9428999959491,
+          "outcome": "completed"
+        },
+        {
+          "ordinal": 4,
+          "input_tokens": 4220,
+          "output_tokens": 155,
+          "total_tokens": 4375,
+          "wall_ms": 3353.043000010075,
+          "outcome": "completed"
+        },
+        {
+          "ordinal": 5,
+          "input_tokens": 4884,
+          "output_tokens": 144,
+          "total_tokens": 5028,
+          "wall_ms": 3213.908400008222,
+          "outcome": "completed"
+        },
+        {
+          "ordinal": 6,
+          "input_tokens": 5539,
+          "output_tokens": 146,
+          "total_tokens": 5685,
+          "wall_ms": 3290.505899989512,
+          "outcome": "completed"
+        },
+        {
+          "ordinal": 7,
+          "input_tokens": 6193,
+          "output_tokens": 146,
+          "total_tokens": 6339,
+          "wall_ms": 3272.8962999826763,
+          "outcome": "completed"
+        },
+        {
+          "ordinal": 8,
+          "input_tokens": 6850,
+          "output_tokens": 147,
+          "total_tokens": 6997,
+          "wall_ms": 3520.6813999975566,
+          "outcome": "completed"
+        },
+        {
+          "ordinal": 9,
+          "input_tokens": 7510,
+          "output_tokens": 147,
+          "total_tokens": 7657,
+          "wall_ms": 3459.0578000061214,
+          "outcome": "completed"
+        },
+        {
+          "ordinal": 10,
+          "input_tokens": 8171,
+          "output_tokens": 148,
+          "total_tokens": 8319,
+          "wall_ms": 3512.2638999891933,
+          "outcome": "completed"
+        },
+        {
+          "ordinal": 11,
+          "input_tokens": 8831,
+          "output_tokens": 147,
+          "total_tokens": 8978,
+          "wall_ms": 3540.3430000005756,
+          "outcome": "completed"
+        },
+        {
+          "ordinal": 12,
+          "input_tokens": 9494,
+          "output_tokens": 148,
+          "total_tokens": 9642,
+          "wall_ms": 3589.967100007925,
+          "outcome": "completed"
+        },
+        {
+          "ordinal": 13,
+          "input_tokens": 10157,
+          "output_tokens": 148,
+          "total_tokens": 10305,
+          "wall_ms": 3661.855899990769,
+          "outcome": "completed"
+        },
+        {
+          "ordinal": 14,
+          "input_tokens": 10821,
+          "output_tokens": 147,
+          "total_tokens": 10968,
+          "wall_ms": 3659.5510999904945,
+          "outcome": "completed"
+        },
+        {
+          "ordinal": 15,
+          "input_tokens": 11485,
+          "output_tokens": 147,
+          "total_tokens": 11632,
+          "wall_ms": 3704.9695999885444,
+          "outcome": "completed"
+        },
+        {
+          "ordinal": 16,
+          "input_tokens": 9629,
+          "output_tokens": 184,
+          "total_tokens": 9813,
+          "wall_ms": 8473.412599996664,
+          "outcome": "completed"
+        },
+        {
+          "ordinal": 17,
+          "input_tokens": 4695,
+          "output_tokens": 95,
+          "total_tokens": 4790,
+          "wall_ms": 3268.562600016594,
+          "outcome": "completed"
+        }
+      ],
+      "tools": [
+        {
+          "name": "search",
+          "at_ms": 250,
+          "args": {
+            "query": "capture separate camera and shared-screen recordings using browser"
+          },
+          "result": {
+            "status": "pending",
+            "job_started": true,
+            "job_id": "job-1",
+            "due_ms": 3250
+          },
+          "error": false
+        },
+        {
+          "name": "search",
+          "at_ms": 500,
+          "args": {
+            "query": "how to capture separate camera and shared-screen recordings using a browser for video export"
+          },
+          "result": {
+            "status": "pending",
+            "job_started": true,
+            "job_id": "job-2",
+            "due_ms": 3500
+          },
+          "error": false
+        },
+        {
+          "name": "wait",
+          "at_ms": 900,
+          "args": {},
+          "result": {
+            "status": "event_arrived",
+            "at_ms": 900
+          },
+          "error": false
+        },
+        {
+          "name": "wait",
+          "at_ms": 3250,
+          "args": {},
+          "result": {
+            "status": "event_arrived",
+            "at_ms": 3250
+          },
+          "error": false
+        },
+        {
+          "name": "search",
+          "at_ms": 3500,
+          "args": {
+            "query": "browser extension for separate camera and shared-screen recordings"
+          },
+          "result": {
+            "status": "pending",
+            "job_started": true,
+            "job_id": "job-3",
+            "due_ms": 6500
+          },
+          "error": false
+        },
+        {
+          "name": "wait",
+          "at_ms": 3500,
+          "args": {},
+          "result": {
+            "status": "event_ready",
+            "at_ms": 3500
+          },
+          "error": false
+        },
+        {
+          "name": "search",
+          "at_ms": 3750,
+          "args": {
+            "query": "browser extension for separate camera and shared-screen recordings"
+          },
+          "result": {
+            "status": "pending",
+            "job_started": true,
+            "job_id": "job-4",
+            "due_ms": 6750
+          },
+          "error": false
+        },
+        {
+          "name": "wait",
+          "at_ms": 6500,
+          "args": {},
+          "result": {
+            "status": "event_arrived",
+            "at_ms": 6500
+          },
+          "error": false
+        },
+        {
+          "name": "search",
+          "at_ms": 6750,
+          "args": {
+            "query": "browser extensions or plugins for separate camera and shared-screen recordings"
+          },
+          "result": {
+            "status": "pending",
+            "job_started": true,
+            "job_id": "job-5",
+            "due_ms": 9750
+          },
+          "error": false
+        },
+        {
+          "name": "wait",
+          "at_ms": 6750,
+          "args": {},
+          "result": {
+            "status": "event_ready",
+            "at_ms": 6750
+          },
+          "error": false
+        },
+        {
+          "name": "search",
+          "at_ms": 7000,
+          "args": {
+            "query": "browser extensions or plugins for separate camera and shared-screen recordings"
+          },
+          "result": {
+            "status": "pending",
+            "job_started": true,
+            "job_id": "job-6",
+            "due_ms": 10000
+          },
+          "error": false
+        },
+        {
+          "name": "wait",
+          "at_ms": 9750,
+          "args": {},
+          "result": {
+            "status": "event_arrived",
+            "at_ms": 9750
+          },
+          "error": false
+        },
+        {
+          "name": "search",
+          "at_ms": 10000,
+          "args": {
+            "query": "browser extensions or plugins for separate camera and shared-screen recordings"
+          },
+          "result": {
+            "status": "pending",
+            "job_started": true,
+            "job_id": "job-7",
+            "due_ms": 13000
+          },
+          "error": false
+        },
+        {
+          "name": "wait",
+          "at_ms": 10000,
+          "args": {},
+          "result": {
+            "status": "event_ready",
+            "at_ms": 10000
+          },
+          "error": false
+        },
+        {
+          "name": "search",
+          "at_ms": 10250,
+          "args": {
+            "query": "browser extensions or plugins for separate camera and shared-screen recordings"
+          },
+          "result": {
+            "status": "pending",
+            "job_started": true,
+            "job_id": "job-8",
+            "due_ms": 13250
+          },
+          "error": false
+        },
+        {
+          "name": "wait",
+          "at_ms": 13000,
+          "args": {},
+          "result": {
+            "status": "event_arrived",
+            "at_ms": 13000
+          },
+          "error": false
+        },
+        {
+          "name": "search",
+          "at_ms": 13250,
+          "args": {
+            "query": "browser extensions or plugins for separate camera and shared-screen recordings"
+          },
+          "result": {
+            "status": "pending",
+            "job_started": true,
+            "job_id": "job-9",
+            "due_ms": 16250
+          },
+          "error": false
+        },
+        {
+          "name": "wait",
+          "at_ms": 13250,
+          "args": {},
+          "result": {
+            "status": "event_ready",
+            "at_ms": 13250
+          },
+          "error": false
+        },
+        {
+          "name": "search",
+          "at_ms": 13500,
+          "args": {
+            "query": "browser extensions or plugins for separate camera and shared-screen recordings"
+          },
+          "result": {
+            "status": "pending",
+            "job_started": true,
+            "job_id": "job-10",
+            "due_ms": 16500
+          },
+          "error": false
+        },
+        {
+          "name": "wait",
+          "at_ms": 16250,
+          "args": {},
+          "result": {
+            "status": "event_arrived",
+            "at_ms": 16250
+          },
+          "error": false
+        },
+        {
+          "name": "search",
+          "at_ms": 16500,
+          "args": {
+            "query": "browser extensions or plugins for separate camera and shared-screen recordings"
+          },
+          "result": {
+            "status": "pending",
+            "job_started": true,
+            "job_id": "job-11",
+            "due_ms": 19500
+          },
+          "error": false
+        },
+        {
+          "name": "wait",
+          "at_ms": 16500,
+          "args": {},
+          "result": {
+            "status": "event_ready",
+            "at_ms": 16500
+          },
+          "error": false
+        },
+        {
+          "name": "search",
+          "at_ms": 16750,
+          "args": {
+            "query": "browser extensions or plugins for separate camera and shared-screen recordings"
+          },
+          "result": {
+            "status": "pending",
+            "job_started": true,
+            "job_id": "job-12",
+            "due_ms": 19750
+          },
+          "error": false
+        },
+        {
+          "name": "wait",
+          "at_ms": 19500,
+          "args": {},
+          "result": {
+            "status": "event_arrived",
+            "at_ms": 19500
+          },
+          "error": false
+        },
+        {
+          "name": "search",
+          "at_ms": 19750,
+          "args": {
+            "query": "browser extensions or plugins for separate camera and shared-screen recordings"
+          },
+          "result": {
+            "status": "pending",
+            "job_started": true,
+            "job_id": "job-13",
+            "due_ms": 22750
+          },
+          "error": false
+        },
+        {
+          "name": "wait",
+          "at_ms": 19750,
+          "args": {},
+          "result": {
+            "status": "event_ready",
+            "at_ms": 19750
+          },
+          "error": false
+        },
+        {
+          "name": "search",
+          "at_ms": 20000,
+          "args": {
+            "query": "browser extensions or plugins for separate camera and shared-screen recordings"
+          },
+          "result": {
+            "status": "pending",
+            "job_started": true,
+            "job_id": "job-14",
+            "due_ms": 23000
+          },
+          "error": false
+        },
+        {
+          "name": "wait",
+          "at_ms": 22750,
+          "args": {},
+          "result": {
+            "status": "event_arrived",
+            "at_ms": 22750
+          },
+          "error": false
+        },
+        {
+          "name": "search",
+          "at_ms": 23250,
+          "args": {
+            "query": "browser extension or plugin for separate camera and shared-screen recordings"
+          },
+          "result": {
+            "status": "pending",
+            "job_started": true,
+            "job_id": "job-15",
+            "due_ms": 26250
+          },
+          "error": false
+        }
+      ],
+      "graph": null,
+      "conversation": [
+        {
+          "speaker": "Mina",
+          "text": "For our LumenCast workshop, we need the camera recording and the shared-screen recording as two separate video files afterward. The classroom computers can only use a browser.",
+          "at_ms": 0
+        },
+        {
+          "speaker": "Jon",
+          "text": "Right, we cannot install a desktop recorder. Paying for a different LumenCast plan is possible if that solves it. Can this browser-only setup produce the two independent recordings?",
+          "at_ms": 900
+        }
+      ],
+      "retrieved_evidence": [
+        {
+          "source_id": "lumencast-browser-recording",
+          "title": "LumenCast browser workshop camera and shared-screen recording",
+          "content_level": "excerpt",
+          "excerpt": "LumenCast browser workshop recording creates one combined video containing the camera and shared screen. This browser mode does not save independent c",
+          "at_ms": 3250
+        },
+        {
+          "source_id": "lumencast-desktop-recording",
+          "title": "LumenCast desktop recorder independent camera and screen files",
+          "content_level": "excerpt",
+          "excerpt": "LumenCast Desktop Recorder can save the camera video and shared-screen video as two independent files. That capture mode requires installing and runni",
+          "at_ms": 3250
+        },
+        {
+          "source_id": "lumencast-plan-recording",
+          "title": "LumenCast plans and browser workshop recording features",
+          "content_level": "excerpt",
+          "excerpt": "LumenCast paid plans increase workshop recording duration and storage allowances. They do not change the browser recorder's combined camera-and-screen",
+          "at_ms": 3250
+        }
+      ],
+      "cards": [],
+      "conclusion": "The agent made 15 searches and 14 waits, but did not read a full document or publish a card. It stopped after exceeding the soft token budget.",
+      "outcome_label": "Required help missing",
+      "limitations": [
+        "Frozen Study 01 development observation: one run per case and configuration; not a general success-rate estimate.",
+        "Synthetic dialogue and documents; no real audio, ASR accuracy or user-study result.",
+        "Compiled graph export was not recorded for this historical run; no topology is reconstructed."
+      ],
+      "sources": [
+        {
+          "path": "experiments/deep_conversation/benchmarks/results/local14-tool-recovery-paired-v1/agent-led-recovery__orch-browser-recording-constraint__r1/manifest.json",
+          "sha256": "b54dea50323d2fe96c2a6dddf33203704214bb35e0b72b313784263edae09111"
+        },
+        {
+          "path": "experiments/deep_conversation/benchmarks/results/local14-tool-recovery-paired-v1/agent-led-recovery__orch-browser-recording-constraint__r1/summary.json",
+          "sha256": "3705fd579785287f5070b4db5439b18ef772e204b214d782128b1589518b4051"
+        },
+        {
+          "path": "experiments/deep_conversation/benchmarks/results/local14-tool-recovery-paired-v1/agent-led-recovery__orch-browser-recording-constraint__r1/model_calls.json",
+          "sha256": "cc4232c1e6b0605952ef82dea6f85e3e36b58d8eedd2f2b64050c2c896823c80"
+        },
+        {
+          "path": "experiments/deep_conversation/benchmarks/results/local14-tool-recovery-paired-v1/agent-led-recovery__orch-browser-recording-constraint__r1/tool_calls.json",
+          "sha256": "601a38372aae298377de7f9c985e950b5f834b40f8780e3849da373b4aa9f94b"
+        },
+        {
+          "path": "experiments/deep_conversation/benchmarks/results/local14-tool-recovery-paired-v1/agent-led-recovery__orch-browser-recording-constraint__r1/environment_log.json",
+          "sha256": "23ae8f2748c77216b4db34e67e48dd25fe08d23f33131cafc88974492806f2d5"
+        },
+        {
+          "path": "sites/conversation-agent-research/dist/data/failure-cases.json",
+          "sha256": "3d4c224bb7f469eb9482a436c90f61da1dec938a6c352f773eec4ef1c5320d41"
+        }
+      ]
+    }
+  ]
+}

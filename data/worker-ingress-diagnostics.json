@@ -1,0 +1,100 @@
+{
+  "date": "2026-10-10",
+  "timezone": "America/Halifax",
+  "type": "engineering_validation_and_exposed_diagnostic",
+  "reported_failure": {
+    "job_id": "5226d1cf3e8044ff9a93f6a176ea77ce",
+    "input_mode": "human_human_transcript",
+    "output": "To understand the concept of an \"agent harness,\" we need to clarify the context, as this term is not a standard or widely recognized term in software engineering or any other field. It might be specific to a particular project, company, or framework. Could you provide more details or context about where you encountered this term?",
+    "model_calls": 1,
+    "tools": {},
+    "stop_reason": "window_closed",
+    "source_sha256": {
+      "summary.json": "95ee099303cc4b72e03dd5487d5e8bbb4b0f5e210a353e9fcaaed87e11f48d07",
+      "lab_provenance.json": "207cf0e8b56a44cc52993b6b393c96a4090cc63414197c8ef5e5d678c7c1d38c",
+      "assistant_output.jsonl": "06af76d560ccf9771329a546eb442c195b90721d18c59e4bab4e3c998c580bad"
+    }
+  },
+  "http_checks": {
+    "plan": {
+      "date": "2026-10-10",
+      "timezone": "America/Halifax",
+      "type": "engineering_integration_check",
+      "question": "what is concept of agent harness",
+      "harness": "agent-led",
+      "documents": [],
+      "conditions": "One submission to each already-running service; unchanged local model and question adapter. Old services must be rejected before model loading; the current service must retain direct-response delivery. This does not test an answer-quality improvement.",
+      "ports": [
+        8767,
+        8768,
+        8769
+      ]
+    },
+    "runs": [
+      {
+        "port": 8767,
+        "job_id": "03945d75322f409c8d6d95dc2c264288",
+        "protocol_version": null,
+        "status": "error",
+        "output_directory_created": false,
+        "outdated_service_rejection": true,
+        "direct_response": null,
+        "model_calls": 0
+      },
+      {
+        "port": 8768,
+        "job_id": "7c6b221f2a374480ba4ff08af3663adf",
+        "protocol_version": null,
+        "status": "error",
+        "output_directory_created": false,
+        "outdated_service_rejection": true,
+        "direct_response": null,
+        "model_calls": 0
+      },
+      {
+        "port": 8769,
+        "job_id": "8f2edfbe316940d6b1ae43c4ffd7164b",
+        "protocol_version": 3,
+        "status": "completed",
+        "output_directory_created": true,
+        "outdated_service_rejection": false,
+        "direct_response": {
+          "schema_version": 1,
+          "input_mode": "direct_request",
+          "status": "response",
+          "text": "The term \"agent harness\" isn't a standard or widely recognized concept in software engineering or computer science. It could be a specific term used within a particular context or organization. Without more context, it's challenging to provide an accurate definition.\n\nHowever, based on the term's components, we can make an educated guess:\n\n- **Agent**: In software, an agent typically refers to a software entity that acts on behalf of a user or another system, often autonomously or semi-autonomously. Agents can perform tasks such as monitoring, data collection, or executing specific actions based on predefined rules or user instructions.\n\n- **Harness**: In software development, a harness is a framework or tool that provides a way to run tests or integrate different components. It can also refer to a system that controls or manages other systems or components.\n\nCombining these ideas, an \"agent harness\" might refer to a framework or system designed to manage, control, or integrate multiple software agents. This could include functionalities such as:\n\n- **Deployment and Management**: Facilitating the deployment, configuration, and management of software agents.\n- **Communication**: Enabling communication between different agents or between agents and other systems.\n- **Monitoring and Control**: Providing tools to monitor the status and performance of agents and control their actions.\n- **Integration**: Integrating agents with other systems or services to create a cohesive solution.\n\nIf you have a specific context or domain in mind where you encountered the term \"agent harness,\" please provide more details so I can give a more precise explanation.",
+          "delivery_id": "de015a4b7d75084c345197a26a44523c6be3f3d7306949f372ccdfd3315e2368",
+          "available_sources": [],
+          "source_metadata_note": "Retrieved sources available to the agent; not a claim that every source was cited or supports the response.",
+          "source_support_evaluated": false,
+          "quality_evaluated": false,
+          "stop_reason": "response_delivered"
+        },
+        "model_calls": 1,
+        "total_tokens": 3020,
+        "model_wall_ms": 11995.875
+      }
+    ]
+  },
+  "raw_model_check": {
+    "plan": "One raw call, same user question and local model/options, minimal general system message and no tools. This tests whether the failure also occurs outside the harness. Changed prompt context prevents an orchestration-only or speed claim.",
+    "model": "qwen2.5:14b-instruct",
+    "digest": "7cdf5a0187d5c58cc5d369b255592f7841d1c4696d45a8c8a9489440385b22f6",
+    "system_message": "You are a helpful assistant. Answer the user's question.",
+    "question": "what is concept of agent harness",
+    "options": {
+      "temperature": 0,
+      "num_ctx": 16384,
+      "num_predict": 1200
+    },
+    "response": "The term \"agent harness\" isn't a widely recognized standard term in software engineering or artificial intelligence, but it might be a specific concept used within certain frameworks or projects. However, based on the context of software agents and their integration, an \"agent harness\" could be interpreted as a framework or a set of tools designed to facilitate the creation, deployment, and management of software agents.\n\nIn the context of software agents, an \"agent\" is an autonomous program that can perform tasks on behalf of a user or another system with some level of independence. An \"agent harness\" could be a tool or framework that:\n\n1. **Simplifies Development**: Provides a set of APIs, libraries, or templates to make it easier to develop software agents.\n2. **Deployment and Management**: Offers mechanisms for deploying agents in different environments and managing their lifecycle (e.g., starting, stopping, updating).\n3. **Communication**: Facilitates communication between agents and other systems or services, often using standard protocols or messaging systems.\n4. **Monitoring and Logging**: Provides tools for monitoring the performance and behavior of agents, as well as logging their activities for debugging and auditing purposes.\n5. **Security and Authentication**: Manages security aspects such as authentication, authorization, and encryption to ensure that agents operate securely.\n\nIf you are referring to a specific framework or project that uses the term \"agent harness,\" it would be helpful to provide more context or details about the specific environment or technology you are working with. This would allow for a more precise explanation or definition.",
+    "input_tokens": 31,
+    "output_tokens": 311,
+    "same_model_after": true
+  },
+  "interpretation": "The reported output exactly matches an old conversation-mode run. Old services are now rejected before model loading. The new direct run and a raw-model call both still fail the intended LLM-harness concept check: they claim the term is not recognized and guess a general software-agent meaning. The failure can occur outside the harness; these diagnostics do not prove its sole cause.",
+  "review_method": "Unblinded assistant inspection of one exposed question, checking for an explanation of the model/tool control loop. No general accuracy, speed, or causal mechanism benefit is established.",
+  "new_model_calls": 2,
+  "paid_api_calls": 0,
+  "semantic_fix": false
+}

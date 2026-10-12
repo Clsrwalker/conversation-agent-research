@@ -1,0 +1,22 @@
+{
+  "id": "experiment-04",
+  "title": "",
+  "status": "planned",
+  "problem": "",
+  "observed_failure_sources": [],
+  "hypothesis": "",
+  "baseline_snapshot": "2026-10-07-agent-led-recovery-v1",
+  "changed_component": "",
+  "unchanged_conditions": [],
+  "protocol_frozen_before_run": false,
+  "dataset_split": "",
+  "independent_scenarios": null,
+  "repeats_per_scenario": null,
+  "metrics": [],
+  "results": null,
+  "failures_and_budget_stops": [],
+  "interpretation": "",
+  "limitations": [],
+  "source_records": [],
+  "note": "Keep results null until runs and scoring have completed. Repeats do not increase independent scenario count."
+}

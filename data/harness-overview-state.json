@@ -1,0 +1,488 @@
+{
+  "schema_version": 1,
+  "id": "harness-overview-state",
+  "title": "Current harness implementation",
+  "reviewed_on": "2026-10-09",
+  "timezone": "America/Halifax",
+  "record_type": "Source-based implementation inventory; not a new experiment, running-service health check or quality evaluation.",
+  "summary": "The implemented prototype delivers arrived conversation and evidence to one Deep Agent, lets it choose investigation and card actions, and preserves execution and accounting state.",
+  "logical_flow": {
+    "kind": "Conceptual explanation of the implemented event loop, not a required sequence of model decisions or an exported per-run execution graph.",
+    "nodes": [
+      {
+        "id": "arrivals",
+        "label": "Arrived conversation and tool results",
+        "description": "Timestamped replay events and completed evidence jobs become visible when they arrive."
+      },
+      {
+        "id": "observe",
+        "label": "Observe current context",
+        "description": "Deliver unseen events with active cards, notes and pending jobs; enforce the observation window and shared model budget."
+      },
+      {
+        "id": "investigate",
+        "label": "One Deep Agent chooses its next action",
+        "description": "The native model/tool loop may search, read, calculate, request optional advice, change course or stay silent."
+      },
+      {
+        "id": "tools",
+        "label": "Tools and delayed evidence jobs",
+        "description": "Search/read acknowledgements report pending work; returned evidence reaches a later observation."
+      },
+      {
+        "id": "cards",
+        "label": "Publish, update or withdraw a card",
+        "description": "Only explicit card tools change displayed help; ordinary model prose remains private."
+      },
+      {
+        "id": "wait",
+        "label": "Wait or end the current investigation turn",
+        "description": "Control returns to the event workflow. The run stops at the window or budget boundary."
+      }
+    ],
+    "edges": [
+      {
+        "from": "arrivals",
+        "to": "observe"
+      },
+      {
+        "from": "observe",
+        "to": "investigate"
+      },
+      {
+        "from": "investigate",
+        "to": "tools"
+      },
+      {
+        "from": "tools",
+        "to": "arrivals"
+      },
+      {
+        "from": "investigate",
+        "to": "cards"
+      },
+      {
+        "from": "cards",
+        "to": "investigate"
+      },
+      {
+        "from": "investigate",
+        "to": "wait"
+      },
+      {
+        "from": "wait",
+        "to": "observe"
+      }
+    ],
+    "supporting_state": [
+      "Pending jobs and arrived-event cursor",
+      "LangGraph checkpoints",
+      "Durable tool, card and budget ledger"
+    ],
+    "source_ids": [
+      "agent-loop",
+      "event-boundary-and-tools",
+      "durable-world",
+      "agent-tools-and-cards"
+    ]
+  },
+  "implemented": [
+    {
+      "id": "replay-input",
+      "title": "Timestamped conversation replay",
+      "explanation": "Authored conversation events, including partial/final-style segments and later changes, arrive on a simulated timeline. The model receives arrived observations rather than the full future fixture.",
+      "source_ids": [
+        "readme",
+        "event-boundary-and-tools",
+        "durable-world",
+        "replay-environment"
+      ]
+    },
+    {
+      "id": "native-agent-loop",
+      "title": "One native Deep Agent investigator",
+      "explanation": "An outer LangGraph observe/investigate loop runs a native Deep Agents model/tool subgraph. Automatic general-purpose subagents are disabled. Agent-led configurations impose no fixed task schema, research sequence or mandatory review stage.",
+      "source_ids": [
+        "agent-loop"
+      ]
+    },
+    {
+      "id": "event-boundary",
+      "title": "New context at model boundaries",
+      "explanation": "In agent-led configurations, new arrivals are added after a completed tool batch and before the next model inference. The boundary checks the window and shared call/token budget.",
+      "source_ids": [
+        "event-boundary-and-tools",
+        "configuration"
+      ]
+    },
+    {
+      "id": "retrieval-jobs",
+      "title": "Search and full-document reads",
+      "explanation": "Search and read start delayed jobs; more than one job can be pending. A job acknowledgement is not evidence. The fixture retriever uses lexical overlap, returns up to three 150-character excerpts and identifies truncation; a full read arrives separately.",
+      "source_ids": [
+        "event-boundary-and-tools",
+        "replay-environment"
+      ]
+    },
+    {
+      "id": "agent-choices",
+      "title": "Investigation, waiting and cancellation",
+      "explanation": "The agent chooses searches, reads, waiting, cancellation, free-form notes and card actions. Optional arithmetic verifies the supplied operation, not the meaning or source applicability of its inputs. Optional evidence advice is model feedback, not publication approval, and shares the model budget.",
+      "source_ids": [
+        "agent-loop",
+        "agent-tools-and-cards",
+        "event-boundary-and-tools"
+      ]
+    },
+    {
+      "id": "displayed-cards",
+      "title": "Explicit card delivery",
+      "explanation": "A nonempty publish_card text displays help; reusing an ID updates the card and withdraw_card can remove an observed card. Citation IDs and the card ID are optional in the agent-led interface. Private model prose does not display a card.",
+      "source_ids": [
+        "agent-loop",
+        "agent-tools-and-cards"
+      ]
+    },
+    {
+      "id": "card-state-checks",
+      "title": "Checks around card changes",
+      "explanation": "Publication and withdrawal check for newly arrived unread observations and conflicts with the card snapshot the agent actually saw. Exact duplicate text/citations can retain the existing card. Local card changes and tool deduplication records share a transaction. These checks do not establish factual correctness.",
+      "source_ids": [
+        "agent-tools-and-cards",
+        "durable-world"
+      ]
+    },
+    {
+      "id": "checkpoint-and-ledger",
+      "title": "Persistent execution state",
+      "explanation": "LangGraph checkpoints and a separate SQLite world/tool/budget ledger support paused-run recovery. Resume checks source/dependency fingerprints and the recorded local model/runtime. Runs with failed or unfinished model requests are not automatically resumed because their outcome may be unknown.",
+      "source_ids": [
+        "runner",
+        "durable-world",
+        "readme"
+      ]
+    },
+    {
+      "id": "optional-recovery",
+      "title": "Bounded retrieval-failure feedback",
+      "explanation": "The research baseline can offer optional feedback after a retrieval attempt did not start a job, the model ended its turn and no work is pending. New input, real pending work, explicit waiting or a successful action suppresses stale recovery feedback. It does not force further investigation.",
+      "source_ids": [
+        "agent-loop",
+        "durable-world",
+        "configuration",
+        "readme"
+      ]
+    },
+    {
+      "id": "local-observability",
+      "title": "Read-only local monitoring",
+      "explanation": "The loopback-only monitor exposes saved run data without starting models or modifying run state. Its interface presents model/token metrics, tool returns, cards, checkpoints and the saved graph, refreshing local observations every second. A completed call or saved checkpoint is not a quality score.",
+      "source_ids": [
+        "local-monitor",
+        "local-monitor-store",
+        "readme"
+      ]
+    }
+  ],
+  "experimental": [
+    {
+      "id": "progress-feedback",
+      "title": "Investigation progress feedback",
+      "configuration": "agent-led-progress",
+      "explanation": "Adds a bounded, temporary message to each already scheduled model request, derived only from its visible context: query attempts, excerpt/full evidence status, pending jobs and card outcomes. It does not add an extra decision turn, inspect unread documents or recover compacted history from the world database.",
+      "status": "Implemented and studied, but remains opt-in; no useful-help improvement demonstrated. The research baseline remains agent-led-recovery.",
+      "source_ids": [
+        "progress-feedback",
+        "configuration",
+        "published-study-02",
+        "readme"
+      ]
+    }
+  ],
+  "not_integrated": [
+    {
+      "id": "live-audio-asr",
+      "title": "Microphone and real ASR",
+      "explanation": "Current input is authored text replay. ASR-style fixture labels do not establish live speech recognition support or performance.",
+      "source_ids": [
+        "readme",
+        "published-study-02"
+      ]
+    },
+    {
+      "id": "consolidated-transcript",
+      "title": "Dedicated latest-transcript state",
+      "explanation": "The prototype passes transcript-like events but does not maintain a separately consolidated latest text for each speech segment.",
+      "source_ids": [
+        "durable-world",
+        "event-boundary-and-tools",
+        "readme"
+      ]
+    },
+    {
+      "id": "live-web-retrieval",
+      "title": "Live web retrieval",
+      "explanation": "The measured environment searches a small fictional document corpus with a diagnostic lexical retriever.",
+      "source_ids": [
+        "readme",
+        "replay-environment"
+      ]
+    },
+    {
+      "id": "cross-session-memory",
+      "title": "Cross-session memory",
+      "explanation": "Run checkpoints preserve execution within a recorded run; they are not an integrated long-term memory product.",
+      "source_ids": [
+        "readme",
+        "runner"
+      ]
+    },
+    {
+      "id": "mobile-product-ui",
+      "title": "Mobile conversation product interface",
+      "explanation": "The implemented interfaces are the research website and local run monitor; the proposed mobile assistance interface is not integrated.",
+      "source_ids": [
+        "readme"
+      ]
+    },
+    {
+      "id": "automatic-hosted-sync",
+      "title": "Automatic local-to-hosted run synchronization",
+      "explanation": "The hosted dashboard reads exported historical snapshots. New local runs are not uploaded automatically.",
+      "source_ids": [
+        "hosted-run-snapshots",
+        "readme"
+      ]
+    }
+  ],
+  "implementation_and_evidence": {
+    "research_reference": {
+      "configuration": "agent-led-recovery",
+      "frozen_id": "2026-10-07-agent-led-recovery-v1",
+      "meaning": "Retained research comparator, not a claim that the current working tree is the unchanged frozen implementation.",
+      "source_id": "frozen-baseline-record"
+    },
+    "cli_defaults": {
+      "configuration": "native",
+      "provider": "ollama",
+      "model": "qwen2.5:14b-instruct",
+      "context_window": 16384,
+      "max_model_calls": 24,
+      "soft_token_budget": 100000,
+      "max_output_tokens_per_call": 1000,
+      "source_id": "configuration"
+    },
+    "measured_study_settings": {
+      "configuration_reference": "agent-led-recovery",
+      "context_window": 16384,
+      "max_model_calls": 24,
+      "soft_token_budget": 120000,
+      "max_output_tokens_per_call": 1200,
+      "meaning": "Explicit settings used for the frozen research comparison; do not confuse them with unchanged command-line defaults.",
+      "source_ids": [
+        "frozen-baseline-record",
+        "published-study-02"
+      ]
+    },
+    "current_vs_frozen_baseline": {
+      "method": "Read-only SHA-256 comparison with the baseline record source_sha256 map.",
+      "changed_listed_files": [
+        {
+          "path": "experiments/deep_conversation/config.py",
+          "frozen_baseline_sha256": "12590fb633c4c163a7104f503d3130106c4697143730e3bad77d2f966657fcf5",
+          "current_sha256": "2227806d3389039291ffa57af2e0953700933dc94b6f284d1090a792fe5c59b6"
+        },
+        {
+          "path": "experiments/deep_conversation/run.py",
+          "frozen_baseline_sha256": "55cf8899c8f045bbcae1656a3b940011e0e87871e47af132402fdf93513ae1c1",
+          "current_sha256": "decf80fe9780f6d26776cf61a594ef84bd535161d1ba8902363f9ea3d18260db"
+        },
+        {
+          "path": "experiments/deep_conversation/agent_led.py",
+          "frozen_baseline_sha256": "611cfda3e4b2b7f0b03437c4a62185fc539434d1a5548a9b567dd4608b45fc6f",
+          "current_sha256": "a395270ce897952d68fba6f6f26e4763f45a7ec40e9abaa34efd222b4ae27cb8"
+        },
+        {
+          "path": "experiments/deep_conversation/bench.py",
+          "frozen_baseline_sha256": "7e038eb223e54f0f100457d7549e7e72d342a2d49b6093b559c454348ca89818",
+          "current_sha256": "c725eaa9430d731820842c4f6520e01d8b691b3d5921cdf67a1533ebb6d7dea9"
+        }
+      ],
+      "unchanged_listed_file_count": 22,
+      "meaning": "The frozen source archive remains a separate reproducibility artifact. A historical result does not become a result for later working-tree changes."
+    },
+    "current_vs_study_02_core": {
+      "method": "Read-only byte-hash comparison for the listed files; not a new execution or exhaustive equivalence test.",
+      "files": [
+        {
+          "current_path": "experiments/deep_conversation/agent.py",
+          "current_sha256": "4f3a83c53bce2748df44b73fd70d291ee79b0a92aa940fd164daed51b0c71409",
+          "study_02_snapshot_path": "experiments/deep_conversation/benchmarks/results/local14-progress-heldout-v1/agent-led-progress__rillstat-process-report__r1/source/experiments/deep_conversation/agent.py",
+          "study_02_snapshot_sha256": "4f3a83c53bce2748df44b73fd70d291ee79b0a92aa940fd164daed51b0c71409",
+          "same_bytes": true
+        },
+        {
+          "current_path": "experiments/deep_conversation/agent_led.py",
+          "current_sha256": "a395270ce897952d68fba6f6f26e4763f45a7ec40e9abaa34efd222b4ae27cb8",
+          "study_02_snapshot_path": "experiments/deep_conversation/benchmarks/results/local14-progress-heldout-v1/agent-led-progress__rillstat-process-report__r1/source/experiments/deep_conversation/agent_led.py",
+          "study_02_snapshot_sha256": "a395270ce897952d68fba6f6f26e4763f45a7ec40e9abaa34efd222b4ae27cb8",
+          "same_bytes": true
+        },
+        {
+          "current_path": "experiments/deep_conversation/agent_led_tools.py",
+          "current_sha256": "358057cfdab5fb53b4f7f8dd8c687bf6fbfa96852b4f8d66d0d195695136ea09",
+          "study_02_snapshot_path": "experiments/deep_conversation/benchmarks/results/local14-progress-heldout-v1/agent-led-progress__rillstat-process-report__r1/source/experiments/deep_conversation/agent_led_tools.py",
+          "study_02_snapshot_sha256": "358057cfdab5fb53b4f7f8dd8c687bf6fbfa96852b4f8d66d0d195695136ea09",
+          "same_bytes": true
+        },
+        {
+          "current_path": "experiments/deep_conversation/config.py",
+          "current_sha256": "2227806d3389039291ffa57af2e0953700933dc94b6f284d1090a792fe5c59b6",
+          "study_02_snapshot_path": "experiments/deep_conversation/benchmarks/results/local14-progress-heldout-v1/agent-led-progress__rillstat-process-report__r1/source/experiments/deep_conversation/config.py",
+          "study_02_snapshot_sha256": "2227806d3389039291ffa57af2e0953700933dc94b6f284d1090a792fe5c59b6",
+          "same_bytes": true
+        },
+        {
+          "current_path": "experiments/deep_conversation/world.py",
+          "current_sha256": "55f5d787121392d03fa8789216486b3ca09f61cbc5c56368a9ffd2809e87dbd3",
+          "study_02_snapshot_path": "experiments/deep_conversation/benchmarks/results/local14-progress-heldout-v1/agent-led-progress__rillstat-process-report__r1/source/experiments/deep_conversation/world.py",
+          "study_02_snapshot_sha256": "55f5d787121392d03fa8789216486b3ca09f61cbc5c56368a9ffd2809e87dbd3",
+          "same_bytes": true
+        },
+        {
+          "current_path": "experiments/deep_conversation/run.py",
+          "current_sha256": "decf80fe9780f6d26776cf61a594ef84bd535161d1ba8902363f9ea3d18260db",
+          "study_02_snapshot_path": "experiments/deep_conversation/benchmarks/results/local14-progress-heldout-v1/agent-led-progress__rillstat-process-report__r1/source/experiments/deep_conversation/run.py",
+          "study_02_snapshot_sha256": "decf80fe9780f6d26776cf61a594ef84bd535161d1ba8902363f9ea3d18260db",
+          "same_bytes": true
+        },
+        {
+          "current_path": "experiments/deep_conversation/investigation_progress.py",
+          "current_sha256": "0798c2ff2a3c1e2ef9e630a1bca7f1ec1fcfcb44f5d7815c39717708d1ff1d84",
+          "study_02_snapshot_path": "experiments/deep_conversation/benchmarks/results/local14-progress-heldout-v1/agent-led-progress__rillstat-process-report__r1/source/experiments/deep_conversation/investigation_progress.py",
+          "study_02_snapshot_sha256": "0798c2ff2a3c1e2ef9e630a1bca7f1ec1fcfcb44f5d7815c39717708d1ff1d84",
+          "same_bytes": true
+        },
+        {
+          "current_path": "experiments/deep_conversation/monitor_runtime.py",
+          "current_sha256": "7088b0606fe98f67cd399fa07d20b3ed8fd8cd196ae6dcd07469340a944e2560",
+          "study_02_snapshot_path": "experiments/deep_conversation/benchmarks/results/local14-progress-heldout-v1/agent-led-progress__rillstat-process-report__r1/source/experiments/deep_conversation/monitor_runtime.py",
+          "study_02_snapshot_sha256": "7088b0606fe98f67cd399fa07d20b3ed8fd8cd196ae6dcd07469340a944e2560",
+          "same_bytes": true
+        }
+      ]
+    },
+    "hosted_snapshot": {
+      "kind": "Read-only exported historical run data",
+      "run_count": 3,
+      "runs": [
+        {
+          "id": "monitor-local14-validation-v1",
+          "classification": "Engineering integration validation",
+          "source_path": "experiments/deep_conversation/runs/monitor-local14-validation-v1"
+        },
+        {
+          "id": "agent-led-recovery__orch-route-checkin-evidence-join__r1",
+          "classification": "Study 01 · frozen development result",
+          "source_path": "experiments/deep_conversation/benchmarks/results/local14-tool-recovery-paired-v1/agent-led-recovery__orch-route-checkin-evidence-join__r1"
+        },
+        {
+          "id": "agent-led-recovery__orch-browser-recording-constraint__r1",
+          "classification": "Study 01 · frozen development result",
+          "source_path": "experiments/deep_conversation/benchmarks/results/local14-tool-recovery-paired-v1/agent-led-recovery__orch-browser-recording-constraint__r1"
+        }
+      ],
+      "meaning": "Two Study 01 failures and one separate monitor integration check. These three records are not a new evaluation batch and do not show the present health or running state of a local service.",
+      "source_id": "hosted-run-snapshots"
+    }
+  },
+  "limitations": [
+    "Implemented software behavior is distinct from measured assistance quality. A finished run, successful tool return, valid source ID or checkpoint does not establish a correct answer.",
+    "The cards and transactional checks are local to this replay environment. They do not guarantee exactly-once effects for external APIs or no repeated model work after a crash.",
+    "Replay positions and simulated tool delays are distinct from measured model-call duration and live end-to-end response latency.",
+    "The available research uses one local model, small fictional scenarios and AI assessment. No human user benefit or real-ASR performance has been established.",
+    "This inventory is a source review, not a guarantee that a local model server or monitor is currently running."
+  ],
+  "review_method": {
+    "activity": "Read-only review of implementation, README and previously published records; hash comparisons identify provenance.",
+    "new_model_runs": 0,
+    "new_execution_tests": 0,
+    "private_model_request_or_response_content_used": false
+  },
+  "provenance": {
+    "path_convention": "Repository-relative source paths identify local records; they are not public download URLs.",
+    "hash_algorithm": "SHA-256 of the reviewed source-file bytes.",
+    "sources": [
+      {
+        "id": "readme",
+        "path": "experiments/deep_conversation/README.md",
+        "sha256": "c73ed48f60a03d1c68ea1a7b654b7131a53a8b5ca36ac45148f4cc03947ce53e"
+      },
+      {
+        "id": "configuration",
+        "path": "experiments/deep_conversation/config.py",
+        "sha256": "2227806d3389039291ffa57af2e0953700933dc94b6f284d1090a792fe5c59b6"
+      },
+      {
+        "id": "agent-loop",
+        "path": "experiments/deep_conversation/agent_led.py",
+        "sha256": "a395270ce897952d68fba6f6f26e4763f45a7ec40e9abaa34efd222b4ae27cb8"
+      },
+      {
+        "id": "event-boundary-and-tools",
+        "path": "experiments/deep_conversation/agent.py",
+        "sha256": "4f3a83c53bce2748df44b73fd70d291ee79b0a92aa940fd164daed51b0c71409"
+      },
+      {
+        "id": "agent-tools-and-cards",
+        "path": "experiments/deep_conversation/agent_led_tools.py",
+        "sha256": "358057cfdab5fb53b4f7f8dd8c687bf6fbfa96852b4f8d66d0d195695136ea09"
+      },
+      {
+        "id": "durable-world",
+        "path": "experiments/deep_conversation/world.py",
+        "sha256": "55f5d787121392d03fa8789216486b3ca09f61cbc5c56368a9ffd2809e87dbd3"
+      },
+      {
+        "id": "progress-feedback",
+        "path": "experiments/deep_conversation/investigation_progress.py",
+        "sha256": "0798c2ff2a3c1e2ef9e630a1bca7f1ec1fcfcb44f5d7815c39717708d1ff1d84"
+      },
+      {
+        "id": "runner",
+        "path": "experiments/deep_conversation/run.py",
+        "sha256": "decf80fe9780f6d26776cf61a594ef84bd535161d1ba8902363f9ea3d18260db"
+      },
+      {
+        "id": "replay-environment",
+        "path": "experiments/conversation_harness/runner.py",
+        "sha256": "fd451f5d50792212a28d8ac81d81d428cde789d1ba31222abc22b13d8ac3ee30"
+      },
+      {
+        "id": "local-monitor",
+        "path": "experiments/deep_conversation/monitor.py",
+        "sha256": "38ecda173b2a196357b6f9124fec20b26151cca9e62c06eaee59e96782e2e3e4"
+      },
+      {
+        "id": "local-monitor-store",
+        "path": "experiments/deep_conversation/monitor_store.py",
+        "sha256": "d3be06421cbbe7f0482b8ff587dce19d451deb964ef7cd2a4cdc929933e50be0"
+      },
+      {
+        "id": "frozen-baseline-record",
+        "path": "sites/conversation-agent-research/dist/data/baseline.json",
+        "sha256": "4d08e3325c48d854e96e5b2f06718d9dd021d8ef94718a9fe609fe1e6decb42a"
+      },
+      {
+        "id": "hosted-run-snapshots",
+        "path": "sites/conversation-agent-research/dist/data/harness-dashboard.json",
+        "sha256": "4309d50a3f3b8efbc712596148bd174d3bb4d29aba45788bed06e813ea8f6d34"
+      },
+      {
+        "id": "published-study-02",
+        "path": "sites/conversation-agent-research/dist/data/experiment-02.json",
+        "sha256": "0994eb6075028831f75e1de974f5c8127ff63ea50271499dba6a7af23060ae65"
+      }
+    ]
+  }
+}

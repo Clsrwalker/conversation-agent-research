@@ -1,0 +1,1686 @@
+{
+  "schema_version": 1,
+  "id": "harness-architecture-evidence",
+  "title": "Current agent-led harness architecture and execution logic",
+  "reviewed_on": "2026-10-10",
+  "timezone": "America/Halifax",
+  "record_type": "Read-only source audit supporting architecture diagrams; no new model run or execution test.",
+  "scope": {
+    "included_configurations": [
+      "agent-led",
+      "agent-led-recovery",
+      "agent-led-progress"
+    ],
+    "research_reference": "agent-led-recovery",
+    "excluded_from_this_diagram": [
+      "The native preset with boundary_input disabled",
+      "Earlier strict orchestration/task-contract implementations",
+      "Live microphone or real ASR deployment",
+      "A currently running node trace"
+    ],
+    "interpretation": "Architecture components and decision-flow nodes are explanatory decompositions, not additional LangGraph nodes or a prescribed search-read-answer sequence."
+  },
+  "actual_outer_graph": {
+    "nodes": [
+      "__start__",
+      "observe",
+      "investigate",
+      "__end__"
+    ],
+    "edges": [
+      {
+        "from": "__start__",
+        "to": "observe"
+      },
+      {
+        "from": "observe",
+        "to": "investigate",
+        "condition": "stop_reason absent"
+      },
+      {
+        "from": "observe",
+        "to": "__end__",
+        "condition": "stop_reason present"
+      },
+      {
+        "from": "investigate",
+        "to": "observe"
+      }
+    ],
+    "evidence": [
+      {
+        "source_id": "agent-led",
+        "start_line": 118,
+        "end_line": 124
+      }
+    ]
+  },
+  "recorded_native_structure": {
+    "nodes": [
+      "__start__",
+      "PatchToolCallsMiddleware.before_agent",
+      "EventBoundary.before_model",
+      "model",
+      "tools",
+      "__end__"
+    ],
+    "meaning": "An already exported native graph corroborates the implementation structure. Conditional edges show possible routing, not proof a node was visited in a particular run.",
+    "evidence": [
+      {
+        "source_id": "recorded-native-graph",
+        "note": "outer and investigator graph objects"
+      },
+      {
+        "source_id": "native-tool-patching",
+        "start_line": 11,
+        "end_line": 52
+      }
+    ]
+  },
+  "components": [
+    {
+      "id": "A1",
+      "title": "Timestamped conversation events",
+      "layer": "replay",
+      "description": "Authored conversation events enter the replay timeline. Partial/final-style labels are fixture data, not a live ASR integration.",
+      "evidence": [
+        {
+          "source_id": "replay",
+          "start_line": 149,
+          "end_line": 168
+        },
+        {
+          "source_id": "readme"
+        }
+      ]
+    },
+    {
+      "id": "A2",
+      "title": "Replay scheduler and pending jobs",
+      "layer": "replay",
+      "description": "The virtual clock advances to conversation arrivals, pending-job due times or the observation deadline. Completed retrieval jobs become arrived environment events.",
+      "evidence": [
+        {
+          "source_id": "replay",
+          "start_line": 180,
+          "end_line": 204
+        },
+        {
+          "source_id": "world",
+          "start_line": 212,
+          "end_line": 215
+        }
+      ],
+      "details": [
+        "Allowed fixture documents are kept in the environment; the full future fixture is not sent to the agent.",
+        "Search/read acknowledgements and their later evidence arrivals are separate events.",
+        "A completed model call also advances virtual time and can make events arrive."
+      ]
+    },
+    {
+      "id": "A3",
+      "title": "Outer observe router",
+      "layer": "orchestration",
+      "description": "Checks paired messages, the deadline and model budget; obtains unseen arrivals; optionally delivers recovery feedback; advances the clock when idle; routes to investigate or END.",
+      "evidence": [
+        {
+          "source_id": "agent-led",
+          "start_line": 81,
+          "end_line": 124
+        }
+      ],
+      "actual_graph_node": "observe",
+      "details": [
+        "Actual outer graph: START to observe; observe conditionally to investigate or END; investigate always returns to observe.",
+        "An ordinary model final response does not itself end the outer run."
+      ]
+    },
+    {
+      "id": "A4",
+      "title": "Before-model event boundary",
+      "layer": "investigator",
+      "description": "After the current tool batch is complete, checks the deadline and budget, verifies tool-message pairing, and inserts newly arrived observations before the next model inference.",
+      "evidence": [
+        {
+          "source_id": "agent-core",
+          "start_line": 124,
+          "end_line": 139
+        },
+        {
+          "source_id": "agent-core",
+          "start_line": 180,
+          "end_line": 207
+        }
+      ],
+      "actual_graph_node": "EventBoundary.before_model"
+    },
+    {
+      "id": "A5",
+      "title": "Native context preparation",
+      "layer": "investigator",
+      "description": "Deep Agents keeps its native filesystem/context middleware and automatic summarization capability. Custom event/progress middleware is inserted after the core middleware stack.",
+      "evidence": [
+        {
+          "source_id": "native-deepagents-stack",
+          "start_line": 879,
+          "end_line": 950
+        },
+        {
+          "source_id": "native-deepagents-stack",
+          "start_line": 205,
+          "end_line": 239
+        },
+        {
+          "source_id": "native-summarization",
+          "start_line": 1520,
+          "end_line": 1604
+        }
+      ],
+      "details": [
+        "Context middleware is an implementation component, not a required evidence-analysis stage.",
+        "Summarization can make another model call; model accounting counts actual starts.",
+        "The saved native graph includes PatchToolCallsMiddleware.before_agent, which handles dangling tool-call records before agent entry."
+      ]
+    },
+    {
+      "id": "A6",
+      "title": "Optional progress projection",
+      "layer": "optional_mechanism",
+      "description": "For agent-led-progress only, derives bounded facts from the already prepared visible messages and appends one temporary HumanMessage to the scheduled model request.",
+      "evidence": [
+        {
+          "source_id": "agent-led",
+          "start_line": 70,
+          "end_line": 78
+        },
+        {
+          "source_id": "progress",
+          "start_line": 144,
+          "end_line": 181
+        }
+      ],
+      "details": [
+        "Does not modify durable message history or add a decision turn.",
+        "No access to WorldStore, unread documents or hidden future events.",
+        "Compacted or absent history remains unknown; matching source IDs do not establish unchanged or sufficient evidence.",
+        "Six recent rows per category and 6000 characters overall bound the added record."
+      ]
+    },
+    {
+      "id": "A7",
+      "title": "Investigator model",
+      "layer": "investigator",
+      "description": "One native Deep Agent chooses tool calls or ordinary final prose. The configured general-purpose subagent is disabled. The model decides whether to investigate, publish, change approach or stay silent.",
+      "evidence": [
+        {
+          "source_id": "agent-led",
+          "start_line": 32,
+          "end_line": 78
+        },
+        {
+          "source_id": "configuration",
+          "start_line": 39,
+          "end_line": 53
+        }
+      ],
+      "details": [
+        "The local default provider is Ollama and the default model is Qwen2.5 14B Instruct.",
+        "Accounting reserves each actual request before dispatch and records usage, duration and outcome on completion or failure.",
+        "Ordinary final prose stays private and ends only the investigator turn."
+      ]
+    },
+    {
+      "id": "A8",
+      "title": "Native tool dispatcher",
+      "layer": "investigator",
+      "description": "Executes the model tool-call batch and returns the matching ToolMessages. When ordinary tools finish, the inner loop returns through the event boundary for another decision.",
+      "evidence": [
+        {
+          "source_id": "native-agent-factory",
+          "start_line": 1991,
+          "end_line": 2042
+        },
+        {
+          "source_id": "native-agent-factory",
+          "start_line": 2072,
+          "end_line": 2111
+        },
+        {
+          "source_id": "agent-core",
+          "start_line": 124,
+          "end_line": 139
+        }
+      ],
+      "actual_graph_node": "tools",
+      "details": [
+        "A tool call can be complete while a delayed search/read evidence job is still pending.",
+        "The native loop exits after a batch only if every executed client tool has return_direct=True.",
+        "A wait-only batch normally exits the investigator; a mixed wait-plus-ordinary-tool batch normally continues to the model."
+      ]
+    },
+    {
+      "id": "A9",
+      "title": "Delayed retrieval tools",
+      "layer": "tools",
+      "description": "Search and read_document start pending jobs and immediately return their receipts. Search returns up to three diagnostic lexical-overlap excerpts; a requested full document arrives later.",
+      "evidence": [
+        {
+          "source_id": "agent-core",
+          "start_line": 215,
+          "end_line": 226
+        },
+        {
+          "source_id": "replay",
+          "start_line": 206,
+          "end_line": 232
+        },
+        {
+          "source_id": "replay",
+          "start_line": 244,
+          "end_line": 282
+        }
+      ],
+      "details": [
+        "An unavailable source ID and an empty query return retryable failures with no job started.",
+        "Search excerpts are bounded to 150 characters and indicate truncation.",
+        "Previously arrived full-source text is not downgraded by later snippets."
+      ]
+    },
+    {
+      "id": "A10",
+      "title": "Optional aids and private notes",
+      "layer": "tools",
+      "description": "The agent may calculate, request evidence advice or save private notes. Arithmetic checks only the supplied operation; evidence advice uses arrived context and is not publication approval.",
+      "evidence": [
+        {
+          "source_id": "agent-tools",
+          "start_line": 131,
+          "end_line": 212
+        },
+        {
+          "source_id": "agent-core",
+          "start_line": 246,
+          "end_line": 262
+        }
+      ],
+      "details": [
+        "evidence_check can invoke the same review model with the evidence_advice role and uses the shared model budget.",
+        "New events during advice are reported to the agent.",
+        "Virtual filesystem content and notes are private work, not external evidence."
+      ]
+    },
+    {
+      "id": "A11",
+      "title": "Guarded card operations",
+      "layer": "tools",
+      "description": "Publication, updates and withdrawal are checked against the observation cursor and the card snapshot actually delivered to the agent. Tool outcomes are returned for the agent to reconsider, not automatically retried.",
+      "evidence": [
+        {
+          "source_id": "agent-tools",
+          "start_line": 61,
+          "end_line": 106
+        },
+        {
+          "source_id": "agent-tools",
+          "start_line": 215,
+          "end_line": 261
+        },
+        {
+          "source_id": "world",
+          "start_line": 297,
+          "end_line": 344
+        }
+      ],
+      "details": [
+        "Empty text is not published. Unknown requested citation IDs are omitted and reported.",
+        "New unread conversation or source arrivals return new_observations.",
+        "A changed card returns conflict and the current snapshot.",
+        "Exactly matching text and citations can return unchanged without replacing the existing card.",
+        "These checks protect state consistency, not factual correctness."
+      ]
+    },
+    {
+      "id": "A12",
+      "title": "Active help cards",
+      "layer": "display",
+      "description": "Explicit card actions create, update or withdraw visible help. Private model prose does not appear here, and the presence of a card does not imply a correct answer.",
+      "evidence": [
+        {
+          "source_id": "agent-led",
+          "start_line": 50,
+          "end_line": 53
+        },
+        {
+          "source_id": "replay",
+          "start_line": 301,
+          "end_line": 316
+        }
+      ]
+    },
+    {
+      "id": "A13",
+      "title": "LangGraph checkpoints",
+      "layer": "persistence",
+      "description": "checkpoints.sqlite saves graph and native-subgraph execution state. The parent owns the checkpointer and agent-led execution uses synchronous checkpoint durability.",
+      "evidence": [
+        {
+          "source_id": "agent-led",
+          "start_line": 74,
+          "end_line": 78
+        },
+        {
+          "source_id": "agent-led",
+          "start_line": 118,
+          "end_line": 124
+        },
+        {
+          "source_id": "run",
+          "start_line": 173,
+          "end_line": 189
+        }
+      ],
+      "details": [
+        "Checkpoint state includes execution/message state and the observation/recovery cursors.",
+        "This database is separate from the world transaction ledger.",
+        "A checkpoint is a saved execution state, not a semantic milestone or correctness certificate."
+      ]
+    },
+    {
+      "id": "A14",
+      "title": "Durable world and call ledger",
+      "layer": "persistence",
+      "description": "world.sqlite holds replay state, pending jobs, arrived sources, active cards, tool results and model-call accounting. Local action effects and the corresponding tool receipt are committed together.",
+      "evidence": [
+        {
+          "source_id": "world",
+          "start_line": 57,
+          "end_line": 145
+        },
+        {
+          "source_id": "world",
+          "start_line": 288,
+          "end_line": 399
+        }
+      ],
+      "details": [
+        "A cached tool call ID must match its original operation and arguments.",
+        "Model calls are reserved with pending outcome before dispatch; a previously reserved ID cannot be resent by this module.",
+        "Recorded token usage is checked before a request; the token cap is soft and unknown usage can add cost.",
+        "Completed calls advance virtual time, separately from measured wall duration."
+      ]
+    },
+    {
+      "id": "A15",
+      "title": "Monitor and exported records",
+      "layer": "observability",
+      "description": "Runtime callbacks export the compiled graph and events; the loopback-only monitor reads saved run data. The published website uses selected historical exports.",
+      "evidence": [
+        {
+          "source_id": "run",
+          "start_line": 166,
+          "end_line": 179
+        },
+        {
+          "source_id": "run",
+          "start_line": 198,
+          "end_line": 225
+        },
+        {
+          "source_id": "monitor",
+          "start_line": 19,
+          "end_line": 80
+        },
+        {
+          "source_id": "monitor-store",
+          "start_line": 1,
+          "end_line": 4
+        }
+      ],
+      "details": [
+        "Read-only observability does not launch or control the model.",
+        "A saved graph describes possible structure, not proof that each node was visited.",
+        "Local runs do not automatically upload to the research website."
+      ]
+    }
+  ],
+  "architecture_edges": [
+    {
+      "from": "A1",
+      "to": "A2",
+      "label": "Timestamped input events",
+      "kind": "control_or_data",
+      "evidence": [
+        {
+          "source_id": "replay",
+          "start_line": 149,
+          "end_line": 204
+        }
+      ]
+    },
+    {
+      "from": "A2",
+      "to": "A3",
+      "label": "Only arrived events",
+      "kind": "control_or_data",
+      "evidence": [
+        {
+          "source_id": "world",
+          "start_line": 190,
+          "end_line": 205
+        }
+      ]
+    },
+    {
+      "from": "A3",
+      "to": "A4",
+      "label": "Enter investigator",
+      "kind": "control_or_data",
+      "evidence": [
+        {
+          "source_id": "agent-led",
+          "start_line": 115,
+          "end_line": 123
+        }
+      ]
+    },
+    {
+      "from": "A4",
+      "to": "A5",
+      "label": "Continue after guard and completed-batch check",
+      "kind": "control_or_data",
+      "evidence": [
+        {
+          "source_id": "agent-core",
+          "start_line": 188,
+          "end_line": 207
+        }
+      ]
+    },
+    {
+      "from": "A5",
+      "to": "A6",
+      "label": "Prepared visible request",
+      "kind": "control_or_data",
+      "evidence": [
+        {
+          "source_id": "native-deepagents-stack",
+          "start_line": 901,
+          "end_line": 950
+        },
+        {
+          "source_id": "progress",
+          "start_line": 178,
+          "end_line": 181
+        }
+      ],
+      "condition": "investigation_progress enabled"
+    },
+    {
+      "from": "A6",
+      "to": "A7",
+      "label": "Request plus transient progress facts",
+      "kind": "control_or_data",
+      "evidence": [
+        {
+          "source_id": "progress",
+          "start_line": 175,
+          "end_line": 181
+        }
+      ],
+      "condition": "agent-led-progress"
+    },
+    {
+      "from": "A5",
+      "to": "A7",
+      "label": "Prepared request without progress",
+      "kind": "control_or_data",
+      "evidence": [
+        {
+          "source_id": "agent-led",
+          "start_line": 70,
+          "end_line": 78
+        }
+      ],
+      "condition": "progress disabled"
+    },
+    {
+      "from": "A7",
+      "to": "A8",
+      "label": "Tool calls requested",
+      "kind": "control_or_data",
+      "evidence": [
+        {
+          "source_id": "native-agent-factory",
+          "start_line": 2016,
+          "end_line": 2032
+        }
+      ]
+    },
+    {
+      "from": "A8",
+      "to": "A9",
+      "label": "Search or read",
+      "kind": "control_or_data",
+      "evidence": [
+        {
+          "source_id": "agent-core",
+          "start_line": 215,
+          "end_line": 226
+        }
+      ]
+    },
+    {
+      "from": "A9",
+      "to": "A8",
+      "label": "Immediate receipt or error",
+      "kind": "control_or_data",
+      "evidence": [
+        {
+          "source_id": "replay",
+          "start_line": 244,
+          "end_line": 282
+        }
+      ]
+    },
+    {
+      "from": "A9",
+      "to": "A2",
+      "label": "New pending evidence job",
+      "kind": "control_or_data",
+      "evidence": [
+        {
+          "source_id": "replay",
+          "start_line": 276,
+          "end_line": 282
+        }
+      ]
+    },
+    {
+      "from": "A8",
+      "to": "A10",
+      "label": "Optional aid or notes",
+      "kind": "control_or_data",
+      "evidence": [
+        {
+          "source_id": "agent-tools",
+          "start_line": 131,
+          "end_line": 212
+        }
+      ]
+    },
+    {
+      "from": "A10",
+      "to": "A8",
+      "label": "Calculated result, advice or receipt",
+      "kind": "control_or_data",
+      "evidence": [
+        {
+          "source_id": "agent-tools",
+          "start_line": 137,
+          "end_line": 212
+        }
+      ]
+    },
+    {
+      "from": "A10",
+      "to": "A7",
+      "label": "Separate advice-model request",
+      "kind": "optional_model_call",
+      "evidence": [
+        {
+          "source_id": "agent-tools",
+          "start_line": 192,
+          "end_line": 203
+        }
+      ],
+      "condition": "evidence_check selected; shared budget available"
+    },
+    {
+      "from": "A8",
+      "to": "A11",
+      "label": "Publish, update or withdraw request",
+      "kind": "control_or_data",
+      "evidence": [
+        {
+          "source_id": "agent-tools",
+          "start_line": 215,
+          "end_line": 261
+        }
+      ]
+    },
+    {
+      "from": "A11",
+      "to": "A12",
+      "label": "Committed card change",
+      "kind": "control_or_data",
+      "evidence": [
+        {
+          "source_id": "world",
+          "start_line": 331,
+          "end_line": 343
+        },
+        {
+          "source_id": "replay",
+          "start_line": 301,
+          "end_line": 316
+        }
+      ],
+      "condition": "state checks pass; unchanged preserves existing card"
+    },
+    {
+      "from": "A11",
+      "to": "A8",
+      "label": "Outcome for reconsideration",
+      "kind": "control_or_data",
+      "evidence": [
+        {
+          "source_id": "world",
+          "start_line": 319,
+          "end_line": 344
+        }
+      ]
+    },
+    {
+      "from": "A8",
+      "to": "A4",
+      "label": "Ordinary completed tool batch",
+      "kind": "control_or_data",
+      "evidence": [
+        {
+          "source_id": "native-agent-factory",
+          "start_line": 2086,
+          "end_line": 2109
+        }
+      ],
+      "condition": "not all executed client tools are return_direct"
+    },
+    {
+      "from": "A8",
+      "to": "A3",
+      "label": "Investigator turn ends",
+      "kind": "control_or_data",
+      "evidence": [
+        {
+          "source_id": "native-agent-factory",
+          "start_line": 2086,
+          "end_line": 2100
+        },
+        {
+          "source_id": "agent-led",
+          "start_line": 123,
+          "end_line": 123
+        }
+      ],
+      "condition": "all executed client tools are return_direct"
+    },
+    {
+      "from": "A7",
+      "to": "A3",
+      "label": "Private final prose; investigator ends",
+      "kind": "control_or_data",
+      "evidence": [
+        {
+          "source_id": "native-agent-factory",
+          "start_line": 2016,
+          "end_line": 2019
+        },
+        {
+          "source_id": "agent-led",
+          "start_line": 123,
+          "end_line": 123
+        }
+      ],
+      "condition": "model returns no tool calls"
+    },
+    {
+      "from": "A3",
+      "to": "A2",
+      "label": "Advance to next event or deadline",
+      "kind": "control_or_data",
+      "evidence": [
+        {
+          "source_id": "agent-led",
+          "start_line": 107,
+          "end_line": 110
+        },
+        {
+          "source_id": "world",
+          "start_line": 212,
+          "end_line": 215
+        }
+      ],
+      "condition": "no unread arrivals and no eligible recovery feedback"
+    },
+    {
+      "from": "A14",
+      "to": "A3",
+      "label": "Optional retrieval recovery facts",
+      "kind": "optional_feedback",
+      "evidence": [
+        {
+          "source_id": "world",
+          "start_line": 217,
+          "end_line": 276
+        },
+        {
+          "source_id": "agent-led",
+          "start_line": 97,
+          "end_line": 106
+        }
+      ]
+    },
+    {
+      "from": "A3",
+      "to": "A13",
+      "label": "Persist parent and native execution state",
+      "kind": "persistence",
+      "evidence": [
+        {
+          "source_id": "agent-led",
+          "start_line": 74,
+          "end_line": 78
+        },
+        {
+          "source_id": "run",
+          "start_line": 173,
+          "end_line": 189
+        }
+      ]
+    },
+    {
+      "from": "A7",
+      "to": "A14",
+      "label": "Reserve, then finish every model request",
+      "kind": "accounting",
+      "evidence": [
+        {
+          "source_id": "agent-core",
+          "start_line": 150,
+          "end_line": 177
+        },
+        {
+          "source_id": "world",
+          "start_line": 346,
+          "end_line": 399
+        }
+      ]
+    },
+    {
+      "from": "A2",
+      "to": "A14",
+      "label": "Persist replay state and job arrivals",
+      "kind": "persistence",
+      "evidence": [
+        {
+          "source_id": "world",
+          "start_line": 134,
+          "end_line": 145
+        },
+        {
+          "source_id": "world",
+          "start_line": 212,
+          "end_line": 215
+        }
+      ]
+    },
+    {
+      "from": "A8",
+      "to": "A14",
+      "label": "Transactional tool receipt and local effects",
+      "kind": "persistence",
+      "evidence": [
+        {
+          "source_id": "world",
+          "start_line": 288,
+          "end_line": 344
+        }
+      ]
+    },
+    {
+      "from": "A11",
+      "to": "A14",
+      "label": "Card change plus deduplication receipt",
+      "kind": "persistence",
+      "evidence": [
+        {
+          "source_id": "world",
+          "start_line": 313,
+          "end_line": 344
+        }
+      ]
+    },
+    {
+      "from": "A13",
+      "to": "A15",
+      "label": "Checkpoint inspection",
+      "kind": "observability",
+      "evidence": [
+        {
+          "source_id": "run",
+          "start_line": 198,
+          "end_line": 218
+        },
+        {
+          "source_id": "monitor-store",
+          "start_line": 1,
+          "end_line": 4
+        }
+      ]
+    },
+    {
+      "from": "A14",
+      "to": "A15",
+      "label": "Run records and accounting",
+      "kind": "observability",
+      "evidence": [
+        {
+          "source_id": "run",
+          "start_line": 198,
+          "end_line": 225
+        },
+        {
+          "source_id": "monitor-store",
+          "start_line": 1,
+          "end_line": 4
+        }
+      ]
+    },
+    {
+      "from": "A7",
+      "to": "A15",
+      "label": "Runtime callbacks",
+      "kind": "observability",
+      "evidence": [
+        {
+          "source_id": "run",
+          "start_line": 166,
+          "end_line": 179
+        }
+      ]
+    }
+  ],
+  "decision_flow": {
+    "nodes": [
+      {
+        "id": "D1",
+        "title": "Observe: paired messages and terminal guards",
+        "layer": "outer_flow",
+        "description": "Confirm tool-message pairing; if the window is closed or known budget exhausted, set a stop reason. Otherwise obtain observations.",
+        "evidence": [
+          {
+            "source_id": "agent-led",
+            "start_line": 81,
+            "end_line": 89
+          }
+        ]
+      },
+      {
+        "id": "D2",
+        "title": "Any unseen arrived events?",
+        "layer": "decision",
+        "description": "Read only environment arrivals newer than event_cursor; payload also includes active cards, notes and pending jobs.",
+        "evidence": [
+          {
+            "source_id": "agent-led",
+            "start_line": 89,
+            "end_line": 90
+          },
+          {
+            "source_id": "world",
+            "start_line": 190,
+            "end_line": 205
+          }
+        ]
+      },
+      {
+        "id": "D3",
+        "title": "Eligible optional recovery?",
+        "layer": "decision",
+        "description": "Requires the configured recovery switch, an idle final model response and no explicit wait in the latest tool-call batch, followed by the durable eligibility rules.",
+        "evidence": [
+          {
+            "source_id": "agent-led",
+            "start_line": 91,
+            "end_line": 106
+          },
+          {
+            "source_id": "world",
+            "start_line": 217,
+            "end_line": 276
+          }
+        ]
+      },
+      {
+        "id": "D4",
+        "title": "Advance virtual time",
+        "layer": "outer_flow",
+        "description": "Advance to the next conversation event, evidence-job due time or deadline, then obtain arrived observations. No new inference is needed for this advance.",
+        "evidence": [
+          {
+            "source_id": "agent-led",
+            "start_line": 107,
+            "end_line": 110
+          },
+          {
+            "source_id": "world",
+            "start_line": 212,
+            "end_line": 215
+          },
+          {
+            "source_id": "replay",
+            "start_line": 180,
+            "end_line": 204
+          }
+        ]
+      },
+      {
+        "id": "D5",
+        "title": "Append observation or recovery message",
+        "layer": "outer_flow",
+        "description": "Persist the relevant cursor and message in graph state before entering investigate. Recovery feedback uses its own acknowledgement cursor.",
+        "evidence": [
+          {
+            "source_id": "agent-led",
+            "start_line": 101,
+            "end_line": 113
+          }
+        ]
+      },
+      {
+        "id": "D6",
+        "title": "Before-model event boundary",
+        "layer": "decision",
+        "description": "Check window/budget again, require a completed tool batch, and insert arrivals received since the prior observation before inference.",
+        "evidence": [
+          {
+            "source_id": "agent-core",
+            "start_line": 188,
+            "end_line": 202
+          }
+        ]
+      },
+      {
+        "id": "D7",
+        "title": "Prepare, reserve and call model",
+        "layer": "model_request",
+        "description": "Native context preparation and optional progress precede the request. Accounting reserves it durably before dispatch, then records known usage, duration and outcome; completed calls advance replay time.",
+        "evidence": [
+          {
+            "source_id": "progress",
+            "start_line": 175,
+            "end_line": 181
+          },
+          {
+            "source_id": "agent-core",
+            "start_line": 150,
+            "end_line": 177
+          },
+          {
+            "source_id": "world",
+            "start_line": 346,
+            "end_line": 399
+          }
+        ]
+      },
+      {
+        "id": "D8",
+        "title": "Did the model request tools?",
+        "layer": "decision",
+        "description": "No tool calls ends the investigator turn. Pending tool calls are dispatched through the native ToolNode.",
+        "evidence": [
+          {
+            "source_id": "native-agent-factory",
+            "start_line": 2010,
+            "end_line": 2032
+          }
+        ]
+      },
+      {
+        "id": "D9",
+        "title": "Execute the complete tool batch",
+        "layer": "tool_batch",
+        "description": "Each selected tool returns its receipt or result. Search/read receipts can describe jobs that remain pending after the batch has completed.",
+        "evidence": [
+          {
+            "source_id": "native-agent-factory",
+            "start_line": 2021,
+            "end_line": 2032
+          },
+          {
+            "source_id": "agent-core",
+            "start_line": 124,
+            "end_line": 139
+          },
+          {
+            "source_id": "replay",
+            "start_line": 276,
+            "end_line": 282
+          }
+        ]
+      },
+      {
+        "id": "D10",
+        "title": "All executed tools return_direct?",
+        "layer": "decision",
+        "description": "Only an all-return-direct batch exits the native loop. wait_for_event is return_direct; mixing it with an ordinary tool normally continues the loop.",
+        "evidence": [
+          {
+            "source_id": "agent-core",
+            "start_line": 228,
+            "end_line": 238
+          },
+          {
+            "source_id": "native-agent-factory",
+            "start_line": 2086,
+            "end_line": 2109
+          }
+        ]
+      },
+      {
+        "id": "D11",
+        "title": "Investigator turn ends",
+        "layer": "outer_flow",
+        "description": "Return control to observe. This is not itself a run-terminal condition; a new event may trigger another investigator turn.",
+        "evidence": [
+          {
+            "source_id": "agent-led",
+            "start_line": 118,
+            "end_line": 124
+          }
+        ]
+      },
+      {
+        "id": "D12",
+        "title": "Finish or suspend the run",
+        "layer": "terminal",
+        "description": "Normal terminal reasons are window_closed and budget_exhausted. Exceptions are recorded as errors; deliberate graph interruption retains next nodes and is exported as paused.",
+        "evidence": [
+          {
+            "source_id": "agent-led",
+            "start_line": 83,
+            "end_line": 88
+          },
+          {
+            "source_id": "run",
+            "start_line": 190,
+            "end_line": 225
+          }
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "from": "START",
+        "to": "D1",
+        "label": "Start or resume outer flow",
+        "kind": "control_or_data",
+        "evidence": [
+          {
+            "source_id": "agent-led",
+            "start_line": 121,
+            "end_line": 121
+          },
+          {
+            "source_id": "run",
+            "start_line": 180,
+            "end_line": 189
+          }
+        ]
+      },
+      {
+        "from": "D1",
+        "to": "D12",
+        "label": "Window closed or budget exhausted",
+        "kind": "control_or_data",
+        "evidence": [
+          {
+            "source_id": "agent-led",
+            "start_line": 83,
+            "end_line": 88
+          },
+          {
+            "source_id": "agent-led",
+            "start_line": 115,
+            "end_line": 116
+          }
+        ],
+        "condition": "terminal guard true"
+      },
+      {
+        "from": "D1",
+        "to": "D2",
+        "label": "Continue",
+        "kind": "control_or_data",
+        "evidence": [
+          {
+            "source_id": "agent-led",
+            "start_line": 89,
+            "end_line": 90
+          }
+        ],
+        "condition": "guards pass"
+      },
+      {
+        "from": "D2",
+        "to": "D5",
+        "label": "Deliver new observation",
+        "kind": "control_or_data",
+        "evidence": [
+          {
+            "source_id": "agent-led",
+            "start_line": 89,
+            "end_line": 113
+          }
+        ],
+        "condition": "unseen arrivals exist"
+      },
+      {
+        "from": "D2",
+        "to": "D3",
+        "label": "No new arrival",
+        "kind": "control_or_data",
+        "evidence": [
+          {
+            "source_id": "agent-led",
+            "start_line": 90,
+            "end_line": 100
+          }
+        ],
+        "condition": "no unseen arrival"
+      },
+      {
+        "from": "D3",
+        "to": "D5",
+        "label": "Deliver eligible feedback",
+        "kind": "control_or_data",
+        "evidence": [
+          {
+            "source_id": "agent-led",
+            "start_line": 101,
+            "end_line": 106
+          }
+        ],
+        "condition": "recovery message available"
+      },
+      {
+        "from": "D3",
+        "to": "D4",
+        "label": "No recovery offered",
+        "kind": "control_or_data",
+        "evidence": [
+          {
+            "source_id": "agent-led",
+            "start_line": 97,
+            "end_line": 108
+          }
+        ],
+        "condition": "recovery unavailable or disabled"
+      },
+      {
+        "from": "D4",
+        "to": "D12",
+        "label": "Deadline reached",
+        "kind": "control_or_data",
+        "evidence": [
+          {
+            "source_id": "agent-led",
+            "start_line": 109,
+            "end_line": 110
+          }
+        ],
+        "condition": "world.done"
+      },
+      {
+        "from": "D4",
+        "to": "D5",
+        "label": "Deliver arrived context",
+        "kind": "control_or_data",
+        "evidence": [
+          {
+            "source_id": "agent-led",
+            "start_line": 108,
+            "end_line": 113
+          }
+        ],
+        "condition": "window remains open"
+      },
+      {
+        "from": "D5",
+        "to": "D6",
+        "label": "Enter native investigator",
+        "kind": "control_or_data",
+        "evidence": [
+          {
+            "source_id": "agent-led",
+            "start_line": 115,
+            "end_line": 123
+          },
+          {
+            "source_id": "agent-core",
+            "start_line": 188,
+            "end_line": 202
+          }
+        ]
+      },
+      {
+        "from": "D6",
+        "to": "D11",
+        "label": "Jump to investigator end",
+        "kind": "control_or_data",
+        "evidence": [
+          {
+            "source_id": "agent-core",
+            "start_line": 187,
+            "end_line": 194
+          }
+        ],
+        "condition": "window closed or budget exhausted"
+      },
+      {
+        "from": "D6",
+        "to": "D7",
+        "label": "Prepared model request",
+        "kind": "control_or_data",
+        "evidence": [
+          {
+            "source_id": "agent-core",
+            "start_line": 195,
+            "end_line": 207
+          },
+          {
+            "source_id": "progress",
+            "start_line": 175,
+            "end_line": 181
+          }
+        ],
+        "condition": "guards and pairing pass"
+      },
+      {
+        "from": "D7",
+        "to": "D8",
+        "label": "Model response",
+        "kind": "control_or_data",
+        "evidence": [
+          {
+            "source_id": "agent-core",
+            "start_line": 160,
+            "end_line": 171
+          },
+          {
+            "source_id": "native-agent-factory",
+            "start_line": 2008,
+            "end_line": 2032
+          }
+        ]
+      },
+      {
+        "from": "D7",
+        "to": "D12",
+        "label": "Uncaught request/runtime failure",
+        "kind": "exception",
+        "evidence": [
+          {
+            "source_id": "run",
+            "start_line": 190,
+            "end_line": 218
+          }
+        ],
+        "condition": "including a reservation guard exception; not a successful answer"
+      },
+      {
+        "from": "D8",
+        "to": "D11",
+        "label": "No tool calls",
+        "kind": "control_or_data",
+        "evidence": [
+          {
+            "source_id": "native-agent-factory",
+            "start_line": 2016,
+            "end_line": 2019
+          }
+        ],
+        "condition": "private final prose"
+      },
+      {
+        "from": "D8",
+        "to": "D9",
+        "label": "Pending tool calls",
+        "kind": "control_or_data",
+        "evidence": [
+          {
+            "source_id": "native-agent-factory",
+            "start_line": 2021,
+            "end_line": 2032
+          }
+        ]
+      },
+      {
+        "from": "D9",
+        "to": "D10",
+        "label": "Tool results complete",
+        "kind": "control_or_data",
+        "evidence": [
+          {
+            "source_id": "native-agent-factory",
+            "start_line": 2079,
+            "end_line": 2098
+          }
+        ]
+      },
+      {
+        "from": "D10",
+        "to": "D11",
+        "label": "All direct-return tools",
+        "kind": "control_or_data",
+        "evidence": [
+          {
+            "source_id": "native-agent-factory",
+            "start_line": 2097,
+            "end_line": 2100
+          }
+        ],
+        "condition": "every executed client tool return_direct"
+      },
+      {
+        "from": "D10",
+        "to": "D6",
+        "label": "Continue through boundary",
+        "kind": "control_or_data",
+        "evidence": [
+          {
+            "source_id": "native-agent-factory",
+            "start_line": 2106,
+            "end_line": 2109
+          }
+        ],
+        "condition": "ordinary or mixed batch"
+      },
+      {
+        "from": "D11",
+        "to": "D1",
+        "label": "Outer loop continues",
+        "kind": "control_or_data",
+        "evidence": [
+          {
+            "source_id": "agent-led",
+            "start_line": 123,
+            "end_line": 123
+          }
+        ]
+      }
+    ],
+    "scope_notes": [
+      "START is an external entry marker, not an additional decision node.",
+      "D12 covers normal termination and error/pause reporting, which have distinct outcomes.",
+      "Native tool-routing also supports generic middleware/structured-output paths; this diagram explains the active agent-led use rather than every generic factory branch.",
+      "A graph checkpoint interrupt or uncaught exception can leave the ordinary flow early."
+    ]
+  },
+  "optional_mechanism_flags": {
+    "presets": [
+      {
+        "configuration": "agent-led",
+        "boundary_input": true,
+        "failure_recovery": false,
+        "investigation_progress": false,
+        "worklog_schema_required": false,
+        "mandatory_release_check": false
+      },
+      {
+        "configuration": "agent-led-recovery",
+        "boundary_input": true,
+        "failure_recovery": true,
+        "investigation_progress": false,
+        "worklog_schema_required": false,
+        "mandatory_release_check": false
+      },
+      {
+        "configuration": "agent-led-progress",
+        "boundary_input": true,
+        "failure_recovery": true,
+        "investigation_progress": true,
+        "worklog_schema_required": false,
+        "mandatory_release_check": false
+      }
+    ],
+    "source_refs": [
+      {
+        "source_id": "configuration",
+        "start_line": 19,
+        "end_line": 36
+      }
+    ],
+    "general_purpose_subagent_enabled": false,
+    "calculation_and_evidence_advice": "Available optional tools in every agent-led configuration; neither is a publication prerequisite.",
+    "progress_status": "Experimental configuration, not the adopted research reference."
+  },
+  "recovery_eligibility": {
+    "outer_preconditions": [
+      "No unread arrived events",
+      "failure_recovery enabled",
+      "Last message is AIMessage with no tool_calls",
+      "The latest tool-call batch contains no wait_for_event"
+    ],
+    "world_preconditions": [
+      "Window and shared model budget remain available",
+      "No pending job",
+      "Latest eligible failure is read_document/source_not_available or search/empty_search_query",
+      "Failure explicitly reports job_started=false and retryable=true",
+      "No later environment arrival",
+      "No later successful wait, pending retrieval start, displayed/unchanged publication or successful withdrawal"
+    ],
+    "delivery_rule": "At most one issued feedback event per conversation revision. If an issued event has not been acknowledged by the parent checkpoint cursor, the same event is redelivered; it is not a new retry allowance.",
+    "meaning": "Optional factual continuation opportunity, not a retry action, an answer-quality judgment or an instruction to publish.",
+    "evidence": [
+      {
+        "source_id": "agent-led",
+        "start_line": 89,
+        "end_line": 106
+      },
+      {
+        "source_id": "world",
+        "start_line": 217,
+        "end_line": 276
+      }
+    ]
+  },
+  "card_operation_routes": {
+    "inputs": "Text plus optional citations and card ID; withdrawal names an observed card. The runtime supplies the observation cursor and observed card snapshot.",
+    "ordered_routes": [
+      {
+        "condition": "Same stable tool call ID already recorded with matching name/arguments",
+        "outcome": "Return cached result without applying the local action again"
+      },
+      {
+        "condition": "Publish text is empty",
+        "outcome": "not_published; no display change"
+      },
+      {
+        "condition": "Unseen conversation or source arrival newer than cursor",
+        "outcome": "new_observations; no card change"
+      },
+      {
+        "condition": "Current card differs from the snapshot the agent saw",
+        "outcome": "conflict plus current_card; no automatic replacement or retry"
+      },
+      {
+        "condition": "Publishing identical text and citation list to the unchanged observed active card while window is open",
+        "outcome": "unchanged; retain existing card"
+      },
+      {
+        "condition": "Remaining publication/withdrawal request passes replay action checks",
+        "outcome": "displayed/card_created/card_updated or withdrawn"
+      },
+      {
+        "condition": "Replay action rejected, such as closed observation window or inactive withdrawal target",
+        "outcome": "Error tool result; no requested action applied"
+      }
+    ],
+    "citation_handling": "Unknown requested source IDs are omitted and reported. Valid or present source IDs do not establish factual correctness.",
+    "next_control": "The result returns in the tool batch; the agent decides whether to reconsider or change action. No approval gate or automatic retry is added.",
+    "storage": "Local card effects and their tool receipt share the WorldStore transaction; graph checkpoints are a separate database.",
+    "evidence": [
+      {
+        "source_id": "agent-tools",
+        "start_line": 61,
+        "end_line": 106
+      },
+      {
+        "source_id": "agent-tools",
+        "start_line": 215,
+        "end_line": 261
+      },
+      {
+        "source_id": "world",
+        "start_line": 288,
+        "end_line": 344
+      },
+      {
+        "source_id": "replay",
+        "start_line": 241,
+        "end_line": 243
+      },
+      {
+        "source_id": "replay",
+        "start_line": 301,
+        "end_line": 316
+      }
+    ]
+  },
+  "model_request_durability": {
+    "before_dispatch": "Accounting persists a pending reservation, request role and known-budget limits. Duplicate reserved call IDs are rejected, not resent.",
+    "after_completion": "Known usage, measured wall duration and outcome are persisted. Completed calls advance simulated time and may make queued events arrive.",
+    "after_failure": "A failure outcome is recorded when the callback can finish it. Unknown/pending calls remain counted. Non-scripted resume refuses runs with failed or unfinished calls.",
+    "limits": "Known usage is checked before each request. A final request can exceed the soft token budget; unknown usage may add cost. The ledger does not guarantee exactly-once network effects or zero re-computation after every crash.",
+    "evidence": [
+      {
+        "source_id": "agent-core",
+        "start_line": 142,
+        "end_line": 177
+      },
+      {
+        "source_id": "world",
+        "start_line": 346,
+        "end_line": 399
+      },
+      {
+        "source_id": "run",
+        "start_line": 114,
+        "end_line": 127
+      },
+      {
+        "source_id": "run",
+        "start_line": 154,
+        "end_line": 157
+      }
+    ]
+  },
+  "critical_distinctions": [
+    "A completed tool receipt is distinct from a completed delayed evidence job.",
+    "A wait-only batch and a mixed wait-plus-ordinary-tool batch can take different native routes.",
+    "An investigator turn ending is distinct from the whole replay run ending.",
+    "A transient progress projection is distinct from durable history or another model decision.",
+    "A card-state rejection is feedback for the agent, not an automatic retry or semantic release approval.",
+    "Graph checkpoints and WorldStore actions use separate databases; local transaction guarantees do not extend to model-provider requests.",
+    "A saved graph, a finished run or a valid card commit is not evidence of a correct or useful answer."
+  ],
+  "limitations": [
+    "This describes the current source and installed native routing code inspected on the review date, not a new behavioral test.",
+    "The prototype uses synthetic replay, fictional documents and diagnostic retrieval. No live microphone, real ASR, live web retrieval or human benefit is established.",
+    "Automatic context preparation exists, but a component appearing in the architecture does not mean it fired in the held-out study.",
+    "The detailed component graph is a documented interpretation of the source. The actual compiled outer graph still has only observe and investigate between start and end.",
+    "No private model request, response, reasoning, credentials or personal conversation content is included in this evidence record."
+  ],
+  "review_method": {
+    "source_inspection": true,
+    "new_model_runs": 0,
+    "new_execution_tests": 0,
+    "existing_artifact_read": "Saved compiled graph only; no new run or replay was executed."
+  },
+  "provenance": {
+    "path_convention": "Repository-relative file paths. Files under .venv are installed dependency source read locally for exact routing; paths are not public download URLs.",
+    "hash_algorithm": "SHA-256 of source-file bytes at review time.",
+    "sources": [
+      {
+        "id": "agent-led",
+        "path": "experiments/deep_conversation/agent_led.py",
+        "sha256": "a395270ce897952d68fba6f6f26e4763f45a7ec40e9abaa34efd222b4ae27cb8"
+      },
+      {
+        "id": "agent-core",
+        "path": "experiments/deep_conversation/agent.py",
+        "sha256": "4f3a83c53bce2748df44b73fd70d291ee79b0a92aa940fd164daed51b0c71409"
+      },
+      {
+        "id": "agent-tools",
+        "path": "experiments/deep_conversation/agent_led_tools.py",
+        "sha256": "358057cfdab5fb53b4f7f8dd8c687bf6fbfa96852b4f8d66d0d195695136ea09"
+      },
+      {
+        "id": "world",
+        "path": "experiments/deep_conversation/world.py",
+        "sha256": "55f5d787121392d03fa8789216486b3ca09f61cbc5c56368a9ffd2809e87dbd3"
+      },
+      {
+        "id": "run",
+        "path": "experiments/deep_conversation/run.py",
+        "sha256": "decf80fe9780f6d26776cf61a594ef84bd535161d1ba8902363f9ea3d18260db"
+      },
+      {
+        "id": "configuration",
+        "path": "experiments/deep_conversation/config.py",
+        "sha256": "2227806d3389039291ffa57af2e0953700933dc94b6f284d1090a792fe5c59b6"
+      },
+      {
+        "id": "progress",
+        "path": "experiments/deep_conversation/investigation_progress.py",
+        "sha256": "0798c2ff2a3c1e2ef9e630a1bca7f1ec1fcfcb44f5d7815c39717708d1ff1d84"
+      },
+      {
+        "id": "replay",
+        "path": "experiments/conversation_harness/runner.py",
+        "sha256": "fd451f5d50792212a28d8ac81d81d428cde789d1ba31222abc22b13d8ac3ee30"
+      },
+      {
+        "id": "native-agent-factory",
+        "path": "experiments/deep_conversation/.venv/Lib/site-packages/langchain/agents/factory.py",
+        "sha256": "cc4a7d9a620224558c4eddd4e13edc988a9ac9e328b7a67deeb71ed2c5ec5174"
+      },
+      {
+        "id": "native-deepagents-stack",
+        "path": "experiments/deep_conversation/.venv/Lib/site-packages/deepagents/graph.py",
+        "sha256": "1972d98908a6d061128b3b260458f04637d38f70a4afbe0a71687aae1b303be8"
+      },
+      {
+        "id": "native-tool-patching",
+        "path": "experiments/deep_conversation/.venv/Lib/site-packages/deepagents/middleware/patch_tool_calls.py",
+        "sha256": "a989963b68d828012cc411e1e75e4507f15665c029d9202423f9ec0fe9494071"
+      },
+      {
+        "id": "native-summarization",
+        "path": "experiments/deep_conversation/.venv/Lib/site-packages/deepagents/middleware/summarization.py",
+        "sha256": "8741655f9da6be6714026d4ceb6a37903127ec0b5429f083f001d7c53374f53d"
+      },
+      {
+        "id": "monitor",
+        "path": "experiments/deep_conversation/monitor.py",
+        "sha256": "38ecda173b2a196357b6f9124fec20b26151cca9e62c06eaee59e96782e2e3e4"
+      },
+      {
+        "id": "monitor-store",
+        "path": "experiments/deep_conversation/monitor_store.py",
+        "sha256": "d3be06421cbbe7f0482b8ff587dce19d451deb964ef7cd2a4cdc929933e50be0"
+      },
+      {
+        "id": "readme",
+        "path": "experiments/deep_conversation/README.md",
+        "sha256": "c73ed48f60a03d1c68ea1a7b654b7131a53a8b5ca36ac45148f4cc03947ce53e"
+      },
+      {
+        "id": "recorded-native-graph",
+        "path": "experiments/deep_conversation/benchmarks/results/local14-progress-heldout-v1/agent-led-progress__rillstat-process-report__r1/graph.json",
+        "sha256": "d9fbbdb7447389acdd248e1149a64661348431918cdfa74b971324b8179c70c2"
+      }
+    ]
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "id": "site-copy-cleanup-2026-10-10",
+  "date": "2026-10-10",
+  "timezone": "America/Halifax",
+  "checked_at": "2026-10-10T01:27:49.853853-03:00",
+  "type": "engineering_validation",
+  "status": "passed_with_documented_limits",
+  "change": "Remove generic introductions, repeated operating instructions and duplicate caveats from the research website and local Run Lab. Preserve essential research and architecture content without shortening it.",
+  "comparison_revision": "30e9f3381c310f5a42b56f7ba0db4df68cacda6a",
+  "tested_revision": "Edited source identified by SHA-256 below. The Sites deployment identifies the published commit separately.",
+  "new_model_calls": 0,
+  "editorial_size": {
+    "static_html_words_before": 3492,
+    "static_html_words_after": 3172,
+    "net_static_html_words_removed": 320,
+    "scope": "All seven page sections in dist/index.html, including closed disclosures; excludes dynamic JS text, SVG labels and local Lab. Counts are an editorial size measure, not a readability or user-study result."
+  },
+  "source_sha256": {
+    "sites/conversation-agent-research/overview-section.html": "333dfb6e65c2257c83dec40bd134765cfc39d21e3e5da580e2b8c4bd2ebf781f",
+    "sites/conversation-agent-research/architecture-section.html": "e50c845afd36a6a653f08ff222628abead6136bd1e220bfcdbbe613ac43ef65e",
+    "sites/conversation-agent-research/overview-dashboard.html": "4a12b534a7b665790a7b7d87ed2c84cbb5f633f5a8997531d5936cb97d6c3a73",
+    "sites/conversation-agent-research/harness-section.html": "b870657d9fbd89f83eeb18b49739f118d501c80987168a1e8115f0e21b52cced",
+    "sites/conversation-agent-research/methods-section.html": "33a82e29fbaa6fe0b8ef51765b02e79390d1b2aeb04a793525a25489ad42729c",
+    "sites/conversation-agent-research/dist/index.html": "608d85e03158b6a58821203cabd7cc4a95727c61a77571fa256e064980f1e97e",
+    "sites/conversation-agent-research/dist/harness.js": "823af9964f3577995fed476d3e6fff3d8189d2879176cb2fb0dd65a93d934e96",
+    "sites/conversation-agent-research/dist/overview-dashboard.js": "d12ba3a6ed666aa3f031d327cc34ff75808ed4766e1bdf3a2ea13a87438f7a5c",
+    "experiments/deep_conversation/lab_ui/index.html": "eb6b23934d0b03305ee95e8440b50f4a1aeabd9d426057018fd7748e3dd351d0",
+    "experiments/deep_conversation/lab_ui/lab.js": "ac7ba3a594a81b1f98c40af907eac9cc18bdc261a845beb4987bbdb1093366fe"
+  },
+  "checks": [
+    {
+      "name": "Essential content preservation",
+      "result": "pass",
+      "detail": {
+        "unchanged_complete_page_sections": [
+          "Study 02",
+          "Study 03"
+        ],
+        "unchanged_source_and_evidence_files": [
+          "experiment-02.html",
+          "experiment-02-story.json",
+          "dist/architecture.js",
+          "dist/execution-nodes.js",
+          "dist/assets/harness-architecture.svg",
+          "dist/assets/harness-execution.svg",
+          "dist/data/harness-architecture-evidence.json",
+          "dist/data/baseline.json",
+          "dist/data/experiment-01.json",
+          "dist/data/experiment-02.json",
+          "dist/data/failure-cases.json",
+          "dist/data/harness-dashboard.json",
+          "dist/data/harness-latency-audit.json",
+          "dist/data/harness-latency-calls.csv",
+          "dist/data/results.csv",
+          "dist/data/harness-run-lab-validation.json"
+        ],
+        "review": "Independent review found no loss of baseline settings, study conditions, findings, failure analysis, architecture explanations or material limitations."
+      }
+    },
+    {
+      "name": "Assembly and data consistency",
+      "result": "pass",
+      "detail": {
+        "unique_html_ids": 99,
+        "routes": 7,
+        "user_quoted_boilerplate_absent": true,
+        "research_json_js_equal": true,
+        "validation_indexed": true
+      }
+    },
+    {
+      "name": "JavaScript syntax",
+      "result": "pass",
+      "detail": [
+        "dist/harness.js",
+        "dist/overview-dashboard.js",
+        "experiments/deep_conversation/lab_ui/lab.js"
+      ]
+    },
+    {
+      "name": "Browser checks",
+      "result": "pass",
+      "detail": [
+        "Local preview returned HTTP 200.",
+        "Overview rendered without horizontal page overflow at the observed 1265 px viewport.",
+        "Architecture and Execution logic tabs rendered; Execution logic retained 12 nodes.",
+        "Native tool dispatcher selection displayed its full explanation and source references.",
+        "Recorded dashboard switched to Study 01 Ferry and shuttle; Call 1 inspection showed 3,224 input and 112 output tokens.",
+        "Case explorer retained the full incorrect card, evidence, timing diagram and failure analysis.",
+        "Local Lab connected, selected the saved frozen baseline and rendered two execution graphs plus token and duration charts.",
+        "Saved Lab baseline remained 5 calls, 18,293 recorded tokens, 16.48 s measured model time and one active card; this is not a quality score.",
+        "No browser console errors observed on the preview or Lab."
+      ]
+    }
+  ],
+  "limitations": [
+    "Copy and presentation checks only; no new research experiment, model execution, assistance score or user study.",
+    "No reliable before/after local Lab word count: original local UI files were not versioned.",
+    "Browser checks used existing recorded runs; active streaming and model execution were not rerun for this copy-only change."
+  ]
+}

@@ -1,0 +1,165 @@
+{
+  "id": "shared-web-knowledge-tools",
+  "date": "2026-10-10",
+  "timezone": "America/Halifax",
+  "type": "engineering_validation_and_exposed_diagnostics",
+  "status": "implemented_with_narrow_model_diagnostics",
+  "problem": "The local model guessed unfamiliar terminology or asked for context, with no real web tool available in direct-question tests.",
+  "change": "Shared DDGS search and public HTML/text reading in all four question harnesses, with source receipts, persisted operation limits, a shorter knowledge-investigation prompt and a question-only profile that hides unrelated virtual file tools. No semantic delivery gate or fixed response schema.",
+  "conditions": {
+    "date": "2026-10-10",
+    "timezone": "America/Halifax",
+    "type": "engineering_repair_diagnostic",
+    "purpose": "Test whether shared optional web tools let the unchanged local model investigate unfamiliar concepts instead of guessing or returning only a clarification request.",
+    "conditions": "Same fixed local Qwen2.5 14B profile, empty supplied documents for concept questions. The shared task prompt and web capabilities change together; this is not an isolated orchestration ablation. Web responses are live and may differ between runs. One run per case/configuration; these are exposed development checks, not research accuracy estimates.",
+    "model": "qwen2.5:14b-instruct",
+    "model_digest": "7cdf5a0187d5c58cc5d369b255592f7841d1c4696d45a8c8a9489440385b22f6",
+    "cases": [
+      {
+        "id": "reported-native",
+        "harness": "native",
+        "question": "what is concept of agent harness",
+        "documents": []
+      },
+      {
+        "id": "reported-agent-led",
+        "harness": "agent-led",
+        "question": "what is concept of agent harness",
+        "documents": []
+      },
+      {
+        "id": "reported-recovery",
+        "harness": "frozen-baseline",
+        "question": "what is concept of agent harness",
+        "documents": []
+      },
+      {
+        "id": "reported-progress",
+        "harness": "progress",
+        "question": "what is concept of agent harness",
+        "documents": []
+      },
+      {
+        "id": "other-concept",
+        "harness": "agent-led",
+        "question": "What is the Model Context Protocol (MCP), and what does it provide to an AI agent?",
+        "documents": []
+      },
+      {
+        "id": "supplied-only",
+        "harness": "agent-led",
+        "question": "Use only the supplied document. What is the total price for eight workshops after the discount?",
+        "documents": [
+          {
+            "title": "Workshop prices",
+            "text": "Each workshop costs 37 credits. A booking of eight workshops receives one 26-credit discount on the total."
+          }
+        ]
+      }
+    ],
+    "checks": {
+      "reported": "Uses actual web search; reads at least one useful public page; explains harness as software around a model that manages tools, state and a repeated model/action/observation loop; includes source links that occur in tool results; does not stop at clarification or claim the term is unrecognized.",
+      "other-concept": "Uses relevant evidence where needed, explains MCP as a protocol connecting AI applications to tools/data rather than a model or the whole agent, and gives source links consistent with retrieved pages.",
+      "supplied-only": "Returns 270 credits from the supplied price and discount; no web requests when the user restricts evidence to the supplied document."
+    },
+    "review": "Unblinded manual assistant inspection; retain all failed, incomplete and inconclusive cases. Tool use or completion alone is not a successful answer."
+  },
+  "offline_checks": {
+    "web_tools": 21,
+    "direct_request": 27,
+    "lab_api": 31,
+    "lab_worker": 9,
+    "graph_mapping": 48,
+    "result": "passed",
+    "interpretation": "Software behavior checks, not answer quality."
+  },
+  "diagnostic_runs": 24,
+  "paid_model_api_calls": 0,
+  "provider_smoke": {
+    "query": "agent harness LLM",
+    "bing_results": 5,
+    "duckduckgo": "DDGSException: No results found.",
+    "original_sha256": "9da5c23c837b14e0078072704a3751c6602c600ff45986cea4fe38c6ad0f9763"
+  },
+  "reader_smoke": {
+    "successful_pages": [
+      "https://www.langchain.com/blog/the-anatomy-of-an-agent-harness",
+      "https://handbook.modular.com/model-interaction/agent-harnesses/"
+    ],
+    "original_sha256": "0a7cc56e0f5ff5b74f22d72b7af8bb1209cd77c8a0aa8fce391bd0f15e82e9e9"
+  },
+  "browser_checks": {
+    "date": "2026-10-10",
+    "status": "pass",
+    "run_id": "e91fa27548e5432a99932762a537bf92",
+    "checks": [
+      "Final response matches the saved response",
+      "Web branch is observed for the actual search",
+      "Model calls 2, tokens 2839 and model time 7.24 s match the ledger",
+      "New profile shows private notes; recorded historical profiles remain distinct",
+      "Research page shows latest six runs and keeps earlier 18 in a disclosure"
+    ]
+  },
+  "outcomes_by_revision": {
+    "v1": {
+      "met target": 1,
+      "partial": 3,
+      "failed": 2
+    },
+    "v2": {
+      "met target": 2,
+      "partial": 0,
+      "failed": 4
+    },
+    "v3": {
+      "met target": 2,
+      "partial": 0,
+      "failed": 4
+    },
+    "v4": {
+      "met target": 2,
+      "partial": 4,
+      "failed": 0
+    }
+  },
+  "evidence": "web-knowledge-diagnostics.json",
+  "source_download": "web-knowledge-source.zip",
+  "limitations": [
+    "Exposed development questions, one run per configuration/case/revision, unblinded assistant review. No accuracy estimate or stable reliability claim.",
+    "The shared task prompt and tool availability change together against the earlier no-web implementation. Live results vary; this is not an isolated orchestration comparison.",
+    "Eight persisted web-tool attempts are not eight HTTP requests; redirects and fallback searches may make more requests.",
+    "Bing succeeded in the provider smoke check; DuckDuckGo returned no usable results. Provider availability is not guaranteed.",
+    "Public HTML/text only. No PDF parsing, authenticated pages or browser JavaScript rendering. Pages can be truncated at 10,000 characters.",
+    "OS DNS resolution is not hard-interrupt bounded; seven-second network deadlines are per hop, not a total run SLA.",
+    "Source retrieval and citations do not establish that every claim is supported. Web errors remain visible; the agent decides what to do next.",
+    "The progress projection still summarizes the original local-source jobs; web receipts and activity are visible separately, but no progress-feedback benefit is established.",
+    "No real ASR, live conversation, user study or speed benefit is tested. Historical baseline scores remain unchanged."
+  ],
+  "source_sha256": {
+    "experiments/deep_conversation/direct_request.py": "d7308e05b62dd21421970f79c4e19d4b1952d642a892a0443a8f40560b131120",
+    "experiments/deep_conversation/web_tools.py": "c71cc76e428d2ae4611c002aa30ef23b98d8ee6fa7a26301a90406b04375d470",
+    "experiments/deep_conversation/lab_worker.py": "ebdc4b59f9b3976726ee1dff679a9c58535ade3dec9acd2a798964abef6765fc",
+    "experiments/deep_conversation/lab.py": "f72cc0d144f112502269a8c90754ada073c8fc7d83ec5b78a2db177d93371012",
+    "experiments/deep_conversation/requirements.txt": "bc746da1ac313df0b4b5c7da7f3095e8707b7ac7aac30c8248fff5dfb0981b45",
+    "experiments/deep_conversation/requirements.lock.txt": "e92e2a948a0a3d411d6cb70a3915d2868ee7dc71b159e05b6366581640caef42",
+    "experiments/deep_conversation/test_direct_request.py": "e19456c3705a2b184c26a830dd298b23c31189c8e19178d0e99fcc3c71b6aba9",
+    "experiments/deep_conversation/test_web_tools.py": "417f9485b5d60a1f1e238f9dedaa8c3d201f3412aa2d4784c58bc52ea59963ad",
+    "experiments/deep_conversation/test_lab_worker.py": "7538be0a3060ef2e2a47bfcb48f49f0366a3ba50b69b252ab0b0876431f82e57",
+    "experiments/deep_conversation/test_lab.py": "d3fc45ef80047f320a6dcbd8ad2a155f1e8225f7e95a8cf7dd6672325d3d9297",
+    "experiments/deep_conversation/build_lab_ui.py": "8fd5a2483ec5e55af262737d1497b12c647cd062d10efe42f48662bbe3098480",
+    "experiments/deep_conversation/lab_ui/harness-graph.js": "13537bf7a2f4f761da655be1bb47ca09e6a40728f71fb3d0a316021f722afeb0",
+    "experiments/deep_conversation/lab_ui/lab-app.js": "afe8685583a367a48cc601daa22182ee3ce5d3734451b413a3eb32e567165be3",
+    "experiments/deep_conversation/lab_ui/lab.js": "8816ba62505cb4136240f3a04e73d7d5b2619fbe3867472e2acedf68322db374",
+    "experiments/deep_conversation/lab_ui/index.html": "84386f377321879b8fc9bb1ce1485aee7f53754e914488a289951906b3556f63",
+    "experiments/deep_conversation/lab_ui/lab.css": "03332423fd91cc3a396137cc893b99f7a623494421180e5a2c34b501c0052ce4",
+    "experiments/deep_conversation/tests/test_harness_graph.cjs": "59827197876b9dff8b63a6f8f3fcf6bc5430e0f413a0ad3918babe38723da24e",
+    "scripts/research/diagnostics/run_web_knowledge_checks.py": "cb20fe1dac7972699284baa74d604079d1a203fca782b94619f47fca0b252db6",
+    "scripts/publication/export_web_knowledge.py": "ceedf529f2429f3838cadc655781c659941cecd6f38d62d86b5f18224910c47b",
+    "output/research/records/question-diagnostics/web-tools-unit-tests.txt": "5006eb312f206c7ab201d3febb55a2b3f0867688d76630b891494e37ef3700e5",
+    "output/research/records/question-diagnostics/web-tools-v2-unit-tests.txt": "f60b5a875f2a31c36c3f0d7d17371515bfaf0aba33ee76c84ef2378fd00e4e5b",
+    "output/research/records/question-diagnostics/web-tools-v3-unit-tests.txt": "0b2319325946c9860698f13c6b669c1a6fd3a3b1df07b3da6a8ce70a9fb52ce2",
+    "output/research/records/question-diagnostics/web-tools-v4-direct-tests.txt": "c4c5f4e905048b0ad7dd8d885bc8dc9dec715c2b220bd1652d6eec0de04c7ffd",
+    "output/research/records/question-diagnostics/web-lab-unit-tests.txt": "7729fe9aa1ebbb140b2b3238c7f859b803260d6399c657a008a28ab84624214d",
+    "output/research/records/question-diagnostics/web-graph-unit-tests.txt": "d16746d85d9a2b8a02ef0525c2abddbb3248d0e39ba44900ce83eb32df269148"
+  }
+}

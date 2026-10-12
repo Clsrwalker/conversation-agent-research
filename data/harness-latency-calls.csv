@@ -1,0 +1,34 @@
+run,call,model_wall_ms,loading_ms,input_processing_ms,output_generation_ms,provider_total_ms,input_tokens,output_tokens,tool_names,provider_metadata_available
+monitor-local14-validation-v1,1,10005.681199982064,7263.2443,977.604,1736.259,9992.3004,3221,100,search,True
+monitor-local14-validation-v1,2,931.6283999942243,3.6352,32.445999,873.341,921.1772,3337,49,wait_for_event,True
+monitor-local14-validation-v1,3,2061.554000014439,2.8208,68.155,1976.717,2059.2966,3547,110,read_document + read_document,True
+monitor-local14-validation-v1,4,1031.5387999871746,2.7437,140.399,869.665,1029.2303,4010,50,wait_for_event,True
+monitor-local14-validation-v1,5,2175.842600001488,2.0411,195.358,1956.415,2173.2963,4569,107,read_document + read_document,True
+monitor-local14-validation-v1,6,981.0274000046775,2.1018,44.23,911.832,978.6816,4716,51,wait_for_event,True
+monitor-local14-validation-v1,7,5166.005400009453,2.0519,153.63,4986.923,5163.6349,5166,270,search,True
+monitor-local14-validation-v1,8,872.4349999974947,2.6107,36.796,800.803,861.2055,5453,44,wait_for_event,True
+monitor-local14-validation-v1,9,1694.2443000152707,3.5978,205.461,1461.855,1692.8743,6006,81,read_document,True
+monitor-local14-validation-v1,10,845.2592999965418,2.0381,35.017,782.64,842.6793,6110,43,wait_for_event,True
+monitor-local14-validation-v1,11,5832.275900000241,3.0832,129.618,5666.278,5822.0271,6398,297,,True
+agent-led-recovery__orch-route-checkin-evidence-join__r1,1,11055.525400006445,7736.623,1047.726,2255.376,11052.8968,3224,112,search,True
+agent-led-recovery__orch-route-checkin-evidence-join__r1,2,1040.1947999780532,2.0424,36.988,988.845,1038.4713,3359,51,wait_for_event,True
+agent-led-recovery__orch-route-checkin-evidence-join__r1,3,1955.6517000019085,3.0822,72.235,1858.36,1946.4643,3584,93,wait_for_event,True
+agent-led-recovery__orch-route-checkin-evidence-join__r1,4,10821.71799999196,2.1777,211.101,10587.957,10820.1754,4196,518,publish_card,True
+agent-led-recovery__orch-route-checkin-evidence-join__r1,5,3538.834000006318,2.3229,81.561,3433.204,3537.2589,4761,169,,True
+agent-led-recovery__orch-browser-recording-constraint__r1,1,2778.145599993877,1.5453,115.799,2635.243,2764.9089,3211,129,search,True
+agent-led-recovery__orch-browser-recording-constraint__r1,2,1142.5889999954961,1.5511,36.369,1091.671,1140.8634,3362,54,search + wait_for_event,True
+agent-led-recovery__orch-browser-recording-constraint__r1,3,1649.9428999959491,2.5387,103.704,1531.123,1648.9443,3654,77,wait_for_event,True
+agent-led-recovery__orch-browser-recording-constraint__r1,4,3353.043000010075,2.0652,176.674,3155.256,3350.0646,4220,155,search + wait_for_event,True
+agent-led-recovery__orch-browser-recording-constraint__r1,5,3213.908400008222,2.1457,223.134,2964.127,3208.5667,4884,144,search + wait_for_event,True
+agent-led-recovery__orch-browser-recording-constraint__r1,6,3290.505899989512,2.5337,218.192,3047.84,3289.7774,5539,146,search + wait_for_event,True
+agent-led-recovery__orch-browser-recording-constraint__r1,7,3272.8962999826763,2.3211,230.198,3015.568,3271.2976,6193,146,search + wait_for_event,True
+agent-led-recovery__orch-browser-recording-constraint__r1,8,3520.6813999975566,2.0528,238.735,3252.403,3518.7101,6850,147,search + wait_for_event,True
+agent-led-recovery__orch-browser-recording-constraint__r1,9,3459.0578000061214,2.043,240.905,3187.183,3456.9994,7510,147,search + wait_for_event,True
+agent-led-recovery__orch-browser-recording-constraint__r1,10,3512.2638999891933,2.1364,246.997,3233.116,3510.8092,8171,148,search + wait_for_event,True
+agent-led-recovery__orch-browser-recording-constraint__r1,11,3540.3430000005756,2.0835,277.022,3229.199,3538.4682,8831,147,search + wait_for_event,True
+agent-led-recovery__orch-browser-recording-constraint__r1,12,3589.967100007925,2.0452,256.471999,3297.03,3588.3614,9494,148,search + wait_for_event,True
+agent-led-recovery__orch-browser-recording-constraint__r1,13,3661.855899990769,3.5749,278.066,3340.335,3658.6967,10157,148,search + wait_for_event,True
+agent-led-recovery__orch-browser-recording-constraint__r1,14,3659.5510999904945,4.6549,272.442,3333.761,3648.9051,10821,147,search + wait_for_event,True
+agent-led-recovery__orch-browser-recording-constraint__r1,15,3704.9695999885444,2.6781,282.108,3381.658,3703.5376,11485,147,search + wait_for_event,True
+agent-led-recovery__orch-browser-recording-constraint__r1,16,8473.412599996664,,,,,9629,184,,False
+agent-led-recovery__orch-browser-recording-constraint__r1,17,3268.562600016594,2.1123,575.092,1941.286,3266.766,4695,95,search,True

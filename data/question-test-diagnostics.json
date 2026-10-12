@@ -1,0 +1,678 @@
+{
+  "plan": {
+    "date": "2026-10-10",
+    "timezone": "America/Halifax",
+    "kind": "engineering_validation_with_targeted_model_diagnostics",
+    "harness": "direct-help",
+    "model": "qwen2.5:14b-instruct",
+    "comparison_limit": "Task prompt and delivery adapter both change. This is a repair check, not an isolated orchestration ablation or a quality benchmark.",
+    "cases": [
+      {
+        "id": "reported-concept",
+        "question": "can you explain concept of agent harness",
+        "documents": [],
+        "repeats": 2,
+        "expected": "Explain an AI-agent runtime/harness, its purpose and a concrete example; do not only request domain clarification or invent sources."
+      },
+      {
+        "id": "other-concept",
+        "question": "Explain a vector database in plain language and give one example.",
+        "documents": [],
+        "repeats": 1,
+        "expected": "Explain similarity-based vector retrieval with an example, not only ask for clarification."
+      },
+      {
+        "id": "provided-source",
+        "question": "According to the supplied Atlas plan, can I edit offline and sync while disconnected?",
+        "documents": [
+          {
+            "title": "Atlas plan",
+            "text": "The Atlas mobile plan allows offline editing. Synchronization requires an internet connection. Offline edits are retained until connectivity returns."
+          }
+        ],
+        "repeats": 1,
+        "expected": "Actually retrieve supplied material; editing yes, synchronization no while disconnected. Do not fabricate a source or requirement."
+      },
+      {
+        "id": "missing-information",
+        "question": "What is the exact submission deadline for my department's internal travel grant this month?",
+        "documents": [],
+        "repeats": 1,
+        "expected": "State that the exact deadline cannot be determined from supplied information; do not invent a date or claim web lookup. Useful missing-information request is acceptable."
+      }
+    ],
+    "grading": "Root assistant inspects visible responses and tool receipts against these narrow expectations. No human study, blinded rating, statistical inference or ASR claims. Preserve failures."
+  },
+  "runs": [
+    {
+      "revision": "v1",
+      "case_id": "reported-concept",
+      "repeat": 1,
+      "question": "can you explain concept of agent harness",
+      "provided_documents": [],
+      "status": "completed",
+      "stop_reason": "response_delivered",
+      "model_calls": 1,
+      "total_tokens": 2921,
+      "model_wall_ms": 10915.48,
+      "checkpoints": 10,
+      "tool_counts": {},
+      "tool_receipts": [],
+      "response": "An agent harness is a framework or tool designed to test, manage, and monitor the behavior of software agents. In the context of your request, it seems you are referring to an AI agent harness test bench, which is a specific environment or system used to evaluate and test AI agents.\n\nIn this context, an agent harness typically includes:\n\n1. **Environment Setup**: The environment in which the AI agents operate. This could be a simulated environment that mimics real-world conditions or a controlled setting where the agent's actions and interactions can be observed and measured.\n\n2. **Task Definition**: The tasks or goals that the AI agents are expected to accomplish. These tasks are designed to test specific capabilities of the agents, such as decision-making, learning, and interaction with other agents or the environment.\n\n3. **Monitoring and Evaluation**: Tools and metrics to monitor the performance of the agents. This includes tracking the agent's actions, decision-making processes, and outcomes to assess their effectiveness and efficiency.\n\n4. **Testing and Validation**: Mechanisms to test the agents under various conditions and scenarios to ensure they perform as expected. This can include stress testing, edge case testing, and performance testing.\n\n5. **Feedback and Learning**: Systems to provide feedback to the agents based on their performance, allowing them to learn and improve over time.\n\nThe agent harness test bench you mentioned is likely a specific implementation of these components tailored for testing AI agents in a controlled and systematic manner.",
+      "response_status": "response",
+      "retrieved_sources": [],
+      "targeted_assessment": "failed",
+      "review_notes": "Delivers prose but interprets the term as the hosting test bench and incorrectly attributes that context to the user.",
+      "review_method": "Unblinded root-assistant inspection of visible responses and recorded tool receipts against the predeclared narrow expectations. Not a frozen-study quality score.",
+      "source_record": "experiments/deep_conversation/runs/lab-389fb3b551794bda88ffc44a1c3561b8",
+      "task_adapter": {
+        "id": "direct-help-v1",
+        "sha256": "6f1b3969ecde7c872d4dea2673495ab80ec9d185d1aaa7204ab8a5aba783153d",
+        "changes": [
+          "Direct user-request prompt",
+          "Role-aware input",
+          "Explicit ordinary-prose response delivery",
+          "One bounded continuation after empty model output"
+        ],
+        "tools_omitted": [
+          "publish_card",
+          "withdraw_card",
+          "evidence_check"
+        ],
+        "delivery_is_quality_score": false,
+        "limitations": [
+          "No live web retrieval",
+          "No semantic answer-quality gate",
+          "Not a frozen-baseline comparison"
+        ]
+      },
+      "model_identity": {
+        "model": "qwen2.5:14b-instruct",
+        "digest": "7cdf5a0187d5c58cc5d369b255592f7841d1c4696d45a8c8a9489440385b22f6",
+        "ollama_version": "0.35.1",
+        "context_window": 16384
+      },
+      "record_sha256": {
+        "summary.json": "da8150a88dbd69f2c0fb22b40ead13c763bedfcb84a92a9f1497c3d0d1af18ab",
+        "model_calls.json": "441779533b0c79d42ffc6fa842a8d4838719356b6a21895f9473d03ebbda2d5a",
+        "tool_calls.json": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f",
+        "direct_response.json": "4fa336999ca97fcbf05f38f5e4c865f1df30727a01a86b41873ea9693475ddec",
+        "graph.json": "da96ec82e6e0fd490c6f50edf8d594f137ad950a470c15c75622ff98e9cf7974",
+        "lab_provenance.json": "10b767cc7bc0d6fa94340975f0d0754bd29479388e6a166bab4b1a14b923910a"
+      }
+    },
+    {
+      "revision": "v1",
+      "case_id": "reported-concept",
+      "repeat": 2,
+      "question": "can you explain concept of agent harness",
+      "provided_documents": [],
+      "status": "completed",
+      "stop_reason": "response_delivered",
+      "model_calls": 1,
+      "total_tokens": 2847,
+      "model_wall_ms": 3837.859,
+      "checkpoints": 10,
+      "tool_counts": {},
+      "tool_receipts": [],
+      "response": "An agent harness is a framework or tool designed to test, monitor, and manage the behavior of software agents. In the context of your request, it seems you are referring to an AI agent harness test bench, which is a specific environment or system used to evaluate and test AI agents.\n\nThe concept involves setting up a controlled environment where AI agents can be run through various scenarios to assess their performance, reliability, and adherence to specifications. This harness typically includes features for:\n\n1. **Scenario Definition**: Defining test cases or scenarios that the AI agents must handle.\n2. **Execution Control**: Running the agents through these scenarios and controlling the environment in which they operate.\n3. **Monitoring and Logging**: Observing the agent's behavior and logging data for analysis.\n4. **Evaluation Metrics**: Measuring the performance of the agents against predefined criteria.\n5. **Feedback Mechanism**: Providing feedback to the agents or developers based on the test results.\n\nThis setup is crucial for ensuring that AI agents function correctly and efficiently in real-world applications, helping to identify and rectify issues before deployment.",
+      "response_status": "response",
+      "retrieved_sources": [],
+      "targeted_assessment": "failed",
+      "review_notes": "Delivers prose but interprets the term as the hosting test bench and incorrectly attributes that context to the user.",
+      "review_method": "Unblinded root-assistant inspection of visible responses and recorded tool receipts against the predeclared narrow expectations. Not a frozen-study quality score.",
+      "source_record": "experiments/deep_conversation/runs/lab-f5cebd50a0394fb89267fb823f637c4d",
+      "task_adapter": {
+        "id": "direct-help-v1",
+        "sha256": "6f1b3969ecde7c872d4dea2673495ab80ec9d185d1aaa7204ab8a5aba783153d",
+        "changes": [
+          "Direct user-request prompt",
+          "Role-aware input",
+          "Explicit ordinary-prose response delivery",
+          "One bounded continuation after empty model output"
+        ],
+        "tools_omitted": [
+          "publish_card",
+          "withdraw_card",
+          "evidence_check"
+        ],
+        "delivery_is_quality_score": false,
+        "limitations": [
+          "No live web retrieval",
+          "No semantic answer-quality gate",
+          "Not a frozen-baseline comparison"
+        ]
+      },
+      "model_identity": {
+        "model": "qwen2.5:14b-instruct",
+        "digest": "7cdf5a0187d5c58cc5d369b255592f7841d1c4696d45a8c8a9489440385b22f6",
+        "ollama_version": "0.35.1",
+        "context_window": 16384
+      },
+      "record_sha256": {
+        "summary.json": "039092716dab9b7df6a0a657831e3fc10a30e1c083973e8d67e7578546f52aa5",
+        "model_calls.json": "566b06af2b0c9db161857ab8315b8ebb5d2cbeda59ef54e9e45757b4ad2f9d3e",
+        "tool_calls.json": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f",
+        "direct_response.json": "52ecdfda9a9e49535804aee092ba0fca49b6b0e8ecdd750fd185f0accf32daa8",
+        "graph.json": "a64d72aa7d3bd3251cff06b8277035b0116fda8156c7506f459169a52b39e7c9",
+        "lab_provenance.json": "fc30c806aca692e0ccaaccd88ef25b804ffe433f825b51760fa5d9220f63e7b0"
+      }
+    },
+    {
+      "revision": "v1",
+      "case_id": "other-concept",
+      "repeat": 1,
+      "question": "Explain a vector database in plain language and give one example.",
+      "provided_documents": [],
+      "status": "completed",
+      "stop_reason": "response_delivered",
+      "model_calls": 1,
+      "total_tokens": 2831,
+      "model_wall_ms": 3451.507,
+      "checkpoints": 10,
+      "tool_counts": {},
+      "tool_receipts": [],
+      "response": "A vector database is a type of database designed to store and manage large collections of vectors, which are arrays of numbers. These databases are particularly useful in machine learning and artificial intelligence applications where vectors represent data points like images, text, or other complex data types. The primary purpose of a vector database is to efficiently perform similarity searches, such as finding the most similar vectors to a given query vector based on a distance metric like cosine similarity.\n\nFor example, imagine you have a collection of images and you want to find images that are visually similar to a given image. You could convert each image into a vector using a technique like deep learning, where each vector represents the features of the image. A vector database would allow you to store these vectors and quickly find the vectors (and thus the images) that are most similar to a new query vector when you input a new image. This is much faster and more efficient than comparing the new image to every single image in a traditional database.",
+      "response_status": "response",
+      "retrieved_sources": [],
+      "targeted_assessment": "met_target",
+      "review_notes": "Explains vectors, similarity retrieval and an example. This narrow inspection is not a comprehensive factual audit.",
+      "review_method": "Unblinded root-assistant inspection of visible responses and recorded tool receipts against the predeclared narrow expectations. Not a frozen-study quality score.",
+      "source_record": "experiments/deep_conversation/runs/lab-e8c338af76754c0f8dac76726592a4b3",
+      "task_adapter": {
+        "id": "direct-help-v1",
+        "sha256": "6f1b3969ecde7c872d4dea2673495ab80ec9d185d1aaa7204ab8a5aba783153d",
+        "changes": [
+          "Direct user-request prompt",
+          "Role-aware input",
+          "Explicit ordinary-prose response delivery",
+          "One bounded continuation after empty model output"
+        ],
+        "tools_omitted": [
+          "publish_card",
+          "withdraw_card",
+          "evidence_check"
+        ],
+        "delivery_is_quality_score": false,
+        "limitations": [
+          "No live web retrieval",
+          "No semantic answer-quality gate",
+          "Not a frozen-baseline comparison"
+        ]
+      },
+      "model_identity": {
+        "model": "qwen2.5:14b-instruct",
+        "digest": "7cdf5a0187d5c58cc5d369b255592f7841d1c4696d45a8c8a9489440385b22f6",
+        "ollama_version": "0.35.1",
+        "context_window": 16384
+      },
+      "record_sha256": {
+        "summary.json": "47ac25841caeed869d23b85570e12f0abc61e23fe2ce5679d0dc671791d34766",
+        "model_calls.json": "c5f1e8566bcaeeec818078b3f1db22147b9d599fa06331a41638b69628e75416",
+        "tool_calls.json": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f",
+        "direct_response.json": "98712d4b8a1e841c67d99c4285097a9ff85e6db292b5973ffa9a48f9e9840e27",
+        "graph.json": "ebc3494cf2272f18731cec34b933d29d79a4ee15cad7f5278e91bc78df01d29f",
+        "lab_provenance.json": "02e97d1503164203b5c1c92fdf2ed34ad24ea4a9bf6f5ca350d9bd2b44c98ce9"
+      }
+    },
+    {
+      "revision": "v1",
+      "case_id": "provided-source",
+      "repeat": 1,
+      "question": "According to the supplied Atlas plan, can I edit offline and sync while disconnected?",
+      "provided_documents": [
+        {
+          "title": "Atlas plan",
+          "text": "The Atlas mobile plan allows offline editing. Synchronization requires an internet connection. Offline edits are retained until connectivity returns."
+        }
+      ],
+      "status": "completed",
+      "stop_reason": "response_delivered",
+      "model_calls": 1,
+      "total_tokens": 2847,
+      "model_wall_ms": 3672.362,
+      "checkpoints": 10,
+      "tool_counts": {},
+      "tool_receipts": [],
+      "response": "The supplied Atlas plan document has not been provided in this session, so I cannot directly reference it to answer your question. However, based on common practices for offline editing and syncing with services like Atlas, here's what you can typically expect:\n\n- **Offline Editing**: Many Atlas-based applications support offline editing, allowing you to make changes to your documents or data while you are disconnected from the internet. These changes are usually cached locally.\n\n- **Syncing**: Once you reconnect to the internet, the application will sync your local changes with the Atlas database. This process ensures that your offline edits are uploaded and integrated with the latest version of your data in the cloud.\n\nTo confirm the specific capabilities of the Atlas plan you are referring to, you would need to consult the actual document or the Atlas service documentation. If you have the document available, you can use the `read_file` tool to open it and review the details about offline editing and syncing capabilities.\n\nIf you want to proceed with reading the document, please provide the path to the file.",
+      "response_status": "response",
+      "retrieved_sources": [],
+      "targeted_assessment": "failed",
+      "review_notes": "Does not retrieve the supplied document, falsely says it was not provided, and substitutes general advice.",
+      "review_method": "Unblinded root-assistant inspection of visible responses and recorded tool receipts against the predeclared narrow expectations. Not a frozen-study quality score.",
+      "source_record": "experiments/deep_conversation/runs/lab-177b2cc4edfa44ddbc899927e1495c33",
+      "task_adapter": {
+        "id": "direct-help-v1",
+        "sha256": "6f1b3969ecde7c872d4dea2673495ab80ec9d185d1aaa7204ab8a5aba783153d",
+        "changes": [
+          "Direct user-request prompt",
+          "Role-aware input",
+          "Explicit ordinary-prose response delivery",
+          "One bounded continuation after empty model output"
+        ],
+        "tools_omitted": [
+          "publish_card",
+          "withdraw_card",
+          "evidence_check"
+        ],
+        "delivery_is_quality_score": false,
+        "limitations": [
+          "No live web retrieval",
+          "No semantic answer-quality gate",
+          "Not a frozen-baseline comparison"
+        ]
+      },
+      "model_identity": {
+        "model": "qwen2.5:14b-instruct",
+        "digest": "7cdf5a0187d5c58cc5d369b255592f7841d1c4696d45a8c8a9489440385b22f6",
+        "ollama_version": "0.35.1",
+        "context_window": 16384
+      },
+      "record_sha256": {
+        "summary.json": "7ba982875a7932a8791fb542995ab40428346fbc4206dcd3ab790ab33420337a",
+        "model_calls.json": "9c5d0cb3f56fae5b39a14c095f04bc780682308e12a600b7e72e920aa8acb3db",
+        "tool_calls.json": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f",
+        "direct_response.json": "23e2cb79a9480077b727387168e37eb5bcdbbe6868776689e618c13e990bab2e",
+        "graph.json": "c3241d88e2d8ac7f1f498f2924eeeb0fc320cf26ee90906c951f1d434c3b992b",
+        "lab_provenance.json": "bc108924556dd8f1d8c54dca92c4928d32c0cd0027b65a78a8abc847701321a2"
+      }
+    },
+    {
+      "revision": "v1",
+      "case_id": "missing-information",
+      "repeat": 1,
+      "question": "What is the exact submission deadline for my department's internal travel grant this month?",
+      "provided_documents": [],
+      "status": "completed",
+      "stop_reason": "response_delivered",
+      "model_calls": 1,
+      "total_tokens": 2736,
+      "model_wall_ms": 1750.611,
+      "checkpoints": 10,
+      "tool_counts": {},
+      "tool_receipts": [],
+      "response": "To find the exact submission deadline for your department's internal travel grant this month, I would need to know the specific details of your department's grant process and any relevant documents or calendars. Since I don't have access to your department's specific information, you should check the internal communications, departmental website, or contact the relevant administrator or committee responsible for the travel grants. If you have a document or calendar event related to this grant, please provide it so I can assist you further.",
+      "response_status": "response",
+      "retrieved_sources": [],
+      "targeted_assessment": "met_target",
+      "review_notes": "Does not invent a deadline. Requests missing information; the suggestion to provide a file path is not a supported file-upload workflow in this interface.",
+      "review_method": "Unblinded root-assistant inspection of visible responses and recorded tool receipts against the predeclared narrow expectations. Not a frozen-study quality score.",
+      "source_record": "experiments/deep_conversation/runs/lab-acc57ad02ca7463a9b955fe0039b3e9a",
+      "task_adapter": {
+        "id": "direct-help-v1",
+        "sha256": "6f1b3969ecde7c872d4dea2673495ab80ec9d185d1aaa7204ab8a5aba783153d",
+        "changes": [
+          "Direct user-request prompt",
+          "Role-aware input",
+          "Explicit ordinary-prose response delivery",
+          "One bounded continuation after empty model output"
+        ],
+        "tools_omitted": [
+          "publish_card",
+          "withdraw_card",
+          "evidence_check"
+        ],
+        "delivery_is_quality_score": false,
+        "limitations": [
+          "No live web retrieval",
+          "No semantic answer-quality gate",
+          "Not a frozen-baseline comparison"
+        ]
+      },
+      "model_identity": {
+        "model": "qwen2.5:14b-instruct",
+        "digest": "7cdf5a0187d5c58cc5d369b255592f7841d1c4696d45a8c8a9489440385b22f6",
+        "ollama_version": "0.35.1",
+        "context_window": 16384
+      },
+      "record_sha256": {
+        "summary.json": "fb871e22795b69dcafe1e5ec003a92de4aa04f2c068f05f9c9f31dfff572673b",
+        "model_calls.json": "46d25cd9c6444c09daf4c29b9881f8f184e93d0da71ab05f53baa5dbbbfeb785",
+        "tool_calls.json": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f",
+        "direct_response.json": "441365a148bcd0042ca71b4dc9d6a33d2dfdaac6d9cd5445a7b9d523038b235e",
+        "graph.json": "cbc5a4cacf74986330840c909e59927a5f82b0148644f650440b3f8f84fc66a1",
+        "lab_provenance.json": "977fe003ff0e8d72cda9fd85f3b33a53d9e2ec511208a76193f64fd61cd770bc"
+      }
+    },
+    {
+      "revision": "v2",
+      "case_id": "reported-concept",
+      "repeat": 1,
+      "question": "can you explain concept of agent harness",
+      "provided_documents": [],
+      "status": "completed",
+      "stop_reason": "response_delivered",
+      "model_calls": 1,
+      "total_tokens": 2941,
+      "model_wall_ms": 4844.405,
+      "checkpoints": 10,
+      "tool_counts": {},
+      "tool_receipts": [],
+      "response": "The term \"agent harness\" can refer to different concepts depending on the context, but in the context of software engineering and automation, an \"agent harness\" typically refers to a framework or tool that facilitates the creation, management, and execution of software agents or bots. These agents are autonomous programs designed to perform specific tasks, such as monitoring, data collection, or automated decision-making.\n\nIn this context, an agent harness provides the necessary infrastructure and services for agents to operate effectively. It might include features such as:\n\n- **Agent Registration and Management**: Allowing agents to register with the system and manage their lifecycle (start, stop, update).\n- **Communication Protocols**: Defining how agents communicate with each other and with the central system.\n- **Task Assignment and Scheduling**: Assigning tasks to agents and scheduling their execution.\n- **Monitoring and Logging**: Tracking the performance and status of agents.\n- **Security and Authentication**: Ensuring that agents can securely interact with the system and each other.\n\nIf you have a specific domain or context in mind for \"agent harness,\" please provide more details so I can give a more precise explanation.",
+      "response_status": "response",
+      "retrieved_sources": [],
+      "targeted_assessment": "partial",
+      "review_notes": "Provides a general software-agent runtime explanation, but lacks a concrete LLM-agent example and omits the model/tool iteration central to the intended concept.",
+      "review_method": "Unblinded root-assistant inspection of visible responses and recorded tool receipts against the predeclared narrow expectations. Not a frozen-study quality score.",
+      "source_record": "experiments/deep_conversation/runs/lab-9c83dec749f1438688b16190a0c6d9b0",
+      "task_adapter": {
+        "id": "direct-help-v2",
+        "sha256": "4162b008330e2004f31c5b6328406d8afeae949f0511d46217f2ac10130a93ec",
+        "changes": [
+          "Direct user-request prompt",
+          "Role-aware input",
+          "Provided-document ID/title inventory without body injection",
+          "Explicit ordinary-prose response delivery",
+          "One bounded continuation after empty model output"
+        ],
+        "tools_omitted": [
+          "publish_card",
+          "withdraw_card",
+          "evidence_check"
+        ],
+        "delivery_is_quality_score": false,
+        "limitations": [
+          "No live web retrieval",
+          "No semantic answer-quality gate",
+          "Not a frozen-baseline comparison"
+        ]
+      },
+      "model_identity": {
+        "model": "qwen2.5:14b-instruct",
+        "digest": "7cdf5a0187d5c58cc5d369b255592f7841d1c4696d45a8c8a9489440385b22f6",
+        "ollama_version": "0.35.1",
+        "context_window": 16384
+      },
+      "record_sha256": {
+        "summary.json": "b82fa1ae4805bcd3df8d32d034302fe232de06dd13033b78d9f95a62eeef6ebb",
+        "model_calls.json": "ee8acc6e36466045fa2799efb540113fbadc0efa922ef842990a8462d212e5ab",
+        "tool_calls.json": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f",
+        "direct_response.json": "8b87fdbef326059c94f778257f199e147d348d658c9f18ba9dcfa90a744e503f",
+        "graph.json": "d7d6d8aa7caaee91188303275cefe84123955b49f13adf48b5da63afa676f057",
+        "lab_provenance.json": "016c8c2285d2c7e0eef59ead716132f846c0a7fb71836e9d82e120a5c7fbd71c"
+      }
+    },
+    {
+      "revision": "v2",
+      "case_id": "reported-concept",
+      "repeat": 2,
+      "question": "can you explain concept of agent harness",
+      "provided_documents": [],
+      "status": "completed",
+      "stop_reason": "response_delivered",
+      "model_calls": 1,
+      "total_tokens": 2958,
+      "model_wall_ms": 4408.2,
+      "checkpoints": 10,
+      "tool_counts": {},
+      "tool_receipts": [],
+      "response": "The term \"agent harness\" can refer to different concepts depending on the context, but in the context of software engineering and automation, an \"agent harness\" typically refers to a framework or tool that facilitates the creation, management, and execution of software agents or bots. These agents are autonomous entities that can perform tasks on behalf of a user or system, often in a distributed or networked environment.\n\nIn this context, an agent harness provides the necessary infrastructure and services for agents to communicate, coordinate, and execute tasks. It might include features such as:\n\n- **Agent Registration and Management**: Allowing agents to register with the system and manage their lifecycle (start, stop, update).\n- **Communication Protocols**: Defining how agents communicate with each other and with the central system.\n- **Task Assignment and Scheduling**: Assigning tasks to agents and scheduling their execution.\n- **Monitoring and Logging**: Tracking the activities of agents and logging their actions for auditing and debugging purposes.\n- **Security and Authentication**: Ensuring that agents are authorized to perform certain tasks and that communications are secure.\n\nIf you have a specific context or domain in mind for \"agent harness,\" please provide more details so I can give a more precise explanation.",
+      "response_status": "response",
+      "retrieved_sources": [],
+      "targeted_assessment": "partial",
+      "review_notes": "Provides a general software-agent runtime explanation, but lacks a concrete LLM-agent example and omits the model/tool iteration central to the intended concept.",
+      "review_method": "Unblinded root-assistant inspection of visible responses and recorded tool receipts against the predeclared narrow expectations. Not a frozen-study quality score.",
+      "source_record": "experiments/deep_conversation/runs/lab-d5f59d38e06049548ebd36337e74b12d",
+      "task_adapter": {
+        "id": "direct-help-v2",
+        "sha256": "4162b008330e2004f31c5b6328406d8afeae949f0511d46217f2ac10130a93ec",
+        "changes": [
+          "Direct user-request prompt",
+          "Role-aware input",
+          "Provided-document ID/title inventory without body injection",
+          "Explicit ordinary-prose response delivery",
+          "One bounded continuation after empty model output"
+        ],
+        "tools_omitted": [
+          "publish_card",
+          "withdraw_card",
+          "evidence_check"
+        ],
+        "delivery_is_quality_score": false,
+        "limitations": [
+          "No live web retrieval",
+          "No semantic answer-quality gate",
+          "Not a frozen-baseline comparison"
+        ]
+      },
+      "model_identity": {
+        "model": "qwen2.5:14b-instruct",
+        "digest": "7cdf5a0187d5c58cc5d369b255592f7841d1c4696d45a8c8a9489440385b22f6",
+        "ollama_version": "0.35.1",
+        "context_window": 16384
+      },
+      "record_sha256": {
+        "summary.json": "96f0a48a394d90dd8ff9d4f91ec4daeee9ff3af0af9b36191d8a25a6ffc89939",
+        "model_calls.json": "a1465b7b726700a799ecac49a02b69ca6157ea49a2a3d6e799aa124d79098a39",
+        "tool_calls.json": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f",
+        "direct_response.json": "68809d300f941b1ddebaf62afbafc5351fdd7876f240a5b6c21ab6e13c3fba59",
+        "graph.json": "44de29ffcae6bf3b2381f6c8d52981dcaba78c989f391dfb489938ccdaac9d6e",
+        "lab_provenance.json": "56d32170bd418a878ed69f7be35eda612eaf04f03c6aa812951c9831c9888a35"
+      }
+    },
+    {
+      "revision": "v2",
+      "case_id": "other-concept",
+      "repeat": 1,
+      "question": "Explain a vector database in plain language and give one example.",
+      "provided_documents": [],
+      "status": "completed",
+      "stop_reason": "response_delivered",
+      "model_calls": 1,
+      "total_tokens": 2954,
+      "model_wall_ms": 4221.343,
+      "checkpoints": 10,
+      "tool_counts": {},
+      "tool_receipts": [],
+      "response": "A vector database is a type of database designed to store and manage large collections of vectors, which are arrays of numbers. These databases are particularly useful in applications that involve machine learning and artificial intelligence, such as recommendation systems, natural language processing, and computer vision.\n\nIn these applications, vectors often represent the numerical features or embeddings of data points like text documents, images, or user preferences. The primary purpose of a vector database is to efficiently store these vectors and perform similarity searches, such as finding the most similar vectors to a given query vector based on a distance metric like cosine similarity.\n\nFor example, imagine you are building a recommendation system for a streaming service. Each movie or TV show could be represented by a vector that captures various features such as genre, director, cast, and user ratings. When a user watches a movie, the system can find other movies with similar vectors, suggesting content that the user might enjoy based on their viewing history.\n\nOne example of a vector database is Pinecone, which is designed specifically for real-time similarity search. Pinecone allows you to easily index and query large sets of vectors, making it suitable for applications that require fast and accurate similarity searches.",
+      "response_status": "response",
+      "retrieved_sources": [],
+      "targeted_assessment": "met_target",
+      "review_notes": "Explains vectors, similarity retrieval and an example. This narrow inspection is not a comprehensive factual audit.",
+      "review_method": "Unblinded root-assistant inspection of visible responses and recorded tool receipts against the predeclared narrow expectations. Not a frozen-study quality score.",
+      "source_record": "experiments/deep_conversation/runs/lab-6f642aabc073441c80efb94356441138",
+      "task_adapter": {
+        "id": "direct-help-v2",
+        "sha256": "4162b008330e2004f31c5b6328406d8afeae949f0511d46217f2ac10130a93ec",
+        "changes": [
+          "Direct user-request prompt",
+          "Role-aware input",
+          "Provided-document ID/title inventory without body injection",
+          "Explicit ordinary-prose response delivery",
+          "One bounded continuation after empty model output"
+        ],
+        "tools_omitted": [
+          "publish_card",
+          "withdraw_card",
+          "evidence_check"
+        ],
+        "delivery_is_quality_score": false,
+        "limitations": [
+          "No live web retrieval",
+          "No semantic answer-quality gate",
+          "Not a frozen-baseline comparison"
+        ]
+      },
+      "model_identity": {
+        "model": "qwen2.5:14b-instruct",
+        "digest": "7cdf5a0187d5c58cc5d369b255592f7841d1c4696d45a8c8a9489440385b22f6",
+        "ollama_version": "0.35.1",
+        "context_window": 16384
+      },
+      "record_sha256": {
+        "summary.json": "5fb5a0974a1c289dcd5dae7b5cb190356ba946bfa4236c0995178f69b798e78e",
+        "model_calls.json": "54330ebcf69f6cf5d545c86dafe13f78a9898fd3f78d1a10171f9fb1944f9ecb",
+        "tool_calls.json": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f",
+        "direct_response.json": "ace8cd49593fff5c6b02468c469767263dfc4b920b4e6001f91010b2f244eb9a",
+        "graph.json": "b62f581df1632b8d9ca80539ff2bafa6f818426049e65e57b8e9d55eab8f2b20",
+        "lab_provenance.json": "72d9cd6614af74e69f2e1276a2ddd065eb2d7813b32d0b72827c916c6237f32a"
+      }
+    },
+    {
+      "revision": "v2",
+      "case_id": "provided-source",
+      "repeat": 1,
+      "question": "According to the supplied Atlas plan, can I edit offline and sync while disconnected?",
+      "provided_documents": [
+        {
+          "title": "Atlas plan",
+          "text": "The Atlas mobile plan allows offline editing. Synchronization requires an internet connection. Offline edits are retained until connectivity returns."
+        }
+      ],
+      "status": "completed",
+      "stop_reason": "response_delivered",
+      "model_calls": 3,
+      "total_tokens": 8945,
+      "model_wall_ms": 2879.94,
+      "checkpoints": 16,
+      "tool_counts": {
+        "read_document": 2,
+        "wait": 1
+      },
+      "tool_receipts": [
+        {
+          "name": "read_document",
+          "args": {
+            "source_id": "provided-1"
+          },
+          "result": {
+            "due_ms": 1250,
+            "job_id": "job-1",
+            "job_started": true,
+            "status": "pending"
+          },
+          "at_ms": 250
+        },
+        {
+          "name": "read_document",
+          "args": {
+            "source_id": "provided-1"
+          },
+          "result": {
+            "due_ms": 1500,
+            "job_id": "job-2",
+            "job_started": true,
+            "status": "pending"
+          },
+          "at_ms": 500
+        },
+        {
+          "name": "wait",
+          "args": {},
+          "result": {
+            "at_ms": 1250,
+            "status": "event_arrived"
+          },
+          "at_ms": 1250
+        }
+      ],
+      "response": "According to the \"Atlas plan\" document, you can edit offline, but synchronization requires an internet connection. Offline edits are retained until connectivity returns, allowing you to work without an internet connection and sync your changes later when you have a connection again.",
+      "response_status": "response",
+      "retrieved_sources": [
+        {
+          "source_id": "provided-1",
+          "title": "Atlas plan",
+          "level": "full"
+        }
+      ],
+      "targeted_assessment": "met_target",
+      "review_notes": "Reads the supplied document and correctly distinguishes offline editing from online sync. Two read requests for the same source were issued before waiting; this duplicate remains.",
+      "review_method": "Unblinded root-assistant inspection of visible responses and recorded tool receipts against the predeclared narrow expectations. Not a frozen-study quality score.",
+      "source_record": "experiments/deep_conversation/runs/lab-aae41e8ec41e4f34ada1e8dba2da4086",
+      "task_adapter": {
+        "id": "direct-help-v2",
+        "sha256": "4162b008330e2004f31c5b6328406d8afeae949f0511d46217f2ac10130a93ec",
+        "changes": [
+          "Direct user-request prompt",
+          "Role-aware input",
+          "Provided-document ID/title inventory without body injection",
+          "Explicit ordinary-prose response delivery",
+          "One bounded continuation after empty model output"
+        ],
+        "tools_omitted": [
+          "publish_card",
+          "withdraw_card",
+          "evidence_check"
+        ],
+        "delivery_is_quality_score": false,
+        "limitations": [
+          "No live web retrieval",
+          "No semantic answer-quality gate",
+          "Not a frozen-baseline comparison"
+        ]
+      },
+      "model_identity": {
+        "model": "qwen2.5:14b-instruct",
+        "digest": "7cdf5a0187d5c58cc5d369b255592f7841d1c4696d45a8c8a9489440385b22f6",
+        "ollama_version": "0.35.1",
+        "context_window": 16384
+      },
+      "record_sha256": {
+        "summary.json": "5e274cbbd5f6bb189f65ca539072a038ce65fd2afe46da65f6702afbaf1e8918",
+        "model_calls.json": "a9d9f67173d8e5930422183a84a1a7cdaa2346136d618b29659a7c9df35313f5",
+        "tool_calls.json": "5062466780f1af85bacc7db8a41a16ee6b0a767349bd212eef6067262784ad1e",
+        "direct_response.json": "262285c5293207a31994194bcc7719cfe5a0f1dc5d0cc8f5754495a313751b19",
+        "graph.json": "017d6acf7b0d2c6e8fb2bee5d6144f9f7cfa4f9863eecb23508d81b825dd8b07",
+        "lab_provenance.json": "85eb9441d5738e0ea0c25955fb8b619d77d62ae9df2cfe86c779e94650122ab8"
+      }
+    },
+    {
+      "revision": "v2",
+      "case_id": "missing-information",
+      "repeat": 1,
+      "question": "What is the exact submission deadline for my department's internal travel grant this month?",
+      "provided_documents": [],
+      "status": "completed",
+      "stop_reason": "response_delivered",
+      "model_calls": 1,
+      "total_tokens": 2818,
+      "model_wall_ms": 1928.67,
+      "checkpoints": 10,
+      "tool_counts": {},
+      "tool_receipts": [],
+      "response": "To find the exact submission deadline for your department's internal travel grant this month, I would need to access specific documents or calendars related to your department's grant information. Since I don't have direct access to your department's documents or calendar, please provide me with the name of the document or the location where this information is typically stored, or any specific details that could help locate the correct information. If you have a document ID or a file path, you can also share that.",
+      "response_status": "response",
+      "retrieved_sources": [],
+      "targeted_assessment": "met_target",
+      "review_notes": "Does not invent a deadline. Requests missing information; the suggestion to provide a file path is not a supported file-upload workflow in this interface.",
+      "review_method": "Unblinded root-assistant inspection of visible responses and recorded tool receipts against the predeclared narrow expectations. Not a frozen-study quality score.",
+      "source_record": "experiments/deep_conversation/runs/lab-eb8203473fe5450982f03e1cf5dc911b",
+      "task_adapter": {
+        "id": "direct-help-v2",
+        "sha256": "4162b008330e2004f31c5b6328406d8afeae949f0511d46217f2ac10130a93ec",
+        "changes": [
+          "Direct user-request prompt",
+          "Role-aware input",
+          "Provided-document ID/title inventory without body injection",
+          "Explicit ordinary-prose response delivery",
+          "One bounded continuation after empty model output"
+        ],
+        "tools_omitted": [
+          "publish_card",
+          "withdraw_card",
+          "evidence_check"
+        ],
+        "delivery_is_quality_score": false,
+        "limitations": [
+          "No live web retrieval",
+          "No semantic answer-quality gate",
+          "Not a frozen-baseline comparison"
+        ]
+      },
+      "model_identity": {
+        "model": "qwen2.5:14b-instruct",
+        "digest": "7cdf5a0187d5c58cc5d369b255592f7841d1c4696d45a8c8a9489440385b22f6",
+        "ollama_version": "0.35.1",
+        "context_window": 16384
+      },
+      "record_sha256": {
+        "summary.json": "35176cceeb224f563ae056da7a13e452fb7a8dc2a179aabf3f60002c840ce8f0",
+        "model_calls.json": "9a6c258d9bde38a7d5658fe3b93e9f52d7ebf9e974b85ee00d97be8ad4d1036a",
+        "tool_calls.json": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f",
+        "direct_response.json": "18654840df259acc16df11e79dad5eb3ee10db61d774c8fc5422bba3e96a25b3",
+        "graph.json": "aee444e02a0795be1f444c2760f88aa405cc83a6f0873f08a2f43131b558c356",
+        "lab_provenance.json": "43f021d7b453e60aa63b6aea670da9bdab1ee637cc1bcd48d28e3ebcb16537b6"
+      }
+    }
+  ]
+}

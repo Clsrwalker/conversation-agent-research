@@ -1,0 +1,110 @@
+{
+  "id": "harness-latency-audit-2026-10-10",
+  "date": "2026-10-10",
+  "timezone": "America/Halifax",
+  "type": "engineering_validation",
+  "status": "passed_with_documented_limits",
+  "change": "Explain measured model-call duration using saved provider timings for the three existing dashboard examples.",
+  "tested_revision": "Source bytes identified by the SHA-256 values below; exact published commit recorded by Sites.",
+  "diagnostic_record": "harness-latency-audit.json",
+  "new_model_runs": 0,
+  "checks": [
+    {
+      "name": "Independent historical source audit",
+      "result": "pass",
+      "detail": "A separate read-only review recovered timing metadata from original requests/checkpoints and matched every provider timing. Coverage 11/11, 5/5 and 16/17; the missing call is the browser example summarization at ordinal 16."
+    },
+    {
+      "name": "Numeric export and missing-data treatment",
+      "result": "pass",
+      "detail": "33 CSV rows agree with JSON; all component sums match measured call totals. Missing provider durations stay empty in CSV and remain part of unclassified wall time."
+    },
+    {
+      "name": "Frozen source integrity",
+      "result": "pass",
+      "detail": "Every archived source fingerprint matches the read-only audit."
+    },
+    {
+      "name": "Export privacy",
+      "result": "pass",
+      "detail": "No absolute Windows paths, raw model prose/requests, private call IDs or GUIDs in public JSON. Only numeric metadata and tool outcome labels are exported."
+    },
+    {
+      "name": "Page and asset delivery",
+      "result": "pass",
+      "detail": {
+        "unique_ids": 85,
+        "http_assets_checked": 6,
+        "all_status_200_and_bytes_equal": true
+      }
+    },
+    {
+      "name": "JavaScript syntax",
+      "result": "pass",
+      "detail": "node --check dist/overview-dashboard.js"
+    },
+    {
+      "name": "Browser interaction and visual inspection",
+      "result": "pass",
+      "detail": "All three selector options displayed matching breakdowns. Browser example visibly reports 16/17 metadata coverage and missing-data caveat. Default example shows 31.60 s model total, 32.42 s monitored session and no published card. No console errors; at the available 1265 px viewport document scrollWidth equals clientWidth. Screenshot retained locally."
+    }
+  ],
+  "limitations": [
+    "Historical diagnosis only; no new model benchmark or demonstrated latency improvement.",
+    "Only the monitor example records full session telemetry; session excludes process startup/preflight and browser delivery.",
+    "Checkpoint and monitor I/O were not separately instrumented; residual time is not checkpoint time.",
+    "No real web/source wait, ASR or mobile end-to-end latency was measured.",
+    "The cause of the large first-call model load is unknown; no cold/warm comparison was run.",
+    "Responsive CSS is retained; this update was visually checked at the available desktop viewport only."
+  ],
+  "source_fingerprints": [
+    {
+      "path": "build_latency.py",
+      "sha256": "8654399f1b0a87b217dab8e0caa5f08ce4aaa2a3e8a5e9e95f92daed839ee4d4"
+    },
+    {
+      "path": "build_data.py",
+      "sha256": "e62f86947af561ebb933395505b218e610d6c5e4071d57d1247a7e648d449b28"
+    },
+    {
+      "path": "build_overview.py",
+      "sha256": "b0448123447ac2e03be43ef56aa09e4a5d22eec1b40f8b9c9193344fb5201874"
+    },
+    {
+      "path": "overview-dashboard.html",
+      "sha256": "942e5987ee093e3bcbcf08c652027a562587c077ee8e5ed952156a99259b8661"
+    },
+    {
+      "path": "methods-section.html",
+      "sha256": "c404497b01b555362ddc187efcb28ddb2659d9ff8a5256f87d2504b2ed2653be"
+    },
+    {
+      "path": "dist/overview-dashboard.js",
+      "sha256": "23d4db1c1fc57db1f7ac55b0c561e0bc15e2d5706481b8b74352fcde7a007b96"
+    },
+    {
+      "path": "dist/overview-dashboard.css",
+      "sha256": "6aae1b1bf7bf235f6ec1b78fe40f38a4287bccadae42cf73375919324e9ce8b9"
+    },
+    {
+      "path": "dist/index.html",
+      "sha256": "ab134c6a2952091ab126c4a8c96bbd748c173d82bc26d20e761648679c6793e6"
+    },
+    {
+      "path": "dist/latency-data.js",
+      "sha256": "77657680694a1619febe7bb7eca2d507bfb68408dcfad136653d275d83bf862a"
+    },
+    {
+      "path": "dist/data/harness-latency-audit.json",
+      "sha256": "1c4f0905b5f5614bad058f9a703bc1e9da2ac906f03599865785adab5f8595bf"
+    },
+    {
+      "path": "dist/data/harness-latency-calls.csv",
+      "sha256": "d5d57b68ef1ba58c2438dd3c59407133f3c012d80061757d317189e491846641"
+    },
+    {
+      "path": "dist/data/analyze_harness_latency.py",
+      "sha256": "1c10198fe9ad8cf69926e33c52a8a03cd316896d02dffff3b40a314b7b895e55"
+    }
+  ]
+}

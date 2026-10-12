@@ -1,0 +1,82 @@
+{
+  "id": "harness-dashboard-2026-10-09",
+  "date": "2026-10-09",
+  "timezone": "America/Halifax",
+  "checked_at": "2026-10-09T21:53:55.447256-03:00",
+  "type": "engineering_validation",
+  "status": "passed_with_documented_limits",
+  "change": "Replace launch-command presentation with a working recorded-run dashboard; add metrics and charts to the local live monitor.",
+  "tested_revision": "Dashboard v1; exact source identities are the SHA-256 entries below.",
+  "source_revision_before_change": "daf6db83c6a043525096d129d09abd9f376a633a",
+  "new_model_runs": 0,
+  "evidence": {
+    "runs": 3,
+    "model_calls": 33,
+    "tool_records": 45,
+    "tokens": 194817,
+    "data": "harness-dashboard.json",
+    "classification": "Two frozen Study 01 failures and one previously recorded integration check; not a new research comparison."
+  },
+  "checks": [
+    {
+      "name": "Source provenance and accounting",
+      "result": "pass",
+      "detail": "Source SHA-256 values, individual token sums, tool-error counts, measured wall-time sums and summary counts match all three archived runs. Export generator also verifies frozen cards against the already-published failure record."
+    },
+    {
+      "name": "Export parity and field allowlist",
+      "result": "pass",
+      "detail": "Downloadable JSON and embedded JavaScript data are equal. Private request, response, credential and reasoning fields are absent."
+    },
+    {
+      "name": "JavaScript and local assets",
+      "result": "pass",
+      "detail": "Four scripts pass node --check. Relative source/download links exist, HTML IDs are unique, the page contains no preformatted command blocks, and dashboard assets return HTTP 200."
+    },
+    {
+      "name": "Hosted dashboard interactions",
+      "result": "pass",
+      "detail": "Browser selected all three runs and confirmed 53,735 / 20,067 / 121,015 tokens. Per-call/cumulative switch, call selection and error filter work; two integration errors and empty-error state on the route run are displayed. Frozen graph absence is explicit."
+    },
+    {
+      "name": "Desktop, mobile and theme",
+      "result": "pass",
+      "detail": "Visual inspection at the normal desktop viewport and 390 px width. No horizontal page overflow. Dark/light modes and both numeric charts rendered. Directed graph arrowheads repaired after review. Browser error log empty."
+    },
+    {
+      "name": "Local monitor dashboard",
+      "result": "pass",
+      "detail": "Read-only server on temporary port 8781 displayed archived integration run: 11 calls, 53,735 tokens, 2,872 ms mean, 12 receipts and 2 returned problems. Cumulative toggle and pause/resume worked. At 390 px, no horizontal overflow. All raw diagnostics remain inside closed details by default. Browser error log empty."
+    },
+    {
+      "name": "Local chart boundary checks",
+      "result": "pass",
+      "detail": "In-memory frontend checks covered unavailable records, pending zero defaults, completed-token total, duration mean, cumulative values, error classification and CSP-compatible tool bars."
+    }
+  ],
+  "repairs_during_validation": [
+    "Fixed directed graph endpoints that initially hid arrowheads behind nodes, and separated opposite-direction edges.",
+    "Local tool bars use SVG attributes to comply with the monitor Content-Security-Policy."
+  ],
+  "limitations": [
+    "Hosted charts are archived snapshots. New local runs are not uploaded or synchronized automatically.",
+    "Local port 8766 did not answer its health check in this session. UI validation used a separate read-only server on port 8781; the existing process was not modified.",
+    "No new live model run, live-traffic test, real ASR test, assistance-quality evaluation or user study was performed.",
+    "Two frozen runs did not save execution graphs. No graph was reconstructed for them.",
+    "The local backend normalizes missing completed usage to zero without an availability flag; recorded tokens are not billing totals. Pending values are excluded.",
+    "Local charts display at most the latest 80 model-call records while KPI totals use all returned records."
+  ],
+  "tested_source_sha256": {
+    "sites/conversation-agent-research/dist/index.html": "6e3498298876f19f973600845b55c75219995fb02b4fd04e067abd4678fa6745",
+    "sites/conversation-agent-research/dist/app.js": "264a878f4fc34c9e00c7be7c4dbba9ed396efd3cdd4c47441849208bd1090f4d",
+    "sites/conversation-agent-research/dist/harness.js": "c41b2bcbc55bd7b9a7d5c70d47b68b9154bba97478d3a348112a732c396930f6",
+    "sites/conversation-agent-research/dist/harness.css": "910e307f73c74264a36f5551df439fea5264e5ec61c3f51a0fcd7b6364e1946b",
+    "sites/conversation-agent-research/dist/harness-data.js": "53ae61cb977f003c6ac786ba683505bd7c38f036a1e78dce2c9e7922a812f475",
+    "sites/conversation-agent-research/dist/data/harness-dashboard.json": "4309d50a3f3b8efbc712596148bd174d3bb4d29aba45788bed06e813ea8f6d34",
+    "sites/conversation-agent-research/build_harness.py": "6ddfb593c0d8f00fe98bb13bb26d00ad51c141c99b1ff21bd3e1d81604b33b91",
+    "sites/conversation-agent-research/build_data.py": "b526374f377d8d66f090fdc20683edd504f304873cd056f103c480a9efd0c60c",
+    "experiments/deep_conversation/monitor_ui/index.html": "24d703ea9f7c752b5149270482338154bd76b086ae2e7ed0e80e188603f925e7",
+    "experiments/deep_conversation/monitor_ui/monitor.css": "0be649e1e71ef6128806bc22ee41435c500a200939bf274d4a6d8212343aecb8",
+    "experiments/deep_conversation/monitor_ui/monitor.js": "3a8f8854a2d88f38f22762f63d0b0edff3358719e963d656e12ba07e024b0d20"
+  }
+}

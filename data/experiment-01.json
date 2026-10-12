@@ -1,0 +1,84 @@
+{
+  "study": {
+    "title": "Local replay check",
+    "summary": "18 runs across three configurations and six previously exposed development scenarios; one run per configuration per scenario.",
+    "model": "qwen2.5:14b-instruct",
+    "provider": "ollama",
+    "context_window": 16384,
+    "model_digest": "7cdf5a0187d5c58cc5d369b255592f7841d1c4696d45a8c8a9489440385b22f6",
+    "max_model_calls": 24,
+    "soft_token_budget": 120000,
+    "max_output_tokens": 1200,
+    "evaluation": "Blinded AI semantic review; not independent human labels.",
+    "time_note": "All timeline positions are simulated replay time. Measured model wall time is reported separately and is not an end-to-end real-time latency result.",
+    "limitations": [
+      "Synthetic conversations and fictional documents.",
+      "These six scenarios had already been used during development.",
+      "One run per configuration per scenario.",
+      "No evidence of generalization, statistical significance or real-user benefit.",
+      "No real ASR audio was evaluated in this batch."
+    ],
+    "sources": [
+      "experiments/deep_conversation/benchmarks/results/local14-tool-recovery-paired-v1/batch_manifest.json",
+      "experiments/deep_conversation/benchmarks/results/local14-tool-recovery-paired-v1/analysis.json",
+      "experiments/deep_conversation/benchmarks/TOOL_RECOVERY_RESULTS.md"
+    ]
+  },
+  "metrics": [
+    {
+      "id": "native",
+      "role": "native reference",
+      "useful_help": {
+        "success": 2,
+        "total": 5
+      },
+      "appropriate_silence": {
+        "success": 1,
+        "total": 1
+      },
+      "material_error_scenarios": 0,
+      "model_calls": 73,
+      "tokens": 337744,
+      "recovery_prompts": 0
+    },
+    {
+      "id": "agent-led",
+      "role": "recovery-disabled comparison",
+      "useful_help": {
+        "success": 3,
+        "total": 5
+      },
+      "appropriate_silence": {
+        "success": 1,
+        "total": 1
+      },
+      "material_error_scenarios": 1,
+      "model_calls": 63,
+      "tokens": 338848,
+      "recovery_prompts": 0
+    },
+    {
+      "id": "agent-led-recovery",
+      "role": "current research baseline",
+      "useful_help": {
+        "success": 3,
+        "total": 5
+      },
+      "appropriate_silence": {
+        "success": 1,
+        "total": 1
+      },
+      "material_error_scenarios": 1,
+      "model_calls": 59,
+      "tokens": 307804,
+      "recovery_prompts": 0
+    }
+  ],
+  "recovery_finding": {
+    "status": "Benefit not demonstrated",
+    "text": "The optional recovery prompt fired zero times across all 18 runs. Scripted tests validate the mechanism, but this batch cannot establish its effect on answer quality or cost.",
+    "sources": [
+      "experiments/deep_conversation/benchmarks/TOOL_RECOVERY_RESULTS.md"
+    ]
+  }
+}

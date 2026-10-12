@@ -1,0 +1,302 @@
+{
+  "schema_version": 1,
+  "generator": "scripts/publication/export_github_pages.py",
+  "source": "sites/conversation-agent-research/dist",
+  "managed_files": [
+    {
+      "path": ".nojekyll",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "README.md",
+      "sha256": "4447cd8c3e8018c42037ccbf78a7e0e0ecb0998570550c8da220c5298e69d846",
+      "bytes": 2357
+    },
+    {
+      "path": "app.js",
+      "sha256": "324b91d634453bb5217618b05d8b991f7484547cd3635fb49c29a6e1d5f72130",
+      "bytes": 12456
+    },
+    {
+      "path": "architecture.css",
+      "sha256": "2162cd91d877d736d2ef8bc15e4a51191d98662b2cf62f06a42e38dc0bdb9006",
+      "bytes": 5148
+    },
+    {
+      "path": "architecture.js",
+      "sha256": "641ff7f81cf4bbddb1a58211315b82cd0ba580de6c6e5948e21c49a57b951e4b",
+      "bytes": 12756
+    },
+    {
+      "path": "assets/harness-architecture.svg",
+      "sha256": "5cdb990181e98068fc3f4ac3c3ad2780261b64f5b75bfb21d33c5a4144ba50fd",
+      "bytes": 14878
+    },
+    {
+      "path": "assets/harness-execution.svg",
+      "sha256": "79661b0186708cc0ce62be97c8ceb9a7e579ee7b7982ee47fa6a0cdf609a2ba9",
+      "bytes": 9529
+    },
+    {
+      "path": "data.js",
+      "sha256": "8ddf4d20fed5c0e046567c28011475791dfcd5afe86a2eb8ab53409d0c71e847",
+      "bytes": 166585
+    },
+    {
+      "path": "data/analyze_harness_latency.py",
+      "sha256": "1c10198fe9ad8cf69926e33c52a8a03cd316896d02dffff3b40a314b7b895e55",
+      "bytes": 16533
+    },
+    {
+      "path": "data/baseline-source.zip",
+      "sha256": "8bf4867d484b56f16768df98586674a298f422d21d2216ea362edd7503357320",
+      "bytes": 144153
+    },
+    {
+      "path": "data/baseline.json",
+      "sha256": "4d08e3325c48d854e96e5b2f06718d9dd021d8ef94718a9fe609fe1e6decb42a",
+      "bytes": 17751
+    },
+    {
+      "path": "data/experiment-01.json",
+      "sha256": "f8f900e6a7724be56425b4db865ea659e3d166bbff2469b6b8d8f864692069a5",
+      "bytes": 2886
+    },
+    {
+      "path": "data/experiment-02-evidence.zip",
+      "sha256": "66ad1efffd88637631a3ba6b51442be3df9457119e11dcacf362e4fce300ca38",
+      "bytes": 713637
+    },
+    {
+      "path": "data/experiment-02-results.csv",
+      "sha256": "1b1ee4067e83706dd7f6eb546b72c7b3c63bb12be3a061ee23905e32a4ff7361",
+      "bytes": 4911
+    },
+    {
+      "path": "data/experiment-02.json",
+      "sha256": "0994eb6075028831f75e1de974f5c8127ff63ea50271499dba6a7af23060ae65",
+      "bytes": 207880
+    },
+    {
+      "path": "data/experiment-template.json",
+      "sha256": "7abecc85d4edc6ba4b17ed0fe63b6a23084fcd73b39b6cfd278a40b12cdb979e",
+      "bytes": 664
+    },
+    {
+      "path": "data/failure-cases.json",
+      "sha256": "3d4c224bb7f469eb9482a436c90f61da1dec938a6c352f773eec4ef1c5320d41",
+      "bytes": 15121
+    },
+    {
+      "path": "data/harness-architecture-evidence.json",
+      "sha256": "4a247a99d7dc2fd02b7f4a51badd7ab4ad13e08f543260562147616e848e5f29",
+      "bytes": 52818
+    },
+    {
+      "path": "data/harness-architecture-validation.json",
+      "sha256": "8080e23da8923af9446a51a1cd6a55f5c366dffc9392f1e680722e3320228019",
+      "bytes": 5447
+    },
+    {
+      "path": "data/harness-dashboard-validation.json",
+      "sha256": "e53b38d3414ebf1795a81323864cf055c12b6df1b5db237e51b1b26f5f1e2afc",
+      "bytes": 5648
+    },
+    {
+      "path": "data/harness-dashboard.json",
+      "sha256": "a5b42598e4753758a21fa513eeaf0b8a02bf45d92ab599dfe33221b8306f0619",
+      "bytes": 44243
+    },
+    {
+      "path": "data/harness-latency-audit.json",
+      "sha256": "1c4f0905b5f5614bad058f9a703bc1e9da2ac906f03599865785adab5f8595bf",
+      "bytes": 65637
+    },
+    {
+      "path": "data/harness-latency-calls.csv",
+      "sha256": "d5d57b68ef1ba58c2438dd3c59407133f3c012d80061757d317189e491846641",
+      "bytes": 4571
+    },
+    {
+      "path": "data/harness-latency-validation.json",
+      "sha256": "a0d3938a5cc83b71fcaed0d1f181237179b19f1ebdf964ad9b98f786c698913f",
+      "bytes": 4771
+    },
+    {
+      "path": "data/harness-overview-state.json",
+      "sha256": "0a1706cc5502255c8a2f4a2d6444995f8bef68388d3e0711a7b3d5ff07dd1281",
+      "bytes": 23406
+    },
+    {
+      "path": "data/harness-overview-validation.json",
+      "sha256": "502b3cc5557015fcc4fc3bfabab669828a2e9ed0455ec3a5671a09ab96a38237",
+      "bytes": 5589
+    },
+    {
+      "path": "data/harness-run-lab-validation.json",
+      "sha256": "ebea99200a66ec95df008248499ef12b05c687548091f1eeef620373cb938ece",
+      "bytes": 22381
+    },
+    {
+      "path": "data/question-task-v3-diagnostics.json",
+      "sha256": "ab3ef3100b777ddb25bc302aab5f56413a69322c6398a4d1e32a7fa8b86489f1",
+      "bytes": 30631
+    },
+    {
+      "path": "data/question-task-v3-source.zip",
+      "sha256": "9391bc4dc57db1b01d3f83482be8bdf93897cb49f9f0b6830f9b653eb2b97be2",
+      "bytes": 53500
+    },
+    {
+      "path": "data/question-task-v3-validation.json",
+      "sha256": "259bf82b672dd0dacb53687344fa309911d51f66364502f3cb0202a6783256e7",
+      "bytes": 6954
+    },
+    {
+      "path": "data/question-test-diagnostics.json",
+      "sha256": "8ee524d7e2300984e8a4a2e92bb97f3000b0e441fece4f3909c3d8300e61c0a9",
+      "bytes": 40615
+    },
+    {
+      "path": "data/question-test-source.zip",
+      "sha256": "a8ed6feb64af2e1e02f6697630392e7c4bc1167b186cdf8907e5b2a0f40628bd",
+      "bytes": 56604
+    },
+    {
+      "path": "data/question-test-validation.json",
+      "sha256": "86f31d3772b8921d45e9b486467a463bd7db5c84d5627651face02e8f08ef421",
+      "bytes": 5548
+    },
+    {
+      "path": "data/research-record.json",
+      "sha256": "dbeec53e5dbbcf63f9a627a8254a540583ff11fc27ebbe5d7c6b10c9956fcc8f",
+      "bytes": 242847
+    },
+    {
+      "path": "data/results.csv",
+      "sha256": "c1450f9f018de761eee45767b0770432a88e1eb110f4a96710adf02cec1c5e96",
+      "bytes": 316
+    },
+    {
+      "path": "data/rillstat-case-study.json",
+      "sha256": "3203d36f0369d90ca72ea57232e0e1686a7fafe250f6b2ca97644b37ef88df27",
+      "bytes": 16645
+    },
+    {
+      "path": "data/site-copy-cleanup-validation.json",
+      "sha256": "c52d8717e336261ae0ad6c6cb9513d96b4d8a8801cf304ce346c9fbc76d0649b",
+      "bytes": 5494
+    },
+    {
+      "path": "data/site-focus-validation.json",
+      "sha256": "5085a5dfbd45431d261c521fc4285a6e1b7bbf9adcc815e57b23a3c366819c65",
+      "bytes": 9004
+    },
+    {
+      "path": "data/web-knowledge-diagnostics.json",
+      "sha256": "2e46aca18e2de2949fc07cbfecd731163290fd2efc06cf99476a5f7ff487dc90",
+      "bytes": 317356
+    },
+    {
+      "path": "data/web-knowledge-source.zip",
+      "sha256": "d57c7a9a7d584bf21fe58f3148fb51d74ebaae735c7dde3cddb0754de38b6023",
+      "bytes": 124895
+    },
+    {
+      "path": "data/web-knowledge-validation.json",
+      "sha256": "bc77f57953acff8796853a2a322378decd4a072baa7df6989cf1450e83a2133f",
+      "bytes": 10160
+    },
+    {
+      "path": "data/worker-ingress-diagnostics.json",
+      "sha256": "fa4437f51eaf602795638bafc9becdca46109949b33f499e7e8cf428772426c5",
+      "bytes": 8029
+    },
+    {
+      "path": "data/worker-ingress-source.zip",
+      "sha256": "59dc25296ee5a453606821dbd9d3e11bddaf4ed64918806146891fb84d68a5f0",
+      "bytes": 10862
+    },
+    {
+      "path": "data/workspace-organization-checks.json",
+      "sha256": "f72262ca8a884c6f9daef115a4469cb3263e515c9e2f72295f27e9876949bf48",
+      "bytes": 2596
+    },
+    {
+      "path": "data/workspace-organization-data-comparison.json",
+      "sha256": "4eef085224d2fbd6472f104020fd5fe691854a7d68ea454f41a3c47f482d2661",
+      "bytes": 1419
+    },
+    {
+      "path": "data/workspace-organization-validation.json",
+      "sha256": "c36d2bd55dc99638e55ba0c53307bce88ed70d3a4e90bec7bb343acb16a7562e",
+      "bytes": 4016
+    },
+    {
+      "path": "execution-nodes.js",
+      "sha256": "7fb78c4d00a402adf7d8696e6bc14524d233dcb50f3114acbefcdcc9470bb77b",
+      "bytes": 6922
+    },
+    {
+      "path": "favicon.svg",
+      "sha256": "ed939a5c86f69f831e8482a772f17878ea4d06db053585abace6d0d7e8a6e9a4",
+      "bytes": 344
+    },
+    {
+      "path": "focus.css",
+      "sha256": "f92d184582a1d7ac1fb1e55c644845c479ee1803bd2247c2efb7f9692169b5a9",
+      "bytes": 7728
+    },
+    {
+      "path": "harness-data.js",
+      "sha256": "952ce7ed4c3a8da76e03008cfdc5a2d5f79fcc54e65656bbbe4d8b0443451a24",
+      "bytes": 44271
+    },
+    {
+      "path": "harness.css",
+      "sha256": "bc9aba0004dc88f6fc7508e84fc3815ee539a89737125f78e4754217e456fa3a",
+      "bytes": 13181
+    },
+    {
+      "path": "harness.js",
+      "sha256": "823af9964f3577995fed476d3e6fff3d8189d2879176cb2fb0dd65a93d934e96",
+      "bytes": 15975
+    },
+    {
+      "path": "index.html",
+      "sha256": "a9898b0fb78c7d09fc60a37beaedf010c7f0b017c1c17572c9f4156dd30319bd",
+      "bytes": 62796
+    },
+    {
+      "path": "latency-data.js",
+      "sha256": "77657680694a1619febe7bb7eca2d507bfb68408dcfad136653d275d83bf862a",
+      "bytes": 44077
+    },
+    {
+      "path": "overview-dashboard.css",
+      "sha256": "6aae1b1bf7bf235f6ec1b78fe40f38a4287bccadae42cf73375919324e9ce8b9",
+      "bytes": 7528
+    },
+    {
+      "path": "overview-dashboard.js",
+      "sha256": "d12ba3a6ed666aa3f031d327cc34ff75808ed4766e1bdf3a2ea13a87438f7a5c",
+      "bytes": 11587
+    },
+    {
+      "path": "overview.css",
+      "sha256": "ac03a31d29c7a3ab2eeadfd1afb774ca08d130221cf65e425297e13664439f21",
+      "bytes": 3375
+    },
+    {
+      "path": "overview.js",
+      "sha256": "6f16ae013e5ad979a2f01618931b58281dac369d8d92e18dd2e502bbb56da81d",
+      "bytes": 1714
+    },
+    {
+      "path": "style.css",
+      "sha256": "1dbf234605435256ab44c01c74c019ee768df30e5cfaaa6ece158450bf17b048",
+      "bytes": 20194
+    }
+  ]
+}

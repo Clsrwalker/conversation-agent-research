@@ -1,0 +1,124 @@
+{
+  "id": "harness-overview-2026-10-10",
+  "date": "2026-10-10",
+  "timezone": "America/Halifax",
+  "checked_at": "2026-10-10T00:02:22.608399-03:00",
+  "type": "engineering_validation",
+  "status": "passed_with_documented_limits",
+  "change": "Make the first page explain the current Harness implementation and decision loop, with recorded charts visible by default before study results.",
+  "tested_revision": "Exact source bytes identified by SHA-256; deployment is recorded separately by Sites.",
+  "checks": [
+    {
+      "name": "Page structure and references",
+      "result": "pass",
+      "detail": {
+        "unique_ids": 83,
+        "primary_navigation": [
+          "overview",
+          "methods",
+          "harness"
+        ],
+        "routes": [
+          "overview",
+          "baseline",
+          "experiment-01",
+          "experiment-02",
+          "experiment-03",
+          "harness",
+          "methods"
+        ],
+        "local_assets": 28,
+        "preformatted_blocks": 0,
+        "removed_affiliations_absent": true
+      }
+    },
+    {
+      "name": "Frozen research evidence and snapshot accounting",
+      "result": "pass",
+      "detail": {
+        "research_json_js_equal": true,
+        "dashboard_json_js_equal": true,
+        "three_frozen_exports_unchanged": true,
+        "run_count": 3,
+        "call_and_token_totals_match": true,
+        "study02_csv_review": "All 40 rows checked against frozen exported analysis in independent read-only review."
+      }
+    },
+    {
+      "name": "Implementation claims",
+      "result": "pass",
+      "detail": {
+        "source_inventory": "harness-overview-state.json",
+        "reviewed_source_files": 14,
+        "findings": "Logical loop, optional progress configuration, research baseline, current implementation and historical snapshots kept distinct."
+      }
+    },
+    {
+      "name": "JavaScript syntax",
+      "result": "pass",
+      "detail": [
+        "app.js",
+        "harness.js",
+        "overview.js",
+        "overview-dashboard.js"
+      ]
+    },
+    {
+      "name": "Browser interaction",
+      "result": "pass",
+      "detail": [
+        "All five logic controls displayed the matching explanation.",
+        "Three run selections displayed recorded calls, tokens, duration and active-card counts.",
+        "Cumulative/per-call token modes, call selector and Enter on chart point updated the inspector.",
+        "Ferry and browser-recording links opened the matching case and analysis tab.",
+        "Study 02 navigation selected the Studies & tests parent; study and case content remained reachable.",
+        "No browser console errors reported."
+      ]
+    },
+    {
+      "name": "Responsive and visual review",
+      "result": "pass",
+      "detail": [
+        "Desktop 1365x900 and mobile 390x844 overrides inspected.",
+        "Logic diagram and both charts are directly visible in the overview, without a disclosure or secondary tab.",
+        "Mobile token plot uses a narrower SVG canvas for readable labels.",
+        "Light/dark display inspected; mobile document width equaled scroll width (375px).",
+        "Overview explains implemented, experimental, incomplete and known-failure states before directing readers to studies."
+      ]
+    },
+    {
+      "name": "Local HTTP delivery",
+      "result": "pass",
+      "detail": {
+        "files": 28,
+        "all_status_200": true,
+        "bytes_match_sources": true
+      }
+    }
+  ],
+  "new_model_runs": 0,
+  "limitations": [
+    "Saved snapshots are not a live connection to the local monitor; no new local model run was launched.",
+    "Current capability inventory is a source review, not an end-to-end re-test of all runtime mechanisms.",
+    "No assistance-quality, real-ASR or usability study was performed for this website change.",
+    "External services and the separate local monitor were not re-tested."
+  ],
+  "tested_source_sha256": {
+    "dist/index.html": "c8a0294d7e16bf07a828ead1e68ca70fed6cc710920b719bdc192e690b7b73c2",
+    "dist/app.js": "324b91d634453bb5217618b05d8b991f7484547cd3635fb49c29a6e1d5f72130",
+    "dist/harness.js": "8de500fd60cd6dd89c8da3ce76dd66d7f12d7ec9bd32adc1afc8489fad49adac",
+    "dist/overview.js": "6f16ae013e5ad979a2f01618931b58281dac369d8d92e18dd2e502bbb56da81d",
+    "dist/overview.css": "542b075ec3d9697982315b7bfb80e63558b0ea69e3b70fb5802dd53b69a1e6b9",
+    "dist/overview-dashboard.js": "bbe48ea2c1d7ccc85f3012ca5245120bcba37a7823532c66d2a3c4a024c05278",
+    "dist/overview-dashboard.css": "034db518dce900963964fa86956bbefe343ace67bed7e23259c12fa82b63e381",
+    "overview-section.html": "a044fdd28a5355e4682cdac9199d6a78add8537b21382b1610b49dbcfb8f52c8",
+    "overview-dashboard.html": "871d2abf453f18bfb58548e8ba31ddc1e2aa4b856687c44b43cff94cc3036db2",
+    "methods-section.html": "461c644eb1a9ca1937ff342ad47b455788b3f4137318e19645347b212023a45e",
+    "build_overview.py": "e1226fa2c3979f7f33b5549772d5b55055c1a41d029663a38c4f333c7ff38062",
+    "build_data.py": "481beea616d00c9431584785af3338bc7574f983fc4e95aee84312bccc000ea4",
+    "README.md": "32596c2ecdb742087c302f31729827b5aec1adc75be05656167866e2e868c410",
+    "dist/data/harness-overview-state.json": "0a1706cc5502255c8a2f4a2d6444995f8bef68388d3e0711a7b3d5ff07dd1281",
+    "dist/data/harness-dashboard.json": "4309d50a3f3b8efbc712596148bd174d3bb4d29aba45788bed06e813ea8f6d34",
+    "dist/data/experiment-02.json": "0994eb6075028831f75e1de974f5c8127ff63ea50271499dba6a7af23060ae65"
+  }
+}

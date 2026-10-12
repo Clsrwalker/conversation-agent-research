@@ -1,0 +1,104 @@
+{
+  "id": "workspace-organization",
+  "date": "2026-10-10",
+  "timezone": "America/Halifax",
+  "type": "engineering-validation",
+  "status": "passed-with-documented-limits",
+  "title": "Workspace organization and evidence integrity",
+  "tested_run": "workspace-organization-2026-10-10-01",
+  "baseline_revision": "42ebba8b513f0bcb2866866d7ec5d0d6b41f1c20",
+  "change": "Established a project entry point and local Git history; classified tools, research evidence and publication archives; preserved original experiment paths and retired a redundant Site checkout.",
+  "new_model_calls": 0,
+  "checks": [
+    {
+      "name": "Migration targets and removed old paths",
+      "result": "pass",
+      "files": 281
+    },
+    {
+      "name": "Frozen baselines, historical run batches, research datasets and source snapshots",
+      "result": "pass",
+      "sha256_files": 7670
+    },
+    {
+      "name": "Preserved migrated artifacts",
+      "result": "pass",
+      "sha256_files": 204
+    },
+    {
+      "name": "Regenerable cache, previews and verified duplicate removed from workspace",
+      "result": "pass",
+      "files": 136,
+      "bytes": 13267242,
+      "recovery": "Windows Recycle Bin; no disk-space-reclaimed claim"
+    },
+    {
+      "name": "Maintained Python source parsing and migrated ROOT anchors",
+      "result": "pass",
+      "parsed_files": 111,
+      "root_anchors": 23
+    },
+    {
+      "name": "Current README navigation and static builder inputs",
+      "result": "pass",
+      "local_links": 143,
+      "static_inputs": 55
+    },
+    {
+      "name": "Site builders",
+      "result": "pass",
+      "builders": [
+        "build_harness.py",
+        "build_progress.py",
+        "build_latency.py",
+        "build_execution_diagram.py",
+        "build_overview.py",
+        "build_data.py"
+      ],
+      "runtime": "System Python 3.13 with installed tzdata"
+    },
+    {
+      "name": "Lab import, UI paths, four harness source paths and frozen baseline",
+      "result": "pass",
+      "new_jobs": 0
+    },
+    {
+      "name": "Historical research exports",
+      "result": "pass",
+      "exports": 30,
+      "byte_identical": 29,
+      "remaining_differences": "Five display separators and export timestamp only; research numbers unchanged."
+    },
+    {
+      "name": "Studies and tests record visible in local browser; three evidence downloads served and matched local JSON",
+      "result": "pass",
+      "downloads": 3
+    }
+  ],
+  "limitations": [
+    "Filesystem integrity and build compatibility do not establish assistance quality.",
+    "No new research experiment, model call, real-ASR check or user study.",
+    "Proposal tooling received syntax and path checks; the PDF was not regenerated or visually revalidated.",
+    "Active services, their open logs and concurrently edited UI work were preserved in place.",
+    "Root Git is local; raw runs, downloaded datasets and independent repositories still require separate backups."
+  ],
+  "records": {
+    "integrity": "workspace-organization-checks.json",
+    "data_comparison": "workspace-organization-data-comparison.json",
+    "local_migration": "maintenance/2026-10-10-workspace-organization/migration-plan.json"
+  },
+  "failures_and_resolution": [
+    {
+      "problem": "Experiment virtualenv cannot resolve America/Halifax because tzdata is absent.",
+      "resolution": "Used the existing system Python with tzdata; left the experiment environment unchanged."
+    },
+    {
+      "problem": "First integrity checker treated a derived data directory named ROOT as the project root.",
+      "resolution": "Limited anchor checking to actual __file__ ancestor expressions, then reran the complete check."
+    },
+    {
+      "problem": "Permanent batch deletion was blocked by automatic safety review.",
+      "resolution": "Used Windows Recycle Bin for reversible cleanup after checking exact paths and hashes."
+    }
+  ]
+}

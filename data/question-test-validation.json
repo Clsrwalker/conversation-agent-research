@@ -1,0 +1,102 @@
+{
+  "id": "question-test-repair-2026-10-10",
+  "date": "2026-10-10",
+  "timezone": "America/Halifax",
+  "type": "engineering_validation",
+  "status": "passed_with_documented_quality_limits",
+  "problem": "A direct concept question was treated as an overheard utterance. One model call ended in private clarification prose, with no tools or delivered help.",
+  "change": "Separate direct-request task adapter, explicit checkpointed response delivery, optional tool use, bounded empty-output continuation, and a readable supplied-document ID/title catalog.",
+  "baseline": {
+    "kind": "historical_user_report",
+    "model_calls": 1,
+    "model_wall_ms": 1577.888,
+    "tools": 0,
+    "active_cards": 0,
+    "source_record": "experiments/deep_conversation/runs/lab-1d05b28fe8bd434281e99aab0fb5ee2c",
+    "record_sha256": "642bc431abe861ca146c90b98f048216347c1aae42c47bd71e97bd7b89251591"
+  },
+  "comparison_conditions": "Same configured local Qwen2.5 14B model and budgets. Task prompt, delivery contract and tool set differ from the frozen conversation baseline. v1/v2 also differ in source catalog and prompt context. These are development repair checks, not an isolated ablation or held-out benchmark.",
+  "checks": [
+    {
+      "name": "Lab HTTP, input, mode isolation and output projection",
+      "result": "pass",
+      "tests": 31
+    },
+    {
+      "name": "Direct runtime: delivery, budgets, checkpoint replay and source catalog",
+      "result": "pass",
+      "tests": 16
+    },
+    {
+      "name": "All selected workers and frozen-source integrity",
+      "result": "pass",
+      "tests": 5
+    },
+    {
+      "name": "World regression",
+      "result": "pass",
+      "tests": 10
+    },
+    {
+      "name": "Provider text stream",
+      "result": "pass",
+      "tests": 13
+    },
+    {
+      "name": "Read-only monitor regression",
+      "result": "pass",
+      "tests": 27
+    }
+  ],
+  "automated_checks_total": 102,
+  "model_runs": 10,
+  "independent_questions": 4,
+  "development_iterations": 2,
+  "cloud_model_calls": 0,
+  "result": "v2 delivers all five responses. The reported concept no longer produces clarification-only output, but remains only a partial match to the intended modern LLM-harness explanation. The source question now reads and uses the provided document. No exact deadline is fabricated.",
+  "limitations": [
+    "Two concept repetitions are not independent scenarios.",
+    "Concept precision remains limited; no general quality improvement claim.",
+    "The supplied-source v2 run still repeats one read.",
+    "Missing-information output mentions file paths although the UI accepts pasted source text, not local file access.",
+    "No live web, real ASR, persistent chat or automatic semantic grading.",
+    "Original four replay configurations remain unchanged in task semantics and are not comparable QA baselines.",
+    "The old service could not be restarted because automatic approval review rejected stopping it. The repaired service and website link use localhost:8769."
+  ],
+  "source_sha256": {
+    "lab.py": "baa32d62f63e6aacb09e824b6a0444378fe9633f2edde71822334ef216a5eb9a",
+    "lab_worker.py": "e6f78aa485be1ab1532d90e4038d80aed3fcce5166ddf9084ae4790a57dc3598",
+    "direct_request.py": "4162b008330e2004f31c5b6328406d8afeae949f0511d46217f2ac10130a93ec",
+    "world.py": "0f0469d54a544a2d6c0ec8b7a11bb2564a22bf97d87f77ed57ab9c5aa85f2c1b",
+    "test_direct_request.py": "fe4c2f498cc73d94f0d4e436a9f85290b229fad93b890f412dc5f0a3507e866f",
+    "test_lab.py": "e46ad5026e9bd8fae948f99cc56573c0178685e13ff69a763282deba28df0d9b",
+    "test_lab_worker.py": "8cd81d762f1e9d11b3b198bbf6d9432e6586343565e1ab2f47aeb948120b59c8",
+    "lab_ui/index.html": "a8f1aadaad7e73d6e349d6c45771c76fff4c72edaad49f33fd0cf7c5a33704cd",
+    "lab_ui/lab.js": "fb0897935606d308bc4858cb615e4a99c7acfd3cf6c8f7a8c9cd7b706d34e35e",
+    "lab_ui/lab.css": "3af3d1b54d625870e40551a9669cf2a39a9990597d6e858cd80e9176a5cccfed"
+  },
+  "evidence": "question-test-diagnostics.json",
+  "source_download": "question-test-source.zip",
+  "browser_checks": {
+    "date": "2026-10-10",
+    "timezone": "America/Halifax",
+    "result": "pass",
+    "checks": [
+      "Default direct-request mode and blank independent question/document inputs are visible.",
+      "Completed concept run shows the persisted final response separately from debug output, with one model call and a visited deliver_response graph node.",
+      "Same-question comparison shows four direct-request diagnostic runs with matching inputs/model, excluding the old replay run and displaying v1/v2 adapter hashes.",
+      "Supplied-source run shows the correct offline-edit / online-sync distinction and three tool receipts (two reads and one wait).",
+      "Switching runs shows Loading response before the detail record arrives, rather than falsely claiming no response.",
+      "Browser console reports no errors in the test bench or site preview.",
+      "Studies and tests preview shows all ten diagnostic rows, partial and failed assessments, 102 software checks and evidence download links."
+    ],
+    "limitations": [
+      "Browser checks verify presentation and recorded outputs, not response quality.",
+      "This pass used the default desktop viewport; no new mobile breakpoint claim."
+    ]
+  },
+  "superseded_task_entry": {
+    "record": "question-task-v3-validation.json",
+    "reason": "The web now tests direct questions in every configuration."
+  }
+}

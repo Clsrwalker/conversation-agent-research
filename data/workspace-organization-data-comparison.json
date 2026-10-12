@@ -1,0 +1,41 @@
+{
+  "date": "2026-10-10",
+  "checked_exports": 30,
+  "byte_identical_exports": 29,
+  "research_numbers_unchanged": true,
+  "different_export": "harness-dashboard.json",
+  "differences": [
+    {
+      "path": "/runs/0/outcome_label",
+      "before": "Telemetry captured \u00b7 no help card",
+      "after": "Telemetry captured \u8def no help card"
+    },
+    {
+      "path": "/runs/1/classification",
+      "before": "Study 01 \u00b7 frozen development result",
+      "after": "Study 01 \u8def frozen development result"
+    },
+    {
+      "path": "/runs/1/title",
+      "before": "Study 01 \u00b7 Ferry and shuttle",
+      "after": "Study 01 \u8def Ferry and shuttle"
+    },
+    {
+      "path": "/runs/2/classification",
+      "before": "Study 01 \u00b7 frozen development result",
+      "after": "Study 01 \u8def frozen development result"
+    },
+    {
+      "path": "/runs/2/title",
+      "before": "Study 01 \u00b7 Browser recording",
+      "after": "Study 01 \u8def Browser recording"
+    },
+    {
+      "path": "/exported_at",
+      "before": "2026-10-10T00:47:15.820118+00:00",
+      "after": "2026-10-10T17:29:10.635144+00:00"
+    }
+  ],
+  "interpretation": "Only the export timestamp and five display separators changed when regenerating from the maintained builder. Research measurements, outcome scores and original run files are unchanged.",
+  "new_model_calls": 0
+}

@@ -1,0 +1,243 @@
+[
+  {
+    "id": "orch-route-checkin-evidence-join",
+    "title": "A confident answer from incomplete evidence",
+    "short_input": "Can the booked 17:10 ferry and connecting shuttle reach the workshop before check-in closes?",
+    "reference_conclusion": "No. The ferry reaches the landing at 17:40. The shuttle departs at 17:45 and takes 12 minutes, arriving at 17:57. Check-in closes at 17:55.",
+    "finding": "The agent published a confident positive answer after one search. It did not request any full document. Its stated 17:50 arrival was unsupported; the 12-minute shuttle journey was outside the returned excerpt.",
+    "outcome_label": "Material error",
+    "next_question": "Can evidence-aware investigation reduce unsupported conclusions without forcing every answer through a fixed sequence?",
+    "scenario_type": "Authored synthetic development scenario, not a transcript from real audio.",
+    "input_verbatim": [
+      {
+        "kind": "asr_final",
+        "at_ms": 0,
+        "speaker": "Tess",
+        "segment_id": "route-0",
+        "text": "For the Windmere paper-craft workshop this Saturday, we booked the 17:10 Windmere ferry sailing and plan to take the workshop shuttle from the landing. Can that route get us there in time to check in?"
+      },
+      {
+        "kind": "asr_final",
+        "at_ms": 900,
+        "speaker": "Cal",
+        "segment_id": "route-900",
+        "text": "The workshop itself starts at 18:00. Please check the ferry timetable, the connecting shuttle and the workshop check-in rule together. For this question we mean that booked ferry-plus-shuttle route, not a taxi or another route."
+      }
+    ],
+    "reference_evidence_verbatim": [
+      {
+        "id": "windmere-ferry-sailing",
+        "title": "Windmere Saturday 17:10 ferry sailing timetable for workshop visitors",
+        "kind": "document",
+        "available_at_ms": 0,
+        "text": "The Saturday Windmere ferry sailing departing at 17:10 is scheduled to reach Windmere Landing at 17:40. The 17:40 time is passenger arrival at the landing. This timetable does not specify workshop admission deadlines or shuttle arrival at the venue. Times are local and apply to the Saturday workshop trip discussed here."
+      },
+      {
+        "id": "windmere-workshop-shuttle",
+        "title": "Windmere Saturday workshop shuttle from the ferry landing",
+        "kind": "document",
+        "available_at_ms": 0,
+        "text": "The Windmere Saturday paper-craft workshop shuttle leaves the ferry landing at 17:45. Ferry passengers arriving at the landing at 17:40 can board this connection. The shuttle journey to the workshop entrance takes 12 minutes. It does not alter the venue's check-in deadline. These are the published scheduled times; this note makes no claim about earlier arrival or discretionary late admission."
+      },
+      {
+        "id": "windmere-workshop-checkin",
+        "title": "Windmere Saturday paper-craft workshop start time and check-in deadline",
+        "kind": "document",
+        "available_at_ms": 0,
+        "text": "The Windmere Saturday paper-craft workshop begins at 18:00. Attendee check-in closes at 17:55 at the workshop entrance. Arrival after 17:55 does not satisfy this check-in rule even if the first activity has not started. This notice gives no exception for arrivals on the ferry shuttle."
+      }
+    ],
+    "first_search_result_verbatim": [
+      {
+        "content_level": "excerpt",
+        "excerpt": "The Saturday Windmere ferry sailing departing at 17:10 is scheduled to reach Windmere Landing at 17:40. The 17:40 time is passenger arrival at the lan",
+        "kind": "document",
+        "read_hint": "Call read_document with this source_id to request the full document, then wait for the read result.",
+        "retrieval_score": 0.9608,
+        "source_id": "windmere-ferry-sailing",
+        "title": "Windmere Saturday 17:10 ferry sailing timetable for workshop visitors",
+        "truncated": true
+      },
+      {
+        "content_level": "excerpt",
+        "excerpt": "The Windmere Saturday paper-craft workshop begins at 18:00. Attendee check-in closes at 17:55 at the workshop entrance. Arrival after 17:55 does not s",
+        "kind": "document",
+        "read_hint": "Call read_document with this source_id to request the full document, then wait for the read result.",
+        "retrieval_score": 0.7625,
+        "source_id": "windmere-workshop-checkin",
+        "title": "Windmere Saturday paper-craft workshop start time and check-in deadline",
+        "truncated": true
+      },
+      {
+        "content_level": "excerpt",
+        "excerpt": "The Windmere Saturday paper-craft workshop shuttle leaves the ferry landing at 17:45. Ferry passengers arriving at the landing at 17:40 can board this",
+        "kind": "document",
+        "read_hint": "Call read_document with this source_id to request the full document, then wait for the read result.",
+        "retrieval_score": 0.5547,
+        "source_id": "windmere-workshop-shuttle",
+        "title": "Windmere Saturday workshop shuttle from the ferry landing",
+        "truncated": true
+      }
+    ],
+    "visible_cards_verbatim": [
+      {
+        "source_ids": [
+          "windmere-ferry-sailing",
+          "windmere-workshop-shuttle",
+          "windmere-workshop-checkin"
+        ],
+        "text": "Based on the ferry and shuttle schedules, you will be able to check in for the Windmere paper-craft workshop on time. The ferry sailing at 17:10 arrives at the landing at 17:40, and the shuttle departs at 17:45, arriving at the workshop location by 17:50, which is within the check-in window of 17:55.",
+        "updated_ms": 3500
+      }
+    ],
+    "output_note": "The quoted card below is the actual incorrect output; it is not the reference answer.",
+    "stop_reason": "window_closed",
+    "model_calls": 5,
+    "tokens": 20067,
+    "tool_counts": {
+      "search": 1,
+      "wait": 2,
+      "publish_card": 1
+    },
+    "agent_stop_simulated_ms": 45000,
+    "evaluation_deadline_simulated_ms": 45000,
+    "measured_model_wall_ms": 28411.924,
+    "recovery_prompts": 0,
+    "primary_success": false,
+    "material_error": true,
+    "native_reference": {
+      "stop_reason": "window_closed",
+      "visible_cards_verbatim": [
+        {
+          "source_ids": [
+            "windmere-ferry-sailing",
+            "windmere-workshop-shuttle",
+            "windmere-workshop-checkin"
+          ],
+          "text": "Based on the schedules and check-in rules: The ferry arrives at the landing at 17:40. The shuttle leaves the landing at 17:45 and takes 12 minutes to reach the workshop entrance. Check-in closes at 17:55. You will arrive at the landing at 17:40, board the shuttle at 17:45, and arrive at the workshop entrance by 17:57. Since check-in closes at 17:55, you will miss the check-in deadline by 2 minutes. The workshop does not provide any exceptions for late arrivals via the ferry shuttle. To ensure you can attend the workshop, it would be best to contact the organizers to confirm if they can accommodate late arrivals.",
+          "updated_ms": 6650
+        }
+      ],
+      "model_calls": 16,
+      "tokens": 85162
+    },
+    "sources": {
+      "fixture": "experiments/deep_conversation/benchmarks/results/local14-tool-recovery-paired-v1/agent-led-recovery__orch-route-checkin-evidence-join__r1/fixture.json",
+      "summary": "experiments/deep_conversation/benchmarks/results/local14-tool-recovery-paired-v1/agent-led-recovery__orch-route-checkin-evidence-join__r1/summary.json",
+      "events": "experiments/deep_conversation/benchmarks/results/local14-tool-recovery-paired-v1/agent-led-recovery__orch-route-checkin-evidence-join__r1/environment_log.json",
+      "tools": "experiments/deep_conversation/benchmarks/results/local14-tool-recovery-paired-v1/agent-led-recovery__orch-route-checkin-evidence-join__r1/tool_calls.json",
+      "rating": "experiments/deep_conversation/benchmarks/results/local14-tool-recovery-paired-v1/analysis.json",
+      "native_summary": "experiments/deep_conversation/benchmarks/results/local14-tool-recovery-paired-v1/native__orch-route-checkin-evidence-join__r1/summary.json"
+    }
+  },
+  {
+    "id": "orch-browser-recording-constraint",
+    "title": "Repeated searches without a useful answer",
+    "short_input": "Can a browser-only setup save camera and screen recordings as two separate files if a paid plan is allowed?",
+    "reference_conclusion": "No. Browser recording creates one combined video on every plan. Separate files require the installed desktop recorder, which the conversation rules out.",
+    "finding": "The agent made 15 searches and 14 waits, but did not read a full document or publish a card. It stopped after exceeding the soft token budget.",
+    "outcome_label": "Required help missing",
+    "next_question": "Can the harness help the agent recognize when repeated search is no longer adding evidence, and move toward a supported conclusion?",
+    "scenario_type": "Authored synthetic development scenario, not a transcript from real audio.",
+    "input_verbatim": [
+      {
+        "kind": "asr_final",
+        "at_ms": 0,
+        "speaker": "Mina",
+        "segment_id": "recording-0",
+        "text": "For our LumenCast workshop, we need the camera recording and the shared-screen recording as two separate video files afterward. The classroom computers can only use a browser."
+      },
+      {
+        "kind": "asr_final",
+        "at_ms": 900,
+        "speaker": "Jon",
+        "segment_id": "recording-900",
+        "text": "Right, we cannot install a desktop recorder. Paying for a different LumenCast plan is possible if that solves it. Can this browser-only setup produce the two independent recordings?"
+      }
+    ],
+    "reference_evidence_verbatim": [
+      {
+        "id": "lumencast-browser-recording",
+        "title": "LumenCast browser workshop camera and shared-screen recording",
+        "kind": "document",
+        "available_at_ms": 0,
+        "text": "LumenCast browser workshop recording creates one combined video containing the camera and shared screen. This browser mode does not save independent camera and screen files on any plan. The recording download preserves that combined layout; changing the subscription does not add separate tracks to a browser recording. This article describes the browser recorder, not the desktop recorder."
+      },
+      {
+        "id": "lumencast-desktop-recording",
+        "title": "LumenCast desktop recorder independent camera and screen files",
+        "kind": "document",
+        "available_at_ms": 0,
+        "text": "LumenCast Desktop Recorder can save the camera video and shared-screen video as two independent files. That capture mode requires installing and running the desktop recorder on the recording computer before the workshop. It is not a browser setting and cannot split an already combined browser recording into the original independent streams."
+      },
+      {
+        "id": "lumencast-plan-recording",
+        "title": "LumenCast plans and browser workshop recording features",
+        "kind": "document",
+        "available_at_ms": 0,
+        "text": "LumenCast paid plans increase workshop recording duration and storage allowances. They do not change the browser recorder's combined camera-and-screen format. Independent camera and shared-screen files are a capability of the installed desktop recorder. Paying for a plan by itself does not enable that desktop capture mode in a browser."
+      }
+    ],
+    "first_search_result_verbatim": [
+      {
+        "content_level": "excerpt",
+        "excerpt": "LumenCast browser workshop recording creates one combined video containing the camera and shared screen. This browser mode does not save independent c",
+        "kind": "document",
+        "read_hint": "Call read_document with this source_id to request the full document, then wait for the read result.",
+        "retrieval_score": 0.9608,
+        "source_id": "lumencast-browser-recording",
+        "title": "LumenCast browser workshop camera and shared-screen recording",
+        "truncated": true
+      },
+      {
+        "content_level": "excerpt",
+        "excerpt": "LumenCast Desktop Recorder can save the camera video and shared-screen video as two independent files. That capture mode requires installing and runni",
+        "kind": "document",
+        "read_hint": "Call read_document with this source_id to request the full document, then wait for the read result.",
+        "retrieval_score": 0.9487,
+        "source_id": "lumencast-desktop-recording",
+        "title": "LumenCast desktop recorder independent camera and screen files",
+        "truncated": true
+      },
+      {
+        "content_level": "excerpt",
+        "excerpt": "LumenCast paid plans increase workshop recording duration and storage allowances. They do not change the browser recorder's combined camera-and-screen",
+        "kind": "document",
+        "read_hint": "Call read_document with this source_id to request the full document, then wait for the read result.",
+        "retrieval_score": 0.915,
+        "source_id": "lumencast-plan-recording",
+        "title": "LumenCast plans and browser workshop recording features",
+        "truncated": true
+      }
+    ],
+    "visible_cards_verbatim": [],
+    "output_note": "No card was displayed.",
+    "stop_reason": "budget_exhausted",
+    "model_calls": 17,
+    "tokens": 121015,
+    "tool_counts": {
+      "search": 15,
+      "wait": 14
+    },
+    "agent_stop_simulated_ms": 23250,
+    "evaluation_deadline_simulated_ms": 45000,
+    "measured_model_wall_ms": 59091.696,
+    "recovery_prompts": 0,
+    "primary_success": false,
+    "material_error": false,
+    "native_reference": {
+      "stop_reason": "budget_exhausted",
+      "visible_cards_verbatim": [],
+      "model_calls": 22,
+      "tokens": 123624
+    },
+    "sources": {
+      "fixture": "experiments/deep_conversation/benchmarks/results/local14-tool-recovery-paired-v1/agent-led-recovery__orch-browser-recording-constraint__r1/fixture.json",
+      "summary": "experiments/deep_conversation/benchmarks/results/local14-tool-recovery-paired-v1/agent-led-recovery__orch-browser-recording-constraint__r1/summary.json",
+      "events": "experiments/deep_conversation/benchmarks/results/local14-tool-recovery-paired-v1/agent-led-recovery__orch-browser-recording-constraint__r1/environment_log.json",
+      "tools": "experiments/deep_conversation/benchmarks/results/local14-tool-recovery-paired-v1/agent-led-recovery__orch-browser-recording-constraint__r1/tool_calls.json",
+      "rating": "experiments/deep_conversation/benchmarks/results/local14-tool-recovery-paired-v1/analysis.json",
+      "native_summary": "experiments/deep_conversation/benchmarks/results/local14-tool-recovery-paired-v1/native__orch-browser-recording-constraint__r1/summary.json"
+    }
+  }
+]
