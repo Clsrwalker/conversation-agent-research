@@ -1,0 +1,858 @@
+{
+  "runtime_world_created": false,
+  "graphs": [
+    {
+      "assistant_id": "bdf846c5-7f5b-5c99-a4b3-657c25144b30",
+      "input_schema": {
+        "$defs": {
+          "SuppliedDocument": {
+            "properties": {
+              "title": {
+                "title": "Title",
+                "type": "string"
+              },
+              "text": {
+                "title": "Text",
+                "type": "string"
+              }
+            },
+            "required": [
+              "title",
+              "text"
+            ],
+            "title": "SuppliedDocument",
+            "type": "object"
+          }
+        },
+        "properties": {
+          "question": {
+            "title": "Question",
+            "type": "string"
+          },
+          "documents": {
+            "items": {
+              "$ref": "#/$defs/SuppliedDocument"
+            },
+            "title": "Documents",
+            "type": "array"
+          }
+        },
+        "required": [
+          "question"
+        ],
+        "title": "StudioInput",
+        "type": "object"
+      },
+      "status": "passed",
+      "graph": {
+        "nodes": [
+          {
+            "id": "__start__",
+            "type": "runnable",
+            "data": {
+              "name": "__start__"
+            }
+          },
+          {
+            "id": "studio_input",
+            "type": "runnable",
+            "data": {
+              "name": "studio_input"
+            }
+          },
+          {
+            "id": "observe",
+            "type": "runnable",
+            "data": {
+              "name": "observe"
+            }
+          },
+          {
+            "id": "request_response",
+            "type": "runnable",
+            "data": {
+              "name": "request_response"
+            }
+          },
+          {
+            "id": "deliver_response",
+            "type": "runnable",
+            "data": {
+              "name": "deliver_response"
+            }
+          },
+          {
+            "id": "consider_recovery",
+            "type": "runnable",
+            "data": {
+              "name": "consider_recovery"
+            }
+          },
+          {
+            "id": "__end__"
+          },
+          {
+            "id": "investigate:model",
+            "type": "runnable",
+            "data": {
+              "name": "investigate:model"
+            }
+          },
+          {
+            "id": "investigate:tools",
+            "type": "runnable",
+            "data": {
+              "name": "investigate:tools"
+            }
+          },
+          {
+            "id": "investigate:PatchToolCallsMiddleware.before_agent",
+            "type": "runnable",
+            "data": {
+              "name": "investigate:PatchToolCallsMiddleware.before_agent"
+            }
+          },
+          {
+            "id": "investigate:DirectEventBoundary.before_model",
+            "type": "runnable",
+            "data": {
+              "name": "investigate:DirectEventBoundary.before_model"
+            }
+          },
+          {
+            "id": "investigate:__end__"
+          }
+        ],
+        "edges": [
+          {
+            "source": "__start__",
+            "target": "studio_input"
+          },
+          {
+            "source": "consider_recovery",
+            "target": "deliver_response",
+            "conditional": true
+          },
+          {
+            "source": "consider_recovery",
+            "target": "investigate:PatchToolCallsMiddleware.before_agent",
+            "conditional": true
+          },
+          {
+            "source": "consider_recovery",
+            "target": "observe",
+            "conditional": true
+          },
+          {
+            "source": "consider_recovery",
+            "target": "request_response",
+            "conditional": true
+          },
+          {
+            "source": "investigate:__end__",
+            "target": "consider_recovery"
+          },
+          {
+            "source": "observe",
+            "target": "deliver_response",
+            "conditional": true
+          },
+          {
+            "source": "observe",
+            "target": "investigate:PatchToolCallsMiddleware.before_agent",
+            "conditional": true
+          },
+          {
+            "source": "request_response",
+            "target": "investigate:PatchToolCallsMiddleware.before_agent"
+          },
+          {
+            "source": "studio_input",
+            "target": "observe"
+          },
+          {
+            "source": "deliver_response",
+            "target": "__end__"
+          },
+          {
+            "source": "investigate:DirectEventBoundary.before_model",
+            "target": "investigate:__end__",
+            "conditional": true
+          },
+          {
+            "source": "investigate:DirectEventBoundary.before_model",
+            "target": "investigate:model",
+            "conditional": true
+          },
+          {
+            "source": "investigate:PatchToolCallsMiddleware.before_agent",
+            "target": "investigate:DirectEventBoundary.before_model"
+          },
+          {
+            "source": "investigate:model",
+            "target": "investigate:DirectEventBoundary.before_model",
+            "conditional": true
+          },
+          {
+            "source": "investigate:model",
+            "target": "investigate:__end__",
+            "conditional": true
+          },
+          {
+            "source": "investigate:model",
+            "target": "investigate:tools",
+            "conditional": true
+          },
+          {
+            "source": "investigate:tools",
+            "target": "investigate:DirectEventBoundary.before_model",
+            "conditional": true
+          },
+          {
+            "source": "investigate:tools",
+            "target": "investigate:__end__",
+            "conditional": true
+          }
+        ]
+      },
+      "graph_id": "recovery-current-question"
+    },
+    {
+      "assistant_id": "7deb1f8e-3a09-5ddd-9f0f-b60f64013c4a",
+      "input_schema": {
+        "$defs": {
+          "SuppliedDocument": {
+            "properties": {
+              "title": {
+                "title": "Title",
+                "type": "string"
+              },
+              "text": {
+                "title": "Text",
+                "type": "string"
+              }
+            },
+            "required": [
+              "title",
+              "text"
+            ],
+            "title": "SuppliedDocument",
+            "type": "object"
+          }
+        },
+        "properties": {
+          "question": {
+            "title": "Question",
+            "type": "string"
+          },
+          "documents": {
+            "items": {
+              "$ref": "#/$defs/SuppliedDocument"
+            },
+            "title": "Documents",
+            "type": "array"
+          }
+        },
+        "required": [
+          "question"
+        ],
+        "title": "StudioInput",
+        "type": "object"
+      },
+      "status": "passed",
+      "graph": {
+        "nodes": [
+          {
+            "id": "__start__",
+            "type": "runnable",
+            "data": {
+              "name": "__start__"
+            }
+          },
+          {
+            "id": "studio_input",
+            "type": "runnable",
+            "data": {
+              "name": "studio_input"
+            }
+          },
+          {
+            "id": "observe",
+            "type": "runnable",
+            "data": {
+              "name": "observe"
+            }
+          },
+          {
+            "id": "request_response",
+            "type": "runnable",
+            "data": {
+              "name": "request_response"
+            }
+          },
+          {
+            "id": "deliver_response",
+            "type": "runnable",
+            "data": {
+              "name": "deliver_response"
+            }
+          },
+          {
+            "id": "__end__"
+          },
+          {
+            "id": "investigate:model",
+            "type": "runnable",
+            "data": {
+              "name": "investigate:model"
+            }
+          },
+          {
+            "id": "investigate:tools",
+            "type": "runnable",
+            "data": {
+              "name": "investigate:tools"
+            }
+          },
+          {
+            "id": "investigate:PatchToolCallsMiddleware.before_agent",
+            "type": "runnable",
+            "data": {
+              "name": "investigate:PatchToolCallsMiddleware.before_agent"
+            }
+          },
+          {
+            "id": "investigate:DirectEventBoundary.before_model",
+            "type": "runnable",
+            "data": {
+              "name": "investigate:DirectEventBoundary.before_model"
+            }
+          },
+          {
+            "id": "investigate:__end__"
+          }
+        ],
+        "edges": [
+          {
+            "source": "__start__",
+            "target": "studio_input"
+          },
+          {
+            "source": "investigate:__end__",
+            "target": "deliver_response",
+            "conditional": true
+          },
+          {
+            "source": "investigate:__end__",
+            "target": "observe",
+            "conditional": true
+          },
+          {
+            "source": "investigate:__end__",
+            "target": "request_response",
+            "conditional": true
+          },
+          {
+            "source": "observe",
+            "target": "deliver_response",
+            "conditional": true
+          },
+          {
+            "source": "observe",
+            "target": "investigate:PatchToolCallsMiddleware.before_agent",
+            "conditional": true
+          },
+          {
+            "source": "request_response",
+            "target": "investigate:PatchToolCallsMiddleware.before_agent"
+          },
+          {
+            "source": "studio_input",
+            "target": "observe"
+          },
+          {
+            "source": "deliver_response",
+            "target": "__end__"
+          },
+          {
+            "source": "investigate:DirectEventBoundary.before_model",
+            "target": "investigate:__end__",
+            "conditional": true
+          },
+          {
+            "source": "investigate:DirectEventBoundary.before_model",
+            "target": "investigate:model",
+            "conditional": true
+          },
+          {
+            "source": "investigate:PatchToolCallsMiddleware.before_agent",
+            "target": "investigate:DirectEventBoundary.before_model"
+          },
+          {
+            "source": "investigate:model",
+            "target": "investigate:DirectEventBoundary.before_model",
+            "conditional": true
+          },
+          {
+            "source": "investigate:model",
+            "target": "investigate:__end__",
+            "conditional": true
+          },
+          {
+            "source": "investigate:model",
+            "target": "investigate:tools",
+            "conditional": true
+          },
+          {
+            "source": "investigate:tools",
+            "target": "investigate:DirectEventBoundary.before_model",
+            "conditional": true
+          },
+          {
+            "source": "investigate:tools",
+            "target": "investigate:__end__",
+            "conditional": true
+          }
+        ]
+      },
+      "graph_id": "native-question"
+    },
+    {
+      "assistant_id": "df6e591f-d090-56c9-ab9e-b8849fe59c9c",
+      "input_schema": {
+        "$defs": {
+          "SuppliedDocument": {
+            "properties": {
+              "title": {
+                "title": "Title",
+                "type": "string"
+              },
+              "text": {
+                "title": "Text",
+                "type": "string"
+              }
+            },
+            "required": [
+              "title",
+              "text"
+            ],
+            "title": "SuppliedDocument",
+            "type": "object"
+          }
+        },
+        "properties": {
+          "question": {
+            "title": "Question",
+            "type": "string"
+          },
+          "documents": {
+            "items": {
+              "$ref": "#/$defs/SuppliedDocument"
+            },
+            "title": "Documents",
+            "type": "array"
+          }
+        },
+        "required": [
+          "question"
+        ],
+        "title": "StudioInput",
+        "type": "object"
+      },
+      "status": "passed",
+      "graph": {
+        "nodes": [
+          {
+            "id": "__start__",
+            "type": "runnable",
+            "data": {
+              "name": "__start__"
+            }
+          },
+          {
+            "id": "studio_input",
+            "type": "runnable",
+            "data": {
+              "name": "studio_input"
+            }
+          },
+          {
+            "id": "observe",
+            "type": "runnable",
+            "data": {
+              "name": "observe"
+            }
+          },
+          {
+            "id": "request_response",
+            "type": "runnable",
+            "data": {
+              "name": "request_response"
+            }
+          },
+          {
+            "id": "deliver_response",
+            "type": "runnable",
+            "data": {
+              "name": "deliver_response"
+            }
+          },
+          {
+            "id": "consider_recovery",
+            "type": "runnable",
+            "data": {
+              "name": "consider_recovery"
+            }
+          },
+          {
+            "id": "__end__"
+          },
+          {
+            "id": "investigate:model",
+            "type": "runnable",
+            "data": {
+              "name": "investigate:model"
+            }
+          },
+          {
+            "id": "investigate:tools",
+            "type": "runnable",
+            "data": {
+              "name": "investigate:tools"
+            }
+          },
+          {
+            "id": "investigate:PatchToolCallsMiddleware.before_agent",
+            "type": "runnable",
+            "data": {
+              "name": "investigate:PatchToolCallsMiddleware.before_agent"
+            }
+          },
+          {
+            "id": "investigate:DirectEventBoundary.before_model",
+            "type": "runnable",
+            "data": {
+              "name": "investigate:DirectEventBoundary.before_model"
+            }
+          },
+          {
+            "id": "investigate:__end__"
+          }
+        ],
+        "edges": [
+          {
+            "source": "__start__",
+            "target": "studio_input"
+          },
+          {
+            "source": "consider_recovery",
+            "target": "deliver_response",
+            "conditional": true
+          },
+          {
+            "source": "consider_recovery",
+            "target": "investigate:PatchToolCallsMiddleware.before_agent",
+            "conditional": true
+          },
+          {
+            "source": "consider_recovery",
+            "target": "observe",
+            "conditional": true
+          },
+          {
+            "source": "consider_recovery",
+            "target": "request_response",
+            "conditional": true
+          },
+          {
+            "source": "investigate:__end__",
+            "target": "consider_recovery"
+          },
+          {
+            "source": "observe",
+            "target": "deliver_response",
+            "conditional": true
+          },
+          {
+            "source": "observe",
+            "target": "investigate:PatchToolCallsMiddleware.before_agent",
+            "conditional": true
+          },
+          {
+            "source": "request_response",
+            "target": "investigate:PatchToolCallsMiddleware.before_agent"
+          },
+          {
+            "source": "studio_input",
+            "target": "observe"
+          },
+          {
+            "source": "deliver_response",
+            "target": "__end__"
+          },
+          {
+            "source": "investigate:DirectEventBoundary.before_model",
+            "target": "investigate:__end__",
+            "conditional": true
+          },
+          {
+            "source": "investigate:DirectEventBoundary.before_model",
+            "target": "investigate:model",
+            "conditional": true
+          },
+          {
+            "source": "investigate:PatchToolCallsMiddleware.before_agent",
+            "target": "investigate:DirectEventBoundary.before_model"
+          },
+          {
+            "source": "investigate:model",
+            "target": "investigate:DirectEventBoundary.before_model",
+            "conditional": true
+          },
+          {
+            "source": "investigate:model",
+            "target": "investigate:__end__",
+            "conditional": true
+          },
+          {
+            "source": "investigate:model",
+            "target": "investigate:tools",
+            "conditional": true
+          },
+          {
+            "source": "investigate:tools",
+            "target": "investigate:DirectEventBoundary.before_model",
+            "conditional": true
+          },
+          {
+            "source": "investigate:tools",
+            "target": "investigate:__end__",
+            "conditional": true
+          }
+        ]
+      },
+      "graph_id": "progress-question"
+    },
+    {
+      "assistant_id": "96031def-1970-58c1-9ee2-35d14948c3a1",
+      "input_schema": {
+        "$defs": {
+          "SuppliedDocument": {
+            "properties": {
+              "title": {
+                "title": "Title",
+                "type": "string"
+              },
+              "text": {
+                "title": "Text",
+                "type": "string"
+              }
+            },
+            "required": [
+              "title",
+              "text"
+            ],
+            "title": "SuppliedDocument",
+            "type": "object"
+          }
+        },
+        "properties": {
+          "question": {
+            "title": "Question",
+            "type": "string"
+          },
+          "documents": {
+            "items": {
+              "$ref": "#/$defs/SuppliedDocument"
+            },
+            "title": "Documents",
+            "type": "array"
+          }
+        },
+        "required": [
+          "question"
+        ],
+        "title": "StudioInput",
+        "type": "object"
+      },
+      "status": "passed",
+      "graph": {
+        "nodes": [
+          {
+            "id": "__start__",
+            "type": "runnable",
+            "data": {
+              "name": "__start__"
+            }
+          },
+          {
+            "id": "studio_input",
+            "type": "runnable",
+            "data": {
+              "name": "studio_input"
+            }
+          },
+          {
+            "id": "observe",
+            "type": "runnable",
+            "data": {
+              "name": "observe"
+            }
+          },
+          {
+            "id": "request_response",
+            "type": "runnable",
+            "data": {
+              "name": "request_response"
+            }
+          },
+          {
+            "id": "deliver_response",
+            "type": "runnable",
+            "data": {
+              "name": "deliver_response"
+            }
+          },
+          {
+            "id": "__end__"
+          },
+          {
+            "id": "investigate:model",
+            "type": "runnable",
+            "data": {
+              "name": "investigate:model"
+            }
+          },
+          {
+            "id": "investigate:tools",
+            "type": "runnable",
+            "data": {
+              "name": "investigate:tools"
+            }
+          },
+          {
+            "id": "investigate:PatchToolCallsMiddleware.before_agent",
+            "type": "runnable",
+            "data": {
+              "name": "investigate:PatchToolCallsMiddleware.before_agent"
+            }
+          },
+          {
+            "id": "investigate:DirectEventBoundary.before_model",
+            "type": "runnable",
+            "data": {
+              "name": "investigate:DirectEventBoundary.before_model"
+            }
+          },
+          {
+            "id": "investigate:__end__"
+          }
+        ],
+        "edges": [
+          {
+            "source": "__start__",
+            "target": "studio_input"
+          },
+          {
+            "source": "investigate:__end__",
+            "target": "deliver_response",
+            "conditional": true
+          },
+          {
+            "source": "investigate:__end__",
+            "target": "observe",
+            "conditional": true
+          },
+          {
+            "source": "investigate:__end__",
+            "target": "request_response",
+            "conditional": true
+          },
+          {
+            "source": "observe",
+            "target": "deliver_response",
+            "conditional": true
+          },
+          {
+            "source": "observe",
+            "target": "investigate:PatchToolCallsMiddleware.before_agent",
+            "conditional": true
+          },
+          {
+            "source": "request_response",
+            "target": "investigate:PatchToolCallsMiddleware.before_agent"
+          },
+          {
+            "source": "studio_input",
+            "target": "observe"
+          },
+          {
+            "source": "deliver_response",
+            "target": "__end__"
+          },
+          {
+            "source": "investigate:DirectEventBoundary.before_model",
+            "target": "investigate:__end__",
+            "conditional": true
+          },
+          {
+            "source": "investigate:DirectEventBoundary.before_model",
+            "target": "investigate:model",
+            "conditional": true
+          },
+          {
+            "source": "investigate:PatchToolCallsMiddleware.before_agent",
+            "target": "investigate:DirectEventBoundary.before_model"
+          },
+          {
+            "source": "investigate:model",
+            "target": "investigate:DirectEventBoundary.before_model",
+            "conditional": true
+          },
+          {
+            "source": "investigate:model",
+            "target": "investigate:__end__",
+            "conditional": true
+          },
+          {
+            "source": "investigate:model",
+            "target": "investigate:tools",
+            "conditional": true
+          },
+          {
+            "source": "investigate:tools",
+            "target": "investigate:DirectEventBoundary.before_model",
+            "conditional": true
+          },
+          {
+            "source": "investigate:tools",
+            "target": "investigate:__end__",
+            "conditional": true
+          }
+        ]
+      },
+      "graph_id": "agent-led-question"
+    }
+  ],
+  "date": "2026-10-12",
+  "base_url": "http://127.0.0.1:2024",
+  "server": {
+    "version": "0.16.0",
+    "langgraph_py_version": "1.2.14",
+    "flags": {
+      "assistants": true,
+      "crons": true,
+      "langsmith": false,
+      "langsmith_tracing_replicas": true,
+      "langsmith_tracing_session_on_runs": true
+    },
+    "host": {
+      "kind": "self-hosted",
+      "project_id": null,
+      "host_revision_id": null,
+      "revision_id": null,
+      "tenant_id": null
+    }
+  },
+  "kind": "engineering_validation"
+}

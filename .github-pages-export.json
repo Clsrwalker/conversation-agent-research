@@ -45,8 +45,8 @@
     },
     {
       "path": "data.js",
-      "sha256": "01e03053b5c40778f931635caa57e1f9ee94f8f8a7c0e354ae32e43c75581bc8",
-      "bytes": 166773
+      "sha256": "f40c95d420f5bb17414b2db6227d7428463e252235e3ebcf816e4dc65c2e7fa1",
+      "bytes": 166969
     },
     {
       "path": "data/analyze_harness_latency.py",
@@ -149,6 +149,11 @@
       "bytes": 22381
     },
     {
+      "path": "data/langgraph-studio-validation.json",
+      "sha256": "67d94701eb9756af7935e922d7a86293c3a6a02cdaf100712f40799a7eb7a203",
+      "bytes": 6169
+    },
+    {
       "path": "data/question-task-v3-diagnostics.json",
       "sha256": "ab3ef3100b777ddb25bc302aab5f56413a69322c6398a4d1e32a7fa8b86489f1",
       "bytes": 30631
@@ -180,8 +185,8 @@
     },
     {
       "path": "data/research-record.json",
-      "sha256": "ba9e71baca9b3528a58de19f842b033f0c0deba1c36a8e5e203713dbf21f424b",
-      "bytes": 243082
+      "sha256": "ce5fcdd76aa7ae3b5aae257f4a80398972cafd9828e880e2aa50914a6751edf4",
+      "bytes": 243325
     },
     {
       "path": "data/results.csv",
@@ -202,6 +207,21 @@
       "path": "data/site-focus-validation.json",
       "sha256": "5085a5dfbd45431d261c521fc4285a6e1b7bbf9adcc815e57b23a3c366819c65",
       "bytes": 9004
+    },
+    {
+      "path": "data/studio-api-inspection.json",
+      "sha256": "8e81cebfe3155c2993d1a8441f71eeb71c7c67325c19bfc85ec775811c1167ac",
+      "bytes": 23798
+    },
+    {
+      "path": "data/studio-entry-unit-tests.txt",
+      "sha256": "819a01e92239d536164d63292b8d60ed19d51a9458801db08458da33363bc832",
+      "bytes": 2141
+    },
+    {
+      "path": "data/studio-graph.jpg",
+      "sha256": "29c496cbf89e736d79098b046b2479de692a122552ca611769f824422c0b3747",
+      "bytes": 34251
     },
     {
       "path": "data/web-knowledge-diagnostics.json",
@@ -275,8 +295,8 @@
     },
     {
       "path": "index.html",
-      "sha256": "acb8eb531298ff258cadf029c063b083970518663ca655992a2b9022d8fd7f0e",
-      "bytes": 62895
+      "sha256": "9c4753b380df4f59c9f37d216e58a9ade2d11b0228e155101c07315acd009cf0",
+      "bytes": 65120
     },
     {
       "path": "latency-data.js",

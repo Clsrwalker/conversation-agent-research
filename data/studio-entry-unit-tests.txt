@@ -1,0 +1,18 @@
+test_all_four_graphs_async_tools_and_selected_recovery (test_studio_entry.StudioEntryTests.test_all_four_graphs_async_tools_and_selected_recovery) ... ok
+test_async_supplied_document_tool_wait_and_delivery (test_studio_entry.StudioEntryTests.test_async_supplied_document_tool_wait_and_delivery) ... ok
+test_direct_question_delivery_accounting_and_tool_differences (test_studio_entry.StudioEntryTests.test_direct_question_delivery_accounting_and_tool_differences) ... ok
+test_execution_factory_closes_its_world_and_requires_server_ids (test_studio_entry.StudioEntryTests.test_execution_factory_closes_its_world_and_requires_server_ids) ... ok
+test_factories_schema_and_cleanup_without_model_or_world_creation (test_studio_entry.StudioEntryTests.test_factories_schema_and_cleanup_without_model_or_world_creation) ... ok
+test_finished_thread_does_not_silently_accept_another_question (test_studio_entry.StudioEntryTests.test_finished_thread_does_not_silently_accept_another_question) ... ok
+test_four_real_graphs_retain_nodes_branches_and_nested_agent (test_studio_entry.StudioEntryTests.test_four_real_graphs_retain_nodes_branches_and_nested_agent) ... ok
+test_invalid_input_rejected_before_world_and_model (test_studio_entry.StudioEntryTests.test_invalid_input_rejected_before_world_and_model) ... ok
+test_preview_cannot_accidentally_execute (test_studio_entry.StudioEntryTests.test_preview_cannot_accidentally_execute) ... ok
+test_server_checkpoint_resume_reopens_same_tool_world (test_studio_entry.StudioEntryTests.test_server_checkpoint_resume_reopens_same_tool_world) ... ok
+test_supplied_document_catalog_then_real_async_read (test_studio_entry.StudioEntryTests.test_supplied_document_catalog_then_real_async_read) ... ok
+test_thread_worlds_and_accounting_are_isolated (test_studio_entry.StudioEntryTests.test_thread_worlds_and_accounting_are_isolated) ... ok
+test_unfinished_thread_rejects_harness_or_question_change (test_studio_entry.StudioEntryTests.test_unfinished_thread_rejects_harness_or_question_change) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 3.395s
+
+OK

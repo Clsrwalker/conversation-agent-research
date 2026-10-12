@@ -1,0 +1,138 @@
+{
+  "id": "langgraph-studio-integration-2026-10-12",
+  "date": "2026-10-12",
+  "timezone": "America/Halifax",
+  "type": "engineering_validation",
+  "status": "passed_with_documented_limits",
+  "change": "Expose the four current direct-question harnesses through a local Agent Server and view their actual nested LangGraph topology in LangSmith Studio.",
+  "tested_revision": {
+    "files": [
+      {
+        "path": "experiments/deep_conversation/studio_entry.py",
+        "sha256": "222b1aeef5ed974df6b2aba646680e86a6e3d3f48ce44049421e189f67a156f5"
+      },
+      {
+        "path": "experiments/deep_conversation/test_studio_entry.py",
+        "sha256": "2a0a07674585dcfe3c0aaa9bc990955a8a1a7297e42010d9c8241b80f3eab3e8"
+      },
+      {
+        "path": "experiments/deep_conversation/direct_request.py",
+        "sha256": "d7308e05b62dd21421970f79c4e19d4b1952d642a892a0443a8f40560b131120"
+      },
+      {
+        "path": "experiments/deep_conversation/agent.py",
+        "sha256": "4f3a83c53bce2748df44b73fd70d291ee79b0a92aa940fd164daed51b0c71409"
+      },
+      {
+        "path": "experiments/deep_conversation/agent_led_tools.py",
+        "sha256": "358057cfdab5fb53b4f7f8dd8c687bf6fbfa96852b4f8d66d0d195695136ea09"
+      },
+      {
+        "path": "experiments/deep_conversation/world.py",
+        "sha256": "0f0469d54a544a2d6c0ec8b7a11bb2564a22bf97d87f77ed57ab9c5aa85f2c1b"
+      },
+      {
+        "path": "experiments/deep_conversation/web_tools.py",
+        "sha256": "c71cc76e428d2ae4611c002aa30ef23b98d8ee6fa7a26301a90406b04375d470"
+      },
+      {
+        "path": "experiments/deep_conversation/investigation_progress.py",
+        "sha256": "0798c2ff2a3c1e2ef9e630a1bca7f1ec1fcfcb44f5d7815c39717708d1ff1d84"
+      },
+      {
+        "path": "experiments/deep_conversation/config.py",
+        "sha256": "2227806d3389039291ffa57af2e0953700933dc94b6f284d1090a792fe5c59b6"
+      },
+      {
+        "path": "experiments/deep_conversation/studio/langgraph.json",
+        "sha256": "0d123dca5d003b4396c3ea17fc8d4254e813428e3aee46851dc32dc1d4721a22"
+      },
+      {
+        "path": "experiments/deep_conversation/studio/start.ps1",
+        "sha256": "2edd189abf1ca787854b9552edac42e676f86bea4b4d8879ac98ad23c7c2ba62"
+      },
+      {
+        "path": "experiments/deep_conversation/studio/requirements.lock.txt",
+        "sha256": "db6f3e0a560746867b7785a976bad9aa65dceba20536e0bf194482d2b60d904d"
+      }
+    ],
+    "packages": {
+      "deepagents": "0.7.22",
+      "langgraph": "1.2.14",
+      "langgraph-cli": "0.4.33",
+      "langgraph-api": "0.16.0",
+      "langgraph-runtime-inmem": "0.36.0",
+      "colorama": "0.4.6"
+    }
+  },
+  "scope": {
+    "graph_origin": "Compiled current harness code with studio_input adapter and an async bridge for the original synchronous model middleware",
+    "configurations": [
+      "recovery-current-question",
+      "native-question",
+      "progress-question",
+      "agent-led-question"
+    ],
+    "recovery_source": "Current implementation; not the frozen research snapshot",
+    "task_mode": "question"
+  },
+  "checks": [
+    {
+      "name": "Isolated dependency environment",
+      "result": "pass",
+      "detail": "pip check reports no broken requirements; the existing Lab environment was not modified."
+    },
+    {
+      "name": "Offline integration checks",
+      "result": "pass",
+      "passed": 13,
+      "total": 13,
+      "evidence": "studio-entry-unit-tests.txt",
+      "detail": "Scripted model responses, actual graph/tool execution, async bridge, thread isolation, Accounting, supplied documents and injected-checkpointer resume. No model-quality claim."
+    },
+    {
+      "name": "Live local Agent Server graph and schema endpoints",
+      "result": "pass",
+      "graphs_checked": 4,
+      "evidence": "studio-api-inspection.json",
+      "detail": "Each graph and schema endpoint returned successfully; question and optional documents are exposed; xray includes the actual model and tools nodes."
+    },
+    {
+      "name": "Studio browser inspection",
+      "result": "pass",
+      "evidence": "studio-graph.jpg",
+      "detail": "Connected to localhost; selected agent-led-question; expanded investigate to show model/tools and middleware nodes. No inference submitted."
+    },
+    {
+      "name": "Inspection has no execution side effects",
+      "result": "pass",
+      "detail": "No Studio WorldStore directory was created by graph/schema inspection. The offline factory test independently checks that schema reads do not invoke the model."
+    }
+  ],
+  "provider_inference_calls": 0,
+  "new_research_results": false,
+  "local_service": {
+    "url": "http://127.0.0.1:2024",
+    "studio_url": "https://smith.langchain.com/studio/?baseUrl=http://127.0.0.1:2024",
+    "bind": "loopback only",
+    "langsmith_tracing": false
+  },
+  "issues_resolved": [
+    "Windows console logging required colorama.",
+    "Original synchronous model middleware required an asynchronous execution bridge.",
+    "Factory filesystem/model setup had to move off the guarded event loop."
+  ],
+  "limitations": [
+    "Engineering validation does not establish answer quality or performance improvement. No real model answer was tested through Studio in this integration.",
+    "One question per thread; use a new thread after changing question, harness or source revision.",
+    "Agent Server owns checkpoints; external WorldStore is not transactionally rewound. Time travel and fork consistency are unsupported.",
+    "A synchronous provider call already in flight must finish or time out before cancellation can fully release its resources.",
+    "Restart the server after editing harness code in the parent directory.",
+    "Local development server must remain running. No cloud deployment or LangSmith tracing is configured."
+  ],
+  "source_records": [
+    "output/research/records/studio-integration/api-inspection.json",
+    "output/research/records/studio-integration/studio-entry-unit-tests.txt",
+    "output/research/records/studio-integration/studio-graph.jpg"
+  ]
+}
