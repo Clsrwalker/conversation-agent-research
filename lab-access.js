@@ -1,12 +1,14 @@
 (() => {
   'use strict';
   const key = 'conversation-agent.private-lab-url';
-  const localUrl = 'http://127.0.0.1:8769';
   const launch = document.getElementById('lab-launch');
   const form = document.getElementById('remote-lab-form');
   const input = document.getElementById('remote-lab-url');
   const status = document.getElementById('lab-connection-status');
-  if (!launch || !form || !input || !status) return;
+  const connection = document.getElementById('lab-connection');
+  const local = document.getElementById('lab-use-local');
+  if (!launch || !form || !input || !status || !connection || !local) return;
+  let selected = null;
 
   function address(value) {
     if (!value || value !== value.trim() || /[\s\\]/.test(value)) return null;
@@ -21,13 +23,22 @@
   }
 
   function select(url) {
-    launch.href = url || localUrl;
-    launch.textContent = url ? 'Open private Harness Lab ↗' : 'Open Lab on this computer ↗';
+    selected = url;
+    launch.href = url || '#lab-connection';
+    launch.target = url ? '_blank' : '_self';
+    launch.textContent = url ? 'Open private Harness Lab ↗' : 'Open Harness Lab';
     input.value = url || '';
   }
 
   try { select(address(localStorage.getItem(key))); }
   catch (_) { select(null); }
+
+  launch.addEventListener('click', event => {
+    if (selected) return;
+    event.preventDefault();
+    connection.open = true;
+    input.focus();
+  });
 
   form.addEventListener('submit', event => {
     event.preventDefault();
@@ -47,10 +58,10 @@
     window.open(url, '_blank', 'noopener,noreferrer');
   });
 
-  document.getElementById('lab-use-local').addEventListener('click', () => {
+  local.addEventListener('click', () => {
     select(null);
     try { localStorage.removeItem(key); }
     catch (_) { /* Local navigation still works when browser storage is unavailable. */ }
-    status.textContent = 'Lab opens on this computer.';
+    status.textContent = 'Opening the Lab on this computer.';
   });
 })();

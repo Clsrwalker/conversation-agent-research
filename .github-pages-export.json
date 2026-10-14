@@ -15,8 +15,8 @@
     },
     {
       "path": "README.md",
-      "sha256": "3e71f66b0b6238da97dc31bfc10eed98f20932d7d2965b01a3df4c74c60eb688",
-      "bytes": 2658
+      "sha256": "e9af4dded33b053994f6ef6276c7ab72e8c151d6261ee97782a75dc21ea830d3",
+      "bytes": 2711
     },
     {
       "path": "app.js",
@@ -159,6 +159,11 @@
       "bytes": 10960
     },
     {
+      "path": "data/private-lab-entry-tests.txt",
+      "sha256": "d075b2be8d6e4c71293098d6d04bcef62b1a72462c0664f29fad425357bd2176",
+      "bytes": 6266
+    },
+    {
       "path": "data/private-lab-https-checks.json",
       "sha256": "d8d99a3825fa4c3781a01fb88fa9f8291d546feaeb4c4bc0912f3cca0b90efdd",
       "bytes": 1014
@@ -175,8 +180,8 @@
     },
     {
       "path": "data/private-lab-setup.txt",
-      "sha256": "21d7211e4ad717b3222ba0273df350a5864b246a34ab5c50e1c13f7f1165e459",
-      "bytes": 2050
+      "sha256": "297f27fb676fa68ee210aceff8a4ff4ebb67cfa809efa09c5f71dcbcac8a7cc3",
+      "bytes": 2129
     },
     {
       "path": "data/private-lab-site-tests.txt",
@@ -185,8 +190,8 @@
     },
     {
       "path": "data/private-lab-validation.json",
-      "sha256": "b8ada6a090878172c373020b462c9d643d3a5235fddf19f06aeabb1f7a992086",
-      "bytes": 6689
+      "sha256": "7d797dca03513d4ffcd626e8b55142d40a1af959a726e86b69e5a668feaa4a69",
+      "bytes": 8889
     },
     {
       "path": "data/question-task-v3-diagnostics.json",
@@ -330,13 +335,13 @@
     },
     {
       "path": "index.html",
-      "sha256": "2c8630f1b115c0b91cff5be2cf437ecae3bb44a5560fe0aca09b71c256cadeb9",
-      "bytes": 66297
+      "sha256": "59f92dace3d6bafd0b6c33dbd1d93a4a39c3c67cac48bd9f120f2615a70ce047",
+      "bytes": 66496
     },
     {
       "path": "lab-access.js",
-      "sha256": "ac397d9614b1dd62621c880732538acf046f59d4683dc3916f79765bf0d479db",
-      "bytes": 2148
+      "sha256": "3cf3691e1f6c464a54dafe3e764d871296984d18fe29301ad971955d36abba93",
+      "bytes": 2461
     },
     {
       "path": "latency-data.js",

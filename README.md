@@ -12,11 +12,12 @@ pages, and existing evidence downloads are static files included in this
 repository. They work without the original experiment environment or a model
 server. The website does not start model runs or receive new local runs.
 
-The Harness Test Bench and live monitor are separate local applications. Their
-localhost links refer to the visitor's own computer and require that visitor's
-local project environment and service. The overview also lets an owner save a
+The Harness Test Bench and live monitor are separate local applications. The
+Lab button asks for a connection on first use; localhost is an explicit option
+for the computer running the service. The overview lets an owner save a
 private Tailscale HTTPS Lab address in that browser for access from another
-device. Both devices must be connected to the owner's Tailscale account, and
+device. Each browser and website origin needs its own saved address. Both
+devices must be connected to the owner's Tailscale account, and
 the Windows Lab must have private remote access configured. The private address
 is not sent to this website. GitHub Pages does not host Python, Ollama, or the
 agent execution service. Recorded runs remain available online.

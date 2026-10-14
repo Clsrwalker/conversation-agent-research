@@ -145,5 +145,52 @@
       "issue": "Initial launcher retry falsely rejected its own live process after JSON automatically parsed the saved timestamp as DateTime.",
       "resolution": "Normalize timestamps to UTC for process identity comparisons; six new regression checks and actual launcher reuse passed."
     }
-  ]
+  ],
+  "entry_fix": {
+    "date": "2026-10-13",
+    "timezone": "America/Halifax",
+    "status": "passed_with_documented_limits",
+    "reported_failure": "The user could open the private Lab directly on Mac Safari, but the GitHub website Open Lab button failed. A browser without a saved address defaulted to localhost on that Mac.",
+    "change": "The primary button opens a connection chooser until this browser has a valid saved private HTTPS address. Localhost requires the explicit same-computer link. Saved private links retain direct navigation.",
+    "checks": [
+      {
+        "name": "Offline website behavior and HTML fallback",
+        "status": "passed",
+        "count": 28,
+        "record": "private-lab-entry-tests.txt"
+      },
+      {
+        "name": "Fresh browser-origin UI",
+        "status": "passed",
+        "details": "In-app Chromium: fresh origin primary click stayed on the website, expanded the chooser and focused the address field. Previously saved HTTPS origin restored directly; no console errors."
+      },
+      {
+        "name": "Windows service readiness",
+        "status": "passed",
+        "details": "Loopback health returned ok; existing private Serve HTTPS route remains configured."
+      }
+    ],
+    "tested_revision": {
+      "base_commit": "61d9ff56b60505e6de6c224b4d8dd311d8c4c7b6",
+      "files": [
+        {
+          "path": "sites/conversation-agent-research/dist/lab-access.js",
+          "sha256": "3cf3691e1f6c464a54dafe3e764d871296984d18fe29301ad971955d36abba93"
+        },
+        {
+          "path": "sites/conversation-agent-research/overview-section.html",
+          "sha256": "efe6e66d671449b7f400444bb4f5757bf0eba37bbfa82a7990eb9b224ca515c9"
+        },
+        {
+          "path": "scripts/publication/test_lab_access.cjs",
+          "sha256": "b5084ba72bdb0e7aeeb4adf4400e9c6cc3c6023229f68e496a374f4bb14c8677"
+        }
+      ]
+    },
+    "limitations": [
+      "The corrected GitHub entry has not yet been verified by the user in Mac Safari.",
+      "Each browser and website origin needs its private address saved separately.",
+      "No new model run or answer-quality result."
+    ]
+  }
 }
