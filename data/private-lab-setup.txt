@@ -1,0 +1,38 @@
+Conversation Agent Harness - private Lab access
+13 Oct 2026, America/Halifax
+
+Setup status: private HTTPS is active and verified from Windows.
+The user confirmed the Lab and architecture graph open in Safari on the other Mac.
+A new model run from that device was not tested in this task.
+
+1. On the Windows computer running the model, install Tailscale from
+   https://tailscale.com/download/windows and sign in. Tailscale uses an
+   existing identity provider such as Google or Microsoft; it does not need
+   your Windows password or a model password.
+
+2. Install Tailscale on your Mac or iPhone from https://tailscale.com/download
+   and sign in to the same account. Connect Tailscale on both devices.
+
+3. In PowerShell at the project root on Windows, run:
+   & .\experiments\deep_conversation\remote_access\start.ps1
+
+   Use only one Lab manager. If the launcher reports an existing Lab, finish
+   its active jobs and close its known terminal before starting this launcher.
+   Follow Tailscale's HTTPS setup link if one is printed, then rerun the script.
+   The launcher prints the private https://device.tailnet.ts.net address.
+
+4. On the Mac/iPhone, open that private address in Safari. Or open the research
+   website, expand "Connect from Mac / iPhone", paste the address, and select
+   "Save & open Lab". The address is saved only in that browser.
+
+The Windows computer, Tailscale, Lab and Ollama must remain running. The model
+and saved runs stay on Windows. This setup publishes the Lab through private
+Tailscale Serve, and restricts remote access to its owner's login. It does not
+enable public Funnel, expose Ollama, or configure the separate Studio service.
+Tagged devices without user identity are not supported.
+
+To stop the launcher-owned private endpoint and idle Lab without deleting runs:
+   & .\experiments\deep_conversation\remote_access\stop.ps1
+
+Implementation and validation record: private-lab-validation.json
+Tailscale documentation: https://tailscale.com/docs/features/tailscale-serve

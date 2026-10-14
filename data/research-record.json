@@ -363,7 +363,7 @@
       "experiments/deep_conversation/benchmarks/TOOL_RECOVERY_RESULTS.md"
     ]
   },
-  "website_record_date": "2026-10-12",
+  "website_record_date": "2026-10-13",
   "investigation_progress": {
     "id": "experiment-02",
     "date": "2026-10-08",
@@ -5801,6 +5801,13 @@
       "date": "2026-10-12",
       "type": "engineering_validation",
       "record": "langgraph-studio-validation.json",
+      "status": "passed_with_documented_limits"
+    },
+    {
+      "id": "private-lab-access-2026-10-13",
+      "date": "2026-10-13",
+      "type": "engineering_validation",
+      "record": "private-lab-validation.json",
       "status": "passed_with_documented_limits"
     }
   ]

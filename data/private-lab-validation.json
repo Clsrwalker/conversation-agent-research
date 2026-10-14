@@ -1,0 +1,149 @@
+{
+  "id": "private-lab-access-2026-10-13",
+  "date": "2026-10-13",
+  "timezone": "America/Halifax",
+  "type": "engineering_validation",
+  "status": "passed_with_documented_limits",
+  "problem": "Localhost on another Mac or iPhone addresses that device rather than the Windows model host.",
+  "change": "Opt-in private Tailscale Serve HTTPS access, restricted to the device owner, plus browser-local saved address on the research website.",
+  "architecture": [
+    "Mac/iPhone in the owner tailnet",
+    "Tailscale Serve HTTPS443",
+    "Windows loopback Lab8769",
+    "Existing local Qwen2.5 14B"
+  ],
+  "checks": [
+    {
+      "name": "Lab backend and regressions",
+      "status": "passed",
+      "count": 68,
+      "record": "private-lab-backend-tests.txt"
+    },
+    {
+      "name": "Launcher parsing and synthetic configuration decisions",
+      "status": "passed",
+      "count": 47,
+      "record": "private-lab-launcher-tests.txt"
+    },
+    {
+      "name": "Website address validation, persistence and reset",
+      "status": "passed",
+      "count": 25,
+      "record": "private-lab-site-tests.txt"
+    },
+    {
+      "name": "Browser presentation",
+      "status": "passed",
+      "details": "In-app Chromium: HTTP localhost rejected in remote field; local link reset works; no console errors; 390px form without horizontal overflow. Not Safari verification."
+    },
+    {
+      "name": "Windows local readiness",
+      "status": "passed",
+      "details": "Tailscale 1.104.1; Windows and a macOS peer online; two verified-idle legacy Lab services stopped; new loopback Lab healthy; four harnesses and local Qwen available; 54 saved jobs, none active."
+    },
+    {
+      "name": "Private HTTPS activation",
+      "status": "passed",
+      "details": "Real certificate-verified HTTPS: shell, JS, CSS, health and configuration returned200; four security checks passed; Serve route is private and contains no Funnel configuration.",
+      "record": "private-lab-https-checks.json"
+    },
+    {
+      "name": "Safari on the other device",
+      "status": "user_confirmed",
+      "details": "The user confirmed on13Oct2026 that Safari on their other Mac opened the private Lab and displayed its architecture graph. This is user-reported UI verification; no new remote model run was observed."
+    },
+    {
+      "name": "Idempotent launcher reuse",
+      "status": "passed",
+      "details": "Rerunning start.ps1 reused the same process and left Serve configuration unchanged.",
+      "record": "private-lab-launcher-reuse.json"
+    },
+    {
+      "name": "Live HTTPS browser",
+      "status": "passed",
+      "details": "Windows in-app Chromium loaded the actual HTTPS Lab, model availability and saved runs; Native and Agent-led fixed architectures switched correctly; connection status healthy; no console errors; Windows-only monitor link hidden on remote origin. No new model run."
+    },
+    {
+      "name": "Research export consistency",
+      "status": "passed",
+      "details": "Only engineering validation metadata and website record date changed; research metrics unchanged; combined JSON and JavaScript agree."
+    }
+  ],
+  "new_model_calls": 0,
+  "limitations": [
+    "Remote Mac Safari page and graph access are user-confirmed; submitting a new model run from that device has not been verified in this task.",
+    "No new model answer or assistance-quality result.",
+    "Windows, Tailscale, Lab and Ollama must remain running.",
+    "Separate Studio and read-only monitor services are not exposed.",
+    "Tagged Tailscale devices without user identity are unsupported.",
+    "Private address is stored per browser; research website does not fetch private APIs."
+  ],
+  "access_boundaries": [
+    "Exact HTTPS ts.net Host and owner identity supplied by Serve",
+    "Matching Origin and CSRF token for writes",
+    "Proxy headers cannot downgrade to localhost trust",
+    "One Lab manager for local and remote access",
+    "No public Funnel, Ollama exposure or wildcard CORS"
+  ],
+  "setup": "private-lab-setup.txt",
+  "tested_revision": {
+    "base_commit": "be1c8088bf17253fec029fa80fe7e1b659b4167e",
+    "files": [
+      {
+        "path": "experiments/deep_conversation/lab.py",
+        "sha256": "3c9d257c6ef73fdd62c37f1d3cde92b52ad6e58a7b2a0d59ee9cdf9d638b4890"
+      },
+      {
+        "path": "experiments/deep_conversation/test_lab_remote.py",
+        "sha256": "dab80793f2b03260f2622542ed55fb25ed38bdf0259631fa8dd8cbca9304844b"
+      },
+      {
+        "path": "experiments/deep_conversation/remote_access/start.ps1",
+        "sha256": "8e0c042ae85ae9860db1e0bd0ea10dd4e11adec6142d57ca8451eb19ff54411b"
+      },
+      {
+        "path": "experiments/deep_conversation/remote_access/stop.ps1",
+        "sha256": "f4a1f94cd4f5c11e59a98f82ebeeaacf66e9db5679dce9f7be827d602361aeb6"
+      },
+      {
+        "path": "experiments/deep_conversation/remote_access/common.ps1",
+        "sha256": "4a90f1bc301778bb74fdf1844bb323410db947c333c69edd7d2a622402f95b22"
+      },
+      {
+        "path": "experiments/deep_conversation/remote_access/test.ps1",
+        "sha256": "5689b10e3070a43ba6a35b6515a0ae0b080432ebb6241dcd4c97e623e09a3a76"
+      },
+      {
+        "path": "scripts/publication/test_lab_access.cjs",
+        "sha256": "d2bd08ce933710cebee33a1d3ae0115cd6fbcc517586c95034f86a669c33b259"
+      },
+      {
+        "path": "sites/conversation-agent-research/dist/lab-access.js",
+        "sha256": "ac397d9614b1dd62621c880732538acf046f59d4683dc3916f79765bf0d479db"
+      },
+      {
+        "path": "experiments/deep_conversation/lab_ui/index.html",
+        "sha256": "7c650520a9e43e92e1db9617a57010117c74fd1553d7e36a9a8369279160aca6"
+      },
+      {
+        "path": "experiments/deep_conversation/lab_ui/lab-app.js",
+        "sha256": "3fbfd74d85e60c7027761fdc6c1e825c61e234fc4c13615574a0a23b17bd6643"
+      },
+      {
+        "path": "experiments/deep_conversation/lab_ui/lab.js",
+        "sha256": "5b7bb643a3c788841506776a32a358843dc5a16189c258610e81209927c794cf"
+      }
+    ]
+  },
+  "sources": [
+    "https://tailscale.com/docs/features/tailscale-serve",
+    "https://tailscale.com/docs/reference/tailscale-cli/serve",
+    "https://bugs.webkit.org/show_bug.cgi?id=171934"
+  ],
+  "observed_failures": [
+    {
+      "issue": "Initial launcher retry falsely rejected its own live process after JSON automatically parsed the saved timestamp as DateTime.",
+      "resolution": "Normalize timestamps to UTC for process identity comparisons; six new regression checks and actual launcher reuse passed."
+    }
+  ]
+}

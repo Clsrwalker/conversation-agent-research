@@ -1,0 +1,41 @@
+{
+  "date": "2026-10-13",
+  "timezone": "America/Halifax",
+  "type": "engineering_validation",
+  "tls_certificate_verified": true,
+  "browser_device": "Windows host, not the remote Mac",
+  "health_config_assets_http200": true,
+  "model_preflight": "available",
+  "harness_count": 4,
+  "checks": [
+    {
+      "check": "wrong_origin_read",
+      "expected": 403,
+      "actual": 403,
+      "passed": true
+    },
+    {
+      "check": "missing_write_token",
+      "expected": 403,
+      "actual": 403,
+      "passed": true
+    },
+    {
+      "check": "same_origin_write_reaches_missing_run",
+      "expected": 404,
+      "actual": 404,
+      "passed": true
+    },
+    {
+      "check": "proxy_localhost_downgrade",
+      "expected": 403,
+      "actual": 403,
+      "passed": true
+    }
+  ],
+  "model_calls": 0,
+  "limits": [
+    "Other-account rejection tested with synthetic identity headers only in unit tests.",
+    "Another-device Safari requires user confirmation."
+  ]
+}

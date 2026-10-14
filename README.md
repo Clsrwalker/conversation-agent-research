@@ -14,8 +14,12 @@ server. The website does not start model runs or receive new local runs.
 
 The Harness Test Bench and live monitor are separate local applications. Their
 localhost links refer to the visitor's own computer and require that visitor's
-local project environment and service. GitHub Pages does not host Python,
-Ollama, or the agent execution service. Recorded runs remain available online.
+local project environment and service. The overview also lets an owner save a
+private Tailscale HTTPS Lab address in that browser for access from another
+device. Both devices must be connected to the owner's Tailscale account, and
+the Windows Lab must have private remote access configured. The private address
+is not sent to this website. GitHub Pages does not host Python, Ollama, or the
+agent execution service. Recorded runs remain available online.
 
 ## Publish and update
 

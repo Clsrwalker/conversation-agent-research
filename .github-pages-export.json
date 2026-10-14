@@ -15,8 +15,8 @@
     },
     {
       "path": "README.md",
-      "sha256": "4447cd8c3e8018c42037ccbf78a7e0e0ecb0998570550c8da220c5298e69d846",
-      "bytes": 2357
+      "sha256": "3e71f66b0b6238da97dc31bfc10eed98f20932d7d2965b01a3df4c74c60eb688",
+      "bytes": 2658
     },
     {
       "path": "app.js",
@@ -45,8 +45,8 @@
     },
     {
       "path": "data.js",
-      "sha256": "f40c95d420f5bb17414b2db6227d7428463e252235e3ebcf816e4dc65c2e7fa1",
-      "bytes": 166969
+      "sha256": "bd5d9b226125adfcfb46618e692b9b37893575ebf9d762bc2c356d4b888c048d",
+      "bytes": 167150
     },
     {
       "path": "data/analyze_harness_latency.py",
@@ -154,6 +154,41 @@
       "bytes": 6169
     },
     {
+      "path": "data/private-lab-backend-tests.txt",
+      "sha256": "c0aa0bb440d7ababa2641b007172a14b1815124d9858a624e0bb4f65c1bc8ff7",
+      "bytes": 10960
+    },
+    {
+      "path": "data/private-lab-https-checks.json",
+      "sha256": "d8d99a3825fa4c3781a01fb88fa9f8291d546feaeb4c4bc0912f3cca0b90efdd",
+      "bytes": 1014
+    },
+    {
+      "path": "data/private-lab-launcher-reuse.json",
+      "sha256": "c4623ba8d7bb49031ee193cf7ba1edef39b680f896ab51f0cb1ed2df1c3db4e5",
+      "bytes": 256
+    },
+    {
+      "path": "data/private-lab-launcher-tests.txt",
+      "sha256": "03c2cb2fbdb88e56422902c132ce6a90b38f76b8ee937e452f12ec64e47641d7",
+      "bytes": 100
+    },
+    {
+      "path": "data/private-lab-setup.txt",
+      "sha256": "21d7211e4ad717b3222ba0273df350a5864b246a34ab5c50e1c13f7f1165e459",
+      "bytes": 2050
+    },
+    {
+      "path": "data/private-lab-site-tests.txt",
+      "sha256": "e2f57e3a97b7cfcb2bf40264b7edc7d3f7f5b9d864e69a1bf351d0f752d6cd06",
+      "bytes": 5897
+    },
+    {
+      "path": "data/private-lab-validation.json",
+      "sha256": "b8ada6a090878172c373020b462c9d643d3a5235fddf19f06aeabb1f7a992086",
+      "bytes": 6689
+    },
+    {
       "path": "data/question-task-v3-diagnostics.json",
       "sha256": "ab3ef3100b777ddb25bc302aab5f56413a69322c6398a4d1e32a7fa8b86489f1",
       "bytes": 30631
@@ -185,8 +220,8 @@
     },
     {
       "path": "data/research-record.json",
-      "sha256": "ce5fcdd76aa7ae3b5aae257f4a80398972cafd9828e880e2aa50914a6751edf4",
-      "bytes": 243325
+      "sha256": "166ea42f4e7f5cd898ac4c05d9540b493e6d8c1ef8e1db94288d3acc80d6922d",
+      "bytes": 243553
     },
     {
       "path": "data/results.csv",
@@ -295,8 +330,13 @@
     },
     {
       "path": "index.html",
-      "sha256": "9c4753b380df4f59c9f37d216e58a9ade2d11b0228e155101c07315acd009cf0",
-      "bytes": 65120
+      "sha256": "2c8630f1b115c0b91cff5be2cf437ecae3bb44a5560fe0aca09b71c256cadeb9",
+      "bytes": 66297
+    },
+    {
+      "path": "lab-access.js",
+      "sha256": "ac397d9614b1dd62621c880732538acf046f59d4683dc3916f79765bf0d479db",
+      "bytes": 2148
     },
     {
       "path": "latency-data.js",
@@ -315,8 +355,8 @@
     },
     {
       "path": "overview.css",
-      "sha256": "ac03a31d29c7a3ab2eeadfd1afb774ca08d130221cf65e425297e13664439f21",
-      "bytes": 3375
+      "sha256": "59044908a699fa49dd042d74e2ed4e82f877c8ca0ace77ef36bc71b4adb10592",
+      "bytes": 4013
     },
     {
       "path": "overview.js",

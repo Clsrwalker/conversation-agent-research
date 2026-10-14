@@ -1,0 +1,1 @@
+47 offline remote-launcher checks passed. No services, processes or network settings were changed.

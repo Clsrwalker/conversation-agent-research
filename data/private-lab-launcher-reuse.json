@@ -1,0 +1,10 @@
+{
+  "launcher_reuse_passed": true,
+  "same_process_id": true,
+  "same_process_created_at": true,
+  "owned_after": true,
+  "serve_configuration_unchanged": true,
+  "local_port": 8769,
+  "network_mutation_performed": false,
+  "new_model_runs": 0
+}
