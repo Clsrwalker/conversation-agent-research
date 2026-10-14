@@ -21,10 +21,10 @@ A new model run from that device was not tested in this task.
    Follow Tailscale's HTTPS setup link if one is printed, then rerun the script.
    The launcher prints the private https://device.tailnet.ts.net address.
 
-4. On the Mac/iPhone, open that private address in Safari. Or open the research
-   website, click "Open Harness Lab", paste the address, and select
-   "Save & open Lab". Save it once per browser and website origin. The main
-   button never defaults to localhost; the same-computer option is separate.
+4. On the Mac/iPhone, open the research website and click "Open Harness Lab".
+   The project website links directly to its configured private HTTPS endpoint;
+   no address entry or browser setup is required. You can also open the private
+   address printed by the launcher directly in Safari.
 
 The Windows computer, Tailscale, Lab and Ollama must remain running. The model
 and saved runs stay on Windows. This setup publishes the Lab through private

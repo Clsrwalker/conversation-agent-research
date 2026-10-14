@@ -5,7 +5,7 @@
   "type": "engineering_validation",
   "status": "passed_with_documented_limits",
   "problem": "Localhost on another Mac or iPhone addresses that device rather than the Windows model host.",
-  "change": "Opt-in private Tailscale Serve HTTPS access, restricted to the device owner, plus browser-local saved address on the research website.",
+  "change": "Owner-only private Tailscale HTTPS access. The project website now links directly to the configured Lab, without address entry or browser storage.",
   "architecture": [
     "Mac/iPhone in the owner tailnet",
     "Tailscale Serve HTTPS443",
@@ -76,7 +76,7 @@
     "Windows, Tailscale, Lab and Ollama must remain running.",
     "Separate Studio and read-only monitor services are not exposed.",
     "Tagged Tailscale devices without user identity are unsupported.",
-    "Private address is stored per browser; research website does not fetch private APIs."
+    "The direct project entry is verified in Windows Chromium; the new entry has not yet been confirmed in Mac Safari. Windows services and Tailscale remain required."
   ],
   "access_boundaries": [
     "Exact HTTPS ts.net Host and owner identity supplied by Serve",
@@ -191,6 +191,33 @@
       "The corrected GitHub entry has not yet been verified by the user in Mac Safari.",
       "Each browser and website origin needs its private address saved separately.",
       "No new model run or answer-quality result."
-    ]
+    ],
+    "superseded_by": "direct_entry"
+  },
+  "direct_entry": {
+    "date": "2026-10-13",
+    "status": "passed_with_documented_limits",
+    "reason": "The user requires the project website to open its own configured Lab without manual address entry.",
+    "change": "Static HTTPS project link replaces the chooser and saved-address script. No backend access settings changed.",
+    "record": "private-lab-direct-entry-checks.json",
+    "new_model_calls": 0,
+    "tested_revision": {
+      "base_commit": "5e14e9c",
+      "files": [
+        {
+          "path": "sites/conversation-agent-research/overview-section.html",
+          "sha256": "6483c001bc14a6af41bc0bfbea5673cef86f351961e0f40bb0440787cd7337d0"
+        },
+        {
+          "path": "sites/conversation-agent-research/dist/index.html",
+          "sha256": "be2989a0f0453a25addae46f018f1c77ee0ebf1ad067dca29b668d3d517655b5"
+        }
+      ]
+    },
+    "limitations": [
+      "Requires Tailscale and the Windows Lab/Ollama to remain online.",
+      "No new model run from Mac Safari was performed."
+    ],
+    "prior_records": "Earlier 25-test and 28-test website records describe the superseded configurable entry. Backend and launcher behavior are unchanged."
   }
 }

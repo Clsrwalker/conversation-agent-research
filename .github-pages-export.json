@@ -15,8 +15,8 @@
     },
     {
       "path": "README.md",
-      "sha256": "e9af4dded33b053994f6ef6276c7ab72e8c151d6261ee97782a75dc21ea830d3",
-      "bytes": 2711
+      "sha256": "ba9d0ee26ce488d738854b276aa680af418eb0ef269c26eb0d2a3161663c1102",
+      "bytes": 2578
     },
     {
       "path": "app.js",
@@ -159,6 +159,11 @@
       "bytes": 10960
     },
     {
+      "path": "data/private-lab-direct-entry-checks.json",
+      "sha256": "1911087d7425b62aad55f0d724085722870880fd82201897ed7054e67f3f4293",
+      "bytes": 365
+    },
+    {
       "path": "data/private-lab-entry-tests.txt",
       "sha256": "d075b2be8d6e4c71293098d6d04bcef62b1a72462c0664f29fad425357bd2176",
       "bytes": 6266
@@ -180,8 +185,8 @@
     },
     {
       "path": "data/private-lab-setup.txt",
-      "sha256": "297f27fb676fa68ee210aceff8a4ff4ebb67cfa809efa09c5f71dcbcac8a7cc3",
-      "bytes": 2129
+      "sha256": "a2ac3f8d64f96f26351f4d4989c36b86cc4a75d3991fd3265ad54a673c098882",
+      "bytes": 2121
     },
     {
       "path": "data/private-lab-site-tests.txt",
@@ -190,8 +195,8 @@
     },
     {
       "path": "data/private-lab-validation.json",
-      "sha256": "7d797dca03513d4ffcd626e8b55142d40a1af959a726e86b69e5a668feaa4a69",
-      "bytes": 8889
+      "sha256": "a5530133886bcf345f76eff658e15ffafd4fbc17468db325afda88f6a467d63f",
+      "bytes": 10227
     },
     {
       "path": "data/question-task-v3-diagnostics.json",
@@ -335,13 +340,8 @@
     },
     {
       "path": "index.html",
-      "sha256": "59f92dace3d6bafd0b6c33dbd1d93a4a39c3c67cac48bd9f120f2615a70ce047",
-      "bytes": 66496
-    },
-    {
-      "path": "lab-access.js",
-      "sha256": "3cf3691e1f6c464a54dafe3e764d871296984d18fe29301ad971955d36abba93",
-      "bytes": 2461
+      "sha256": "be2989a0f0453a25addae46f018f1c77ee0ebf1ad067dca29b668d3d517655b5",
+      "bytes": 65621
     },
     {
       "path": "latency-data.js",
@@ -360,8 +360,8 @@
     },
     {
       "path": "overview.css",
-      "sha256": "59044908a699fa49dd042d74e2ed4e82f877c8ca0ace77ef36bc71b4adb10592",
-      "bytes": 4013
+      "sha256": "effb1d5fdaecedc46d2c5e771c643de65960e120f9bd8317e41ef42031b22d06",
+      "bytes": 3447
     },
     {
       "path": "overview.js",
