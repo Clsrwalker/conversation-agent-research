@@ -1,0 +1,52 @@
+{
+  "date": "2026-10-13",
+  "timezone": "America/Halifax",
+  "type": "engineering_validation",
+  "before": {
+    "without_fetch_user": 403,
+    "with_fetch_user": 200,
+    "error": "Open the Lab at its configured address."
+  },
+  "after": [
+    {
+      "check": "Safari-style landing /",
+      "expected": 200,
+      "actual": 200
+    },
+    {
+      "check": "Safari-style landing /index.html",
+      "expected": 200,
+      "actual": 200
+    },
+    {
+      "check": "Safari-style landing /?from=research",
+      "expected": 200,
+      "actual": 200
+    },
+    {
+      "check": "Cross-site API stays denied",
+      "expected": 403,
+      "actual": 403
+    },
+    {
+      "check": "Cross-site iframe stays denied",
+      "expected": 403,
+      "actual": 403
+    },
+    {
+      "check": "Write without CSRF token stays denied",
+      "expected": 403,
+      "actual": 403
+    },
+    {
+      "check": "Valid same-origin token reaches nonexistent-run route",
+      "expected": 404,
+      "actual": 404
+    }
+  ],
+  "saved_runs": 55,
+  "active_runs": 0,
+  "new_model_calls": 0,
+  "tls_certificate_verified": true,
+  "limitation": "Requests reproduce the Safari header shape through real HTTPS; the user Mac was not controlled in this check."
+}

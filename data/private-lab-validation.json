@@ -75,8 +75,7 @@
     "No new model answer or assistance-quality result.",
     "Windows, Tailscale, Lab and Ollama must remain running.",
     "Separate Studio and read-only monitor services are not exposed.",
-    "Tagged Tailscale devices without user identity are unsupported.",
-    "The direct project entry is verified in Windows Chromium; the new entry has not yet been confirmed in Mac Safari. Windows services and Tailscale remain required."
+    "Tagged Tailscale devices without user identity are unsupported."
   ],
   "access_boundaries": [
     "Exact HTTPS ts.net Host and owner identity supplied by Serve",
@@ -144,6 +143,10 @@
     {
       "issue": "Initial launcher retry falsely rejected its own live process after JSON automatically parsed the saved timestamp as DateTime.",
       "resolution": "Normalize timestamps to UTC for process identity comparisons; six new regression checks and actual launcher reuse passed."
+    },
+    {
+      "issue": "User reported403 from the direct GitHub Lab link in Safari; earlier browser checks did not cover a missing Sec-Fetch-User header.",
+      "resolution": "Reproduced on the actual HTTPS endpoint, added missing-header regression coverage, repaired the navigation predicate and restarted the owned idle service. The same request now returns200."
     }
   ],
   "entry_fix": {
@@ -219,5 +222,55 @@
       "No new model run from Mac Safari was performed."
     ],
     "prior_records": "Earlier 25-test and 28-test website records describe the superseded configurable entry. Backend and launcher behavior are unchanged."
+  },
+  "safari_navigation_fix": {
+    "date": "2026-10-13",
+    "status": "passed_with_documented_limits",
+    "reported_error": "Open the Lab at its configured address.",
+    "cause": "The cross-site document-navigation exception required Sec-Fetch-User: ?1. A valid owner request without that optional header returned403; the same request with it returned200.",
+    "change": "Accept absent Sec-Fetch-User for approved top-level GET navigation to the static Lab shell. Exact Host, Serve owner identity, Origin, API restrictions and CSRF write checks remain enforced.",
+    "backend_tests": {
+      "passed": 70,
+      "record": "private-lab-safari-tests.txt"
+    },
+    "live_https": {
+      "passed": 7,
+      "record": "private-lab-safari-https-checks.json",
+      "before": 403,
+      "after": 200
+    },
+    "website_change": "Removed the connection note and localhost-only Studio entry from the homepage. The project Lab remains a direct link.",
+    "new_model_calls": 0,
+    "saved_runs_retained": 55,
+    "mac_safari_confirmation": "user_confirmed",
+    "limitations": [
+      "No new model run or answer-quality result."
+    ],
+    "sources": [
+      "https://bugs.webkit.org/show_bug.cgi?id=247697",
+      "https://www.w3.org/TR/fetch-metadata/#sec-fetch-user-header"
+    ],
+    "tested_revision": {
+      "base_commit": "7190a6e",
+      "files": [
+        {
+          "path": "experiments/deep_conversation/lab.py",
+          "sha256": "4d7c65b3d3ed9d448860e763e17ede73c04396651c78977af030760dce417a51"
+        },
+        {
+          "path": "experiments/deep_conversation/test_lab.py",
+          "sha256": "b70d7a439a7a6acda6df68564250dbd9e00ae959937698980bcbb768994eb01c"
+        },
+        {
+          "path": "experiments/deep_conversation/test_lab_remote.py",
+          "sha256": "6a14ce6bbe9173908ffc210df09acbd35d81087ca22dd30a82b4d2b134fc2124"
+        },
+        {
+          "path": "sites/conversation-agent-research/overview-section.html",
+          "sha256": "e355617d49e87bd52d1914088c44ec9108d1529ee7e101a2fe7ede33f2ac7f32"
+        }
+      ]
+    },
+    "user_confirmation": "The user confirmed on13Oct2026 that Mac Safari now opens the test bench after refreshing the failed Lab page."
   }
 }
