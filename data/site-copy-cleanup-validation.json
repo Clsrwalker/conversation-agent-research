@@ -97,5 +97,54 @@
     "Copy and presentation checks only; no new research experiment, model execution, assistance score or user study.",
     "No reliable before/after local Lab word count: original local UI files were not versioned.",
     "Browser checks used existing recorded runs; active streaming and model execution were not rerun for this copy-only change."
+  ],
+  "last_updated": "2026-10-13",
+  "follow_up_updates": [
+    {
+      "date": "2026-10-13",
+      "timezone": "America/Halifax",
+      "type": "engineering_validation",
+      "change": "Remove homepage operating instructions, three status reminders, repeated stage/scope/snapshot copy and obsolete local Monitor links.",
+      "removed": [
+        "Question-test introduction and validation prompt",
+        "Working implementation / Research baseline / Experimental change strip",
+        "Current-stage badge",
+        "Repeated architecture-scope reminder",
+        "Repeated historical-snapshot reminders",
+        "Localhost Monitor links in overview and Case explorer"
+      ],
+      "preserved": [
+        "Detailed architecture nodes and source references",
+        "Recorded charts and metric definitions",
+        "Implementation limits and research conclusions",
+        "All original study records and data"
+      ],
+      "checks": {
+        "assembled_page_removed_text_absent": true,
+        "architecture_and_dashboard_present": true,
+        "direct_lab_link_preserved": true,
+        "protected_source_and_evidence_files_unchanged": [
+          "dist/architecture.js",
+          "dist/execution-nodes.js",
+          "dist/assets/harness-architecture.svg",
+          "dist/assets/harness-execution.svg",
+          "dist/data/experiment-01.json",
+          "dist/data/experiment-02.json",
+          "dist/data/harness-dashboard.json",
+          "dist/data/harness-latency-audit.json",
+          "dist/overview-dashboard.js"
+        ],
+        "browser": "In-app Chromium: homepage renders title, Open Lab and architecture directly, without the removed blocks."
+      },
+      "source_sha256": {
+        "overview-section.html": "17339b5ee87670b7a3d2ae500c5bf0a29730bce45f2e5df0e0a160ecd0926825",
+        "architecture-section.html": "4840b526ca6308c9cd08281ab51374df210c3e1151d1cb77d69edf2fd779ebaf",
+        "overview-dashboard.html": "acfa172d1ea306a54c74e68c2d5ab9b8fb9e5aa3fdc7acf9a6959c2ec3d3c749",
+        "harness-section.html": "e5452b2138de75615e0f584c05d1fc566c7ed1c2fc6cfadb9e4d4eb7bfc7a688",
+        "dist/overview.css": "3ffee2b71791a11fc4d4a5711da9fd975017411077e59abf47235064022366c7"
+      },
+      "new_model_calls": 0,
+      "limits": "Copy and presentation review only; no experiment, model execution or readability study."
+    }
   ]
 }

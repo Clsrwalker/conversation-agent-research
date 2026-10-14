@@ -255,8 +255,8 @@
     },
     {
       "path": "data/site-copy-cleanup-validation.json",
-      "sha256": "c52d8717e336261ae0ad6c6cb9513d96b4d8a8801cf304ce346c9fbc76d0649b",
-      "bytes": 5494
+      "sha256": "e4390a698be7633110e7e7895bd4ce42bd67010dcb71d3d93e89f8560e36e6dd",
+      "bytes": 7912
     },
     {
       "path": "data/site-focus-validation.json",
@@ -350,8 +350,8 @@
     },
     {
       "path": "index.html",
-      "sha256": "191d6c699c9f84c932622867defd728cb506b9ad4e4314c52acafe27927ba1fa",
-      "bytes": 65138
+      "sha256": "566e2e5149e960617728d27ffce4a29f14060cb6c715f7c58ee94d9fc11af0f4",
+      "bytes": 63527
     },
     {
       "path": "latency-data.js",
@@ -370,8 +370,8 @@
     },
     {
       "path": "overview.css",
-      "sha256": "ac03a31d29c7a3ab2eeadfd1afb774ca08d130221cf65e425297e13664439f21",
-      "bytes": 3375
+      "sha256": "3ffee2b71791a11fc4d4a5711da9fd975017411077e59abf47235064022366c7",
+      "bytes": 2577
     },
     {
       "path": "overview.js",
