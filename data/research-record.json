@@ -363,7 +363,7 @@
       "experiments/deep_conversation/benchmarks/TOOL_RECOVERY_RESULTS.md"
     ]
   },
-  "website_record_date": "2026-10-13",
+  "website_record_date": "2026-10-17",
   "investigation_progress": {
     "id": "experiment-02",
     "date": "2026-10-08",
@@ -5809,6 +5809,25 @@
       "type": "engineering_validation",
       "record": "private-lab-validation.json",
       "status": "passed_with_documented_limits"
+    },
+    {
+      "id": "intention-literature-publication-2026-10-17",
+      "date": "2026-10-17",
+      "type": "engineering_validation",
+      "record": "intention-literature-validation.json",
+      "status": "passed_with_limits"
+    }
+  ],
+  "literature_reviews": [
+    {
+      "id": "intention-literature-2026-10-17",
+      "date": "2026-10-17",
+      "type": "literature_review",
+      "status": "reviewed_primary_sources",
+      "record": "intention-literature-2026-10-17.json",
+      "page": "intention-literature.html",
+      "papers": 9,
+      "new_model_runs": 0
     }
   ]
 }

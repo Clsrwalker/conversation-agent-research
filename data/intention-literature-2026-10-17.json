@@ -1,0 +1,160 @@
+{
+  "id": "intention-literature-2026-10-17",
+  "date": "2026-10-17",
+  "timezone": "America/Halifax",
+  "type": "literature_review",
+  "status": "reviewed_primary_sources",
+  "title": "From understanding intentions to verified fulfillment",
+  "scope": "Selected 2025–2026 primary papers, checked through 17 October 2026. A targeted review, not an exhaustive search or a cross-benchmark ranking.",
+  "new_model_runs": 0,
+  "papers": [
+    {
+      "id": "sage",
+      "stage": "H1",
+      "title": "Structured Uncertainty guided Clarification for LLM Agents",
+      "label": "SAGE · 2025 / revised Apr 2026",
+      "url": "https://arxiv.org/html/2511.08798v2",
+      "version": "arXiv v2",
+      "location": "Sections 4–5; Tables 3–4",
+      "mechanism": "Represent uncertainty over tool arguments, then choose questions by expected value of perfect information minus repeated-question cost. Separate missing user specification from model uncertainty.",
+      "result": "On ambiguous ClarifyBench cases, GPT-4o coverage rises from 55.70% with Domain-aware ReAct to 59.73%; questions fall from 2.56 to 1.39. Coverage measures correct-parameter tool calls, not complete task success.",
+      "limitation": "On the separate BFCLv2/When2Call evaluation (Table 4), GPT-4o ToolCall F1 falls from 0.75 with ReAct to 0.65 with SAGE. Simulated users and tool schemas limit transfer; selecting one call does not track concurrent obligations.",
+      "transfer": "Attach uncertainty to each current requirement. Do not turn alternative interpretations into several mandatory tasks."
+    },
+    {
+      "id": "ig-clarifier",
+      "stage": "H1",
+      "title": "Uncertainty-Aware Clarification in LLM Agents with Information Gain",
+      "label": "IG Clarifier · Jun 2026",
+      "url": "https://arxiv.org/html/2606.03135v1",
+      "version": "arXiv v1",
+      "location": "Table 1; Table 3; Appendix 6.5",
+      "mechanism": "Train a small clarifier with DAPO using the change in length-normalized likelihood of the true goal after a question and answer. Tool feedback can trigger clarification.",
+      "result": "For the Qwen3-8B agent with a trained Qwen3-1.7B clarifier, retail/airline macro-average task success rises from 15.4% to 17.8%, while steps rise from 24.2 to 25.1. The untrained 1.7B clarifier scores 14.9%.",
+      "limitation": "Training uses known goals and simulated users. The reported five-agent aggregate in Table 3 does not reconcile with its rows, so it is not used here. A case resolves budget ambiguity but still executes an upgrade before confirmation.",
+      "transfer": "Reward useful uncertainty reduction, while measuring execution order separately. Asking successfully does not establish fulfillment."
+    },
+    {
+      "id": "recap",
+      "stage": "H1",
+      "title": "RECAP: REwriting Conversations for Intent Understanding in Agentic Planning",
+      "label": "RECAP · Findings EACL 2026",
+      "url": "https://arxiv.org/html/2509.04472v1",
+      "publication_url": "https://aclanthology.org/2026.findings-eacl.105/",
+      "version": "Quantitative analysis uses arXiv v1; venue independently verified",
+      "location": "Main DPO experiment; Appendix F, Table 9",
+      "mechanism": "Rewrite conversation history into a current goal description before planning. Train the rewriter with DPO preferences derived from downstream plans instead of requiring one gold summary.",
+      "result": "DPO-human versus Advanced rewriting wins/ties/loses 48.88/28.90/22.22% on the small test set, but 26.80/44.53/28.67% across all 750 conversations: no broad superiority in that comparison.",
+      "limitation": "Synthetic conversations and plan-preference judgments; plans are not executed. More elaborate rewriting can invent assumptions. The test set comes from a 150-conversation subset.",
+      "transfer": "Evaluate summaries by their downstream effects, and penalize unsupported requirements. Better-looking summaries alone are insufficient."
+    },
+    {
+      "id": "statemem",
+      "stage": "H2",
+      "title": "Can Agent Memory Systems Track Evolving State?",
+      "label": "StateMem · Aug 2026 preprint",
+      "url": "https://arxiv.org/html/2608.19652v1",
+      "version": "arXiv v1",
+      "location": "State representation; Table 14 and dependency ablation",
+      "mechanism": "Maintain sourced state units with active, superseded and needs_recheck status. Record dependencies so a changed input can invalidate derived conclusions.",
+      "result": "With DeepSeek-V4-Flash, StateMem answers 117/322 probes correctly, versus Dense retrieval 66/322 and full context 48/322. Removing dependency propagation scores 120/322, slightly above the complete method.",
+      "limitation": "234 synthetic scenarios, one run, a same-family judge, and 165–600 encoding calls per scenario. The benchmark targets the method's policy family; authors call its gains an upper bound. Propagation can wrongly flag valid state for rechecking.",
+      "transfer": "Track which requirement changed and preserve unaffected requirements; test stale-state retention and over-deletion separately."
+    },
+    {
+      "id": "mem1",
+      "stage": "H2",
+      "title": "MEM1: Learning to Synergize Memory and Reasoning for Efficient Long-Horizon Agents",
+      "label": "MEM1 · 2025 / ICLR 2026",
+      "url": "https://arxiv.org/html/2506.15841v2",
+      "publication_url": "https://github.com/MIT-MI/MEM1",
+      "version": "arXiv v2",
+      "location": "Method; Table 1; format-reward ablation",
+      "mechanism": "Use reinforcement learning to update a compact internal state that combines memory and reasoning, then discard the old trajectory. Final task rewards teach the model what to retain.",
+      "result": "On 16-objective QA, MEM1-7B averages 1.97 exact-match subanswers versus 0.567 for Qwen2.5-14B, with peak tokens 1,040 versus 3,840. These are counts of correct subanswers, not whole-task success rates.",
+      "limitation": "It needs verifiable training rewards and does not establish a minimal sufficient state. Adding a format reward lowers two-objective EM from 0.709 to 0.466.",
+      "transfer": "A learned compact state is a real alternative to a queue or retained reasoning; compare under matched total inference cost."
+    },
+    {
+      "id": "evolving-intent",
+      "stage": "H2",
+      "title": "LLMs Get Lost in Evolving User Intent",
+      "label": "Evolving intent · Jul 2026 preprint",
+      "url": "https://arxiv.org/html/2607.20734v1",
+      "version": "arXiv v1",
+      "location": "GSM8K intent evolution; BIRD oracle recap; preliminary GRPO experiment",
+      "mechanism": "Separate revealing parameters, revising parameters and switching task functions. Construct evolving conversations that return to the original benchmark target and retain its verifier.",
+      "result": "Across 200 GSM8K items, GPT-5.5 accuracy falls from 99.0% in one turn to 80.5% with six intent changes. On 100 BIRD items, function-switch accuracy rises from 65% to 75% with oracle recap, still below 80% single-turn accuracy.",
+      "limitation": "Preliminary Qwen3-4B GRPO improves dynamic-intent math accuracy from 64% to 76%; this is not broad agent evidence. Final-answer verification does not check every intermediate action.",
+      "transfer": "Separate additions, corrections and task switches in evaluation. Use oracle recap as an intervention, not deployable ground truth."
+    },
+    {
+      "id": "agentprm",
+      "stage": "H3",
+      "title": "AgentPRM: Process Reward Models for LLM Agents via Step-Wise Promise and Progress",
+      "label": "AgentPRM · Nov 2025 preprint",
+      "url": "https://arxiv.org/html/2511.08325v1",
+      "version": "arXiv v1; the Xi et al. paper, distinct from the other AgentPRM title",
+      "location": "Section 3; Table 1; Section 4.1",
+      "mechanism": "Train a reward model to estimate future success and improvement between adjacent decisions. TD estimation with GAE supplies labels; the reward model guides beam search and can support RL.",
+      "result": "For Qwen2.5-3B on WebShop at the same 4×4 beam setting, success is 72.5% with AgentPRM versus 59.0% with PVM. Evaluation uses 100 WebShop queries.",
+      "limitation": "Controlled WebShop, BabyAI and TextCraft environments differ from evolving conversation. Training and search incur extra cost. Promise/progress scores are predictions, not direct evidence that an obligation was fulfilled.",
+      "transfer": "Learn which action improves remaining-goal fulfillment; do not reward tool-call count or verbal claims of progress."
+    },
+    {
+      "id": "insighttoast",
+      "stage": "H1",
+      "title": "InsightToast: Proactive Information Retrieval & Glanceable Visualization in the Side Channel of Data-Rich Meetings",
+      "label": "InsightToast · Aug 2026 preprint",
+      "url": "https://arxiv.org/html/2608.31115v1",
+      "version": "arXiv v1",
+      "location": "Sections 4.2, 5.2 and 6; Appendix A.1",
+      "mechanism": "Maintain conversational state, detect a knowledge gap, generate complementary queries, evaluate retrieval, and deliver sourced text or charts in a peripheral interface.",
+      "result": "In 16 sessions, mean utterance-level trigger precision/recall/F1 are .70/.99/.81 against researcher annotations. Sessions average 113 utterances; exact TP/FP/FN counts are not reported.",
+      "limitation": "These are trigger metrics, not answer quality. Each 15-minute policy discussion pairs a participant with a researcher using scripted cues. Adjacent-turn over-triggering, noisy notifications and 29-second synthesis latency remain limitations.",
+      "transfer": "The closest application reference for this meeting assistant: separate knowledge-gap detection, retrieved evidence and notification. It does not establish compound-task completion or local ASR robustness."
+    },
+    {
+      "id": "deploybench",
+      "stage": "H4",
+      "title": "DeployBench",
+      "label": "DeployBench · Jun 2026 / revised Aug 2026",
+      "url": "https://arxiv.org/html/2606.05238v2",
+      "version": "arXiv v2",
+      "location": "Sections 3.3 and 5.3; Table 7",
+      "mechanism": "Evaluate research-artifact deployments using hidden checks that execute a reduced paper-specific experiment and inspect its outputs. Diagnose the gap between an agent's stopping criterion and the requested outcome.",
+      "result": "Five models on 51 artifacts achieve 7.8–51.0% success. Of 181 failures, 102 self-stop; 60 of those claim SUCCESS and 32 report PARTIAL. Self-stop is therefore not synonymous with a false-success claim.",
+      "limitation": "Public reproducible artifacts and one OpenHands scaffold; deployment is not conversation. The paper proposes stronger completion checks but does not demonstrate a mitigation experiment.",
+      "transfer": "Derive completion evidence from the original requirement and inspect the delivered state, rather than accepting a weaker substitute test."
+    }
+  ],
+  "interpretation": "The promising unit of optimization is a current, evidence-linked requirement together with its uncertainty, revision history and observed fulfillment. This is our synthesis, not a validated architecture or a claim of novelty.",
+  "proposed_comparison": {
+    "status": "planned_not_run",
+    "arms": [
+      "Full conversation history",
+      "Ordinary summary",
+      "Current-intent rewrite",
+      "Source-linked state with supersession",
+      "Oracle current state as a diagnostic reference"
+    ],
+    "controls": "Freeze the model, tools, visible prefix, deadline, final evaluator and total resource budget. Count state-updater, clarifier, verifier and failed-call costs. Use matched-context and token controls to test effects of added context.",
+    "outcomes": [
+      "All applicable requirements fulfilled in user-visible output",
+      "Initially omitted versus subsequently lost requirements at matched visible-prefix checkpoints",
+      "Stale requirements retained",
+      "Valid requirements incorrectly removed",
+      "Dependency-order and required-confirmation violations, including later-repaired cases",
+      "False completion and premature stopping",
+      "Unnecessary clarification or interruption",
+      "Tokens, calls and elapsed time"
+    ],
+    "attribution": "Only after a state intervention is characterized, cross a fixed/learned state policy with a fixed/adapted actor. Report both main effects and the interaction. These identify effects of specific interventions, not universal responsibility of the LLM or harness."
+  },
+  "limitations": [
+    "No new model experiment, SFT, RL or reproduction was performed.",
+    "Selected sources use different tasks, model sizes, budgets and metrics; their scores cannot be ranked in a shared leaderboard.",
+    "Synthetic and simulated-user findings do not establish benefits for live meetings, real ASR or human users.",
+    "The proposed state representation must be tested against a simple summary, its own costs, and errors from invented or stale obligations."
+  ]
+}

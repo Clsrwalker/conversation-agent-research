@@ -1,0 +1,47 @@
+{
+  "id": "intention-literature-publication-2026-10-17",
+  "date": "2026-10-17",
+  "timezone": "America/Halifax",
+  "type": "engineering_validation",
+  "status": "passed_with_limits",
+  "scope": "Literature-page assembly, source/download consistency and presentation only",
+  "checks": [
+    {
+      "check": "Nine paper cards match maintained source and JSON download",
+      "result": "pass"
+    },
+    {
+      "check": "All local literature-page links and fragment destinations exist",
+      "result": "pass"
+    },
+    {
+      "check": "Combined JSON and JavaScript research records agree",
+      "result": "pass"
+    },
+    {
+      "check": "Previous research findings unchanged against pre-update Git HEAD",
+      "result": "pass"
+    },
+    {
+      "check": "Browser desktop render at 1280px; nine cards; no horizontal overflow",
+      "result": "pass"
+    },
+    {
+      "check": "H3 anchor navigation and evidence-location disclosure",
+      "result": "pass"
+    }
+  ],
+  "new_model_runs": 0,
+  "limitations": [
+    "No paper reproduction or new assistance-quality experiment.",
+    "External paper links were reviewed with browsing; availability can change.",
+    "Mobile and print rendering were not visually checked.",
+    "Initial sandbox-local preview timed out; browser inspection succeeded with the local-only preview outside the sandbox."
+  ],
+  "run": "intention-literature-2026-10-17-publication",
+  "tested_source_sha256": {
+    "intention-literature.json": "7753e6d6d198114f772c841ffb835226031911c045b8d0e43e0b8e1131c35eb1",
+    "build_literature.py": "0992192039f7db4b43ea3e8f17bcabdaa24c2aa65f0cff0bc76926f3511deedb",
+    "dist/intention-literature.css": "987319f0d603d851dccc7e0f8ff2b15db6b1789725408abc0892afacb067e81d"
+  }
+}

@@ -45,8 +45,8 @@
     },
     {
       "path": "data.js",
-      "sha256": "bd5d9b226125adfcfb46618e692b9b37893575ebf9d762bc2c356d4b888c048d",
-      "bytes": 167150
+      "sha256": "87218d43efda3e4757dc37e0b5cf6a52904b1eef433c65f4d27a01cafa7b14d2",
+      "bytes": 167620
     },
     {
       "path": "data/analyze_harness_latency.py",
@@ -149,6 +149,16 @@
       "bytes": 22381
     },
     {
+      "path": "data/intention-literature-2026-10-17.json",
+      "sha256": "d279beb3cdee2cc5500926ddad2efc34e5249c52632f93aed0dd260660c62eaf",
+      "bytes": 13205
+    },
+    {
+      "path": "data/intention-literature-validation.json",
+      "sha256": "f2d2e9a172edb66f8e65177f57c348941398914c758e5158f529403fbf29c5a3",
+      "bytes": 1798
+    },
+    {
       "path": "data/langgraph-studio-validation.json",
       "sha256": "67d94701eb9756af7935e922d7a86293c3a6a02cdaf100712f40799a7eb7a203",
       "bytes": 6169
@@ -240,8 +250,8 @@
     },
     {
       "path": "data/research-record.json",
-      "sha256": "166ea42f4e7f5cd898ac4c05d9540b493e6d8c1ef8e1db94288d3acc80d6922d",
-      "bytes": 243553
+      "sha256": "411005a2dc8c9fb7350f123bc888fbe42b50528606a49f5653d7544a9d313e2e",
+      "bytes": 244146
     },
     {
       "path": "data/results.csv",
@@ -350,8 +360,18 @@
     },
     {
       "path": "index.html",
-      "sha256": "566e2e5149e960617728d27ffce4a29f14060cb6c715f7c58ee94d9fc11af0f4",
-      "bytes": 63527
+      "sha256": "04cec919f33241ecc72f41a02789210484ff1795c6028cb4fafd70affe357bfb",
+      "bytes": 64342
+    },
+    {
+      "path": "intention-literature.css",
+      "sha256": "987319f0d603d851dccc7e0f8ff2b15db6b1789725408abc0892afacb067e81d",
+      "bytes": 2622
+    },
+    {
+      "path": "intention-literature.html",
+      "sha256": "a352425e1b29c982993325ef55397b525c261bf1779dcc897e08dfd16cab8c63",
+      "bytes": 19545
     },
     {
       "path": "latency-data.js",
