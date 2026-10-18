@@ -1,0 +1,37 @@
+{
+  "status": "reviewed",
+  "review_type": "AI-assisted trace audit",
+  "findings": [
+    {
+      "title": "Saved-state claims exceed the evidence",
+      "text": "2 runs claim a saved assessment after failed saves, without a successful commit. Some claims follow scripted fallback replies; they remain false at the time they are delivered.",
+      "run_ids": [
+        "auto-record--tool_failure__r1",
+        "auto-authorization--detour_correction__r2"
+      ]
+    },
+    {
+      "title": "Assessment records lose evidence distinctions",
+      "text": "6 runs persist incorrect assistance flags or answer-source links. Correct answer text alone does not establish an accurate trainee assessment.",
+      "run_ids": [
+        "auto-authorization--detour_correction__r1",
+        "auto-request--compound__r1",
+        "auto-authorization--compound__r1",
+        "auto-authorization--detour_correction__r2",
+        "auto-request--compound__r2",
+        "auto-authorization--compound__r2"
+      ]
+    },
+    {
+      "title": "Receipt format affects the headline score",
+      "text": "5 runs fail only because a truthful confirmation omits the literal receipt ID. Accepting those confirmations changes strict completion from 10/42 to 15/42. This is a scoring sensitivity, not a harness improvement.",
+      "run_ids": [
+        "telecom-receipt--tool_failure__r1",
+        "telecom-loyalty--detour_correction__r1",
+        "telecom-receipt--compound__r1",
+        "telecom-correction--tool_failure__r2",
+        "telecom-receipt--compound__r2"
+      ]
+    }
+  ]
+}

@@ -45,8 +45,8 @@
     },
     {
       "path": "data.js",
-      "sha256": "5a52528c913f70acc2e51842c5a63fedfd34b9d58421862b6ef25d164f7e1c16",
-      "bytes": 168080
+      "sha256": "a10675100789e762c0184e6ea123840463e5094d3f6e922720c4e823a7350d79",
+      "bytes": 168878
     },
     {
       "path": "data/analyze_harness_latency.py",
@@ -99,6 +99,56 @@
       "bytes": 4794
     },
     {
+      "path": "data/goal-directed-environment-validation.json",
+      "sha256": "599b97b91730eff42cd7830d34d1415044fe40a36639b6b5a5e7c6a58216a750",
+      "bytes": 7799
+    },
+    {
+      "path": "data/goal-directed-phase1-cases.json",
+      "sha256": "de93b0fb646993c68e39df744a9aaef2e0f2d11fa2811c95b2078b77a0a8117f",
+      "bytes": 137751
+    },
+    {
+      "path": "data/goal-directed-phase1-evidence.json",
+      "sha256": "dcf950035b84e16fa0b4cf50a08b33cfc5885441458c12236cb844c9103984ff",
+      "bytes": 892525
+    },
+    {
+      "path": "data/goal-directed-phase1-findings.json",
+      "sha256": "6c929dc364d8722952073b8158768a82e578f00ab888557dd43ec8fca43ed4ed",
+      "bytes": 1600
+    },
+    {
+      "path": "data/goal-directed-phase1-measurement-audit.json",
+      "sha256": "f551ab77af44047d658d2a50e6ef6700ec2daddf8cf88573824befb128660e9d",
+      "bytes": 2705
+    },
+    {
+      "path": "data/goal-directed-phase1-methods.md",
+      "sha256": "5d4ec2a2f98d8cf053faa935696c98613181d6752c2bf219bbdb771c8b1d617b",
+      "bytes": 3604
+    },
+    {
+      "path": "data/goal-directed-phase1-results.csv",
+      "sha256": "6a6dd0c7bfd471b03c07850e08855b7732ce289846b2343b195509a2f62db996",
+      "bytes": 6931
+    },
+    {
+      "path": "data/goal-directed-phase1-results.json",
+      "sha256": "5386f73f83d9318f0c42c549bba604053aa5764eadda8115c42d9325c7ae5e96",
+      "bytes": 10571
+    },
+    {
+      "path": "data/goal-directed-phase1-scores.json",
+      "sha256": "e228c66eaa9bac8cb30a9771587f84c3c7b21c0c54859396284b38b7e539ca82",
+      "bytes": 264219
+    },
+    {
+      "path": "data/goal-directed-phase1-sources.json",
+      "sha256": "d24dea2074512b60d6bdfdefe075d5d25510152b84c34930a9680c6eb38757cf",
+      "bytes": 53718
+    },
+    {
       "path": "data/goal-directed-plan-2026-10-17.json",
       "sha256": "12d9d6ed742bca85a2cfa3aa5e5592563852e3257084e93622808e4845c1061d",
       "bytes": 8944
@@ -107,11 +157,6 @@
       "path": "data/goal-directed-plan-validation.json",
       "sha256": "26c749a2deaf9168d6cc41b52d47ff958fdf3ea3eb96e33cb62af18578434d53",
       "bytes": 2184
-    },
-    {
-      "path": "data/goal-directed-protocol.zh-CN.md",
-      "sha256": "1840c6bf407eff024503697dce48f5860a4006d3884fd97e890e10a6ceb5ab14",
-      "bytes": 25060
     },
     {
       "path": "data/harness-architecture-evidence.json",
@@ -265,8 +310,8 @@
     },
     {
       "path": "data/research-record.json",
-      "sha256": "72460b75a3b9edce1f76fb6f288b553b70131d56636a925e73fa683923b4fb23",
-      "bytes": 244729
+      "sha256": "ec486ae661145c6f5991fd62e50328d325419fb9b26482d9577bb487f03afb68",
+      "bytes": 245692
     },
     {
       "path": "data/results.csv",
@@ -360,13 +405,13 @@
     },
     {
       "path": "goal-directed-plan.css",
-      "sha256": "91429c95a47687a1c07d6dd6b83df24193a510b63597c95b75566ada03b016ee",
-      "bytes": 1560
+      "sha256": "36e63e6c7090f2599e0a7f8a376829ac550ebbd5e08f888f8c7f4e9729c0cb28",
+      "bytes": 5101
     },
     {
       "path": "goal-directed-plan.html",
-      "sha256": "11dd980c3b350baf52c16127f4961f63b0ae5bb934a95d4eb7544485c5beeddb",
-      "bytes": 16525
+      "sha256": "4c9449ce6a2b856f954a38acf3643997f9a310d3a0ead2d1d38c0571329aca45",
+      "bytes": 10267
     },
     {
       "path": "harness-data.js",
@@ -385,8 +430,8 @@
     },
     {
       "path": "index.html",
-      "sha256": "011a8b4c5e5f4e3371c3940accc80c0e01ea2da81a5614ac1d8997ffa77053f4",
-      "bytes": 65156
+      "sha256": "a306906742b21ddd3a584c13b7764f2f3012467aaad1fdfb4adbd91169fc72a5",
+      "bytes": 64791
     },
     {
       "path": "intention-literature.css",

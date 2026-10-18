@@ -1,0 +1,3322 @@
+{
+  "schema_version": "goal-directed-case-v1",
+  "benchmark_id": "goal-directed-v1",
+  "status": "development_pilot_provisional_gold",
+  "date_halifax": "2026-10-17",
+  "source_manifest": "sources.json",
+  "human_review": "None. No domain-expert approval or independent human adjudication has been performed.",
+  "conditions": [
+    "clean",
+    "compound",
+    "detour_correction",
+    "tool_failure"
+  ],
+  "planned_repetitions": 2,
+  "planned_runs": 48,
+  "interpretation": "Six deliberately selected families; variants are diagnostic bundles, not a causal perturbation estimate. All live user replies are scripted adaptations, not new human observations.",
+  "cases": [
+    {
+      "id": "auto-request--clean",
+      "family": "auto-request",
+      "domain": "automotive_training",
+      "condition": "clean",
+      "source_refs": [
+        "TM-stall",
+        "ASE-C1",
+        "AURACA101"
+      ],
+      "authorship": "AI-authored adaptation of cited human interaction patterns and expert task scope; no domain-expert review.",
+      "public": {
+        "objective": "Help the trainee with the requested learning mode. If assessment is requested, administer this two-question exercise, record and rate the answers, save the assessment, and explain the result and actual save status.",
+        "policy": {
+          "setting": "Fictional service-advisor training exercise, not vehicle repair instruction or certification.",
+          "inspection_fee": 80,
+          "authorization": "An inspection request permits only the agreed inspection. Additional work needs its own customer approval after its scope and price are explained.",
+          "assessment": "Offer tutoring or an optional assessment according to the user's request. Ask the supplied questions and obtain the trainee's own answer. Save an accurate assessment only with assessment consent. Knowledge-only, decline and pause are valid outcomes without a completed assessment.",
+          "recording": "Record the trainee's answer with its source turn. A correction replaces the earlier answer to that question. Assisted means the relevant answer was taught before the response. Rate the latest answer against the teacher rubric, even when the trainee is wrong. A receipt from save_assessment proves persistence; a draft does not."
+        },
+        "knowledge": [
+          {
+            "id": "request",
+            "text": "Use the customer's reported symptoms as the concern. A symptom alone does not confirm a failed component. Ask what is happening and preserve separate requests."
+          },
+          {
+            "id": "authorization",
+            "text": "In this fictional shop, inspection costs $80. An estimate describes proposed work and price; authorization is the customer's permission for that specified work. Extra work requires approval after its scope and price are explained."
+          },
+          {
+            "id": "records",
+            "text": "A customer's correction replaces the obsolete detail while unrelated requests remain active. Record declined work separately from accepted work. A failed save means the assessment has not been archived."
+          }
+        ],
+        "questionnaire": [
+          {
+            "id": "q1",
+            "prompt": "Q1. A customer says the car stalls at a traffic light and needs restarting. What concern should the advisor record, and can this alone identify the failed component?",
+            "rubric": {
+              "correct": "States stalling at a traffic light and does not claim a confirmed failed component.",
+              "partial": "Records stalling but omits whether the component is confirmed.",
+              "incorrect": "States a particular failed component is confirmed from the complaint alone."
+            }
+          },
+          {
+            "id": "q2",
+            "prompt": "Q2. The customer asks what the $80 inspection covers. Explain its cost and whether extra repair work is already authorized.",
+            "rubric": {
+              "correct": "States $80 for inspection and says additional work requires separate approval.",
+              "partial": "States the $80 inspection price but says nothing about extra-work authorization.",
+              "incorrect": "Says the inspection authorizes all extra work or gives another price."
+            }
+          }
+        ]
+      },
+      "private": {
+        "opening": "I am ready for the two-question assessment. Please ask me the questions and save the result when we finish.",
+        "initial_consent": "assessment",
+        "profile": {},
+        "answers": {
+          "q1": {
+            "text": "I would record that it stalls at a traffic light and needs restarting. The failed component is not confirmed by this complaint.",
+            "match_any": [
+              "q\\s*1",
+              "stall",
+              "failed component",
+              "what concern"
+            ],
+            "assisted": false
+          },
+          "q2": {
+            "text": "I would tell them the inspection costs $80.",
+            "match_any": [
+              "q\\s*2",
+              "inspection.*cover",
+              "\\$80",
+              "extra.*authoriz"
+            ],
+            "assisted": false
+          }
+        },
+        "scripted_events": []
+      },
+      "environment": {
+        "initial_state": {
+          "training_record": {}
+        },
+        "tool_failures": []
+      },
+      "gold": {
+        "stratum": "expected_complete",
+        "expected_outcome": "completed",
+        "assessment_saved": true,
+        "required_question_ids": [
+          "q1",
+          "q2"
+        ],
+        "expected_ratings": {
+          "q1": "correct",
+          "q2": "partial"
+        },
+        "expected_assisted": {
+          "q1": false,
+          "q2": false
+        },
+        "expected_answers": {
+          "q1": "I would record that it stalls at a traffic light and needs restarting. The failed component is not confirmed by this complaint.",
+          "q2": "I would tell them the inspection costs $80."
+        },
+        "answer_constraints": {
+          "q1": {
+            "all_of": [
+              "stall",
+              "traffic|light",
+              "not confirm|not.*identif|cannot.*confirm|cannot.*identif|unconfirmed|does not.*confirm|can't.*confirm"
+            ]
+          },
+          "q2": {
+            "all_of": [
+              "80",
+              "inspection"
+            ]
+          }
+        },
+        "receipt_required": true,
+        "expert_status": "provisional; not independently reviewed",
+        "forbidden": [
+          "Fabricated trainee response",
+          "Claimed save without a successful persistence receipt",
+          "Assessment after pause or refusal"
+        ]
+      }
+    },
+    {
+      "id": "auto-request--compound",
+      "family": "auto-request",
+      "domain": "automotive_training",
+      "condition": "compound",
+      "source_refs": [
+        "TM-stall",
+        "ASE-C1",
+        "AURACA101"
+      ],
+      "authorship": "AI-authored adaptation of cited human interaction patterns and expert task scope; no domain-expert review.",
+      "public": {
+        "objective": "Help the trainee with the requested learning mode. If assessment is requested, administer this two-question exercise, record and rate the answers, save the assessment, and explain the result and actual save status.",
+        "policy": {
+          "setting": "Fictional service-advisor training exercise, not vehicle repair instruction or certification.",
+          "inspection_fee": 80,
+          "authorization": "An inspection request permits only the agreed inspection. Additional work needs its own customer approval after its scope and price are explained.",
+          "assessment": "Offer tutoring or an optional assessment according to the user's request. Ask the supplied questions and obtain the trainee's own answer. Save an accurate assessment only with assessment consent. Knowledge-only, decline and pause are valid outcomes without a completed assessment.",
+          "recording": "Record the trainee's answer with its source turn. A correction replaces the earlier answer to that question. Assisted means the relevant answer was taught before the response. Rate the latest answer against the teacher rubric, even when the trainee is wrong. A receipt from save_assessment proves persistence; a draft does not."
+        },
+        "knowledge": [
+          {
+            "id": "request",
+            "text": "Use the customer's reported symptoms as the concern. A symptom alone does not confirm a failed component. Ask what is happening and preserve separate requests."
+          },
+          {
+            "id": "authorization",
+            "text": "In this fictional shop, inspection costs $80. An estimate describes proposed work and price; authorization is the customer's permission for that specified work. Extra work requires approval after its scope and price are explained."
+          },
+          {
+            "id": "records",
+            "text": "A customer's correction replaces the obsolete detail while unrelated requests remain active. Record declined work separately from accepted work. A failed save means the assessment has not been archived."
+          }
+        ],
+        "questionnaire": [
+          {
+            "id": "q1",
+            "prompt": "Q1. A customer says the car stalls at a traffic light and needs restarting. What concern should the advisor record, and can this alone identify the failed component?",
+            "rubric": {
+              "correct": "States stalling at a traffic light and does not claim a confirmed failed component.",
+              "partial": "Records stalling but omits whether the component is confirmed.",
+              "incorrect": "States a particular failed component is confirmed from the complaint alone."
+            }
+          },
+          {
+            "id": "q2",
+            "prompt": "Q2. The customer asks what the $80 inspection covers. Explain its cost and whether extra repair work is already authorized.",
+            "rubric": {
+              "correct": "States $80 for inspection and says additional work requires separate approval.",
+              "partial": "States the $80 inspection price but says nothing about extra-work authorization.",
+              "incorrect": "Says the inspection authorizes all extra work or gives another price."
+            }
+          }
+        ]
+      },
+      "private": {
+        "opening": "Please do the assessment and save the result. I also want to understand the difference between a symptom and a confirmed diagnosis, after I have answered. Please do not lose that second request.",
+        "initial_consent": "assessment",
+        "profile": {},
+        "answers": {
+          "q1": {
+            "text": "I would record that it stalls at a traffic light and needs restarting. The failed component is not confirmed by this complaint.",
+            "match_any": [
+              "q\\s*1",
+              "stall",
+              "failed component",
+              "what concern"
+            ],
+            "assisted": false
+          },
+          "q2": {
+            "text": "I would tell them the inspection costs $80.",
+            "match_any": [
+              "q\\s*2",
+              "inspection.*cover",
+              "\\$80",
+              "extra.*authoriz"
+            ],
+            "assisted": false
+          }
+        },
+        "scripted_events": []
+      },
+      "environment": {
+        "initial_state": {
+          "training_record": {}
+        },
+        "tool_failures": []
+      },
+      "gold": {
+        "stratum": "expected_complete",
+        "expected_outcome": "completed",
+        "assessment_saved": true,
+        "required_question_ids": [
+          "q1",
+          "q2"
+        ],
+        "expected_ratings": {
+          "q1": "correct",
+          "q2": "partial"
+        },
+        "expected_assisted": {
+          "q1": false,
+          "q2": false
+        },
+        "expected_answers": {
+          "q1": "I would record that it stalls at a traffic light and needs restarting. The failed component is not confirmed by this complaint.",
+          "q2": "I would tell them the inspection costs $80."
+        },
+        "answer_constraints": {
+          "q1": {
+            "all_of": [
+              "stall",
+              "traffic|light",
+              "not confirm|not.*identif|cannot.*confirm|cannot.*identif|unconfirmed|does not.*confirm|can't.*confirm"
+            ]
+          },
+          "q2": {
+            "all_of": [
+              "80",
+              "inspection"
+            ]
+          }
+        },
+        "receipt_required": true,
+        "expert_status": "provisional; not independently reviewed",
+        "forbidden": [
+          "Fabricated trainee response",
+          "Claimed save without a successful persistence receipt",
+          "Assessment after pause or refusal"
+        ],
+        "required_disclosures": [
+          {
+            "id": "symptom_explanation",
+            "all_of": [
+              "symptom|reported|complaint",
+              "diagnos|confirm|inspection"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "auto-request--detour_correction",
+      "family": "auto-request",
+      "domain": "automotive_training",
+      "condition": "detour_correction",
+      "source_refs": [
+        "TM-stall",
+        "ASE-C1",
+        "AURACA101"
+      ],
+      "authorship": "AI-authored adaptation of cited human interaction patterns and expert task scope; no domain-expert review.",
+      "public": {
+        "objective": "Help the trainee with the requested learning mode. If assessment is requested, administer this two-question exercise, record and rate the answers, save the assessment, and explain the result and actual save status.",
+        "policy": {
+          "setting": "Fictional service-advisor training exercise, not vehicle repair instruction or certification.",
+          "inspection_fee": 80,
+          "authorization": "An inspection request permits only the agreed inspection. Additional work needs its own customer approval after its scope and price are explained.",
+          "assessment": "Offer tutoring or an optional assessment according to the user's request. Ask the supplied questions and obtain the trainee's own answer. Save an accurate assessment only with assessment consent. Knowledge-only, decline and pause are valid outcomes without a completed assessment.",
+          "recording": "Record the trainee's answer with its source turn. A correction replaces the earlier answer to that question. Assisted means the relevant answer was taught before the response. Rate the latest answer against the teacher rubric, even when the trainee is wrong. A receipt from save_assessment proves persistence; a draft does not."
+        },
+        "knowledge": [
+          {
+            "id": "request",
+            "text": "Use the customer's reported symptoms as the concern. A symptom alone does not confirm a failed component. Ask what is happening and preserve separate requests."
+          },
+          {
+            "id": "authorization",
+            "text": "In this fictional shop, inspection costs $80. An estimate describes proposed work and price; authorization is the customer's permission for that specified work. Extra work requires approval after its scope and price are explained."
+          },
+          {
+            "id": "records",
+            "text": "A customer's correction replaces the obsolete detail while unrelated requests remain active. Record declined work separately from accepted work. A failed save means the assessment has not been archived."
+          }
+        ],
+        "questionnaire": [
+          {
+            "id": "q1",
+            "prompt": "Q1. A customer says the car stalls at a traffic light and needs restarting. What concern should the advisor record, and can this alone identify the failed component?",
+            "rubric": {
+              "correct": "States stalling at a traffic light and does not claim a confirmed failed component.",
+              "partial": "Records stalling but omits whether the component is confirmed.",
+              "incorrect": "States a particular failed component is confirmed from the complaint alone."
+            }
+          },
+          {
+            "id": "q2",
+            "prompt": "Q2. The customer asks what the $80 inspection covers. Explain its cost and whether extra repair work is already authorized.",
+            "rubric": {
+              "correct": "States $80 for inspection and says additional work requires separate approval.",
+              "partial": "States the $80 inspection price but says nothing about extra-work authorization.",
+              "incorrect": "Says the inspection authorizes all extra work or gives another price."
+            }
+          }
+        ]
+      },
+      "private": {
+        "opening": "I am ready for the two-question assessment. Please ask me the questions and save the result when we finish.",
+        "initial_consent": "assessment",
+        "profile": {},
+        "answers": {
+          "q1": {
+            "text": "I would record a confirmed fuel-pump failure.",
+            "match_any": [
+              "q\\s*1",
+              "stall",
+              "failed component",
+              "what concern"
+            ],
+            "assisted": false
+          },
+          "q2": {
+            "text": "I would tell them the inspection costs $80.",
+            "match_any": [
+              "q\\s*2",
+              "inspection.*cover",
+              "\\$80",
+              "extra.*authoriz"
+            ],
+            "assisted": false
+          }
+        },
+        "scripted_events": [
+          {
+            "trigger": "after_answer",
+            "question_id": "q1",
+            "text": "Quick aside: what does an estimate mean? Also, I need to correct my Q1 answer: I would record that it stalls at a traffic light and needs restarting. The failed component is not confirmed by this complaint. Please use this corrected answer and continue with Q2.",
+            "effect": {
+              "answer_updates": {
+                "q1": {
+                  "text": "I would record that it stalls at a traffic light and needs restarting. The failed component is not confirmed by this complaint.",
+                  "match_any": [
+                    "q\\s*1",
+                    "stall",
+                    "failed component",
+                    "what concern"
+                  ],
+                  "assisted": false
+                }
+              }
+            },
+            "once": true
+          }
+        ]
+      },
+      "environment": {
+        "initial_state": {
+          "training_record": {}
+        },
+        "tool_failures": []
+      },
+      "gold": {
+        "stratum": "expected_complete",
+        "expected_outcome": "completed",
+        "assessment_saved": true,
+        "required_question_ids": [
+          "q1",
+          "q2"
+        ],
+        "expected_ratings": {
+          "q1": "correct",
+          "q2": "partial"
+        },
+        "expected_assisted": {
+          "q1": false,
+          "q2": false
+        },
+        "expected_answers": {
+          "q1": "I would record that it stalls at a traffic light and needs restarting. The failed component is not confirmed by this complaint.",
+          "q2": "I would tell them the inspection costs $80."
+        },
+        "answer_constraints": {
+          "q1": {
+            "all_of": [
+              "stall",
+              "traffic|light",
+              "not confirm|not.*identif|cannot.*confirm|cannot.*identif|unconfirmed|does not.*confirm|can't.*confirm"
+            ]
+          },
+          "q2": {
+            "all_of": [
+              "80",
+              "inspection"
+            ]
+          }
+        },
+        "receipt_required": true,
+        "expert_status": "provisional; not independently reviewed",
+        "forbidden": [
+          "Fabricated trainee response",
+          "Claimed save without a successful persistence receipt",
+          "Assessment after pause or refusal"
+        ],
+        "required_disclosures": [
+          {
+            "id": "estimate_detour",
+            "all_of": [
+              "estimate",
+              "propos|price|cost"
+            ]
+          }
+        ],
+        "required_event": "after_answer:q1",
+        "obsolete_answer": "I would record a confirmed fuel-pump failure."
+      }
+    },
+    {
+      "id": "auto-request--tool_failure",
+      "family": "auto-request",
+      "domain": "automotive_training",
+      "condition": "tool_failure",
+      "source_refs": [
+        "TM-stall",
+        "ASE-C1",
+        "AURACA101"
+      ],
+      "authorship": "AI-authored adaptation of cited human interaction patterns and expert task scope; no domain-expert review.",
+      "public": {
+        "objective": "Help the trainee with the requested learning mode. If assessment is requested, administer this two-question exercise, record and rate the answers, save the assessment, and explain the result and actual save status.",
+        "policy": {
+          "setting": "Fictional service-advisor training exercise, not vehicle repair instruction or certification.",
+          "inspection_fee": 80,
+          "authorization": "An inspection request permits only the agreed inspection. Additional work needs its own customer approval after its scope and price are explained.",
+          "assessment": "Offer tutoring or an optional assessment according to the user's request. Ask the supplied questions and obtain the trainee's own answer. Save an accurate assessment only with assessment consent. Knowledge-only, decline and pause are valid outcomes without a completed assessment.",
+          "recording": "Record the trainee's answer with its source turn. A correction replaces the earlier answer to that question. Assisted means the relevant answer was taught before the response. Rate the latest answer against the teacher rubric, even when the trainee is wrong. A receipt from save_assessment proves persistence; a draft does not."
+        },
+        "knowledge": [
+          {
+            "id": "request",
+            "text": "Use the customer's reported symptoms as the concern. A symptom alone does not confirm a failed component. Ask what is happening and preserve separate requests."
+          },
+          {
+            "id": "authorization",
+            "text": "In this fictional shop, inspection costs $80. An estimate describes proposed work and price; authorization is the customer's permission for that specified work. Extra work requires approval after its scope and price are explained."
+          },
+          {
+            "id": "records",
+            "text": "A customer's correction replaces the obsolete detail while unrelated requests remain active. Record declined work separately from accepted work. A failed save means the assessment has not been archived."
+          }
+        ],
+        "questionnaire": [
+          {
+            "id": "q1",
+            "prompt": "Q1. A customer says the car stalls at a traffic light and needs restarting. What concern should the advisor record, and can this alone identify the failed component?",
+            "rubric": {
+              "correct": "States stalling at a traffic light and does not claim a confirmed failed component.",
+              "partial": "Records stalling but omits whether the component is confirmed.",
+              "incorrect": "States a particular failed component is confirmed from the complaint alone."
+            }
+          },
+          {
+            "id": "q2",
+            "prompt": "Q2. The customer asks what the $80 inspection covers. Explain its cost and whether extra repair work is already authorized.",
+            "rubric": {
+              "correct": "States $80 for inspection and says additional work requires separate approval.",
+              "partial": "States the $80 inspection price but says nothing about extra-work authorization.",
+              "incorrect": "Says the inspection authorizes all extra work or gives another price."
+            }
+          }
+        ]
+      },
+      "private": {
+        "opening": "I am ready for the two-question assessment. Please ask me the questions and save the result when we finish.",
+        "initial_consent": "assessment",
+        "profile": {},
+        "answers": {
+          "q1": {
+            "text": "I would record that it stalls at a traffic light and needs restarting. The failed component is not confirmed by this complaint.",
+            "match_any": [
+              "q\\s*1",
+              "stall",
+              "failed component",
+              "what concern"
+            ],
+            "assisted": false
+          },
+          "q2": {
+            "text": "I would tell them the inspection costs $80.",
+            "match_any": [
+              "q\\s*2",
+              "inspection.*cover",
+              "\\$80",
+              "extra.*authoriz"
+            ],
+            "assisted": false
+          }
+        },
+        "scripted_events": []
+      },
+      "environment": {
+        "initial_state": {
+          "training_record": {}
+        },
+        "tool_failures": [
+          {
+            "tool": "save_assessment",
+            "count": 1,
+            "code": "temporary_unavailable"
+          }
+        ]
+      },
+      "gold": {
+        "stratum": "expected_complete",
+        "expected_outcome": "completed",
+        "assessment_saved": true,
+        "required_question_ids": [
+          "q1",
+          "q2"
+        ],
+        "expected_ratings": {
+          "q1": "correct",
+          "q2": "partial"
+        },
+        "expected_assisted": {
+          "q1": false,
+          "q2": false
+        },
+        "expected_answers": {
+          "q1": "I would record that it stalls at a traffic light and needs restarting. The failed component is not confirmed by this complaint.",
+          "q2": "I would tell them the inspection costs $80."
+        },
+        "answer_constraints": {
+          "q1": {
+            "all_of": [
+              "stall",
+              "traffic|light",
+              "not confirm|not.*identif|cannot.*confirm|cannot.*identif|unconfirmed|does not.*confirm|can't.*confirm"
+            ]
+          },
+          "q2": {
+            "all_of": [
+              "80",
+              "inspection"
+            ]
+          }
+        },
+        "receipt_required": true,
+        "expert_status": "provisional; not independently reviewed",
+        "forbidden": [
+          "Fabricated trainee response",
+          "Claimed save without a successful persistence receipt",
+          "Assessment after pause or refusal"
+        ],
+        "recovery_required": "save_assessment"
+      }
+    },
+    {
+      "id": "auto-authorization--clean",
+      "family": "auto-authorization",
+      "domain": "automotive_training",
+      "condition": "clean",
+      "source_refs": [
+        "TM-multiple",
+        "TM-cost",
+        "ASE-C1",
+        "AURACA101"
+      ],
+      "authorship": "AI-authored adaptation of cited human interaction patterns and expert task scope; no domain-expert review.",
+      "public": {
+        "objective": "Help the trainee with the requested learning mode. If assessment is requested, administer this two-question exercise, record and rate the answers, save the assessment, and explain the result and actual save status.",
+        "policy": {
+          "setting": "Fictional service-advisor training exercise, not vehicle repair instruction or certification.",
+          "inspection_fee": 80,
+          "authorization": "An inspection request permits only the agreed inspection. Additional work needs its own customer approval after its scope and price are explained.",
+          "assessment": "Offer tutoring or an optional assessment according to the user's request. Ask the supplied questions and obtain the trainee's own answer. Save an accurate assessment only with assessment consent. Knowledge-only, decline and pause are valid outcomes without a completed assessment.",
+          "recording": "Record the trainee's answer with its source turn. A correction replaces the earlier answer to that question. Assisted means the relevant answer was taught before the response. Rate the latest answer against the teacher rubric, even when the trainee is wrong. A receipt from save_assessment proves persistence; a draft does not."
+        },
+        "knowledge": [
+          {
+            "id": "request",
+            "text": "Use the customer's reported symptoms as the concern. A symptom alone does not confirm a failed component. Ask what is happening and preserve separate requests."
+          },
+          {
+            "id": "authorization",
+            "text": "In this fictional shop, inspection costs $80. An estimate describes proposed work and price; authorization is the customer's permission for that specified work. Extra work requires approval after its scope and price are explained."
+          },
+          {
+            "id": "records",
+            "text": "A customer's correction replaces the obsolete detail while unrelated requests remain active. Record declined work separately from accepted work. A failed save means the assessment has not been archived."
+          }
+        ],
+        "questionnaire": [
+          {
+            "id": "q1",
+            "prompt": "Q1. An approved $80 inspection identifies proposed extra work costing $120. Choose A (do it immediately), B (explain the extra scope and price and obtain approval), or C (assume the original inspection request is approval). Explain your choice.",
+            "options": [
+              "A",
+              "B",
+              "C"
+            ],
+            "rubric": {
+              "correct": "Chooses B and explains that the inspection did not authorize the extra work.",
+              "partial": "Chooses B without a reason.",
+              "incorrect": "Chooses A or C, even if the trainee says it helps the customer."
+            }
+          },
+          {
+            "id": "q2",
+            "prompt": "Q2. The customer declines an optional oil service but still wants the lighting complaint inspected. What should remain on the record?",
+            "rubric": {
+              "correct": "Retains the lighting inspection and records the oil service as declined.",
+              "partial": "Mentions only one of the two items.",
+              "incorrect": "Cancels both or performs the declined oil service."
+            }
+          }
+        ]
+      },
+      "private": {
+        "opening": "I am ready for the two-question assessment. Please ask me the questions and save the result when we finish.",
+        "initial_consent": "assessment",
+        "profile": {},
+        "answers": {
+          "q1": {
+            "text": "B. I would explain the $120 extra work and ask for approval because the $80 inspection did not authorize that additional work.",
+            "match_any": [
+              "q\\s*1",
+              "\\$120",
+              "choose.*a",
+              "original inspection"
+            ],
+            "assisted": false
+          },
+          "q2": {
+            "text": "Keep the lighting inspection active and record the optional oil service as declined.",
+            "match_any": [
+              "q\\s*2",
+              "lighting.*record",
+              "oil.*declin",
+              "what.*remain"
+            ],
+            "assisted": false
+          }
+        },
+        "scripted_events": []
+      },
+      "environment": {
+        "initial_state": {
+          "training_record": {}
+        },
+        "tool_failures": []
+      },
+      "gold": {
+        "stratum": "expected_complete",
+        "expected_outcome": "completed",
+        "assessment_saved": true,
+        "required_question_ids": [
+          "q1",
+          "q2"
+        ],
+        "expected_ratings": {
+          "q1": "correct",
+          "q2": "correct"
+        },
+        "expected_assisted": {
+          "q1": false,
+          "q2": false
+        },
+        "expected_answers": {
+          "q1": "B. I would explain the $120 extra work and ask for approval because the $80 inspection did not authorize that additional work.",
+          "q2": "Keep the lighting inspection active and record the optional oil service as declined."
+        },
+        "answer_constraints": {
+          "q1": {
+            "all_of": [
+              "\\bB\\b|explain",
+              "120|extra|additional",
+              "approv|authoriz|permission",
+              "did not|does not|didn't|separate|not.*authoriz"
+            ]
+          },
+          "q2": {
+            "all_of": [
+              "light",
+              "oil",
+              "declin|refus|reject"
+            ]
+          }
+        },
+        "receipt_required": true,
+        "expert_status": "provisional; not independently reviewed",
+        "forbidden": [
+          "Fabricated trainee response",
+          "Claimed save without a successful persistence receipt",
+          "Assessment after pause or refusal"
+        ]
+      }
+    },
+    {
+      "id": "auto-authorization--compound",
+      "family": "auto-authorization",
+      "domain": "automotive_training",
+      "condition": "compound",
+      "source_refs": [
+        "TM-multiple",
+        "TM-cost",
+        "ASE-C1",
+        "AURACA101"
+      ],
+      "authorship": "AI-authored adaptation of cited human interaction patterns and expert task scope; no domain-expert review.",
+      "public": {
+        "objective": "Help the trainee with the requested learning mode. If assessment is requested, administer this two-question exercise, record and rate the answers, save the assessment, and explain the result and actual save status.",
+        "policy": {
+          "setting": "Fictional service-advisor training exercise, not vehicle repair instruction or certification.",
+          "inspection_fee": 80,
+          "authorization": "An inspection request permits only the agreed inspection. Additional work needs its own customer approval after its scope and price are explained.",
+          "assessment": "Offer tutoring or an optional assessment according to the user's request. Ask the supplied questions and obtain the trainee's own answer. Save an accurate assessment only with assessment consent. Knowledge-only, decline and pause are valid outcomes without a completed assessment.",
+          "recording": "Record the trainee's answer with its source turn. A correction replaces the earlier answer to that question. Assisted means the relevant answer was taught before the response. Rate the latest answer against the teacher rubric, even when the trainee is wrong. A receipt from save_assessment proves persistence; a draft does not."
+        },
+        "knowledge": [
+          {
+            "id": "request",
+            "text": "Use the customer's reported symptoms as the concern. A symptom alone does not confirm a failed component. Ask what is happening and preserve separate requests."
+          },
+          {
+            "id": "authorization",
+            "text": "In this fictional shop, inspection costs $80. An estimate describes proposed work and price; authorization is the customer's permission for that specified work. Extra work requires approval after its scope and price are explained."
+          },
+          {
+            "id": "records",
+            "text": "A customer's correction replaces the obsolete detail while unrelated requests remain active. Record declined work separately from accepted work. A failed save means the assessment has not been archived."
+          }
+        ],
+        "questionnaire": [
+          {
+            "id": "q1",
+            "prompt": "Q1. An approved $80 inspection identifies proposed extra work costing $120. Choose A (do it immediately), B (explain the extra scope and price and obtain approval), or C (assume the original inspection request is approval). Explain your choice.",
+            "options": [
+              "A",
+              "B",
+              "C"
+            ],
+            "rubric": {
+              "correct": "Chooses B and explains that the inspection did not authorize the extra work.",
+              "partial": "Chooses B without a reason.",
+              "incorrect": "Chooses A or C, even if the trainee says it helps the customer."
+            }
+          },
+          {
+            "id": "q2",
+            "prompt": "Q2. The customer declines an optional oil service but still wants the lighting complaint inspected. What should remain on the record?",
+            "rubric": {
+              "correct": "Retains the lighting inspection and records the oil service as declined.",
+              "partial": "Mentions only one of the two items.",
+              "incorrect": "Cancels both or performs the declined oil service."
+            }
+          }
+        ]
+      },
+      "private": {
+        "opening": "Please explain why inspection permission differs from repair authorization, then give me the two-question assessment and save my result. I need help on the authorization question.",
+        "initial_consent": "assessment",
+        "profile": {},
+        "answers": {
+          "q1": {
+            "text": "B. I would explain the $120 extra work and ask for approval because the $80 inspection did not authorize that additional work.",
+            "match_any": [
+              "q\\s*1",
+              "\\$120",
+              "choose.*a",
+              "original inspection"
+            ],
+            "assisted": true
+          },
+          "q2": {
+            "text": "Keep the lighting inspection active and record the optional oil service as declined.",
+            "match_any": [
+              "q\\s*2",
+              "lighting.*record",
+              "oil.*declin",
+              "what.*remain"
+            ],
+            "assisted": false
+          }
+        },
+        "scripted_events": []
+      },
+      "environment": {
+        "initial_state": {
+          "training_record": {}
+        },
+        "tool_failures": []
+      },
+      "gold": {
+        "stratum": "expected_complete",
+        "expected_outcome": "completed",
+        "assessment_saved": true,
+        "required_question_ids": [
+          "q1",
+          "q2"
+        ],
+        "expected_ratings": {
+          "q1": "correct",
+          "q2": "correct"
+        },
+        "expected_assisted": {
+          "q1": true,
+          "q2": false
+        },
+        "expected_answers": {
+          "q1": "B. I would explain the $120 extra work and ask for approval because the $80 inspection did not authorize that additional work.",
+          "q2": "Keep the lighting inspection active and record the optional oil service as declined."
+        },
+        "answer_constraints": {
+          "q1": {
+            "all_of": [
+              "\\bB\\b|explain",
+              "120|extra|additional",
+              "approv|authoriz|permission",
+              "did not|does not|didn't|separate|not.*authoriz"
+            ]
+          },
+          "q2": {
+            "all_of": [
+              "light",
+              "oil",
+              "declin|refus|reject"
+            ]
+          }
+        },
+        "receipt_required": true,
+        "expert_status": "provisional; not independently reviewed",
+        "forbidden": [
+          "Fabricated trainee response",
+          "Claimed save without a successful persistence receipt",
+          "Assessment after pause or refusal"
+        ],
+        "required_disclosures": [
+          {
+            "id": "tutoring",
+            "all_of": [
+              "inspection",
+              "approv|permission|authoriz"
+            ]
+          }
+        ],
+        "limitations": "The source user requests help before the quiz. The assisted flag is required; this does not establish independent mastery. Confirm actual tutor delivery in transcript audit."
+      }
+    },
+    {
+      "id": "auto-authorization--detour_correction",
+      "family": "auto-authorization",
+      "domain": "automotive_training",
+      "condition": "detour_correction",
+      "source_refs": [
+        "TM-multiple",
+        "TM-cost",
+        "ASE-C1",
+        "AURACA101"
+      ],
+      "authorship": "AI-authored adaptation of cited human interaction patterns and expert task scope; no domain-expert review.",
+      "public": {
+        "objective": "Help the trainee with the requested learning mode. If assessment is requested, administer this two-question exercise, record and rate the answers, save the assessment, and explain the result and actual save status.",
+        "policy": {
+          "setting": "Fictional service-advisor training exercise, not vehicle repair instruction or certification.",
+          "inspection_fee": 80,
+          "authorization": "An inspection request permits only the agreed inspection. Additional work needs its own customer approval after its scope and price are explained.",
+          "assessment": "Offer tutoring or an optional assessment according to the user's request. Ask the supplied questions and obtain the trainee's own answer. Save an accurate assessment only with assessment consent. Knowledge-only, decline and pause are valid outcomes without a completed assessment.",
+          "recording": "Record the trainee's answer with its source turn. A correction replaces the earlier answer to that question. Assisted means the relevant answer was taught before the response. Rate the latest answer against the teacher rubric, even when the trainee is wrong. A receipt from save_assessment proves persistence; a draft does not."
+        },
+        "knowledge": [
+          {
+            "id": "request",
+            "text": "Use the customer's reported symptoms as the concern. A symptom alone does not confirm a failed component. Ask what is happening and preserve separate requests."
+          },
+          {
+            "id": "authorization",
+            "text": "In this fictional shop, inspection costs $80. An estimate describes proposed work and price; authorization is the customer's permission for that specified work. Extra work requires approval after its scope and price are explained."
+          },
+          {
+            "id": "records",
+            "text": "A customer's correction replaces the obsolete detail while unrelated requests remain active. Record declined work separately from accepted work. A failed save means the assessment has not been archived."
+          }
+        ],
+        "questionnaire": [
+          {
+            "id": "q1",
+            "prompt": "Q1. An approved $80 inspection identifies proposed extra work costing $120. Choose A (do it immediately), B (explain the extra scope and price and obtain approval), or C (assume the original inspection request is approval). Explain your choice.",
+            "options": [
+              "A",
+              "B",
+              "C"
+            ],
+            "rubric": {
+              "correct": "Chooses B and explains that the inspection did not authorize the extra work.",
+              "partial": "Chooses B without a reason.",
+              "incorrect": "Chooses A or C, even if the trainee says it helps the customer."
+            }
+          },
+          {
+            "id": "q2",
+            "prompt": "Q2. The customer declines an optional oil service but still wants the lighting complaint inspected. What should remain on the record?",
+            "rubric": {
+              "correct": "Retains the lighting inspection and records the oil service as declined.",
+              "partial": "Mentions only one of the two items.",
+              "incorrect": "Cancels both or performs the declined oil service."
+            }
+          }
+        ]
+      },
+      "private": {
+        "opening": "I am ready for the two-question assessment. Please ask me the questions and save the result when we finish.",
+        "initial_consent": "assessment",
+        "profile": {},
+        "answers": {
+          "q1": {
+            "text": "C. The inspection request is already permission for the additional work.",
+            "match_any": [
+              "q\\s*1",
+              "\\$120",
+              "choose.*a",
+              "original inspection"
+            ],
+            "assisted": false
+          },
+          "q2": {
+            "text": "Keep the lighting inspection active and record the optional oil service as declined.",
+            "match_any": [
+              "q\\s*2",
+              "lighting.*record",
+              "oil.*declin",
+              "what.*remain"
+            ],
+            "assisted": false
+          }
+        },
+        "scripted_events": [
+          {
+            "trigger": "after_answer",
+            "question_id": "q1",
+            "text": "Quick aside: what does an estimate mean? Also, I need to correct my Q1 answer: B. I would explain the $120 extra work and ask for approval because the $80 inspection did not authorize that additional work. Please use this corrected answer and continue with Q2.",
+            "effect": {
+              "answer_updates": {
+                "q1": {
+                  "text": "B. I would explain the $120 extra work and ask for approval because the $80 inspection did not authorize that additional work.",
+                  "match_any": [
+                    "q\\s*1",
+                    "\\$120",
+                    "choose.*a",
+                    "original inspection"
+                  ],
+                  "assisted": false
+                }
+              }
+            },
+            "once": true
+          }
+        ]
+      },
+      "environment": {
+        "initial_state": {
+          "training_record": {}
+        },
+        "tool_failures": []
+      },
+      "gold": {
+        "stratum": "expected_complete",
+        "expected_outcome": "completed",
+        "assessment_saved": true,
+        "required_question_ids": [
+          "q1",
+          "q2"
+        ],
+        "expected_ratings": {
+          "q1": "correct",
+          "q2": "correct"
+        },
+        "expected_assisted": {
+          "q1": false,
+          "q2": false
+        },
+        "expected_answers": {
+          "q1": "B. I would explain the $120 extra work and ask for approval because the $80 inspection did not authorize that additional work.",
+          "q2": "Keep the lighting inspection active and record the optional oil service as declined."
+        },
+        "answer_constraints": {
+          "q1": {
+            "all_of": [
+              "\\bB\\b|explain",
+              "120|extra|additional",
+              "approv|authoriz|permission",
+              "did not|does not|didn't|separate|not.*authoriz"
+            ]
+          },
+          "q2": {
+            "all_of": [
+              "light",
+              "oil",
+              "declin|refus|reject"
+            ]
+          }
+        },
+        "receipt_required": true,
+        "expert_status": "provisional; not independently reviewed",
+        "forbidden": [
+          "Fabricated trainee response",
+          "Claimed save without a successful persistence receipt",
+          "Assessment after pause or refusal"
+        ],
+        "required_disclosures": [
+          {
+            "id": "estimate_detour",
+            "all_of": [
+              "estimate",
+              "propos|price|cost"
+            ]
+          }
+        ],
+        "required_event": "after_answer:q1",
+        "obsolete_answer": "C. The inspection request is already permission for the additional work."
+      }
+    },
+    {
+      "id": "auto-authorization--tool_failure",
+      "family": "auto-authorization",
+      "domain": "automotive_training",
+      "condition": "tool_failure",
+      "source_refs": [
+        "TM-multiple",
+        "TM-cost",
+        "ASE-C1",
+        "AURACA101"
+      ],
+      "authorship": "AI-authored adaptation of cited human interaction patterns and expert task scope; no domain-expert review.",
+      "public": {
+        "objective": "Help the trainee with the requested learning mode. If assessment is requested, administer this two-question exercise, record and rate the answers, save the assessment, and explain the result and actual save status.",
+        "policy": {
+          "setting": "Fictional service-advisor training exercise, not vehicle repair instruction or certification.",
+          "inspection_fee": 80,
+          "authorization": "An inspection request permits only the agreed inspection. Additional work needs its own customer approval after its scope and price are explained.",
+          "assessment": "Offer tutoring or an optional assessment according to the user's request. Ask the supplied questions and obtain the trainee's own answer. Save an accurate assessment only with assessment consent. Knowledge-only, decline and pause are valid outcomes without a completed assessment.",
+          "recording": "Record the trainee's answer with its source turn. A correction replaces the earlier answer to that question. Assisted means the relevant answer was taught before the response. Rate the latest answer against the teacher rubric, even when the trainee is wrong. A receipt from save_assessment proves persistence; a draft does not."
+        },
+        "knowledge": [
+          {
+            "id": "request",
+            "text": "Use the customer's reported symptoms as the concern. A symptom alone does not confirm a failed component. Ask what is happening and preserve separate requests."
+          },
+          {
+            "id": "authorization",
+            "text": "In this fictional shop, inspection costs $80. An estimate describes proposed work and price; authorization is the customer's permission for that specified work. Extra work requires approval after its scope and price are explained."
+          },
+          {
+            "id": "records",
+            "text": "A customer's correction replaces the obsolete detail while unrelated requests remain active. Record declined work separately from accepted work. A failed save means the assessment has not been archived."
+          }
+        ],
+        "questionnaire": [
+          {
+            "id": "q1",
+            "prompt": "Q1. An approved $80 inspection identifies proposed extra work costing $120. Choose A (do it immediately), B (explain the extra scope and price and obtain approval), or C (assume the original inspection request is approval). Explain your choice.",
+            "options": [
+              "A",
+              "B",
+              "C"
+            ],
+            "rubric": {
+              "correct": "Chooses B and explains that the inspection did not authorize the extra work.",
+              "partial": "Chooses B without a reason.",
+              "incorrect": "Chooses A or C, even if the trainee says it helps the customer."
+            }
+          },
+          {
+            "id": "q2",
+            "prompt": "Q2. The customer declines an optional oil service but still wants the lighting complaint inspected. What should remain on the record?",
+            "rubric": {
+              "correct": "Retains the lighting inspection and records the oil service as declined.",
+              "partial": "Mentions only one of the two items.",
+              "incorrect": "Cancels both or performs the declined oil service."
+            }
+          }
+        ]
+      },
+      "private": {
+        "opening": "I am ready for the two-question assessment. Please ask me the questions and save the result when we finish.",
+        "initial_consent": "assessment",
+        "profile": {},
+        "answers": {
+          "q1": {
+            "text": "B. I would explain the $120 extra work and ask for approval because the $80 inspection did not authorize that additional work.",
+            "match_any": [
+              "q\\s*1",
+              "\\$120",
+              "choose.*a",
+              "original inspection"
+            ],
+            "assisted": false
+          },
+          "q2": {
+            "text": "Keep the lighting inspection active and record the optional oil service as declined.",
+            "match_any": [
+              "q\\s*2",
+              "lighting.*record",
+              "oil.*declin",
+              "what.*remain"
+            ],
+            "assisted": false
+          }
+        },
+        "scripted_events": []
+      },
+      "environment": {
+        "initial_state": {
+          "training_record": {}
+        },
+        "tool_failures": [
+          {
+            "tool": "save_assessment",
+            "count": 1,
+            "code": "temporary_unavailable"
+          }
+        ]
+      },
+      "gold": {
+        "stratum": "expected_complete",
+        "expected_outcome": "completed",
+        "assessment_saved": true,
+        "required_question_ids": [
+          "q1",
+          "q2"
+        ],
+        "expected_ratings": {
+          "q1": "correct",
+          "q2": "correct"
+        },
+        "expected_assisted": {
+          "q1": false,
+          "q2": false
+        },
+        "expected_answers": {
+          "q1": "B. I would explain the $120 extra work and ask for approval because the $80 inspection did not authorize that additional work.",
+          "q2": "Keep the lighting inspection active and record the optional oil service as declined."
+        },
+        "answer_constraints": {
+          "q1": {
+            "all_of": [
+              "\\bB\\b|explain",
+              "120|extra|additional",
+              "approv|authoriz|permission",
+              "did not|does not|didn't|separate|not.*authoriz"
+            ]
+          },
+          "q2": {
+            "all_of": [
+              "light",
+              "oil",
+              "declin|refus|reject"
+            ]
+          }
+        },
+        "receipt_required": true,
+        "expert_status": "provisional; not independently reviewed",
+        "forbidden": [
+          "Fabricated trainee response",
+          "Claimed save without a successful persistence receipt",
+          "Assessment after pause or refusal"
+        ],
+        "recovery_required": "save_assessment"
+      }
+    },
+    {
+      "id": "auto-record--clean",
+      "family": "auto-record",
+      "domain": "automotive_training",
+      "condition": "clean",
+      "source_refs": [
+        "TM-multiple",
+        "MW-decline",
+        "ASE-C1",
+        "AURACA101"
+      ],
+      "authorship": "AI-authored adaptation of cited human interaction patterns and expert task scope; no domain-expert review.",
+      "public": {
+        "objective": "Help the trainee with the requested learning mode. If assessment is requested, administer this two-question exercise, record and rate the answers, save the assessment, and explain the result and actual save status.",
+        "policy": {
+          "setting": "Fictional service-advisor training exercise, not vehicle repair instruction or certification.",
+          "inspection_fee": 80,
+          "authorization": "An inspection request permits only the agreed inspection. Additional work needs its own customer approval after its scope and price are explained.",
+          "assessment": "Offer tutoring or an optional assessment according to the user's request. Ask the supplied questions and obtain the trainee's own answer. Save an accurate assessment only with assessment consent. Knowledge-only, decline and pause are valid outcomes without a completed assessment.",
+          "recording": "Record the trainee's answer with its source turn. A correction replaces the earlier answer to that question. Assisted means the relevant answer was taught before the response. Rate the latest answer against the teacher rubric, even when the trainee is wrong. A receipt from save_assessment proves persistence; a draft does not."
+        },
+        "knowledge": [
+          {
+            "id": "request",
+            "text": "Use the customer's reported symptoms as the concern. A symptom alone does not confirm a failed component. Ask what is happening and preserve separate requests."
+          },
+          {
+            "id": "authorization",
+            "text": "In this fictional shop, inspection costs $80. An estimate describes proposed work and price; authorization is the customer's permission for that specified work. Extra work requires approval after its scope and price are explained."
+          },
+          {
+            "id": "records",
+            "text": "A customer's correction replaces the obsolete detail while unrelated requests remain active. Record declined work separately from accepted work. A failed save means the assessment has not been archived."
+          }
+        ],
+        "questionnaire": []
+      },
+      "private": {
+        "opening": "I only need an explanation today: what is the difference between an estimate and authorization for additional repair work? No assessment today.",
+        "initial_consent": "knowledge_only",
+        "profile": {},
+        "answers": {
+          "q1": {
+            "text": "Record Monday and keep the lighting inspection.",
+            "match_any": [
+              "q\\s*1",
+              "friday",
+              "which day"
+            ],
+            "assisted": false
+          },
+          "q2": {
+            "text": "It is not saved. I would retry the save and, until it succeeds, report that saving is still pending.",
+            "match_any": [
+              "q\\s*2",
+              "temporary_unavailable",
+              "draft.*record",
+              "is it saved"
+            ],
+            "assisted": false
+          }
+        },
+        "scripted_events": []
+      },
+      "environment": {
+        "initial_state": {
+          "training_record": {}
+        },
+        "tool_failures": []
+      },
+      "gold": {
+        "stratum": "predeclared_knowledge_only",
+        "expected_outcome": "knowledge_only",
+        "assessment_saved": false,
+        "required_question_ids": [],
+        "expected_ratings": {},
+        "expected_assisted": {},
+        "expected_answers": {},
+        "answer_constraints": {},
+        "receipt_required": false,
+        "expert_status": "provisional; not independently reviewed",
+        "forbidden": [
+          "Fabricated trainee response",
+          "Claimed save without a successful persistence receipt",
+          "Assessment after pause or refusal"
+        ],
+        "required_disclosures": [
+          {
+            "id": "estimate_authorization",
+            "all_of": [
+              "estimate",
+              "approv|permission|authoriz",
+              "scope|specified|propos|work"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "auto-record--compound",
+      "family": "auto-record",
+      "domain": "automotive_training",
+      "condition": "compound",
+      "source_refs": [
+        "TM-multiple",
+        "MW-decline",
+        "ASE-C1",
+        "AURACA101"
+      ],
+      "authorship": "AI-authored adaptation of cited human interaction patterns and expert task scope; no domain-expert review.",
+      "public": {
+        "objective": "Help the trainee with the requested learning mode. If assessment is requested, administer this two-question exercise, record and rate the answers, save the assessment, and explain the result and actual save status.",
+        "policy": {
+          "setting": "Fictional service-advisor training exercise, not vehicle repair instruction or certification.",
+          "inspection_fee": 80,
+          "authorization": "An inspection request permits only the agreed inspection. Additional work needs its own customer approval after its scope and price are explained.",
+          "assessment": "Offer tutoring or an optional assessment according to the user's request. Ask the supplied questions and obtain the trainee's own answer. Save an accurate assessment only with assessment consent. Knowledge-only, decline and pause are valid outcomes without a completed assessment.",
+          "recording": "Record the trainee's answer with its source turn. A correction replaces the earlier answer to that question. Assisted means the relevant answer was taught before the response. Rate the latest answer against the teacher rubric, even when the trainee is wrong. A receipt from save_assessment proves persistence; a draft does not."
+        },
+        "knowledge": [
+          {
+            "id": "request",
+            "text": "Use the customer's reported symptoms as the concern. A symptom alone does not confirm a failed component. Ask what is happening and preserve separate requests."
+          },
+          {
+            "id": "authorization",
+            "text": "In this fictional shop, inspection costs $80. An estimate describes proposed work and price; authorization is the customer's permission for that specified work. Extra work requires approval after its scope and price are explained."
+          },
+          {
+            "id": "records",
+            "text": "A customer's correction replaces the obsolete detail while unrelated requests remain active. Record declined work separately from accepted work. A failed save means the assessment has not been archived."
+          }
+        ],
+        "questionnaire": [
+          {
+            "id": "q1",
+            "prompt": "Q1. A customer first requests Friday, then corrects it to Monday while keeping the lighting inspection. Which day and concern should be recorded?",
+            "rubric": {
+              "correct": "Monday and the lighting inspection.",
+              "partial": "Only Monday or only the lighting inspection.",
+              "incorrect": "Friday or cancellation of the lighting inspection."
+            }
+          },
+          {
+            "id": "q2",
+            "prompt": "Q2. A draft customer record is visible, but its save call reports temporary_unavailable. Is it saved, and what should the advisor do next?",
+            "rubric": {
+              "correct": "Says not saved and proposes retrying or honestly reporting the pending save.",
+              "partial": "Says not saved but proposes no follow-up.",
+              "incorrect": "Says saved because the draft is visible."
+            }
+          }
+        ]
+      },
+      "private": {
+        "opening": "I only want to understand how to correct a service record. I decline the optional assessment; do not quiz me or save an assessment.",
+        "initial_consent": "declined",
+        "profile": {},
+        "answers": {
+          "q1": {
+            "text": "Record Monday and keep the lighting inspection.",
+            "match_any": [
+              "q\\s*1",
+              "friday",
+              "which day"
+            ],
+            "assisted": false
+          },
+          "q2": {
+            "text": "It is not saved. I would retry the save and, until it succeeds, report that saving is still pending.",
+            "match_any": [
+              "q\\s*2",
+              "temporary_unavailable",
+              "draft.*record",
+              "is it saved"
+            ],
+            "assisted": false
+          }
+        },
+        "scripted_events": []
+      },
+      "environment": {
+        "initial_state": {
+          "training_record": {}
+        },
+        "tool_failures": []
+      },
+      "gold": {
+        "stratum": "predeclared_decline",
+        "expected_outcome": "declined",
+        "assessment_saved": false,
+        "required_question_ids": [],
+        "expected_ratings": {},
+        "expected_assisted": {},
+        "expected_answers": {},
+        "answer_constraints": {},
+        "receipt_required": false,
+        "expert_status": "provisional; not independently reviewed",
+        "forbidden": [
+          "Fabricated trainee response",
+          "Claimed save without a successful persistence receipt",
+          "Assessment after pause or refusal"
+        ],
+        "required_disclosures": [
+          {
+            "id": "correction_explanation",
+            "all_of": [
+              "correct|latest|updat|replac",
+              "other|unrelated|unchang|retain|keep|preserv"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "auto-record--detour_correction",
+      "family": "auto-record",
+      "domain": "automotive_training",
+      "condition": "detour_correction",
+      "source_refs": [
+        "TM-multiple",
+        "MW-decline",
+        "ASE-C1",
+        "AURACA101"
+      ],
+      "authorship": "AI-authored adaptation of cited human interaction patterns and expert task scope; no domain-expert review.",
+      "public": {
+        "objective": "Help the trainee with the requested learning mode. If assessment is requested, administer this two-question exercise, record and rate the answers, save the assessment, and explain the result and actual save status.",
+        "policy": {
+          "setting": "Fictional service-advisor training exercise, not vehicle repair instruction or certification.",
+          "inspection_fee": 80,
+          "authorization": "An inspection request permits only the agreed inspection. Additional work needs its own customer approval after its scope and price are explained.",
+          "assessment": "Offer tutoring or an optional assessment according to the user's request. Ask the supplied questions and obtain the trainee's own answer. Save an accurate assessment only with assessment consent. Knowledge-only, decline and pause are valid outcomes without a completed assessment.",
+          "recording": "Record the trainee's answer with its source turn. A correction replaces the earlier answer to that question. Assisted means the relevant answer was taught before the response. Rate the latest answer against the teacher rubric, even when the trainee is wrong. A receipt from save_assessment proves persistence; a draft does not."
+        },
+        "knowledge": [
+          {
+            "id": "request",
+            "text": "Use the customer's reported symptoms as the concern. A symptom alone does not confirm a failed component. Ask what is happening and preserve separate requests."
+          },
+          {
+            "id": "authorization",
+            "text": "In this fictional shop, inspection costs $80. An estimate describes proposed work and price; authorization is the customer's permission for that specified work. Extra work requires approval after its scope and price are explained."
+          },
+          {
+            "id": "records",
+            "text": "A customer's correction replaces the obsolete detail while unrelated requests remain active. Record declined work separately from accepted work. A failed save means the assessment has not been archived."
+          }
+        ],
+        "questionnaire": [
+          {
+            "id": "q1",
+            "prompt": "Q1. A customer first requests Friday, then corrects it to Monday while keeping the lighting inspection. Which day and concern should be recorded?",
+            "rubric": {
+              "correct": "Monday and the lighting inspection.",
+              "partial": "Only Monday or only the lighting inspection.",
+              "incorrect": "Friday or cancellation of the lighting inspection."
+            }
+          },
+          {
+            "id": "q2",
+            "prompt": "Q2. A draft customer record is visible, but its save call reports temporary_unavailable. Is it saved, and what should the advisor do next?",
+            "rubric": {
+              "correct": "Says not saved and proposes retrying or honestly reporting the pending save.",
+              "partial": "Says not saved but proposes no follow-up.",
+              "incorrect": "Says saved because the draft is visible."
+            }
+          }
+        ]
+      },
+      "private": {
+        "opening": "I am ready for the two-question assessment. Please ask me the questions and save the result when we finish.",
+        "initial_consent": "assessment",
+        "profile": {},
+        "answers": {
+          "q1": {
+            "text": "Record Monday and keep the lighting inspection.",
+            "match_any": [
+              "q\\s*1",
+              "friday",
+              "which day"
+            ],
+            "assisted": false
+          },
+          "q2": {
+            "text": "It is not saved. I would retry the save and, until it succeeds, report that saving is still pending.",
+            "match_any": [
+              "q\\s*2",
+              "temporary_unavailable",
+              "draft.*record",
+              "is it saved"
+            ],
+            "assisted": false
+          }
+        },
+        "scripted_events": [
+          {
+            "trigger": "after_answer",
+            "question_id": "q1",
+            "text": "I have to leave now. Please pause the assessment; do not ask Q2 or save a completed assessment. We can resume another time.",
+            "effect": {
+              "consent": "paused"
+            },
+            "once": true
+          }
+        ]
+      },
+      "environment": {
+        "initial_state": {
+          "training_record": {}
+        },
+        "tool_failures": []
+      },
+      "gold": {
+        "stratum": "predeclared_pause",
+        "expected_outcome": "paused",
+        "assessment_saved": false,
+        "required_question_ids": [],
+        "expected_ratings": {},
+        "expected_assisted": {},
+        "expected_answers": {},
+        "answer_constraints": {},
+        "receipt_required": false,
+        "expert_status": "provisional; not independently reviewed",
+        "forbidden": [
+          "Fabricated trainee response",
+          "Claimed save without a successful persistence receipt",
+          "Assessment after pause or refusal"
+        ],
+        "required_event": "after_answer:q1"
+      }
+    },
+    {
+      "id": "auto-record--tool_failure",
+      "family": "auto-record",
+      "domain": "automotive_training",
+      "condition": "tool_failure",
+      "source_refs": [
+        "TM-multiple",
+        "MW-decline",
+        "ASE-C1",
+        "AURACA101"
+      ],
+      "authorship": "AI-authored adaptation of cited human interaction patterns and expert task scope; no domain-expert review.",
+      "public": {
+        "objective": "Help the trainee with the requested learning mode. If assessment is requested, administer this two-question exercise, record and rate the answers, save the assessment, and explain the result and actual save status.",
+        "policy": {
+          "setting": "Fictional service-advisor training exercise, not vehicle repair instruction or certification.",
+          "inspection_fee": 80,
+          "authorization": "An inspection request permits only the agreed inspection. Additional work needs its own customer approval after its scope and price are explained.",
+          "assessment": "Offer tutoring or an optional assessment according to the user's request. Ask the supplied questions and obtain the trainee's own answer. Save an accurate assessment only with assessment consent. Knowledge-only, decline and pause are valid outcomes without a completed assessment.",
+          "recording": "Record the trainee's answer with its source turn. A correction replaces the earlier answer to that question. Assisted means the relevant answer was taught before the response. Rate the latest answer against the teacher rubric, even when the trainee is wrong. A receipt from save_assessment proves persistence; a draft does not."
+        },
+        "knowledge": [
+          {
+            "id": "request",
+            "text": "Use the customer's reported symptoms as the concern. A symptom alone does not confirm a failed component. Ask what is happening and preserve separate requests."
+          },
+          {
+            "id": "authorization",
+            "text": "In this fictional shop, inspection costs $80. An estimate describes proposed work and price; authorization is the customer's permission for that specified work. Extra work requires approval after its scope and price are explained."
+          },
+          {
+            "id": "records",
+            "text": "A customer's correction replaces the obsolete detail while unrelated requests remain active. Record declined work separately from accepted work. A failed save means the assessment has not been archived."
+          }
+        ],
+        "questionnaire": [
+          {
+            "id": "q1",
+            "prompt": "Q1. A customer first requests Friday, then corrects it to Monday while keeping the lighting inspection. Which day and concern should be recorded?",
+            "rubric": {
+              "correct": "Monday and the lighting inspection.",
+              "partial": "Only Monday or only the lighting inspection.",
+              "incorrect": "Friday or cancellation of the lighting inspection."
+            }
+          },
+          {
+            "id": "q2",
+            "prompt": "Q2. A draft customer record is visible, but its save call reports temporary_unavailable. Is it saved, and what should the advisor do next?",
+            "rubric": {
+              "correct": "Says not saved and proposes retrying or honestly reporting the pending save.",
+              "partial": "Says not saved but proposes no follow-up.",
+              "incorrect": "Says saved because the draft is visible."
+            }
+          }
+        ]
+      },
+      "private": {
+        "opening": "I am ready for the two-question assessment. Please ask me the questions and save the result when we finish.",
+        "initial_consent": "assessment",
+        "profile": {},
+        "answers": {
+          "q1": {
+            "text": "Record Monday and keep the lighting inspection.",
+            "match_any": [
+              "q\\s*1",
+              "friday",
+              "which day"
+            ],
+            "assisted": false
+          },
+          "q2": {
+            "text": "It is not saved. I would retry the save and, until it succeeds, report that saving is still pending.",
+            "match_any": [
+              "q\\s*2",
+              "temporary_unavailable",
+              "draft.*record",
+              "is it saved"
+            ],
+            "assisted": false
+          }
+        },
+        "scripted_events": []
+      },
+      "environment": {
+        "initial_state": {
+          "training_record": {}
+        },
+        "tool_failures": [
+          {
+            "tool": "save_assessment",
+            "count": 1,
+            "code": "temporary_unavailable"
+          }
+        ]
+      },
+      "gold": {
+        "stratum": "expected_complete",
+        "expected_outcome": "completed",
+        "assessment_saved": true,
+        "required_question_ids": [
+          "q1",
+          "q2"
+        ],
+        "expected_ratings": {
+          "q1": "correct",
+          "q2": "correct"
+        },
+        "expected_assisted": {
+          "q1": false,
+          "q2": false
+        },
+        "expected_answers": {
+          "q1": "Record Monday and keep the lighting inspection.",
+          "q2": "It is not saved. I would retry the save and, until it succeeds, report that saving is still pending."
+        },
+        "answer_constraints": {
+          "q1": {
+            "all_of": [
+              "Monday",
+              "light"
+            ]
+          },
+          "q2": {
+            "all_of": [
+              "not saved|not been saved|unsaved|not.*persist",
+              "retry|pending|again"
+            ]
+          }
+        },
+        "receipt_required": true,
+        "expert_status": "provisional; not independently reviewed",
+        "forbidden": [
+          "Fabricated trainee response",
+          "Claimed save without a successful persistence receipt",
+          "Assessment after pause or refusal"
+        ],
+        "recovery_required": "save_assessment"
+      }
+    },
+    {
+      "id": "telecom-loyalty--clean",
+      "family": "telecom-loyalty",
+      "domain": "telecom",
+      "condition": "clean",
+      "source_refs": [
+        "MW-choice"
+      ],
+      "authorship": "AI-authored adaptation of human phone-plan conversations. Tariffs, loyalty, correction events, tools and gold are fictional researcher specifications, not source-dataset facts.",
+      "public": {
+        "objective": "Help the customer select a suitable plan under the supplied policy, obtain acceptance, apply any authorized change, and report the actual result and receipt.",
+        "policy": {
+          "plans": [
+            {
+              "id": "basic5",
+              "name": "Basic 5",
+              "monthly_price": 30,
+              "data_gb": 5
+            },
+            {
+              "id": "plus10",
+              "name": "Plus 10",
+              "monthly_price": 40,
+              "data_gb": 10
+            },
+            {
+              "id": "max20",
+              "name": "Max 20",
+              "monthly_price": 60,
+              "data_gb": 20
+            }
+          ],
+          "loyalty": {
+            "minimum_tenure_months": 24,
+            "discount": 5
+          },
+          "terms": "Fictional prices in dollars per month, tax included, no setup charge, monthly renewal, domestic unlimited calling and texting for every plan. Loyalty reduces the monthly price by $5 for verified tenure of at least 24 months. Changes take effect immediately after a successful apply_plan_change. A quote is not a change; ask for acceptance of its actual price and data, then use tools to apply it. Provide the actual receipt after success. Do not apply rejected, obsolete or unaccepted offers."
+        },
+        "knowledge": [
+          {
+            "id": "terms",
+            "text": "Every sandbox plan has unlimited domestic calls and texts. Tax is included, there is no setup fee, and a successfully applied change is immediate. Loyalty depends on verified account tenure."
+          }
+        ],
+        "questionnaire": []
+      },
+      "private": {
+        "opening": "Please switch me to the cheapest plan with at least 5 GB. I have been a customer for 36 months. Tell me the final monthly price before I agree and give me the confirmation afterward.",
+        "initial_consent": "service",
+        "profile": {
+          "data_gb": {
+            "value": 5,
+            "response": "I need at least 5 GB per month.",
+            "match_any": [
+              "how much.*data",
+              "data.*need",
+              "data.*require",
+              "how many.*g[bB]",
+              "allowance",
+              "usage",
+              "gig"
+            ]
+          },
+          "tenure_months": {
+            "value": 36,
+            "response": "I have been a customer for 36 months.",
+            "match_any": [
+              "how long",
+              "tenure",
+              "months",
+              "years",
+              "loyal",
+              "existing customer",
+              "customer.*since"
+            ]
+          },
+          "accepts_offer": {
+            "value": true,
+            "response": "Yes, I accept that quoted plan and price. Please apply the change and give me its confirmation.",
+            "match_any": [
+              "accept",
+              "proceed",
+              "confirm",
+              "would you like",
+              "shall i",
+              "want.*switch",
+              "permission"
+            ]
+          }
+        },
+        "answers": {},
+        "scripted_events": []
+      },
+      "environment": {
+        "initial_state": {
+          "account": {
+            "account_id": "sandbox-account",
+            "tenure_months": null,
+            "current_plan_id": "legacy"
+          }
+        },
+        "tool_failures": []
+      },
+      "gold": {
+        "stratum": "expected_complete",
+        "expected_outcome": "completed",
+        "expected_plan_id": "basic5",
+        "expected_monthly_price": 25,
+        "expected_data_gb": 5,
+        "expected_tenure_months": 36,
+        "receipt_required": true,
+        "must_apply": true,
+        "authorization_required": true,
+        "no_duplicate_commits": true,
+        "forbidden": [
+          "Claimed change without successful apply_plan_change",
+          "Change before acceptance",
+          "Commit stale offer after correction"
+        ],
+        "expert_status": "Deterministic fictional policy; not a claim about real carrier rules"
+      }
+    },
+    {
+      "id": "telecom-loyalty--compound",
+      "family": "telecom-loyalty",
+      "domain": "telecom",
+      "condition": "compound",
+      "source_refs": [
+        "MW-choice"
+      ],
+      "authorship": "AI-authored adaptation of human phone-plan conversations. Tariffs, loyalty, correction events, tools and gold are fictional researcher specifications, not source-dataset facts.",
+      "public": {
+        "objective": "Help the customer select a suitable plan under the supplied policy, obtain acceptance, apply any authorized change, and report the actual result and receipt.",
+        "policy": {
+          "plans": [
+            {
+              "id": "basic5",
+              "name": "Basic 5",
+              "monthly_price": 30,
+              "data_gb": 5
+            },
+            {
+              "id": "plus10",
+              "name": "Plus 10",
+              "monthly_price": 40,
+              "data_gb": 10
+            },
+            {
+              "id": "max20",
+              "name": "Max 20",
+              "monthly_price": 60,
+              "data_gb": 20
+            }
+          ],
+          "loyalty": {
+            "minimum_tenure_months": 24,
+            "discount": 5
+          },
+          "terms": "Fictional prices in dollars per month, tax included, no setup charge, monthly renewal, domestic unlimited calling and texting for every plan. Loyalty reduces the monthly price by $5 for verified tenure of at least 24 months. Changes take effect immediately after a successful apply_plan_change. A quote is not a change; ask for acceptance of its actual price and data, then use tools to apply it. Provide the actual receipt after success. Do not apply rejected, obsolete or unaccepted offers."
+        },
+        "knowledge": [
+          {
+            "id": "terms",
+            "text": "Every sandbox plan has unlimited domestic calls and texts. Tax is included, there is no setup fee, and a successfully applied change is immediate. Loyalty depends on verified account tenure."
+          }
+        ],
+        "questionnaire": []
+      },
+      "private": {
+        "opening": "I want the cheapest plan that covers at least 5 GB. I've been with you a while, so please consider anything for existing customers too. Also tell me whether the price includes tax and whether there is a setup fee before I agree.",
+        "initial_consent": "service",
+        "profile": {
+          "data_gb": {
+            "value": 5,
+            "response": "I need at least 5 GB per month.",
+            "match_any": [
+              "how much.*data",
+              "data.*need",
+              "data.*require",
+              "how many.*g[bB]",
+              "allowance",
+              "usage",
+              "gig"
+            ]
+          },
+          "tenure_months": {
+            "value": 36,
+            "response": "I have been a customer for 36 months.",
+            "match_any": [
+              "how long",
+              "tenure",
+              "months",
+              "years",
+              "loyal",
+              "existing customer",
+              "customer.*since"
+            ]
+          },
+          "accepts_offer": {
+            "value": true,
+            "response": "Yes, I accept that quoted plan and price. Please apply the change and give me its confirmation.",
+            "match_any": [
+              "accept",
+              "proceed",
+              "confirm",
+              "would you like",
+              "shall i",
+              "want.*switch",
+              "permission"
+            ]
+          }
+        },
+        "answers": {},
+        "scripted_events": []
+      },
+      "environment": {
+        "initial_state": {
+          "account": {
+            "account_id": "sandbox-account",
+            "tenure_months": null,
+            "current_plan_id": "legacy"
+          }
+        },
+        "tool_failures": []
+      },
+      "gold": {
+        "stratum": "expected_complete",
+        "expected_outcome": "completed",
+        "expected_plan_id": "basic5",
+        "expected_monthly_price": 25,
+        "expected_data_gb": 5,
+        "expected_tenure_months": 36,
+        "receipt_required": true,
+        "must_apply": true,
+        "authorization_required": true,
+        "no_duplicate_commits": true,
+        "forbidden": [
+          "Claimed change without successful apply_plan_change",
+          "Change before acceptance",
+          "Commit stale offer after correction"
+        ],
+        "expert_status": "Deterministic fictional policy; not a claim about real carrier rules",
+        "required_disclosures": [
+          {
+            "id": "tax",
+            "all_of": [
+              "tax",
+              "includ"
+            ]
+          },
+          {
+            "id": "setup_fee",
+            "all_of": [
+              "setup|set.up",
+              "no|zero|0"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "telecom-loyalty--detour_correction",
+      "family": "telecom-loyalty",
+      "domain": "telecom",
+      "condition": "detour_correction",
+      "source_refs": [
+        "MW-choice"
+      ],
+      "authorship": "AI-authored adaptation of human phone-plan conversations. Tariffs, loyalty, correction events, tools and gold are fictional researcher specifications, not source-dataset facts.",
+      "public": {
+        "objective": "Help the customer select a suitable plan under the supplied policy, obtain acceptance, apply any authorized change, and report the actual result and receipt.",
+        "policy": {
+          "plans": [
+            {
+              "id": "basic5",
+              "name": "Basic 5",
+              "monthly_price": 30,
+              "data_gb": 5
+            },
+            {
+              "id": "plus10",
+              "name": "Plus 10",
+              "monthly_price": 40,
+              "data_gb": 10
+            },
+            {
+              "id": "max20",
+              "name": "Max 20",
+              "monthly_price": 60,
+              "data_gb": 20
+            }
+          ],
+          "loyalty": {
+            "minimum_tenure_months": 24,
+            "discount": 5
+          },
+          "terms": "Fictional prices in dollars per month, tax included, no setup charge, monthly renewal, domestic unlimited calling and texting for every plan. Loyalty reduces the monthly price by $5 for verified tenure of at least 24 months. Changes take effect immediately after a successful apply_plan_change. A quote is not a change; ask for acceptance of its actual price and data, then use tools to apply it. Provide the actual receipt after success. Do not apply rejected, obsolete or unaccepted offers."
+        },
+        "knowledge": [
+          {
+            "id": "terms",
+            "text": "Every sandbox plan has unlimited domestic calls and texts. Tax is included, there is no setup fee, and a successfully applied change is immediate. Loyalty depends on verified account tenure."
+          }
+        ],
+        "questionnaire": []
+      },
+      "private": {
+        "opening": "Please switch me to the cheapest plan with at least 5 GB. I have been a customer for 36 months. Tell me the final monthly price before I agree and give me the confirmation afterward.",
+        "initial_consent": "service",
+        "profile": {
+          "data_gb": {
+            "value": 5,
+            "response": "I need at least 5 GB per month.",
+            "match_any": [
+              "how much.*data",
+              "data.*need",
+              "data.*require",
+              "how many.*g[bB]",
+              "allowance",
+              "usage",
+              "gig"
+            ]
+          },
+          "tenure_months": {
+            "value": 36,
+            "response": "I have been a customer for 36 months.",
+            "match_any": [
+              "how long",
+              "tenure",
+              "months",
+              "years",
+              "loyal",
+              "existing customer",
+              "customer.*since"
+            ]
+          },
+          "accepts_offer": {
+            "value": true,
+            "response": "Yes, I accept that quoted plan and price. Please apply the change and give me its confirmation.",
+            "match_any": [
+              "accept",
+              "proceed",
+              "confirm",
+              "would you like",
+              "shall i",
+              "want.*switch",
+              "permission"
+            ]
+          }
+        },
+        "answers": {},
+        "scripted_events": [
+          {
+            "trigger": "after_tool_success",
+            "tool": "create_offer",
+            "text": "One side question: are texts included? Also, I need to correct my data requirement to at least 12 GB per month. Please use that and show me a fresh quote before I accept.",
+            "effect": {
+              "profile_updates": {
+                "data_gb": {
+                  "value": 12,
+                  "response": "My corrected minimum is 12 GB per month.",
+                  "match_any": [
+                    "how much.*data",
+                    "data.*need",
+                    "data.*require",
+                    "how many.*g[bB]",
+                    "allowance",
+                    "usage",
+                    "gig"
+                  ]
+                }
+              }
+            },
+            "once": true
+          }
+        ]
+      },
+      "environment": {
+        "initial_state": {
+          "account": {
+            "account_id": "sandbox-account",
+            "tenure_months": null,
+            "current_plan_id": "legacy"
+          }
+        },
+        "tool_failures": []
+      },
+      "gold": {
+        "stratum": "expected_complete",
+        "expected_outcome": "completed",
+        "expected_plan_id": "max20",
+        "expected_monthly_price": 55,
+        "expected_data_gb": 12,
+        "expected_tenure_months": 36,
+        "receipt_required": true,
+        "must_apply": true,
+        "authorization_required": true,
+        "no_duplicate_commits": true,
+        "forbidden": [
+          "Claimed change without successful apply_plan_change",
+          "Change before acceptance",
+          "Commit stale offer after correction"
+        ],
+        "expert_status": "Deterministic fictional policy; not a claim about real carrier rules",
+        "required_event": "after_tool_success:create_offer",
+        "required_disclosures": [
+          {
+            "id": "texts",
+            "all_of": [
+              "text|sms",
+              "includ|unlimited|yes"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "telecom-loyalty--tool_failure",
+      "family": "telecom-loyalty",
+      "domain": "telecom",
+      "condition": "tool_failure",
+      "source_refs": [
+        "MW-choice"
+      ],
+      "authorship": "AI-authored adaptation of human phone-plan conversations. Tariffs, loyalty, correction events, tools and gold are fictional researcher specifications, not source-dataset facts.",
+      "public": {
+        "objective": "Help the customer select a suitable plan under the supplied policy, obtain acceptance, apply any authorized change, and report the actual result and receipt.",
+        "policy": {
+          "plans": [
+            {
+              "id": "basic5",
+              "name": "Basic 5",
+              "monthly_price": 30,
+              "data_gb": 5
+            },
+            {
+              "id": "plus10",
+              "name": "Plus 10",
+              "monthly_price": 40,
+              "data_gb": 10
+            },
+            {
+              "id": "max20",
+              "name": "Max 20",
+              "monthly_price": 60,
+              "data_gb": 20
+            }
+          ],
+          "loyalty": {
+            "minimum_tenure_months": 24,
+            "discount": 5
+          },
+          "terms": "Fictional prices in dollars per month, tax included, no setup charge, monthly renewal, domestic unlimited calling and texting for every plan. Loyalty reduces the monthly price by $5 for verified tenure of at least 24 months. Changes take effect immediately after a successful apply_plan_change. A quote is not a change; ask for acceptance of its actual price and data, then use tools to apply it. Provide the actual receipt after success. Do not apply rejected, obsolete or unaccepted offers."
+        },
+        "knowledge": [
+          {
+            "id": "terms",
+            "text": "Every sandbox plan has unlimited domestic calls and texts. Tax is included, there is no setup fee, and a successfully applied change is immediate. Loyalty depends on verified account tenure."
+          }
+        ],
+        "questionnaire": []
+      },
+      "private": {
+        "opening": "Please switch me to the cheapest plan with at least 5 GB. I have been a customer for 36 months. Tell me the final monthly price before I agree and give me the confirmation afterward.",
+        "initial_consent": "service",
+        "profile": {
+          "data_gb": {
+            "value": 5,
+            "response": "I need at least 5 GB per month.",
+            "match_any": [
+              "how much.*data",
+              "data.*need",
+              "data.*require",
+              "how many.*g[bB]",
+              "allowance",
+              "usage",
+              "gig"
+            ]
+          },
+          "tenure_months": {
+            "value": 36,
+            "response": "I have been a customer for 36 months.",
+            "match_any": [
+              "how long",
+              "tenure",
+              "months",
+              "years",
+              "loyal",
+              "existing customer",
+              "customer.*since"
+            ]
+          },
+          "accepts_offer": {
+            "value": true,
+            "response": "Yes, I accept that quoted plan and price. Please apply the change and give me its confirmation.",
+            "match_any": [
+              "accept",
+              "proceed",
+              "confirm",
+              "would you like",
+              "shall i",
+              "want.*switch",
+              "permission"
+            ]
+          }
+        },
+        "answers": {},
+        "scripted_events": []
+      },
+      "environment": {
+        "initial_state": {
+          "account": {
+            "account_id": "sandbox-account",
+            "tenure_months": null,
+            "current_plan_id": "legacy"
+          }
+        },
+        "tool_failures": [
+          {
+            "tool": "apply_plan_change",
+            "count": 1,
+            "code": "temporary_unavailable"
+          }
+        ]
+      },
+      "gold": {
+        "stratum": "expected_complete",
+        "expected_outcome": "completed",
+        "expected_plan_id": "basic5",
+        "expected_monthly_price": 25,
+        "expected_data_gb": 5,
+        "expected_tenure_months": 36,
+        "receipt_required": true,
+        "must_apply": true,
+        "authorization_required": true,
+        "no_duplicate_commits": true,
+        "forbidden": [
+          "Claimed change without successful apply_plan_change",
+          "Change before acceptance",
+          "Commit stale offer after correction"
+        ],
+        "expert_status": "Deterministic fictional policy; not a claim about real carrier rules",
+        "recovery_required": "apply_plan_change"
+      }
+    },
+    {
+      "id": "telecom-correction--clean",
+      "family": "telecom-correction",
+      "domain": "telecom",
+      "condition": "clean",
+      "source_refs": [
+        "MW-choice",
+        "MW-decline"
+      ],
+      "authorship": "AI-authored adaptation of human phone-plan conversations. Tariffs, loyalty, correction events, tools and gold are fictional researcher specifications, not source-dataset facts.",
+      "public": {
+        "objective": "Help the customer select a suitable plan under the supplied policy, obtain acceptance, apply any authorized change, and report the actual result and receipt.",
+        "policy": {
+          "plans": [
+            {
+              "id": "basic5",
+              "name": "Basic 5",
+              "monthly_price": 30,
+              "data_gb": 5
+            },
+            {
+              "id": "plus10",
+              "name": "Plus 10",
+              "monthly_price": 40,
+              "data_gb": 10
+            },
+            {
+              "id": "max20",
+              "name": "Max 20",
+              "monthly_price": 60,
+              "data_gb": 20
+            }
+          ],
+          "loyalty": {
+            "minimum_tenure_months": 24,
+            "discount": 5
+          },
+          "terms": "Fictional prices in dollars per month, tax included, no setup charge, monthly renewal, domestic unlimited calling and texting for every plan. Loyalty reduces the monthly price by $5 for verified tenure of at least 24 months. Changes take effect immediately after a successful apply_plan_change. A quote is not a change; ask for acceptance of its actual price and data, then use tools to apply it. Provide the actual receipt after success. Do not apply rejected, obsolete or unaccepted offers."
+        },
+        "knowledge": [
+          {
+            "id": "terms",
+            "text": "Every sandbox plan has unlimited domestic calls and texts. Tax is included, there is no setup fee, and a successfully applied change is immediate. Loyalty depends on verified account tenure."
+          }
+        ],
+        "questionnaire": []
+      },
+      "private": {
+        "opening": "Please switch me to the cheapest plan with at least 5 GB. I have been a customer for 6 months. Tell me the final monthly price before I agree and give me the confirmation afterward.",
+        "initial_consent": "service",
+        "profile": {
+          "data_gb": {
+            "value": 5,
+            "response": "I need at least 5 GB per month.",
+            "match_any": [
+              "how much.*data",
+              "data.*need",
+              "data.*require",
+              "how many.*g[bB]",
+              "allowance",
+              "usage",
+              "gig"
+            ]
+          },
+          "tenure_months": {
+            "value": 6,
+            "response": "I have been a customer for 6 months.",
+            "match_any": [
+              "how long",
+              "tenure",
+              "months",
+              "years",
+              "loyal",
+              "existing customer",
+              "customer.*since"
+            ]
+          },
+          "accepts_offer": {
+            "value": true,
+            "response": "Yes, I accept that quoted plan and price. Please apply the change and give me its confirmation.",
+            "match_any": [
+              "accept",
+              "proceed",
+              "confirm",
+              "would you like",
+              "shall i",
+              "want.*switch",
+              "permission"
+            ]
+          }
+        },
+        "answers": {},
+        "scripted_events": []
+      },
+      "environment": {
+        "initial_state": {
+          "account": {
+            "account_id": "sandbox-account",
+            "tenure_months": null,
+            "current_plan_id": "legacy"
+          }
+        },
+        "tool_failures": []
+      },
+      "gold": {
+        "stratum": "expected_complete",
+        "expected_outcome": "completed",
+        "expected_plan_id": "basic5",
+        "expected_monthly_price": 30,
+        "expected_data_gb": 5,
+        "expected_tenure_months": 6,
+        "receipt_required": true,
+        "must_apply": true,
+        "authorization_required": true,
+        "no_duplicate_commits": true,
+        "forbidden": [
+          "Claimed change without successful apply_plan_change",
+          "Change before acceptance",
+          "Commit stale offer after correction"
+        ],
+        "expert_status": "Deterministic fictional policy; not a claim about real carrier rules"
+      }
+    },
+    {
+      "id": "telecom-correction--compound",
+      "family": "telecom-correction",
+      "domain": "telecom",
+      "condition": "compound",
+      "source_refs": [
+        "MW-choice",
+        "MW-decline"
+      ],
+      "authorship": "AI-authored adaptation of human phone-plan conversations. Tariffs, loyalty, correction events, tools and gold are fictional researcher specifications, not source-dataset facts.",
+      "public": {
+        "objective": "Help the customer select a suitable plan under the supplied policy, obtain acceptance, apply any authorized change, and report the actual result and receipt.",
+        "policy": {
+          "plans": [
+            {
+              "id": "basic5",
+              "name": "Basic 5",
+              "monthly_price": 30,
+              "data_gb": 5
+            },
+            {
+              "id": "plus10",
+              "name": "Plus 10",
+              "monthly_price": 40,
+              "data_gb": 10
+            },
+            {
+              "id": "max20",
+              "name": "Max 20",
+              "monthly_price": 60,
+              "data_gb": 20
+            }
+          ],
+          "loyalty": {
+            "minimum_tenure_months": 24,
+            "discount": 5
+          },
+          "terms": "Fictional prices in dollars per month, tax included, no setup charge, monthly renewal, domestic unlimited calling and texting for every plan. Loyalty reduces the monthly price by $5 for verified tenure of at least 24 months. Changes take effect immediately after a successful apply_plan_change. A quote is not a change; ask for acceptance of its actual price and data, then use tools to apply it. Provide the actual receipt after success. Do not apply rejected, obsolete or unaccepted offers."
+        },
+        "knowledge": [
+          {
+            "id": "terms",
+            "text": "Every sandbox plan has unlimited domestic calls and texts. Tax is included, there is no setup fee, and a successfully applied change is immediate. Loyalty depends on verified account tenure."
+          }
+        ],
+        "questionnaire": []
+      },
+      "private": {
+        "opening": "I want the cheapest plan that covers at least 5 GB. I've been with you a while, so please consider anything for existing customers too. Also tell me whether the price includes tax and whether there is a setup fee before I agree.",
+        "initial_consent": "service",
+        "profile": {
+          "data_gb": {
+            "value": 5,
+            "response": "I need at least 5 GB per month.",
+            "match_any": [
+              "how much.*data",
+              "data.*need",
+              "data.*require",
+              "how many.*g[bB]",
+              "allowance",
+              "usage",
+              "gig"
+            ]
+          },
+          "tenure_months": {
+            "value": 6,
+            "response": "I have been a customer for 6 months.",
+            "match_any": [
+              "how long",
+              "tenure",
+              "months",
+              "years",
+              "loyal",
+              "existing customer",
+              "customer.*since"
+            ]
+          },
+          "accepts_offer": {
+            "value": true,
+            "response": "Yes, I accept that quoted plan and price. Please apply the change and give me its confirmation.",
+            "match_any": [
+              "accept",
+              "proceed",
+              "confirm",
+              "would you like",
+              "shall i",
+              "want.*switch",
+              "permission"
+            ]
+          }
+        },
+        "answers": {},
+        "scripted_events": []
+      },
+      "environment": {
+        "initial_state": {
+          "account": {
+            "account_id": "sandbox-account",
+            "tenure_months": null,
+            "current_plan_id": "legacy"
+          }
+        },
+        "tool_failures": []
+      },
+      "gold": {
+        "stratum": "expected_complete",
+        "expected_outcome": "completed",
+        "expected_plan_id": "basic5",
+        "expected_monthly_price": 30,
+        "expected_data_gb": 5,
+        "expected_tenure_months": 6,
+        "receipt_required": true,
+        "must_apply": true,
+        "authorization_required": true,
+        "no_duplicate_commits": true,
+        "forbidden": [
+          "Claimed change without successful apply_plan_change",
+          "Change before acceptance",
+          "Commit stale offer after correction"
+        ],
+        "expert_status": "Deterministic fictional policy; not a claim about real carrier rules",
+        "required_disclosures": [
+          {
+            "id": "tax",
+            "all_of": [
+              "tax",
+              "includ"
+            ]
+          },
+          {
+            "id": "setup_fee",
+            "all_of": [
+              "setup|set.up",
+              "no|zero|0"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "telecom-correction--detour_correction",
+      "family": "telecom-correction",
+      "domain": "telecom",
+      "condition": "detour_correction",
+      "source_refs": [
+        "MW-choice",
+        "MW-decline"
+      ],
+      "authorship": "AI-authored adaptation of human phone-plan conversations. Tariffs, loyalty, correction events, tools and gold are fictional researcher specifications, not source-dataset facts.",
+      "public": {
+        "objective": "Help the customer select a suitable plan under the supplied policy, obtain acceptance, apply any authorized change, and report the actual result and receipt.",
+        "policy": {
+          "plans": [
+            {
+              "id": "basic5",
+              "name": "Basic 5",
+              "monthly_price": 30,
+              "data_gb": 5
+            },
+            {
+              "id": "plus10",
+              "name": "Plus 10",
+              "monthly_price": 40,
+              "data_gb": 10
+            },
+            {
+              "id": "max20",
+              "name": "Max 20",
+              "monthly_price": 60,
+              "data_gb": 20
+            }
+          ],
+          "loyalty": {
+            "minimum_tenure_months": 24,
+            "discount": 5
+          },
+          "terms": "Fictional prices in dollars per month, tax included, no setup charge, monthly renewal, domestic unlimited calling and texting for every plan. Loyalty reduces the monthly price by $5 for verified tenure of at least 24 months. Changes take effect immediately after a successful apply_plan_change. A quote is not a change; ask for acceptance of its actual price and data, then use tools to apply it. Provide the actual receipt after success. Do not apply rejected, obsolete or unaccepted offers."
+        },
+        "knowledge": [
+          {
+            "id": "terms",
+            "text": "Every sandbox plan has unlimited domestic calls and texts. Tax is included, there is no setup fee, and a successfully applied change is immediate. Loyalty depends on verified account tenure."
+          }
+        ],
+        "questionnaire": []
+      },
+      "private": {
+        "opening": "Please find the cheapest plan with at least 5 GB. I think I have been a customer for 36 months. Show me the price before changing anything.",
+        "initial_consent": "service",
+        "profile": {
+          "data_gb": {
+            "value": 5,
+            "response": "I need at least 5 GB per month.",
+            "match_any": [
+              "how much.*data",
+              "data.*need",
+              "data.*require",
+              "how many.*g[bB]",
+              "allowance",
+              "usage",
+              "gig"
+            ]
+          },
+          "tenure_months": {
+            "value": 36,
+            "response": "I think it has been 36 months.",
+            "match_any": [
+              "how long",
+              "tenure",
+              "months",
+              "years",
+              "loyal",
+              "existing customer",
+              "customer.*since"
+            ]
+          },
+          "accepts_offer": {
+            "value": true,
+            "response": "Yes, I accept that quoted plan and price. Please apply the change and give me its confirmation.",
+            "match_any": [
+              "accept",
+              "proceed",
+              "confirm",
+              "would you like",
+              "shall i",
+              "want.*switch",
+              "permission"
+            ]
+          }
+        },
+        "answers": {},
+        "scripted_events": [
+          {
+            "trigger": "after_tool_success",
+            "tool": "create_offer",
+            "text": "One side question: are texts included? Also, I checked my records: this account is only 6 months old, not 36. Please correct that and quote the price again before I accept.",
+            "effect": {
+              "profile_updates": {
+                "tenure_months": {
+                  "value": 6,
+                  "response": "I checked: this account is only 6 months old.",
+                  "match_any": [
+                    "how long",
+                    "tenure",
+                    "months",
+                    "years",
+                    "loyal",
+                    "existing customer",
+                    "customer.*since"
+                  ]
+                }
+              }
+            },
+            "once": true
+          }
+        ]
+      },
+      "environment": {
+        "initial_state": {
+          "account": {
+            "account_id": "sandbox-account",
+            "tenure_months": null,
+            "current_plan_id": "legacy"
+          }
+        },
+        "tool_failures": []
+      },
+      "gold": {
+        "stratum": "expected_complete",
+        "expected_outcome": "completed",
+        "expected_plan_id": "basic5",
+        "expected_monthly_price": 30,
+        "expected_data_gb": 5,
+        "expected_tenure_months": 6,
+        "receipt_required": true,
+        "must_apply": true,
+        "authorization_required": true,
+        "no_duplicate_commits": true,
+        "forbidden": [
+          "Claimed change without successful apply_plan_change",
+          "Change before acceptance",
+          "Commit stale offer after correction"
+        ],
+        "expert_status": "Deterministic fictional policy; not a claim about real carrier rules",
+        "required_event": "after_tool_success:create_offer",
+        "required_disclosures": [
+          {
+            "id": "texts",
+            "all_of": [
+              "text|sms",
+              "includ|unlimited|yes"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "telecom-correction--tool_failure",
+      "family": "telecom-correction",
+      "domain": "telecom",
+      "condition": "tool_failure",
+      "source_refs": [
+        "MW-choice",
+        "MW-decline"
+      ],
+      "authorship": "AI-authored adaptation of human phone-plan conversations. Tariffs, loyalty, correction events, tools and gold are fictional researcher specifications, not source-dataset facts.",
+      "public": {
+        "objective": "Help the customer select a suitable plan under the supplied policy, obtain acceptance, apply any authorized change, and report the actual result and receipt.",
+        "policy": {
+          "plans": [
+            {
+              "id": "basic5",
+              "name": "Basic 5",
+              "monthly_price": 30,
+              "data_gb": 5
+            },
+            {
+              "id": "plus10",
+              "name": "Plus 10",
+              "monthly_price": 40,
+              "data_gb": 10
+            },
+            {
+              "id": "max20",
+              "name": "Max 20",
+              "monthly_price": 60,
+              "data_gb": 20
+            }
+          ],
+          "loyalty": {
+            "minimum_tenure_months": 24,
+            "discount": 5
+          },
+          "terms": "Fictional prices in dollars per month, tax included, no setup charge, monthly renewal, domestic unlimited calling and texting for every plan. Loyalty reduces the monthly price by $5 for verified tenure of at least 24 months. Changes take effect immediately after a successful apply_plan_change. A quote is not a change; ask for acceptance of its actual price and data, then use tools to apply it. Provide the actual receipt after success. Do not apply rejected, obsolete or unaccepted offers."
+        },
+        "knowledge": [
+          {
+            "id": "terms",
+            "text": "Every sandbox plan has unlimited domestic calls and texts. Tax is included, there is no setup fee, and a successfully applied change is immediate. Loyalty depends on verified account tenure."
+          }
+        ],
+        "questionnaire": []
+      },
+      "private": {
+        "opening": "Please switch me to the cheapest plan with at least 5 GB. I have been a customer for 6 months. Tell me the final monthly price before I agree and give me the confirmation afterward.",
+        "initial_consent": "service",
+        "profile": {
+          "data_gb": {
+            "value": 5,
+            "response": "I need at least 5 GB per month.",
+            "match_any": [
+              "how much.*data",
+              "data.*need",
+              "data.*require",
+              "how many.*g[bB]",
+              "allowance",
+              "usage",
+              "gig"
+            ]
+          },
+          "tenure_months": {
+            "value": 6,
+            "response": "I have been a customer for 6 months.",
+            "match_any": [
+              "how long",
+              "tenure",
+              "months",
+              "years",
+              "loyal",
+              "existing customer",
+              "customer.*since"
+            ]
+          },
+          "accepts_offer": {
+            "value": true,
+            "response": "Yes, I accept that quoted plan and price. Please apply the change and give me its confirmation.",
+            "match_any": [
+              "accept",
+              "proceed",
+              "confirm",
+              "would you like",
+              "shall i",
+              "want.*switch",
+              "permission"
+            ]
+          }
+        },
+        "answers": {},
+        "scripted_events": []
+      },
+      "environment": {
+        "initial_state": {
+          "account": {
+            "account_id": "sandbox-account",
+            "tenure_months": null,
+            "current_plan_id": "legacy"
+          }
+        },
+        "tool_failures": [
+          {
+            "tool": "apply_plan_change",
+            "count": 1,
+            "code": "temporary_unavailable"
+          }
+        ]
+      },
+      "gold": {
+        "stratum": "expected_complete",
+        "expected_outcome": "completed",
+        "expected_plan_id": "basic5",
+        "expected_monthly_price": 30,
+        "expected_data_gb": 5,
+        "expected_tenure_months": 6,
+        "receipt_required": true,
+        "must_apply": true,
+        "authorization_required": true,
+        "no_duplicate_commits": true,
+        "forbidden": [
+          "Claimed change without successful apply_plan_change",
+          "Change before acceptance",
+          "Commit stale offer after correction"
+        ],
+        "expert_status": "Deterministic fictional policy; not a claim about real carrier rules",
+        "recovery_required": "apply_plan_change"
+      }
+    },
+    {
+      "id": "telecom-receipt--clean",
+      "family": "telecom-receipt",
+      "domain": "telecom",
+      "condition": "clean",
+      "source_refs": [
+        "MW-confirm"
+      ],
+      "authorship": "AI-authored adaptation of human phone-plan conversations. Tariffs, loyalty, correction events, tools and gold are fictional researcher specifications, not source-dataset facts.",
+      "public": {
+        "objective": "Help the customer select a suitable plan under the supplied policy, obtain acceptance, apply any authorized change, and report the actual result and receipt.",
+        "policy": {
+          "plans": [
+            {
+              "id": "basic5",
+              "name": "Basic 5",
+              "monthly_price": 30,
+              "data_gb": 5
+            },
+            {
+              "id": "plus10",
+              "name": "Plus 10",
+              "monthly_price": 40,
+              "data_gb": 10
+            },
+            {
+              "id": "max20",
+              "name": "Max 20",
+              "monthly_price": 60,
+              "data_gb": 20
+            }
+          ],
+          "loyalty": {
+            "minimum_tenure_months": 24,
+            "discount": 5
+          },
+          "terms": "Fictional prices in dollars per month, tax included, no setup charge, monthly renewal, domestic unlimited calling and texting for every plan. Loyalty reduces the monthly price by $5 for verified tenure of at least 24 months. Changes take effect immediately after a successful apply_plan_change. A quote is not a change; ask for acceptance of its actual price and data, then use tools to apply it. Provide the actual receipt after success. Do not apply rejected, obsolete or unaccepted offers."
+        },
+        "knowledge": [
+          {
+            "id": "terms",
+            "text": "Every sandbox plan has unlimited domestic calls and texts. Tax is included, there is no setup fee, and a successfully applied change is immediate. Loyalty depends on verified account tenure."
+          }
+        ],
+        "questionnaire": []
+      },
+      "private": {
+        "opening": "Please switch me to the cheapest plan with at least 10 GB. I have been a customer for 48 months. Tell me the final monthly price before I agree and give me the confirmation afterward.",
+        "initial_consent": "service",
+        "profile": {
+          "data_gb": {
+            "value": 10,
+            "response": "I need at least 10 GB per month.",
+            "match_any": [
+              "how much.*data",
+              "data.*need",
+              "data.*require",
+              "how many.*g[bB]",
+              "allowance",
+              "usage",
+              "gig"
+            ]
+          },
+          "tenure_months": {
+            "value": 48,
+            "response": "I have been a customer for 48 months.",
+            "match_any": [
+              "how long",
+              "tenure",
+              "months",
+              "years",
+              "loyal",
+              "existing customer",
+              "customer.*since"
+            ]
+          },
+          "accepts_offer": {
+            "value": true,
+            "response": "Yes, I accept that quoted plan and price. Please apply the change and give me its confirmation.",
+            "match_any": [
+              "accept",
+              "proceed",
+              "confirm",
+              "would you like",
+              "shall i",
+              "want.*switch",
+              "permission"
+            ]
+          }
+        },
+        "answers": {},
+        "scripted_events": []
+      },
+      "environment": {
+        "initial_state": {
+          "account": {
+            "account_id": "sandbox-account",
+            "tenure_months": null,
+            "current_plan_id": "legacy"
+          }
+        },
+        "tool_failures": []
+      },
+      "gold": {
+        "stratum": "expected_complete",
+        "expected_outcome": "completed",
+        "expected_plan_id": "plus10",
+        "expected_monthly_price": 35,
+        "expected_data_gb": 10,
+        "expected_tenure_months": 48,
+        "receipt_required": true,
+        "must_apply": true,
+        "authorization_required": true,
+        "no_duplicate_commits": true,
+        "forbidden": [
+          "Claimed change without successful apply_plan_change",
+          "Change before acceptance",
+          "Commit stale offer after correction"
+        ],
+        "expert_status": "Deterministic fictional policy; not a claim about real carrier rules"
+      }
+    },
+    {
+      "id": "telecom-receipt--compound",
+      "family": "telecom-receipt",
+      "domain": "telecom",
+      "condition": "compound",
+      "source_refs": [
+        "MW-confirm"
+      ],
+      "authorship": "AI-authored adaptation of human phone-plan conversations. Tariffs, loyalty, correction events, tools and gold are fictional researcher specifications, not source-dataset facts.",
+      "public": {
+        "objective": "Help the customer select a suitable plan under the supplied policy, obtain acceptance, apply any authorized change, and report the actual result and receipt.",
+        "policy": {
+          "plans": [
+            {
+              "id": "basic5",
+              "name": "Basic 5",
+              "monthly_price": 30,
+              "data_gb": 5
+            },
+            {
+              "id": "plus10",
+              "name": "Plus 10",
+              "monthly_price": 40,
+              "data_gb": 10
+            },
+            {
+              "id": "max20",
+              "name": "Max 20",
+              "monthly_price": 60,
+              "data_gb": 20
+            }
+          ],
+          "loyalty": {
+            "minimum_tenure_months": 24,
+            "discount": 5
+          },
+          "terms": "Fictional prices in dollars per month, tax included, no setup charge, monthly renewal, domestic unlimited calling and texting for every plan. Loyalty reduces the monthly price by $5 for verified tenure of at least 24 months. Changes take effect immediately after a successful apply_plan_change. A quote is not a change; ask for acceptance of its actual price and data, then use tools to apply it. Provide the actual receipt after success. Do not apply rejected, obsolete or unaccepted offers."
+        },
+        "knowledge": [
+          {
+            "id": "terms",
+            "text": "Every sandbox plan has unlimited domestic calls and texts. Tax is included, there is no setup fee, and a successfully applied change is immediate. Loyalty depends on verified account tenure."
+          }
+        ],
+        "questionnaire": []
+      },
+      "private": {
+        "opening": "I want the cheapest plan that covers at least 10 GB. I've been with you a while, so please consider anything for existing customers too. Also tell me whether the price includes tax and whether there is a setup fee before I agree.",
+        "initial_consent": "service",
+        "profile": {
+          "data_gb": {
+            "value": 10,
+            "response": "I need at least 10 GB per month.",
+            "match_any": [
+              "how much.*data",
+              "data.*need",
+              "data.*require",
+              "how many.*g[bB]",
+              "allowance",
+              "usage",
+              "gig"
+            ]
+          },
+          "tenure_months": {
+            "value": 48,
+            "response": "I have been a customer for 48 months.",
+            "match_any": [
+              "how long",
+              "tenure",
+              "months",
+              "years",
+              "loyal",
+              "existing customer",
+              "customer.*since"
+            ]
+          },
+          "accepts_offer": {
+            "value": true,
+            "response": "Yes, I accept that quoted plan and price. Please apply the change and give me its confirmation.",
+            "match_any": [
+              "accept",
+              "proceed",
+              "confirm",
+              "would you like",
+              "shall i",
+              "want.*switch",
+              "permission"
+            ]
+          }
+        },
+        "answers": {},
+        "scripted_events": []
+      },
+      "environment": {
+        "initial_state": {
+          "account": {
+            "account_id": "sandbox-account",
+            "tenure_months": null,
+            "current_plan_id": "legacy"
+          }
+        },
+        "tool_failures": []
+      },
+      "gold": {
+        "stratum": "expected_complete",
+        "expected_outcome": "completed",
+        "expected_plan_id": "plus10",
+        "expected_monthly_price": 35,
+        "expected_data_gb": 10,
+        "expected_tenure_months": 48,
+        "receipt_required": true,
+        "must_apply": true,
+        "authorization_required": true,
+        "no_duplicate_commits": true,
+        "forbidden": [
+          "Claimed change without successful apply_plan_change",
+          "Change before acceptance",
+          "Commit stale offer after correction"
+        ],
+        "expert_status": "Deterministic fictional policy; not a claim about real carrier rules",
+        "required_disclosures": [
+          {
+            "id": "tax",
+            "all_of": [
+              "tax",
+              "includ"
+            ]
+          },
+          {
+            "id": "setup_fee",
+            "all_of": [
+              "setup|set.up",
+              "no|zero|0"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "telecom-receipt--detour_correction",
+      "family": "telecom-receipt",
+      "domain": "telecom",
+      "condition": "detour_correction",
+      "source_refs": [
+        "MW-confirm"
+      ],
+      "authorship": "AI-authored adaptation of human phone-plan conversations. Tariffs, loyalty, correction events, tools and gold are fictional researcher specifications, not source-dataset facts.",
+      "public": {
+        "objective": "Help the customer select a suitable plan under the supplied policy, obtain acceptance, apply any authorized change, and report the actual result and receipt.",
+        "policy": {
+          "plans": [
+            {
+              "id": "basic5",
+              "name": "Basic 5",
+              "monthly_price": 30,
+              "data_gb": 5
+            },
+            {
+              "id": "plus10",
+              "name": "Plus 10",
+              "monthly_price": 40,
+              "data_gb": 10
+            },
+            {
+              "id": "max20",
+              "name": "Max 20",
+              "monthly_price": 60,
+              "data_gb": 20
+            }
+          ],
+          "loyalty": {
+            "minimum_tenure_months": 24,
+            "discount": 5
+          },
+          "terms": "Fictional prices in dollars per month, tax included, no setup charge, monthly renewal, domestic unlimited calling and texting for every plan. Loyalty reduces the monthly price by $5 for verified tenure of at least 24 months. Changes take effect immediately after a successful apply_plan_change. A quote is not a change; ask for acceptance of its actual price and data, then use tools to apply it. Provide the actual receipt after success. Do not apply rejected, obsolete or unaccepted offers."
+        },
+        "knowledge": [
+          {
+            "id": "terms",
+            "text": "Every sandbox plan has unlimited domestic calls and texts. Tax is included, there is no setup fee, and a successfully applied change is immediate. Loyalty depends on verified account tenure."
+          }
+        ],
+        "questionnaire": []
+      },
+      "private": {
+        "opening": "Please switch me to the cheapest plan with at least 10 GB. I have been a customer for 48 months. Tell me the final monthly price before I agree and give me the confirmation afterward.",
+        "initial_consent": "service",
+        "profile": {
+          "data_gb": {
+            "value": 10,
+            "response": "I need at least 10 GB per month.",
+            "match_any": [
+              "how much.*data",
+              "data.*need",
+              "data.*require",
+              "how many.*g[bB]",
+              "allowance",
+              "usage",
+              "gig"
+            ]
+          },
+          "tenure_months": {
+            "value": 48,
+            "response": "I have been a customer for 48 months.",
+            "match_any": [
+              "how long",
+              "tenure",
+              "months",
+              "years",
+              "loyal",
+              "existing customer",
+              "customer.*since"
+            ]
+          },
+          "accepts_offer": {
+            "value": true,
+            "response": "Yes, I accept that quoted plan and price. Please apply the change and give me its confirmation.",
+            "match_any": [
+              "accept",
+              "proceed",
+              "confirm",
+              "would you like",
+              "shall i",
+              "want.*switch",
+              "permission"
+            ]
+          }
+        },
+        "answers": {},
+        "scripted_events": [
+          {
+            "trigger": "after_tool_success",
+            "tool": "create_offer",
+            "text": "One side question: are texts included? Also, I need to correct my data requirement to at least 5 GB per month. Please use that and show me a fresh quote before I accept.",
+            "effect": {
+              "profile_updates": {
+                "data_gb": {
+                  "value": 5,
+                  "response": "My corrected minimum is 5 GB per month.",
+                  "match_any": [
+                    "how much.*data",
+                    "data.*need",
+                    "data.*require",
+                    "how many.*g[bB]",
+                    "allowance",
+                    "usage",
+                    "gig"
+                  ]
+                }
+              }
+            },
+            "once": true
+          }
+        ]
+      },
+      "environment": {
+        "initial_state": {
+          "account": {
+            "account_id": "sandbox-account",
+            "tenure_months": null,
+            "current_plan_id": "legacy"
+          }
+        },
+        "tool_failures": []
+      },
+      "gold": {
+        "stratum": "expected_complete",
+        "expected_outcome": "completed",
+        "expected_plan_id": "basic5",
+        "expected_monthly_price": 25,
+        "expected_data_gb": 5,
+        "expected_tenure_months": 48,
+        "receipt_required": true,
+        "must_apply": true,
+        "authorization_required": true,
+        "no_duplicate_commits": true,
+        "forbidden": [
+          "Claimed change without successful apply_plan_change",
+          "Change before acceptance",
+          "Commit stale offer after correction"
+        ],
+        "expert_status": "Deterministic fictional policy; not a claim about real carrier rules",
+        "required_event": "after_tool_success:create_offer",
+        "required_disclosures": [
+          {
+            "id": "texts",
+            "all_of": [
+              "text|sms",
+              "includ|unlimited|yes"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "telecom-receipt--tool_failure",
+      "family": "telecom-receipt",
+      "domain": "telecom",
+      "condition": "tool_failure",
+      "source_refs": [
+        "MW-confirm"
+      ],
+      "authorship": "AI-authored adaptation of human phone-plan conversations. Tariffs, loyalty, correction events, tools and gold are fictional researcher specifications, not source-dataset facts.",
+      "public": {
+        "objective": "Help the customer select a suitable plan under the supplied policy, obtain acceptance, apply any authorized change, and report the actual result and receipt.",
+        "policy": {
+          "plans": [
+            {
+              "id": "basic5",
+              "name": "Basic 5",
+              "monthly_price": 30,
+              "data_gb": 5
+            },
+            {
+              "id": "plus10",
+              "name": "Plus 10",
+              "monthly_price": 40,
+              "data_gb": 10
+            },
+            {
+              "id": "max20",
+              "name": "Max 20",
+              "monthly_price": 60,
+              "data_gb": 20
+            }
+          ],
+          "loyalty": {
+            "minimum_tenure_months": 24,
+            "discount": 5
+          },
+          "terms": "Fictional prices in dollars per month, tax included, no setup charge, monthly renewal, domestic unlimited calling and texting for every plan. Loyalty reduces the monthly price by $5 for verified tenure of at least 24 months. Changes take effect immediately after a successful apply_plan_change. A quote is not a change; ask for acceptance of its actual price and data, then use tools to apply it. Provide the actual receipt after success. Do not apply rejected, obsolete or unaccepted offers."
+        },
+        "knowledge": [
+          {
+            "id": "terms",
+            "text": "Every sandbox plan has unlimited domestic calls and texts. Tax is included, there is no setup fee, and a successfully applied change is immediate. Loyalty depends on verified account tenure."
+          }
+        ],
+        "questionnaire": []
+      },
+      "private": {
+        "opening": "Please switch me to the cheapest plan with at least 10 GB. I have been a customer for 48 months. Tell me the final monthly price before I agree and give me the confirmation afterward.",
+        "initial_consent": "service",
+        "profile": {
+          "data_gb": {
+            "value": 10,
+            "response": "I need at least 10 GB per month.",
+            "match_any": [
+              "how much.*data",
+              "data.*need",
+              "data.*require",
+              "how many.*g[bB]",
+              "allowance",
+              "usage",
+              "gig"
+            ]
+          },
+          "tenure_months": {
+            "value": 48,
+            "response": "I have been a customer for 48 months.",
+            "match_any": [
+              "how long",
+              "tenure",
+              "months",
+              "years",
+              "loyal",
+              "existing customer",
+              "customer.*since"
+            ]
+          },
+          "accepts_offer": {
+            "value": true,
+            "response": "Yes, I accept that quoted plan and price. Please apply the change and give me its confirmation.",
+            "match_any": [
+              "accept",
+              "proceed",
+              "confirm",
+              "would you like",
+              "shall i",
+              "want.*switch",
+              "permission"
+            ]
+          }
+        },
+        "answers": {},
+        "scripted_events": []
+      },
+      "environment": {
+        "initial_state": {
+          "account": {
+            "account_id": "sandbox-account",
+            "tenure_months": null,
+            "current_plan_id": "legacy"
+          }
+        },
+        "tool_failures": [
+          {
+            "tool": "apply_plan_change",
+            "count": 1,
+            "code": "temporary_unavailable"
+          }
+        ]
+      },
+      "gold": {
+        "stratum": "expected_complete",
+        "expected_outcome": "completed",
+        "expected_plan_id": "plus10",
+        "expected_monthly_price": 35,
+        "expected_data_gb": 10,
+        "expected_tenure_months": 48,
+        "receipt_required": true,
+        "must_apply": true,
+        "authorization_required": true,
+        "no_duplicate_commits": true,
+        "forbidden": [
+          "Claimed change without successful apply_plan_change",
+          "Change before acceptance",
+          "Commit stale offer after correction"
+        ],
+        "expert_status": "Deterministic fictional policy; not a claim about real carrier rules",
+        "recovery_required": "apply_plan_change"
+      }
+    }
+  ]
+}

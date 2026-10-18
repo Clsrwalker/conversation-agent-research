@@ -5823,6 +5823,13 @@
       "type": "engineering_validation",
       "record": "goal-directed-plan-validation.json",
       "status": "passed_with_limits"
+    },
+    {
+      "id": "goal-directed-environment-validation-2026-10-17",
+      "date": "2026-10-17",
+      "type": "engineering_validation",
+      "record": "goal-directed-environment-validation.json",
+      "status": "passed_with_limits"
     }
   ],
   "literature_reviews": [
@@ -5846,7 +5853,25 @@
       "record": "goal-directed-plan-2026-10-17.json",
       "page": "goal-directed-plan.html",
       "new_model_runs": 0,
-      "results": null
+      "results": null,
+      "historical_design": true,
+      "current_phase_one_results": "goal-directed-phase1-results.json"
+    }
+  ],
+  "research_studies": [
+    {
+      "id": "goal-directed-phase1-first48",
+      "date": "2026-10-17",
+      "type": "research_experiment",
+      "status": "completed_scored",
+      "record": "goal-directed-phase1-results.json",
+      "page": "goal-directed-plan.html",
+      "new_model_runs": 48,
+      "complete_successes": 10,
+      "expected_complete_runs": 42,
+      "valid_outcomes": 16,
+      "evidence": "goal-directed-phase1-evidence.json",
+      "scoring": "Deterministic business assertions plus AI-assisted transcript adjudication; no independent human expert review."
     }
   ]
 }

@@ -1,0 +1,70 @@
+{
+  "id": "goal-directed-phase1-measurement-audit",
+  "date": "2026-10-17",
+  "type": "post_hoc_descriptive_sensitivity",
+  "strict_complete_successes": 10,
+  "denominator": 42,
+  "receipt_reference_only_failures": [
+    "telecom-receipt--tool_failure__r1",
+    "telecom-loyalty--detour_correction__r1",
+    "telecom-receipt--compound__r1",
+    "telecom-correction--tool_failure__r2",
+    "telecom-receipt--compound__r2"
+  ],
+  "successes_with_truthful_confirmation_instead_of_literal_id": 15,
+  "revision_only_snapshot_failures": [
+    "auto-authorization--tool_failure__r1",
+    "auto-authorization--tool_failure__r2"
+  ],
+  "persisted_answer_assistance_or_provenance_errors": [
+    "auto-authorization--detour_correction__r1",
+    "auto-request--compound__r1",
+    "auto-authorization--compound__r1",
+    "auto-authorization--detour_correction__r2",
+    "auto-request--compound__r2",
+    "auto-authorization--compound__r2"
+  ],
+  "field_checks_among_expected_completion_runs": {
+    "automotive_training": {
+      "runs": 18,
+      "checks_passed": {
+        "execution_completed": 18,
+        "authorized_process": 18,
+        "answers_recorded": 12,
+        "answer_content": 11,
+        "answer_provenance": 10,
+        "assisted_flags": 7,
+        "business_state": 10,
+        "assessment_ratings": 10,
+        "assessment_current": 6,
+        "receipt_delivered": 8,
+        "required_disclosures": 18,
+        "required_event_delivered": 18
+      }
+    },
+    "telecom": {
+      "runs": 24,
+      "checks_passed": {
+        "execution_completed": 24,
+        "authorized_process": 23,
+        "business_state": 15,
+        "receipt_delivered": 7,
+        "no_duplicate_or_wrong_commits": 15,
+        "required_disclosures": 23,
+        "required_event_delivered": 24
+      }
+    }
+  },
+  "ambiguous_completion_claims": {
+    "auto-request--compound__r2": [
+      48,
+      51,
+      54,
+      57,
+      60
+    ]
+  },
+  "scope": "The sensitivity changes only literal receipt-ID delivery for reviewed truthful confirmations. Every other check and material-error requirement remains. It does not replace the frozen primary endpoint.",
+  "interpretation": "Scripted reply coverage and strict receipt/revision conventions constrain the observed success rate. Unsupported save claims and wrong evidence attribution remain directly observable errors.",
+  "next_decision": "Validate broader scripted-user coverage and receipt/currentness definitions before a fresh comparison. Then compare a prompt-only control with receipt-gated finalization and answer-evidence/revision tracking. No mechanism or async benefit has been tested."
+}

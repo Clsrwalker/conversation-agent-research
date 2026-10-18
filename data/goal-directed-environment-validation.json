@@ -1,0 +1,121 @@
+{
+  "id": "goal-directed-environment-validation-2026-10-17",
+  "date": "2026-10-17",
+  "timezone": "America/Halifax",
+  "type": "engineering_validation",
+  "status": "passed_with_limits",
+  "run": "goal-directed-phase1-preflight",
+  "scope": "Shared business world, branching scripted user, adapted native runner and deterministic scoring",
+  "checks": [
+    {
+      "check": "28 environment tests including all 24 case contracts, consent/corrections, receipts, isolation and scoped-question regression checks",
+      "result": "pass"
+    },
+    {
+      "check": "9 real-DeepAgent integration tests with an injected scripted model: shared call/token budgets including native compaction, visible replies, private isolation, tool IDs, durable checkpoints and preserved failures",
+      "result": "pass"
+    },
+    {
+      "check": "5 scoring tests: persisted versus delivered completion, completion-claim candidates, legitimate non-assessment ending, injected versus actor error, correct assessment of a partial trainee answer",
+      "result": "pass"
+    }
+  ],
+  "command": "python -B -m unittest discover -s experiments/deep_conversation/goal_directed -t . -p test_*.py -v",
+  "passed_tests": 42,
+  "earlier_failure": "The first discovery invocation omitted -t . and could not import the relative environment test module; the corrected package-aware invocation passed all 37 tests.",
+  "log": "output/research/2026-10-17/goal-directed-environment-checks-v2.log",
+  "source_hash_record": "output/research/2026-10-17/goal-directed-phase1/batch-manifest.json",
+  "new_model_runs": 1,
+  "limitations": [
+    "42 offline tests use scripted responses. One real diagnostic run is preserved separately; the 48 real baseline runs use the repaired simulator and a new frozen batch.",
+    "The user simulator uses frozen text patterns, not real human participants.",
+    "Automotive scoring is provisional and has not received domain-expert review.",
+    "Native context summarization retains inherited framework retries; all actual model starts share the run budget."
+  ],
+  "model_diagnostic": {
+    "path": "output/research/2026-10-17/goal-directed-phase1-preflight",
+    "assigned_runs": 1,
+    "completed_runs": 1,
+    "calls": 14,
+    "tokens": 58825,
+    "seconds": 354.64,
+    "status": "excluded_from_main_48",
+    "reason": "User simulator echoed summarized answers as if they had been asked again; v2 fixes request-span parsing and save confirmation. Actor policy and cases unchanged."
+  },
+  "runtime_preparation": {
+    "record": "output/research/2026-10-17/goal-directed-runtime-reload.json",
+    "note": "After the diagnostic ended, unloaded and loaded the same local model with no generation. Available GPU memory then allowed full GPU residency before the main batch. No unrelated application was stopped."
+  },
+  "tested_source_sha256": {
+    "experiments/deep_conversation/agent.py": "4f3a83c53bce2748df44b73fd70d291ee79b0a92aa940fd164daed51b0c71409",
+    "experiments/deep_conversation/benchmarks/goal-directed-v1/benchmark.json": "de93b0fb646993c68e39df744a9aaef2e0f2d11fa2811c95b2078b77a0a8117f",
+    "experiments/deep_conversation/benchmarks/goal-directed-v1/README.md": "81bab0de15773081ad20bf84a8f3999330cbf55845b893e7b76df20599e6eb8f",
+    "experiments/deep_conversation/benchmarks/goal-directed-v1/SCORING.md": "4596720c89c4788947a25a4f7763d10415a2b83a859f99c47f8e011f5a503d21",
+    "experiments/deep_conversation/benchmarks/goal-directed-v1/sources.json": "d24dea2074512b60d6bdfdefe075d5d25510152b84c34930a9680c6eb38757cf",
+    "experiments/deep_conversation/config.py": "0588cd012ea96ba505ffe7499ad5208ec14f57548e6f9ebd2c0263b60d1f0548",
+    "experiments/deep_conversation/goal_directed/__init__.py": "70dfea8124d1b80693963b4e27a8247287fe59deaa62db8533b7fc147af0deef",
+    "experiments/deep_conversation/goal_directed/batch.py": "f3dee69b5f219222465067161e6cc5d02a2cb93861ffbcbd268d42522ab00195",
+    "experiments/deep_conversation/goal_directed/environment.py": "fa76fc09b4420e9f2bd900b01c2e0fc7b5dadcfa46bc142cc4814d818040f891",
+    "experiments/deep_conversation/goal_directed/run_baseline.py": "abdc16980ac7079417d2ca2d05d5ea05c34beb86072c67f68f631604482d0beb",
+    "experiments/deep_conversation/goal_directed/score.py": "3d31ef602dc6bfaf5ca3e9c911bcf36a96eb1b59721b2f59a0b2360d7f561f4e",
+    "experiments/deep_conversation/goal_directed/test_environment.py": "37ca83fb04f4479c392fe19e6eaa05a77926d3de6c711a37d6a26a0639fa59e0",
+    "experiments/deep_conversation/goal_directed/test_runner.py": "32868a21e76ac389966e541fb56bc802498ed607ccbb94e466545f2ef734ff57",
+    "experiments/deep_conversation/goal_directed/test_scoring.py": "4bd7319656d72c750e0886ef9464849a090043d31e4bebbbf0b7009f9bf71d04",
+    "experiments/deep_conversation/local_runtime.py": "f5e8dfb1a128900dfcbdfeaec6add889760849e34e41d361b1f9f77beb2de7ea",
+    "experiments/deep_conversation/model_capture.py": "5f28201df25034f8b87238e41be2d7614ee82ec7e32f11464da842965545072d",
+    "experiments/deep_conversation/providers.py": "5506b24015c9c7ff3846ac83bdec5294a3dee716485b696911b848b07a0857ca",
+    "experiments/deep_conversation/requirements.lock.txt": "e92e2a948a0a3d411d6cb70a3915d2868ee7dc71b159e05b6366581640caef42"
+  },
+  "phase_one_reconciliation": {
+    "status": "passed",
+    "assigned_runs": 48,
+    "completed_runs": 48,
+    "reviewed_runs": 48,
+    "model_calls": 296,
+    "tokens": 1158180,
+    "checks": [
+      "Every frozen source hash matches the executed snapshot.",
+      "All 48 unique assigned run summaries, worlds and call ledgers exist.",
+      "Per-run call and token totals agree with ledgers and the aggregate result.",
+      "Every semantic error annotation points to an actual event.",
+      "All 48 transcripts received AI-assisted review; no independent expert adjudication."
+    ]
+  },
+  "scoring_runtime": {
+    "python": "3.13.1",
+    "note": "The experiment venv lacked tzdata for the date label. Scoring was rerun unchanged with the installed system Python and America/Halifax zone data. No model episode was repeated."
+  },
+  "publication_checks": {
+    "status": "passed",
+    "scope": "Local publication readiness; deployment is verified separately by the release receipt.",
+    "checks": [
+      {
+        "check": "Final builder verifies 48 unique reviewed rows, the 42-run completion denominator, all condition/domain/family aggregates and CSV agreement.",
+        "result": "pass"
+      },
+      {
+        "check": "Independent read-only reconciliation of all 18 source hashes, raw summaries, call ledgers and five receipt-only sensitivity cases.",
+        "result": "pass"
+      },
+      {
+        "check": "English-only HTML, Markdown, JavaScript and JSON exports; obsolete Chinese protocol download removed and original local source preserved.",
+        "result": "pass"
+      },
+      {
+        "check": "All relative links in the baseline page resolve; prior study records remain unchanged.",
+        "result": "pass"
+      },
+      {
+        "check": "Local HTTP 200, browser accessibility inspection and visual review of summary metrics and condition/domain tables in the 610 x 577 panel; all four columns fit.",
+        "result": "pass"
+      }
+    ],
+    "limitations": [
+      "Mobile device rendering was not separately tested.",
+      "These checks validate the evidence export and presentation, not real-user benefit."
+    ],
+    "page_sha256": "4c9449ce6a2b856f954a38acf3643997f9a310d3a0ead2d1d38c0571329aca45",
+    "css_sha256": "36e63e6c7090f2599e0a7f8a376829ac550ebbd5e08f888f8c7f4e9729c0cb28"
+  },
+  "new_model_runs_scope": "One separate preflight diagnostic; the 48 main research runs are recorded in the phase-one results."
+}
