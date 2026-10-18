@@ -5816,6 +5816,13 @@
       "type": "engineering_validation",
       "record": "intention-literature-validation.json",
       "status": "passed_with_limits"
+    },
+    {
+      "id": "goal-directed-plan-publication-2026-10-17",
+      "date": "2026-10-17",
+      "type": "engineering_validation",
+      "record": "goal-directed-plan-validation.json",
+      "status": "passed_with_limits"
     }
   ],
   "literature_reviews": [
@@ -5828,6 +5835,18 @@
       "page": "intention-literature.html",
       "papers": 9,
       "new_model_runs": 0
+    }
+  ],
+  "research_plans": [
+    {
+      "id": "goal-directed-conversation-plan-2026-10-17",
+      "date": "2026-10-17",
+      "type": "research_plan",
+      "status": "planned_not_run",
+      "record": "goal-directed-plan-2026-10-17.json",
+      "page": "goal-directed-plan.html",
+      "new_model_runs": 0,
+      "results": null
     }
   ]
 }

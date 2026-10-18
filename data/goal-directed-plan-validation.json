@@ -1,0 +1,48 @@
+{
+  "id": "goal-directed-plan-publication-2026-10-17",
+  "date": "2026-10-17",
+  "timezone": "America/Halifax",
+  "type": "engineering_validation",
+  "status": "passed_with_limits",
+  "scope": "Protocol page, synchronized downloads and presentation; no experiment execution",
+  "run": "goal-directed-plan-2026-10-17-publication",
+  "checks": [
+    {
+      "check": "Maintained design and download agree; planned counts 48 / 480 / 192 match arithmetic; results null and new model runs zero",
+      "result": "pass"
+    },
+    {
+      "check": "Chinese protocol download matches source bytes and SHA-256",
+      "result": "pass"
+    },
+    {
+      "check": "All 17 local page links and fragment destinations exist",
+      "result": "pass"
+    },
+    {
+      "check": "Combined research-record JSON and JavaScript agree; plan appears separately from findings",
+      "result": "pass"
+    },
+    {
+      "check": "Earlier findings, baseline and literature data unchanged against source commit 7556e5216ba5d8e1696431c3c8c7fffbe1134c55",
+      "result": "pass"
+    },
+    {
+      "check": "Default browser viewport 625 px: heading and comparison table visually inspected; five arm rows, three stages and comparison anchor; no page-level horizontal overflow",
+      "result": "pass"
+    }
+  ],
+  "new_model_runs": 0,
+  "limitations": [
+    "The experiment is planned, not implemented or run.",
+    "No automotive expert validation or task-data extraction has been completed.",
+    "Mobile and print rendering were not visually checked; wide tables use horizontal scrolling.",
+    "Publication checks establish document consistency, not task success, simulator fidelity or research validity."
+  ],
+  "tested_source_sha256": {
+    "goal-directed-plan.json": "6dbc6cf12ae32c15304d1a89a622821d88a903f017b0489d235a767f3c8bda2e",
+    "build_goal_plan.py": "55cc0f0dd5bbcd12b3a06427632f490e0615d51837d3144cb30b544881f0db02",
+    "dist/goal-directed-plan.css": "91429c95a47687a1c07d6dd6b83df24193a510b63597c95b75566ada03b016ee",
+    "dist/data/goal-directed-protocol.zh-CN.md": "1840c6bf407eff024503697dce48f5860a4006d3884fd97e890e10a6ceb5ab14"
+  }
+}

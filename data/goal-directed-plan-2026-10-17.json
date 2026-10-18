@@ -1,0 +1,185 @@
+{
+  "id": "goal-directed-conversation-plan-2026-10-17",
+  "date": "2026-10-17",
+  "timezone": "America/Halifax",
+  "type": "research_plan",
+  "status": "planned_not_run",
+  "title": "From conversation to verifiable task completion",
+  "question": "Which failures need better prompts, persistent task state or completion checks—and do the gains transfer to a new questionnaire?",
+  "new_model_runs": 0,
+  "results": null,
+  "protocol_source": "output/research/2026-10-17/goal-directed-conversation/PROTOCOL.zh-CN.md",
+  "coverage": [
+    {
+      "id": "H1",
+      "failure": "Missed needs or missing clarification",
+      "current": "Prefix probes can expose wrong interpretations; behavioral omission alone does not prove missed understanding. Preserve unknown attribution.",
+      "needed": "Interactive clarification and scoring from information actually revealed so far."
+    },
+    {
+      "id": "H2",
+      "failure": "Lost or stale task state",
+      "current": "Card-update traces can expose loss even when the final answer is later repaired.",
+      "needed": "Field revisions, dependencies, correction propagation and evidence of what remains valid."
+    },
+    {
+      "id": "H3",
+      "failure": "Wrong execution",
+      "current": "Tool failures are logged, but meeting cases lack sufficient business-action gold.",
+      "needed": "Action, argument, interpretation and prerequisite checks; multiple valid paths allowed."
+    },
+    {
+      "id": "H4",
+      "failure": "Unsupported completion claims",
+      "current": "Recorded traces can compare a completion judgment with a failed card update.",
+      "needed": "Compare every claim with committed business state and delivered confirmation."
+    }
+  ],
+  "scenarios": [
+    {
+      "title": "Automotive employee training",
+      "role": "Primary task",
+      "description": "Answer grounded questions, administer a scenario assessment, handle explanations and corrections, then save an evidence-backed evaluation.",
+      "terminal": "Separate correct tutoring, independently demonstrated knowledge and a successfully saved assessment. Mark assisted answers; respect withdrawal.",
+      "limit": "A text assessment is not proof of practical repair skill. New-model vehicle claims require authorized manuals and expert review."
+    },
+    {
+      "title": "Telecom offer and change",
+      "role": "Second domain",
+      "description": "Resolve a standard-price request plus implicit loyalty eligibility, explain conditions, obtain acceptance and submit a simulated change.",
+      "terminal": "Offer, acceptance, pending change, applied change and delivered confirmation remain separate states.",
+      "limit": "Use fictional fixed policies and sandbox transactions. No real carrier accounts, payments or email delivery claims."
+    }
+  ],
+  "arms": [
+    {
+      "id": "B",
+      "name": "Adapted reference",
+      "change": "Agent-led / ReAct-style tool choice and free notes; common multi-turn interface.",
+      "contrast": "Baseline failure discovery"
+    },
+    {
+      "id": "P",
+      "name": "Prompt only",
+      "change": "B plus reminders to maintain multiple needs, apply corrections and use completion evidence.",
+      "contrast": "P − B: does a simple prompt suffice?"
+    },
+    {
+      "id": "S",
+      "name": "Persistent state",
+      "change": "P plus per-need/field state, provenance, revisions and dependency updates.",
+      "contrast": "S − P: incremental state-management benefit"
+    },
+    {
+      "id": "V",
+      "name": "Completion check",
+      "change": "P plus verification of accessible business receipts before claiming completion.",
+      "contrast": "V − P: incremental verification benefit"
+    },
+    {
+      "id": "SV",
+      "name": "Combined",
+      "change": "P plus both state and completion checks.",
+      "contrast": "SV − S − V + P: interaction"
+    }
+  ],
+  "stages": [
+    {
+      "id": "discovery",
+      "label": "Discover failures first",
+      "cases": 24,
+      "arms": 1,
+      "models": 1,
+      "repeats": 2,
+      "planned_runs": 48,
+      "description": "Six development task families, four conditions each. Review failures before building a candidate mechanism."
+    },
+    {
+      "id": "development",
+      "label": "Compare only justified changes",
+      "cases": 24,
+      "arms": 5,
+      "models": 2,
+      "repeats": 2,
+      "planned_runs": 480,
+      "description": "Full design ceiling, including the 48 discovery runs only if every frozen condition matches. Six families remain six clustering units; omit factorial claims if a mechanism branch is stopped."
+    },
+    {
+      "id": "transfer",
+      "label": "Freeze, then test transfer",
+      "cases": 24,
+      "arms": 2,
+      "models": 2,
+      "repeats": 2,
+      "planned_runs": 192,
+      "description": "Twelve new families with two conditions each. Compare P with one common candidate selected before testing. Freeze prompts, schema, code and grading. Cross-domain claims require a new domain."
+    }
+  ],
+  "sources": [
+    {
+      "id": "taskmaster",
+      "title": "Taskmaster-1 · official data",
+      "url": "https://github.com/google-research-datasets/Taskmaster/tree/master/TM-1-2019",
+      "use": "Select two-person automotive WoZ dialogue for human language; retain source IDs and attribution.",
+      "limit": "Role-play, not naturally occurring company calls. The corpus also contains self-written dialogue. CC BY 4.0; automotive subset not yet extracted."
+    },
+    {
+      "id": "ase",
+      "title": "ASE Automobile 2026 · official guide",
+      "url": "https://www.ase.com/uploads/ASE_Automobile_Study_Guide_2026.pdf",
+      "use": "Expert task coverage and knowledge-assessment forms.",
+      "limit": "Public access does not authorize republishing the question bank; not a new-vehicle manual or dialogue gold."
+    },
+    {
+      "id": "aur",
+      "title": "AURACA101 · official competency standard",
+      "url": "https://training.gov.au/TrainingComponentFiles/AUR/AURACA101_R1.pdf",
+      "use": "Requirements clarification, outstanding needs and follow-up as rubric inputs.",
+      "limit": "A competency standard is not a ready-made questionnaire. Redistribution terms have not been verified."
+    },
+    {
+      "id": "react",
+      "title": "ReAct · original paper",
+      "url": "https://arxiv.org/abs/2210.03629",
+      "use": "Interleaved reasoning and acting as a reference strategy.",
+      "limit": "ReAct does not require the agent to track only one intention; structural failure must be measured."
+    },
+    {
+      "id": "tau",
+      "title": "τ²-bench · versioned paper",
+      "url": "https://arxiv.org/html/2506.07982v1",
+      "use": "Separate policy, private user task, tools and terminal assertions.",
+      "limit": "The official repository has evolved to τ³. Pin code, tasks and grader; do not compare unversioned scores."
+    },
+    {
+      "id": "gaia2",
+      "title": "Gaia2 / ARE · versioned paper",
+      "url": "https://arxiv.org/html/2602.11964v1",
+      "use": "Dynamic events, dependencies and asynchronous environments.",
+      "limit": "An asynchronous environment or parallel tools do not imply universal gains."
+    },
+    {
+      "id": "sim2real",
+      "title": "Mind the Sim2Real Gap · versioned paper",
+      "url": "https://arxiv.org/html/2603.11245v1",
+      "use": "Motivates independent checks of simulated-user behavior and human anchors.",
+      "limit": "Simulation outcomes cannot by themselves establish real-user benefit."
+    },
+    {
+      "id": "formbharo",
+      "title": "FormBharo · versioned paper",
+      "url": "https://arxiv.org/html/2608.06027v1",
+      "use": "Related work on extraction plus deterministic form-state handling.",
+      "limit": "Limited form and simulator coverage; per-field correctness is not whole-task success or arbitrary-JSON transfer."
+    }
+  ],
+  "limitations": [
+    "No new model experiments, human study, clinical task or architecture implementation in this update.",
+    "The 48 / 480 / 192 counts are staged planning ceilings, not completed runs or power guarantees. Extra oracle and ablation runs are not included.",
+    "Expert-reviewed cases, executable gold and a shared interactive business adapter remain to be built.",
+    "State and verification arms initially estimate intervention-package effects, including computation. Matched-budget summary/reviewer controls are required for narrower mechanism claims.",
+    "A questionnaire can change through JSON only within a shared schema and operation set; new business operations require an adapter.",
+    "Previous research findings and frozen baselines are unchanged."
+  ],
+  "protocol_sha256": "1840c6bf407eff024503697dce48f5860a4006d3884fd97e890e10a6ceb5ab14"
+}

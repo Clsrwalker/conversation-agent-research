@@ -45,8 +45,8 @@
     },
     {
       "path": "data.js",
-      "sha256": "87218d43efda3e4757dc37e0b5cf6a52904b1eef433c65f4d27a01cafa7b14d2",
-      "bytes": 167620
+      "sha256": "5a52528c913f70acc2e51842c5a63fedfd34b9d58421862b6ef25d164f7e1c16",
+      "bytes": 168080
     },
     {
       "path": "data/analyze_harness_latency.py",
@@ -97,6 +97,21 @@
       "path": "data/github-pages-validation.json",
       "sha256": "fe4f119e253e1cb286cb1ce2722475f770d3aa69a19155b99bc07d678389ff53",
       "bytes": 4794
+    },
+    {
+      "path": "data/goal-directed-plan-2026-10-17.json",
+      "sha256": "12d9d6ed742bca85a2cfa3aa5e5592563852e3257084e93622808e4845c1061d",
+      "bytes": 8944
+    },
+    {
+      "path": "data/goal-directed-plan-validation.json",
+      "sha256": "26c749a2deaf9168d6cc41b52d47ff958fdf3ea3eb96e33cb62af18578434d53",
+      "bytes": 2184
+    },
+    {
+      "path": "data/goal-directed-protocol.zh-CN.md",
+      "sha256": "1840c6bf407eff024503697dce48f5860a4006d3884fd97e890e10a6ceb5ab14",
+      "bytes": 25060
     },
     {
       "path": "data/harness-architecture-evidence.json",
@@ -250,8 +265,8 @@
     },
     {
       "path": "data/research-record.json",
-      "sha256": "411005a2dc8c9fb7350f123bc888fbe42b50528606a49f5653d7544a9d313e2e",
-      "bytes": 244146
+      "sha256": "72460b75a3b9edce1f76fb6f288b553b70131d56636a925e73fa683923b4fb23",
+      "bytes": 244729
     },
     {
       "path": "data/results.csv",
@@ -344,6 +359,16 @@
       "bytes": 7728
     },
     {
+      "path": "goal-directed-plan.css",
+      "sha256": "91429c95a47687a1c07d6dd6b83df24193a510b63597c95b75566ada03b016ee",
+      "bytes": 1560
+    },
+    {
+      "path": "goal-directed-plan.html",
+      "sha256": "11dd980c3b350baf52c16127f4961f63b0ae5bb934a95d4eb7544485c5beeddb",
+      "bytes": 16525
+    },
+    {
       "path": "harness-data.js",
       "sha256": "952ce7ed4c3a8da76e03008cfdc5a2d5f79fcc54e65656bbbe4d8b0443451a24",
       "bytes": 44271
@@ -360,8 +385,8 @@
     },
     {
       "path": "index.html",
-      "sha256": "04cec919f33241ecc72f41a02789210484ff1795c6028cb4fafd70affe357bfb",
-      "bytes": 64342
+      "sha256": "011a8b4c5e5f4e3371c3940accc80c0e01ea2da81a5614ac1d8997ffa77053f4",
+      "bytes": 65156
     },
     {
       "path": "intention-literature.css",
