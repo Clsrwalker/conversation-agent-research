@@ -20,8 +20,8 @@
     },
     {
       "path": "app.js",
-      "sha256": "324b91d634453bb5217618b05d8b991f7484547cd3635fb49c29a6e1d5f72130",
-      "bytes": 12456
+      "sha256": "b7fcf75d69d65d444b2bf30da357f878e393b7fbac8119a9ccfb82ae853f2334",
+      "bytes": 12918
     },
     {
       "path": "architecture.css",
@@ -45,8 +45,8 @@
     },
     {
       "path": "data.js",
-      "sha256": "a10675100789e762c0184e6ea123840463e5094d3f6e922720c4e823a7350d79",
-      "bytes": 168878
+      "sha256": "d0b96285dca41f0914faaf000b975a66559fd1847ae17aeedaa0d46d83a065ab",
+      "bytes": 196070
     },
     {
       "path": "data/analyze_harness_latency.py",
@@ -224,6 +224,131 @@
       "bytes": 6169
     },
     {
+      "path": "data/october-studies-tables.csv",
+      "sha256": "549f1e7614bd980c8166bb6cf554523665613fef6b4dc5dfd9bdaf33574f547c",
+      "bytes": 2107
+    },
+    {
+      "path": "data/october-studies-validation.json",
+      "sha256": "e67d1f49e16f7d607a6e15424b4e7256facd487f507a8ccb39d00d1e9d991e0d",
+      "bytes": 1371
+    },
+    {
+      "path": "data/october-studies.json",
+      "sha256": "467ccae736adcebb8af9f0bc78363f9050ad99373e33f34eb037b765dc62a08d",
+      "bytes": 40660
+    },
+    {
+      "path": "data/october-studies/METHODS.md",
+      "sha256": "5a0ae06493fdc6d8ab17bf0ef15626b4a792654aa1f47d5c6192c4b13b0e4fad",
+      "bytes": 8155
+    },
+    {
+      "path": "data/october-studies/answer-delivery-report.md",
+      "sha256": "20c9d0c47646c934006fcaa50944687c27640facc571185eb17e35c2cb9e1b1d",
+      "bytes": 7918
+    },
+    {
+      "path": "data/october-studies/answer-delivery-results.json",
+      "sha256": "884fd23c5fb041d947be1bca463fc756c2e1f4110ed5921d875ca0e25b15de0c",
+      "bytes": 9556
+    },
+    {
+      "path": "data/october-studies/budget-state-repair-aster-trace.md",
+      "sha256": "fb59df0be82c85cd2508fe5f64c89cc2ca2e5e30d94423c38759f8e71e6e8d2f",
+      "bytes": 18619
+    },
+    {
+      "path": "data/october-studies/budget-state-repair-report.md",
+      "sha256": "335753c19dfda549aa7f69b2d11ab4f1aaa475836f1c30fb6c6831dece14a21d",
+      "bytes": 8351
+    },
+    {
+      "path": "data/october-studies/budget-state-repair-results.json",
+      "sha256": "535666e7b833b7f33ab8897580dd14ed4cf7a07c9f6dd185470c199733bb2948",
+      "bytes": 95482
+    },
+    {
+      "path": "data/october-studies/delivery-recovery-report.md",
+      "sha256": "3d734dddc3457622b4cfc7598fc763dd693b8a62a2190fdd8f082ba1f4d31a5f",
+      "bytes": 5945
+    },
+    {
+      "path": "data/october-studies/delivery-recovery-results.json",
+      "sha256": "c24583e3b337df2f83cb009a35b6ae3d8b2423394919eebbe1a8e08258c9f4a0",
+      "bytes": 4091
+    },
+    {
+      "path": "data/october-studies/export-manifest.json",
+      "sha256": "138c580e8366ae632cd4e2cae45b864c855c2225728c487fa541b28d83e907a1",
+      "bytes": 4039
+    },
+    {
+      "path": "data/october-studies/intent-coverage-recognition-counts.json",
+      "sha256": "88a3eef2515d52d38573895ca6a0cde94e7b5b7ca7e27980db5780ff2a73f60a",
+      "bytes": 102329
+    },
+    {
+      "path": "data/october-studies/intent-coverage-report.md",
+      "sha256": "42e5bb9bfa21539bbee7641e5588f49700dc269b0a6be5a7115c1ade2275ed10",
+      "bytes": 5878
+    },
+    {
+      "path": "data/october-studies/intent-coverage-results.json",
+      "sha256": "68c785f4d1e87bcdb701dd5bebfaf8a12fea1764fcd250dc9c2d2b53af2655ff",
+      "bytes": 5491
+    },
+    {
+      "path": "data/october-studies/intention-attribution-report.md",
+      "sha256": "b80d43564b9342cf74687d1d7f84f79dc399cd53df74ccce22ff3e9eaa91be48",
+      "bytes": 6898
+    },
+    {
+      "path": "data/october-studies/intention-attribution-results.json",
+      "sha256": "ea39765717fee8ed3b0b943bf009161fb2c9c0b1bdfa217f7363b4c4aa462341",
+      "bytes": 7540
+    },
+    {
+      "path": "data/october-studies/intention-diagnostic-report.md",
+      "sha256": "41d45ee22900432929524e4dbe522a317c806034b8cd3666af69890b860486ef",
+      "bytes": 4393
+    },
+    {
+      "path": "data/october-studies/intention-diagnostic-results.json",
+      "sha256": "1162aac794052fc5ee50315d253224d768643a237f0157ad1dfa6268cbad020c",
+      "bytes": 3031
+    },
+    {
+      "path": "data/october-studies/meeting-intent-probe-report.md",
+      "sha256": "ed9ee600a120b56b4624472a688c5c831a9dace9d9d9e2fc84b4203da959a103",
+      "bytes": 4864
+    },
+    {
+      "path": "data/october-studies/meeting-intent-probe-results.json",
+      "sha256": "0d75a6be83630c9ed2c97b6a0b9ec62a23f445aa854f40551d0e2ba703e066ed",
+      "bytes": 2661
+    },
+    {
+      "path": "data/october-studies/meeting-intention-report.md",
+      "sha256": "e020b03d9c596cc1580244369676581c6a514131d96ac00812f0954cd7c61d54",
+      "bytes": 7460
+    },
+    {
+      "path": "data/october-studies/meeting-intention-results.json",
+      "sha256": "bcc47bf4689bf9d59c5a99ff677e8d22ad00a04f97a332cf57d4d6b9e8a91d5a",
+      "bytes": 2539
+    },
+    {
+      "path": "data/october-studies/model-harness-factorial-report.md",
+      "sha256": "9ccd558bbafaa0ff7db564a1ccc99905a07d850f726bd4f69595bbed5d88bcc3",
+      "bytes": 11095
+    },
+    {
+      "path": "data/october-studies/model-harness-factorial-results.json",
+      "sha256": "772d643499ec6a8d5d002b89f323a93a00493d53082fec2df764a592c96bda7f",
+      "bytes": 62320
+    },
+    {
       "path": "data/private-lab-backend-tests.txt",
       "sha256": "c0aa0bb440d7ababa2641b007172a14b1815124d9858a624e0bb4f65c1bc8ff7",
       "bytes": 10960
@@ -310,8 +435,8 @@
     },
     {
       "path": "data/research-record.json",
-      "sha256": "ec486ae661145c6f5991fd62e50328d325419fb9b26482d9577bb487f03afb68",
-      "bytes": 245692
+      "sha256": "7694f8094f8e6f2bed8db760dbfbb0215228affe4da2c1be86da15eb525d7c8c",
+      "bytes": 288904
     },
     {
       "path": "data/results.csv",
@@ -430,8 +555,8 @@
     },
     {
       "path": "index.html",
-      "sha256": "a306906742b21ddd3a584c13b7764f2f3012467aaad1fdfb4adbd91169fc72a5",
-      "bytes": 64791
+      "sha256": "2580a3006d8f818d7e0fcd4b8e4988ae6e219f59e4264440824fe207796dd6d0",
+      "bytes": 67302
     },
     {
       "path": "intention-literature.css",
@@ -447,6 +572,16 @@
       "path": "latency-data.js",
       "sha256": "77657680694a1619febe7bb7eca2d507bfb68408dcfad136653d275d83bf862a",
       "bytes": 44077
+    },
+    {
+      "path": "october-studies.css",
+      "sha256": "0ecebd69316fcbefbf2d278a86d54aeace034d861caf193da8707eeebb6f7a6c",
+      "bytes": 10317
+    },
+    {
+      "path": "october-studies.html",
+      "sha256": "0a992c29ebc410ca28dc929ce9be8b60bdcd571b7b3d8b88f57bd73b09a53140",
+      "bytes": 19704
     },
     {
       "path": "overview-dashboard.css",
@@ -467,6 +602,11 @@
       "path": "overview.js",
       "sha256": "6f16ae013e5ad979a2f01618931b58281dac369d8d92e18dd2e502bbb56da81d",
       "bytes": 1714
+    },
+    {
+      "path": "recent-entry.css",
+      "sha256": "ce3495808593b777c8abafd9f9e2915a5659c5ef8a967fa08079d59875af9b17",
+      "bytes": 2918
     },
     {
       "path": "style.css",

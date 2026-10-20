@@ -1,0 +1,36 @@
+{
+  "id": "october-studies-publication-2026-10-19",
+  "date": "2026-10-19",
+  "type": "website_publication_validation",
+  "status": "passed",
+  "scope": "Presentation of existing reviewed research; no new model calls",
+  "checks": {
+    "studies": 9,
+    "primary_comparisons": 3,
+    "earlier_studies": 6,
+    "source_hashes_verified": 23,
+    "html_pages_checked": 4,
+    "local_links_checked": 191,
+    "duplicate_ids": 0,
+    "missing_local_links": 0,
+    "external_urls_not_rechecked": 17,
+    "independent_numeric_review": "passed; denominator wording and shared-material caption corrected",
+    "historical_research_fields": "unchanged; new October index and website date added",
+    "desktop_width": 1440,
+    "mobile_widths": [
+      390,
+      320
+    ],
+    "main_tables_clipped": false,
+    "horizontal_page_overflow": false,
+    "dark_and_light_modes": "visually checked",
+    "navigation": "overview, methods, nested engineering section and earlier studies checked",
+    "browser_console_errors": 0,
+    "new_model_calls": 0
+  },
+  "layout": "Objective, procedure, results and conclusion; result tables; methods and earlier records expandable",
+  "review_limitations": [
+    "Browser checks use Chromium, not a native Safari device.",
+    "AI-reviewed synthetic study results; no new efficacy or human-user claim."
+  ]
+}

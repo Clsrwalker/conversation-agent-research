@@ -1,0 +1,42 @@
+/* Compact research links; the implementation diagram remains the main overview. */
+.recent-progress{margin:28px 0 34px;border:1px solid var(--line);border-radius:9px;background:var(--panel);overflow:hidden}
+.recent-heading{display:flex;align-items:baseline;justify-content:space-between;gap:16px}
+.recent-heading h2{font-size:19px;letter-spacing:-.025em}
+.recent-heading>span{font-size:12px;color:var(--muted);white-space:nowrap}
+.recent-progress>.recent-heading{padding:16px 20px 13px}
+.recent-progress-rows>a{display:grid;grid-template-columns:210px minmax(0,1fr) 112px;align-items:center;gap:24px;padding:15px 20px;border-top:1px solid var(--line);color:var(--ink);font-size:13px;line-height:1.6}
+.recent-progress-rows>a:hover,.recent-study-list>a:hover{background:var(--tint);text-decoration:none}
+.recent-progress-rows strong{font-weight:600}
+.recent-progress-rows>a>span:not(.recent-entry-link){color:var(--muted)}
+.recent-entry-link{color:var(--accent);text-align:right;font-size:12px;font-weight:600;white-space:nowrap}
+.recent-studies{margin:30px 0 44px}
+.recent-studies>.recent-heading{margin-bottom:18px}
+.recent-studies .recent-heading h2{font-size:25px}
+.recent-study-list{border:1px solid var(--line);border-radius:9px;background:var(--panel);overflow:hidden}
+.recent-study-list>a{display:grid;grid-template-columns:minmax(240px,.95fr) minmax(0,1.5fr) 24px;align-items:center;gap:24px;padding:23px 24px;color:var(--ink)}
+.recent-study-list>a+a{border-top:1px solid var(--line)}
+.recent-study-date{display:block;font-size:10px;letter-spacing:.055em;font-weight:650;color:var(--muted);margin-bottom:6px}
+.recent-study-list h3{font-size:18px;margin:0}
+.recent-study-list p{font-size:14px;line-height:1.65;color:var(--muted);margin:0}
+.recent-study-arrow{font-size:20px;color:var(--accent);text-align:right}
+.recent-study-footer{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-top:17px}
+.engineering-archive{padding:21px 0;margin:38px 0}
+.engineering-archive>summary{font-size:16px}
+.engineering-archive>.home-test-records:first-of-type{border-top:0;margin-top:18px;padding-top:16px}
+@media(max-width:800px){
+  .recent-progress-rows>a{grid-template-columns:180px minmax(0,1fr);gap:8px 20px}
+  .recent-entry-link{grid-column:2;text-align:left}
+  .recent-study-list>a{grid-template-columns:minmax(0,1fr) 24px;gap:12px 18px}
+  .recent-study-list>a>div{grid-column:1}
+  .recent-study-list p{grid-column:1;grid-row:2}
+  .recent-study-arrow{grid-column:2;grid-row:1 / span 2}
+}
+@media(max-width:540px){
+  .recent-heading{align-items:flex-start;gap:8px;flex-direction:column}
+  .recent-progress>.recent-heading{padding:16px 17px 12px}
+  .recent-progress-rows>a{grid-template-columns:1fr;gap:5px;padding:16px 17px}
+  .recent-entry-link{grid-column:1;margin-top:4px}
+  .recent-study-list>a{padding:20px 18px}
+  .recent-study-list h3{font-size:17px}
+  .recent-study-list p{font-size:13px}
+}

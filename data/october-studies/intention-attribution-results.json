@@ -1,0 +1,209 @@
+{
+  "schema_version": 1,
+  "study_id": "intention-attribution",
+  "export_kind": "selected aggregate evidence",
+  "provenance": [
+    {
+      "path": "output/research/2026-10-17/intention-attribution/RESULTS.md",
+      "sha256": "b80d43564b9342cf74687d1d7f84f79dc399cd53df74ccce22ff3e9eaa91be48",
+      "selected_fields": [
+        "complete original Markdown; unchanged bytes"
+      ]
+    },
+    {
+      "path": "output/research/2026-10-17/intention-attribution/context_trial/results.json",
+      "sha256": "d3788b2a13182e355b3e6362bb3e3ab9e6b46a819c89257bedcea86654d7fc08",
+      "selected_fields": [
+        "analysis_kind",
+        "design",
+        "limitations",
+        "per_condition: model, context, adjudicated scores"
+      ]
+    },
+    {
+      "path": "output/research/2026-10-17/intention-attribution/oracle_trial/results.json",
+      "sha256": "db02db82553ef7ef6352b67c7aabe4b7dc217ff6883175b4c33368ba61ec7c15",
+      "selected_fields": [
+        "description",
+        "scoring",
+        "primary_successes",
+        "runs",
+        "necessary_conclusions_passed",
+        "necessary_conclusions_total",
+        "actual_unique_model_calls",
+        "actual_unique_total_tokens",
+        "rows: name, case_id, necessary_conclusions_passed, necessary_conclusions_total, primary_success"
+      ]
+    }
+  ],
+  "summary": {
+    "recognition": {
+      "analysis_kind": "offline diagnostic; not native harness score",
+      "design": {
+        "models": [
+          "qwen2.5:14b-instruct",
+          "qwen3.5:9b"
+        ],
+        "contexts": [
+          "minimal",
+          "saved-context"
+        ],
+        "conditions": 4,
+        "items_per_condition": 8,
+        "prefixes": 8,
+        "meetings": 3,
+        "runs_per_cell": 1,
+        "outputs": 32,
+        "criterion_instances": 112,
+        "prefix_specific_criteria": 28,
+        "prefixes_are_independent_samples": false
+      },
+      "limitations": [
+        "Offline diagnostic of human information-need attribution, not native harness scoring or native agent execution.",
+        "Three meetings supply eight correlated prefixes; these are not eight independent samples. Each of four model/context conditions has eight outputs, with one run per cell.",
+        "The two initial reviews were blinded AI reviews, not a human gold standard. The root-agent adjudicator had seen model/context conditions and was not blinded.",
+        "Agreement is descriptive exact-label agreement over 112 criterion instances, including uncertain/uncertain agreements; it is not an independent-sample inference.",
+        "Historical assistant/tool content was quoted reference data under the same diagnostic instruction. No original system instruction/tool schema was executed and no new retrieval was performed.",
+        "Uncertainty is retained. Any fail makes the whole item fail; otherwise any uncertain makes it uncertain; all-pass items pass.",
+        "Counts and paired differences are descriptive only. No confidence interval, significance claim, or causal/general model-quality conclusion is computed.",
+        "Token counts and timing are reported from raw responses; tokenization differs by model. Requested and observed context sizes do not by themselves prove full context retention."
+      ],
+      "per_condition": [
+        {
+          "model": "qwen2.5:14b-instruct",
+          "context": "minimal",
+          "scores": {
+            "whole_items": {
+              "pass": 3,
+              "fail": 3,
+              "uncertain": 2,
+              "total": 8
+            },
+            "criteria": {
+              "pass": 22,
+              "fail": 3,
+              "uncertain": 3,
+              "total": 28
+            },
+            "whole_item_pass_fraction": 0.375,
+            "criterion_pass_fraction": 0.7857142857142857
+          }
+        },
+        {
+          "model": "qwen2.5:14b-instruct",
+          "context": "saved-context",
+          "scores": {
+            "whole_items": {
+              "pass": 1,
+              "fail": 5,
+              "uncertain": 2,
+              "total": 8
+            },
+            "criteria": {
+              "pass": 15,
+              "fail": 11,
+              "uncertain": 2,
+              "total": 28
+            },
+            "whole_item_pass_fraction": 0.125,
+            "criterion_pass_fraction": 0.5357142857142857
+          }
+        },
+        {
+          "model": "qwen3.5:9b",
+          "context": "minimal",
+          "scores": {
+            "whole_items": {
+              "pass": 5,
+              "fail": 3,
+              "uncertain": 0,
+              "total": 8
+            },
+            "criteria": {
+              "pass": 23,
+              "fail": 4,
+              "uncertain": 1,
+              "total": 28
+            },
+            "whole_item_pass_fraction": 0.625,
+            "criterion_pass_fraction": 0.8214285714285714
+          }
+        },
+        {
+          "model": "qwen3.5:9b",
+          "context": "saved-context",
+          "scores": {
+            "whole_items": {
+              "pass": 2,
+              "fail": 6,
+              "uncertain": 0,
+              "total": 8
+            },
+            "criteria": {
+              "pass": 11,
+              "fail": 14,
+              "uncertain": 3,
+              "total": 28
+            },
+            "whole_item_pass_fraction": 0.25,
+            "criterion_pass_fraction": 0.39285714285714285
+          }
+        }
+      ]
+    },
+    "continuation": {
+      "description": "Two selected development meetings, three branches from one common prefix per meeting; one run per branch.",
+      "scoring": "Two independent blinded AI reviewers. Not human gold or held-out performance.",
+      "primary_successes": 0,
+      "runs": 6,
+      "necessary_conclusions_passed": 4,
+      "necessary_conclusions_total": 18,
+      "actual_unique_model_calls": 48,
+      "actual_unique_total_tokens": 310161,
+      "rows": [
+        {
+          "name": "field-control",
+          "case_id": "meeting-field-trip-app",
+          "necessary_conclusions_passed": 1,
+          "necessary_conclusions_total": 3,
+          "primary_success": false
+        },
+        {
+          "name": "field-oracle",
+          "case_id": "meeting-field-trip-app",
+          "necessary_conclusions_passed": 2,
+          "necessary_conclusions_total": 3,
+          "primary_success": false
+        },
+        {
+          "name": "field-verbatim",
+          "case_id": "meeting-field-trip-app",
+          "necessary_conclusions_passed": 1,
+          "necessary_conclusions_total": 3,
+          "primary_success": false
+        },
+        {
+          "name": "volunteer-control",
+          "case_id": "meeting-volunteer-partial-cancel",
+          "necessary_conclusions_passed": 0,
+          "necessary_conclusions_total": 3,
+          "primary_success": false
+        },
+        {
+          "name": "volunteer-oracle",
+          "case_id": "meeting-volunteer-partial-cancel",
+          "necessary_conclusions_passed": 0,
+          "necessary_conclusions_total": 3,
+          "primary_success": false
+        },
+        {
+          "name": "volunteer-verbatim",
+          "case_id": "meeting-volunteer-partial-cancel",
+          "necessary_conclusions_passed": 0,
+          "necessary_conclusions_total": 3,
+          "primary_success": false
+        }
+      ]
+    }
+  }
+}

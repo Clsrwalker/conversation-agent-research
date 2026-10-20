@@ -14,7 +14,9 @@ let selectedMetric = 'help';
 function showPage({initial = false} = {}) {
   const requested = location.hash.slice(1);
   if (requested === 'main') return;
-  const id = Object.hasOwn(titles, requested) ? requested : 'overview';
+  const target = document.getElementById(requested);
+  const containingPage = target?.closest('.page');
+  const id = Object.hasOwn(titles, requested) ? requested : containingPage?.id || 'overview';
   document.body.dataset.page = id;
   document.querySelectorAll('.page').forEach(page => { page.hidden = page.id !== id; });
   document.querySelectorAll('[data-page]').forEach(link => {
@@ -23,7 +25,12 @@ function showPage({initial = false} = {}) {
     else link.removeAttribute('aria-current');
   });
   document.title = `${titles[id]} · Conversation Agent Research`;
-  if (!initial) {
+  if (target && target.id !== id && containingPage) {
+    for (let element = target; element && element !== containingPage; element = element.parentElement) {
+      if (element.tagName === 'DETAILS') element.open = true;
+    }
+    requestAnimationFrame(() => target.scrollIntoView({block: 'start', behavior: 'instant'}));
+  } else if (!initial) {
     const main = document.getElementById('main');
     main.focus({preventScroll: true});
     main.scrollIntoView({block: 'start', behavior: 'instant'});

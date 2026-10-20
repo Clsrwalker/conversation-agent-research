@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "study_id": "delivery-recovery",
+  "export_kind": "selected aggregate evidence",
+  "provenance": [
+    {
+      "path": "output/research/2026-10-17/delivery-recovery/RESULTS.md",
+      "sha256": "3d734dddc3457622b4cfc7598fc763dd693b8a62a2190fdd8f082ba1f4d31a5f",
+      "selected_fields": [
+        "complete original Markdown; unchanged bytes"
+      ]
+    },
+    {
+      "path": "output/research/2026-10-17/delivery-recovery/results.json",
+      "sha256": "43c745176d05588e43a0ab7a5914184df770767589174530c4d09ff721f90509",
+      "selected_fields": [
+        "study_id",
+        "completed_runs",
+        "assessment",
+        "scoring",
+        "arms",
+        "relative_changes",
+        "limitations"
+      ]
+    }
+  ],
+  "summary": {
+    "study_id": "meeting-delivery-recovery-local14-v1",
+    "completed_runs": 12,
+    "assessment": "exploratory development comparison; three independent synthetic scenarios",
+    "scoring": "current visible assistance at frozen deadline; private prose earns no delivery credit",
+    "arms": {
+      "agent-led-delivery-recovery": {
+        "runs": 6,
+        "independent_scenarios": 3,
+        "primary_success": 0,
+        "primary_denominator": 6,
+        "need_outcomes": {
+          "incorrect_or_unsupported": 3,
+          "omitted": 14,
+          "pass": 1
+        },
+        "need_denominator": 18,
+        "final_material_error_runs": 2,
+        "intermediate_material_error_runs": 2,
+        "stale_active_runs": 1,
+        "unnecessary_publication_confirmed": 0,
+        "unnecessary_publication_uncertain": 1,
+        "metrics": {
+          "model_calls": 113,
+          "input_tokens": 712714,
+          "output_tokens": 18826,
+          "total_tokens": 731540,
+          "api_wall_ms": 395111.059,
+          "publications": 8,
+          "withdrawals": 0,
+          "delivery_feedback_issued": 39,
+          "delivery_feedback_consumed": 38,
+          "mean_api_wall_seconds": 65.85184316666667,
+          "median_api_wall_seconds": 56.250609,
+          "scheduled_dialogue_turns": 54,
+          "consumed_dialogue_turns": 41,
+          "early_budget_exits": 6,
+          "failed_or_pending_provider_calls": 0
+        }
+      },
+      "agent-led-recovery": {
+        "runs": 6,
+        "independent_scenarios": 3,
+        "primary_success": 0,
+        "primary_denominator": 6,
+        "need_outcomes": {
+          "omitted": 17,
+          "incorrect_or_unsupported": 1
+        },
+        "need_denominator": 18,
+        "final_material_error_runs": 1,
+        "intermediate_material_error_runs": 1,
+        "stale_active_runs": 0,
+        "unnecessary_publication_confirmed": 0,
+        "unnecessary_publication_uncertain": 0,
+        "metrics": {
+          "model_calls": 76,
+          "input_tokens": 390461,
+          "output_tokens": 12747,
+          "total_tokens": 403208,
+          "api_wall_ms": 237719.92,
+          "publications": 2,
+          "withdrawals": 0,
+          "delivery_feedback_issued": 0,
+          "delivery_feedback_consumed": 0,
+          "mean_api_wall_seconds": 39.61998666666667,
+          "median_api_wall_seconds": 40.309381,
+          "scheduled_dialogue_turns": 54,
+          "consumed_dialogue_turns": 54,
+          "early_budget_exits": 0,
+          "failed_or_pending_provider_calls": 0
+        }
+      }
+    },
+    "relative_changes": {
+      "model_calls_change_percent": 48.684210526315795,
+      "total_tokens_change_percent": 81.42993194579473,
+      "api_wall_ms_change_percent": 66.20864545133618
+    },
+    "limitations": [
+      "Not real ASR, real meetings, a held-out test, or a user study.",
+      "No all-silence scenario and no treatment failed-card operation occurred.",
+      "Three scenarios repeated twice; no statistical generalization claim.",
+      "One framework compactor output is missing; all 188 normal investigator outputs recovered.",
+      "One repeated-update diagnostic is uncertain; primary outcomes are unchanged."
+    ]
+  }
+}

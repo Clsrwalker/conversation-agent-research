@@ -1,0 +1,198 @@
+{
+  "schema_version": 1,
+  "study_id": "intent-coverage",
+  "export_kind": "selected aggregate evidence",
+  "provenance": [
+    {
+      "path": "output/research/2026-10-19/intent-coverage/RESULTS.md",
+      "sha256": "42e5bb9bfa21539bbee7641e5588f49700dc269b0a6be5a7115c1ade2275ed10",
+      "selected_fields": [
+        "complete original Markdown; unchanged bytes"
+      ]
+    },
+    {
+      "path": "output/research/2026-10-19/intent-coverage/scoring/aggregate.json",
+      "sha256": "3a88ecd00b88214a51da10120f60a39a5a9c0852a02f8d5d03610548981983b7",
+      "selected_fields": [
+        "scope",
+        "uncertainty",
+        "groups"
+      ]
+    },
+    {
+      "path": "output/research/2026-10-19/intent-coverage/scoring/recognition-counts.json",
+      "sha256": "fc9d98c9a1200da79bf2ca6dae50a09107ba1193255b8a48a1a73771bc2e36e2",
+      "selected_fields": [
+        "definitions",
+        "no_need_conditions",
+        "per_output_G_P_TP_FN_FP (counts and case/model/arm/repeat only)"
+      ]
+    }
+  ],
+  "summary": {
+    "scope": "H1 recognition only; no tool execution or factual-answer scoring",
+    "uncertainty": "Conservative marginal bounds, not necessarily jointly attainable and not statistical confidence intervals; repeats are clustered by contrast pair.",
+    "groups": [
+      {
+        "model": "qwen2.5:14b-instruct",
+        "arm": "coverage",
+        "scheduled_runs": 48,
+        "assessable_runs": 48,
+        "unassessable_runs": 0,
+        "gold_needs_assessable": 56,
+        "gold_needs_excluded_due_to_unavailable_output": 0,
+        "predicted_needs_bounds": [
+          64,
+          64
+        ],
+        "missed_true_needs_bounds": [
+          0,
+          0
+        ],
+        "miss_rate_bounds": [
+          0.0,
+          0.0
+        ],
+        "invented_needs_bounds": [
+          8,
+          8
+        ],
+        "false_discovery_fraction_bounds": [
+          0.125,
+          0.125
+        ],
+        "false_discovery_denominator_may_be_zero": false,
+        "invented_per_assessable_case_bounds": [
+          0.16666666666666666,
+          0.16666666666666666
+        ],
+        "no_need_cases_assessable": 8,
+        "no_need_cases_with_invention_bounds": [
+          4,
+          4
+        ],
+        "uncertain_runs": 0
+      },
+      {
+        "model": "qwen2.5:14b-instruct",
+        "arm": "direct",
+        "scheduled_runs": 48,
+        "assessable_runs": 48,
+        "unassessable_runs": 0,
+        "gold_needs_assessable": 56,
+        "gold_needs_excluded_due_to_unavailable_output": 0,
+        "predicted_needs_bounds": [
+          58,
+          58
+        ],
+        "missed_true_needs_bounds": [
+          0,
+          0
+        ],
+        "miss_rate_bounds": [
+          0.0,
+          0.0
+        ],
+        "invented_needs_bounds": [
+          2,
+          2
+        ],
+        "false_discovery_fraction_bounds": [
+          0.034482758620689655,
+          0.034482758620689655
+        ],
+        "false_discovery_denominator_may_be_zero": false,
+        "invented_per_assessable_case_bounds": [
+          0.041666666666666664,
+          0.041666666666666664
+        ],
+        "no_need_cases_assessable": 8,
+        "no_need_cases_with_invention_bounds": [
+          2,
+          2
+        ],
+        "uncertain_runs": 0
+      },
+      {
+        "model": "qwen3.5:9b",
+        "arm": "coverage",
+        "scheduled_runs": 48,
+        "assessable_runs": 48,
+        "unassessable_runs": 0,
+        "gold_needs_assessable": 56,
+        "gold_needs_excluded_due_to_unavailable_output": 0,
+        "predicted_needs_bounds": [
+          54,
+          58
+        ],
+        "missed_true_needs_bounds": [
+          0,
+          4
+        ],
+        "miss_rate_bounds": [
+          0.0,
+          0.07142857142857142
+        ],
+        "invented_needs_bounds": [
+          2,
+          6
+        ],
+        "false_discovery_fraction_bounds": [
+          0.034482758620689655,
+          0.10344827586206896
+        ],
+        "false_discovery_denominator_may_be_zero": false,
+        "invented_per_assessable_case_bounds": [
+          0.041666666666666664,
+          0.125
+        ],
+        "no_need_cases_assessable": 8,
+        "no_need_cases_with_invention_bounds": [
+          0,
+          0
+        ],
+        "uncertain_runs": 4
+      },
+      {
+        "model": "qwen3.5:9b",
+        "arm": "direct",
+        "scheduled_runs": 48,
+        "assessable_runs": 48,
+        "unassessable_runs": 0,
+        "gold_needs_assessable": 56,
+        "gold_needs_excluded_due_to_unavailable_output": 0,
+        "predicted_needs_bounds": [
+          42,
+          44
+        ],
+        "missed_true_needs_bounds": [
+          12,
+          14
+        ],
+        "miss_rate_bounds": [
+          0.21428571428571427,
+          0.25
+        ],
+        "invented_needs_bounds": [
+          0,
+          2
+        ],
+        "false_discovery_fraction_bounds": [
+          0.0,
+          0.045454545454545456
+        ],
+        "false_discovery_denominator_may_be_zero": false,
+        "invented_per_assessable_case_bounds": [
+          0.0,
+          0.041666666666666664
+        ],
+        "no_need_cases_assessable": 8,
+        "no_need_cases_with_invention_bounds": [
+          0,
+          0
+        ],
+        "uncertain_runs": 2
+      }
+    ]
+  }
+}

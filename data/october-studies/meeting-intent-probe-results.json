@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "study_id": "meeting-intent-probe",
+  "export_kind": "selected aggregate evidence",
+  "provenance": [
+    {
+      "path": "output/research/2026-10-17/meeting-intent-probe/RESULTS.md",
+      "sha256": "ed9ee600a120b56b4624472a688c5c831a9dace9d9d9e2fc84b4203da959a103",
+      "selected_fields": [
+        "complete original Markdown; unchanged bytes"
+      ]
+    },
+    {
+      "path": "output/research/2026-10-17/meeting-intent-probe/results.json",
+      "sha256": "bdce0602c7afb136470f0fd528479c2b4fdefeab026af2ad45c1d8f9d820d53b",
+      "selected_fields": [
+        "study",
+        "calls",
+        "independent_meetings",
+        "prefixes",
+        "arms",
+        "review_agreement"
+      ]
+    }
+  ],
+  "summary": {
+    "study": "meeting-prefix-recognition-diagnostic",
+    "calls": 16,
+    "independent_meetings": 3,
+    "prefixes": 8,
+    "arms": {
+      "plain": {
+        "calls": 8,
+        "input_tokens": 2574,
+        "output_tokens": 633,
+        "wall_seconds_total": 15.237628099997892,
+        "wall_seconds_median": 1.4307311499997013,
+        "model_load_seconds_total": 4.5033874,
+        "prompt_and_generation_seconds_total": 10.521656999000001,
+        "truncated": 0,
+        "prefix_outcomes": {
+          "pass": 2,
+          "fail": 4,
+          "uncertain": 2
+        }
+      },
+      "state-aware": {
+        "calls": 8,
+        "input_tokens": 3182,
+        "output_tokens": 547,
+        "wall_seconds_total": 9.642117999997936,
+        "wall_seconds_median": 1.1630632500000502,
+        "model_load_seconds_total": 0.0397249,
+        "prompt_and_generation_seconds_total": 9.272170998,
+        "truncated": 0,
+        "prefix_outcomes": {
+          "pass": 5,
+          "fail": 3,
+          "uncertain": 0
+        }
+      }
+    },
+    "review_agreement": {
+      "exact": 55,
+      "criteria": 56,
+      "disagreements": [
+        {
+          "item_id": "item-01",
+          "index": 2,
+          "a": {
+            "index": 2,
+            "score": "uncertain",
+            "reason": "保留 Owen 自行预约及取消后的空位问题，但仍列一份预约能否供多人使用；没有明确旧共享路径失效，也没有明确声称可继续使用 Mira 的预约。"
+          },
+          "b": {
+            "index": 2,
+            "score": "fail",
+            "reason": "仍把“Whether a single bench reservation can cover multiple people”列为当前未决问题；在唯一提到的 Mira 预约已取消后，这一共享预约问题已失去当前前提。"
+          }
+        }
+      ]
+    }
+  }
+}

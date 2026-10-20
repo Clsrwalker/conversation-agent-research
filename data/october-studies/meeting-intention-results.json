@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "study_id": "meeting-intention",
+  "export_kind": "selected aggregate evidence",
+  "provenance": [
+    {
+      "path": "output/research/2026-10-16/meeting-intention/RESULTS.md",
+      "sha256": "e020b03d9c596cc1580244369676581c6a514131d96ac00812f0954cd7c61d54",
+      "selected_fields": [
+        "complete original Markdown; unchanged bytes"
+      ]
+    },
+    {
+      "path": "output/research/2026-10-16/meeting-intention/results.json",
+      "sha256": "5e0354d621dbebb9e82bf3cd68d7989ed526bbcbbb71332cfdd9a58de843e0ef",
+      "selected_fields": [
+        "rating_method",
+        "runs",
+        "scenarios",
+        "categories",
+        "need_outcomes",
+        "flags",
+        "cost",
+        "status_counts",
+        "stop_reasons",
+        "limits"
+      ]
+    }
+  ],
+  "summary": {
+    "rating_method": "Two independent AI reviews and trace-based adjudication; not human labels",
+    "runs": 6,
+    "scenarios": 3,
+    "categories": {
+      "required_help": {
+        "runs": 6,
+        "scenarios": 3,
+        "successes": 0,
+        "uncertain_runs": 1,
+        "primary_uncertain_runs": 0,
+        "successes_excluding_primary_uncertain": 0,
+        "successes_including_primary_uncertain": 0
+      }
+    },
+    "need_outcomes": {
+      "omitted": 16,
+      "pass": 1,
+      "uncertain": 1
+    },
+    "flags": {
+      "material_error": 0,
+      "missed_required_help": 6,
+      "unnecessary_publication": 1,
+      "unnecessary_revision": 1,
+      "stale_new_publication": 0,
+      "uncertain": 1
+    },
+    "cost": {
+      "model_calls": 77,
+      "input_tokens": 413154,
+      "output_tokens": 14132,
+      "total_tokens": 427286,
+      "inference_wall_ms_total": 261684.062,
+      "inference_wall_ms_median": 40376.807,
+      "inference_wall_ms_range": [
+        32229.543,
+        58789.155
+      ],
+      "paid_api_calls": 0,
+      "provider": "ollama",
+      "model": "qwen2.5:14b-instruct"
+    },
+    "status_counts": {
+      "completed": 6
+    },
+    "stop_reasons": {
+      "window_closed": 6
+    },
+    "limits": [
+      "Exploratory scripted text replays with fictional closed-corpus facts",
+      "Repeated runs do not add independent scenarios",
+      "No real-ASR or human-usefulness conclusion",
+      "No improved-harness comparison in this batch",
+      "Virtual timeline differs from measured inference wall time",
+      "Ollama 0.40.4 differs from the historical baseline runtime"
+    ]
+  }
+}

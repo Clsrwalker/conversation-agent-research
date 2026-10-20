@@ -1,0 +1,4023 @@
+{
+  "schema_version": 1,
+  "study_id": "intent-coverage",
+  "export_kind": "selected aggregate evidence",
+  "provenance": [
+    {
+      "path": "output/research/2026-10-19/intent-coverage/scoring/recognition-counts.json",
+      "sha256": "fc9d98c9a1200da79bf2ca6dae50a09107ba1193255b8a48a1a73771bc2e36e2",
+      "selected_fields": [
+        "definitions",
+        "no_need_conditions",
+        "per_output_G_P_TP_FN_FP (counts and case/model/arm/repeat only)"
+      ]
+    }
+  ],
+  "summary": {
+    "definitions": "G=gold_count; P=predicted_min..predicted_max; TP=true_positive_bounds; FN=missed_min..missed_max; FP=invented_min..invented_max. Bounds are marginal.",
+    "no_need_conditions": [
+      {
+        "model": "qwen2.5:14b-instruct",
+        "arm": "coverage",
+        "scheduled_runs": 8,
+        "assessable_runs": 8,
+        "unassessable_runs": 0,
+        "gold_needs_assessable": 0,
+        "gold_needs_excluded_due_to_unavailable_output": 0,
+        "predicted_needs_bounds": [
+          8,
+          8
+        ],
+        "missed_true_needs_bounds": [
+          0,
+          0
+        ],
+        "miss_rate_bounds": [
+          null,
+          null
+        ],
+        "invented_needs_bounds": [
+          8,
+          8
+        ],
+        "false_discovery_fraction_bounds": [
+          1.0,
+          1.0
+        ],
+        "false_discovery_denominator_may_be_zero": false,
+        "invented_per_assessable_case_bounds": [
+          1.0,
+          1.0
+        ],
+        "no_need_cases_assessable": 8,
+        "no_need_cases_with_invention_bounds": [
+          4,
+          4
+        ],
+        "uncertain_runs": 0
+      },
+      {
+        "model": "qwen2.5:14b-instruct",
+        "arm": "direct",
+        "scheduled_runs": 8,
+        "assessable_runs": 8,
+        "unassessable_runs": 0,
+        "gold_needs_assessable": 0,
+        "gold_needs_excluded_due_to_unavailable_output": 0,
+        "predicted_needs_bounds": [
+          2,
+          2
+        ],
+        "missed_true_needs_bounds": [
+          0,
+          0
+        ],
+        "miss_rate_bounds": [
+          null,
+          null
+        ],
+        "invented_needs_bounds": [
+          2,
+          2
+        ],
+        "false_discovery_fraction_bounds": [
+          1.0,
+          1.0
+        ],
+        "false_discovery_denominator_may_be_zero": false,
+        "invented_per_assessable_case_bounds": [
+          0.25,
+          0.25
+        ],
+        "no_need_cases_assessable": 8,
+        "no_need_cases_with_invention_bounds": [
+          2,
+          2
+        ],
+        "uncertain_runs": 0
+      },
+      {
+        "model": "qwen3.5:9b",
+        "arm": "coverage",
+        "scheduled_runs": 8,
+        "assessable_runs": 8,
+        "unassessable_runs": 0,
+        "gold_needs_assessable": 0,
+        "gold_needs_excluded_due_to_unavailable_output": 0,
+        "predicted_needs_bounds": [
+          0,
+          0
+        ],
+        "missed_true_needs_bounds": [
+          0,
+          0
+        ],
+        "miss_rate_bounds": [
+          null,
+          null
+        ],
+        "invented_needs_bounds": [
+          0,
+          0
+        ],
+        "false_discovery_fraction_bounds": [
+          null,
+          null
+        ],
+        "false_discovery_denominator_may_be_zero": true,
+        "invented_per_assessable_case_bounds": [
+          0.0,
+          0.0
+        ],
+        "no_need_cases_assessable": 8,
+        "no_need_cases_with_invention_bounds": [
+          0,
+          0
+        ],
+        "uncertain_runs": 0
+      },
+      {
+        "model": "qwen3.5:9b",
+        "arm": "direct",
+        "scheduled_runs": 8,
+        "assessable_runs": 8,
+        "unassessable_runs": 0,
+        "gold_needs_assessable": 0,
+        "gold_needs_excluded_due_to_unavailable_output": 0,
+        "predicted_needs_bounds": [
+          0,
+          0
+        ],
+        "missed_true_needs_bounds": [
+          0,
+          0
+        ],
+        "miss_rate_bounds": [
+          null,
+          null
+        ],
+        "invented_needs_bounds": [
+          0,
+          0
+        ],
+        "false_discovery_fraction_bounds": [
+          null,
+          null
+        ],
+        "false_discovery_denominator_may_be_zero": true,
+        "invented_per_assessable_case_bounds": [
+          0.0,
+          0.0
+        ],
+        "no_need_cases_assessable": 8,
+        "no_need_cases_with_invention_bounds": [
+          0,
+          0
+        ],
+        "uncertain_runs": 0
+      }
+    ],
+    "per_output_counts": [
+      {
+        "case_id": "icv1-08b",
+        "pair_id": "icv1-p08",
+        "category": "action_vs_information",
+        "model": "qwen3.5:9b",
+        "arm": "coverage",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 0,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 1,
+        "invented_min": 0,
+        "invented_max": 1,
+        "true_positive_bounds": [
+          0,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-12a",
+        "pair_id": "icv1-p12",
+        "category": "settled_vs_open_dimensions",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "direct",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 2,
+        "predicted_min": 2,
+        "predicted_max": 2,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          2,
+          2
+        ]
+      },
+      {
+        "case_id": "icv1-08b",
+        "pair_id": "icv1-p08",
+        "category": "action_vs_information",
+        "model": "qwen3.5:9b",
+        "arm": "coverage",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 0,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 1,
+        "invented_min": 0,
+        "invented_max": 1,
+        "true_positive_bounds": [
+          0,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-10a",
+        "pair_id": "icv1-p10",
+        "category": "pragmatic_partial_resolution",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "direct",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 2,
+        "predicted_min": 2,
+        "predicted_max": 2,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          2,
+          2
+        ]
+      },
+      {
+        "case_id": "icv1-05b",
+        "pair_id": "icv1-p05",
+        "category": "resolved_question",
+        "model": "qwen3.5:9b",
+        "arm": "direct",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-04b",
+        "pair_id": "icv1-p04",
+        "category": "background_scope",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "coverage",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-10b",
+        "pair_id": "icv1-p10",
+        "category": "pragmatic_partial_resolution",
+        "model": "qwen3.5:9b",
+        "arm": "coverage",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-12a",
+        "pair_id": "icv1-p12",
+        "category": "settled_vs_open_dimensions",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "direct",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 2,
+        "predicted_min": 2,
+        "predicted_max": 2,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          2,
+          2
+        ]
+      },
+      {
+        "case_id": "icv1-02b",
+        "pair_id": "icv1-p02",
+        "category": "filtered_information",
+        "model": "qwen3.5:9b",
+        "arm": "direct",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 0,
+        "predicted_max": 0,
+        "missed_min": 1,
+        "missed_max": 1,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          0,
+          0
+        ]
+      },
+      {
+        "case_id": "icv1-03b",
+        "pair_id": "icv1-p03",
+        "category": "pragmatic_information_gap",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "direct",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-03b",
+        "pair_id": "icv1-p03",
+        "category": "pragmatic_information_gap",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "coverage",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-10a",
+        "pair_id": "icv1-p10",
+        "category": "pragmatic_partial_resolution",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "direct",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 2,
+        "predicted_min": 2,
+        "predicted_max": 2,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          2,
+          2
+        ]
+      },
+      {
+        "case_id": "icv1-06a",
+        "pair_id": "icv1-p06",
+        "category": "rhetorical_vs_genuine",
+        "model": "qwen3.5:9b",
+        "arm": "direct",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-03a",
+        "pair_id": "icv1-p03",
+        "category": "pragmatic_information_gap",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "coverage",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 2,
+        "predicted_min": 2,
+        "predicted_max": 2,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          2,
+          2
+        ]
+      },
+      {
+        "case_id": "icv1-08b",
+        "pair_id": "icv1-p08",
+        "category": "action_vs_information",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "direct",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-11a",
+        "pair_id": "icv1-p11",
+        "category": "quoted_practice_vs_current",
+        "model": "qwen3.5:9b",
+        "arm": "direct",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 2,
+        "predicted_min": 2,
+        "predicted_max": 2,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          2,
+          2
+        ]
+      },
+      {
+        "case_id": "icv1-10a",
+        "pair_id": "icv1-p10",
+        "category": "pragmatic_partial_resolution",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "coverage",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 2,
+        "predicted_min": 2,
+        "predicted_max": 2,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          2,
+          2
+        ]
+      },
+      {
+        "case_id": "icv1-01a",
+        "pair_id": "icv1-p01",
+        "category": "explicit_compound",
+        "model": "qwen3.5:9b",
+        "arm": "coverage",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 2,
+        "predicted_min": 2,
+        "predicted_max": 2,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          2,
+          2
+        ]
+      },
+      {
+        "case_id": "icv1-08b",
+        "pair_id": "icv1-p08",
+        "category": "action_vs_information",
+        "model": "qwen3.5:9b",
+        "arm": "direct",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 0,
+        "predicted_max": 0,
+        "missed_min": 1,
+        "missed_max": 1,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          0,
+          0
+        ]
+      },
+      {
+        "case_id": "icv1-09a",
+        "pair_id": "icv1-p09",
+        "category": "partial_compound",
+        "model": "qwen3.5:9b",
+        "arm": "coverage",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 2,
+        "predicted_min": 2,
+        "predicted_max": 2,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          2,
+          2
+        ]
+      },
+      {
+        "case_id": "icv1-08a",
+        "pair_id": "icv1-p08",
+        "category": "action_vs_information",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "coverage",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 0,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 1,
+        "invented_max": 1,
+        "true_positive_bounds": [
+          0,
+          0
+        ]
+      },
+      {
+        "case_id": "icv1-02a",
+        "pair_id": "icv1-p02",
+        "category": "filtered_information",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "direct",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-03b",
+        "pair_id": "icv1-p03",
+        "category": "pragmatic_information_gap",
+        "model": "qwen3.5:9b",
+        "arm": "direct",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-06a",
+        "pair_id": "icv1-p06",
+        "category": "rhetorical_vs_genuine",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "coverage",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-11b",
+        "pair_id": "icv1-p11",
+        "category": "quoted_practice_vs_current",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "direct",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 2,
+        "predicted_min": 2,
+        "predicted_max": 2,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          2,
+          2
+        ]
+      },
+      {
+        "case_id": "icv1-01b",
+        "pair_id": "icv1-p01",
+        "category": "explicit_compound",
+        "model": "qwen3.5:9b",
+        "arm": "coverage",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-02a",
+        "pair_id": "icv1-p02",
+        "category": "filtered_information",
+        "model": "qwen3.5:9b",
+        "arm": "direct",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 0,
+        "predicted_max": 0,
+        "missed_min": 1,
+        "missed_max": 1,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          0,
+          0
+        ]
+      },
+      {
+        "case_id": "icv1-03a",
+        "pair_id": "icv1-p03",
+        "category": "pragmatic_information_gap",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "coverage",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 2,
+        "predicted_min": 2,
+        "predicted_max": 2,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          2,
+          2
+        ]
+      },
+      {
+        "case_id": "icv1-11a",
+        "pair_id": "icv1-p11",
+        "category": "quoted_practice_vs_current",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "coverage",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 2,
+        "predicted_min": 2,
+        "predicted_max": 2,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          2,
+          2
+        ]
+      },
+      {
+        "case_id": "icv1-02a",
+        "pair_id": "icv1-p02",
+        "category": "filtered_information",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "coverage",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-11b",
+        "pair_id": "icv1-p11",
+        "category": "quoted_practice_vs_current",
+        "model": "qwen3.5:9b",
+        "arm": "direct",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 2,
+        "predicted_min": 1,
+        "predicted_max": 2,
+        "missed_min": 0,
+        "missed_max": 1,
+        "invented_min": 0,
+        "invented_max": 1,
+        "true_positive_bounds": [
+          1,
+          2
+        ]
+      },
+      {
+        "case_id": "icv1-09b",
+        "pair_id": "icv1-p09",
+        "category": "partial_compound",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "coverage",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-02b",
+        "pair_id": "icv1-p02",
+        "category": "filtered_information",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "direct",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-03a",
+        "pair_id": "icv1-p03",
+        "category": "pragmatic_information_gap",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "direct",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 2,
+        "predicted_min": 2,
+        "predicted_max": 2,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          2,
+          2
+        ]
+      },
+      {
+        "case_id": "icv1-01a",
+        "pair_id": "icv1-p01",
+        "category": "explicit_compound",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "coverage",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 2,
+        "predicted_min": 2,
+        "predicted_max": 2,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          2,
+          2
+        ]
+      },
+      {
+        "case_id": "icv1-03a",
+        "pair_id": "icv1-p03",
+        "category": "pragmatic_information_gap",
+        "model": "qwen3.5:9b",
+        "arm": "coverage",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 2,
+        "predicted_min": 2,
+        "predicted_max": 2,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          2,
+          2
+        ]
+      },
+      {
+        "case_id": "icv1-02a",
+        "pair_id": "icv1-p02",
+        "category": "filtered_information",
+        "model": "qwen3.5:9b",
+        "arm": "direct",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 0,
+        "predicted_max": 0,
+        "missed_min": 1,
+        "missed_max": 1,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          0,
+          0
+        ]
+      },
+      {
+        "case_id": "icv1-07a",
+        "pair_id": "icv1-p07",
+        "category": "role_statement",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "coverage",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 0,
+        "predicted_min": 3,
+        "predicted_max": 3,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 3,
+        "invented_max": 3,
+        "true_positive_bounds": [
+          0,
+          0
+        ]
+      },
+      {
+        "case_id": "icv1-07a",
+        "pair_id": "icv1-p07",
+        "category": "role_statement",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "direct",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 0,
+        "predicted_min": 0,
+        "predicted_max": 0,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          0,
+          0
+        ]
+      },
+      {
+        "case_id": "icv1-04a",
+        "pair_id": "icv1-p04",
+        "category": "background_scope",
+        "model": "qwen3.5:9b",
+        "arm": "coverage",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-04b",
+        "pair_id": "icv1-p04",
+        "category": "background_scope",
+        "model": "qwen3.5:9b",
+        "arm": "direct",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-03a",
+        "pair_id": "icv1-p03",
+        "category": "pragmatic_information_gap",
+        "model": "qwen3.5:9b",
+        "arm": "coverage",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 2,
+        "predicted_min": 2,
+        "predicted_max": 2,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          2,
+          2
+        ]
+      },
+      {
+        "case_id": "icv1-06b",
+        "pair_id": "icv1-p06",
+        "category": "rhetorical_vs_genuine",
+        "model": "qwen3.5:9b",
+        "arm": "direct",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 0,
+        "predicted_min": 0,
+        "predicted_max": 0,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          0,
+          0
+        ]
+      },
+      {
+        "case_id": "icv1-05b",
+        "pair_id": "icv1-p05",
+        "category": "resolved_question",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "coverage",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-03a",
+        "pair_id": "icv1-p03",
+        "category": "pragmatic_information_gap",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "direct",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 2,
+        "predicted_min": 2,
+        "predicted_max": 2,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          2,
+          2
+        ]
+      },
+      {
+        "case_id": "icv1-11a",
+        "pair_id": "icv1-p11",
+        "category": "quoted_practice_vs_current",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "coverage",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 2,
+        "predicted_min": 2,
+        "predicted_max": 2,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          2,
+          2
+        ]
+      },
+      {
+        "case_id": "icv1-04b",
+        "pair_id": "icv1-p04",
+        "category": "background_scope",
+        "model": "qwen3.5:9b",
+        "arm": "coverage",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-02b",
+        "pair_id": "icv1-p02",
+        "category": "filtered_information",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "direct",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-12a",
+        "pair_id": "icv1-p12",
+        "category": "settled_vs_open_dimensions",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "coverage",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 2,
+        "predicted_min": 2,
+        "predicted_max": 2,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          2,
+          2
+        ]
+      },
+      {
+        "case_id": "icv1-02b",
+        "pair_id": "icv1-p02",
+        "category": "filtered_information",
+        "model": "qwen3.5:9b",
+        "arm": "direct",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 0,
+        "predicted_max": 0,
+        "missed_min": 1,
+        "missed_max": 1,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          0,
+          0
+        ]
+      },
+      {
+        "case_id": "icv1-07a",
+        "pair_id": "icv1-p07",
+        "category": "role_statement",
+        "model": "qwen3.5:9b",
+        "arm": "direct",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 0,
+        "predicted_min": 0,
+        "predicted_max": 0,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          0,
+          0
+        ]
+      },
+      {
+        "case_id": "icv1-06b",
+        "pair_id": "icv1-p06",
+        "category": "rhetorical_vs_genuine",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "coverage",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 0,
+        "predicted_min": 0,
+        "predicted_max": 0,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          0,
+          0
+        ]
+      },
+      {
+        "case_id": "icv1-11b",
+        "pair_id": "icv1-p11",
+        "category": "quoted_practice_vs_current",
+        "model": "qwen3.5:9b",
+        "arm": "coverage",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 2,
+        "predicted_min": 1,
+        "predicted_max": 2,
+        "missed_min": 0,
+        "missed_max": 1,
+        "invented_min": 0,
+        "invented_max": 1,
+        "true_positive_bounds": [
+          1,
+          2
+        ]
+      },
+      {
+        "case_id": "icv1-06b",
+        "pair_id": "icv1-p06",
+        "category": "rhetorical_vs_genuine",
+        "model": "qwen3.5:9b",
+        "arm": "coverage",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 0,
+        "predicted_min": 0,
+        "predicted_max": 0,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          0,
+          0
+        ]
+      },
+      {
+        "case_id": "icv1-03b",
+        "pair_id": "icv1-p03",
+        "category": "pragmatic_information_gap",
+        "model": "qwen3.5:9b",
+        "arm": "coverage",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-01a",
+        "pair_id": "icv1-p01",
+        "category": "explicit_compound",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "direct",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 2,
+        "predicted_min": 2,
+        "predicted_max": 2,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          2,
+          2
+        ]
+      },
+      {
+        "case_id": "icv1-07b",
+        "pair_id": "icv1-p07",
+        "category": "role_statement",
+        "model": "qwen3.5:9b",
+        "arm": "direct",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 0,
+        "predicted_max": 0,
+        "missed_min": 1,
+        "missed_max": 1,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          0,
+          0
+        ]
+      },
+      {
+        "case_id": "icv1-01b",
+        "pair_id": "icv1-p01",
+        "category": "explicit_compound",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "coverage",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-04a",
+        "pair_id": "icv1-p04",
+        "category": "background_scope",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "coverage",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-12a",
+        "pair_id": "icv1-p12",
+        "category": "settled_vs_open_dimensions",
+        "model": "qwen3.5:9b",
+        "arm": "coverage",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 2,
+        "predicted_min": 2,
+        "predicted_max": 2,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          2,
+          2
+        ]
+      },
+      {
+        "case_id": "icv1-08a",
+        "pair_id": "icv1-p08",
+        "category": "action_vs_information",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "direct",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 0,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 1,
+        "invented_max": 1,
+        "true_positive_bounds": [
+          0,
+          0
+        ]
+      },
+      {
+        "case_id": "icv1-07b",
+        "pair_id": "icv1-p07",
+        "category": "role_statement",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "coverage",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-10a",
+        "pair_id": "icv1-p10",
+        "category": "pragmatic_partial_resolution",
+        "model": "qwen3.5:9b",
+        "arm": "direct",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 2,
+        "predicted_min": 2,
+        "predicted_max": 2,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          2,
+          2
+        ]
+      },
+      {
+        "case_id": "icv1-05a",
+        "pair_id": "icv1-p05",
+        "category": "resolved_question",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "coverage",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 0,
+        "predicted_min": 0,
+        "predicted_max": 0,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          0,
+          0
+        ]
+      },
+      {
+        "case_id": "icv1-01a",
+        "pair_id": "icv1-p01",
+        "category": "explicit_compound",
+        "model": "qwen3.5:9b",
+        "arm": "coverage",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 2,
+        "predicted_min": 2,
+        "predicted_max": 2,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          2,
+          2
+        ]
+      },
+      {
+        "case_id": "icv1-12a",
+        "pair_id": "icv1-p12",
+        "category": "settled_vs_open_dimensions",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "coverage",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 2,
+        "predicted_min": 2,
+        "predicted_max": 2,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          2,
+          2
+        ]
+      },
+      {
+        "case_id": "icv1-03b",
+        "pair_id": "icv1-p03",
+        "category": "pragmatic_information_gap",
+        "model": "qwen3.5:9b",
+        "arm": "direct",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-11a",
+        "pair_id": "icv1-p11",
+        "category": "quoted_practice_vs_current",
+        "model": "qwen3.5:9b",
+        "arm": "coverage",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 2,
+        "predicted_min": 2,
+        "predicted_max": 2,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          2,
+          2
+        ]
+      },
+      {
+        "case_id": "icv1-04a",
+        "pair_id": "icv1-p04",
+        "category": "background_scope",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "coverage",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-06b",
+        "pair_id": "icv1-p06",
+        "category": "rhetorical_vs_genuine",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "direct",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 0,
+        "predicted_min": 0,
+        "predicted_max": 0,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          0,
+          0
+        ]
+      },
+      {
+        "case_id": "icv1-03a",
+        "pair_id": "icv1-p03",
+        "category": "pragmatic_information_gap",
+        "model": "qwen3.5:9b",
+        "arm": "direct",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 2,
+        "predicted_min": 2,
+        "predicted_max": 2,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          2,
+          2
+        ]
+      },
+      {
+        "case_id": "icv1-04a",
+        "pair_id": "icv1-p04",
+        "category": "background_scope",
+        "model": "qwen3.5:9b",
+        "arm": "coverage",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-09a",
+        "pair_id": "icv1-p09",
+        "category": "partial_compound",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "coverage",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 2,
+        "predicted_min": 2,
+        "predicted_max": 2,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          2,
+          2
+        ]
+      },
+      {
+        "case_id": "icv1-12b",
+        "pair_id": "icv1-p12",
+        "category": "settled_vs_open_dimensions",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "direct",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 2,
+        "predicted_min": 2,
+        "predicted_max": 2,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          2,
+          2
+        ]
+      },
+      {
+        "case_id": "icv1-08a",
+        "pair_id": "icv1-p08",
+        "category": "action_vs_information",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "coverage",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 0,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 1,
+        "invented_max": 1,
+        "true_positive_bounds": [
+          0,
+          0
+        ]
+      },
+      {
+        "case_id": "icv1-06b",
+        "pair_id": "icv1-p06",
+        "category": "rhetorical_vs_genuine",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "coverage",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 0,
+        "predicted_min": 0,
+        "predicted_max": 0,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          0,
+          0
+        ]
+      },
+      {
+        "case_id": "icv1-01b",
+        "pair_id": "icv1-p01",
+        "category": "explicit_compound",
+        "model": "qwen3.5:9b",
+        "arm": "coverage",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-08a",
+        "pair_id": "icv1-p08",
+        "category": "action_vs_information",
+        "model": "qwen3.5:9b",
+        "arm": "coverage",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 0,
+        "predicted_min": 0,
+        "predicted_max": 0,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          0,
+          0
+        ]
+      },
+      {
+        "case_id": "icv1-02b",
+        "pair_id": "icv1-p02",
+        "category": "filtered_information",
+        "model": "qwen3.5:9b",
+        "arm": "coverage",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-05b",
+        "pair_id": "icv1-p05",
+        "category": "resolved_question",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "coverage",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-04a",
+        "pair_id": "icv1-p04",
+        "category": "background_scope",
+        "model": "qwen3.5:9b",
+        "arm": "direct",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-10b",
+        "pair_id": "icv1-p10",
+        "category": "pragmatic_partial_resolution",
+        "model": "qwen3.5:9b",
+        "arm": "coverage",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-12b",
+        "pair_id": "icv1-p12",
+        "category": "settled_vs_open_dimensions",
+        "model": "qwen3.5:9b",
+        "arm": "direct",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 2,
+        "predicted_min": 2,
+        "predicted_max": 2,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          2,
+          2
+        ]
+      },
+      {
+        "case_id": "icv1-03a",
+        "pair_id": "icv1-p03",
+        "category": "pragmatic_information_gap",
+        "model": "qwen3.5:9b",
+        "arm": "direct",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 2,
+        "predicted_min": 2,
+        "predicted_max": 2,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          2,
+          2
+        ]
+      },
+      {
+        "case_id": "icv1-06b",
+        "pair_id": "icv1-p06",
+        "category": "rhetorical_vs_genuine",
+        "model": "qwen3.5:9b",
+        "arm": "direct",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 0,
+        "predicted_min": 0,
+        "predicted_max": 0,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          0,
+          0
+        ]
+      },
+      {
+        "case_id": "icv1-11b",
+        "pair_id": "icv1-p11",
+        "category": "quoted_practice_vs_current",
+        "model": "qwen3.5:9b",
+        "arm": "coverage",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 2,
+        "predicted_min": 1,
+        "predicted_max": 2,
+        "missed_min": 0,
+        "missed_max": 1,
+        "invented_min": 0,
+        "invented_max": 1,
+        "true_positive_bounds": [
+          1,
+          2
+        ]
+      },
+      {
+        "case_id": "icv1-10b",
+        "pair_id": "icv1-p10",
+        "category": "pragmatic_partial_resolution",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "coverage",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-12b",
+        "pair_id": "icv1-p12",
+        "category": "settled_vs_open_dimensions",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "coverage",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 2,
+        "predicted_min": 2,
+        "predicted_max": 2,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          2,
+          2
+        ]
+      },
+      {
+        "case_id": "icv1-01b",
+        "pair_id": "icv1-p01",
+        "category": "explicit_compound",
+        "model": "qwen3.5:9b",
+        "arm": "direct",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-02a",
+        "pair_id": "icv1-p02",
+        "category": "filtered_information",
+        "model": "qwen3.5:9b",
+        "arm": "coverage",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-08b",
+        "pair_id": "icv1-p08",
+        "category": "action_vs_information",
+        "model": "qwen3.5:9b",
+        "arm": "direct",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 0,
+        "predicted_max": 0,
+        "missed_min": 1,
+        "missed_max": 1,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          0,
+          0
+        ]
+      },
+      {
+        "case_id": "icv1-01b",
+        "pair_id": "icv1-p01",
+        "category": "explicit_compound",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "direct",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-01a",
+        "pair_id": "icv1-p01",
+        "category": "explicit_compound",
+        "model": "qwen3.5:9b",
+        "arm": "direct",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 2,
+        "predicted_min": 0,
+        "predicted_max": 0,
+        "missed_min": 2,
+        "missed_max": 2,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          0,
+          0
+        ]
+      },
+      {
+        "case_id": "icv1-06a",
+        "pair_id": "icv1-p06",
+        "category": "rhetorical_vs_genuine",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "direct",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-04a",
+        "pair_id": "icv1-p04",
+        "category": "background_scope",
+        "model": "qwen3.5:9b",
+        "arm": "direct",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-04b",
+        "pair_id": "icv1-p04",
+        "category": "background_scope",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "coverage",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-07a",
+        "pair_id": "icv1-p07",
+        "category": "role_statement",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "coverage",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 0,
+        "predicted_min": 3,
+        "predicted_max": 3,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 3,
+        "invented_max": 3,
+        "true_positive_bounds": [
+          0,
+          0
+        ]
+      },
+      {
+        "case_id": "icv1-01b",
+        "pair_id": "icv1-p01",
+        "category": "explicit_compound",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "direct",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-09a",
+        "pair_id": "icv1-p09",
+        "category": "partial_compound",
+        "model": "qwen3.5:9b",
+        "arm": "direct",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 2,
+        "predicted_min": 2,
+        "predicted_max": 2,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          2,
+          2
+        ]
+      },
+      {
+        "case_id": "icv1-12b",
+        "pair_id": "icv1-p12",
+        "category": "settled_vs_open_dimensions",
+        "model": "qwen3.5:9b",
+        "arm": "direct",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 2,
+        "predicted_min": 2,
+        "predicted_max": 2,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          2,
+          2
+        ]
+      },
+      {
+        "case_id": "icv1-09a",
+        "pair_id": "icv1-p09",
+        "category": "partial_compound",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "direct",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 2,
+        "predicted_min": 2,
+        "predicted_max": 2,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          2,
+          2
+        ]
+      },
+      {
+        "case_id": "icv1-09a",
+        "pair_id": "icv1-p09",
+        "category": "partial_compound",
+        "model": "qwen3.5:9b",
+        "arm": "coverage",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 2,
+        "predicted_min": 2,
+        "predicted_max": 2,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          2,
+          2
+        ]
+      },
+      {
+        "case_id": "icv1-12b",
+        "pair_id": "icv1-p12",
+        "category": "settled_vs_open_dimensions",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "direct",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 2,
+        "predicted_min": 2,
+        "predicted_max": 2,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          2,
+          2
+        ]
+      },
+      {
+        "case_id": "icv1-09b",
+        "pair_id": "icv1-p09",
+        "category": "partial_compound",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "direct",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-09b",
+        "pair_id": "icv1-p09",
+        "category": "partial_compound",
+        "model": "qwen3.5:9b",
+        "arm": "direct",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-10b",
+        "pair_id": "icv1-p10",
+        "category": "pragmatic_partial_resolution",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "direct",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-10b",
+        "pair_id": "icv1-p10",
+        "category": "pragmatic_partial_resolution",
+        "model": "qwen3.5:9b",
+        "arm": "direct",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-11a",
+        "pair_id": "icv1-p11",
+        "category": "quoted_practice_vs_current",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "direct",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 2,
+        "predicted_min": 2,
+        "predicted_max": 2,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          2,
+          2
+        ]
+      },
+      {
+        "case_id": "icv1-06a",
+        "pair_id": "icv1-p06",
+        "category": "rhetorical_vs_genuine",
+        "model": "qwen3.5:9b",
+        "arm": "coverage",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-10b",
+        "pair_id": "icv1-p10",
+        "category": "pragmatic_partial_resolution",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "coverage",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-05b",
+        "pair_id": "icv1-p05",
+        "category": "resolved_question",
+        "model": "qwen3.5:9b",
+        "arm": "direct",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-07b",
+        "pair_id": "icv1-p07",
+        "category": "role_statement",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "direct",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-11a",
+        "pair_id": "icv1-p11",
+        "category": "quoted_practice_vs_current",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "direct",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 2,
+        "predicted_min": 2,
+        "predicted_max": 2,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          2,
+          2
+        ]
+      },
+      {
+        "case_id": "icv1-10b",
+        "pair_id": "icv1-p10",
+        "category": "pragmatic_partial_resolution",
+        "model": "qwen3.5:9b",
+        "arm": "direct",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-05a",
+        "pair_id": "icv1-p05",
+        "category": "resolved_question",
+        "model": "qwen3.5:9b",
+        "arm": "direct",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 0,
+        "predicted_min": 0,
+        "predicted_max": 0,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          0,
+          0
+        ]
+      },
+      {
+        "case_id": "icv1-02a",
+        "pair_id": "icv1-p02",
+        "category": "filtered_information",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "coverage",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-12a",
+        "pair_id": "icv1-p12",
+        "category": "settled_vs_open_dimensions",
+        "model": "qwen3.5:9b",
+        "arm": "direct",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 2,
+        "predicted_min": 2,
+        "predicted_max": 2,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          2,
+          2
+        ]
+      },
+      {
+        "case_id": "icv1-08a",
+        "pair_id": "icv1-p08",
+        "category": "action_vs_information",
+        "model": "qwen3.5:9b",
+        "arm": "direct",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 0,
+        "predicted_min": 0,
+        "predicted_max": 0,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          0,
+          0
+        ]
+      },
+      {
+        "case_id": "icv1-07b",
+        "pair_id": "icv1-p07",
+        "category": "role_statement",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "direct",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-02b",
+        "pair_id": "icv1-p02",
+        "category": "filtered_information",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "coverage",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-01a",
+        "pair_id": "icv1-p01",
+        "category": "explicit_compound",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "direct",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 2,
+        "predicted_min": 2,
+        "predicted_max": 2,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          2,
+          2
+        ]
+      },
+      {
+        "case_id": "icv1-06a",
+        "pair_id": "icv1-p06",
+        "category": "rhetorical_vs_genuine",
+        "model": "qwen3.5:9b",
+        "arm": "direct",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-04b",
+        "pair_id": "icv1-p04",
+        "category": "background_scope",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "direct",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-01b",
+        "pair_id": "icv1-p01",
+        "category": "explicit_compound",
+        "model": "qwen3.5:9b",
+        "arm": "direct",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-11b",
+        "pair_id": "icv1-p11",
+        "category": "quoted_practice_vs_current",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "coverage",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 2,
+        "predicted_min": 2,
+        "predicted_max": 2,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          2,
+          2
+        ]
+      },
+      {
+        "case_id": "icv1-06a",
+        "pair_id": "icv1-p06",
+        "category": "rhetorical_vs_genuine",
+        "model": "qwen3.5:9b",
+        "arm": "coverage",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-01b",
+        "pair_id": "icv1-p01",
+        "category": "explicit_compound",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "coverage",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-03b",
+        "pair_id": "icv1-p03",
+        "category": "pragmatic_information_gap",
+        "model": "qwen3.5:9b",
+        "arm": "coverage",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-06a",
+        "pair_id": "icv1-p06",
+        "category": "rhetorical_vs_genuine",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "direct",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-09b",
+        "pair_id": "icv1-p09",
+        "category": "partial_compound",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "direct",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-10a",
+        "pair_id": "icv1-p10",
+        "category": "pragmatic_partial_resolution",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "coverage",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 2,
+        "predicted_min": 2,
+        "predicted_max": 2,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          2,
+          2
+        ]
+      },
+      {
+        "case_id": "icv1-05b",
+        "pair_id": "icv1-p05",
+        "category": "resolved_question",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "direct",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-04b",
+        "pair_id": "icv1-p04",
+        "category": "background_scope",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "direct",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-12b",
+        "pair_id": "icv1-p12",
+        "category": "settled_vs_open_dimensions",
+        "model": "qwen3.5:9b",
+        "arm": "coverage",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 2,
+        "predicted_min": 2,
+        "predicted_max": 2,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          2,
+          2
+        ]
+      },
+      {
+        "case_id": "icv1-07b",
+        "pair_id": "icv1-p07",
+        "category": "role_statement",
+        "model": "qwen3.5:9b",
+        "arm": "coverage",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 2,
+        "predicted_max": 2,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 1,
+        "invented_max": 1,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-04b",
+        "pair_id": "icv1-p04",
+        "category": "background_scope",
+        "model": "qwen3.5:9b",
+        "arm": "coverage",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-10a",
+        "pair_id": "icv1-p10",
+        "category": "pragmatic_partial_resolution",
+        "model": "qwen3.5:9b",
+        "arm": "coverage",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 2,
+        "predicted_min": 2,
+        "predicted_max": 2,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          2,
+          2
+        ]
+      },
+      {
+        "case_id": "icv1-09b",
+        "pair_id": "icv1-p09",
+        "category": "partial_compound",
+        "model": "qwen3.5:9b",
+        "arm": "direct",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-06a",
+        "pair_id": "icv1-p06",
+        "category": "rhetorical_vs_genuine",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "coverage",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-12a",
+        "pair_id": "icv1-p12",
+        "category": "settled_vs_open_dimensions",
+        "model": "qwen3.5:9b",
+        "arm": "direct",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 2,
+        "predicted_min": 2,
+        "predicted_max": 2,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          2,
+          2
+        ]
+      },
+      {
+        "case_id": "icv1-09a",
+        "pair_id": "icv1-p09",
+        "category": "partial_compound",
+        "model": "qwen3.5:9b",
+        "arm": "direct",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 2,
+        "predicted_min": 2,
+        "predicted_max": 2,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          2,
+          2
+        ]
+      },
+      {
+        "case_id": "icv1-01a",
+        "pair_id": "icv1-p01",
+        "category": "explicit_compound",
+        "model": "qwen3.5:9b",
+        "arm": "direct",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 2,
+        "predicted_min": 0,
+        "predicted_max": 0,
+        "missed_min": 2,
+        "missed_max": 2,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          0,
+          0
+        ]
+      },
+      {
+        "case_id": "icv1-12b",
+        "pair_id": "icv1-p12",
+        "category": "settled_vs_open_dimensions",
+        "model": "qwen3.5:9b",
+        "arm": "coverage",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 2,
+        "predicted_min": 2,
+        "predicted_max": 2,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          2,
+          2
+        ]
+      },
+      {
+        "case_id": "icv1-01a",
+        "pair_id": "icv1-p01",
+        "category": "explicit_compound",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "coverage",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 2,
+        "predicted_min": 2,
+        "predicted_max": 2,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          2,
+          2
+        ]
+      },
+      {
+        "case_id": "icv1-04b",
+        "pair_id": "icv1-p04",
+        "category": "background_scope",
+        "model": "qwen3.5:9b",
+        "arm": "direct",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-08b",
+        "pair_id": "icv1-p08",
+        "category": "action_vs_information",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "direct",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-02a",
+        "pair_id": "icv1-p02",
+        "category": "filtered_information",
+        "model": "qwen3.5:9b",
+        "arm": "coverage",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-05a",
+        "pair_id": "icv1-p05",
+        "category": "resolved_question",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "coverage",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 0,
+        "predicted_min": 0,
+        "predicted_max": 0,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          0,
+          0
+        ]
+      },
+      {
+        "case_id": "icv1-07b",
+        "pair_id": "icv1-p07",
+        "category": "role_statement",
+        "model": "qwen3.5:9b",
+        "arm": "direct",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 0,
+        "predicted_max": 0,
+        "missed_min": 1,
+        "missed_max": 1,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          0,
+          0
+        ]
+      },
+      {
+        "case_id": "icv1-08a",
+        "pair_id": "icv1-p08",
+        "category": "action_vs_information",
+        "model": "qwen3.5:9b",
+        "arm": "direct",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 0,
+        "predicted_min": 0,
+        "predicted_max": 0,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          0,
+          0
+        ]
+      },
+      {
+        "case_id": "icv1-11a",
+        "pair_id": "icv1-p11",
+        "category": "quoted_practice_vs_current",
+        "model": "qwen3.5:9b",
+        "arm": "coverage",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 2,
+        "predicted_min": 2,
+        "predicted_max": 2,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          2,
+          2
+        ]
+      },
+      {
+        "case_id": "icv1-05b",
+        "pair_id": "icv1-p05",
+        "category": "resolved_question",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "direct",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-07a",
+        "pair_id": "icv1-p07",
+        "category": "role_statement",
+        "model": "qwen3.5:9b",
+        "arm": "coverage",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 0,
+        "predicted_min": 0,
+        "predicted_max": 0,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          0,
+          0
+        ]
+      },
+      {
+        "case_id": "icv1-05a",
+        "pair_id": "icv1-p05",
+        "category": "resolved_question",
+        "model": "qwen3.5:9b",
+        "arm": "direct",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 0,
+        "predicted_min": 0,
+        "predicted_max": 0,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          0,
+          0
+        ]
+      },
+      {
+        "case_id": "icv1-04a",
+        "pair_id": "icv1-p04",
+        "category": "background_scope",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "direct",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-07b",
+        "pair_id": "icv1-p07",
+        "category": "role_statement",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "coverage",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-09b",
+        "pair_id": "icv1-p09",
+        "category": "partial_compound",
+        "model": "qwen3.5:9b",
+        "arm": "coverage",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-08b",
+        "pair_id": "icv1-p08",
+        "category": "action_vs_information",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "coverage",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-03b",
+        "pair_id": "icv1-p03",
+        "category": "pragmatic_information_gap",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "direct",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-03b",
+        "pair_id": "icv1-p03",
+        "category": "pragmatic_information_gap",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "coverage",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-08a",
+        "pair_id": "icv1-p08",
+        "category": "action_vs_information",
+        "model": "qwen3.5:9b",
+        "arm": "coverage",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 0,
+        "predicted_min": 0,
+        "predicted_max": 0,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          0,
+          0
+        ]
+      },
+      {
+        "case_id": "icv1-12b",
+        "pair_id": "icv1-p12",
+        "category": "settled_vs_open_dimensions",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "coverage",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 2,
+        "predicted_min": 2,
+        "predicted_max": 2,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          2,
+          2
+        ]
+      },
+      {
+        "case_id": "icv1-07a",
+        "pair_id": "icv1-p07",
+        "category": "role_statement",
+        "model": "qwen3.5:9b",
+        "arm": "direct",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 0,
+        "predicted_min": 0,
+        "predicted_max": 0,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          0,
+          0
+        ]
+      },
+      {
+        "case_id": "icv1-07b",
+        "pair_id": "icv1-p07",
+        "category": "role_statement",
+        "model": "qwen3.5:9b",
+        "arm": "coverage",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 2,
+        "predicted_max": 2,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 1,
+        "invented_max": 1,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-05b",
+        "pair_id": "icv1-p05",
+        "category": "resolved_question",
+        "model": "qwen3.5:9b",
+        "arm": "coverage",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-10a",
+        "pair_id": "icv1-p10",
+        "category": "pragmatic_partial_resolution",
+        "model": "qwen3.5:9b",
+        "arm": "coverage",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 2,
+        "predicted_min": 2,
+        "predicted_max": 2,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          2,
+          2
+        ]
+      },
+      {
+        "case_id": "icv1-10a",
+        "pair_id": "icv1-p10",
+        "category": "pragmatic_partial_resolution",
+        "model": "qwen3.5:9b",
+        "arm": "direct",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 2,
+        "predicted_min": 2,
+        "predicted_max": 2,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          2,
+          2
+        ]
+      },
+      {
+        "case_id": "icv1-05a",
+        "pair_id": "icv1-p05",
+        "category": "resolved_question",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "direct",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 0,
+        "predicted_min": 0,
+        "predicted_max": 0,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          0,
+          0
+        ]
+      },
+      {
+        "case_id": "icv1-08a",
+        "pair_id": "icv1-p08",
+        "category": "action_vs_information",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "direct",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 0,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 1,
+        "invented_max": 1,
+        "true_positive_bounds": [
+          0,
+          0
+        ]
+      },
+      {
+        "case_id": "icv1-11b",
+        "pair_id": "icv1-p11",
+        "category": "quoted_practice_vs_current",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "direct",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 2,
+        "predicted_min": 2,
+        "predicted_max": 2,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          2,
+          2
+        ]
+      },
+      {
+        "case_id": "icv1-07a",
+        "pair_id": "icv1-p07",
+        "category": "role_statement",
+        "model": "qwen3.5:9b",
+        "arm": "coverage",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 0,
+        "predicted_min": 0,
+        "predicted_max": 0,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          0,
+          0
+        ]
+      },
+      {
+        "case_id": "icv1-08b",
+        "pair_id": "icv1-p08",
+        "category": "action_vs_information",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "coverage",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-02b",
+        "pair_id": "icv1-p02",
+        "category": "filtered_information",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "coverage",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-05b",
+        "pair_id": "icv1-p05",
+        "category": "resolved_question",
+        "model": "qwen3.5:9b",
+        "arm": "coverage",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-05a",
+        "pair_id": "icv1-p05",
+        "category": "resolved_question",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "direct",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 0,
+        "predicted_min": 0,
+        "predicted_max": 0,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          0,
+          0
+        ]
+      },
+      {
+        "case_id": "icv1-05a",
+        "pair_id": "icv1-p05",
+        "category": "resolved_question",
+        "model": "qwen3.5:9b",
+        "arm": "coverage",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 0,
+        "predicted_min": 0,
+        "predicted_max": 0,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          0,
+          0
+        ]
+      },
+      {
+        "case_id": "icv1-11b",
+        "pair_id": "icv1-p11",
+        "category": "quoted_practice_vs_current",
+        "model": "qwen3.5:9b",
+        "arm": "direct",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 2,
+        "predicted_min": 1,
+        "predicted_max": 2,
+        "missed_min": 0,
+        "missed_max": 1,
+        "invented_min": 0,
+        "invented_max": 1,
+        "true_positive_bounds": [
+          1,
+          2
+        ]
+      },
+      {
+        "case_id": "icv1-05a",
+        "pair_id": "icv1-p05",
+        "category": "resolved_question",
+        "model": "qwen3.5:9b",
+        "arm": "coverage",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 0,
+        "predicted_min": 0,
+        "predicted_max": 0,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          0,
+          0
+        ]
+      },
+      {
+        "case_id": "icv1-09a",
+        "pair_id": "icv1-p09",
+        "category": "partial_compound",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "direct",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 2,
+        "predicted_min": 2,
+        "predicted_max": 2,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          2,
+          2
+        ]
+      },
+      {
+        "case_id": "icv1-06b",
+        "pair_id": "icv1-p06",
+        "category": "rhetorical_vs_genuine",
+        "model": "qwen3.5:9b",
+        "arm": "coverage",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 0,
+        "predicted_min": 0,
+        "predicted_max": 0,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          0,
+          0
+        ]
+      },
+      {
+        "case_id": "icv1-12a",
+        "pair_id": "icv1-p12",
+        "category": "settled_vs_open_dimensions",
+        "model": "qwen3.5:9b",
+        "arm": "coverage",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 2,
+        "predicted_min": 2,
+        "predicted_max": 2,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          2,
+          2
+        ]
+      },
+      {
+        "case_id": "icv1-06b",
+        "pair_id": "icv1-p06",
+        "category": "rhetorical_vs_genuine",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "direct",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 0,
+        "predicted_min": 0,
+        "predicted_max": 0,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          0,
+          0
+        ]
+      },
+      {
+        "case_id": "icv1-10b",
+        "pair_id": "icv1-p10",
+        "category": "pragmatic_partial_resolution",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "direct",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-02b",
+        "pair_id": "icv1-p02",
+        "category": "filtered_information",
+        "model": "qwen3.5:9b",
+        "arm": "coverage",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-11b",
+        "pair_id": "icv1-p11",
+        "category": "quoted_practice_vs_current",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "coverage",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 2,
+        "predicted_min": 2,
+        "predicted_max": 2,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          2,
+          2
+        ]
+      },
+      {
+        "case_id": "icv1-04a",
+        "pair_id": "icv1-p04",
+        "category": "background_scope",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "direct",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-09a",
+        "pair_id": "icv1-p09",
+        "category": "partial_compound",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "coverage",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 2,
+        "predicted_min": 2,
+        "predicted_max": 2,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          2,
+          2
+        ]
+      },
+      {
+        "case_id": "icv1-07a",
+        "pair_id": "icv1-p07",
+        "category": "role_statement",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "direct",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 0,
+        "predicted_min": 0,
+        "predicted_max": 0,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          0,
+          0
+        ]
+      },
+      {
+        "case_id": "icv1-11a",
+        "pair_id": "icv1-p11",
+        "category": "quoted_practice_vs_current",
+        "model": "qwen3.5:9b",
+        "arm": "direct",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 2,
+        "predicted_min": 2,
+        "predicted_max": 2,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          2,
+          2
+        ]
+      },
+      {
+        "case_id": "icv1-02a",
+        "pair_id": "icv1-p02",
+        "category": "filtered_information",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "direct",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-09b",
+        "pair_id": "icv1-p09",
+        "category": "partial_compound",
+        "model": "qwen2.5:14b-instruct",
+        "arm": "coverage",
+        "repeat": 1,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      },
+      {
+        "case_id": "icv1-09b",
+        "pair_id": "icv1-p09",
+        "category": "partial_compound",
+        "model": "qwen3.5:9b",
+        "arm": "coverage",
+        "repeat": 0,
+        "assessable": true,
+        "gold_count": 1,
+        "predicted_min": 1,
+        "predicted_max": 1,
+        "missed_min": 0,
+        "missed_max": 0,
+        "invented_min": 0,
+        "invented_max": 0,
+        "true_positive_bounds": [
+          1,
+          1
+        ]
+      }
+    ]
+  }
+}

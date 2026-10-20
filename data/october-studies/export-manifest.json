@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-19",
+  "study_count": 9,
+  "export_policy": "Fixed allowlist; original reports plus selected aggregate scores. No raw requests, responses, databases, private mappings, logs or credentials.",
+  "exporter_sha256": "dd7b21983ba6f8fde74132f3ce9c14d78c03119232e38fad79d9784b937a1262",
+  "exports": [
+    {
+      "path": "data/october-studies/intent-coverage-report.md",
+      "sha256": "42e5bb9bfa21539bbee7641e5588f49700dc269b0a6be5a7115c1ade2275ed10"
+    },
+    {
+      "path": "data/october-studies/intent-coverage-recognition-counts.json",
+      "sha256": "88a3eef2515d52d38573895ca6a0cde94e7b5b7ca7e27980db5780ff2a73f60a"
+    },
+    {
+      "path": "data/october-studies/intent-coverage-results.json",
+      "sha256": "68c785f4d1e87bcdb701dd5bebfaf8a12fea1764fcd250dc9c2d2b53af2655ff"
+    },
+    {
+      "path": "data/october-studies/budget-state-repair-report.md",
+      "sha256": "335753c19dfda549aa7f69b2d11ab4f1aaa475836f1c30fb6c6831dece14a21d"
+    },
+    {
+      "path": "data/october-studies/budget-state-repair-aster-trace.md",
+      "sha256": "fb59df0be82c85cd2508fe5f64c89cc2ca2e5e30d94423c38759f8e71e6e8d2f"
+    },
+    {
+      "path": "data/october-studies/budget-state-repair-results.json",
+      "sha256": "535666e7b833b7f33ab8897580dd14ed4cf7a07c9f6dd185470c199733bb2948"
+    },
+    {
+      "path": "data/october-studies/model-harness-factorial-report.md",
+      "sha256": "9ccd558bbafaa0ff7db564a1ccc99905a07d850f726bd4f69595bbed5d88bcc3"
+    },
+    {
+      "path": "data/october-studies/model-harness-factorial-results.json",
+      "sha256": "772d643499ec6a8d5d002b89f323a93a00493d53082fec2df764a592c96bda7f"
+    },
+    {
+      "path": "data/october-studies/delivery-recovery-report.md",
+      "sha256": "3d734dddc3457622b4cfc7598fc763dd693b8a62a2190fdd8f082ba1f4d31a5f"
+    },
+    {
+      "path": "data/october-studies/delivery-recovery-results.json",
+      "sha256": "c24583e3b337df2f83cb009a35b6ae3d8b2423394919eebbe1a8e08258c9f4a0"
+    },
+    {
+      "path": "data/october-studies/answer-delivery-report.md",
+      "sha256": "20c9d0c47646c934006fcaa50944687c27640facc571185eb17e35c2cb9e1b1d"
+    },
+    {
+      "path": "data/october-studies/answer-delivery-results.json",
+      "sha256": "884fd23c5fb041d947be1bca463fc756c2e1f4110ed5921d875ca0e25b15de0c"
+    },
+    {
+      "path": "data/october-studies/intention-attribution-report.md",
+      "sha256": "b80d43564b9342cf74687d1d7f84f79dc399cd53df74ccce22ff3e9eaa91be48"
+    },
+    {
+      "path": "data/october-studies/intention-attribution-results.json",
+      "sha256": "ea39765717fee8ed3b0b943bf009161fb2c9c0b1bdfa217f7363b4c4aa462341"
+    },
+    {
+      "path": "data/october-studies/meeting-intent-probe-report.md",
+      "sha256": "ed9ee600a120b56b4624472a688c5c831a9dace9d9d9e2fc84b4203da959a103"
+    },
+    {
+      "path": "data/october-studies/meeting-intent-probe-results.json",
+      "sha256": "0d75a6be83630c9ed2c97b6a0b9ec62a23f445aa854f40551d0e2ba703e066ed"
+    },
+    {
+      "path": "data/october-studies/meeting-intention-report.md",
+      "sha256": "e020b03d9c596cc1580244369676581c6a514131d96ac00812f0954cd7c61d54"
+    },
+    {
+      "path": "data/october-studies/meeting-intention-results.json",
+      "sha256": "bcc47bf4689bf9d59c5a99ff677e8d22ad00a04f97a332cf57d4d6b9e8a91d5a"
+    },
+    {
+      "path": "data/october-studies/intention-diagnostic-report.md",
+      "sha256": "41d45ee22900432929524e4dbe522a317c806034b8cd3666af69890b860486ef"
+    },
+    {
+      "path": "data/october-studies/intention-diagnostic-results.json",
+      "sha256": "1162aac794052fc5ee50315d253224d768643a237f0157ad1dfa6268cbad020c"
+    },
+    {
+      "path": "data/october-studies/METHODS.md",
+      "sha256": "5a0ae06493fdc6d8ab17bf0ef15626b4a792654aa1f47d5c6192c4b13b0e4fad"
+    },
+    {
+      "path": "data/october-studies.json",
+      "sha256": "467ccae736adcebb8af9f0bc78363f9050ad99373e33f34eb037b765dc62a08d"
+    }
+  ]
+}

@@ -1,0 +1,2498 @@
+{
+  "schema_version": 1,
+  "study_id": "budget-state-repair",
+  "export_kind": "selected aggregate evidence",
+  "provenance": [
+    {
+      "path": "output/research/2026-10-17/budget-state-repair/RESULTS.md",
+      "sha256": "335753c19dfda549aa7f69b2d11ab4f1aaa475836f1c30fb6c6831dece14a21d",
+      "selected_fields": [
+        "complete original Markdown; unchanged bytes"
+      ]
+    },
+    {
+      "path": "output/research/2026-10-17/budget-state-repair/results.json",
+      "sha256": "d5f5d333b7bfd0311392745e2e8302296ac9fab5fad3cfbf5c81bcf683e1520c",
+      "selected_fields": [
+        "completed_runs",
+        "independent_scenarios",
+        "independent_help_scenarios",
+        "independent_silence_scenarios",
+        "cells",
+        "interpretation",
+        "limitations"
+      ]
+    },
+    {
+      "path": "output/research/2026-10-17/budget-state-repair/diagnostics/by-model-harness.json",
+      "sha256": "c11f20d546e58a2edac01fb95e7a5d251a2dc86363cd1e6ed4aeb579b562c74c",
+      "selected_fields": [
+        "cells: model_key, preset, attempted_runs, complete_dialogue_consumed_runs"
+      ]
+    },
+    {
+      "path": "output/research/2026-10-17/budget-state-repair/TRACE-ASTER.md",
+      "sha256": "fb59df0be82c85cd2508fe5f64c89cc2ca2e5e30d94423c38759f8e71e6e8d2f",
+      "selected_fields": [
+        "complete original Markdown; unchanged bytes"
+      ]
+    }
+  ],
+  "summary": {
+    "completed_runs": 48,
+    "independent_scenarios": 4,
+    "independent_help_scenarios": 3,
+    "independent_silence_scenarios": 1,
+    "cells": {
+      "qwen25-14b": {
+        "agent-led-recovery": {
+          "all_meetings": {
+            "runs": 8,
+            "independent_scenarios": 4,
+            "primary_success": 2,
+            "primary_denominator": 8,
+            "primary_uncertain_runs": 0,
+            "need_outcomes": {
+              "omitted": 13,
+              "pass": 1
+            },
+            "need_denominator": 14,
+            "diagnostics": {
+              "material_error": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 8,
+                "uncertain_runs": 0
+              },
+              "intermediate_material_error": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 8,
+                "uncertain_runs": 0
+              },
+              "stale_active": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 8,
+                "uncertain_runs": 0
+              },
+              "unnecessary_publication": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 8,
+                "uncertain_runs": 0
+              },
+              "unnecessary_revision": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 8,
+                "uncertain_runs": 0
+              },
+              "stale_new_publication": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 8,
+                "uncertain_runs": 0
+              }
+            },
+            "metrics": {
+              "model_calls": 106,
+              "input_tokens": 511928,
+              "output_tokens": 9736,
+              "total_tokens": 521664,
+              "api_wall_ms": 220903.722,
+              "publications": 6,
+              "withdrawals": 0,
+              "normal_investigator_calls": 106,
+              "private_only_responses": 73,
+              "investigator_private_only_responses": 73,
+              "framework_context_extraction_calls": 0,
+              "answer_delivery_candidates": 0,
+              "answer_delivery_review_calls": 0,
+              "answer_delivery_verified_card_operations": 0,
+              "mean_model_wall_seconds": 27.612965250000002,
+              "median_model_wall_seconds": 28.935398500000005,
+              "early_call_budget_exits": 0,
+              "early_token_budget_exits": 1,
+              "early_any_budget_exits": 1,
+              "failed_or_pending_provider_calls": 0,
+              "scheduled_dialogue_turns": 72,
+              "consumed_dialogue_turns": 69
+            },
+            "model_costs_by_role": {
+              "normal_investigator": {
+                "model_calls": 106,
+                "input_tokens": 511928,
+                "output_tokens": 9736,
+                "total_tokens": 521664,
+                "api_wall_ms": 220903.722
+              }
+            },
+            "delivery_paths": {
+              "answer_delivery": {
+                "card_operation_attempts": 0,
+                "publication_attempts": 0,
+                "withdrawal_attempts": 0,
+                "committed_publications": 0,
+                "unchanged_cards": 0,
+                "committed_withdrawals": 0,
+                "receipt_statuses": {}
+              },
+              "direct_actor": {
+                "card_operation_attempts": 6,
+                "publication_attempts": 6,
+                "withdrawal_attempts": 0,
+                "committed_publications": 6,
+                "unchanged_cards": 0,
+                "committed_withdrawals": 0,
+                "receipt_statuses": {
+                  "displayed": 6
+                }
+              }
+            },
+            "delivery_decision_outcomes": {},
+            "delivery_decision_actions": {},
+            "delivery_receipt_statuses": {},
+            "observed_explicit_intention": "not scored by visible-output reviewers",
+            "behavior_counts": {
+              "help": 6,
+              "silence": 2
+            },
+            "primary_success_interval": {
+              "confirmed_successes": 2,
+              "uncertain_runs": 0,
+              "denominator": 8
+            },
+            "model_loading": {
+              "provider_load_seconds_known": 27.3094343,
+              "provider_load_duration_complete": true,
+              "interpretation": "Reported inference wall time includes cold model loading. Known load duration is separated as provider metadata, not an estimate of a warm rerun."
+            },
+            "strict_zero_card_runs": 5,
+            "strict_zero_card_denominator": 8
+          },
+          "help": {
+            "runs": 6,
+            "independent_scenarios": 3,
+            "primary_success": 0,
+            "primary_denominator": 6,
+            "primary_uncertain_runs": 0,
+            "need_outcomes": {
+              "omitted": 13,
+              "pass": 1
+            },
+            "need_denominator": 14,
+            "diagnostics": {
+              "material_error": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 6,
+                "uncertain_runs": 0
+              },
+              "intermediate_material_error": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 6,
+                "uncertain_runs": 0
+              },
+              "stale_active": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 6,
+                "uncertain_runs": 0
+              },
+              "unnecessary_publication": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 6,
+                "uncertain_runs": 0
+              },
+              "unnecessary_revision": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 6,
+                "uncertain_runs": 0
+              },
+              "stale_new_publication": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 6,
+                "uncertain_runs": 0
+              }
+            },
+            "metrics": {
+              "model_calls": 87,
+              "input_tokens": 433149,
+              "output_tokens": 8316,
+              "total_tokens": 441465,
+              "api_wall_ms": 186906.944,
+              "publications": 5,
+              "withdrawals": 0,
+              "normal_investigator_calls": 87,
+              "private_only_responses": 56,
+              "investigator_private_only_responses": 56,
+              "framework_context_extraction_calls": 0,
+              "answer_delivery_candidates": 0,
+              "answer_delivery_review_calls": 0,
+              "answer_delivery_verified_card_operations": 0,
+              "mean_model_wall_seconds": 31.151157333333334,
+              "median_model_wall_seconds": 32.5918835,
+              "early_call_budget_exits": 0,
+              "early_token_budget_exits": 1,
+              "early_any_budget_exits": 1,
+              "failed_or_pending_provider_calls": 0,
+              "scheduled_dialogue_turns": 54,
+              "consumed_dialogue_turns": 51
+            },
+            "model_costs_by_role": {
+              "normal_investigator": {
+                "model_calls": 87,
+                "input_tokens": 433149,
+                "output_tokens": 8316,
+                "total_tokens": 441465,
+                "api_wall_ms": 186906.944
+              }
+            },
+            "delivery_paths": {
+              "answer_delivery": {
+                "card_operation_attempts": 0,
+                "publication_attempts": 0,
+                "withdrawal_attempts": 0,
+                "committed_publications": 0,
+                "unchanged_cards": 0,
+                "committed_withdrawals": 0,
+                "receipt_statuses": {}
+              },
+              "direct_actor": {
+                "card_operation_attempts": 5,
+                "publication_attempts": 5,
+                "withdrawal_attempts": 0,
+                "committed_publications": 5,
+                "unchanged_cards": 0,
+                "committed_withdrawals": 0,
+                "receipt_statuses": {
+                  "displayed": 5
+                }
+              }
+            },
+            "delivery_decision_outcomes": {},
+            "delivery_decision_actions": {},
+            "delivery_receipt_statuses": {},
+            "observed_explicit_intention": "not scored by visible-output reviewers",
+            "behavior_counts": {
+              "help": 6
+            },
+            "primary_success_interval": {
+              "confirmed_successes": 0,
+              "uncertain_runs": 0,
+              "denominator": 6
+            },
+            "model_loading": {
+              "provider_load_seconds_known": 21.5498438,
+              "provider_load_duration_complete": true,
+              "interpretation": "Reported inference wall time includes cold model loading. Known load duration is separated as provider metadata, not an estimate of a warm rerun."
+            },
+            "strict_zero_card_runs": 4,
+            "strict_zero_card_denominator": 6
+          },
+          "silence": {
+            "runs": 2,
+            "independent_scenarios": 1,
+            "primary_success": 2,
+            "primary_denominator": 2,
+            "primary_uncertain_runs": 0,
+            "need_outcomes": {},
+            "need_denominator": 0,
+            "diagnostics": {
+              "material_error": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 2,
+                "uncertain_runs": 0
+              },
+              "intermediate_material_error": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 2,
+                "uncertain_runs": 0
+              },
+              "stale_active": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 2,
+                "uncertain_runs": 0
+              },
+              "unnecessary_publication": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 2,
+                "uncertain_runs": 0
+              },
+              "unnecessary_revision": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 2,
+                "uncertain_runs": 0
+              },
+              "stale_new_publication": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 2,
+                "uncertain_runs": 0
+              }
+            },
+            "metrics": {
+              "model_calls": 19,
+              "input_tokens": 78779,
+              "output_tokens": 1420,
+              "total_tokens": 80199,
+              "api_wall_ms": 33996.778,
+              "publications": 1,
+              "withdrawals": 0,
+              "normal_investigator_calls": 19,
+              "private_only_responses": 17,
+              "investigator_private_only_responses": 17,
+              "framework_context_extraction_calls": 0,
+              "answer_delivery_candidates": 0,
+              "answer_delivery_review_calls": 0,
+              "answer_delivery_verified_card_operations": 0,
+              "mean_model_wall_seconds": 16.998389000000003,
+              "median_model_wall_seconds": 16.998389000000003,
+              "early_call_budget_exits": 0,
+              "early_token_budget_exits": 0,
+              "early_any_budget_exits": 0,
+              "failed_or_pending_provider_calls": 0,
+              "scheduled_dialogue_turns": 18,
+              "consumed_dialogue_turns": 18
+            },
+            "model_costs_by_role": {
+              "normal_investigator": {
+                "model_calls": 19,
+                "input_tokens": 78779,
+                "output_tokens": 1420,
+                "total_tokens": 80199,
+                "api_wall_ms": 33996.778
+              }
+            },
+            "delivery_paths": {
+              "answer_delivery": {
+                "card_operation_attempts": 0,
+                "publication_attempts": 0,
+                "withdrawal_attempts": 0,
+                "committed_publications": 0,
+                "unchanged_cards": 0,
+                "committed_withdrawals": 0,
+                "receipt_statuses": {}
+              },
+              "direct_actor": {
+                "card_operation_attempts": 1,
+                "publication_attempts": 1,
+                "withdrawal_attempts": 0,
+                "committed_publications": 1,
+                "unchanged_cards": 0,
+                "committed_withdrawals": 0,
+                "receipt_statuses": {
+                  "displayed": 1
+                }
+              }
+            },
+            "delivery_decision_outcomes": {},
+            "delivery_decision_actions": {},
+            "delivery_receipt_statuses": {},
+            "observed_explicit_intention": "not scored by visible-output reviewers",
+            "behavior_counts": {
+              "silence": 2
+            },
+            "primary_success_interval": {
+              "confirmed_successes": 2,
+              "uncertain_runs": 0,
+              "denominator": 2
+            },
+            "model_loading": {
+              "provider_load_seconds_known": 5.759590500000001,
+              "provider_load_duration_complete": true,
+              "interpretation": "Reported inference wall time includes cold model loading. Known load duration is separated as provider metadata, not an estimate of a warm rerun."
+            },
+            "strict_zero_card_runs": 1,
+            "strict_zero_card_denominator": 2
+          }
+        },
+        "agent-led-answer-delivery": {
+          "all_meetings": {
+            "runs": 8,
+            "independent_scenarios": 4,
+            "primary_success": 4,
+            "primary_denominator": 8,
+            "primary_uncertain_runs": 0,
+            "need_outcomes": {
+              "omitted": 4,
+              "incorrect_or_unsupported": 4,
+              "pass": 6
+            },
+            "need_denominator": 14,
+            "diagnostics": {
+              "material_error": {
+                "confirmed_true_runs": 2,
+                "confirmed_false_runs": 6,
+                "uncertain_runs": 0
+              },
+              "intermediate_material_error": {
+                "confirmed_true_runs": 4,
+                "confirmed_false_runs": 4,
+                "uncertain_runs": 0
+              },
+              "stale_active": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 8,
+                "uncertain_runs": 0
+              },
+              "unnecessary_publication": {
+                "confirmed_true_runs": 1,
+                "confirmed_false_runs": 7,
+                "uncertain_runs": 0
+              },
+              "unnecessary_revision": {
+                "confirmed_true_runs": 8,
+                "confirmed_false_runs": 0,
+                "uncertain_runs": 0
+              },
+              "stale_new_publication": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 8,
+                "uncertain_runs": 0
+              }
+            },
+            "metrics": {
+              "model_calls": 164,
+              "input_tokens": 607980,
+              "output_tokens": 20601,
+              "total_tokens": 628581,
+              "api_wall_ms": 461810.353,
+              "publications": 56,
+              "withdrawals": 1,
+              "normal_investigator_calls": 102,
+              "private_only_responses": 64,
+              "investigator_private_only_responses": 64,
+              "framework_context_extraction_calls": 0,
+              "answer_delivery_candidates": 64,
+              "answer_delivery_review_calls": 62,
+              "answer_delivery_verified_card_operations": 56,
+              "mean_model_wall_seconds": 57.726294125,
+              "median_model_wall_seconds": 58.676497499999996,
+              "early_call_budget_exits": 2,
+              "early_token_budget_exits": 0,
+              "early_any_budget_exits": 2,
+              "failed_or_pending_provider_calls": 0,
+              "scheduled_dialogue_turns": 72,
+              "consumed_dialogue_turns": 63
+            },
+            "model_costs_by_role": {
+              "answer_delivery": {
+                "model_calls": 62,
+                "input_tokens": 101600,
+                "output_tokens": 9142,
+                "total_tokens": 110742,
+                "api_wall_ms": 197316.759
+              },
+              "normal_investigator": {
+                "model_calls": 102,
+                "input_tokens": 506380,
+                "output_tokens": 11459,
+                "total_tokens": 517839,
+                "api_wall_ms": 264493.597
+              }
+            },
+            "delivery_paths": {
+              "answer_delivery": {
+                "card_operation_attempts": 56,
+                "publication_attempts": 56,
+                "withdrawal_attempts": 0,
+                "committed_publications": 50,
+                "unchanged_cards": 5,
+                "committed_withdrawals": 0,
+                "receipt_statuses": {
+                  "displayed": 50,
+                  "new_observations": 1,
+                  "unchanged": 5
+                }
+              },
+              "direct_actor": {
+                "card_operation_attempts": 10,
+                "publication_attempts": 8,
+                "withdrawal_attempts": 2,
+                "committed_publications": 6,
+                "unchanged_cards": 0,
+                "committed_withdrawals": 1,
+                "receipt_statuses": {
+                  "displayed": 6,
+                  "withdrawn": 1,
+                  "conflict": 1,
+                  "new_observations": 2
+                }
+              }
+            },
+            "delivery_decision_outcomes": {
+              "reviewed": 58,
+              "new_observations": 1,
+              "budget_exhausted": 1,
+              "no_valid_decision": 4
+            },
+            "delivery_decision_actions": {
+              "publish": 5,
+              "update": 51,
+              "none": 8
+            },
+            "delivery_receipt_statuses": {
+              "displayed": 50,
+              "not_published": 8,
+              "new_observations": 1,
+              "unchanged": 5
+            },
+            "observed_explicit_intention": "not scored by visible-output reviewers",
+            "behavior_counts": {
+              "help": 6,
+              "silence": 2
+            },
+            "primary_success_interval": {
+              "confirmed_successes": 4,
+              "uncertain_runs": 0,
+              "denominator": 8
+            },
+            "model_loading": {
+              "provider_load_seconds_known": 22.5276699,
+              "provider_load_duration_complete": true,
+              "interpretation": "Reported inference wall time includes cold model loading. Known load duration is separated as provider metadata, not an estimate of a warm rerun."
+            },
+            "strict_zero_card_runs": 0,
+            "strict_zero_card_denominator": 8
+          },
+          "help": {
+            "runs": 6,
+            "independent_scenarios": 3,
+            "primary_success": 2,
+            "primary_denominator": 6,
+            "primary_uncertain_runs": 0,
+            "need_outcomes": {
+              "omitted": 4,
+              "incorrect_or_unsupported": 4,
+              "pass": 6
+            },
+            "need_denominator": 14,
+            "diagnostics": {
+              "material_error": {
+                "confirmed_true_runs": 2,
+                "confirmed_false_runs": 4,
+                "uncertain_runs": 0
+              },
+              "intermediate_material_error": {
+                "confirmed_true_runs": 4,
+                "confirmed_false_runs": 2,
+                "uncertain_runs": 0
+              },
+              "stale_active": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 6,
+                "uncertain_runs": 0
+              },
+              "unnecessary_publication": {
+                "confirmed_true_runs": 1,
+                "confirmed_false_runs": 5,
+                "uncertain_runs": 0
+              },
+              "unnecessary_revision": {
+                "confirmed_true_runs": 6,
+                "confirmed_false_runs": 0,
+                "uncertain_runs": 0
+              },
+              "stale_new_publication": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 6,
+                "uncertain_runs": 0
+              }
+            },
+            "metrics": {
+              "model_calls": 128,
+              "input_tokens": 497464,
+              "output_tokens": 16037,
+              "total_tokens": 513501,
+              "api_wall_ms": 359901.037,
+              "publications": 44,
+              "withdrawals": 1,
+              "normal_investigator_calls": 83,
+              "private_only_responses": 47,
+              "investigator_private_only_responses": 47,
+              "framework_context_extraction_calls": 0,
+              "answer_delivery_candidates": 47,
+              "answer_delivery_review_calls": 45,
+              "answer_delivery_verified_card_operations": 43,
+              "mean_model_wall_seconds": 59.98350616666667,
+              "median_model_wall_seconds": 61.942398,
+              "early_call_budget_exits": 2,
+              "early_token_budget_exits": 0,
+              "early_any_budget_exits": 2,
+              "failed_or_pending_provider_calls": 0,
+              "scheduled_dialogue_turns": 54,
+              "consumed_dialogue_turns": 45
+            },
+            "model_costs_by_role": {
+              "answer_delivery": {
+                "model_calls": 45,
+                "input_tokens": 75711,
+                "output_tokens": 6926,
+                "total_tokens": 82637,
+                "api_wall_ms": 149591.826
+              },
+              "normal_investigator": {
+                "model_calls": 83,
+                "input_tokens": 421753,
+                "output_tokens": 9111,
+                "total_tokens": 430864,
+                "api_wall_ms": 210309.213
+              }
+            },
+            "delivery_paths": {
+              "answer_delivery": {
+                "card_operation_attempts": 43,
+                "publication_attempts": 43,
+                "withdrawal_attempts": 0,
+                "committed_publications": 39,
+                "unchanged_cards": 3,
+                "committed_withdrawals": 0,
+                "receipt_statuses": {
+                  "displayed": 39,
+                  "new_observations": 1,
+                  "unchanged": 3
+                }
+              },
+              "direct_actor": {
+                "card_operation_attempts": 9,
+                "publication_attempts": 7,
+                "withdrawal_attempts": 2,
+                "committed_publications": 5,
+                "unchanged_cards": 0,
+                "committed_withdrawals": 1,
+                "receipt_statuses": {
+                  "displayed": 5,
+                  "withdrawn": 1,
+                  "conflict": 1,
+                  "new_observations": 2
+                }
+              }
+            },
+            "delivery_decision_outcomes": {
+              "reviewed": 45,
+              "new_observations": 1,
+              "budget_exhausted": 1
+            },
+            "delivery_decision_actions": {
+              "publish": 4,
+              "update": 39,
+              "none": 4
+            },
+            "delivery_receipt_statuses": {
+              "displayed": 39,
+              "not_published": 4,
+              "new_observations": 1,
+              "unchanged": 3
+            },
+            "observed_explicit_intention": "not scored by visible-output reviewers",
+            "behavior_counts": {
+              "help": 6
+            },
+            "primary_success_interval": {
+              "confirmed_successes": 2,
+              "uncertain_runs": 0,
+              "denominator": 6
+            },
+            "model_loading": {
+              "provider_load_seconds_known": 17.2383355,
+              "provider_load_duration_complete": true,
+              "interpretation": "Reported inference wall time includes cold model loading. Known load duration is separated as provider metadata, not an estimate of a warm rerun."
+            },
+            "strict_zero_card_runs": 0,
+            "strict_zero_card_denominator": 6
+          },
+          "silence": {
+            "runs": 2,
+            "independent_scenarios": 1,
+            "primary_success": 2,
+            "primary_denominator": 2,
+            "primary_uncertain_runs": 0,
+            "need_outcomes": {},
+            "need_denominator": 0,
+            "diagnostics": {
+              "material_error": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 2,
+                "uncertain_runs": 0
+              },
+              "intermediate_material_error": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 2,
+                "uncertain_runs": 0
+              },
+              "stale_active": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 2,
+                "uncertain_runs": 0
+              },
+              "unnecessary_publication": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 2,
+                "uncertain_runs": 0
+              },
+              "unnecessary_revision": {
+                "confirmed_true_runs": 2,
+                "confirmed_false_runs": 0,
+                "uncertain_runs": 0
+              },
+              "stale_new_publication": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 2,
+                "uncertain_runs": 0
+              }
+            },
+            "metrics": {
+              "model_calls": 36,
+              "input_tokens": 110516,
+              "output_tokens": 4564,
+              "total_tokens": 115080,
+              "api_wall_ms": 101909.316,
+              "publications": 12,
+              "withdrawals": 0,
+              "normal_investigator_calls": 19,
+              "private_only_responses": 17,
+              "investigator_private_only_responses": 17,
+              "framework_context_extraction_calls": 0,
+              "answer_delivery_candidates": 17,
+              "answer_delivery_review_calls": 17,
+              "answer_delivery_verified_card_operations": 13,
+              "mean_model_wall_seconds": 50.954658,
+              "median_model_wall_seconds": 50.954658,
+              "early_call_budget_exits": 0,
+              "early_token_budget_exits": 0,
+              "early_any_budget_exits": 0,
+              "failed_or_pending_provider_calls": 0,
+              "scheduled_dialogue_turns": 18,
+              "consumed_dialogue_turns": 18
+            },
+            "model_costs_by_role": {
+              "answer_delivery": {
+                "model_calls": 17,
+                "input_tokens": 25889,
+                "output_tokens": 2216,
+                "total_tokens": 28105,
+                "api_wall_ms": 47724.933
+              },
+              "normal_investigator": {
+                "model_calls": 19,
+                "input_tokens": 84627,
+                "output_tokens": 2348,
+                "total_tokens": 86975,
+                "api_wall_ms": 54184.384
+              }
+            },
+            "delivery_paths": {
+              "answer_delivery": {
+                "card_operation_attempts": 13,
+                "publication_attempts": 13,
+                "withdrawal_attempts": 0,
+                "committed_publications": 11,
+                "unchanged_cards": 2,
+                "committed_withdrawals": 0,
+                "receipt_statuses": {
+                  "displayed": 11,
+                  "unchanged": 2
+                }
+              },
+              "direct_actor": {
+                "card_operation_attempts": 1,
+                "publication_attempts": 1,
+                "withdrawal_attempts": 0,
+                "committed_publications": 1,
+                "unchanged_cards": 0,
+                "committed_withdrawals": 0,
+                "receipt_statuses": {
+                  "displayed": 1
+                }
+              }
+            },
+            "delivery_decision_outcomes": {
+              "reviewed": 13,
+              "no_valid_decision": 4
+            },
+            "delivery_decision_actions": {
+              "publish": 1,
+              "update": 12,
+              "none": 4
+            },
+            "delivery_receipt_statuses": {
+              "displayed": 11,
+              "unchanged": 2,
+              "not_published": 4
+            },
+            "observed_explicit_intention": "not scored by visible-output reviewers",
+            "behavior_counts": {
+              "silence": 2
+            },
+            "primary_success_interval": {
+              "confirmed_successes": 2,
+              "uncertain_runs": 0,
+              "denominator": 2
+            },
+            "model_loading": {
+              "provider_load_seconds_known": 5.2893344,
+              "provider_load_duration_complete": true,
+              "interpretation": "Reported inference wall time includes cold model loading. Known load duration is separated as provider metadata, not an estimate of a warm rerun."
+            },
+            "strict_zero_card_runs": 0,
+            "strict_zero_card_denominator": 2
+          }
+        },
+        "agent-led-budget-state": {
+          "all_meetings": {
+            "runs": 8,
+            "independent_scenarios": 4,
+            "primary_success": 6,
+            "primary_denominator": 8,
+            "primary_uncertain_runs": 0,
+            "need_outcomes": {
+              "pass": 8,
+              "omitted": 6
+            },
+            "need_denominator": 14,
+            "diagnostics": {
+              "material_error": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 8,
+                "uncertain_runs": 0
+              },
+              "intermediate_material_error": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 8,
+                "uncertain_runs": 0
+              },
+              "stale_active": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 8,
+                "uncertain_runs": 0
+              },
+              "unnecessary_publication": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 8,
+                "uncertain_runs": 0
+              },
+              "unnecessary_revision": {
+                "confirmed_true_runs": 4,
+                "confirmed_false_runs": 4,
+                "uncertain_runs": 0
+              },
+              "stale_new_publication": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 8,
+                "uncertain_runs": 0
+              }
+            },
+            "metrics": {
+              "model_calls": 121,
+              "input_tokens": 605857,
+              "output_tokens": 15506,
+              "total_tokens": 621363,
+              "api_wall_ms": 360820.426,
+              "publications": 19,
+              "withdrawals": 0,
+              "normal_investigator_calls": 101,
+              "private_only_responses": 59,
+              "investigator_private_only_responses": 58,
+              "framework_context_extraction_calls": 1,
+              "answer_delivery_candidates": 58,
+              "answer_delivery_review_calls": 19,
+              "answer_delivery_verified_card_operations": 14,
+              "mean_model_wall_seconds": 45.10255325,
+              "median_model_wall_seconds": 43.207708499999995,
+              "early_call_budget_exits": 0,
+              "early_token_budget_exits": 1,
+              "early_any_budget_exits": 1,
+              "failed_or_pending_provider_calls": 0,
+              "scheduled_dialogue_turns": 72,
+              "consumed_dialogue_turns": 72
+            },
+            "model_costs_by_role": {
+              "answer_delivery": {
+                "model_calls": 19,
+                "input_tokens": 40302,
+                "output_tokens": 3813,
+                "total_tokens": 44115,
+                "api_wall_ms": 82107.867
+              },
+              "framework_context_extraction": {
+                "model_calls": 1,
+                "input_tokens": 9385,
+                "output_tokens": 270,
+                "total_tokens": 9655,
+                "api_wall_ms": 9263.886
+              },
+              "normal_investigator": {
+                "model_calls": 101,
+                "input_tokens": 556170,
+                "output_tokens": 11423,
+                "total_tokens": 567593,
+                "api_wall_ms": 269448.672
+              }
+            },
+            "delivery_paths": {
+              "answer_delivery": {
+                "card_operation_attempts": 14,
+                "publication_attempts": 14,
+                "withdrawal_attempts": 0,
+                "committed_publications": 14,
+                "unchanged_cards": 0,
+                "committed_withdrawals": 0,
+                "receipt_statuses": {
+                  "displayed": 14
+                }
+              },
+              "direct_actor": {
+                "card_operation_attempts": 6,
+                "publication_attempts": 6,
+                "withdrawal_attempts": 0,
+                "committed_publications": 5,
+                "unchanged_cards": 0,
+                "committed_withdrawals": 0,
+                "receipt_statuses": {
+                  "displayed": 5,
+                  "edit_required": 1
+                }
+              }
+            },
+            "delivery_decision_outcomes": {
+              "budget_or_input_deferred": 25,
+              "reviewed": 14,
+              "no_valid_decision": 4,
+              "new_observations": 13,
+              "budget_exhausted": 1,
+              "invalid_edit": 1
+            },
+            "delivery_decision_actions": {
+              "none": 44,
+              "update": 12,
+              "publish": 2
+            },
+            "delivery_receipt_statuses": {
+              "not_published": 44,
+              "displayed": 14
+            },
+            "observed_explicit_intention": "not scored by visible-output reviewers",
+            "behavior_counts": {
+              "silence": 2,
+              "help": 6
+            },
+            "primary_success_interval": {
+              "confirmed_successes": 6,
+              "uncertain_runs": 0,
+              "denominator": 8
+            },
+            "model_loading": {
+              "provider_load_seconds_known": 24.6649465,
+              "provider_load_duration_complete": true,
+              "interpretation": "Reported inference wall time includes cold model loading. Known load duration is separated as provider metadata, not an estimate of a warm rerun."
+            },
+            "strict_zero_card_runs": 4,
+            "strict_zero_card_denominator": 8
+          },
+          "help": {
+            "runs": 6,
+            "independent_scenarios": 3,
+            "primary_success": 4,
+            "primary_denominator": 6,
+            "primary_uncertain_runs": 0,
+            "need_outcomes": {
+              "pass": 8,
+              "omitted": 6
+            },
+            "need_denominator": 14,
+            "diagnostics": {
+              "material_error": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 6,
+                "uncertain_runs": 0
+              },
+              "intermediate_material_error": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 6,
+                "uncertain_runs": 0
+              },
+              "stale_active": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 6,
+                "uncertain_runs": 0
+              },
+              "unnecessary_publication": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 6,
+                "uncertain_runs": 0
+              },
+              "unnecessary_revision": {
+                "confirmed_true_runs": 4,
+                "confirmed_false_runs": 2,
+                "uncertain_runs": 0
+              },
+              "stale_new_publication": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 6,
+                "uncertain_runs": 0
+              }
+            },
+            "metrics": {
+              "model_calls": 103,
+              "input_tokens": 524805,
+              "output_tokens": 13756,
+              "total_tokens": 538561,
+              "api_wall_ms": 316223.764,
+              "publications": 19,
+              "withdrawals": 0,
+              "normal_investigator_calls": 83,
+              "private_only_responses": 57,
+              "investigator_private_only_responses": 56,
+              "framework_context_extraction_calls": 1,
+              "answer_delivery_candidates": 56,
+              "answer_delivery_review_calls": 19,
+              "answer_delivery_verified_card_operations": 14,
+              "mean_model_wall_seconds": 52.70396066666667,
+              "median_model_wall_seconds": 63.9571195,
+              "early_call_budget_exits": 0,
+              "early_token_budget_exits": 1,
+              "early_any_budget_exits": 1,
+              "failed_or_pending_provider_calls": 0,
+              "scheduled_dialogue_turns": 54,
+              "consumed_dialogue_turns": 54
+            },
+            "model_costs_by_role": {
+              "answer_delivery": {
+                "model_calls": 19,
+                "input_tokens": 40302,
+                "output_tokens": 3813,
+                "total_tokens": 44115,
+                "api_wall_ms": 82107.867
+              },
+              "framework_context_extraction": {
+                "model_calls": 1,
+                "input_tokens": 9385,
+                "output_tokens": 270,
+                "total_tokens": 9655,
+                "api_wall_ms": 9263.886
+              },
+              "normal_investigator": {
+                "model_calls": 83,
+                "input_tokens": 475118,
+                "output_tokens": 9673,
+                "total_tokens": 484791,
+                "api_wall_ms": 224852.01
+              }
+            },
+            "delivery_paths": {
+              "answer_delivery": {
+                "card_operation_attempts": 14,
+                "publication_attempts": 14,
+                "withdrawal_attempts": 0,
+                "committed_publications": 14,
+                "unchanged_cards": 0,
+                "committed_withdrawals": 0,
+                "receipt_statuses": {
+                  "displayed": 14
+                }
+              },
+              "direct_actor": {
+                "card_operation_attempts": 6,
+                "publication_attempts": 6,
+                "withdrawal_attempts": 0,
+                "committed_publications": 5,
+                "unchanged_cards": 0,
+                "committed_withdrawals": 0,
+                "receipt_statuses": {
+                  "displayed": 5,
+                  "edit_required": 1
+                }
+              }
+            },
+            "delivery_decision_outcomes": {
+              "budget_or_input_deferred": 23,
+              "reviewed": 14,
+              "no_valid_decision": 4,
+              "new_observations": 13,
+              "budget_exhausted": 1,
+              "invalid_edit": 1
+            },
+            "delivery_decision_actions": {
+              "none": 42,
+              "update": 12,
+              "publish": 2
+            },
+            "delivery_receipt_statuses": {
+              "not_published": 42,
+              "displayed": 14
+            },
+            "observed_explicit_intention": "not scored by visible-output reviewers",
+            "behavior_counts": {
+              "help": 6
+            },
+            "primary_success_interval": {
+              "confirmed_successes": 4,
+              "uncertain_runs": 0,
+              "denominator": 6
+            },
+            "model_loading": {
+              "provider_load_seconds_known": 15.2549439,
+              "provider_load_duration_complete": true,
+              "interpretation": "Reported inference wall time includes cold model loading. Known load duration is separated as provider metadata, not an estimate of a warm rerun."
+            },
+            "strict_zero_card_runs": 2,
+            "strict_zero_card_denominator": 6
+          },
+          "silence": {
+            "runs": 2,
+            "independent_scenarios": 1,
+            "primary_success": 2,
+            "primary_denominator": 2,
+            "primary_uncertain_runs": 0,
+            "need_outcomes": {},
+            "need_denominator": 0,
+            "diagnostics": {
+              "material_error": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 2,
+                "uncertain_runs": 0
+              },
+              "intermediate_material_error": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 2,
+                "uncertain_runs": 0
+              },
+              "stale_active": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 2,
+                "uncertain_runs": 0
+              },
+              "unnecessary_publication": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 2,
+                "uncertain_runs": 0
+              },
+              "unnecessary_revision": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 2,
+                "uncertain_runs": 0
+              },
+              "stale_new_publication": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 2,
+                "uncertain_runs": 0
+              }
+            },
+            "metrics": {
+              "model_calls": 18,
+              "input_tokens": 81052,
+              "output_tokens": 1750,
+              "total_tokens": 82802,
+              "api_wall_ms": 44596.662,
+              "publications": 0,
+              "withdrawals": 0,
+              "normal_investigator_calls": 18,
+              "private_only_responses": 2,
+              "investigator_private_only_responses": 2,
+              "framework_context_extraction_calls": 0,
+              "answer_delivery_candidates": 2,
+              "answer_delivery_review_calls": 0,
+              "answer_delivery_verified_card_operations": 0,
+              "mean_model_wall_seconds": 22.298330999999997,
+              "median_model_wall_seconds": 22.298330999999997,
+              "early_call_budget_exits": 0,
+              "early_token_budget_exits": 0,
+              "early_any_budget_exits": 0,
+              "failed_or_pending_provider_calls": 0,
+              "scheduled_dialogue_turns": 18,
+              "consumed_dialogue_turns": 18
+            },
+            "model_costs_by_role": {
+              "normal_investigator": {
+                "model_calls": 18,
+                "input_tokens": 81052,
+                "output_tokens": 1750,
+                "total_tokens": 82802,
+                "api_wall_ms": 44596.662
+              }
+            },
+            "delivery_paths": {
+              "answer_delivery": {
+                "card_operation_attempts": 0,
+                "publication_attempts": 0,
+                "withdrawal_attempts": 0,
+                "committed_publications": 0,
+                "unchanged_cards": 0,
+                "committed_withdrawals": 0,
+                "receipt_statuses": {}
+              },
+              "direct_actor": {
+                "card_operation_attempts": 0,
+                "publication_attempts": 0,
+                "withdrawal_attempts": 0,
+                "committed_publications": 0,
+                "unchanged_cards": 0,
+                "committed_withdrawals": 0,
+                "receipt_statuses": {}
+              }
+            },
+            "delivery_decision_outcomes": {
+              "budget_or_input_deferred": 2
+            },
+            "delivery_decision_actions": {
+              "none": 2
+            },
+            "delivery_receipt_statuses": {
+              "not_published": 2
+            },
+            "observed_explicit_intention": "not scored by visible-output reviewers",
+            "behavior_counts": {
+              "silence": 2
+            },
+            "primary_success_interval": {
+              "confirmed_successes": 2,
+              "uncertain_runs": 0,
+              "denominator": 2
+            },
+            "model_loading": {
+              "provider_load_seconds_known": 9.4100026,
+              "provider_load_duration_complete": true,
+              "interpretation": "Reported inference wall time includes cold model loading. Known load duration is separated as provider metadata, not an estimate of a warm rerun."
+            },
+            "strict_zero_card_runs": 2,
+            "strict_zero_card_denominator": 2
+          }
+        }
+      },
+      "qwen35-9b": {
+        "agent-led-recovery": {
+          "all_meetings": {
+            "runs": 8,
+            "independent_scenarios": 4,
+            "primary_success": 2,
+            "primary_denominator": 8,
+            "primary_uncertain_runs": 0,
+            "need_outcomes": {
+              "omitted": 14
+            },
+            "need_denominator": 14,
+            "diagnostics": {
+              "material_error": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 8,
+                "uncertain_runs": 0
+              },
+              "intermediate_material_error": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 8,
+                "uncertain_runs": 0
+              },
+              "stale_active": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 8,
+                "uncertain_runs": 0
+              },
+              "unnecessary_publication": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 8,
+                "uncertain_runs": 0
+              },
+              "unnecessary_revision": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 8,
+                "uncertain_runs": 0
+              },
+              "stale_new_publication": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 8,
+                "uncertain_runs": 0
+              }
+            },
+            "metrics": {
+              "model_calls": 100,
+              "input_tokens": 521302,
+              "output_tokens": 10500,
+              "total_tokens": 531802,
+              "api_wall_ms": 154018.919,
+              "publications": 0,
+              "withdrawals": 0,
+              "normal_investigator_calls": 100,
+              "private_only_responses": 72,
+              "investigator_private_only_responses": 72,
+              "framework_context_extraction_calls": 0,
+              "answer_delivery_candidates": 0,
+              "answer_delivery_review_calls": 0,
+              "answer_delivery_verified_card_operations": 0,
+              "mean_model_wall_seconds": 19.252364875,
+              "median_model_wall_seconds": 18.832622,
+              "early_call_budget_exits": 0,
+              "early_token_budget_exits": 0,
+              "early_any_budget_exits": 0,
+              "failed_or_pending_provider_calls": 0,
+              "scheduled_dialogue_turns": 72,
+              "consumed_dialogue_turns": 72
+            },
+            "model_costs_by_role": {
+              "normal_investigator": {
+                "model_calls": 100,
+                "input_tokens": 521302,
+                "output_tokens": 10500,
+                "total_tokens": 531802,
+                "api_wall_ms": 154018.919
+              }
+            },
+            "delivery_paths": {
+              "answer_delivery": {
+                "card_operation_attempts": 0,
+                "publication_attempts": 0,
+                "withdrawal_attempts": 0,
+                "committed_publications": 0,
+                "unchanged_cards": 0,
+                "committed_withdrawals": 0,
+                "receipt_statuses": {}
+              },
+              "direct_actor": {
+                "card_operation_attempts": 0,
+                "publication_attempts": 0,
+                "withdrawal_attempts": 0,
+                "committed_publications": 0,
+                "unchanged_cards": 0,
+                "committed_withdrawals": 0,
+                "receipt_statuses": {}
+              }
+            },
+            "delivery_decision_outcomes": {},
+            "delivery_decision_actions": {},
+            "delivery_receipt_statuses": {},
+            "observed_explicit_intention": "not scored by visible-output reviewers",
+            "behavior_counts": {
+              "help": 6,
+              "silence": 2
+            },
+            "primary_success_interval": {
+              "confirmed_successes": 2,
+              "uncertain_runs": 0,
+              "denominator": 8
+            },
+            "model_loading": {
+              "provider_load_seconds_known": 16.2817064,
+              "provider_load_duration_complete": true,
+              "interpretation": "Reported inference wall time includes cold model loading. Known load duration is separated as provider metadata, not an estimate of a warm rerun."
+            },
+            "strict_zero_card_runs": 8,
+            "strict_zero_card_denominator": 8
+          },
+          "help": {
+            "runs": 6,
+            "independent_scenarios": 3,
+            "primary_success": 0,
+            "primary_denominator": 6,
+            "primary_uncertain_runs": 0,
+            "need_outcomes": {
+              "omitted": 14
+            },
+            "need_denominator": 14,
+            "diagnostics": {
+              "material_error": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 6,
+                "uncertain_runs": 0
+              },
+              "intermediate_material_error": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 6,
+                "uncertain_runs": 0
+              },
+              "stale_active": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 6,
+                "uncertain_runs": 0
+              },
+              "unnecessary_publication": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 6,
+                "uncertain_runs": 0
+              },
+              "unnecessary_revision": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 6,
+                "uncertain_runs": 0
+              },
+              "stale_new_publication": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 6,
+                "uncertain_runs": 0
+              }
+            },
+            "metrics": {
+              "model_calls": 82,
+              "input_tokens": 441680,
+              "output_tokens": 9532,
+              "total_tokens": 451212,
+              "api_wall_ms": 139747.195,
+              "publications": 0,
+              "withdrawals": 0,
+              "normal_investigator_calls": 82,
+              "private_only_responses": 54,
+              "investigator_private_only_responses": 54,
+              "framework_context_extraction_calls": 0,
+              "answer_delivery_candidates": 0,
+              "answer_delivery_review_calls": 0,
+              "answer_delivery_verified_card_operations": 0,
+              "mean_model_wall_seconds": 23.29119916666667,
+              "median_model_wall_seconds": 21.530005,
+              "early_call_budget_exits": 0,
+              "early_token_budget_exits": 0,
+              "early_any_budget_exits": 0,
+              "failed_or_pending_provider_calls": 0,
+              "scheduled_dialogue_turns": 54,
+              "consumed_dialogue_turns": 54
+            },
+            "model_costs_by_role": {
+              "normal_investigator": {
+                "model_calls": 82,
+                "input_tokens": 441680,
+                "output_tokens": 9532,
+                "total_tokens": 451212,
+                "api_wall_ms": 139747.195
+              }
+            },
+            "delivery_paths": {
+              "answer_delivery": {
+                "card_operation_attempts": 0,
+                "publication_attempts": 0,
+                "withdrawal_attempts": 0,
+                "committed_publications": 0,
+                "unchanged_cards": 0,
+                "committed_withdrawals": 0,
+                "receipt_statuses": {}
+              },
+              "direct_actor": {
+                "card_operation_attempts": 0,
+                "publication_attempts": 0,
+                "withdrawal_attempts": 0,
+                "committed_publications": 0,
+                "unchanged_cards": 0,
+                "committed_withdrawals": 0,
+                "receipt_statuses": {}
+              }
+            },
+            "delivery_decision_outcomes": {},
+            "delivery_decision_actions": {},
+            "delivery_receipt_statuses": {},
+            "observed_explicit_intention": "not scored by visible-output reviewers",
+            "behavior_counts": {
+              "help": 6
+            },
+            "primary_success_interval": {
+              "confirmed_successes": 0,
+              "uncertain_runs": 0,
+              "denominator": 6
+            },
+            "model_loading": {
+              "provider_load_seconds_known": 16.2040168,
+              "provider_load_duration_complete": true,
+              "interpretation": "Reported inference wall time includes cold model loading. Known load duration is separated as provider metadata, not an estimate of a warm rerun."
+            },
+            "strict_zero_card_runs": 6,
+            "strict_zero_card_denominator": 6
+          },
+          "silence": {
+            "runs": 2,
+            "independent_scenarios": 1,
+            "primary_success": 2,
+            "primary_denominator": 2,
+            "primary_uncertain_runs": 0,
+            "need_outcomes": {},
+            "need_denominator": 0,
+            "diagnostics": {
+              "material_error": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 2,
+                "uncertain_runs": 0
+              },
+              "intermediate_material_error": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 2,
+                "uncertain_runs": 0
+              },
+              "stale_active": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 2,
+                "uncertain_runs": 0
+              },
+              "unnecessary_publication": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 2,
+                "uncertain_runs": 0
+              },
+              "unnecessary_revision": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 2,
+                "uncertain_runs": 0
+              },
+              "stale_new_publication": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 2,
+                "uncertain_runs": 0
+              }
+            },
+            "metrics": {
+              "model_calls": 18,
+              "input_tokens": 79622,
+              "output_tokens": 968,
+              "total_tokens": 80590,
+              "api_wall_ms": 14271.724,
+              "publications": 0,
+              "withdrawals": 0,
+              "normal_investigator_calls": 18,
+              "private_only_responses": 18,
+              "investigator_private_only_responses": 18,
+              "framework_context_extraction_calls": 0,
+              "answer_delivery_candidates": 0,
+              "answer_delivery_review_calls": 0,
+              "answer_delivery_verified_card_operations": 0,
+              "mean_model_wall_seconds": 7.1358619999999995,
+              "median_model_wall_seconds": 7.1358619999999995,
+              "early_call_budget_exits": 0,
+              "early_token_budget_exits": 0,
+              "early_any_budget_exits": 0,
+              "failed_or_pending_provider_calls": 0,
+              "scheduled_dialogue_turns": 18,
+              "consumed_dialogue_turns": 18
+            },
+            "model_costs_by_role": {
+              "normal_investigator": {
+                "model_calls": 18,
+                "input_tokens": 79622,
+                "output_tokens": 968,
+                "total_tokens": 80590,
+                "api_wall_ms": 14271.724
+              }
+            },
+            "delivery_paths": {
+              "answer_delivery": {
+                "card_operation_attempts": 0,
+                "publication_attempts": 0,
+                "withdrawal_attempts": 0,
+                "committed_publications": 0,
+                "unchanged_cards": 0,
+                "committed_withdrawals": 0,
+                "receipt_statuses": {}
+              },
+              "direct_actor": {
+                "card_operation_attempts": 0,
+                "publication_attempts": 0,
+                "withdrawal_attempts": 0,
+                "committed_publications": 0,
+                "unchanged_cards": 0,
+                "committed_withdrawals": 0,
+                "receipt_statuses": {}
+              }
+            },
+            "delivery_decision_outcomes": {},
+            "delivery_decision_actions": {},
+            "delivery_receipt_statuses": {},
+            "observed_explicit_intention": "not scored by visible-output reviewers",
+            "behavior_counts": {
+              "silence": 2
+            },
+            "primary_success_interval": {
+              "confirmed_successes": 2,
+              "uncertain_runs": 0,
+              "denominator": 2
+            },
+            "model_loading": {
+              "provider_load_seconds_known": 0.0776896,
+              "provider_load_duration_complete": true,
+              "interpretation": "Reported inference wall time includes cold model loading. Known load duration is separated as provider metadata, not an estimate of a warm rerun."
+            },
+            "strict_zero_card_runs": 2,
+            "strict_zero_card_denominator": 2
+          }
+        },
+        "agent-led-answer-delivery": {
+          "all_meetings": {
+            "runs": 8,
+            "independent_scenarios": 4,
+            "primary_success": 4,
+            "primary_denominator": 8,
+            "primary_uncertain_runs": 0,
+            "need_outcomes": {
+              "incorrect_or_unsupported": 4,
+              "pass": 10
+            },
+            "need_denominator": 14,
+            "diagnostics": {
+              "material_error": {
+                "confirmed_true_runs": 2,
+                "confirmed_false_runs": 6,
+                "uncertain_runs": 0
+              },
+              "intermediate_material_error": {
+                "confirmed_true_runs": 2,
+                "confirmed_false_runs": 6,
+                "uncertain_runs": 0
+              },
+              "stale_active": {
+                "confirmed_true_runs": 2,
+                "confirmed_false_runs": 6,
+                "uncertain_runs": 0
+              },
+              "unnecessary_publication": {
+                "confirmed_true_runs": 5,
+                "confirmed_false_runs": 3,
+                "uncertain_runs": 0
+              },
+              "unnecessary_revision": {
+                "confirmed_true_runs": 3,
+                "confirmed_false_runs": 5,
+                "uncertain_runs": 0
+              },
+              "stale_new_publication": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 8,
+                "uncertain_runs": 0
+              }
+            },
+            "metrics": {
+              "model_calls": 166,
+              "input_tokens": 868554,
+              "output_tokens": 22366,
+              "total_tokens": 890920,
+              "api_wall_ms": 349792.873,
+              "publications": 53,
+              "withdrawals": 0,
+              "normal_investigator_calls": 115,
+              "private_only_responses": 56,
+              "investigator_private_only_responses": 55,
+              "framework_context_extraction_calls": 1,
+              "answer_delivery_candidates": 55,
+              "answer_delivery_review_calls": 50,
+              "answer_delivery_verified_card_operations": 48,
+              "mean_model_wall_seconds": 43.724109125,
+              "median_model_wall_seconds": 39.848296999999995,
+              "early_call_budget_exits": 0,
+              "early_token_budget_exits": 6,
+              "early_any_budget_exits": 6,
+              "failed_or_pending_provider_calls": 1,
+              "scheduled_dialogue_turns": 72,
+              "consumed_dialogue_turns": 53
+            },
+            "model_costs_by_role": {
+              "answer_delivery": {
+                "model_calls": 50,
+                "input_tokens": 101413,
+                "output_tokens": 11087,
+                "total_tokens": 112500,
+                "api_wall_ms": 155252.969
+              },
+              "framework_context_extraction": {
+                "model_calls": 1,
+                "input_tokens": 10343,
+                "output_tokens": 959,
+                "total_tokens": 11302,
+                "api_wall_ms": 13397.974
+              },
+              "normal_investigator": {
+                "model_calls": 115,
+                "input_tokens": 756798,
+                "output_tokens": 10320,
+                "total_tokens": 767118,
+                "api_wall_ms": 181141.93
+              }
+            },
+            "delivery_paths": {
+              "answer_delivery": {
+                "card_operation_attempts": 48,
+                "publication_attempts": 48,
+                "withdrawal_attempts": 0,
+                "committed_publications": 48,
+                "unchanged_cards": 0,
+                "committed_withdrawals": 0,
+                "receipt_statuses": {
+                  "displayed": 48
+                }
+              },
+              "direct_actor": {
+                "card_operation_attempts": 5,
+                "publication_attempts": 5,
+                "withdrawal_attempts": 0,
+                "committed_publications": 5,
+                "unchanged_cards": 0,
+                "committed_withdrawals": 0,
+                "receipt_statuses": {
+                  "displayed": 5
+                }
+              }
+            },
+            "delivery_decision_outcomes": {
+              "reviewed": 49,
+              "budget_exhausted": 5,
+              "review_failed": 1
+            },
+            "delivery_decision_actions": {
+              "publish": 43,
+              "none": 7,
+              "update": 5
+            },
+            "delivery_receipt_statuses": {
+              "displayed": 48,
+              "not_published": 7
+            },
+            "observed_explicit_intention": "not scored by visible-output reviewers",
+            "behavior_counts": {
+              "help": 6,
+              "silence": 2
+            },
+            "primary_success_interval": {
+              "confirmed_successes": 4,
+              "uncertain_runs": 0,
+              "denominator": 8
+            },
+            "model_loading": {
+              "provider_load_seconds_known": 31.6535163,
+              "provider_load_duration_complete": true,
+              "interpretation": "Reported inference wall time includes cold model loading. Known load duration is separated as provider metadata, not an estimate of a warm rerun."
+            },
+            "strict_zero_card_runs": 0,
+            "strict_zero_card_denominator": 8
+          },
+          "help": {
+            "runs": 6,
+            "independent_scenarios": 3,
+            "primary_success": 2,
+            "primary_denominator": 6,
+            "primary_uncertain_runs": 0,
+            "need_outcomes": {
+              "incorrect_or_unsupported": 4,
+              "pass": 10
+            },
+            "need_denominator": 14,
+            "diagnostics": {
+              "material_error": {
+                "confirmed_true_runs": 2,
+                "confirmed_false_runs": 4,
+                "uncertain_runs": 0
+              },
+              "intermediate_material_error": {
+                "confirmed_true_runs": 2,
+                "confirmed_false_runs": 4,
+                "uncertain_runs": 0
+              },
+              "stale_active": {
+                "confirmed_true_runs": 2,
+                "confirmed_false_runs": 4,
+                "uncertain_runs": 0
+              },
+              "unnecessary_publication": {
+                "confirmed_true_runs": 5,
+                "confirmed_false_runs": 1,
+                "uncertain_runs": 0
+              },
+              "unnecessary_revision": {
+                "confirmed_true_runs": 1,
+                "confirmed_false_runs": 5,
+                "uncertain_runs": 0
+              },
+              "stale_new_publication": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 6,
+                "uncertain_runs": 0
+              }
+            },
+            "metrics": {
+              "model_calls": 130,
+              "input_tokens": 735415,
+              "output_tokens": 18163,
+              "total_tokens": 753578,
+              "api_wall_ms": 282979.626,
+              "publications": 35,
+              "withdrawals": 0,
+              "normal_investigator_calls": 97,
+              "private_only_responses": 38,
+              "investigator_private_only_responses": 37,
+              "framework_context_extraction_calls": 1,
+              "answer_delivery_candidates": 37,
+              "answer_delivery_review_calls": 32,
+              "answer_delivery_verified_card_operations": 30,
+              "mean_model_wall_seconds": 47.163270999999995,
+              "median_model_wall_seconds": 44.8692955,
+              "early_call_budget_exits": 0,
+              "early_token_budget_exits": 6,
+              "early_any_budget_exits": 6,
+              "failed_or_pending_provider_calls": 1,
+              "scheduled_dialogue_turns": 54,
+              "consumed_dialogue_turns": 35
+            },
+            "model_costs_by_role": {
+              "answer_delivery": {
+                "model_calls": 32,
+                "input_tokens": 67419,
+                "output_tokens": 7777,
+                "total_tokens": 75196,
+                "api_wall_ms": 110183.877
+              },
+              "framework_context_extraction": {
+                "model_calls": 1,
+                "input_tokens": 10343,
+                "output_tokens": 959,
+                "total_tokens": 11302,
+                "api_wall_ms": 13397.974
+              },
+              "normal_investigator": {
+                "model_calls": 97,
+                "input_tokens": 657653,
+                "output_tokens": 9427,
+                "total_tokens": 667080,
+                "api_wall_ms": 159397.775
+              }
+            },
+            "delivery_paths": {
+              "answer_delivery": {
+                "card_operation_attempts": 30,
+                "publication_attempts": 30,
+                "withdrawal_attempts": 0,
+                "committed_publications": 30,
+                "unchanged_cards": 0,
+                "committed_withdrawals": 0,
+                "receipt_statuses": {
+                  "displayed": 30
+                }
+              },
+              "direct_actor": {
+                "card_operation_attempts": 5,
+                "publication_attempts": 5,
+                "withdrawal_attempts": 0,
+                "committed_publications": 5,
+                "unchanged_cards": 0,
+                "committed_withdrawals": 0,
+                "receipt_statuses": {
+                  "displayed": 5
+                }
+              }
+            },
+            "delivery_decision_outcomes": {
+              "reviewed": 31,
+              "budget_exhausted": 5,
+              "review_failed": 1
+            },
+            "delivery_decision_actions": {
+              "publish": 27,
+              "none": 7,
+              "update": 3
+            },
+            "delivery_receipt_statuses": {
+              "displayed": 30,
+              "not_published": 7
+            },
+            "observed_explicit_intention": "not scored by visible-output reviewers",
+            "behavior_counts": {
+              "help": 6
+            },
+            "primary_success_interval": {
+              "confirmed_successes": 2,
+              "uncertain_runs": 0,
+              "denominator": 6
+            },
+            "model_loading": {
+              "provider_load_seconds_known": 26.138374,
+              "provider_load_duration_complete": true,
+              "interpretation": "Reported inference wall time includes cold model loading. Known load duration is separated as provider metadata, not an estimate of a warm rerun."
+            },
+            "strict_zero_card_runs": 0,
+            "strict_zero_card_denominator": 6
+          },
+          "silence": {
+            "runs": 2,
+            "independent_scenarios": 1,
+            "primary_success": 2,
+            "primary_denominator": 2,
+            "primary_uncertain_runs": 0,
+            "need_outcomes": {},
+            "need_denominator": 0,
+            "diagnostics": {
+              "material_error": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 2,
+                "uncertain_runs": 0
+              },
+              "intermediate_material_error": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 2,
+                "uncertain_runs": 0
+              },
+              "stale_active": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 2,
+                "uncertain_runs": 0
+              },
+              "unnecessary_publication": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 2,
+                "uncertain_runs": 0
+              },
+              "unnecessary_revision": {
+                "confirmed_true_runs": 2,
+                "confirmed_false_runs": 0,
+                "uncertain_runs": 0
+              },
+              "stale_new_publication": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 2,
+                "uncertain_runs": 0
+              }
+            },
+            "metrics": {
+              "model_calls": 36,
+              "input_tokens": 133139,
+              "output_tokens": 4203,
+              "total_tokens": 137342,
+              "api_wall_ms": 66813.247,
+              "publications": 18,
+              "withdrawals": 0,
+              "normal_investigator_calls": 18,
+              "private_only_responses": 18,
+              "investigator_private_only_responses": 18,
+              "framework_context_extraction_calls": 0,
+              "answer_delivery_candidates": 18,
+              "answer_delivery_review_calls": 18,
+              "answer_delivery_verified_card_operations": 18,
+              "mean_model_wall_seconds": 33.406623499999995,
+              "median_model_wall_seconds": 33.406623499999995,
+              "early_call_budget_exits": 0,
+              "early_token_budget_exits": 0,
+              "early_any_budget_exits": 0,
+              "failed_or_pending_provider_calls": 0,
+              "scheduled_dialogue_turns": 18,
+              "consumed_dialogue_turns": 18
+            },
+            "model_costs_by_role": {
+              "answer_delivery": {
+                "model_calls": 18,
+                "input_tokens": 33994,
+                "output_tokens": 3310,
+                "total_tokens": 37304,
+                "api_wall_ms": 45069.092
+              },
+              "normal_investigator": {
+                "model_calls": 18,
+                "input_tokens": 99145,
+                "output_tokens": 893,
+                "total_tokens": 100038,
+                "api_wall_ms": 21744.155
+              }
+            },
+            "delivery_paths": {
+              "answer_delivery": {
+                "card_operation_attempts": 18,
+                "publication_attempts": 18,
+                "withdrawal_attempts": 0,
+                "committed_publications": 18,
+                "unchanged_cards": 0,
+                "committed_withdrawals": 0,
+                "receipt_statuses": {
+                  "displayed": 18
+                }
+              },
+              "direct_actor": {
+                "card_operation_attempts": 0,
+                "publication_attempts": 0,
+                "withdrawal_attempts": 0,
+                "committed_publications": 0,
+                "unchanged_cards": 0,
+                "committed_withdrawals": 0,
+                "receipt_statuses": {}
+              }
+            },
+            "delivery_decision_outcomes": {
+              "reviewed": 18
+            },
+            "delivery_decision_actions": {
+              "publish": 16,
+              "update": 2
+            },
+            "delivery_receipt_statuses": {
+              "displayed": 18
+            },
+            "observed_explicit_intention": "not scored by visible-output reviewers",
+            "behavior_counts": {
+              "silence": 2
+            },
+            "primary_success_interval": {
+              "confirmed_successes": 2,
+              "uncertain_runs": 0,
+              "denominator": 2
+            },
+            "model_loading": {
+              "provider_load_seconds_known": 5.5151423,
+              "provider_load_duration_complete": true,
+              "interpretation": "Reported inference wall time includes cold model loading. Known load duration is separated as provider metadata, not an estimate of a warm rerun."
+            },
+            "strict_zero_card_runs": 0,
+            "strict_zero_card_denominator": 2
+          }
+        },
+        "agent-led-budget-state": {
+          "all_meetings": {
+            "runs": 8,
+            "independent_scenarios": 4,
+            "primary_success": 5,
+            "primary_denominator": 8,
+            "primary_uncertain_runs": 0,
+            "need_outcomes": {
+              "pass": 10,
+              "incorrect_or_unsupported": 2,
+              "omitted": 2
+            },
+            "need_denominator": 14,
+            "diagnostics": {
+              "material_error": {
+                "confirmed_true_runs": 1,
+                "confirmed_false_runs": 7,
+                "uncertain_runs": 0
+              },
+              "intermediate_material_error": {
+                "confirmed_true_runs": 1,
+                "confirmed_false_runs": 7,
+                "uncertain_runs": 0
+              },
+              "stale_active": {
+                "confirmed_true_runs": 2,
+                "confirmed_false_runs": 6,
+                "uncertain_runs": 0
+              },
+              "unnecessary_publication": {
+                "confirmed_true_runs": 1,
+                "confirmed_false_runs": 7,
+                "uncertain_runs": 0
+              },
+              "unnecessary_revision": {
+                "confirmed_true_runs": 1,
+                "confirmed_false_runs": 7,
+                "uncertain_runs": 0
+              },
+              "stale_new_publication": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 8,
+                "uncertain_runs": 0
+              }
+            },
+            "metrics": {
+              "model_calls": 136,
+              "input_tokens": 795556,
+              "output_tokens": 18749,
+              "total_tokens": 814305,
+              "api_wall_ms": 302281.129,
+              "publications": 17,
+              "withdrawals": 0,
+              "normal_investigator_calls": 106,
+              "private_only_responses": 73,
+              "investigator_private_only_responses": 70,
+              "framework_context_extraction_calls": 3,
+              "answer_delivery_candidates": 70,
+              "answer_delivery_review_calls": 27,
+              "answer_delivery_verified_card_operations": 16,
+              "mean_model_wall_seconds": 37.785141125,
+              "median_model_wall_seconds": 38.556263,
+              "early_call_budget_exits": 0,
+              "early_token_budget_exits": 5,
+              "early_any_budget_exits": 5,
+              "failed_or_pending_provider_calls": 0,
+              "scheduled_dialogue_turns": 72,
+              "consumed_dialogue_turns": 72
+            },
+            "model_costs_by_role": {
+              "answer_delivery": {
+                "model_calls": 27,
+                "input_tokens": 61476,
+                "output_tokens": 6730,
+                "total_tokens": 68206,
+                "api_wall_ms": 89530.581
+              },
+              "framework_context_extraction": {
+                "model_calls": 3,
+                "input_tokens": 30200,
+                "output_tokens": 2487,
+                "total_tokens": 32687,
+                "api_wall_ms": 32265.801
+              },
+              "normal_investigator": {
+                "model_calls": 106,
+                "input_tokens": 703880,
+                "output_tokens": 9532,
+                "total_tokens": 713412,
+                "api_wall_ms": 180484.747
+              }
+            },
+            "delivery_paths": {
+              "answer_delivery": {
+                "card_operation_attempts": 16,
+                "publication_attempts": 16,
+                "withdrawal_attempts": 0,
+                "committed_publications": 14,
+                "unchanged_cards": 2,
+                "committed_withdrawals": 0,
+                "receipt_statuses": {
+                  "displayed": 14,
+                  "unchanged": 2
+                }
+              },
+              "direct_actor": {
+                "card_operation_attempts": 5,
+                "publication_attempts": 5,
+                "withdrawal_attempts": 0,
+                "committed_publications": 3,
+                "unchanged_cards": 2,
+                "committed_withdrawals": 0,
+                "receipt_statuses": {
+                  "displayed": 3,
+                  "unchanged": 2
+                }
+              }
+            },
+            "delivery_decision_outcomes": {
+              "budget_or_input_deferred": 25,
+              "reviewed": 22,
+              "new_observations": 14,
+              "budget_exhausted": 4,
+              "invalid_edit": 5
+            },
+            "delivery_decision_actions": {
+              "none": 54,
+              "publish": 7,
+              "update": 9
+            },
+            "delivery_receipt_statuses": {
+              "not_published": 54,
+              "displayed": 14,
+              "unchanged": 2
+            },
+            "observed_explicit_intention": "not scored by visible-output reviewers",
+            "behavior_counts": {
+              "help": 6,
+              "silence": 2
+            },
+            "primary_success_interval": {
+              "confirmed_successes": 5,
+              "uncertain_runs": 0,
+              "denominator": 8
+            },
+            "model_loading": {
+              "provider_load_seconds_known": 34.2184334,
+              "provider_load_duration_complete": true,
+              "interpretation": "Reported inference wall time includes cold model loading. Known load duration is separated as provider metadata, not an estimate of a warm rerun."
+            },
+            "strict_zero_card_runs": 2,
+            "strict_zero_card_denominator": 8
+          },
+          "help": {
+            "runs": 6,
+            "independent_scenarios": 3,
+            "primary_success": 3,
+            "primary_denominator": 6,
+            "primary_uncertain_runs": 0,
+            "need_outcomes": {
+              "pass": 10,
+              "incorrect_or_unsupported": 2,
+              "omitted": 2
+            },
+            "need_denominator": 14,
+            "diagnostics": {
+              "material_error": {
+                "confirmed_true_runs": 1,
+                "confirmed_false_runs": 5,
+                "uncertain_runs": 0
+              },
+              "intermediate_material_error": {
+                "confirmed_true_runs": 1,
+                "confirmed_false_runs": 5,
+                "uncertain_runs": 0
+              },
+              "stale_active": {
+                "confirmed_true_runs": 2,
+                "confirmed_false_runs": 4,
+                "uncertain_runs": 0
+              },
+              "unnecessary_publication": {
+                "confirmed_true_runs": 1,
+                "confirmed_false_runs": 5,
+                "uncertain_runs": 0
+              },
+              "unnecessary_revision": {
+                "confirmed_true_runs": 1,
+                "confirmed_false_runs": 5,
+                "uncertain_runs": 0
+              },
+              "stale_new_publication": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 6,
+                "uncertain_runs": 0
+              }
+            },
+            "metrics": {
+              "model_calls": 118,
+              "input_tokens": 708866,
+              "output_tokens": 17917,
+              "total_tokens": 726783,
+              "api_wall_ms": 278440.105,
+              "publications": 17,
+              "withdrawals": 0,
+              "normal_investigator_calls": 88,
+              "private_only_responses": 55,
+              "investigator_private_only_responses": 52,
+              "framework_context_extraction_calls": 3,
+              "answer_delivery_candidates": 52,
+              "answer_delivery_review_calls": 27,
+              "answer_delivery_verified_card_operations": 16,
+              "mean_model_wall_seconds": 46.406684166666665,
+              "median_model_wall_seconds": 44.484375,
+              "early_call_budget_exits": 0,
+              "early_token_budget_exits": 5,
+              "early_any_budget_exits": 5,
+              "failed_or_pending_provider_calls": 0,
+              "scheduled_dialogue_turns": 54,
+              "consumed_dialogue_turns": 54
+            },
+            "model_costs_by_role": {
+              "answer_delivery": {
+                "model_calls": 27,
+                "input_tokens": 61476,
+                "output_tokens": 6730,
+                "total_tokens": 68206,
+                "api_wall_ms": 89530.581
+              },
+              "framework_context_extraction": {
+                "model_calls": 3,
+                "input_tokens": 30200,
+                "output_tokens": 2487,
+                "total_tokens": 32687,
+                "api_wall_ms": 32265.801
+              },
+              "normal_investigator": {
+                "model_calls": 88,
+                "input_tokens": 617190,
+                "output_tokens": 8700,
+                "total_tokens": 625890,
+                "api_wall_ms": 156643.723
+              }
+            },
+            "delivery_paths": {
+              "answer_delivery": {
+                "card_operation_attempts": 16,
+                "publication_attempts": 16,
+                "withdrawal_attempts": 0,
+                "committed_publications": 14,
+                "unchanged_cards": 2,
+                "committed_withdrawals": 0,
+                "receipt_statuses": {
+                  "displayed": 14,
+                  "unchanged": 2
+                }
+              },
+              "direct_actor": {
+                "card_operation_attempts": 5,
+                "publication_attempts": 5,
+                "withdrawal_attempts": 0,
+                "committed_publications": 3,
+                "unchanged_cards": 2,
+                "committed_withdrawals": 0,
+                "receipt_statuses": {
+                  "displayed": 3,
+                  "unchanged": 2
+                }
+              }
+            },
+            "delivery_decision_outcomes": {
+              "budget_or_input_deferred": 7,
+              "reviewed": 22,
+              "new_observations": 14,
+              "budget_exhausted": 4,
+              "invalid_edit": 5
+            },
+            "delivery_decision_actions": {
+              "none": 36,
+              "publish": 7,
+              "update": 9
+            },
+            "delivery_receipt_statuses": {
+              "not_published": 36,
+              "displayed": 14,
+              "unchanged": 2
+            },
+            "observed_explicit_intention": "not scored by visible-output reviewers",
+            "behavior_counts": {
+              "help": 6
+            },
+            "primary_success_interval": {
+              "confirmed_successes": 3,
+              "uncertain_runs": 0,
+              "denominator": 6
+            },
+            "model_loading": {
+              "provider_load_seconds_known": 23.292748200000002,
+              "provider_load_duration_complete": true,
+              "interpretation": "Reported inference wall time includes cold model loading. Known load duration is separated as provider metadata, not an estimate of a warm rerun."
+            },
+            "strict_zero_card_runs": 0,
+            "strict_zero_card_denominator": 6
+          },
+          "silence": {
+            "runs": 2,
+            "independent_scenarios": 1,
+            "primary_success": 2,
+            "primary_denominator": 2,
+            "primary_uncertain_runs": 0,
+            "need_outcomes": {},
+            "need_denominator": 0,
+            "diagnostics": {
+              "material_error": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 2,
+                "uncertain_runs": 0
+              },
+              "intermediate_material_error": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 2,
+                "uncertain_runs": 0
+              },
+              "stale_active": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 2,
+                "uncertain_runs": 0
+              },
+              "unnecessary_publication": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 2,
+                "uncertain_runs": 0
+              },
+              "unnecessary_revision": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 2,
+                "uncertain_runs": 0
+              },
+              "stale_new_publication": {
+                "confirmed_true_runs": 0,
+                "confirmed_false_runs": 2,
+                "uncertain_runs": 0
+              }
+            },
+            "metrics": {
+              "model_calls": 18,
+              "input_tokens": 86690,
+              "output_tokens": 832,
+              "total_tokens": 87522,
+              "api_wall_ms": 23841.024,
+              "publications": 0,
+              "withdrawals": 0,
+              "normal_investigator_calls": 18,
+              "private_only_responses": 18,
+              "investigator_private_only_responses": 18,
+              "framework_context_extraction_calls": 0,
+              "answer_delivery_candidates": 18,
+              "answer_delivery_review_calls": 0,
+              "answer_delivery_verified_card_operations": 0,
+              "mean_model_wall_seconds": 11.920512000000002,
+              "median_model_wall_seconds": 11.920512000000002,
+              "early_call_budget_exits": 0,
+              "early_token_budget_exits": 0,
+              "early_any_budget_exits": 0,
+              "failed_or_pending_provider_calls": 0,
+              "scheduled_dialogue_turns": 18,
+              "consumed_dialogue_turns": 18
+            },
+            "model_costs_by_role": {
+              "normal_investigator": {
+                "model_calls": 18,
+                "input_tokens": 86690,
+                "output_tokens": 832,
+                "total_tokens": 87522,
+                "api_wall_ms": 23841.024
+              }
+            },
+            "delivery_paths": {
+              "answer_delivery": {
+                "card_operation_attempts": 0,
+                "publication_attempts": 0,
+                "withdrawal_attempts": 0,
+                "committed_publications": 0,
+                "unchanged_cards": 0,
+                "committed_withdrawals": 0,
+                "receipt_statuses": {}
+              },
+              "direct_actor": {
+                "card_operation_attempts": 0,
+                "publication_attempts": 0,
+                "withdrawal_attempts": 0,
+                "committed_publications": 0,
+                "unchanged_cards": 0,
+                "committed_withdrawals": 0,
+                "receipt_statuses": {}
+              }
+            },
+            "delivery_decision_outcomes": {
+              "budget_or_input_deferred": 18
+            },
+            "delivery_decision_actions": {
+              "none": 18
+            },
+            "delivery_receipt_statuses": {
+              "not_published": 18
+            },
+            "observed_explicit_intention": "not scored by visible-output reviewers",
+            "behavior_counts": {
+              "silence": 2
+            },
+            "primary_success_interval": {
+              "confirmed_successes": 2,
+              "uncertain_runs": 0,
+              "denominator": 2
+            },
+            "model_loading": {
+              "provider_load_seconds_known": 10.9256852,
+              "provider_load_duration_complete": true,
+              "interpretation": "Reported inference wall time includes cold model loading. Known load duration is separated as provider metadata, not an estimate of a warm rerun."
+            },
+            "strict_zero_card_runs": 2,
+            "strict_zero_card_denominator": 2
+          }
+        }
+      }
+    },
+    "interpretation": "Delivered assistance is the outcome here, not intention recognition. No extra intention probe is run. The repair combines budget scheduling and card-state preservation, so their individual causal effects are not isolated. Model condition changes model family, size and training together; no claim about a parameter-count effect or causal percentage of blame.",
+    "limitations": [
+      "Four authored development meetings (three help, one silence), not held-out, real ASR or a user study.",
+      "Repeats do not create independent scenarios. Contrasts are descriptive; label-uncertainty ranges are not confidence intervals.",
+      "Same token budget does not imply equivalent information capacity across model tokenizers; also report calls, output, wall time and incomplete observation.",
+      "The combined repair modifies budget scheduling and card-state preservation; this three-arm experiment does not isolate each component.",
+      "The cases previously revealed the failure modes and informed the repair; this is development regression, not held-out generalization.",
+      "Silent incomplete/error executions cannot establish successful restraint. No visible help cannot establish lack of understanding."
+    ],
+    "full_input_coverage": [
+      {
+        "model": "Qwen2.5 14B",
+        "harness_id": "agent-led-recovery",
+        "count": 7,
+        "total": 8
+      },
+      {
+        "model": "Qwen2.5 14B",
+        "harness_id": "agent-led-answer-delivery",
+        "count": 6,
+        "total": 8
+      },
+      {
+        "model": "Qwen2.5 14B",
+        "harness_id": "agent-led-budget-state",
+        "count": 8,
+        "total": 8
+      },
+      {
+        "model": "Qwen3.5 9B",
+        "harness_id": "agent-led-recovery",
+        "count": 8,
+        "total": 8
+      },
+      {
+        "model": "Qwen3.5 9B",
+        "harness_id": "agent-led-answer-delivery",
+        "count": 2,
+        "total": 8
+      },
+      {
+        "model": "Qwen3.5 9B",
+        "harness_id": "agent-led-budget-state",
+        "count": 8,
+        "total": 8
+      }
+    ]
+  }
+}

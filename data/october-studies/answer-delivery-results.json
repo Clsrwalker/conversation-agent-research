@@ -1,0 +1,283 @@
+{
+  "schema_version": 1,
+  "study_id": "answer-delivery",
+  "export_kind": "selected aggregate evidence",
+  "provenance": [
+    {
+      "path": "output/research/2026-10-17/answer-delivery/RESULTS.md",
+      "sha256": "20c9d0c47646c934006fcaa50944687c27640facc571185eb17e35c2cb9e1b1d",
+      "selected_fields": [
+        "complete original Markdown; unchanged bytes"
+      ]
+    },
+    {
+      "path": "output/research/2026-10-17/answer-delivery/results.json",
+      "sha256": "cb97ec3ead78cf8ae2369de86b9b6a5710df28fc7d3fdc3520975a22e97a4a1a",
+      "selected_fields": [
+        "study_id",
+        "completed_runs",
+        "assessment",
+        "scoring",
+        "arms",
+        "relative_changes",
+        "limitations"
+      ]
+    }
+  ],
+  "summary": {
+    "study_id": "meeting-answer-delivery-local14-v1",
+    "completed_runs": 12,
+    "assessment": "Exploratory development comparison with independent anonymous AI reviews and explicit adjudication.",
+    "scoring": "Frozen current-visible-card rubric; private prose earns no delivery credit.",
+    "arms": {
+      "agent-led-answer-delivery": {
+        "runs": 6,
+        "independent_scenarios": 3,
+        "primary_success": 1,
+        "primary_denominator": 6,
+        "primary_uncertain_runs": 1,
+        "need_outcomes": {
+          "incorrect_or_unsupported": 7,
+          "omitted": 3,
+          "pass": 6,
+          "uncertain": 2
+        },
+        "need_denominator": 18,
+        "diagnostics": {
+          "material_error": {
+            "confirmed_true_runs": 3,
+            "confirmed_false_runs": 2,
+            "uncertain_runs": 1
+          },
+          "intermediate_material_error": {
+            "confirmed_true_runs": 4,
+            "confirmed_false_runs": 0,
+            "uncertain_runs": 2
+          },
+          "stale_active": {
+            "confirmed_true_runs": 1,
+            "confirmed_false_runs": 5,
+            "uncertain_runs": 0
+          },
+          "unnecessary_publication": {
+            "confirmed_true_runs": 0,
+            "confirmed_false_runs": 4,
+            "uncertain_runs": 2
+          },
+          "unnecessary_revision": {
+            "confirmed_true_runs": 6,
+            "confirmed_false_runs": 0,
+            "uncertain_runs": 0
+          },
+          "stale_new_publication": {
+            "confirmed_true_runs": 1,
+            "confirmed_false_runs": 5,
+            "uncertain_runs": 0
+          }
+        },
+        "metrics": {
+          "model_calls": 129,
+          "input_tokens": 551326,
+          "output_tokens": 22102,
+          "total_tokens": 573428,
+          "api_wall_ms": 470708.942,
+          "publications": 43,
+          "withdrawals": 1,
+          "normal_investigator_calls": 81,
+          "private_only_responses": 49,
+          "investigator_private_only_responses": 48,
+          "framework_context_extraction_calls": 1,
+          "answer_delivery_candidates": 48,
+          "answer_delivery_review_calls": 47,
+          "answer_delivery_verified_card_operations": 43,
+          "mean_model_wall_seconds": 78.45149033333333,
+          "median_model_wall_seconds": 72.31660550000001,
+          "early_call_budget_exits": 2,
+          "early_token_budget_exits": 1,
+          "early_any_budget_exits": 3,
+          "failed_or_pending_provider_calls": 0,
+          "scheduled_dialogue_turns": 54,
+          "consumed_dialogue_turns": 48
+        },
+        "model_costs_by_role": {
+          "answer_delivery": {
+            "model_calls": 47,
+            "input_tokens": 85848,
+            "output_tokens": 8743,
+            "total_tokens": 94591,
+            "api_wall_ms": 186781.414
+          },
+          "framework_context_extraction": {
+            "model_calls": 1,
+            "input_tokens": 8740,
+            "output_tokens": 229,
+            "total_tokens": 8969,
+            "api_wall_ms": 7591.107
+          },
+          "normal_investigator": {
+            "model_calls": 81,
+            "input_tokens": 456738,
+            "output_tokens": 13130,
+            "total_tokens": 469868,
+            "api_wall_ms": 276336.422
+          }
+        },
+        "delivery_paths": {
+          "answer_delivery": {
+            "card_operation_attempts": 43,
+            "publication_attempts": 43,
+            "withdrawal_attempts": 0,
+            "committed_publications": 37,
+            "unchanged_cards": 5,
+            "committed_withdrawals": 0,
+            "receipt_statuses": {
+              "displayed": 37,
+              "unchanged": 5,
+              "new_observations": 1
+            }
+          },
+          "direct_actor": {
+            "card_operation_attempts": 8,
+            "publication_attempts": 7,
+            "withdrawal_attempts": 1,
+            "committed_publications": 6,
+            "unchanged_cards": 0,
+            "committed_withdrawals": 1,
+            "receipt_statuses": {
+              "displayed": 6,
+              "withdrawn": 1,
+              "conflict": 1
+            }
+          }
+        },
+        "delivery_decision_outcomes": {
+          "reviewed": 43,
+          "no_valid_decision": 3,
+          "unobserved_card": 1,
+          "budget_exhausted": 1
+        },
+        "delivery_decision_actions": {
+          "publish": 5,
+          "update": 38,
+          "none": 5
+        },
+        "delivery_receipt_statuses": {
+          "displayed": 37,
+          "not_published": 5,
+          "unchanged": 5,
+          "new_observations": 1
+        }
+      },
+      "agent-led-recovery": {
+        "runs": 6,
+        "independent_scenarios": 3,
+        "primary_success": 0,
+        "primary_denominator": 6,
+        "primary_uncertain_runs": 0,
+        "need_outcomes": {
+          "omitted": 18
+        },
+        "need_denominator": 18,
+        "diagnostics": {
+          "material_error": {
+            "confirmed_true_runs": 0,
+            "confirmed_false_runs": 6,
+            "uncertain_runs": 0
+          },
+          "intermediate_material_error": {
+            "confirmed_true_runs": 0,
+            "confirmed_false_runs": 6,
+            "uncertain_runs": 0
+          },
+          "stale_active": {
+            "confirmed_true_runs": 0,
+            "confirmed_false_runs": 6,
+            "uncertain_runs": 0
+          },
+          "unnecessary_publication": {
+            "confirmed_true_runs": 0,
+            "confirmed_false_runs": 6,
+            "uncertain_runs": 0
+          },
+          "unnecessary_revision": {
+            "confirmed_true_runs": 0,
+            "confirmed_false_runs": 5,
+            "uncertain_runs": 1
+          },
+          "stale_new_publication": {
+            "confirmed_true_runs": 0,
+            "confirmed_false_runs": 6,
+            "uncertain_runs": 0
+          }
+        },
+        "metrics": {
+          "model_calls": 76,
+          "input_tokens": 396364,
+          "output_tokens": 13191,
+          "total_tokens": 409555,
+          "api_wall_ms": 254410.285,
+          "publications": 1,
+          "withdrawals": 1,
+          "normal_investigator_calls": 76,
+          "private_only_responses": 56,
+          "investigator_private_only_responses": 56,
+          "framework_context_extraction_calls": 0,
+          "answer_delivery_candidates": 0,
+          "answer_delivery_review_calls": 0,
+          "answer_delivery_verified_card_operations": 0,
+          "mean_model_wall_seconds": 42.401714166666665,
+          "median_model_wall_seconds": 43.650056500000005,
+          "early_call_budget_exits": 0,
+          "early_token_budget_exits": 0,
+          "early_any_budget_exits": 0,
+          "failed_or_pending_provider_calls": 0,
+          "scheduled_dialogue_turns": 54,
+          "consumed_dialogue_turns": 54
+        },
+        "model_costs_by_role": {
+          "normal_investigator": {
+            "model_calls": 76,
+            "input_tokens": 396364,
+            "output_tokens": 13191,
+            "total_tokens": 409555,
+            "api_wall_ms": 254410.285
+          }
+        },
+        "delivery_paths": {
+          "answer_delivery": {
+            "card_operation_attempts": 0,
+            "publication_attempts": 0,
+            "withdrawal_attempts": 0,
+            "committed_publications": 0,
+            "unchanged_cards": 0,
+            "committed_withdrawals": 0,
+            "receipt_statuses": {}
+          },
+          "direct_actor": {
+            "card_operation_attempts": 3,
+            "publication_attempts": 2,
+            "withdrawal_attempts": 1,
+            "committed_publications": 1,
+            "unchanged_cards": 0,
+            "committed_withdrawals": 1,
+            "receipt_statuses": {
+              "displayed": 1,
+              "withdrawn": 1,
+              "conflict": 1
+            }
+          }
+        },
+        "delivery_decision_outcomes": {},
+        "delivery_decision_actions": {},
+        "delivery_receipt_statuses": {}
+      }
+    },
+    "limitations": [
+      "Three authored development scenarios, each repeated twice.",
+      "Not real ASR, real meetings, held-out testing or a user study.",
+      "All scenarios require some help; ordinary-meeting false interruptions are not estimated.",
+      "Delivery review uses the same model and consumes the shared budget.",
+      "The intervention can alter selection, wording and correction; it is not a pure transport comparison."
+    ]
+  }
+}

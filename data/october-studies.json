@@ -1,0 +1,1153 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-19",
+  "title": "October research updates",
+  "scope": "Completed local studies; recognition diagnostics and delivered-help results stay separate.",
+  "report_download_note": "Original reports are unchanged source-language downloads. Use the links in this index for exported evidence.",
+  "studies": [
+    {
+      "id": "intent-coverage",
+      "date": "2026-10-19",
+      "title": "Missing needs and invented needs",
+      "sample_plain": "24 short dialogues, 2 models, 2 prompts, 2 repeats; 192 calls.",
+      "finding_plain": "Coverage reminders reduced missed needs for 9B, but added invented needs. For 14B, misses stayed at zero while invented needs rose from 2 to 8.",
+      "limits": [
+        "Recognition only; no retrieval, answer delivery or full agent run.",
+        "12 synthetic contrast pairs; repeated outputs are not independent samples.",
+        "Ranges preserve semantic ambiguity, not statistical confidence intervals."
+      ],
+      "method_notes": [
+        "Both prompts used the same dialogue, local model settings and free-form output.",
+        "Each condition has 48 outputs and 56 reference-need appearances: 28 annotated needs, repeated twice.",
+        "Two blinded AI reviews and a third adjudication covered the outputs. No human gold labels."
+      ],
+      "source_reports": [
+        "data/october-studies/intent-coverage-report.md"
+      ],
+      "additional_sources": [
+        "data/october-studies/intent-coverage-recognition-counts.json"
+      ],
+      "facts": {
+        "kind": "recognition",
+        "cases": 24,
+        "contrast_pairs": 12,
+        "calls": 192,
+        "repeats": 2,
+        "rows": [
+          {
+            "model": "Qwen2.5 14B",
+            "condition": "Direct prompt",
+            "condition_id": "direct",
+            "outputs": 48,
+            "reference_needs": 56,
+            "identified_needs": [
+              58,
+              58
+            ],
+            "missed_needs": [
+              0,
+              0
+            ],
+            "invented_needs": [
+              2,
+              2
+            ],
+            "missed_rate": [
+              0.0,
+              0.0
+            ],
+            "invented_share": [
+              0.034482758620689655,
+              0.034482758620689655
+            ]
+          },
+          {
+            "model": "Qwen2.5 14B",
+            "condition": "Coverage prompt",
+            "condition_id": "coverage",
+            "outputs": 48,
+            "reference_needs": 56,
+            "identified_needs": [
+              64,
+              64
+            ],
+            "missed_needs": [
+              0,
+              0
+            ],
+            "invented_needs": [
+              8,
+              8
+            ],
+            "missed_rate": [
+              0.0,
+              0.0
+            ],
+            "invented_share": [
+              0.125,
+              0.125
+            ]
+          },
+          {
+            "model": "Qwen3.5 9B",
+            "condition": "Direct prompt",
+            "condition_id": "direct",
+            "outputs": 48,
+            "reference_needs": 56,
+            "identified_needs": [
+              42,
+              44
+            ],
+            "missed_needs": [
+              12,
+              14
+            ],
+            "invented_needs": [
+              0,
+              2
+            ],
+            "missed_rate": [
+              0.21428571428571427,
+              0.25
+            ],
+            "invented_share": [
+              0.0,
+              0.045454545454545456
+            ]
+          },
+          {
+            "model": "Qwen3.5 9B",
+            "condition": "Coverage prompt",
+            "condition_id": "coverage",
+            "outputs": 48,
+            "reference_needs": 56,
+            "identified_needs": [
+              54,
+              58
+            ],
+            "missed_needs": [
+              0,
+              4
+            ],
+            "invented_needs": [
+              2,
+              6
+            ],
+            "missed_rate": [
+              0.0,
+              0.07142857142857142
+            ],
+            "invented_share": [
+              0.034482758620689655,
+              0.10344827586206896
+            ]
+          }
+        ]
+      },
+      "source_results": "data/october-studies/intent-coverage-results.json",
+      "provenance": [
+        {
+          "path": "output/research/2026-10-19/intent-coverage/RESULTS.md",
+          "sha256": "42e5bb9bfa21539bbee7641e5588f49700dc269b0a6be5a7115c1ade2275ed10",
+          "selected_fields": [
+            "complete original Markdown; unchanged bytes"
+          ]
+        },
+        {
+          "path": "output/research/2026-10-19/intent-coverage/scoring/aggregate.json",
+          "sha256": "3a88ecd00b88214a51da10120f60a39a5a9c0852a02f8d5d03610548981983b7",
+          "selected_fields": [
+            "scope",
+            "uncertainty",
+            "groups"
+          ]
+        },
+        {
+          "path": "output/research/2026-10-19/intent-coverage/scoring/recognition-counts.json",
+          "sha256": "fc9d98c9a1200da79bf2ca6dae50a09107ba1193255b8a48a1a73771bc2e36e2",
+          "selected_fields": [
+            "definitions",
+            "no_need_conditions",
+            "per_output_G_P_TP_FN_FP (counts and case/model/arm/repeat only)"
+          ]
+        }
+      ],
+      "download_note": "Original report download; source-language Markdown. Internal links refer to the full research archive."
+    },
+    {
+      "id": "budget-state-repair",
+      "date": "2026-10-17",
+      "title": "Budget and answer updates",
+      "sample_plain": "4 meetings, 2 models, 3 harnesses, 2 repeats; 48 run attempts.",
+      "finding_plain": "Complete help rose from 0 to 4 of 6 runs for 14B, and from 0 to 3 of 6 for 9B. All 16 repair runs received the full dialogue; some updates still failed.",
+      "limits": [
+        "Regression on four previously examined synthetic meetings.",
+        "Budget scheduling, context selection and editing changed together.",
+        "The repair remains experimental; it has not replaced the project baseline."
+      ],
+      "method_notes": [
+        "All three harnesses were rerun in the same batch for each unchanged local model.",
+        "Quality uses six help runs per condition; two silence-control runs are scored separately.",
+        "Each run shares 24 model calls and a soft limit of 120,000 known tokens. Missing provider usage remains unknown."
+      ],
+      "source_reports": [
+        "data/october-studies/budget-state-repair-report.md"
+      ],
+      "additional_sources": [
+        "data/october-studies/budget-state-repair-aster-trace.md"
+      ],
+      "facts": {
+        "kind": "delivery",
+        "runs": 48,
+        "scenarios": 4,
+        "help_scenarios": 3,
+        "silence_scenarios": 1,
+        "rows": [
+          {
+            "model": "Qwen2.5 14B",
+            "condition": "Project baseline",
+            "harness_id": "agent-led-recovery",
+            "complete_help": {
+              "passed": 0,
+              "total": 6,
+              "uncertain": 0
+            },
+            "required_conclusions": {
+              "passed": 1,
+              "total": 14,
+              "uncertain": 0
+            },
+            "budget_exits_help": {
+              "count": 1,
+              "total": 6
+            },
+            "budget_exits_all": {
+              "count": 1,
+              "total": 8
+            },
+            "model_calls": 106,
+            "known_tokens": 521664,
+            "mean_model_seconds": 27.612965250000002,
+            "strict_zero_cards": {
+              "count": 1,
+              "total": 2
+            },
+            "full_input": {
+              "count": 7,
+              "total": 8
+            }
+          },
+          {
+            "model": "Qwen2.5 14B",
+            "condition": "Answer delivery",
+            "harness_id": "agent-led-answer-delivery",
+            "complete_help": {
+              "passed": 2,
+              "total": 6,
+              "uncertain": 0
+            },
+            "required_conclusions": {
+              "passed": 6,
+              "total": 14,
+              "uncertain": 0
+            },
+            "budget_exits_help": {
+              "count": 2,
+              "total": 6
+            },
+            "budget_exits_all": {
+              "count": 2,
+              "total": 8
+            },
+            "model_calls": 164,
+            "known_tokens": 628581,
+            "mean_model_seconds": 57.726294125,
+            "strict_zero_cards": {
+              "count": 0,
+              "total": 2
+            },
+            "full_input": {
+              "count": 6,
+              "total": 8
+            }
+          },
+          {
+            "model": "Qwen2.5 14B",
+            "condition": "Budget and update repair",
+            "harness_id": "agent-led-budget-state",
+            "complete_help": {
+              "passed": 4,
+              "total": 6,
+              "uncertain": 0
+            },
+            "required_conclusions": {
+              "passed": 8,
+              "total": 14,
+              "uncertain": 0
+            },
+            "budget_exits_help": {
+              "count": 1,
+              "total": 6
+            },
+            "budget_exits_all": {
+              "count": 1,
+              "total": 8
+            },
+            "model_calls": 121,
+            "known_tokens": 621363,
+            "mean_model_seconds": 45.10255325,
+            "strict_zero_cards": {
+              "count": 2,
+              "total": 2
+            },
+            "full_input": {
+              "count": 8,
+              "total": 8
+            }
+          },
+          {
+            "model": "Qwen3.5 9B",
+            "condition": "Project baseline",
+            "harness_id": "agent-led-recovery",
+            "complete_help": {
+              "passed": 0,
+              "total": 6,
+              "uncertain": 0
+            },
+            "required_conclusions": {
+              "passed": 0,
+              "total": 14,
+              "uncertain": 0
+            },
+            "budget_exits_help": {
+              "count": 0,
+              "total": 6
+            },
+            "budget_exits_all": {
+              "count": 0,
+              "total": 8
+            },
+            "model_calls": 100,
+            "known_tokens": 531802,
+            "mean_model_seconds": 19.252364875,
+            "strict_zero_cards": {
+              "count": 2,
+              "total": 2
+            },
+            "full_input": {
+              "count": 8,
+              "total": 8
+            }
+          },
+          {
+            "model": "Qwen3.5 9B",
+            "condition": "Answer delivery",
+            "harness_id": "agent-led-answer-delivery",
+            "complete_help": {
+              "passed": 2,
+              "total": 6,
+              "uncertain": 0
+            },
+            "required_conclusions": {
+              "passed": 10,
+              "total": 14,
+              "uncertain": 0
+            },
+            "budget_exits_help": {
+              "count": 6,
+              "total": 6
+            },
+            "budget_exits_all": {
+              "count": 6,
+              "total": 8
+            },
+            "model_calls": 166,
+            "known_tokens": 890920,
+            "mean_model_seconds": 43.724109125,
+            "strict_zero_cards": {
+              "count": 0,
+              "total": 2
+            },
+            "full_input": {
+              "count": 2,
+              "total": 8
+            }
+          },
+          {
+            "model": "Qwen3.5 9B",
+            "condition": "Budget and update repair",
+            "harness_id": "agent-led-budget-state",
+            "complete_help": {
+              "passed": 3,
+              "total": 6,
+              "uncertain": 0
+            },
+            "required_conclusions": {
+              "passed": 10,
+              "total": 14,
+              "uncertain": 0
+            },
+            "budget_exits_help": {
+              "count": 5,
+              "total": 6
+            },
+            "budget_exits_all": {
+              "count": 5,
+              "total": 8
+            },
+            "model_calls": 136,
+            "known_tokens": 814305,
+            "mean_model_seconds": 37.785141125,
+            "strict_zero_cards": {
+              "count": 2,
+              "total": 2
+            },
+            "full_input": {
+              "count": 8,
+              "total": 8
+            }
+          }
+        ]
+      },
+      "source_results": "data/october-studies/budget-state-repair-results.json",
+      "provenance": [
+        {
+          "path": "output/research/2026-10-17/budget-state-repair/RESULTS.md",
+          "sha256": "335753c19dfda549aa7f69b2d11ab4f1aaa475836f1c30fb6c6831dece14a21d",
+          "selected_fields": [
+            "complete original Markdown; unchanged bytes"
+          ]
+        },
+        {
+          "path": "output/research/2026-10-17/budget-state-repair/results.json",
+          "sha256": "d5f5d333b7bfd0311392745e2e8302296ac9fab5fad3cfbf5c81bcf683e1520c",
+          "selected_fields": [
+            "completed_runs",
+            "independent_scenarios",
+            "independent_help_scenarios",
+            "independent_silence_scenarios",
+            "cells",
+            "interpretation",
+            "limitations"
+          ]
+        },
+        {
+          "path": "output/research/2026-10-17/budget-state-repair/diagnostics/by-model-harness.json",
+          "sha256": "c11f20d546e58a2edac01fb95e7a5d251a2dc86363cd1e6ed4aeb579b562c74c",
+          "selected_fields": [
+            "cells: model_key, preset, attempted_runs, complete_dialogue_consumed_runs"
+          ]
+        },
+        {
+          "path": "output/research/2026-10-17/budget-state-repair/TRACE-ASTER.md",
+          "sha256": "fb59df0be82c85cd2508fe5f64c89cc2ca2e5e30d94423c38759f8e71e6e8d2f",
+          "selected_fields": [
+            "complete original Markdown; unchanged bytes"
+          ]
+        }
+      ],
+      "download_note": "Original report download; source-language Markdown. Internal links refer to the full research archive."
+    },
+    {
+      "id": "model-harness-factorial",
+      "date": "2026-10-17",
+      "title": "Model and harness cross-check",
+      "sample_plain": "4 then-new meetings, 2 models, 2 harnesses, 2 repeats; 32 run attempts, plus 16 recognition calls.",
+      "finding_plain": "Answer delivery exposed more correct conclusions, but complete help remained rare: 1 of 6 for 14B and 0 of 6 for 9B. All six 9B delivery help runs ended early on budget.",
+      "limits": [
+        "Three help scenarios and one silence control; repeats do not add independent scenarios.",
+        "Recognition probes are separate from the running agent.",
+        "Model family, training, size and tokenizer differ; this is not a parameter-size comparison."
+      ],
+      "method_notes": [
+        "Scenes and scoring were frozen before this batch; tools searched controlled fictional sources.",
+        "Two blinded AI reviewers agreed on all 32 primary run labels; secondary disagreements were adjudicated.",
+        "Complete help is measured at the final visible cards, not in private model replies."
+      ],
+      "source_reports": [
+        "data/october-studies/model-harness-factorial-report.md"
+      ],
+      "additional_sources": [],
+      "facts": {
+        "kind": "delivery",
+        "runs": 32,
+        "scenarios": 4,
+        "help_scenarios": 3,
+        "silence_scenarios": 1,
+        "rows": [
+          {
+            "model": "Qwen2.5 14B",
+            "condition": "Project baseline",
+            "harness_id": "agent-led-recovery",
+            "complete_help": {
+              "passed": 0,
+              "total": 6,
+              "uncertain": 0
+            },
+            "required_conclusions": {
+              "passed": 2,
+              "total": 14,
+              "uncertain": 0
+            },
+            "budget_exits_help": {
+              "count": 1,
+              "total": 6
+            },
+            "budget_exits_all": {
+              "count": 1,
+              "total": 8
+            },
+            "model_calls": 107,
+            "known_tokens": 534112,
+            "mean_model_seconds": 29.831345250000002,
+            "strict_zero_cards": {
+              "count": 0,
+              "total": 2
+            }
+          },
+          {
+            "model": "Qwen2.5 14B",
+            "condition": "Answer delivery",
+            "harness_id": "agent-led-answer-delivery",
+            "complete_help": {
+              "passed": 1,
+              "total": 6,
+              "uncertain": 0
+            },
+            "required_conclusions": {
+              "passed": 3,
+              "total": 14,
+              "uncertain": 1
+            },
+            "budget_exits_help": {
+              "count": 3,
+              "total": 6
+            },
+            "budget_exits_all": {
+              "count": 3,
+              "total": 8
+            },
+            "model_calls": 166,
+            "known_tokens": 621386,
+            "mean_model_seconds": 63.358260125,
+            "strict_zero_cards": {
+              "count": 0,
+              "total": 2
+            }
+          },
+          {
+            "model": "Qwen3.5 9B",
+            "condition": "Project baseline",
+            "harness_id": "agent-led-recovery",
+            "complete_help": {
+              "passed": 0,
+              "total": 6,
+              "uncertain": 0
+            },
+            "required_conclusions": {
+              "passed": 0,
+              "total": 14,
+              "uncertain": 0
+            },
+            "budget_exits_help": {
+              "count": 0,
+              "total": 6
+            },
+            "budget_exits_all": {
+              "count": 0,
+              "total": 8
+            },
+            "model_calls": 100,
+            "known_tokens": 531802,
+            "mean_model_seconds": 20.40834475,
+            "strict_zero_cards": {
+              "count": 2,
+              "total": 2
+            }
+          },
+          {
+            "model": "Qwen3.5 9B",
+            "condition": "Answer delivery",
+            "harness_id": "agent-led-answer-delivery",
+            "complete_help": {
+              "passed": 0,
+              "total": 6,
+              "uncertain": 0
+            },
+            "required_conclusions": {
+              "passed": 8,
+              "total": 14,
+              "uncertain": 0
+            },
+            "budget_exits_help": {
+              "count": 6,
+              "total": 6
+            },
+            "budget_exits_all": {
+              "count": 6,
+              "total": 8
+            },
+            "model_calls": 168,
+            "known_tokens": 897082,
+            "mean_model_seconds": 48.194804625,
+            "strict_zero_cards": {
+              "count": 0,
+              "total": 2
+            }
+          }
+        ],
+        "recognition_rows": [
+          {
+            "model": "Qwen2.5 14B",
+            "passed": 7,
+            "failed": 1,
+            "uncertain": 0,
+            "total": 8
+          },
+          {
+            "model": "Qwen3.5 9B",
+            "passed": 5,
+            "failed": 2,
+            "uncertain": 1,
+            "total": 8
+          }
+        ]
+      },
+      "source_results": "data/october-studies/model-harness-factorial-results.json",
+      "provenance": [
+        {
+          "path": "output/research/2026-10-17/model-harness-factorial/RESULTS.md",
+          "sha256": "9ccd558bbafaa0ff7db564a1ccc99905a07d850f726bd4f69595bbed5d88bcc3",
+          "selected_fields": [
+            "complete original Markdown; unchanged bytes"
+          ]
+        },
+        {
+          "path": "output/research/2026-10-17/model-harness-factorial/results.json",
+          "sha256": "64bf401d851c0004b18672159bef30bfe9b95fa083e25e789217851ea5bb93c2",
+          "selected_fields": [
+            "completed_runs",
+            "independent_scenarios",
+            "independent_help_scenarios",
+            "independent_silence_scenarios",
+            "cells",
+            "interpretation",
+            "limitations"
+          ]
+        },
+        {
+          "path": "output/research/2026-10-17/model-harness-factorial/intention-probe/results.json",
+          "sha256": "9c77ee5bd6fd6444d5a343c2e224c67456a726d2315ad522907b45675b0bbb6b",
+          "selected_fields": [
+            "models.*.all: responses, overall, need_scores, need_denominator"
+          ]
+        }
+      ],
+      "download_note": "Original report download; source-language Markdown. Internal links refer to the full research archive."
+    },
+    {
+      "id": "delivery-recovery",
+      "date": "2026-10-17",
+      "title": "Delivery reminders",
+      "sample_plain": "3 meetings, 2 harnesses, 2 repeats; 12 runs with Qwen2.5 14B.",
+      "finding_plain": "Explicit delivery feedback left complete help at 0 of 6 in both groups, while model calls rose from 76 to 113.",
+      "limits": [
+        "Small development comparison with AI scoring.",
+        "This batch does not validate recovery after failed card operations."
+      ],
+      "method_notes": [
+        "Feedback told the investigator what was actually visible after private replies or incomplete delivery.",
+        "Private prose did not earn delivery credit. Both groups used the same local model and meeting fixtures."
+      ],
+      "source_reports": [
+        "data/october-studies/delivery-recovery-report.md"
+      ],
+      "additional_sources": [],
+      "facts": {
+        "kind": "delivery",
+        "runs": 12,
+        "rows": [
+          {
+            "model": "Qwen2.5 14B",
+            "condition": "Delivery reminders",
+            "harness_id": "agent-led-delivery-recovery",
+            "complete_help": {
+              "passed": 0,
+              "total": 6,
+              "uncertain": 0
+            },
+            "required_conclusions": {
+              "passed": 1,
+              "total": 18,
+              "uncertain": 0
+            },
+            "model_calls": 113,
+            "known_tokens": 731540
+          },
+          {
+            "model": "Qwen2.5 14B",
+            "condition": "Project baseline",
+            "harness_id": "agent-led-recovery",
+            "complete_help": {
+              "passed": 0,
+              "total": 6,
+              "uncertain": 0
+            },
+            "required_conclusions": {
+              "passed": 0,
+              "total": 18,
+              "uncertain": 0
+            },
+            "model_calls": 76,
+            "known_tokens": 403208
+          }
+        ]
+      },
+      "source_results": "data/october-studies/delivery-recovery-results.json",
+      "provenance": [
+        {
+          "path": "output/research/2026-10-17/delivery-recovery/RESULTS.md",
+          "sha256": "3d734dddc3457622b4cfc7598fc763dd693b8a62a2190fdd8f082ba1f4d31a5f",
+          "selected_fields": [
+            "complete original Markdown; unchanged bytes"
+          ]
+        },
+        {
+          "path": "output/research/2026-10-17/delivery-recovery/results.json",
+          "sha256": "43c745176d05588e43a0ab7a5914184df770767589174530c4d09ff721f90509",
+          "selected_fields": [
+            "study_id",
+            "completed_runs",
+            "assessment",
+            "scoring",
+            "arms",
+            "relative_changes",
+            "limitations"
+          ]
+        }
+      ],
+      "download_note": "Original report download; source-language Markdown. Internal links refer to the full research archive."
+    },
+    {
+      "id": "answer-delivery",
+      "date": "2026-10-17",
+      "title": "Reviewing private answers for delivery",
+      "sample_plain": "3 meetings, 2 harnesses, 2 repeats; 12 runs with Qwen2.5 14B.",
+      "finding_plain": "A separate delivery decision produced 1 confirmed complete result out of 6, with 1 more uncertain. The baseline had none; errors and repeated updates remained.",
+      "limits": [
+        "One uncertain complete-help result is kept separate from confirmed success.",
+        "Delivery review adds context and a model decision; it is not simple text forwarding."
+      ],
+      "method_notes": [
+        "The same model reviewed real private answers and chose whether to publish, update, withdraw or show nothing.",
+        "Six help runs per arm shared the same model, sources and budget. AI reviewers scored only visible assistance."
+      ],
+      "source_reports": [
+        "data/october-studies/answer-delivery-report.md"
+      ],
+      "additional_sources": [],
+      "facts": {
+        "kind": "delivery",
+        "runs": 12,
+        "rows": [
+          {
+            "model": "Qwen2.5 14B",
+            "condition": "Answer delivery",
+            "harness_id": "agent-led-answer-delivery",
+            "complete_help": {
+              "passed": 1,
+              "total": 6,
+              "uncertain": 1
+            },
+            "required_conclusions": {
+              "passed": 6,
+              "total": 18,
+              "uncertain": 2
+            },
+            "model_calls": 129,
+            "known_tokens": 573428
+          },
+          {
+            "model": "Qwen2.5 14B",
+            "condition": "Project baseline",
+            "harness_id": "agent-led-recovery",
+            "complete_help": {
+              "passed": 0,
+              "total": 6,
+              "uncertain": 0
+            },
+            "required_conclusions": {
+              "passed": 0,
+              "total": 18,
+              "uncertain": 0
+            },
+            "model_calls": 76,
+            "known_tokens": 409555
+          }
+        ]
+      },
+      "source_results": "data/october-studies/answer-delivery-results.json",
+      "provenance": [
+        {
+          "path": "output/research/2026-10-17/answer-delivery/RESULTS.md",
+          "sha256": "20c9d0c47646c934006fcaa50944687c27640facc571185eb17e35c2cb9e1b1d",
+          "selected_fields": [
+            "complete original Markdown; unchanged bytes"
+          ]
+        },
+        {
+          "path": "output/research/2026-10-17/answer-delivery/results.json",
+          "sha256": "cb97ec3ead78cf8ae2369de86b9b6a5710df28fc7d3fdc3520975a22e97a4a1a",
+          "selected_fields": [
+            "study_id",
+            "completed_runs",
+            "assessment",
+            "scoring",
+            "arms",
+            "relative_changes",
+            "limitations"
+          ]
+        }
+      ],
+      "download_note": "Original report download; source-language Markdown. Internal links refer to the full research archive."
+    },
+    {
+      "id": "intention-attribution",
+      "date": "2026-10-17",
+      "title": "Understanding versus delivery",
+      "sample_plain": "8 meeting prefixes, 2 models and 2 contexts; 32 recognition calls. Two meetings also had 3 paired continuation branches each.",
+      "finding_plain": "Saved history reduced diagnostic passes for both models. A correct need summary improved one meeting from 1 to 2 of 3 delivered conclusions; the other stayed at zero.",
+      "limits": [
+        "Diagnostic context comparison is not a full-harness benchmark.",
+        "The correct summaries were supplied for diagnosis, not generated by an implemented memory method.",
+        "Six continuation branches did not achieve complete help; only two independent meetings were tested."
+      ],
+      "method_notes": [
+        "Recognition compared human-only input with the same human dialogue plus saved assistant and tool history.",
+        "Continuation branches shared one checkpoint per meeting: unchanged, repeated human words, or a correct current-need summary.",
+        "The summary contained no factual answers or future dialogue, and inherited the remaining budget."
+      ],
+      "source_reports": [
+        "data/october-studies/intention-attribution-report.md"
+      ],
+      "additional_sources": [],
+      "facts": {
+        "kind": "attribution",
+        "recognition_calls": 32,
+        "continuation_branches": 6,
+        "recognition_rows": [
+          {
+            "model": "Qwen2.5 14B",
+            "condition": "Human dialogue only",
+            "pass": 3,
+            "fail": 3,
+            "uncertain": 2,
+            "total": 8
+          },
+          {
+            "model": "Qwen2.5 14B",
+            "condition": "Dialogue and saved history",
+            "pass": 1,
+            "fail": 5,
+            "uncertain": 2,
+            "total": 8
+          },
+          {
+            "model": "Qwen3.5 9B",
+            "condition": "Human dialogue only",
+            "pass": 5,
+            "fail": 3,
+            "uncertain": 0,
+            "total": 8
+          },
+          {
+            "model": "Qwen3.5 9B",
+            "condition": "Dialogue and saved history",
+            "pass": 2,
+            "fail": 6,
+            "uncertain": 0,
+            "total": 8
+          }
+        ],
+        "continuation_rows": [
+          {
+            "name": "field-control",
+            "case_id": "meeting-field-trip-app",
+            "necessary_conclusions_passed": 1,
+            "necessary_conclusions_total": 3,
+            "primary_success": false
+          },
+          {
+            "name": "field-oracle",
+            "case_id": "meeting-field-trip-app",
+            "necessary_conclusions_passed": 2,
+            "necessary_conclusions_total": 3,
+            "primary_success": false
+          },
+          {
+            "name": "field-verbatim",
+            "case_id": "meeting-field-trip-app",
+            "necessary_conclusions_passed": 1,
+            "necessary_conclusions_total": 3,
+            "primary_success": false
+          },
+          {
+            "name": "volunteer-control",
+            "case_id": "meeting-volunteer-partial-cancel",
+            "necessary_conclusions_passed": 0,
+            "necessary_conclusions_total": 3,
+            "primary_success": false
+          },
+          {
+            "name": "volunteer-oracle",
+            "case_id": "meeting-volunteer-partial-cancel",
+            "necessary_conclusions_passed": 0,
+            "necessary_conclusions_total": 3,
+            "primary_success": false
+          },
+          {
+            "name": "volunteer-verbatim",
+            "case_id": "meeting-volunteer-partial-cancel",
+            "necessary_conclusions_passed": 0,
+            "necessary_conclusions_total": 3,
+            "primary_success": false
+          }
+        ]
+      },
+      "source_results": "data/october-studies/intention-attribution-results.json",
+      "provenance": [
+        {
+          "path": "output/research/2026-10-17/intention-attribution/RESULTS.md",
+          "sha256": "b80d43564b9342cf74687d1d7f84f79dc399cd53df74ccce22ff3e9eaa91be48",
+          "selected_fields": [
+            "complete original Markdown; unchanged bytes"
+          ]
+        },
+        {
+          "path": "output/research/2026-10-17/intention-attribution/context_trial/results.json",
+          "sha256": "d3788b2a13182e355b3e6362bb3e3ab9e6b46a819c89257bedcea86654d7fc08",
+          "selected_fields": [
+            "analysis_kind",
+            "design",
+            "limitations",
+            "per_condition: model, context, adjudicated scores"
+          ]
+        },
+        {
+          "path": "output/research/2026-10-17/intention-attribution/oracle_trial/results.json",
+          "sha256": "db02db82553ef7ef6352b67c7aabe4b7dc217ff6883175b4c33368ba61ec7c15",
+          "selected_fields": [
+            "description",
+            "scoring",
+            "primary_successes",
+            "runs",
+            "necessary_conclusions_passed",
+            "necessary_conclusions_total",
+            "actual_unique_model_calls",
+            "actual_unique_total_tokens",
+            "rows: name, case_id, necessary_conclusions_passed, necessary_conclusions_total, primary_success"
+          ]
+        }
+      ],
+      "download_note": "Original report download; source-language Markdown. Internal links refer to the full research archive."
+    },
+    {
+      "id": "meeting-intent-probe",
+      "date": "2026-10-17",
+      "title": "People, status and cancellation scope",
+      "sample_plain": "8 prefixes from 3 meetings; 16 recognition calls with Qwen2.5 14B.",
+      "finding_plain": "People-and-status reminders increased passes from 2 to 5 of 8 prefixes, but still missed needs and misread what was cancelled.",
+      "limits": [
+        "Single-call recognition only, without retrieval or cards.",
+        "The eight prefixes come from three development meetings; two baseline outcomes remain uncertain."
+      ],
+      "method_notes": [
+        "Both prompt groups saw the same human dialogue up to each cut point, with no future speech or earlier predictions.",
+        "Two blinded AI reviewers checked need coverage, ownership, change scope and unsupported additions."
+      ],
+      "source_reports": [
+        "data/october-studies/meeting-intent-probe-report.md"
+      ],
+      "additional_sources": [],
+      "facts": {
+        "kind": "recognition",
+        "calls": 16,
+        "rows": [
+          {
+            "model": "Qwen2.5 14B",
+            "condition": "Direct prompt",
+            "total": 8,
+            "pass": 2,
+            "fail": 4,
+            "uncertain": 2
+          },
+          {
+            "model": "Qwen2.5 14B",
+            "condition": "People and status reminders",
+            "total": 8,
+            "pass": 5,
+            "fail": 3,
+            "uncertain": 0
+          }
+        ]
+      },
+      "source_results": "data/october-studies/meeting-intent-probe-results.json",
+      "provenance": [
+        {
+          "path": "output/research/2026-10-17/meeting-intent-probe/RESULTS.md",
+          "sha256": "ed9ee600a120b56b4624472a688c5c831a9dace9d9d9e2fc84b4203da959a103",
+          "selected_fields": [
+            "complete original Markdown; unchanged bytes"
+          ]
+        },
+        {
+          "path": "output/research/2026-10-17/meeting-intent-probe/results.json",
+          "sha256": "bdce0602c7afb136470f0fd528479c2b4fdefeab026af2ad45c1d8f9d820d53b",
+          "selected_fields": [
+            "study",
+            "calls",
+            "independent_meetings",
+            "prefixes",
+            "arms",
+            "review_agreement"
+          ]
+        }
+      ],
+      "download_note": "Original report download; source-language Markdown. Internal links refer to the full research archive."
+    },
+    {
+      "id": "meeting-intention",
+      "date": "2026-10-16",
+      "title": "Meeting baseline failures",
+      "sample_plain": "3 scripted meetings, 2 repeats each; 6 full baseline runs with Qwen2.5 14B.",
+      "finding_plain": "None of the six runs retained complete applicable help. Five ended without cards; one retained an outdated general explanation.",
+      "limits": [
+        "All three synthetic meetings required help, so this batch cannot estimate unwanted interruption.",
+        "Text replay and fictional sources, not recorded meetings or real ASR."
+      ],
+      "method_notes": [
+        "Each meeting had three speakers and nine turns, including new questions, revisions and cancellation.",
+        "All 54 human turns reached model requests. Final visible cards were scored at 120 simulated seconds."
+      ],
+      "source_reports": [
+        "data/october-studies/meeting-intention-report.md"
+      ],
+      "additional_sources": [],
+      "facts": {
+        "kind": "baseline",
+        "runs": 6,
+        "scenarios": 3,
+        "complete_help": {
+          "passed": 0,
+          "total": 6,
+          "strict_passed": 0
+        },
+        "control_categories": {}
+      },
+      "source_results": "data/october-studies/meeting-intention-results.json",
+      "provenance": [
+        {
+          "path": "output/research/2026-10-16/meeting-intention/RESULTS.md",
+          "sha256": "e020b03d9c596cc1580244369676581c6a514131d96ac00812f0954cd7c61d54",
+          "selected_fields": [
+            "complete original Markdown; unchanged bytes"
+          ]
+        },
+        {
+          "path": "output/research/2026-10-16/meeting-intention/results.json",
+          "sha256": "5e0354d621dbebb9e82bf3cd68d7989ed526bbcbbb71332cfdd9a58de843e0ef",
+          "selected_fields": [
+            "rating_method",
+            "runs",
+            "scenarios",
+            "categories",
+            "need_outcomes",
+            "flags",
+            "cost",
+            "status_counts",
+            "stop_reasons",
+            "limits"
+          ]
+        }
+      ],
+      "download_note": "Original report download; source-language Markdown. Internal links refer to the full research archive."
+    },
+    {
+      "id": "intention-diagnostic",
+      "date": "2026-10-16",
+      "title": "Short intention scenarios",
+      "sample_plain": "6 short scenarios, 2 repeats each; 12 baseline runs with Qwen2.5 14B.",
+      "finding_plain": "Required help succeeded in 6 of 8 runs, or 5 under the stricter evidence reading. Both multi-question runs found answers but never published them.",
+      "limits": [
+        "Cancellation and silence controls are separate from required-help success.",
+        "One evidence-boundary judgement changes 6 of 8 to 5 of 8; this is not a confidence interval.",
+        "Synthetic short replay; no real ASR, long-term memory or user-benefit claim."
+      ],
+      "method_notes": [
+        "The frozen project baseline ran unchanged against controlled documents for 45 simulated seconds per scenario.",
+        "Two independent AI reviews and trace adjudication preserved the evidence-boundary disagreement."
+      ],
+      "source_reports": [
+        "data/october-studies/intention-diagnostic-report.md"
+      ],
+      "additional_sources": [],
+      "facts": {
+        "kind": "baseline",
+        "runs": 12,
+        "scenarios": 6,
+        "complete_help": {
+          "passed": 6,
+          "total": 8,
+          "strict_passed": 5
+        },
+        "control_categories": {
+          "cancellation_control": {
+            "runs": 2,
+            "scenarios": 1,
+            "successes": 2,
+            "uncertain_runs": 0,
+            "primary_uncertain_runs": 0,
+            "successes_excluding_primary_uncertain": 2,
+            "successes_including_primary_uncertain": 2
+          },
+          "resolved_silence_control": {
+            "runs": 2,
+            "scenarios": 1,
+            "successes": 2,
+            "uncertain_runs": 0,
+            "primary_uncertain_runs": 0,
+            "successes_excluding_primary_uncertain": 2,
+            "successes_including_primary_uncertain": 2
+          }
+        }
+      },
+      "source_results": "data/october-studies/intention-diagnostic-results.json",
+      "provenance": [
+        {
+          "path": "output/research/2026-10-16/intention-diagnostic/RESULTS.md",
+          "sha256": "41d45ee22900432929524e4dbe522a317c806034b8cd3666af69890b860486ef",
+          "selected_fields": [
+            "complete original Markdown; unchanged bytes"
+          ]
+        },
+        {
+          "path": "output/research/2026-10-16/intention-diagnostic/results.json",
+          "sha256": "e0112d0ab05241a9b44a38cb8614ae14ee3018d3cd81dd6851d2be611098bc8e",
+          "selected_fields": [
+            "rating_method",
+            "runs",
+            "scenarios",
+            "categories",
+            "need_outcomes",
+            "flags",
+            "cost",
+            "status_counts",
+            "stop_reasons",
+            "limits"
+          ]
+        }
+      ],
+      "download_note": "Original report download; source-language Markdown. Internal links refer to the full research archive."
+    }
+  ]
+}
