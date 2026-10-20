@@ -7,6 +7,9 @@
 /* Override the shared site's wide legacy table minimum. */
 .recent-studies table{min-width:0}.recent-studies .wide-table table{min-width:700px}
 
+.version-comparison{margin:0 0 32px}.version-table th:first-child{width:145px}.version-table td{color:var(--muted);line-height:1.65}.preset-records code{overflow-wrap:anywhere;white-space:normal;font-size:12px}.preset-records>a{display:inline-block;margin-top:18px}
+@media(max-width:520px){.version-table th:first-child{width:86px}.version-table td{font-size:14px}.version-table th,.version-table td{padding:16px 12px}.repair-table th{overflow-wrap:normal}.preset-records table{table-layout:fixed}.preset-records th:first-child{width:90px}}
+
 /* Objective, procedure, results and conclusion. */
 .experiment-plan{display:grid;grid-template-columns:1fr 1.3fr;gap:44px;margin:18px 0 28px}.experiment-plan h3,.part-label{font-size:14px;font-weight:650;margin:0 0 10px;color:var(--ink)}.experiment-plan p{font-size:15px;line-height:1.7;color:var(--muted);margin:0 0 10px}.procedure-setups{grid-template-columns:repeat(3,1fr);padding:20px 0 22px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:20px 0 30px}.part-label{margin:28px 0 16px;font-size:21px}.result-note{font-size:13px;color:var(--muted);margin:14px 0 22px}.study-heading h2{margin-bottom:0}.study-number{padding-top:25px}.history-table th{width:23%}.history-table td{width:25.67%}
 @media(max-width:800px){.experiment-plan{grid-template-columns:1fr;gap:14px}.procedure-setups{grid-template-columns:1fr;gap:15px}.history-table th,.history-table td{width:100%}.history-table td:nth-child(2)::before{content:'Procedure'}.history-table td:nth-child(3)::before{content:'Result'}.history-table td:nth-child(4)::before{content:'Conclusion';display:block;color:var(--ink);font-weight:600;margin-bottom:4px}}

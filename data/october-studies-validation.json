@@ -32,5 +32,34 @@
   "review_limitations": [
     "Browser checks use Chromium, not a native Safari device.",
     "AI-reviewed synthetic study results; no new efficacy or human-user claim."
-  ]
+  ],
+  "harness_comparison_update": {
+    "date": "2026-10-19",
+    "status": "passed",
+    "scope": "Display names and paired model comparisons; existing research evidence unchanged",
+    "harness_names": [
+      "Harness A",
+      "Harness B",
+      "Harness C"
+    ],
+    "checks": {
+      "independent_evidence_review": "passed; source mapping, 48-run matrix and separate 32-run matrix verified",
+      "html_pages_checked": 2,
+      "local_links_checked": 155,
+      "missing_links_or_ids": 0,
+      "csv_rows_checked": 28,
+      "csv_names_source_ids_and_scores": "match evidence",
+      "desktop_width": 1440,
+      "mobile_widths": [
+        390,
+        320
+      ],
+      "primary_tables_clipped": false,
+      "horizontal_page_overflow": false,
+      "dark_and_light_modes": "visually checked",
+      "browser_console_errors": 0,
+      "new_model_calls": 0
+    },
+    "layout": "Version changes separate from column names; both models share each result table; study index shows the 48-run comparison directly."
+  }
 }

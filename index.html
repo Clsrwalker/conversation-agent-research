@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="focus.css?v=harness-home-1">
   <link rel="stylesheet" href="overview.css?v=focused-home-5">
   <link rel="stylesheet" href="overview-dashboard.css?v=latency-audit-1">
-  <link rel="stylesheet" href="recent-entry.css?v=october-studies-1">
+  <link rel="stylesheet" href="recent-entry.css?v=oct19-harness">
   <script src="data.js?v=october-studies-1" defer></script>
   <script src="app.js?v=october-studies-1" defer></script>
   <script src="harness-data.js?v=harness-home-1" defer></script>
@@ -45,7 +45,7 @@
         <div class="recent-heading"><h2 id="recent-progress-title">Recent experiment results</h2><span>16–19 Oct 2026</span></div>
         <div class="recent-progress-rows">
           <a href="october-studies.html#intent-coverage"><strong>Request coverage prompt</strong><span>Qwen3.5 9B missed requests: 12–14 → 0–4. Qwen2.5 14B unsupported requests: 2 → 8.</span><span class="recent-entry-link">192 outputs →</span></a>
-          <a href="october-studies.html#budget-state-repair"><strong>Budget and answer updates</strong><span>Complete help, original → repair: Qwen2.5 14B 0/6 → 4/6; Qwen3.5 9B 0/6 → 3/6.</span><span class="recent-entry-link">48 runs →</span></a>
+          <a href="october-studies.html#budget-state-repair"><strong>Harness A / B / C</strong><span>Complete help, A → B → C: Qwen2.5 14B 0/6 → 2/6 → 4/6; Qwen3.5 9B 0/6 → 2/6 → 3/6.</span><span class="recent-entry-link">48 runs →</span></a>
         </div>
       </section>
             <section class="home-architecture" aria-labelledby="architecture-title">
@@ -169,10 +169,15 @@
       <header class="page-heading"><p class="eyebrow">STUDIES &amp; TESTS</p><h1 id="methods-title">What changed, and what was learned?</h1><a class="text-link" href="#overview">← Start with the Harness overview</a></header>
       <section class="recent-studies" aria-labelledby="recent-studies-title">
         <div class="recent-heading"><h2 id="recent-studies-title">Recent experiments</h2><span>16–19 Oct 2026</span></div>
+        <div class="harness-study-summary">
+  <span class="recent-study-date">17 OCT · 48 RUNS</span><h3>Three harness versions, two models</h3>
+  <div class="harness-summary-grid"><dl class="harness-summary-versions"><div><dt>Harness A</dt><dd>Original research reference.</dd></div><div><dt>Harness B</dt><dd>A + same-model review of candidate answers.</dd></div><div><dt>Harness C</dt><dd>B + budget allocation, partial answer edits and update feedback; less repeated context.</dd></div></dl>
+  <div class="harness-summary-results"><table><caption>Complete help by the deadline · six help runs per cell</caption><thead><tr><th scope="col">Model</th><th scope="col">Harness A</th><th scope="col">Harness B</th><th scope="col">Harness C</th></tr></thead><tbody><tr><th scope="row">Qwen2.5 14B</th><td class=""><strong class="score">0<span> / 6</span></strong><span class="score-track" aria-hidden="true"><i style="width:0.00%"></i></span></td><td class=""><strong class="score">2<span> / 6</span></strong><span class="score-track" aria-hidden="true"><i style="width:33.33%"></i></span></td><td class="improved"><strong class="score">4<span> / 6</span></strong><span class="score-track" aria-hidden="true"><i style="width:66.67%"></i></span></td></tr><tr><th scope="row">Qwen3.5 9B</th><td class=""><strong class="score">0<span> / 6</span></strong><span class="score-track" aria-hidden="true"><i style="width:0.00%"></i></span></td><td class=""><strong class="score">2<span> / 6</span></strong><span class="score-track" aria-hidden="true"><i style="width:33.33%"></i></span></td><td class="improved"><strong class="score">3<span> / 6</span></strong><span class="score-track" aria-hidden="true"><i style="width:50.00%"></i></span></td></tr></tbody></table></div></div>
+  <a class="text-link" href="october-studies.html#budget-state-repair">Changes, procedure and conclusions →</a>
+</div>
         <div class="recent-study-list">
           <a href="october-studies.html#intent-coverage"><div><span class="recent-study-date">19 OCT · 192 OUTPUTS</span><h3>Request coverage prompt</h3></div><p>Standard → coverage prompt: missed requests 12–14 → 0–4 (Qwen3.5 9B); unsupported requests 2 → 8 (Qwen2.5 14B).</p><span class="recent-study-arrow" aria-hidden="true">→</span></a>
-          <a href="october-studies.html#budget-state-repair"><div><span class="recent-study-date">17 OCT · 48 RUNS</span><h3>Budget and answer updates</h3></div><p>Complete help, original → repair: Qwen2.5 14B 0/6 → 4/6; Qwen3.5 9B 0/6 → 3/6.</p><span class="recent-study-arrow" aria-hidden="true">→</span></a>
-          <a href="october-studies.html#model-harness-factorial"><div><span class="recent-study-date">17 OCT · 32 RUNS + 16 CHECKS</span><h3>Answer delivery comparison</h3></div><p>Complete help, original → delivery check: Qwen2.5 14B 0/6 → 1/6; Qwen3.5 9B 0/6 → 0/6.</p><span class="recent-study-arrow" aria-hidden="true">→</span></a>
+          <a href="october-studies.html#model-harness-factorial"><div><span class="recent-study-date">17 OCT · EARLIER BATCH · 32 RUNS</span><h3>Earlier Harness A / B comparison</h3></div><p>Complete help, A → B: Qwen2.5 14B 0/6 → 1/6; Qwen3.5 9B 0/6 → 0/6.</p><span class="recent-study-arrow" aria-hidden="true">→</span></a>
         </div>
         <div class="recent-study-footer"><a class="text-link" href="october-studies.html#earlier-studies">Six earlier diagnostics →</a><a class="text-link" href="october-studies.html#records">Data and methods →</a></div>
       </section>

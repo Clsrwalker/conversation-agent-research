@@ -169,6 +169,11 @@
       "bytes": 5447
     },
     {
+      "path": "data/harness-comparison-versions.json",
+      "sha256": "2228173b67790ca83089f3e0ea6382be10a925742d27e0c87ee7b2fb197ede27",
+      "bytes": 1088
+    },
+    {
       "path": "data/harness-dashboard-validation.json",
       "sha256": "e53b38d3414ebf1795a81323864cf055c12b6df1b5db237e51b1b26f5f1e2afc",
       "bytes": 5648
@@ -225,13 +230,13 @@
     },
     {
       "path": "data/october-studies-tables.csv",
-      "sha256": "549f1e7614bd980c8166bb6cf554523665613fef6b4dc5dfd9bdaf33574f547c",
-      "bytes": 2107
+      "sha256": "146357dd3cbf3ee2e9794d60955368bcf0fe1ba6ea949523dfa6415ff02056bb",
+      "bytes": 2462
     },
     {
       "path": "data/october-studies-validation.json",
-      "sha256": "e67d1f49e16f7d607a6e15424b4e7256facd487f507a8ccb39d00d1e9d991e0d",
-      "bytes": 1371
+      "sha256": "19d5aceafd1c58c1fa538f081dcacc9760d247ab3b3bf04a7db95221b57babf0",
+      "bytes": 2422
     },
     {
       "path": "data/october-studies.json",
@@ -555,8 +560,8 @@
     },
     {
       "path": "index.html",
-      "sha256": "2580a3006d8f818d7e0fcd4b8e4988ae6e219f59e4264440824fe207796dd6d0",
-      "bytes": 67302
+      "sha256": "dbb37cbead6fcee6dbb8fd41b05536809eed4456bae3fc17ef69b61cecda758f",
+      "bytes": 68867
     },
     {
       "path": "intention-literature.css",
@@ -575,13 +580,13 @@
     },
     {
       "path": "october-studies.css",
-      "sha256": "0ecebd69316fcbefbf2d278a86d54aeace034d861caf193da8707eeebb6f7a6c",
-      "bytes": 10317
+      "sha256": "bf43cc0fb79c6c128bb442745609a1e38068c4bb5c1fe134713dbe147c3f2f98",
+      "bytes": 10859
     },
     {
       "path": "october-studies.html",
-      "sha256": "0a992c29ebc410ca28dc929ce9be8b60bdcd571b7b3d8b88f57bd73b09a53140",
-      "bytes": 19704
+      "sha256": "2cbf629a4e01dfe84e76c182f50ff06813c6c96843ee72385961623e3d4ebc5d",
+      "bytes": 22014
     },
     {
       "path": "overview-dashboard.css",
@@ -605,8 +610,8 @@
     },
     {
       "path": "recent-entry.css",
-      "sha256": "ce3495808593b777c8abafd9f9e2915a5659c5ef8a967fa08079d59875af9b17",
-      "bytes": 2918
+      "sha256": "0007fcc9261de5277afcfb80ba91cb7442b8415a8deb224e80c6f66395e7ce54",
+      "bytes": 4963
     },
     {
       "path": "style.css",

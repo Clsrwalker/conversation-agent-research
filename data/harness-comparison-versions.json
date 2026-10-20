@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Harness A",
+    "harness_id": "agent-led-recovery",
+    "based_on": null,
+    "change": "Research reference. The model chooses what to investigate and when to publish or update an answer.",
+    "short_change": "Original research reference."
+  },
+  {
+    "name": "Harness B",
+    "harness_id": "agent-led-answer-delivery",
+    "based_on": "Harness A",
+    "change": "Harness A + a delivery check by the same model. It reviews a candidate answer and chooses to publish it, update or withdraw an existing answer, or leave the display unchanged.",
+    "short_change": "A + same-model review of candidate answers."
+  },
+  {
+    "name": "Harness C",
+    "harness_id": "agent-led-budget-state",
+    "based_on": "Harness B",
+    "change": "Harness B + resources reserved for later turns and limits on delivery checks. Adds partial answer edits and feedback when updates fail; removes duplicate old answer snapshots from model requests.",
+    "short_change": "B + budget allocation, partial answer edits and update feedback; less repeated context."
+  }
+]
