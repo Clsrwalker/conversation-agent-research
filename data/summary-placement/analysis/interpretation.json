@@ -1,0 +1,45 @@
+{
+  "status": "reviewed",
+  "date": "2026-10-23",
+  "timezone": "America/Halifax",
+  "lead": "In this batch, summary-first had two fewer paired ordinary-actor errors in the previously authored challenges, but more needless re-approval in earlier regressions. Results differ by placement in this run; repeated-input variability means a reproducible placement effect is not established.",
+  "findings": [
+    {
+      "title": "Two fewer challenge errors in this run",
+      "text": "With incorrect summaries, ordinary-actor scope errors were 2/12 with summary last and 0/12 with summary first. The paired changes concerned requesting the Birch record before its condition was met and rejecting Owen’s current Pine request. The guided actor moved from 0/12 + 1 uncertain to 0/12; no definite error was fixed in that comparison."
+    },
+    {
+      "title": "Earlier regressions became more hesitant",
+      "text": "With incorrect summaries, earlier-regression scope errors rose from 2/12 to 3/12 for the ordinary actor and from 2/12 to 4/12 with guidance. All seven summary-first errors were pure re-approval questions. Excluding only pure re-approval leaves 0/12 in each summary-first arm; guided summary-last retains one uncertain non-question scope claim."
+    },
+    {
+      "title": "Correct summaries did not prevent harm",
+      "text": "In earlier regressions with correct summaries, summary-first introduced one definite guided re-approval error and one uncertain ordinary response. Both summary-last groups had 0/12 scope errors. Guided oral-history outputs with summary last also claimed a permission draft was complete without supplying an actual draft: one omission under each summary condition."
+    },
+    {
+      "title": "Guidance depends on the comparison",
+      "text": "Within challenge summary-last inputs, guidance fixed the two definite ordinary errors but added one uncertain condition interpretation. Within summary-first inputs, both challenge actors had 0/12 errors; in earlier regressions guidance instead added a definite error. This small exposed set does not establish a stable benefit or a statistical interaction."
+    },
+    {
+      "title": "Other failures remain separate",
+      "text": "The guided incorrect-summary, summary-last panel response invented a ready aluminium estimate: 1/12 factual errors in that group. Three outputs had definite omissions across the batch, plus one uncertain omission. The no-summary challenge reference also requested a cancelled Meadow check (1/12 scope errors), so absence of a summary did not guarantee correct scope."
+    },
+    {
+      "title": "Repeated inputs were not identical outputs",
+      "text": "Only 63/120 freshly repeated prior inputs produced the same complete response and stop after ignoring tool-call IDs. Temperature zero did not yield identical responses throughout these two batches. The runtime cause was not isolated; prior scores remain frozen, and the new comparison uses only this batch."
+    },
+    {
+      "title": "An appropriate scope can still produce an invalid call",
+      "text": "One of 243 native requests violated its supplied schema: a guided correct-summary, summary-first oral-history response called ls with card_id and text but no required path. Three requests, including that one, contained undeclared keys; extra keys were not forbidden by their schemas, so they are not three additional schema failures. No request was executed."
+    }
+  ],
+  "engineering_text": "Thirteen unique offline contract tests passed after a preflight exposed and repaired a prior-freeze digest overwrite. Initial failures remain available. Independent execution auditing checked all 216 request/response wire records, 120 unchanged original inputs, 96 order-only swaps, 228 frozen inputs and 5,261 protected entries. Separate independent score accounting reconstructs all 18 groups and 64 paired comparisons. These checks do not establish assistance quality.",
+  "next_steps": [
+    "Keep source-authority guidance optional and leave the default harness unchanged. Do not add a redundant ordering fix to a native path that already places later events after its summary.",
+    "Test actual summary coverage and event delivery on new dialogue structures, with accepted or withdrawn work followed by irrelevant speech, quotation and multiple live participants. Record real boundaries rather than inventing a summary timestamp.",
+    "For a full-harness comparison, execute simulated tools and inject changes before dispatch, during pending work and before publication. Separate obsolete in-flight results from newly requested out-of-scope actions, and score effective delivered cards under matched budgets.",
+    "Investigate repeated-input variability with preserved runtime and request evidence before treating single-cell changes as reproducible effects; do not replace the current runs with favorable retries."
+  ],
+  "decision": "Do not promote placement or guidance as a general intention repair. Proceed to realistic boundary diagnosis and controlled full-workflow evidence.",
+  "goal_status": "Ongoing research; general intention reduction and production benefit remain unestablished."
+}

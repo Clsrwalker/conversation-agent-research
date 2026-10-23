@@ -1,0 +1,806 @@
+{
+  "schema_version": "summary-placement-review-process-audit-v1",
+  "study_date": "2026-10-23",
+  "timezone": "America/Halifax",
+  "audited_at_utc": "2026-10-23T15:54:35.664848+00:00",
+  "type": "engineering_review_process_audit",
+  "reviewer": "/root/harness_audit",
+  "status": "review_files_validated_adjudication_record_present_not_audited",
+  "blind_packets": 180,
+  "expected_model_call_mapping": 216,
+  "review_coverage": {
+    "reviewer_a": 180,
+    "reviewer_b": 180,
+    "complete_id_sets": true
+  },
+  "reviewer_provenance": {
+    "reviewer_a": {
+      "task": "/root/placement_reviewer_a",
+      "evidence": "Observed completed task in collaboration.list_agents; its completion report states 180 independent blind reviews and quote validation."
+    },
+    "reviewer_b": {
+      "task": "/root/placement_reviewer_b",
+      "evidence": "Parent task scheduling/completion record reports a fresh AI reviewer, 180 completed reviews, 191 verbatim quotes, reading SCORING and nine anonymous bundles and its own drafts, without mapping/calls/prepared/other review files."
+    },
+    "independence_basis": "Fresh task assignments and reviewer access self-reports, as reported by parent/agent status. JSON coverage alone does not prove reviewer independence or actual access isolation.",
+    "human_review": false
+  },
+  "reviewer_a_quote_completion": {
+    "preserved_original": "scoring/reviewer-a.before-quote-completion.json",
+    "current": "scoring/reviewer-a.json",
+    "changed_records": 161,
+    "only_changed_field": "evidence_quotes",
+    "unchanged_semantic_classifications": true,
+    "unchanged_reasons": true,
+    "unchanged_order_and_metadata": true,
+    "original_nonempty_outputs_without_quotes": 161,
+    "all_changed_rows_had_all_five_labels_no_and_subtype_none": true,
+    "added_quotes_are_exact_substrings_of_actor_output": true,
+    "not_a_semantic_rescore": true,
+    "changed_record_ids": [
+      {
+        "id": "output-001",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-002",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-003",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-004",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-005",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-006",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-007",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-008",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-009",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-010",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-011",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-012",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-013",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-014",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-016",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-017",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-018",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-019",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-020",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-021",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-022",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-023",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-024",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-025",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-026",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-027",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-028",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-029",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-030",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-031",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-032",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-033",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-034",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-036",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-037",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-038",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-039",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-040",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-041",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-042",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-043",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-046",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-047",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-048",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-049",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-050",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-052",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-053",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-054",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-055",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-056",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-057",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-058",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-059",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-060",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-061",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-062",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-063",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-065",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-066",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-067",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-068",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-069",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-071",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-072",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-074",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-075",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-076",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-077",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-078",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-079",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-080",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-081",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-082",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-084",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-085",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-086",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-087",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-089",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-090",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-091",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-092",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-093",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-094",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-096",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-097",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-098",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-100",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-101",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-102",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-103",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-104",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-105",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-106",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-108",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-109",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-110",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-112",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-113",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-114",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-115",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-117",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-118",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-119",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-120",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-121",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-122",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-123",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-124",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-125",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-126",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-127",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-128",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-129",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-130",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-131",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-132",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-133",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-134",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-135",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-138",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-139",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-140",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-141",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-142",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-143",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-144",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-145",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-146",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-147",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-148",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-149",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-150",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-151",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-152",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-153",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-154",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-155",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-156",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-157",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-158",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-160",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-161",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-162",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-163",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-164",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-165",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-166",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-167",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-168",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-169",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-170",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-172",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-173",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-174",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-175",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-176",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-177",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-178",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-179",
+        "added_quote_count": 1
+      },
+      {
+        "id": "output-180",
+        "added_quote_count": 1
+      }
+    ],
+    "current_total_quote_count": 185,
+    "initial_validator_failure_reproduced": "Evidence quote not found in actor output: output-001",
+    "interpretation": "The initial quote lists violated the inherited validator, not evidence that the 161 semantic no-error judgments were wrong. Mechanical quote completion did not change labels or rationales."
+  },
+  "validator_boundary": {
+    "source": "experiments/deep_conversation/source_authority_score.py:21-61",
+    "rubric": "SCORING.md:29 explicitly requires output evidence for positive or uncertain error labels and explains the empty-output exception.",
+    "implementation": "The inherited validator also requires at least one exact quote for every nonempty output even when all error labels are no. Empty outputs may omit quotes.",
+    "final_a_passed": 180,
+    "final_b_passed": 180,
+    "reviewer_b_total_quote_count": 191,
+    "semantic_correctness_proven": false
+  },
+  "disagreements": {
+    "comparison_fields": [
+      "scope_error",
+      "scope_error_excluding_reconfirmation",
+      "unnecessary_reconfirmation",
+      "factual_error",
+      "observable_omission",
+      "scope_failure_type"
+    ],
+    "count": 2,
+    "records": [
+      {
+        "id": "output-111",
+        "fields": {
+          "factual_error": {
+            "reviewer_a": "uncertain",
+            "reviewer_b": "yes"
+          }
+        }
+      },
+      {
+        "id": "output-171",
+        "fields": {
+          "scope_failure_type": {
+            "reviewer_a": "condition",
+            "reviewer_b": "uncertain"
+          }
+        }
+      }
+    ],
+    "third_review_status": "record exists but was not assessed by this audit",
+    "adjudication_file_exists": true,
+    "decisions_applied_by_this_audit": false
+  },
+  "scorer_and_website_read_only_review": {
+    "scorer_retains": "Five yes/no/uncertain fields, scope subtypes, all 216 per-call rows, 18 groups, correct/incorrect controls, fixed/regressed/uncertain paired buckets, no-summary references, empty/truncated outputs, tool requests and costs.",
+    "adjudication_gate": "summary_placement_score.score requires adjudication IDs exactly equal to the six-field disagreement set before completed_scored output.",
+    "website_retains": "Both summary positions, correct and incorrect summaries, both scope metrics including uncertainty, shared no-summary references, zero executed tools, and exposed-state/native-compaction limits.",
+    "remaining_reporting_attention": "The rendered tables directly show only two scope metrics. Factual errors, omissions, empty responses, truncations and action-quality limitations require explicit final findings/report text when present; downloading all records is not a substitute for describing consequential negative results.",
+    "validation_schema_current": "Current validation.json contains id/date/type/status and satisfies the website key requirement; earlier suspected mismatch was superseded by the parent update.",
+    "website_built_or_published_by_this_audit": false,
+    "final_negative_result_completeness_assessed": false,
+    "reason": "Final adjudication and interpretation were not assessed; this audit does not certify the eventual narrative."
+  },
+  "evidence": [
+    {
+      "path": "output/research/2026-10-23/summary-placement/scoring/blind-packets.json",
+      "sha256": "bcd94d86583b98e4e2b800de1312e05a69f52dfc313c0dac1a3610e2c46a89e2"
+    },
+    {
+      "path": "output/research/2026-10-23/summary-placement/scoring/reviewer-a.before-quote-completion.json",
+      "sha256": "b4ba2b9819fe2b9879baa9c8583bfea71b8cef8b74dc3a271af9d1f0113fd211"
+    },
+    {
+      "path": "output/research/2026-10-23/summary-placement/scoring/reviewer-a.json",
+      "sha256": "7da3a2afc797ce1343f81a9dcbb6a4e328325b354900d34a1eac54c54c4ebf80"
+    },
+    {
+      "path": "output/research/2026-10-23/summary-placement/scoring/reviewer-b.json",
+      "sha256": "74baa4135c9d1fbcbf204f20fe5a4aba6f302442efeeb3e9f1e76b8af0583163"
+    },
+    {
+      "path": "output/research/2026-10-23/summary-placement/scoring/review-disagreements.json",
+      "sha256": "b5fbc9393aca23318abbf14359872b4c39903059be7c7898e356715707c570ac"
+    },
+    {
+      "path": "output/research/2026-10-23/summary-placement/scoring/adjudication-blind-packets.json",
+      "sha256": "40c9d39c0f7b3fbfda479ea99bf4c0c2cf7f7baee92e9efdedeabdfb6d8194d2"
+    },
+    {
+      "path": "output/research/2026-10-23/summary-placement/SCORING.md",
+      "sha256": "b5a9d568233f1d0d3c162c338ade62e6e0ad2594377f85ba5c91ccc1b9780f98"
+    },
+    {
+      "path": "output/research/2026-10-23/summary-placement/PROTOCOL.md",
+      "sha256": "6c5237989ce385ef88c5b8c8dba8399ee60d15a6fa2bd1f255f62fe7d950f829"
+    },
+    {
+      "path": "output/research/2026-10-23/summary-placement/engineering/validation.json",
+      "sha256": "23247ade134fb6fba4bd0d20bc023b809d5bd2dd5fd3554472382d403630104b"
+    },
+    {
+      "path": "experiments/deep_conversation/source_authority_score.py",
+      "sha256": "403c4c18adde21a9353108fe61e12ed3a60902407565e9dadbee62d806840316"
+    },
+    {
+      "path": "experiments/deep_conversation/summary_placement_score.py",
+      "sha256": "016cde1ad8ccac971c3dc40b84643d89e68d486d3bc931c3a6f9fd0507ea9ddc"
+    },
+    {
+      "path": "sites/conversation-agent-research/build_summary_placement.py",
+      "sha256": "06cd167fea933042e6ac0a2437bc97950af1c0d7baac177126304b7cc49a29ae"
+    }
+  ],
+  "actions": {
+    "model_calls": 0,
+    "test_suite_runs": 0,
+    "existing_validator_calls": 3,
+    "semantic_labels_changed": 0,
+    "website_edits": 0
+  },
+  "limitations": [
+    "Exact quote presence and schema agreement do not prove semantic scoring quality.",
+    "Reviewers are AI agents, not human or domain-expert ground truth.",
+    "The initial failure is reproducible from retained data and current frozen validator; this audit does not claim a separate archived original traceback exists.",
+    "No adjudication result or final quality aggregate is produced here."
+  ]
+}

@@ -1,0 +1,264 @@
+{
+  "schema_version": "summary-placement-independent-execution-audit-v1",
+  "date": "2026-10-23",
+  "date_basis": "Frozen study date in America/Halifax",
+  "audited_at_utc": "2026-10-23T15:36:01.412601+00:00",
+  "timezone": "America/Halifax",
+  "status": "passed",
+  "kind": "engineering_record_audit",
+  "audit_source_sha256": "a2f66cf1ab181d52347d10c60765510c7ecc3496d4b2086e43983ca161e43fb2",
+  "freeze_sha256": "67e866ef6f6bfd911f30723cf6ecd88ab5f5ba45445a57a389b7c8b1a3dab768",
+  "calls": 216,
+  "cases": 24,
+  "groups": 18,
+  "request_and_wire_equal": 216,
+  "response_and_wire_equal": 216,
+  "prior_request_unchanged": 120,
+  "prior_request_only_message_swap": 96,
+  "gold_exclusion": {
+    "checked_calls": 216,
+    "method": "Exact independent reconstruction of all actor messages from raw_turns, provenance, selected summary, frozen system guidance and final continuation; exact historical tools and top-level request whitelist. Evaluator fields are not selected."
+  },
+  "unchanged_frozen_files": 228,
+  "unchanged_protected_files": 5261,
+  "unique_frozen_paths": 5484,
+  "costs": {
+    "earlier_regression/baseline/correct/summary_first": {
+      "n": 12,
+      "input_tokens": 44031,
+      "output_tokens": 1695,
+      "wall_seconds_sum": 32.11332069992204,
+      "median_wall_seconds": 2.553342099985457,
+      "stops": {
+        "stop": 12
+      },
+      "tool_request_outputs": 10,
+      "empty_outputs": 0
+    },
+    "earlier_regression/baseline/correct/summary_last": {
+      "n": 12,
+      "input_tokens": 44031,
+      "output_tokens": 1065,
+      "wall_seconds_sum": 21.63582680001855,
+      "median_wall_seconds": 1.5135490500106243,
+      "stops": {
+        "stop": 12
+      },
+      "tool_request_outputs": 10,
+      "empty_outputs": 0
+    },
+    "earlier_regression/baseline/incorrect/summary_first": {
+      "n": 12,
+      "input_tokens": 44031,
+      "output_tokens": 1464,
+      "wall_seconds_sum": 27.59553390002111,
+      "median_wall_seconds": 2.310260850004852,
+      "stops": {
+        "stop": 12
+      },
+      "tool_request_outputs": 8,
+      "empty_outputs": 0
+    },
+    "earlier_regression/baseline/incorrect/summary_last": {
+      "n": 12,
+      "input_tokens": 44031,
+      "output_tokens": 1332,
+      "wall_seconds_sum": 25.195190899947193,
+      "median_wall_seconds": 2.1768885500059696,
+      "stops": {
+        "stop": 12
+      },
+      "tool_request_outputs": 9,
+      "empty_outputs": 0
+    },
+    "earlier_regression/baseline/none/none": {
+      "n": 12,
+      "input_tokens": 43185,
+      "output_tokens": 1389,
+      "wall_seconds_sum": 27.145164099987596,
+      "median_wall_seconds": 1.9180583499983186,
+      "stops": {
+        "stop": 12
+      },
+      "tool_request_outputs": 8,
+      "empty_outputs": 0
+    },
+    "earlier_regression/source_authority/correct/summary_first": {
+      "n": 12,
+      "input_tokens": 48003,
+      "output_tokens": 1312,
+      "wall_seconds_sum": 25.30576619997737,
+      "median_wall_seconds": 2.033375450002495,
+      "stops": {
+        "stop": 12
+      },
+      "tool_request_outputs": 8,
+      "empty_outputs": 0
+    },
+    "earlier_regression/source_authority/correct/summary_last": {
+      "n": 12,
+      "input_tokens": 48003,
+      "output_tokens": 1141,
+      "wall_seconds_sum": 23.3471418999834,
+      "median_wall_seconds": 1.4767069999943487,
+      "stops": {
+        "stop": 12
+      },
+      "tool_request_outputs": 8,
+      "empty_outputs": 0
+    },
+    "earlier_regression/source_authority/incorrect/summary_first": {
+      "n": 12,
+      "input_tokens": 48003,
+      "output_tokens": 1367,
+      "wall_seconds_sum": 26.11481620001723,
+      "median_wall_seconds": 2.148131750000175,
+      "stops": {
+        "stop": 12
+      },
+      "tool_request_outputs": 7,
+      "empty_outputs": 0
+    },
+    "earlier_regression/source_authority/incorrect/summary_last": {
+      "n": 12,
+      "input_tokens": 48003,
+      "output_tokens": 1409,
+      "wall_seconds_sum": 27.78931579994969,
+      "median_wall_seconds": 2.3854995999863604,
+      "stops": {
+        "stop": 12
+      },
+      "tool_request_outputs": 7,
+      "empty_outputs": 0
+    },
+    "previously_authored_challenge/baseline/correct/summary_first": {
+      "n": 12,
+      "input_tokens": 42579,
+      "output_tokens": 1695,
+      "wall_seconds_sum": 31.28339179995237,
+      "median_wall_seconds": 2.603606199991191,
+      "stops": {
+        "stop": 12
+      },
+      "tool_request_outputs": 11,
+      "empty_outputs": 0
+    },
+    "previously_authored_challenge/baseline/correct/summary_last": {
+      "n": 12,
+      "input_tokens": 42579,
+      "output_tokens": 1092,
+      "wall_seconds_sum": 20.729530099983094,
+      "median_wall_seconds": 1.299020250007743,
+      "stops": {
+        "stop": 12
+      },
+      "tool_request_outputs": 10,
+      "empty_outputs": 0
+    },
+    "previously_authored_challenge/baseline/incorrect/summary_first": {
+      "n": 12,
+      "input_tokens": 42579,
+      "output_tokens": 1872,
+      "wall_seconds_sum": 37.74623309998424,
+      "median_wall_seconds": 2.8056809999980032,
+      "stops": {
+        "stop": 12
+      },
+      "tool_request_outputs": 12,
+      "empty_outputs": 0
+    },
+    "previously_authored_challenge/baseline/incorrect/summary_last": {
+      "n": 12,
+      "input_tokens": 42579,
+      "output_tokens": 1160,
+      "wall_seconds_sum": 22.472621300054016,
+      "median_wall_seconds": 1.8186276499909582,
+      "stops": {
+        "stop": 12
+      },
+      "tool_request_outputs": 8,
+      "empty_outputs": 0
+    },
+    "previously_authored_challenge/baseline/none/none": {
+      "n": 12,
+      "input_tokens": 41749,
+      "output_tokens": 995,
+      "wall_seconds_sum": 19.035574899986386,
+      "median_wall_seconds": 1.277650399992126,
+      "stops": {
+        "stop": 12
+      },
+      "tool_request_outputs": 10,
+      "empty_outputs": 0
+    },
+    "previously_authored_challenge/source_authority/correct/summary_first": {
+      "n": 12,
+      "input_tokens": 46551,
+      "output_tokens": 1672,
+      "wall_seconds_sum": 31.357063599978574,
+      "median_wall_seconds": 2.6541584499937017,
+      "stops": {
+        "stop": 12
+      },
+      "tool_request_outputs": 12,
+      "empty_outputs": 0
+    },
+    "previously_authored_challenge/source_authority/correct/summary_last": {
+      "n": 12,
+      "input_tokens": 46551,
+      "output_tokens": 1122,
+      "wall_seconds_sum": 23.473679900052957,
+      "median_wall_seconds": 1.6462868499947945,
+      "stops": {
+        "stop": 12
+      },
+      "tool_request_outputs": 10,
+      "empty_outputs": 0
+    },
+    "previously_authored_challenge/source_authority/incorrect/summary_first": {
+      "n": 12,
+      "input_tokens": 46551,
+      "output_tokens": 1872,
+      "wall_seconds_sum": 34.794399300037185,
+      "median_wall_seconds": 2.7269237500004238,
+      "stops": {
+        "stop": 12
+      },
+      "tool_request_outputs": 11,
+      "empty_outputs": 0
+    },
+    "previously_authored_challenge/source_authority/incorrect/summary_last": {
+      "n": 12,
+      "input_tokens": 46551,
+      "output_tokens": 1536,
+      "wall_seconds_sum": 29.71641259995522,
+      "median_wall_seconds": 2.027228249979089,
+      "stops": {
+        "stop": 12
+      },
+      "tool_request_outputs": 11,
+      "empty_outputs": 0
+    }
+  },
+  "tool_requests_by_name": {
+    "ls": 1,
+    "publish_card": 68,
+    "read_document": 120,
+    "search": 34,
+    "wait_for_event": 15,
+    "withdraw_card": 2,
+    "write_file": 3
+  },
+  "provider_failures": 0,
+  "tool_requests_executed_by_this_audit": 0,
+  "model_calls_by_this_audit": 0,
+  "semantic_quality_assessed": false,
+  "limits": [
+    "Checks establish record consistency and the declared input manipulation, not semantic correctness.",
+    "The study exposes tools but does not execute their requests; private prose is not delivered help.",
+    "All states were previously exposed; repeated conditions are not independent conversations.",
+    "Summary-first swaps both summary position and dialogue recency; it is not native compaction.",
+    "Timing includes loading and cache effects; no general speed claim is supported.",
+    "Matching this study freeze does not prove older whole-harness fingerprints match the current workspace."
+  ]
+}

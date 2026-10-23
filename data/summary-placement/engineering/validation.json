@@ -1,0 +1,322 @@
+{
+  "id": "summary-placement-engineering-2026-10-23",
+  "type": "engineering_validation",
+  "execution_audit": {
+    "record": "analysis/execution-audit.json",
+    "status": "passed",
+    "calls": 216,
+    "request_and_response_wire_matches": 216,
+    "unchanged_original_requests": 120,
+    "only_message_order_swapped": 96,
+    "unchanged_frozen_inputs": 228,
+    "unchanged_protected_files": 5261,
+    "semantic_quality_assessed": false
+  },
+  "schema_version": "summary-placement-engineering-validation-v1",
+  "date": "2026-10-23",
+  "date_basis": "Frozen engineering preflight date in America/Halifax",
+  "recorded_at_utc": "2026-10-23T15:34:52.588421+00:00",
+  "timezone": "America/Halifax",
+  "kind": "existing_offline_engineering_evidence",
+  "status": "passed",
+  "preflight": "PREFLIGHT.json",
+  "preflight_sha256": "6d96fa6013e4046e1a965edddc95d97c8b3723154f8a0377b2f261e06014a381",
+  "freeze_sha256": "67e866ef6f6bfd911f30723cf6ecd88ab5f5ba45445a57a389b7c8b1a3dab768",
+  "freeze_counts": {
+    "files": 228,
+    "historical_files": 5261
+  },
+  "unique_test_methods": 13,
+  "test_methods": [
+    "PlacementContracts.test_all_216_calls_dispatch_fresh_and_preserve_wire_without_tool_execution",
+    "PlacementContracts.test_blinding_and_full_scoring_preserve_216_denominators_tokens_and_all_paired_buckets",
+    "PlacementContracts.test_canonical_identity_ignores_only_valid_unique_call_ids",
+    "PlacementContracts.test_gold_and_actor_observations_exactly_inherit_24_previously_reviewed_states",
+    "PlacementContracts.test_prepare_cannot_replace_prior_frozen_digest_with_current_tampered_hash",
+    "PlacementContracts.test_prepare_materializes_all_requests_deterministically_and_protects_prior_results",
+    "PlacementContracts.test_prepare_requires_approval_and_refuses_existing_preparation",
+    "PlacementContracts.test_provider_failure_is_retained_and_stops_without_retry",
+    "PlacementContracts.test_real_matrix_has_216_new_cells_18_groups_and_one_shared_none",
+    "PlacementContracts.test_scoring_rejects_mapping_packet_wire_and_unadjudicated_label_corruption",
+    "PlacementContracts.test_semantic_rubric_and_all_original_frozen_hashes_remain_unchanged",
+    "PlacementContracts.test_started_batch_cannot_be_silently_dispatched_again",
+    "PlacementContracts.test_verify_rejects_missing_current_and_modified_historical_inputs"
+  ],
+  "final_passed": 13,
+  "final_failed": 0,
+  "final_errors": 0,
+  "original_command": "experiments/deep_conversation/.venv/Scripts/python.exe -B output/research/2026-10-23/summary-placement/engineering/test_preflight.py",
+  "attempts": [
+    {
+      "log": "engineering/preflight-tests-attempt1.txt",
+      "tests": 13,
+      "passed": 11,
+      "failed": 2,
+      "explanation": "One failure exposed historical validation occurring after prepared writes. One was a preflight fixture assertion that used POSIX separators for a Windows-native freeze key; that fixture was corrected. Original evidence is retained.",
+      "log_sha256": "5bf770731b9bf7f08ac43cbace596996681208de0da86cff3f8e2a7fc3e4a0fe",
+      "elapsed_seconds_from_log": 19.36,
+      "errors_from_log": 0
+    },
+    {
+      "log": "engineering/preflight-tamper-reproduction.txt",
+      "tests": 1,
+      "passed": 0,
+      "failed": 1,
+      "explanation": "After correcting fixture path representation, the isolated tamper test demonstrated that old prepare accepted changed prior material by replacing its frozen digest. Root corrected prior verification and conflict handling; final 13-test run passed. This repeat does not add a fourteenth unique test.",
+      "log_sha256": "12076a71058a14e5b9ec729df519a1efe1d267ac02c16ad20aaa04cbc009f26c",
+      "elapsed_seconds_from_log": 1.848,
+      "errors_from_log": 0
+    },
+    {
+      "log": "engineering/preflight-tests-final.txt",
+      "tests": 13,
+      "passed": 13,
+      "failed": 0,
+      "explanation": "Final runner and corrected fixture; all original frozen entries matched.",
+      "log_sha256": "7c273f64c3e54c1989e5f4b176da46e90fb2b84aff0d92dc523c9f6b03349562",
+      "elapsed_seconds_from_log": 39.468,
+      "errors_from_log": 0
+    }
+  ],
+  "resolved_issue": {
+    "id": "prior_freeze_digest_overwrite",
+    "severity": "freeze_blocking_before_fix",
+    "status": "fixed_and_verified",
+    "description": "Original prepare merged current prior-directory hashes over previously frozen digests and validated too late. The corrected runner verifies every old digest first and refuses conflicting additions before any runtime access or new preparation. Only temporary fixture files were tampered during reproduction."
+  },
+  "tested_and_reviewed_files": [
+    {
+      "path": "experiments/deep_conversation/summary_placement_study.py",
+      "sha256": "f308f779d748c683310cb89de944ae6a433f8226ce17c29d6fa7b999e1a30c05",
+      "freeze_groups": [
+        "files"
+      ],
+      "reviewed_at_preflight": true
+    },
+    {
+      "path": "experiments/deep_conversation/summary_placement_score.py",
+      "sha256": "016cde1ad8ccac971c3dc40b84643d89e68d486d3bc931c3a6f9fd0507ea9ddc",
+      "freeze_groups": [
+        "files"
+      ],
+      "reviewed_at_preflight": true
+    },
+    {
+      "path": "experiments/deep_conversation/source_authority_study.py",
+      "sha256": "7e9e1da9092984151f16b1cab3415fa9cb8d5450d3ee9a21fccdeddc5a893ee5",
+      "freeze_groups": [
+        "files",
+        "historical_files"
+      ],
+      "reviewed_at_preflight": true
+    },
+    {
+      "path": "experiments/deep_conversation/source_authority_score.py",
+      "sha256": "403c4c18adde21a9353108fe61e12ed3a60902407565e9dadbee62d806840316",
+      "freeze_groups": [
+        "files",
+        "historical_files"
+      ],
+      "reviewed_at_preflight": true
+    },
+    {
+      "path": "experiments/deep_conversation/source_authority.py",
+      "sha256": "2bf061a12143a50a1267baf40d570078deab8b2188b51c6e9fcb1fffc2347df4",
+      "freeze_groups": [
+        "historical_files"
+      ],
+      "reviewed_at_preflight": true
+    },
+    {
+      "path": "experiments/deep_conversation/config.py",
+      "sha256": "7bbe081c57042975a5af79a04cdad8d73de7f77f0910fe8c48b742c284410ec3",
+      "freeze_groups": [
+        "files",
+        "historical_files"
+      ],
+      "reviewed_at_preflight": true
+    },
+    {
+      "path": "experiments/deep_conversation/local_runtime.py",
+      "sha256": "f5e8dfb1a128900dfcbdfeaec6add889760849e34e41d361b1f9f77beb2de7ea",
+      "freeze_groups": [
+        "files",
+        "historical_files"
+      ],
+      "reviewed_at_preflight": true
+    },
+    {
+      "path": "experiments/deep_conversation/providers.py",
+      "sha256": "5506b24015c9c7ff3846ac83bdec5294a3dee716485b696911b848b07a0857ca",
+      "freeze_groups": [
+        "files",
+        "historical_files"
+      ],
+      "reviewed_at_preflight": true
+    },
+    {
+      "path": "output/research/2026-10-23/summary-placement/PROTOCOL.md",
+      "sha256": "6c5237989ce385ef88c5b8c8dba8399ee60d15a6fa2bd1f255f62fe7d950f829",
+      "freeze_groups": [
+        "files"
+      ],
+      "reviewed_at_preflight": true
+    },
+    {
+      "path": "output/research/2026-10-23/summary-placement/SCORING.md",
+      "sha256": "b5a9d568233f1d0d3c162c338ade62e6e0ad2594377f85ba5c91ccc1b9780f98",
+      "freeze_groups": [
+        "files"
+      ],
+      "reviewed_at_preflight": true
+    },
+    {
+      "path": "output/research/2026-10-23/summary-placement/engineering/test_preflight.py",
+      "sha256": "bc8a5eaad33a27673715337231e27ec6162b92df6b821b1c0affd042753c276e",
+      "freeze_groups": [],
+      "reviewed_at_preflight": true
+    },
+    {
+      "path": "output/research/2026-10-23/source-authority/FREEZE.json",
+      "sha256": "beaef8fd12ad925f253680ce1cf0ae909154db59ff1e70fb854593f52d558a83",
+      "freeze_groups": [
+        "historical_files"
+      ],
+      "reviewed_at_preflight": true
+    },
+    {
+      "path": "output/research/2026-10-23/source-authority/materials/PREFLIGHT.json",
+      "sha256": "2709c0f0f39491f21bb5f3ae0b57ad6a4301f10a89a328b99df5a46f1c8690fc",
+      "freeze_groups": [
+        "historical_files"
+      ],
+      "reviewed_at_preflight": true
+    },
+    {
+      "path": "output/research/2026-10-23/source-authority/materials/novel-cases.json",
+      "sha256": "faa407da11f7015e2518e5c2a09ecfae641ea4aff83fcdb39709756cdc8f8949",
+      "freeze_groups": [
+        "historical_files"
+      ],
+      "reviewed_at_preflight": true
+    },
+    {
+      "path": "output/research/2026-10-23/source-authority/materials/novel-gold.json",
+      "sha256": "05c420ec0e64b594938c42b6662ff87a44b72d641989d2285648d11da62a0f77",
+      "freeze_groups": [
+        "historical_files"
+      ],
+      "reviewed_at_preflight": true
+    },
+    {
+      "path": "output/research/2026-10-19/summary-causal-replay/materials/cases.json",
+      "sha256": "b1e0cf4b47a319033221fc8add0b37c1e8bcaab6f40511b96f31d4b8422cf48b",
+      "freeze_groups": [
+        "historical_files"
+      ],
+      "reviewed_at_preflight": true
+    }
+  ],
+  "source_bundle": {
+    "manifest": "frozen-source/MANIFEST.json",
+    "source_count": 10
+  },
+  "event_contract_audit": {
+    "path": "EVENT-CONTRACT-AUDIT.md",
+    "sha256": "55483cc000c77eaa8915f4d9a4e589b559f2f09d543c9464a5e417ea219a6c42",
+    "classification": "Research-component event contract gap; not integrated into current production actor or Lab.",
+    "historical_replay_limit": "The older source-recovery full harness fingerprint does not match current config.py, run.py and agent_led.py; matching the two recovery component hashes is not whole-study reproducibility."
+  },
+  "model_calls_by_this_recorder": 0,
+  "tests_rerun_by_this_recorder": 0,
+  "recorder_execution_note": "Initial recorder invocation reached verified source copying but could not format a timezone because this Python environment lacks tzdata. No validation.json was written. The recorder now preserves the frozen Halifax study date and records its own creation time separately in UTC; this is not another test-suite attempt.",
+  "quality_claim": false,
+  "limits": [
+    "Thirteen unique offline tests; repeated attempts do not increase the test count.",
+    "Initial failures and the isolated digest-overwrite reproduction remain in the record.",
+    "This recorder validates reviewed files, logs and copied sources; the independent execution audit separately checks every frozen/protected file and all real request/response records.",
+    "Passing contracts does not establish intention understanding, assistance quality, native compaction equivalence or production benefit.",
+    "Source copies preserve frozen bytes but do not include a complete runtime or prove historical end-to-end replay."
+  ],
+  "publication_preflight": {
+    "status": "passed",
+    "date": "2026-10-23",
+    "timezone": "America/Halifax",
+    "recorded_at_utc": "2026-10-23T18:36:21.688717+00:00",
+    "builds": [
+      "build_summary_placement.py",
+      "build_source_authority.py",
+      "build_overview.py",
+      "build_data.py"
+    ],
+    "check_script": "engineering/check_publication.py",
+    "checks": [
+      "All 16 new-page local links and target fragments resolve.",
+      "Standalone report relative evidence links resolve to exported files.",
+      "All 32 displayed scope metric cells equal the corresponding scored groups.",
+      "Homepage contains both new study links and retains both source-authority links.",
+      "Prior study links to follow-up while preserving its scores.",
+      "Combined JSON and JavaScript records agree and contain one study and one validation entry.",
+      "Evidence ZIP has unique members, passes CRC, and matches all local source and public export hashes.",
+      "Evidence contains all 216 request JSON and 216 response JSON files and frozen source."
+    ],
+    "browser": {
+      "environment": "Local in-app browser at http://127.0.0.1:8777; not a production deployment check",
+      "http_status": 200,
+      "page": "summary-placement.html",
+      "viewport_observations": [
+        {
+          "width": 1280,
+          "height": 720,
+          "document_scroll_width": 1265,
+          "table_client_width": 1065,
+          "table_scroll_width": 1065,
+          "observed": "Heading, metrics, both-order table columns and uncertain counts display without overlap."
+        },
+        {
+          "width": 390,
+          "height": 844,
+          "document_scroll_width": 375,
+          "table_client_width": 308,
+          "table_scroll_width": 680,
+          "observed": "Long result tables are contained in overflow-x:auto areas; page has no horizontal overflow. Paragraphs and download actions fit the viewport."
+        }
+      ],
+      "study_index": "New 216-call entry is visible under index.html#methods.",
+      "captured_console_errors_or_warnings": 0,
+      "viewport_override_reset": true,
+      "limits": [
+        "No automated accessibility conformance claim.",
+        "Download records were verified on disk; no browser download completion test.",
+        "No model calls were triggered by site validation."
+      ]
+    },
+    "deployment": "Recorded separately after publication; this preflight does not claim hosted success.",
+    "source_sha256": {
+      "sites/conversation-agent-research/build_summary_placement.py": "4301321106294f32f0912ff3ec4c88bc6aacefef0129bcaa622cd330a43cb663",
+      "sites/conversation-agent-research/build_source_authority.py": "3369184e7375320f74ef380151319d1e9b89a4a681966522982be0cefa563778",
+      "sites/conversation-agent-research/build_overview.py": "0245106ef46479094c42a0c07449dc7c2ceeb8c90b521e8406b5c589dbc9cdca",
+      "sites/conversation-agent-research/build_data.py": "3c59b1037594812a40fc466858599db5ad333a5258ff7ab68c61916bc3fc2570",
+      "output/research/2026-10-23/summary-placement/engineering/check_publication.py": "7a3b27a3c84db106d331bb955b58ac57f34ee8e8a38ffa354709af7072eeafdb"
+    }
+  },
+  "interface_diagnostic": {
+    "record": "analysis/interface-audit.json",
+    "calls": 216,
+    "native_tool_requests": 243,
+    "explicit_schema_violations": 1,
+    "calls_with_undeclared_keys": 3,
+    "overlap": "One of the three extra-key calls is also the single required-field failure.",
+    "tools_executed": false,
+    "limit": "Limited validation of supplied schema keywords; not an executed parser test or assistance-quality score."
+  },
+  "score_accounting": {
+    "record": "analysis/INDEPENDENT-AUDIT.json",
+    "independent_checks_passed": 8,
+    "scored_calls": 216,
+    "groups": 18,
+    "paired_comparisons": 64,
+    "human_review": false,
+    "semantic_quality_proven": false
+  }
+}

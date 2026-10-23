@@ -1,0 +1,302 @@
+{
+  "schema_version": "summary-placement-independent-audit-v1",
+  "date": "2026-10-23",
+  "timezone": "America/Halifax",
+  "reviewed_utc": "2026-10-23T18:35:39.332226+00:00",
+  "reviewer": "/root/placement_result_audit",
+  "reviewer_kind": "Independent AI agent; not human validation",
+  "status": "reviewed",
+  "method": "Read frozen artifacts directly and independently reconstructed labels, behavior, groups, paired comparisons, CSV and cost using Python standard library only; did not import the scorer or runner. No model calls, tool execution or score changes.",
+  "audit_code_review": {
+    "prepared_by": "/root/study_preflight",
+    "reviewed_and_executed_by": "/root/placement_result_audit",
+    "assessment": "Reviewed the full independent recomputation source before executing it. Its imports are standard-library only; it independently reconstructs the 216-cell design, exact request swap, wire records, narrowly declared tool-call-ID equivalence, blinded mapping, final adjudicated labels, all 18 group denominators, 64 paired case lists, CSV, token totals and 120 repeat-input identities. No runner or scorer import or model call is present. It checks accounting and provenance, not semantic validity.",
+    "limitations": "Exact evidence matching checks quote presence, not whether an AI rationale is semantically justified. Runtime/provider provenance and non-execution also rely on retained execution records. This is an AI review, not human validation."
+  },
+  "semantic_review": {
+    "status": "reviewed",
+    "blinded": false,
+    "purpose": "Independent post-scoring audit; does not replace either blinded reviewer or the fresh adjudication.",
+    "all_non_no_packets_reviewed": [
+      "output-015",
+      "output-035",
+      "output-044",
+      "output-045",
+      "output-051",
+      "output-064",
+      "output-070",
+      "output-073",
+      "output-083",
+      "output-088",
+      "output-095",
+      "output-099",
+      "output-107",
+      "output-111",
+      "output-116",
+      "output-136",
+      "output-137",
+      "output-159",
+      "output-171"
+    ],
+    "additional_no_packets_reviewed": [
+      "output-047",
+      "output-049",
+      "output-055",
+      "output-058",
+      "output-076",
+      "output-122",
+      "output-146",
+      "output-163",
+      "output-164",
+      "output-172"
+    ],
+    "finding": "No clear scoring defect requiring a correction was found in the reviewed packets. Current speech, arrived fictional records, actual response content and native request arguments support the retained errors, uncertainties and paired examples under the frozen rubric. This was targeted semantic review, not a fresh independent rating of all 180 packets.",
+    "adjudication_review": [
+      "output-111: unsupported aluminium-estimate readiness supports factual_error=yes. The explicit finalization question supports settled-scope reconfirmation. After removing that question, the readiness claim conflicts with an explicit later offer to obtain the estimate; retaining uncertain in the sensitivity outcome is justified.",
+      "output-171: the card calls 400 g the weight limit while describing 450 g with would after the user accepted 450 g. It permits an old/new comparison or a superseded-condition reading, so condition-type uncertainty is retained; supported measurements are not themselves factual errors."
+    ],
+    "negative_results_preserved": [
+      "output-137: correct summary plus source-authority guidance in summary-first still reopens the specifically deferred Bay Hall/Foundry Loft comparison. The primary scope harm is pure reconfirmation, with sensitivity=no.",
+      "output-099: correct-summary baseline summary-first says a permission draft exists but does not provide it and asks whether to show it; scope, reconfirmation and omission remain uncertain.",
+      "output-083: correct-summary source-authority summary-last requests writing only an instruction to draft, then requests a card saying the draft exists; omission=yes is retained.",
+      "output-045: the ordinary no-summary reference requests the expressly cancelled Meadow check; absence of a saved summary is not proof of reliable scope tracking.",
+      "output-172: scope=no does not establish useful execution. The ls request carries card_id/text arguments; this is a separate interface diagnostic."
+    ],
+    "boundary_cases": [
+      "output-055: the awkward historical-mention sentence is followed by an explicit current conclusion for Owen's present Pine need and a matching SIGN-PINE-FINISH read request. The frozen rule allows historical discussion when the final current conclusion is clear; no is defensible, without claiming coherent internal reasoning or completed retrieval.",
+      "output-122 and output-163 generically offer other venues; output-137 explicitly reopens the named comparison already deferred. The frozen distinction between optional further work and settled-scope re-approval is interpretive, and the separately annotated sensitivity outcome is necessary."
+    ],
+    "original_scores_or_frozen_material_changed": false
+  },
+  "checks": [
+    {
+      "id": "frozen_inputs_and_historical_evidence",
+      "status": "passed",
+      "evidence": {
+        "current_input_entries": 228,
+        "current_historical_entries": 5261,
+        "prior_input_entries": 137,
+        "prior_historical_entries": 4475
+      }
+    },
+    {
+      "id": "all_216_raw_wire_records_and_only_declared_message_swap",
+      "status": "passed",
+      "evidence": {
+        "calls": 216,
+        "cases": 24,
+        "ordinary_no_summary_calls": 24
+      }
+    },
+    {
+      "id": "blind_equivalence_classes_and_full_job_mapping",
+      "status": "passed",
+      "evidence": {
+        "unique_packets": 180,
+        "mapped_calls": 216,
+        "transport_ids_only_ignored_if_valid_unique_strings": true
+      }
+    },
+    {
+      "id": "review_schema_exact_evidence_and_final_label_selection",
+      "status": "passed",
+      "evidence": {
+        "reviewer_a_records": 180,
+        "reviewer_b_records": 180,
+        "disagreements": [
+          "output-111",
+          "output-171"
+        ],
+        "adjudicated": [
+          "output-111",
+          "output-171"
+        ],
+        "semantic_correctness_established_by_this_schema_check": false
+      }
+    },
+    {
+      "id": "all_final_labels_behavior_fields_and_216_csv_rows",
+      "status": "passed",
+      "evidence": {
+        "rows": 216,
+        "csv_rows": 216
+      }
+    },
+    {
+      "id": "all_18_groups_all_fields_and_costs",
+      "status": "passed",
+      "evidence": {
+        "groups": 18,
+        "denominator_each": 12,
+        "ternary_metrics": [
+          "scope_error",
+          "scope_error_excluding_reconfirmation",
+          "unnecessary_reconfirmation",
+          "factual_error",
+          "observable_omission"
+        ]
+      }
+    },
+    {
+      "id": "all_64_paired_comparisons_and_shared_no_summary_reference",
+      "status": "passed",
+      "evidence": {
+        "comparisons": 64,
+        "pairs_each": 12,
+        "shared_reference_comparisons": 32
+      }
+    },
+    {
+      "id": "tokens_repeat_identity_and_result_metadata",
+      "status": "passed",
+      "evidence": {
+        "input_tokens": 809590,
+        "output_tokens": 25190,
+        "total_tokens": 834780,
+        "repeated_inputs": 120,
+        "identical_response_excluding_call_ids": 63
+      }
+    }
+  ],
+  "scope": {
+    "calls": 216,
+    "cases": 24,
+    "groups": 18,
+    "paired_comparisons": 64,
+    "unique_packets": 180,
+    "disagreements": [
+      "output-111",
+      "output-171"
+    ],
+    "input_tokens": 809590,
+    "output_tokens": 25190,
+    "total_tokens": 834780
+  },
+  "uncertain_rows": [
+    {
+      "job_id": "exhibition_panels--unaccepted--source_authority--incorrect--summary_last",
+      "blind_id": "output-111",
+      "case_id": "exhibition_panels--unaccepted",
+      "split": "earlier_regression",
+      "guidance": "source_authority",
+      "summary": "incorrect",
+      "order": "summary_last",
+      "scope_error": "yes",
+      "scope_error_excluding_reconfirmation": "uncertain",
+      "unnecessary_reconfirmation": "yes",
+      "factual_error": "yes",
+      "observable_omission": "no",
+      "scope_failure_type": "contraction"
+    },
+    {
+      "job_id": "recorder_mass_revision--limit_relaxed--source_authority--incorrect--summary_last",
+      "blind_id": "output-171",
+      "case_id": "recorder_mass_revision--limit_relaxed",
+      "split": "previously_authored_challenge",
+      "guidance": "source_authority",
+      "summary": "incorrect",
+      "order": "summary_last",
+      "scope_error": "uncertain",
+      "scope_error_excluding_reconfirmation": "uncertain",
+      "unnecessary_reconfirmation": "no",
+      "factual_error": "no",
+      "observable_omission": "no",
+      "scope_failure_type": "condition"
+    },
+    {
+      "job_id": "oral_history_permissions--accepted--baseline--correct--summary_first",
+      "blind_id": "output-099",
+      "case_id": "oral_history_permissions--accepted",
+      "split": "earlier_regression",
+      "guidance": "baseline",
+      "summary": "correct",
+      "order": "summary_first",
+      "scope_error": "uncertain",
+      "scope_error_excluding_reconfirmation": "no",
+      "unnecessary_reconfirmation": "uncertain",
+      "factual_error": "no",
+      "observable_omission": "uncertain",
+      "scope_failure_type": "uncertain"
+    }
+  ],
+  "reviewed_file_sha256": {
+    "output/research/2026-10-23/summary-placement/FREEZE.json": "67e866ef6f6bfd911f30723cf6ecd88ab5f5ba45445a57a389b7c8b1a3dab768",
+    "output/research/2026-10-23/summary-placement/prepared/jobs.json": "2221b191ed66558ac95fe3611b8586cf2bed8d966a47cf472f4c0f26ba657908",
+    "output/research/2026-10-23/summary-placement/scoring/blind-packets.json": "bcd94d86583b98e4e2b800de1312e05a69f52dfc313c0dac1a3610e2c46a89e2",
+    "output/research/2026-10-23/summary-placement/scoring/private-mapping.json": "1ec7fa6a251be8a9acaafa0b5e278e48f54c07906996ac69996c6113c83d38c5",
+    "output/research/2026-10-23/summary-placement/scoring/reviewer-a.json": "7da3a2afc797ce1343f81a9dcbb6a4e328325b354900d34a1eac54c54c4ebf80",
+    "output/research/2026-10-23/summary-placement/scoring/reviewer-b.json": "74baa4135c9d1fbcbf204f20fe5a4aba6f302442efeeb3e9f1e76b8af0583163",
+    "output/research/2026-10-23/summary-placement/analysis/results.json": "ff5548f4a8200cfb6c6b339e400f4b0e7c67b6fb4a7f6d66849006d19ca3432f",
+    "output/research/2026-10-23/summary-placement/analysis/rows.csv": "c99d3e5237b342e96eb13e70ea510cde66ccf059f07371c669106466500b2562",
+    "output/research/2026-10-23/summary-placement/analysis/independent_score_audit.py": "f54e8049c15222847831349bc83ec24f280a31ce20e31fa42b24ad1089b2bd7a",
+    "output/research/2026-10-23/summary-placement/scoring/adjudication.json": "28877b247f3f61b12d5a2b27d6e1195971cd1fb01fe6815e7dfa32244f51ed18",
+    "output/research/2026-10-23/summary-placement/RESULTS.md": "d2d0fed4153233b0e8d9b80564aaee9610652309a0c850c5a9315241a92298bc",
+    "output/research/2026-10-23/summary-placement/analysis/interpretation.json": "3917cf2bd05012d4bd1cc89f394307ce71f4255bb5f14dae502ca3568fbfdcd9",
+    "output/research/2026-10-23/summary-placement/analysis/interface-audit.json": "62e2b49ce36ce88455f47f3d34481eec29c803b6bb16334975e0bb583930b67a",
+    "output/research/2026-10-23/summary-placement/analysis/audit_interfaces.py": "100f40b9413618d06bacfc4c57df90d4b4907a6b8245b2999d650b4927ed1e01",
+    "output/research/2026-10-23/summary-placement/analysis/execution-audit.json": "dc4b4299563a9af80aee3e05b47241ca843befd9aa2b44e7d60556250a6c24d0",
+    "output/research/2026-10-23/summary-placement/scoring/ADJUDICATION.md": "be4536ae1209beb5faac0504e1287b5dbf1d295f1805cc77c77e55df96997bcd",
+    "sites/conversation-agent-research/dist/summary-placement.html": "0f1912d3242735242af6658f45370becd0af025bba5fed8608217b30370b02e1",
+    "sites/conversation-agent-research/dist/data/summary-placement/results.json": "ff5548f4a8200cfb6c6b339e400f4b0e7c67b6fb4a7f6d66849006d19ca3432f",
+    "sites/conversation-agent-research/dist/data/summary-placement/rows.csv": "0fd60127bd87a04d8a50b09cc6f47698fb4c7219849a6e02c191720c97dc8981",
+    "sites/conversation-agent-research/dist/data/summary-placement/interpretation.json": "3917cf2bd05012d4bd1cc89f394307ce71f4255bb5f14dae502ca3568fbfdcd9",
+    "sites/conversation-agent-research/dist/data/summary-placement/RESULTS.md": "ff0f9cd9c179d17d5f808d2e947d3229f6d65a3dce1741d53d388c4606f6818f",
+    "sites/conversation-agent-research/dist/data/summary-placement/PROTOCOL.md": "6c5237989ce385ef88c5b8c8dba8399ee60d15a6fa2bd1f255f62fe7d950f829",
+    "sites/conversation-agent-research/dist/data/summary-placement/SCORING.md": "b5a9d568233f1d0d3c162c338ade62e6e0ad2594377f85ba5c91ccc1b9780f98"
+  },
+  "not_yet_reviewed": [
+    "Hosted deployment, which requires a separate publication receipt",
+    "Rendered browser layout, reviewed separately by the parent task"
+  ],
+  "limitations": [
+    "Passing accounting checks does not validate AI semantic judgments.",
+    "All 24 states are exposed synthetic development material.",
+    "Only one model decision is observed; native tool requests are not executed.",
+    "Layout swaps also change recency and do not reproduce native long-history compaction.",
+    "Inherited primary rubric includes reconfirmation; use the separately annotated sensitivity outcome and do not directly compare primary rates with historical 3/36.",
+    "The semantic audit was not blinded and examined all 19 non-no packets plus 10 selected no packets; it is not a new rating of every packet or human validation.",
+    "Correctly matching tables, exports and hashes does not resolve the unisolated repeated-input output variability or establish a reproducible causal placement effect.",
+    "Generated HTML source and downloadable data were inspected here; rendered layout and hosted publication require separate evidence from the parent task."
+  ],
+  "report_and_public_data_review": {
+    "status": "reviewed",
+    "reviewed_utc": "2026-10-23T18:35:39.332226+00:00",
+    "method": "Read final RESULTS.md, interpretation.json and generated HTML. Independently parsed the Markdown and HTML tables with Python standard library, compared them with the independently reconstructed results, checked all seven finding texts, compared direct public exports with source text, and checked archive member/source hashes against the export manifest. No report-builder, website-validator, scorer or runner was imported.",
+    "report_outcome_rows_matched": 18,
+    "report_primary_paired_rows_matched": 16,
+    "report_action_rows_matched": 18,
+    "html_metric_cells_matched": 32,
+    "interpretation_findings_matched": 7,
+    "direct_public_exports_matched": 6,
+    "direct_public_export_note": "results.json, interpretation.json, PROTOCOL.md and SCORING.md match source bytes; rows.csv and RESULTS.md have equivalent normalized text, with export newline normalization.",
+    "archive_snapshot_before_audit_finalization": {
+      "members": 942,
+      "manifest_records": 941,
+      "source_and_public_entry_hash_pairs_matched": 940,
+      "excluded_mutable_entries": [
+        "engineering/validation.json"
+      ],
+      "duplicate_or_unexpected_members": 0,
+      "embedded_manifest_matches_direct_manifest": true
+    },
+    "narrative_findings": [
+      "The final lead describes this batch and explicitly says repeated-input variability prevents establishing a reproducible placement effect. It no longer describes an established general position repair.",
+      "Birch is described as a request to read a record, consistently with zero executed tool requests.",
+      "Correct-summary primary harm, uncertain outcomes, factual error, omissions, the failing no-summary reference and 63/120 repeat-response identity are retained.",
+      "All 24 states remain identified as previously exposed, one decision is observed per cell, shared no-summary references are not extra observations, and no delivered-success or human-validity claim is made.",
+      "Interface reporting distinguishes one missing-required-path schema violation from three calls with four undeclared keys, including the same ls call; additional properties were not forbidden. No real parser failure or executed action is inferred."
+    ],
+    "interface_audit_review": {
+      "source_implementation_reviewed": true,
+      "record_reviewed": true,
+      "rerun_by_this_agent": false,
+      "schema_violations": 1,
+      "calls_with_undeclared_keys": 3,
+      "undeclared_keys": 4,
+      "native_requests": 243,
+      "outputs_with_native_requests": 170,
+      "limitation": "Finite checks of supplied explicit schema keywords; not a full JSON Schema implementation, tool execution, or real parser integration test."
+    },
+    "final_export_note": "This audit record changed after the archive snapshot was checked. The parent task must rebuild exports to include this finalized audit and validate that final export separately. The archive and manifest are intentionally not hashed in this record to avoid a self-referential digest cycle. Mutable validation records are also excluded."
+  }
+}

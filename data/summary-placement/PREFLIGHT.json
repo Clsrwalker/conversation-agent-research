@@ -1,0 +1,149 @@
+{
+  "schema_version": "summary-placement-independent-preflight-v1",
+  "date": "2026-10-23",
+  "timezone": "America/Halifax",
+  "reviewer": "/root/study_preflight",
+  "reviewer_kind": "Independent AI agent; not human validation",
+  "approved_for_freeze": true,
+  "approval_scope": "Approve the reviewed protocol, inherited materials, runner and scorer for 216 newly dispatched single-decision layout-control calls. This does not establish model understanding, delivered assistance, native compaction equivalence or a production harness improvement.",
+  "review_method": "Read the new protocol, full scoring rubric, runner and scorer; compare their behavior with the frozen prior requests, gold mapping and prior independent semantic preflight. Verify the semantic rubric unchanged and all 24 states inherited exactly. No new material requires a new semantic case judgment; the prior 12 authored-state semantic reviews are inherited rather than described as a new independent rereading of every case. Run offline transport, freeze, blinding and arithmetic contracts with network connection blocked and fabricated provider responses. No model inference or tool execution was performed.",
+  "design": {
+    "cases": 24,
+    "scenario_families": 12,
+    "all_states_previously_exposed": true,
+    "provenance_strata": {
+      "earlier_regression": 12,
+      "previously_authored_challenge": 12
+    },
+    "summary_calls_per_case": 8,
+    "guidance_conditions": [
+      "baseline",
+      "source_authority"
+    ],
+    "summary_conditions": [
+      "correct",
+      "incorrect"
+    ],
+    "placement_conditions": [
+      "summary_first",
+      "summary_last"
+    ],
+    "shared_baseline_no_summary_calls": 24,
+    "total_new_calls": 216,
+    "groups": 18,
+    "cases_per_group": 12,
+    "primary_comparison": "Within the identical case, guidance and incorrect summary, compare summary_first against summary_last separately by provenance stratum. Preserve correct-summary harm, guidance comparisons within each order, and the one shared ordinary no-summary reference.",
+    "inference_limits": "The swap changes both summary primacy and raw-dialogue recency. It isolates layout sensitivity only. Both messages remain user-role wrappers, all raw dialogue is present, summaries are synthetic, and there is no native long-history compaction or executed tool workflow. One call per cell and two states per family do not create 216 independent conversations or estimate generalization. The 120 original-input cells must be newly dispatched; old responses are used only for a separate identity observation."
+  },
+  "checks": [
+    {
+      "id": "exact_request_control",
+      "status": "passed",
+      "evidence": "All 216 generated request JSON values compared with their exact prior frozen request: summary_first swaps only complete messages at indices 1 and 2; summary_last and none are identical. System/guidance, full raw turns, provenance, wrapper roles/text, final continuation, 16 tools and decoding options are unchanged. Each case has eight summarized cells and one baseline/none/none cell."
+    },
+    {
+      "id": "prior_gold_and_actor_isolation",
+      "status": "passed",
+      "evidence": "All 12 earlier evaluation_only records plus all 12 prior authored gold records match the new gold_by_case mapping without collision or missing state. Every actor observation contains only conversation, provenance, pending_jobs and active_cards, and exact request inheritance preserves the prior reviewed evaluator exclusion. The same prior semantic rubric from Required review record through Facts/actions/delivery is byte-equivalent as decoded text."
+    },
+    {
+      "id": "original_frozen_entries_unchanged",
+      "status": "passed",
+      "evidence": "The original source-authority verify() independently rehashed and matched all 137 frozen input entries and 4475 historical entries during the final offline test run. No old frozen file was edited by this preflight."
+    },
+    {
+      "id": "new_freeze_integrity_and_schedule",
+      "status": "passed",
+      "evidence": "Approval and existing-preparation guards pass. Corrected prepare verifies both prior freeze groups before runtime access or new prepared output, rejects digest conflicts instead of replacing them, then includes post-run prior evidence. A deliberately changed prior fixture is rejected before new materialization. A successful fake prepare records all 216 request hashes in deterministic seed-2026102302 order; verify rejects changed historical or missing current inputs."
+    },
+    {
+      "id": "fresh_dispatch_and_failure_receipts",
+      "status": "passed",
+      "evidence": "A fabricated provider supplied 216 fresh responses and the runner recorded every wire request/response and terminal count without executing publish_card. A 503 fixture retains response wire/status/error, stops after the first call and produces no terminal success. An existing run-start prevents redispatch. The unchanged exception handler also records transport/parse errors; those variants were inspected here but are not claimed as newly executed tests."
+    },
+    {
+      "id": "semantic_dedup_and_blind_mapping",
+      "status": "passed",
+      "evidence": "Only tool_calls[].id is removed, only if all IDs in that message are nonempty unique strings. Missing, empty, duplicate, null or numeric ID fixtures stay unchanged. Original messages are not mutated; role, content whitespace, call order, index and arguments remain identity-significant. Full mock blinding produced 96 representative packets for 216 calls, retained representative original IDs, isolated cases, and preserved all jobs. Stop is in the inspected key and is checked against every mapped raw response by the scorer."
+    },
+    {
+      "id": "full_aggregation_and_paired_arithmetic",
+      "status": "passed",
+      "evidence": "An independent synthetic annotation fixture recomputed all 18 groups, all five ternary fields, both token counters, 64 paired comparisons and their fixed/regressed/uncertain/both-error/both-no-error case lists. All retain 12 cases per group/pair, and all 32 no-summary comparisons use the same baseline/none/none references. All 120 original-input response identity observations match ignoring only valid transport call IDs. Synthetic labels are fixtures, not semantic model judgments."
+    },
+    {
+      "id": "score_integrity_and_review_policy",
+      "status": "passed",
+      "evidence": "Corrupted mapping job metadata, packet gold, request wire and unadjudicated label disagreements are rejected. Read code additionally checks packet IDs, complete mapping coverage, raw message/stop identity, response wire, all 216 unique job/lookup rows and exact adjudication set. The protocol requires two fresh blinded reviewers and a fresh third review for all six-field disagreements, retaining uncertainty and the reconfirmation-excluded sensitivity field. Actual future reviews and output semantics have not been audited by this preflight."
+    }
+  ],
+  "engineering_validation": {
+    "kind": "offline_contract_validation",
+    "model_calls": 0,
+    "production_tool_executions": 0,
+    "network_connections_allowed": false,
+    "unique_test_methods": 13,
+    "final_passed": 13,
+    "final_failed": 0,
+    "final_errors": 0,
+    "final_elapsed_seconds": 39.468,
+    "command": "experiments/deep_conversation/.venv/Scripts/python.exe -B output/research/2026-10-23/summary-placement/engineering/test_preflight.py",
+    "test_source": "engineering/test_preflight.py",
+    "final_log": "engineering/preflight-tests-final.txt",
+    "attempts": [
+      {
+        "log": "engineering/preflight-tests-attempt1.txt",
+        "tests": 13,
+        "passed": 11,
+        "failed": 2,
+        "explanation": "One failure exposed historical validation occurring after prepared writes. One was a preflight fixture assertion that used POSIX separators for a Windows-native freeze key; that fixture was corrected. Original evidence is retained."
+      },
+      {
+        "log": "engineering/preflight-tamper-reproduction.txt",
+        "tests": 1,
+        "passed": 0,
+        "failed": 1,
+        "explanation": "After correcting fixture path representation, the isolated tamper test demonstrated that old prepare accepted changed prior material by replacing its frozen digest. Root corrected prior verification and conflict handling; final 13-test run passed. This repeat does not add a fourteenth unique test."
+      },
+      {
+        "log": "engineering/preflight-tests-final.txt",
+        "tests": 13,
+        "passed": 13,
+        "failed": 0,
+        "explanation": "Final runner and corrected fixture; all original frozen entries matched."
+      }
+    ]
+  },
+  "resolved_issue": {
+    "id": "prior_freeze_digest_overwrite",
+    "severity": "freeze_blocking_before_fix",
+    "status": "fixed_and_verified",
+    "description": "Original prepare merged current prior-directory hashes over previously frozen digests and validated too late. The corrected runner verifies every old digest first and refuses conflicting additions before any runtime access or new preparation. Only temporary fixture files were tampered during reproduction."
+  },
+  "remaining_limits": [
+    "Actual model/runtime availability and digest equality are checked by prepare/run; this offline preflight did not contact the runtime.",
+    "No measured model result, semantic label, delivered action or native compaction benefit exists for this new diagnostic at preflight time.",
+    "Transport-ID deduplication applies to single-decision semantic review; it does not establish multi-step tool-call/result pairing correctness.",
+    "Keep historical study semantics distinct from its older predecessor: the inherited primary metric includes repeated requests for settled-scope approval; report the separately annotated sensitivity metric rather than compare the main rate directly with historical 3/36.",
+    "The research website must include these grouped engineering checks, the initial failures, eventual measured results and limits in the same task; publication is handled separately by the root agent."
+  ],
+  "reviewed_utc": "2026-10-23T13:04:03.359558+00:00",
+  "reviewed_file_sha256": {
+    "experiments/deep_conversation/summary_placement_study.py": "f308f779d748c683310cb89de944ae6a433f8226ce17c29d6fa7b999e1a30c05",
+    "experiments/deep_conversation/summary_placement_score.py": "016cde1ad8ccac971c3dc40b84643d89e68d486d3bc931c3a6f9fd0507ea9ddc",
+    "experiments/deep_conversation/source_authority_study.py": "7e9e1da9092984151f16b1cab3415fa9cb8d5450d3ee9a21fccdeddc5a893ee5",
+    "experiments/deep_conversation/source_authority_score.py": "403c4c18adde21a9353108fe61e12ed3a60902407565e9dadbee62d806840316",
+    "experiments/deep_conversation/source_authority.py": "2bf061a12143a50a1267baf40d570078deab8b2188b51c6e9fcb1fffc2347df4",
+    "experiments/deep_conversation/config.py": "7bbe081c57042975a5af79a04cdad8d73de7f77f0910fe8c48b742c284410ec3",
+    "experiments/deep_conversation/local_runtime.py": "f5e8dfb1a128900dfcbdfeaec6add889760849e34e41d361b1f9f77beb2de7ea",
+    "experiments/deep_conversation/providers.py": "5506b24015c9c7ff3846ac83bdec5294a3dee716485b696911b848b07a0857ca",
+    "output/research/2026-10-23/summary-placement/PROTOCOL.md": "6c5237989ce385ef88c5b8c8dba8399ee60d15a6fa2bd1f255f62fe7d950f829",
+    "output/research/2026-10-23/summary-placement/SCORING.md": "b5a9d568233f1d0d3c162c338ade62e6e0ad2594377f85ba5c91ccc1b9780f98",
+    "output/research/2026-10-23/summary-placement/engineering/test_preflight.py": "bc8a5eaad33a27673715337231e27ec6162b92df6b821b1c0affd042753c276e",
+    "output/research/2026-10-23/source-authority/FREEZE.json": "beaef8fd12ad925f253680ce1cf0ae909154db59ff1e70fb854593f52d558a83",
+    "output/research/2026-10-23/source-authority/materials/PREFLIGHT.json": "2709c0f0f39491f21bb5f3ae0b57ad6a4301f10a89a328b99df5a46f1c8690fc",
+    "output/research/2026-10-23/source-authority/materials/novel-cases.json": "faa407da11f7015e2518e5c2a09ecfae641ea4aff83fcdb39709756cdc8f8949",
+    "output/research/2026-10-23/source-authority/materials/novel-gold.json": "05c420ec0e64b594938c42b6662ff87a44b72d641989d2285648d11da62a0f77",
+    "output/research/2026-10-19/summary-causal-replay/materials/cases.json": "b1e0cf4b47a319033221fc8add0b37c1e8bcaab6f40511b96f31d4b8422cf48b"
+  }
+}

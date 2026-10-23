@@ -5844,6 +5844,13 @@
       "type": "engineering_validation",
       "record": "source-authority-validation.json",
       "status": "passed_with_initial_fixture_and_environment_failures_retained"
+    },
+    {
+      "id": "summary-placement-engineering-2026-10-23",
+      "date": "2026-10-23",
+      "type": "engineering_validation",
+      "record": "summary-placement-validation.json",
+      "status": "passed"
     }
   ],
   "literature_reviews": [
@@ -5909,6 +5916,33 @@
           "output-041",
           "output-119"
         ],
+        "human_review": false
+      }
+    },
+    {
+      "id": "summary-placement-2026-10-23",
+      "date": "2026-10-23",
+      "type": "model_component_diagnostic",
+      "status": "completed_scored",
+      "record": "summary-placement/results.json",
+      "page": "summary-placement.html",
+      "new_model_runs": 216,
+      "all_cases_previously_exposed": true,
+      "tool_requests_executed": false,
+      "delivered_success": null,
+      "evidence": "summary-placement/evidence.zip",
+      "scoring": {
+        "independent_ai_reviewers": 2,
+        "unique_packets": 180,
+        "disagreements": [
+          "output-111",
+          "output-171"
+        ],
+        "adjudicated": [
+          "output-111",
+          "output-171"
+        ],
+        "deduplication": "Same case, complete message and stop, ignoring only native tool call IDs.",
         "human_review": false
       }
     }
