@@ -1,0 +1,194 @@
+{
+  "groups": [
+    {
+      "arm": "A",
+      "summary": "correct",
+      "n": 12,
+      "adopted_n": 6,
+      "delivered_success": 5,
+      "semantic_success": 9,
+      "scope_violations": 0,
+      "explicit_revision_rejections": 0,
+      "adopted_expansion_incomplete": 5,
+      "material_final_claim_errors": 1,
+      "median_seconds": 8.79779110000527,
+      "mean_seconds": 10.00606293333476,
+      "total_generated_tokens": 3833,
+      "total_decisions": 32
+    },
+    {
+      "arm": "A",
+      "summary": "incorrect",
+      "n": 12,
+      "adopted_n": 6,
+      "delivered_success": 2,
+      "semantic_success": 9,
+      "scope_violations": 1,
+      "explicit_revision_rejections": 0,
+      "adopted_expansion_incomplete": 6,
+      "material_final_claim_errors": 1,
+      "median_seconds": 10.510266949997458,
+      "mean_seconds": 9.281335224997747,
+      "total_generated_tokens": 3698,
+      "total_decisions": 28
+    },
+    {
+      "arm": "B",
+      "summary": "none",
+      "n": 12,
+      "adopted_n": 6,
+      "delivered_success": 4,
+      "semantic_success": 10,
+      "scope_violations": 0,
+      "explicit_revision_rejections": 0,
+      "adopted_expansion_incomplete": 4,
+      "material_final_claim_errors": 1,
+      "median_seconds": 8.006070349998481,
+      "mean_seconds": 8.931785633331552,
+      "total_generated_tokens": 3391,
+      "total_decisions": 30
+    },
+    {
+      "arm": "C",
+      "summary": "correct",
+      "n": 12,
+      "adopted_n": 6,
+      "delivered_success": 1,
+      "semantic_success": 7,
+      "scope_violations": 0,
+      "explicit_revision_rejections": 0,
+      "adopted_expansion_incomplete": 6,
+      "material_final_claim_errors": 1,
+      "median_seconds": 14.090220550002414,
+      "mean_seconds": 16.17675019999903,
+      "total_generated_tokens": 3011,
+      "total_decisions": 28
+    },
+    {
+      "arm": "C",
+      "summary": "incorrect",
+      "n": 12,
+      "adopted_n": 6,
+      "delivered_success": 1,
+      "semantic_success": 9,
+      "scope_violations": 0,
+      "explicit_revision_rejections": 0,
+      "adopted_expansion_incomplete": 6,
+      "material_final_claim_errors": 0,
+      "median_seconds": 15.839810849996866,
+      "mean_seconds": 15.729313716667093,
+      "total_generated_tokens": 2892,
+      "total_decisions": 28
+    }
+  ],
+  "paired": [
+    {
+      "summary": "correct",
+      "reference": "B",
+      "metric": "trajectory_success",
+      "both_true": 1,
+      "C_only_true": 0,
+      "reference_only_true": 3,
+      "both_false": 8
+    },
+    {
+      "summary": "correct",
+      "reference": "B",
+      "metric": "semantic_task_success",
+      "both_true": 7,
+      "C_only_true": 0,
+      "reference_only_true": 3,
+      "both_false": 2
+    },
+    {
+      "summary": "correct",
+      "reference": "B",
+      "metric": "scope_violation",
+      "both_true": 0,
+      "C_only_true": 0,
+      "reference_only_true": 0,
+      "both_false": 12
+    },
+    {
+      "summary": "correct",
+      "reference": "A",
+      "metric": "trajectory_success",
+      "both_true": 1,
+      "C_only_true": 0,
+      "reference_only_true": 4,
+      "both_false": 7
+    },
+    {
+      "summary": "correct",
+      "reference": "A",
+      "metric": "semantic_task_success",
+      "both_true": 7,
+      "C_only_true": 0,
+      "reference_only_true": 2,
+      "both_false": 3
+    },
+    {
+      "summary": "correct",
+      "reference": "A",
+      "metric": "scope_violation",
+      "both_true": 0,
+      "C_only_true": 0,
+      "reference_only_true": 0,
+      "both_false": 12
+    },
+    {
+      "summary": "incorrect",
+      "reference": "B",
+      "metric": "trajectory_success",
+      "both_true": 1,
+      "C_only_true": 0,
+      "reference_only_true": 3,
+      "both_false": 8
+    },
+    {
+      "summary": "incorrect",
+      "reference": "B",
+      "metric": "semantic_task_success",
+      "both_true": 9,
+      "C_only_true": 0,
+      "reference_only_true": 1,
+      "both_false": 2
+    },
+    {
+      "summary": "incorrect",
+      "reference": "B",
+      "metric": "scope_violation",
+      "both_true": 0,
+      "C_only_true": 0,
+      "reference_only_true": 0,
+      "both_false": 12
+    },
+    {
+      "summary": "incorrect",
+      "reference": "A",
+      "metric": "trajectory_success",
+      "both_true": 0,
+      "C_only_true": 1,
+      "reference_only_true": 2,
+      "both_false": 9
+    },
+    {
+      "summary": "incorrect",
+      "reference": "A",
+      "metric": "semantic_task_success",
+      "both_true": 8,
+      "C_only_true": 1,
+      "reference_only_true": 1,
+      "both_false": 2
+    },
+    {
+      "summary": "incorrect",
+      "reference": "A",
+      "metric": "scope_violation",
+      "both_true": 0,
+      "C_only_true": 0,
+      "reference_only_true": 1,
+      "both_false": 11
+    }
+  ]
+}

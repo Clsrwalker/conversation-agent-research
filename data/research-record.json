@@ -363,7 +363,7 @@
       "experiments/deep_conversation/benchmarks/TOOL_RECOVERY_RESULTS.md"
     ]
   },
-  "website_record_date": "2026-10-19",
+  "website_record_date": "2026-10-23",
   "investigation_progress": {
     "id": "experiment-02",
     "date": "2026-10-08",
@@ -5837,6 +5837,13 @@
       "type": "website_publication_validation",
       "record": "october-studies-validation.json",
       "status": "passed"
+    },
+    {
+      "id": "source-authority-engineering-2026-10-23",
+      "date": "2026-10-23",
+      "type": "engineering_validation",
+      "record": "source-authority-validation.json",
+      "status": "passed_with_initial_fixture_and_environment_failures_retained"
     }
   ],
   "literature_reviews": [
@@ -5879,6 +5886,31 @@
       "valid_outcomes": 16,
       "evidence": "goal-directed-phase1-evidence.json",
       "scoring": "Deterministic business assertions plus AI-assisted transcript adjudication; no independent human expert review."
+    },
+    {
+      "id": "source-authority-2026-10-23",
+      "date": "2026-10-23",
+      "type": "model_component_diagnostic",
+      "status": "completed_scored",
+      "record": "source-authority/results.json",
+      "page": "source-authority.html",
+      "new_model_runs": 120,
+      "tool_requests_executed": false,
+      "delivered_success": null,
+      "evidence": "source-authority/evidence.zip",
+      "scoring": {
+        "independent_ai_reviewers": 2,
+        "unique_packets": 120,
+        "disagreements": [
+          "output-041",
+          "output-119"
+        ],
+        "adjudicated": [
+          "output-041",
+          "output-119"
+        ],
+        "human_review": false
+      }
     }
   ],
   "october_studies": {

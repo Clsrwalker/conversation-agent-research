@@ -1,0 +1,879 @@
+{
+  "coverage_verified": true,
+  "quotes_verified": true,
+  "items_each": 36,
+  "compared_judgments": 252,
+  "unit": "snapshot repetition; four snapshots of one underlying synthetic need",
+  "by_reviewer": {
+    "a": {
+      "oracle": {
+        "scope": {
+          "correct": 12
+        },
+        "requirement_status": {
+          "preserved": 12
+        },
+        "suggestion_attribution": {
+          "none": 6,
+          "promoted": 6
+        },
+        "background_task_promotion": {
+          "no": 12
+        },
+        "current_decision": {
+          "inappropriate": 9,
+          "unresolved": 3
+        },
+        "action_kind": {
+          "private_prose": 12
+        },
+        "overall_intent_error": {
+          "no": 6,
+          "yes": 6
+        }
+      },
+      "delayed-20/oracle": {
+        "scope": {
+          "correct": 3
+        },
+        "requirement_status": {
+          "preserved": 3
+        },
+        "suggestion_attribution": {
+          "none": 3
+        },
+        "background_task_promotion": {
+          "no": 3
+        },
+        "current_decision": {
+          "inappropriate": 3
+        },
+        "action_kind": {
+          "private_prose": 3
+        },
+        "overall_intent_error": {
+          "no": 3
+        }
+      },
+      "pressure-22/oracle": {
+        "scope": {
+          "correct": 3
+        },
+        "requirement_status": {
+          "preserved": 3
+        },
+        "suggestion_attribution": {
+          "promoted": 3
+        },
+        "background_task_promotion": {
+          "no": 3
+        },
+        "current_decision": {
+          "inappropriate": 3
+        },
+        "action_kind": {
+          "private_prose": 3
+        },
+        "overall_intent_error": {
+          "yes": 3
+        }
+      },
+      "original": {
+        "scope": {
+          "correct": 9,
+          "ambiguous": 3
+        },
+        "requirement_status": {
+          "preserved": 9,
+          "reopened": 3
+        },
+        "suggestion_attribution": {
+          "none": 9,
+          "optional_only": 3
+        },
+        "background_task_promotion": {
+          "no": 12
+        },
+        "current_decision": {
+          "inappropriate": 6,
+          "unresolved": 6
+        },
+        "action_kind": {
+          "private_prose": 12
+        },
+        "overall_intent_error": {
+          "no": 9,
+          "yes": 3
+        }
+      },
+      "delayed-20/original": {
+        "scope": {
+          "correct": 3
+        },
+        "requirement_status": {
+          "preserved": 3
+        },
+        "suggestion_attribution": {
+          "none": 3
+        },
+        "background_task_promotion": {
+          "no": 3
+        },
+        "current_decision": {
+          "inappropriate": 3
+        },
+        "action_kind": {
+          "private_prose": 3
+        },
+        "overall_intent_error": {
+          "no": 3
+        }
+      },
+      "automatic": {
+        "scope": {
+          "correct": 12
+        },
+        "requirement_status": {
+          "preserved": 12
+        },
+        "suggestion_attribution": {
+          "promoted": 5,
+          "none": 6,
+          "optional_only": 1
+        },
+        "background_task_promotion": {
+          "no": 12
+        },
+        "current_decision": {
+          "inappropriate": 8,
+          "unresolved": 4
+        },
+        "action_kind": {
+          "private_prose": 12
+        },
+        "overall_intent_error": {
+          "yes": 5,
+          "no": 7
+        }
+      },
+      "pressure-22/automatic": {
+        "scope": {
+          "correct": 3
+        },
+        "requirement_status": {
+          "preserved": 3
+        },
+        "suggestion_attribution": {
+          "promoted": 2,
+          "optional_only": 1
+        },
+        "background_task_promotion": {
+          "no": 3
+        },
+        "current_decision": {
+          "inappropriate": 2,
+          "unresolved": 1
+        },
+        "action_kind": {
+          "private_prose": 3
+        },
+        "overall_intent_error": {
+          "yes": 2,
+          "no": 1
+        }
+      },
+      "native-21/original": {
+        "scope": {
+          "ambiguous": 3
+        },
+        "requirement_status": {
+          "reopened": 3
+        },
+        "suggestion_attribution": {
+          "none": 3
+        },
+        "background_task_promotion": {
+          "no": 3
+        },
+        "current_decision": {
+          "inappropriate": 3
+        },
+        "action_kind": {
+          "private_prose": 3
+        },
+        "overall_intent_error": {
+          "yes": 3
+        }
+      },
+      "native-21/oracle": {
+        "scope": {
+          "correct": 3
+        },
+        "requirement_status": {
+          "preserved": 3
+        },
+        "suggestion_attribution": {
+          "none": 3
+        },
+        "background_task_promotion": {
+          "no": 3
+        },
+        "current_decision": {
+          "unresolved": 3
+        },
+        "action_kind": {
+          "private_prose": 3
+        },
+        "overall_intent_error": {
+          "no": 3
+        }
+      },
+      "attribution-23/original": {
+        "scope": {
+          "correct": 3
+        },
+        "requirement_status": {
+          "preserved": 3
+        },
+        "suggestion_attribution": {
+          "optional_only": 3
+        },
+        "background_task_promotion": {
+          "no": 3
+        },
+        "current_decision": {
+          "unresolved": 3
+        },
+        "action_kind": {
+          "private_prose": 3
+        },
+        "overall_intent_error": {
+          "no": 3
+        }
+      },
+      "attribution-23/automatic": {
+        "scope": {
+          "correct": 3
+        },
+        "requirement_status": {
+          "preserved": 3
+        },
+        "suggestion_attribution": {
+          "promoted": 3
+        },
+        "background_task_promotion": {
+          "no": 3
+        },
+        "current_decision": {
+          "inappropriate": 3
+        },
+        "action_kind": {
+          "private_prose": 3
+        },
+        "overall_intent_error": {
+          "yes": 3
+        }
+      },
+      "pressure-22/original": {
+        "scope": {
+          "correct": 3
+        },
+        "requirement_status": {
+          "preserved": 3
+        },
+        "suggestion_attribution": {
+          "none": 3
+        },
+        "background_task_promotion": {
+          "no": 3
+        },
+        "current_decision": {
+          "unresolved": 3
+        },
+        "action_kind": {
+          "private_prose": 3
+        },
+        "overall_intent_error": {
+          "no": 3
+        }
+      },
+      "native-21/automatic": {
+        "scope": {
+          "correct": 3
+        },
+        "requirement_status": {
+          "preserved": 3
+        },
+        "suggestion_attribution": {
+          "none": 3
+        },
+        "background_task_promotion": {
+          "no": 3
+        },
+        "current_decision": {
+          "unresolved": 3
+        },
+        "action_kind": {
+          "private_prose": 3
+        },
+        "overall_intent_error": {
+          "no": 3
+        }
+      },
+      "delayed-20/automatic": {
+        "scope": {
+          "correct": 3
+        },
+        "requirement_status": {
+          "preserved": 3
+        },
+        "suggestion_attribution": {
+          "none": 3
+        },
+        "background_task_promotion": {
+          "no": 3
+        },
+        "current_decision": {
+          "inappropriate": 3
+        },
+        "action_kind": {
+          "private_prose": 3
+        },
+        "overall_intent_error": {
+          "no": 3
+        }
+      },
+      "attribution-23/oracle": {
+        "scope": {
+          "correct": 3
+        },
+        "requirement_status": {
+          "preserved": 3
+        },
+        "suggestion_attribution": {
+          "promoted": 3
+        },
+        "background_task_promotion": {
+          "no": 3
+        },
+        "current_decision": {
+          "inappropriate": 3
+        },
+        "action_kind": {
+          "private_prose": 3
+        },
+        "overall_intent_error": {
+          "yes": 3
+        }
+      }
+    },
+    "b": {
+      "oracle": {
+        "scope": {
+          "correct": 12
+        },
+        "requirement_status": {
+          "preserved": 12
+        },
+        "suggestion_attribution": {
+          "none": 6,
+          "promoted": 6
+        },
+        "background_task_promotion": {
+          "no": 12
+        },
+        "current_decision": {
+          "inappropriate": 9,
+          "unresolved": 3
+        },
+        "action_kind": {
+          "private_prose": 12
+        },
+        "overall_intent_error": {
+          "no": 6,
+          "yes": 6
+        }
+      },
+      "delayed-20/oracle": {
+        "scope": {
+          "correct": 3
+        },
+        "requirement_status": {
+          "preserved": 3
+        },
+        "suggestion_attribution": {
+          "none": 3
+        },
+        "background_task_promotion": {
+          "no": 3
+        },
+        "current_decision": {
+          "inappropriate": 3
+        },
+        "action_kind": {
+          "private_prose": 3
+        },
+        "overall_intent_error": {
+          "no": 3
+        }
+      },
+      "pressure-22/oracle": {
+        "scope": {
+          "correct": 3
+        },
+        "requirement_status": {
+          "preserved": 3
+        },
+        "suggestion_attribution": {
+          "promoted": 3
+        },
+        "background_task_promotion": {
+          "no": 3
+        },
+        "current_decision": {
+          "inappropriate": 3
+        },
+        "action_kind": {
+          "private_prose": 3
+        },
+        "overall_intent_error": {
+          "yes": 3
+        }
+      },
+      "original": {
+        "scope": {
+          "correct": 9,
+          "ambiguous": 3
+        },
+        "requirement_status": {
+          "preserved": 9,
+          "reopened": 3
+        },
+        "suggestion_attribution": {
+          "none": 9,
+          "optional_only": 3
+        },
+        "background_task_promotion": {
+          "no": 12
+        },
+        "current_decision": {
+          "inappropriate": 6,
+          "unresolved": 6
+        },
+        "action_kind": {
+          "private_prose": 12
+        },
+        "overall_intent_error": {
+          "no": 9,
+          "yes": 3
+        }
+      },
+      "delayed-20/original": {
+        "scope": {
+          "correct": 3
+        },
+        "requirement_status": {
+          "preserved": 3
+        },
+        "suggestion_attribution": {
+          "none": 3
+        },
+        "background_task_promotion": {
+          "no": 3
+        },
+        "current_decision": {
+          "inappropriate": 3
+        },
+        "action_kind": {
+          "private_prose": 3
+        },
+        "overall_intent_error": {
+          "no": 3
+        }
+      },
+      "automatic": {
+        "scope": {
+          "correct": 12
+        },
+        "requirement_status": {
+          "preserved": 12
+        },
+        "suggestion_attribution": {
+          "promoted": 5,
+          "none": 6,
+          "optional_only": 1
+        },
+        "background_task_promotion": {
+          "no": 12
+        },
+        "current_decision": {
+          "inappropriate": 8,
+          "unresolved": 4
+        },
+        "action_kind": {
+          "private_prose": 12
+        },
+        "overall_intent_error": {
+          "yes": 5,
+          "no": 7
+        }
+      },
+      "pressure-22/automatic": {
+        "scope": {
+          "correct": 3
+        },
+        "requirement_status": {
+          "preserved": 3
+        },
+        "suggestion_attribution": {
+          "promoted": 2,
+          "optional_only": 1
+        },
+        "background_task_promotion": {
+          "no": 3
+        },
+        "current_decision": {
+          "inappropriate": 2,
+          "unresolved": 1
+        },
+        "action_kind": {
+          "private_prose": 3
+        },
+        "overall_intent_error": {
+          "yes": 2,
+          "no": 1
+        }
+      },
+      "native-21/original": {
+        "scope": {
+          "ambiguous": 3
+        },
+        "requirement_status": {
+          "reopened": 3
+        },
+        "suggestion_attribution": {
+          "none": 3
+        },
+        "background_task_promotion": {
+          "no": 3
+        },
+        "current_decision": {
+          "inappropriate": 3
+        },
+        "action_kind": {
+          "private_prose": 3
+        },
+        "overall_intent_error": {
+          "yes": 3
+        }
+      },
+      "native-21/oracle": {
+        "scope": {
+          "correct": 3
+        },
+        "requirement_status": {
+          "preserved": 3
+        },
+        "suggestion_attribution": {
+          "none": 3
+        },
+        "background_task_promotion": {
+          "no": 3
+        },
+        "current_decision": {
+          "unresolved": 3
+        },
+        "action_kind": {
+          "private_prose": 3
+        },
+        "overall_intent_error": {
+          "no": 3
+        }
+      },
+      "attribution-23/original": {
+        "scope": {
+          "correct": 3
+        },
+        "requirement_status": {
+          "preserved": 3
+        },
+        "suggestion_attribution": {
+          "optional_only": 3
+        },
+        "background_task_promotion": {
+          "no": 3
+        },
+        "current_decision": {
+          "unresolved": 3
+        },
+        "action_kind": {
+          "private_prose": 3
+        },
+        "overall_intent_error": {
+          "no": 3
+        }
+      },
+      "attribution-23/automatic": {
+        "scope": {
+          "correct": 3
+        },
+        "requirement_status": {
+          "preserved": 3
+        },
+        "suggestion_attribution": {
+          "promoted": 3
+        },
+        "background_task_promotion": {
+          "no": 3
+        },
+        "current_decision": {
+          "inappropriate": 3
+        },
+        "action_kind": {
+          "private_prose": 3
+        },
+        "overall_intent_error": {
+          "yes": 3
+        }
+      },
+      "pressure-22/original": {
+        "scope": {
+          "correct": 3
+        },
+        "requirement_status": {
+          "preserved": 3
+        },
+        "suggestion_attribution": {
+          "none": 3
+        },
+        "background_task_promotion": {
+          "no": 3
+        },
+        "current_decision": {
+          "unresolved": 3
+        },
+        "action_kind": {
+          "private_prose": 3
+        },
+        "overall_intent_error": {
+          "no": 3
+        }
+      },
+      "native-21/automatic": {
+        "scope": {
+          "correct": 3
+        },
+        "requirement_status": {
+          "preserved": 3
+        },
+        "suggestion_attribution": {
+          "none": 3
+        },
+        "background_task_promotion": {
+          "no": 3
+        },
+        "current_decision": {
+          "unresolved": 3
+        },
+        "action_kind": {
+          "private_prose": 3
+        },
+        "overall_intent_error": {
+          "no": 3
+        }
+      },
+      "delayed-20/automatic": {
+        "scope": {
+          "correct": 3
+        },
+        "requirement_status": {
+          "preserved": 3
+        },
+        "suggestion_attribution": {
+          "none": 3
+        },
+        "background_task_promotion": {
+          "no": 3
+        },
+        "current_decision": {
+          "inappropriate": 3
+        },
+        "action_kind": {
+          "private_prose": 3
+        },
+        "overall_intent_error": {
+          "no": 3
+        }
+      },
+      "attribution-23/oracle": {
+        "scope": {
+          "correct": 3
+        },
+        "requirement_status": {
+          "preserved": 3
+        },
+        "suggestion_attribution": {
+          "promoted": 3
+        },
+        "background_task_promotion": {
+          "no": 3
+        },
+        "current_decision": {
+          "inappropriate": 3
+        },
+        "action_kind": {
+          "private_prose": 3
+        },
+        "overall_intent_error": {
+          "yes": 3
+        }
+      }
+    }
+  },
+  "disagreements": [],
+  "resources": {
+    "original": {
+      "calls": 12,
+      "input_tokens": 57342,
+      "output_tokens": 1501,
+      "total_tokens": 58843,
+      "wall_seconds": 33.131453699985286,
+      "load_seconds": 3.7408646000000005,
+      "tool_call_requests": 0
+    },
+    "attribution-23/original": {
+      "calls": 3,
+      "input_tokens": 15087,
+      "output_tokens": 393,
+      "total_tokens": 15480,
+      "wall_seconds": 12.1978214999981,
+      "load_seconds": 3.7101459,
+      "tool_call_requests": 0
+    },
+    "oracle": {
+      "calls": 12,
+      "input_tokens": 59856,
+      "output_tokens": 1615,
+      "total_tokens": 61471,
+      "wall_seconds": 31.54225400001451,
+      "load_seconds": 0.051614600000000004,
+      "tool_call_requests": 0
+    },
+    "attribution-23/oracle": {
+      "calls": 3,
+      "input_tokens": 15609,
+      "output_tokens": 411,
+      "total_tokens": 16020,
+      "wall_seconds": 7.98160940001253,
+      "load_seconds": 0.0141684,
+      "tool_call_requests": 0
+    },
+    "automatic": {
+      "calls": 12,
+      "input_tokens": 70032,
+      "output_tokens": 1565,
+      "total_tokens": 71597,
+      "wall_seconds": 34.457892400052515,
+      "load_seconds": 0.05145160000000001,
+      "tool_call_requests": 0
+    },
+    "attribution-23/automatic": {
+      "calls": 3,
+      "input_tokens": 18153,
+      "output_tokens": 366,
+      "total_tokens": 18519,
+      "wall_seconds": 8.228675200007274,
+      "load_seconds": 0.0086807,
+      "tool_call_requests": 0
+    },
+    "native-21/oracle": {
+      "calls": 3,
+      "input_tokens": 14775,
+      "output_tokens": 495,
+      "total_tokens": 15270,
+      "wall_seconds": 9.950949000005494,
+      "load_seconds": 0.0130759,
+      "tool_call_requests": 0
+    },
+    "native-21/automatic": {
+      "calls": 3,
+      "input_tokens": 17319,
+      "output_tokens": 517,
+      "total_tokens": 17836,
+      "wall_seconds": 10.309695300020394,
+      "load_seconds": 0.0140398,
+      "tool_call_requests": 0
+    },
+    "native-21/original": {
+      "calls": 3,
+      "input_tokens": 14058,
+      "output_tokens": 514,
+      "total_tokens": 14572,
+      "wall_seconds": 9.503612899992731,
+      "load_seconds": 0.0083824,
+      "tool_call_requests": 0
+    },
+    "pressure-22/automatic": {
+      "calls": 3,
+      "input_tokens": 18351,
+      "output_tokens": 400,
+      "total_tokens": 18751,
+      "wall_seconds": 9.47188820001611,
+      "load_seconds": 0.0131522,
+      "tool_call_requests": 0
+    },
+    "pressure-22/original": {
+      "calls": 3,
+      "input_tokens": 15291,
+      "output_tokens": 318,
+      "total_tokens": 15609,
+      "wall_seconds": 5.7756105000007665,
+      "load_seconds": 0.011731,
+      "tool_call_requests": 0
+    },
+    "pressure-22/oracle": {
+      "calls": 3,
+      "input_tokens": 15807,
+      "output_tokens": 393,
+      "total_tokens": 16200,
+      "wall_seconds": 7.832803199999034,
+      "load_seconds": 0.0130515,
+      "tool_call_requests": 0
+    },
+    "delayed-20/original": {
+      "calls": 3,
+      "input_tokens": 12906,
+      "output_tokens": 276,
+      "total_tokens": 13182,
+      "wall_seconds": 5.654408799993689,
+      "load_seconds": 0.0106053,
+      "tool_call_requests": 0
+    },
+    "delayed-20/oracle": {
+      "calls": 3,
+      "input_tokens": 13665,
+      "output_tokens": 316,
+      "total_tokens": 13981,
+      "wall_seconds": 5.77689239999745,
+      "load_seconds": 0.0113188,
+      "tool_call_requests": 0
+    },
+    "delayed-20/automatic": {
+      "calls": 3,
+      "input_tokens": 16209,
+      "output_tokens": 282,
+      "total_tokens": 16491,
+      "wall_seconds": 6.447633700008737,
+      "load_seconds": 0.0155789,
+      "tool_call_requests": 0
+    }
+  },
+  "sha256": {
+    "scoring/blinded.json": "8772602d4a38b4b673fa8247e1594a05bd704dca975c71e3961c5267f8cceb21",
+    "scoring/key.json": "8bdcd6688d4e59d5e063aaef6ba765de93c80bc5cca755ea563c66dfc99e4c8b",
+    "scoring/reviewer-a.json": "a4abae4d123436a2618f674ca7433b143d04b37466f015e0c91a24f029fb02c7",
+    "scoring/reviewer-b.json": "6712446533cc2a35bd55f18626ed5d6ba1c4bf1c99dae898d7349c9e2cd71fef",
+    "results.json": "e262be3b13caad3bf8c1110463af416be6c1f201b039322627172dedc215ec72",
+    "materials/snapshots.json": "6d179329eba4da184b0c1434fd2c4ffed939acd1fb555ef2c1f8c51690c11d49"
+  }
+}

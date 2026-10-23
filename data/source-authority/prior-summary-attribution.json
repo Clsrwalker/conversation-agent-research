@@ -1,0 +1,394 @@
+{
+  "coverage_verified": true,
+  "quotes_verified": true,
+  "review_items_each": 52,
+  "new_unit_decisions_each": 96,
+  "historical_items_each": 12,
+  "scoring_unit": "case-specific semantic unit per repetition; not independent scenario count",
+  "independent_new_contrast_scenarios": 5,
+  "repetitions": 2,
+  "by_reviewer": {
+    "a": {
+      "native": {
+        "historical_current_need_status": {
+          "retained": 6
+        },
+        "historical_suggestion_promotion": {
+          "ambiguous": 3,
+          "no": 3
+        },
+        "historical_background_task_promotion": {
+          "yes": 2,
+          "ambiguous": 4
+        },
+        "historical_decision_stage": {
+          "omitted": 6
+        },
+        "historical_delivery_state": {
+          "omitted": 5,
+          "ambiguous": 1
+        },
+        "historical_open_set_additions": {
+          "count": 0
+        },
+        "all_current_needs": {
+          "retained": 29,
+          "missed": 1
+        },
+        "original_needs": {
+          "retained": 19,
+          "missed": 1
+        },
+        "accepted_suggestions": {
+          "retained": 10
+        },
+        "new_case_open_set_additions": {
+          "count": 0
+        },
+        "all_noncurrent_items": {
+          "correct": 16,
+          "promoted": 2
+        },
+        "noncurrent_suggestions": {
+          "correct": 12,
+          "promoted": 2
+        },
+        "settled_background": {
+          "correct": 4
+        }
+      },
+      "attribution": {
+        "all_current_needs": {
+          "retained": 27,
+          "missed": 3
+        },
+        "original_needs": {
+          "retained": 17,
+          "missed": 3
+        },
+        "all_noncurrent_items": {
+          "correct": 16,
+          "promoted": 2
+        },
+        "noncurrent_suggestions": {
+          "correct": 12,
+          "promoted": 2
+        },
+        "new_case_open_set_additions": {
+          "count": 0
+        },
+        "accepted_suggestions": {
+          "retained": 10
+        },
+        "settled_background": {
+          "correct": 4
+        },
+        "historical_current_need_status": {
+          "retained": 6
+        },
+        "historical_suggestion_promotion": {
+          "no": 2,
+          "ambiguous": 2,
+          "yes": 2
+        },
+        "historical_background_task_promotion": {
+          "ambiguous": 2,
+          "no": 4
+        },
+        "historical_decision_stage": {
+          "omitted": 6
+        },
+        "historical_delivery_state": {
+          "omitted": 4,
+          "ambiguous": 2
+        },
+        "historical_open_set_additions": {
+          "count": 0
+        }
+      }
+    },
+    "b": {
+      "native": {
+        "historical_current_need_status": {
+          "retained": 6
+        },
+        "historical_suggestion_promotion": {
+          "ambiguous": 3,
+          "no": 3
+        },
+        "historical_background_task_promotion": {
+          "yes": 6
+        },
+        "historical_decision_stage": {
+          "omitted": 6
+        },
+        "historical_delivery_state": {
+          "omitted": 3,
+          "ambiguous": 1,
+          "correct": 2
+        },
+        "historical_open_set_additions": {
+          "count": 0
+        },
+        "all_current_needs": {
+          "retained": 29,
+          "missed": 1
+        },
+        "original_needs": {
+          "retained": 19,
+          "missed": 1
+        },
+        "accepted_suggestions": {
+          "retained": 10
+        },
+        "new_case_open_set_additions": {
+          "count": 0
+        },
+        "all_noncurrent_items": {
+          "correct": 16,
+          "promoted": 2
+        },
+        "noncurrent_suggestions": {
+          "correct": 12,
+          "promoted": 2
+        },
+        "settled_background": {
+          "correct": 4
+        }
+      },
+      "attribution": {
+        "all_current_needs": {
+          "retained": 27,
+          "missed": 3
+        },
+        "original_needs": {
+          "retained": 17,
+          "missed": 3
+        },
+        "all_noncurrent_items": {
+          "correct": 16,
+          "promoted": 2
+        },
+        "noncurrent_suggestions": {
+          "correct": 12,
+          "promoted": 2
+        },
+        "new_case_open_set_additions": {
+          "count": 0
+        },
+        "accepted_suggestions": {
+          "retained": 10
+        },
+        "settled_background": {
+          "correct": 4
+        },
+        "historical_current_need_status": {
+          "retained": 6
+        },
+        "historical_suggestion_promotion": {
+          "no": 2,
+          "ambiguous": 2,
+          "yes": 2
+        },
+        "historical_background_task_promotion": {
+          "yes": 2,
+          "no": 4
+        },
+        "historical_decision_stage": {
+          "omitted": 6
+        },
+        "historical_delivery_state": {
+          "correct": 2,
+          "ambiguous": 2,
+          "omitted": 2
+        },
+        "historical_open_set_additions": {
+          "count": 0
+        }
+      }
+    }
+  },
+  "compared_judgments": 156,
+  "disagreements": [
+    {
+      "item_id": "item-010",
+      "case_id": "delayed-19",
+      "field": "background_task_promotion",
+      "reviewer_a": "ambiguous",
+      "reviewer_b": "yes",
+      "job_id": "delayed-19--r2--attribution",
+      "arm": "attribution",
+      "repetition": 2
+    },
+    {
+      "item_id": "item-010",
+      "case_id": "delayed-19",
+      "field": "delivery_state",
+      "reviewer_a": "omitted",
+      "reviewer_b": "correct",
+      "job_id": "delayed-19--r2--attribution",
+      "arm": "attribution",
+      "repetition": 2
+    },
+    {
+      "item_id": "item-011",
+      "case_id": "delayed-19",
+      "field": "background_task_promotion",
+      "reviewer_a": "ambiguous",
+      "reviewer_b": "yes",
+      "job_id": "delayed-19--r1--attribution",
+      "arm": "attribution",
+      "repetition": 1
+    },
+    {
+      "item_id": "item-011",
+      "case_id": "delayed-19",
+      "field": "delivery_state",
+      "reviewer_a": "omitted",
+      "reviewer_b": "correct",
+      "job_id": "delayed-19--r1--attribution",
+      "arm": "attribution",
+      "repetition": 1
+    },
+    {
+      "item_id": "item-021",
+      "case_id": "pressure-23",
+      "field": "background_task_promotion",
+      "reviewer_a": "ambiguous",
+      "reviewer_b": "yes",
+      "job_id": "pressure-23--r2--native",
+      "arm": "native",
+      "repetition": 2
+    },
+    {
+      "item_id": "item-025",
+      "case_id": "delayed-19",
+      "field": "background_task_promotion",
+      "reviewer_a": "ambiguous",
+      "reviewer_b": "yes",
+      "job_id": "delayed-19--r1--native",
+      "arm": "native",
+      "repetition": 1
+    },
+    {
+      "item_id": "item-025",
+      "case_id": "delayed-19",
+      "field": "delivery_state",
+      "reviewer_a": "omitted",
+      "reviewer_b": "correct",
+      "job_id": "delayed-19--r1--native",
+      "arm": "native",
+      "repetition": 1
+    },
+    {
+      "item_id": "item-032",
+      "case_id": "pressure-23",
+      "field": "background_task_promotion",
+      "reviewer_a": "ambiguous",
+      "reviewer_b": "yes",
+      "job_id": "pressure-23--r1--native",
+      "arm": "native",
+      "repetition": 1
+    },
+    {
+      "item_id": "item-049",
+      "case_id": "delayed-19",
+      "field": "background_task_promotion",
+      "reviewer_a": "ambiguous",
+      "reviewer_b": "yes",
+      "job_id": "delayed-19--r2--native",
+      "arm": "native",
+      "repetition": 2
+    },
+    {
+      "item_id": "item-049",
+      "case_id": "delayed-19",
+      "field": "delivery_state",
+      "reviewer_a": "omitted",
+      "reviewer_b": "correct",
+      "job_id": "delayed-19--r2--native",
+      "arm": "native",
+      "repetition": 2
+    }
+  ],
+  "component_resources": {
+    "native": {
+      "all": {
+        "calls": 26,
+        "tokens": {
+          "input_tokens": 82608,
+          "output_tokens": 5607,
+          "total_tokens": 88215
+        },
+        "wall_seconds_sum": 122.75420330002089,
+        "wall_seconds_median": 2.0257095499982825,
+        "load_seconds_sum": 0.1112974
+      },
+      "new_contrast_case": {
+        "calls": 20,
+        "tokens": {
+          "input_tokens": 15814,
+          "output_tokens": 2414,
+          "total_tokens": 18228
+        },
+        "wall_seconds_sum": 41.27965630001563,
+        "wall_seconds_median": 1.950480850005988,
+        "load_seconds_sum": 0.0822816
+      },
+      "known_failure_snapshot": {
+        "calls": 6,
+        "tokens": {
+          "input_tokens": 66794,
+          "output_tokens": 3193,
+          "total_tokens": 69987
+        },
+        "wall_seconds_sum": 81.47454700000526,
+        "wall_seconds_median": 13.509978200003388,
+        "load_seconds_sum": 0.0290158
+      }
+    },
+    "attribution": {
+      "all": {
+        "calls": 26,
+        "tokens": {
+          "input_tokens": 90954,
+          "output_tokens": 3766,
+          "total_tokens": 94720
+        },
+        "wall_seconds_sum": 95.2363032999856,
+        "wall_seconds_median": 2.439868799992837,
+        "load_seconds_sum": 3.5509942000000003
+      },
+      "new_contrast_case": {
+        "calls": 20,
+        "tokens": {
+          "input_tokens": 22234,
+          "output_tokens": 2440,
+          "total_tokens": 24674
+        },
+        "wall_seconds_sum": 48.022056800007704,
+        "wall_seconds_median": 2.2287561500052107,
+        "load_seconds_sum": 3.5235652
+      },
+      "known_failure_snapshot": {
+        "calls": 6,
+        "tokens": {
+          "input_tokens": 68720,
+          "output_tokens": 1326,
+          "total_tokens": 70046
+        },
+        "wall_seconds_sum": 47.21424649997789,
+        "wall_seconds_median": 8.222006299998611,
+        "load_seconds_sum": 0.027429000000000002
+      }
+    }
+  },
+  "source_sha256": {
+    "scoring/blinded.json": "1c3362bad70cdb8492b6bc8ab47927fbc448048771ff76b360f0f3e858b1725c",
+    "scoring/key.json": "978155bf4e78bee17fb89c00185979d932faeb966325debb772a6ba4199d34b7",
+    "materials/gold.json": "28e9521ef27a111606e8aebe2392ba454cb9888ae526ea505a14bf5be50c1d57",
+    "scoring/reviewer-a.json": "4bc6ce85f77ae60163411f9caf516f119cbf2bc80c0aa5df74516017918ebc82",
+    "scoring/reviewer-b.json": "65d17e1e75a70271f8504423b4bd1391c44682faa25ea0efc73bb20ffad06ab6",
+    "component/results.json": "1c3eb646a3401f184c3a6c3fa88fd8749ad98522be00251499828032a413a472"
+  }
+}

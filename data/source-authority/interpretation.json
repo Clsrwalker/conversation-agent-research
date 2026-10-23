@@ -1,0 +1,28 @@
+{
+  "status": "reviewed",
+  "date": "2026-10-23",
+  "lead": "Source-authority guidance fixed the known shuttle error, but did not reliably improve new cases or outperform the no-summary reference. It remains an optional experimental configuration.",
+  "findings": [
+    {
+      "title": "A known error was corrected; that is not a general improvement",
+      "text": "With an incorrect summary, the ordinary actor requested the explicitly deferred Canal Shuttle search. The guided actor kept that option separate. On exposed cases, definite scope errors fell from 2/12 to 1/12, with one additional uncertain output in each arm. Excluding pure re-approval questions changes these counts to 1/12 and 0/12."
+    },
+    {
+      "title": "New cases expose both a fix and a regression",
+      "text": "Under incorrect summaries, new-challenge scope errors were 2/12 for the ordinary actor and 2/12 plus one uncertain output for the guided actor. Guidance stopped the premature Birch check, but started the withdrawn Meadow lookup. Both actors still dismissed Owen's explicit current Pine request as someone else's historical request."
+    },
+    {
+      "title": "A simpler reference remains stronger on these short inputs",
+      "text": "The no-summary reference had no observed scope errors in either 12-case split. Both actors also had no scope errors with correct summaries. Every comparison contained the full original dialogue; this does not establish that summaries can be removed from long conversations. Guidance added 331 input tokens per actor call without adding a model call."
+    }
+  ],
+  "engineering_text": "28 offline checks passed: 10 middleware/graph integration checks, 13 runner contracts and 5 annotation contracts. Initial test-fixture and sandbox failures remain in the record. All 120 request/response pairs match their wire bytes; 137 frozen input files and 4,475 historical evidence files remain unchanged.",
+  "next_steps": [
+    "Keep the candidate optional. Do not promote it based on the exposed shuttle fix or software-test results.",
+    "Investigate why the actor acknowledges a withdrawal yet requests that lookup, and why a second participant's present request is still treated as old background. Compare evidence placement and task-source attribution using separate frozen conditions.",
+    "Evaluate the next promising change in a full replay with executed tool receipts, changing conversation state, budget and delivered-answer scoring. Maintain a no-summary reference only where the original context is fully available.",
+    "Repair the separately identified mismatch between conversation event types used by query extraction and retrieval, then verify its integration without presenting that software fix as intention-quality evidence."
+  ],
+  "decision": "retain_experimental_do_not_promote",
+  "goal_status": "ongoing_research"
+}

@@ -1,0 +1,187 @@
+{
+  "id": "source-authority-engineering-2026-10-23",
+  "date": "2026-10-23",
+  "timezone": "America/Halifax",
+  "type": "engineering_validation",
+  "status": "passed_with_initial_fixture_and_environment_failures_retained",
+  "tested_revision": {
+    "git_head": "b35a686fd965873e75b3b50d29c7b4babe28f3c0",
+    "working_tree": "Existing uncommitted work retained; exact tested files identified by SHA-256.",
+    "study_run": "output/research/2026-10-23/source-authority"
+  },
+  "checks": [
+    {
+      "name": "Actor middleware and graph integration",
+      "passed": 10,
+      "failed_final": 0,
+      "command": ".venv/Scripts/python.exe -B -m unittest test_source_authority -v",
+      "cwd": "experiments/deep_conversation",
+      "log": "engineering/source-authority-tests-rerun.txt",
+      "covers": [
+        "same default/candidate calls and tools",
+        "sync and async request mutation boundary",
+        "tool-loop and next-turn guidance is not persisted or duplicated",
+        "native summary request unchanged",
+        "no source text promoted into system"
+      ]
+    },
+    {
+      "name": "Frozen runner contracts",
+      "passed": 13,
+      "failed_final": 0,
+      "log": "engineering/preflight/runner-tests.txt",
+      "covers": [
+        "120 cells, 24 unique no-summary calls",
+        "gold isolation",
+        "frozen-file tamper refusal",
+        "provider/JSON/timeout failures retained without retry",
+        "blind duplicate mapping"
+      ]
+    },
+    {
+      "name": "Annotation contracts",
+      "passed": 5,
+      "failed_final": 0,
+      "log": "engineering/preflight/scoring-tests.txt",
+      "covers": [
+        "missing/duplicate/unknown annotations rejected",
+        "quotes must occur in actor output",
+        "empty response does not need fabricated quote",
+        "sensitivity consistency"
+      ]
+    }
+  ],
+  "passed_total": 28,
+  "initial_attempts": [
+    {
+      "log": "engineering/source-authority-tests.txt",
+      "failed": 2,
+      "errors": 1,
+      "cause": "Two async fixture failures: a blanket socket guard also blocked Windows asyncio self-pipe setup. The test creates its event loop before enabling that guard. Separately sandbox temporary-file permissions prevented SQLite creation and cleanup. The final approved local run passed; no model provider connections were allowed by the fixture."
+    },
+    {
+      "log": "engineering/preflight/runner-tests-attempt1-fixture-path-failure.txt",
+      "failed": 2,
+      "errors": 1,
+      "cause": "Preflight test fixture compared Windows native paths with slash-only literals. Fixture assertions were normalized; the runner was not changed to hide those failures."
+    }
+  ],
+  "limitations": [
+    "Scripted models verify software contracts, not participant intention or answer quality.",
+    "The 120 real-model calls are single-decision diagnostics with captured tools, not live end-to-end harness execution.",
+    "No implicit-acceptance, ASR, long-history or human-benefit validation.",
+    "The standalone scorer aggregation is audited against raw rows and reviews; its annotation validator has tests, but no complete arithmetic fixture was claimed.",
+    "Source-recovery query extraction and retrieval use inconsistent event-kind allowlists; discovered by code inspection, not repaired or evaluated in this change."
+  ],
+  "files_sha256": {
+    "experiments/deep_conversation/source_authority.py": "2bf061a12143a50a1267baf40d570078deab8b2188b51c6e9fcb1fffc2347df4",
+    "experiments/deep_conversation/test_source_authority.py": "427150ac054c60abc0c9e504362f820a1bcc2523e98ba014f752c0377e923b33",
+    "experiments/deep_conversation/source_authority_study.py": "7e9e1da9092984151f16b1cab3415fa9cb8d5450d3ee9a21fccdeddc5a893ee5",
+    "experiments/deep_conversation/source_authority_score.py": "403c4c18adde21a9353108fe61e12ed3a60902407565e9dadbee62d806840316",
+    "experiments/deep_conversation/config.py": "7bbe081c57042975a5af79a04cdad8d73de7f77f0910fe8c48b742c284410ec3",
+    "experiments/deep_conversation/agent_led.py": "a6ba6031473ad9347c09d781f9c699d091b3f3e0bc079d8205afc67d586cd7f5",
+    "experiments/deep_conversation/run.py": "2edb03e94e83f02f90b6033b1b2d5df1481c4cbfb1bc225662c44e1fee65d5f7",
+    "output/research/2026-10-23/source-authority/engineering/source-authority-tests.txt": "f1fec757c54e4ae96b165039e12e5c993d9eca4f49928a0b78552d66a0b18dcd",
+    "output/research/2026-10-23/source-authority/engineering/source-authority-tests-rerun.txt": "cd86f8280921ac087101c530a259392a1fa3818dc220cb72760653b51899b04b",
+    "output/research/2026-10-23/source-authority/engineering/preflight/runner-tests.txt": "f4ce68e3f0f782d7fc75e74da00a2404fee301d0671655d5f6e390871b5ab556",
+    "output/research/2026-10-23/source-authority/engineering/preflight/scoring-tests.txt": "d9866aac8ad3fdfc8943143a3fe7d41e6305d67eb599b12c9b6a9de921c2dd9b",
+    "output/research/2026-10-23/source-authority/engineering/preflight/runner-tests-attempt1-fixture-path-failure.txt": "50d70899484dc3d64c1f87d15c46a31d848883d0591ee5ac5a63c5b99275f727",
+    "output/research/2026-10-23/source-authority/materials/PREFLIGHT.json": "2709c0f0f39491f21bb5f3ae0b57ad6a4301f10a89a328b99df5a46f1c8690fc",
+    "output/research/2026-10-23/source-authority/FREEZE.json": "beaef8fd12ad925f253680ce1cf0ae909154db59ff1e70fb854593f52d558a83"
+  },
+  "publication_checks": {
+    "date": "2026-10-23",
+    "timezone": "America/Halifax",
+    "recorded_utc": "2026-10-23T10:21:18.682743+00:00",
+    "status": "local_artifact_acceptance_passed",
+    "scope": "Local generated website and evidence export only. Hosted deployment is verified by separate root-owned publication receipts.",
+    "script": "engineering/publication_acceptance.py",
+    "command": "experiments/deep_conversation/.venv/Scripts/python.exe -B output/research/2026-10-23/source-authority/engineering/publication_acceptance.py",
+    "no_model_calls": true,
+    "unit_test_total_unchanged": 28,
+    "checks": [
+      {
+        "name": "New page local href/src targets",
+        "status": "passed",
+        "local_reference_occurrences": 17,
+        "distinct_local_targets": 17,
+        "fragment_targets_checked": true
+      },
+      {
+        "name": "Two homepage entries and current masthead/footer dates",
+        "status": "passed",
+        "entrypoints": [
+          "index.html recent-progress-rows",
+          "index.html recent-study-list"
+        ],
+        "updated_date_occurrences": 2,
+        "date": "2026-10-23"
+      },
+      {
+        "name": "Combined research-record.json and data.js",
+        "status": "passed",
+        "parsed_objects_equal": true,
+        "study_entries": 1,
+        "validation_entries": 1,
+        "study_calls": 120,
+        "website_record_date": "2026-10-23"
+      },
+      {
+        "name": "Evidence ZIP CRC and export manifest",
+        "status": "passed",
+        "crc_errors": 0,
+        "duplicate_members": 0,
+        "manifest_entries": 409,
+        "source_and_public_hashes_verified": 409
+      }
+    ],
+    "browser_observations": {
+      "observer": "/root",
+      "source": "Root agent reported actual local-browser inspection; this acceptance script does not recreate browser observations.",
+      "local_http_status": 200,
+      "desktop": {
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "table_client_width": 1064,
+        "table_scroll_width": 1064,
+        "page_scroll_width": 1265,
+        "horizontal_page_overflow": false
+      },
+      "mobile": {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "page_width": 375,
+        "table_wrapper_client_widths": [
+          308,
+          308,
+          308
+        ],
+        "table_scroll_widths": [
+          680,
+          680,
+          680
+        ],
+        "behavior": "Tables scroll horizontally within their wrappers; screenshot text was readable.",
+        "initial_screenshot": "failed",
+        "recovery": "Root reread accessibility state, then the second screenshot succeeded."
+      },
+      "navigation": {
+        "back_link_destination": "index.html#methods",
+        "heading": "Studies & tests",
+        "displayed_date": "23 Oct 2026",
+        "succeeded": true
+      },
+      "browser_error_logs": [],
+      "viewport_reset_after_inspection": true
+    },
+    "limitations": [
+      "Local page acceptance does not prove hosted publication.",
+      "These checks do not add to the 28 offline software tests or measure model/assistance quality.",
+      "No archive or validation-record hash is stored here, avoiding a hash self-reference."
+    ]
+  }
+}

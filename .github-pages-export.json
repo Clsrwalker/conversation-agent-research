@@ -45,8 +45,8 @@
     },
     {
       "path": "data.js",
-      "sha256": "d0b96285dca41f0914faaf000b975a66559fd1847ae17aeedaa0d46d83a065ab",
-      "bytes": 196070
+      "sha256": "f2f430d80cf2c87ddfb80a56b0b0299c85faa3cada02e53d11887490cb79c4e0",
+      "bytes": 196813
     },
     {
       "path": "data/analyze_harness_latency.py",
@@ -440,8 +440,8 @@
     },
     {
       "path": "data/research-record.json",
-      "sha256": "7694f8094f8e6f2bed8db760dbfbb0215228affe4da2c1be86da15eb525d7c8c",
-      "bytes": 288904
+      "sha256": "60f9c1dcd10e96e5ff4350a533df39c0ac1043f23551835457a18adab9dacc55",
+      "bytes": 289903
     },
     {
       "path": "data/results.csv",
@@ -462,6 +462,71 @@
       "path": "data/site-focus-validation.json",
       "sha256": "5085a5dfbd45431d261c521fc4285a6e1b7bbf9adcc815e57b23a3c366819c65",
       "bytes": 9004
+    },
+    {
+      "path": "data/source-authority-validation.json",
+      "sha256": "674721d1431d7038e285c268b06be04cfb842cf9fbdff762fd7a6ca61f5b6808",
+      "bytes": 8800
+    },
+    {
+      "path": "data/source-authority/PROTOCOL.md",
+      "sha256": "239a2e220cdf4f30f343727eedd1a6d21858adef99ac88be1e4e68b9f0ab624d",
+      "bytes": 4708
+    },
+    {
+      "path": "data/source-authority/RESULTS.md",
+      "sha256": "dffc769e767f152d8f2dd62f3a8b0194c4dc392fb2bc3f122fbdfd56149da1bc",
+      "bytes": 9217
+    },
+    {
+      "path": "data/source-authority/SCORING.md",
+      "sha256": "8f19b9cab45807729fc4ff7adb3777c0a2b95be3f28d15c59270fa18beab1054",
+      "bytes": 11731
+    },
+    {
+      "path": "data/source-authority/evidence.zip",
+      "sha256": "68d7f22a4ab34eaa4fd5136413f3264e33548fec32b5b7cbe621ea9c7bc101a4",
+      "bytes": 2288344
+    },
+    {
+      "path": "data/source-authority/interpretation.json",
+      "sha256": "81c88a5c4e449cf6aaafc3cbc80469b143a9d8c11a43b5ff9e9006ee868c7f31",
+      "bytes": 2897
+    },
+    {
+      "path": "data/source-authority/prior-contrastive-decoding.json",
+      "sha256": "40bea7524854f558387b6b3f689fcc02279ad573e8003bf07d7e247bd332f688",
+      "bytes": 4970
+    },
+    {
+      "path": "data/source-authority/prior-source-recovery.json",
+      "sha256": "c22f3f6384b8470d550e48a6b4a62274fb28ed2a07a744192efbf8c517a87212",
+      "bytes": 20983
+    },
+    {
+      "path": "data/source-authority/prior-summary-attribution.json",
+      "sha256": "1bb8c92c48b01294752b51aaeed27f24d4a0be5aa51ecf3dcffd7f9e7d5ffe8d",
+      "bytes": 10688
+    },
+    {
+      "path": "data/source-authority/prior-summary-causal-scoring.md",
+      "sha256": "cc025b62e81e0adb1f90b9e93d8d03578db2c5146c3112403027b297dcb52ca5",
+      "bytes": 2684
+    },
+    {
+      "path": "data/source-authority/prior-summary-causal.json",
+      "sha256": "e161f549a45f8598dc7e4353fc7792173569d8eb069de62668577899d53a8583",
+      "bytes": 20546
+    },
+    {
+      "path": "data/source-authority/results.json",
+      "sha256": "3c448d1dfc65f6bcd97baad6d381abfa28b472fe73521f9bc17f5a41c2ea6a6c",
+      "bytes": 200387
+    },
+    {
+      "path": "data/source-authority/rows.csv",
+      "sha256": "a13f2394125944696cfcc98a64a99daee241f35c90b1435381ad879feed92ff7",
+      "bytes": 24510
     },
     {
       "path": "data/studio-api-inspection.json",
@@ -560,8 +625,8 @@
     },
     {
       "path": "index.html",
-      "sha256": "dbb37cbead6fcee6dbb8fd41b05536809eed4456bae3fc17ef69b61cecda758f",
-      "bytes": 68867
+      "sha256": "eeaf24129407b607363911f0d72fda9b49b8a831c10e1f3a18b2c8a508546aad",
+      "bytes": 69568
     },
     {
       "path": "intention-literature.css",
@@ -612,6 +677,16 @@
       "path": "recent-entry.css",
       "sha256": "0007fcc9261de5277afcfb80ba91cb7442b8415a8deb224e80c6f66395e7ce54",
       "bytes": 4963
+    },
+    {
+      "path": "source-authority.css",
+      "sha256": "53cc38db4483823538ee054399203ad8ca52eda6cf75b00fdfbd02d4940b6144",
+      "bytes": 1392
+    },
+    {
+      "path": "source-authority.html",
+      "sha256": "5d660b86589ca0eebc20b80e8f53307dc14e2f8509b17ca4f239bd371d88700f",
+      "bytes": 10711
     },
     {
       "path": "style.css",
