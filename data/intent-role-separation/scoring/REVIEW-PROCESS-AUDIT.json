@@ -1,0 +1,39 @@
+{
+  "status": "completed",
+  "date": "2026-10-23",
+  "timezone": "America/Halifax",
+  "method": "Two separate condition-blind model review sessions; a fresh condition-blind model session adjudicated disagreements.",
+  "packets": 48,
+  "independent_complete_agreements": 47,
+  "disagreements": 1,
+  "adjudicated": 1,
+  "agreement_unit": "All five final-delivery fields and every per-intent coverage field agree.",
+  "blinding": "Packets use deterministic randomized IDs and contain raw dialogue, source documents, final gold and final active cards; arm and repetition mapping was withheld from reviewers.",
+  "batching": "Four immutable batches of twelve assigned trajectories, selected by frozen assignment order and shuffled within each batch. No selection by outcome.",
+  "clarification": "Initial batch-1 instructions ambiguously described omission as not correctly answering. Both reviewers independently reapplied the frozen missing-content definition. Each changed only packet-001 omission from true to false. Initial files and separate clarification records are retained; other labels were unchanged.",
+  "grounding": "Raw user requests take precedence over paraphrased gold; extra true facts are not automatically a scope error.",
+  "secondary_review": "One condition-aware model session scored 144 stage snapshots separately; those diagnostic labels do not replace these primary scores.",
+  "strict_schema_checked": true,
+  "limitations": [
+    "These are model judgments, not human labels or participant ratings.",
+    "Different sessions are procedurally independent but may share model biases.",
+    "Reviewers may infer an orchestration policy from answer style.",
+    "High inter-reviewer agreement does not establish annotation accuracy."
+  ],
+  "sha256": {
+    "scoring/reviewer-a/batch-01-clarification.json": "dda62ec4fa1dcdc24f3f9fd99a3e483b5c2964435002764b3674f32118bff819",
+    "scoring/reviewer-a/batch-01.initial.json": "a8356dede840a7a07074146d16fa8f0b0235bb40431f25de4a6c872d0344c57b",
+    "scoring/reviewer-a/batch-01.json": "e631787daa10bcc1a1d7da1751b95158e69f8273d5e4879bd066a1d99aeaf8d5",
+    "scoring/reviewer-a/batch-02.json": "26981564ba8a6afb0a167bcd37f81ffaba7dd5fdd705a404e50fa767528daac0",
+    "scoring/reviewer-a/batch-03.json": "76933bd42ff47e69af25b1a225b5828dd1fc80ce9df75a1d4a6bfb20e1f6a1fc",
+    "scoring/reviewer-a/batch-04.json": "f42c776d8227e33f515cd3aea9ba8688a6f2bf407378c490e5fd4a87649e67c9",
+    "scoring/reviewer-b/batch-01-clarification.json": "6b62b2b665f768a21849092439ecaa8ed1729a122faed40c90fd7dc9d4b0ea64",
+    "scoring/reviewer-b/batch-01.initial.json": "eddd8c4e7fba9208aedb24e752951c74d96caf467efd0ff8e483ea9bfef3268e",
+    "scoring/reviewer-b/batch-01.json": "b5ac5879cc2fb3d406c34d7839387499fa37084e2fb82c8815afb9d71348ad55",
+    "scoring/reviewer-b/batch-02.json": "2d1dca3b127da72a11a4adb61c9d7b4dfd0b3d65422b063f529736ed487a05d6",
+    "scoring/reviewer-b/batch-03.json": "61e81570ba362421300e5df77e34b6f1ab9d687a74bc32f9a666ab7cc26e1c04",
+    "scoring/reviewer-b/batch-04.json": "9130dba25dfcdb2496a9aecb10a4c09e53ba9c64fdb2579a63c025b9ed672e9c",
+    "scoring/adjudication.json": "3c3a68fdad739eb16bba41a7037b39d72ecc461b387834b862c7fb8894e8eb90",
+    "scoring/final-scores.json": "b06232d3971a7e1c2c6f8652da3c18f67155fd832a56ef46e51cc8af82ac737d"
+  }
+}

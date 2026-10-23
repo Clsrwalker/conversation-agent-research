@@ -1,0 +1,2519 @@
+{
+  "schema_version": 1,
+  "kind": "post_run_tracker_failure_mechanism_aggregate",
+  "date": "2026-10-23",
+  "display_timezone": "America/Halifax",
+  "created_at_utc": "2026-10-23T20:05:57.959341+00:00",
+  "scope": "Frozen evaluation only; no new model calls, code changes or repaired reruns.",
+  "summary": {
+    "tracked_trajectories": 16,
+    "tracked_stages": 48,
+    "tracker_calls": 69,
+    "valid_commits": 44,
+    "rejected_tracker_calls": 25,
+    "affected_trajectories": 5,
+    "affected_families": 3,
+    "affected_stages": 5,
+    "no_actor_stages": 4,
+    "recovered_commit_within_same_stage": 1,
+    "unrecovered_within_same_stage": 4,
+    "subsequently_committed_after_failed_stage": 2,
+    "longest_consecutive_rejection_streak": 6,
+    "all_tracker_usage": {
+      "input_tokens": 241396,
+      "output_tokens": 5788,
+      "total_tokens": 247184,
+      "wall_ms": 172407.01369999442
+    },
+    "failed_tracker_usage": {
+      "input_tokens": 120066,
+      "output_tokens": 2292,
+      "total_tokens": 122358,
+      "wall_ms": 76125.38489999133
+    },
+    "retries_after_failure_with_identical_packet_except_at_ms": 21,
+    "retry_pairs_inspected": 21,
+    "retries_with_validation_error_text_in_input": 0,
+    "late_seeded_trajectories": 6,
+    "late_seed_actually_arrived": 0,
+    "late_seed_cancelled_before_due": 6
+  },
+  "classification_rule": "Classify the first rejected operation against the pre-call intention state and validator error; later invalid-looking operations in an atomic rejected patch are not counted as separately executed failures.",
+  "failure_classes": {
+    "duplicate_target_in_patch": {
+      "calls": 12,
+      "families": [
+        "irs-multiple-request-owners"
+      ],
+      "trajectories": 2,
+      "stages": 2,
+      "first_rejected_operations": {
+        "withdraw": 12
+      },
+      "target_pre_patch_statuses": {
+        "active": 12
+      },
+      "usage": {
+        "input_tokens": 54048,
+        "output_tokens": 948,
+        "total_tokens": 54996,
+        "wall_ms": 32419.0646999632
+      }
+    },
+    "invalid_proposed_status": {
+      "calls": 3,
+      "families": [
+        "irs-combined-workshop-change"
+      ],
+      "trajectories": 1,
+      "stages": 1,
+      "first_rejected_operations": {
+        "update": 3
+      },
+      "target_pre_patch_statuses": {
+        "withdrawn": 3
+      },
+      "usage": {
+        "input_tokens": 15771,
+        "output_tokens": 461,
+        "total_tokens": 16232,
+        "wall_ms": 12955.748300009873
+      }
+    },
+    "non_conversation_evidence_reference": {
+      "calls": 1,
+      "families": [
+        "irs-unaccepted-assistant-proposal"
+      ],
+      "trajectories": 1,
+      "stages": 1,
+      "first_rejected_operations": {
+        "update": 1
+      },
+      "target_pre_patch_statuses": {
+        "active": 1
+      },
+      "usage": {
+        "input_tokens": 2760,
+        "output_tokens": 71,
+        "total_tokens": 2831,
+        "wall_ms": 1914.0751000086311
+      }
+    },
+    "update_of_withdrawn_target": {
+      "calls": 9,
+      "families": [
+        "irs-combined-workshop-change"
+      ],
+      "trajectories": 2,
+      "stages": 2,
+      "first_rejected_operations": {
+        "update": 9
+      },
+      "target_pre_patch_statuses": {
+        "withdrawn": 9
+      },
+      "usage": {
+        "input_tokens": 47487,
+        "output_tokens": 812,
+        "total_tokens": 48299,
+        "wall_ms": 28836.496800009627
+      }
+    }
+  },
+  "zero_observed_first_failure_classes": [
+    "withdraw_of_withdrawn_target",
+    "duplicate_addition",
+    "malformed_json",
+    "stale_version_conflict",
+    "future_conversation_reference"
+  ],
+  "affected_stages": [
+    {
+      "run_id": "irs-combined-workshop-change--tracked--r2",
+      "family": "irs-combined-workshop-change",
+      "repeat": 2,
+      "stage_id": "stage-3",
+      "failure_steps": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "failed_tracker_calls": 6,
+      "roles": {
+        "tracker": 6
+      },
+      "actor_calls": 0,
+      "failed_call_usage": {
+        "input_tokens": 31716,
+        "output_tokens": 538,
+        "total_tokens": 32254,
+        "wall_ms": 19188.877899985528
+      },
+      "valid_commit_recovered_within_stage": false,
+      "first_same_stage_recovery_step": null,
+      "valid_commit_recovered_later_in_trajectory": false,
+      "first_later_valid_commit_step": null,
+      "start_version": 2,
+      "end_version": 2,
+      "start_processed_seq": 24,
+      "end_processed_seq": 24,
+      "observed_seq": 43,
+      "end_stage_visible_cards": {
+        "agent-card-2": {
+          "source_ids": [
+            "irs-workshop-guide"
+          ],
+          "text": "The cheapest Friday workshop at or below $25 with step-free access is Glaze Lab, which is held in Room G4.",
+          "updated_ms": 6200
+        }
+      },
+      "final_visible_cards": {
+        "agent-card-2": {
+          "source_ids": [
+            "irs-workshop-guide"
+          ],
+          "text": "The cheapest Friday workshop at or below $25 with step-free access is Glaze Lab, which is held in Room G4.",
+          "updated_ms": 6200
+        }
+      },
+      "final_intentions": [
+        {
+          "created_version": 1,
+          "history": [
+            {
+              "op": "add",
+              "patch_id": "intent-role-step-0",
+              "source_seqs": [
+                1
+              ],
+              "state": {
+                "owner": "Mara",
+                "status": "active",
+                "text": "Find the cheapest Tuesday workshop at or below $25 from the Kiln Workshop list and provide its room and parking location."
+              },
+              "version": 1
+            },
+            {
+              "op": "withdraw",
+              "patch_id": "intent-role-step-6",
+              "source_seqs": [
+                24
+              ],
+              "state": {
+                "owner": "Mara",
+                "status": "withdrawn",
+                "text": "Find the cheapest Tuesday workshop at or below $25 from the Kiln Workshop list and provide its room and parking location."
+              },
+              "version": 2
+            }
+          ],
+          "intent_id": "workshop-info",
+          "owner": "Mara",
+          "source_seqs": [
+            24
+          ],
+          "status": "withdrawn",
+          "text": "Find the cheapest Tuesday workshop at or below $25 from the Kiln Workshop list and provide its room and parking location.",
+          "updated_version": 2
+        },
+        {
+          "created_version": 2,
+          "history": [
+            {
+              "op": "add",
+              "patch_id": "intent-role-step-6",
+              "source_seqs": [
+                24
+              ],
+              "state": {
+                "owner": "Mara",
+                "status": "active",
+                "text": "Find the cheapest Friday workshop at or below $25 from the Kiln Workshop list with step-free access and provide its room."
+              },
+              "version": 2
+            }
+          ],
+          "intent_id": "workshop-info-2",
+          "owner": "Mara",
+          "source_seqs": [
+            24
+          ],
+          "status": "active",
+          "text": "Find the cheapest Friday workshop at or below $25 from the Kiln Workshop list with step-free access and provide its room.",
+          "updated_version": 2
+        }
+      ],
+      "semantic_recovery_established": false
+    },
+    {
+      "run_id": "irs-unaccepted-assistant-proposal--tracked--r2",
+      "family": "irs-unaccepted-assistant-proposal",
+      "repeat": 2,
+      "stage_id": "stage-2",
+      "failure_steps": [
+        6
+      ],
+      "failed_tracker_calls": 1,
+      "roles": {
+        "tracker": 2,
+        "chat": 2,
+        "work": 2
+      },
+      "actor_calls": 4,
+      "failed_call_usage": {
+        "input_tokens": 2760,
+        "output_tokens": 71,
+        "total_tokens": 2831,
+        "wall_ms": 1914.0751000086311
+      },
+      "valid_commit_recovered_within_stage": true,
+      "first_same_stage_recovery_step": 7,
+      "valid_commit_recovered_later_in_trajectory": true,
+      "first_later_valid_commit_step": 7,
+      "start_version": 1,
+      "end_version": 2,
+      "start_processed_seq": 1,
+      "end_processed_seq": 23,
+      "observed_seq": 23,
+      "end_stage_visible_cards": {
+        "agent-card-1": {
+          "source_ids": [
+            "irs-demo-guide"
+          ],
+          "text": "The Tidepool Demo session starts at 14:20 and is in Room T6.",
+          "updated_ms": 6300
+        }
+      },
+      "final_visible_cards": {
+        "agent-card-1": {
+          "source_ids": [
+            "irs-demo-guide"
+          ],
+          "text": "The Tidepool Demo session starts at 14:20 and is in Room T6.",
+          "updated_ms": 6300
+        }
+      },
+      "final_intentions": [
+        {
+          "created_version": 1,
+          "history": [
+            {
+              "op": "add",
+              "patch_id": "intent-role-step-0",
+              "source_seqs": [
+                1
+              ],
+              "state": {
+                "owner": "Imani",
+                "status": "active",
+                "text": "Find the session start time and room for the Tidepool Demo notice."
+              },
+              "version": 1
+            },
+            {
+              "op": "update",
+              "patch_id": "intent-role-step-7",
+              "source_seqs": [
+                23
+              ],
+              "state": {
+                "owner": "Imani",
+                "status": "active",
+                "text": "Find the session start time and room for the Tidepool Demo notice. I have not decided to add anything to the request."
+              },
+              "version": 2
+            },
+            {
+              "op": "update",
+              "patch_id": "intent-role-step-12",
+              "source_seqs": [
+                39
+              ],
+              "state": {
+                "owner": "Imani",
+                "status": "active",
+                "text": "Find the session start time and room for the Tidepool Demo notice. Please give me the requested session details now."
+              },
+              "version": 3
+            }
+          ],
+          "intent_id": "stable-id-1",
+          "owner": "Imani",
+          "source_seqs": [
+            39
+          ],
+          "status": "active",
+          "text": "Find the session start time and room for the Tidepool Demo notice. Please give me the requested session details now.",
+          "updated_version": 3
+        }
+      ],
+      "semantic_recovery_established": false
+    },
+    {
+      "run_id": "irs-combined-workshop-change--tracked--r1",
+      "family": "irs-combined-workshop-change",
+      "repeat": 1,
+      "stage_id": "stage-3",
+      "failure_steps": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "failed_tracker_calls": 6,
+      "roles": {
+        "tracker": 6
+      },
+      "actor_calls": 0,
+      "failed_call_usage": {
+        "input_tokens": 31542,
+        "output_tokens": 735,
+        "total_tokens": 32277,
+        "wall_ms": 22603.367200033972
+      },
+      "valid_commit_recovered_within_stage": false,
+      "first_same_stage_recovery_step": null,
+      "valid_commit_recovered_later_in_trajectory": false,
+      "first_later_valid_commit_step": null,
+      "start_version": 2,
+      "end_version": 2,
+      "start_processed_seq": 24,
+      "end_processed_seq": 24,
+      "observed_seq": 43,
+      "end_stage_visible_cards": {
+        "agent-card-2": {
+          "source_ids": [
+            "irs-workshop-guide"
+          ],
+          "text": "The cheapest Friday workshop at or below $25 with step-free access is Glaze Lab, which is held in Room G4.",
+          "updated_ms": 6200
+        }
+      },
+      "final_visible_cards": {
+        "agent-card-2": {
+          "source_ids": [
+            "irs-workshop-guide"
+          ],
+          "text": "The cheapest Friday workshop at or below $25 with step-free access is Glaze Lab, which is held in Room G4.",
+          "updated_ms": 6200
+        }
+      },
+      "final_intentions": [
+        {
+          "created_version": 1,
+          "history": [
+            {
+              "op": "add",
+              "patch_id": "intent-role-step-0",
+              "source_seqs": [
+                1
+              ],
+              "state": {
+                "owner": "Mara",
+                "status": "active",
+                "text": "Find the cheapest Tuesday workshop at or below $25 from the Kiln Workshop list and provide its room and parking location."
+              },
+              "version": 1
+            },
+            {
+              "op": "withdraw",
+              "patch_id": "intent-role-step-6",
+              "source_seqs": [
+                24
+              ],
+              "state": {
+                "owner": "Mara",
+                "status": "withdrawn",
+                "text": "Find the cheapest Tuesday workshop at or below $25 from the Kiln Workshop list and provide its room and parking location."
+              },
+              "version": 2
+            }
+          ],
+          "intent_id": "workshop-info",
+          "owner": "Mara",
+          "source_seqs": [
+            24
+          ],
+          "status": "withdrawn",
+          "text": "Find the cheapest Tuesday workshop at or below $25 from the Kiln Workshop list and provide its room and parking location.",
+          "updated_version": 2
+        },
+        {
+          "created_version": 2,
+          "history": [
+            {
+              "op": "add",
+              "patch_id": "intent-role-step-6",
+              "source_seqs": [
+                24
+              ],
+              "state": {
+                "owner": "Mara",
+                "status": "active",
+                "text": "Find the cheapest Friday workshop at or below $25 from the Kiln Workshop list that has step-free access and provide its room."
+              },
+              "version": 2
+            }
+          ],
+          "intent_id": "workshop-info-friday",
+          "owner": "Mara",
+          "source_seqs": [
+            24
+          ],
+          "status": "active",
+          "text": "Find the cheapest Friday workshop at or below $25 from the Kiln Workshop list that has step-free access and provide its room.",
+          "updated_version": 2
+        }
+      ],
+      "semantic_recovery_established": false
+    },
+    {
+      "run_id": "irs-multiple-request-owners--tracked--r2",
+      "family": "irs-multiple-request-owners",
+      "repeat": 2,
+      "stage_id": "stage-2",
+      "failure_steps": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "failed_tracker_calls": 6,
+      "roles": {
+        "tracker": 6
+      },
+      "actor_calls": 0,
+      "failed_call_usage": {
+        "input_tokens": 26988,
+        "output_tokens": 474,
+        "total_tokens": 27462,
+        "wall_ms": 16140.005199995358
+      },
+      "valid_commit_recovered_within_stage": false,
+      "first_same_stage_recovery_step": null,
+      "valid_commit_recovered_later_in_trajectory": true,
+      "first_later_valid_commit_step": 12,
+      "start_version": 1,
+      "end_version": 1,
+      "start_processed_seq": 2,
+      "end_processed_seq": 2,
+      "observed_seq": 31,
+      "end_stage_visible_cards": {},
+      "final_visible_cards": {
+        "agent-card-1": {
+          "source_ids": [],
+          "text": "The signup deadline for the Orchard Volunteer event is Thursday at 17:00. For wheelchair access, users can enter through the North gate and follow a step-free ramp to the briefing room. The arrival window for the briefing is 08:40–08:55.",
+          "updated_ms": 12200
+        }
+      },
+      "final_intentions": [
+        {
+          "created_version": 1,
+          "history": [
+            {
+              "op": "add",
+              "patch_id": "intent-role-step-0",
+              "source_seqs": [
+                2
+              ],
+              "state": {
+                "owner": "Lina",
+                "status": "active",
+                "text": "I need to know whether I can enter with my wheelchair."
+              },
+              "version": 1
+            },
+            {
+              "op": "update",
+              "patch_id": "intent-role-step-12",
+              "source_seqs": [
+                44
+              ],
+              "state": {
+                "owner": "Lina",
+                "status": "active",
+                "text": "Keep my wheelchair-access question, and add the arrival window for the briefing."
+              },
+              "version": 2
+            }
+          ],
+          "intent_id": "orchard-accessibility",
+          "owner": "Lina",
+          "source_seqs": [
+            44
+          ],
+          "status": "active",
+          "text": "Keep my wheelchair-access question, and add the arrival window for the briefing.",
+          "updated_version": 2
+        },
+        {
+          "created_version": 1,
+          "history": [
+            {
+              "op": "add",
+              "patch_id": "intent-role-step-0",
+              "source_seqs": [
+                1
+              ],
+              "state": {
+                "owner": "Omar",
+                "status": "active",
+                "text": "From the Orchard Volunteer briefing note, I need the cancellation refund rule for my place."
+              },
+              "version": 1
+            },
+            {
+              "op": "update",
+              "patch_id": "intent-role-step-12",
+              "source_seqs": [
+                31
+              ],
+              "state": {
+                "owner": "Omar",
+                "status": "active",
+                "text": "Drop my refund question. I still need the signup deadline."
+              },
+              "version": 2
+            }
+          ],
+          "intent_id": "orchard-cancellation-refund",
+          "owner": "Omar",
+          "source_seqs": [
+            31
+          ],
+          "status": "active",
+          "text": "Drop my refund question. I still need the signup deadline.",
+          "updated_version": 2
+        },
+        {
+          "created_version": 1,
+          "history": [
+            {
+              "op": "add",
+              "patch_id": "intent-role-step-0",
+              "source_seqs": [
+                1
+              ],
+              "state": {
+                "owner": "Omar",
+                "status": "active",
+                "text": "From the Orchard Volunteer briefing note, I need the signup deadline for my place."
+              },
+              "version": 1
+            }
+          ],
+          "intent_id": "orchard-signup-deadline",
+          "owner": "Omar",
+          "source_seqs": [
+            1
+          ],
+          "status": "active",
+          "text": "From the Orchard Volunteer briefing note, I need the signup deadline for my place.",
+          "updated_version": 1
+        }
+      ],
+      "semantic_recovery_established": false
+    },
+    {
+      "run_id": "irs-multiple-request-owners--tracked--r1",
+      "family": "irs-multiple-request-owners",
+      "repeat": 1,
+      "stage_id": "stage-2",
+      "failure_steps": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "failed_tracker_calls": 6,
+      "roles": {
+        "tracker": 6
+      },
+      "actor_calls": 0,
+      "failed_call_usage": {
+        "input_tokens": 27060,
+        "output_tokens": 474,
+        "total_tokens": 27534,
+        "wall_ms": 16279.059499967843
+      },
+      "valid_commit_recovered_within_stage": false,
+      "first_same_stage_recovery_step": null,
+      "valid_commit_recovered_later_in_trajectory": true,
+      "first_later_valid_commit_step": 12,
+      "start_version": 1,
+      "end_version": 1,
+      "start_processed_seq": 2,
+      "end_processed_seq": 2,
+      "observed_seq": 31,
+      "end_stage_visible_cards": {},
+      "final_visible_cards": {
+        "agent-card-1": {
+          "source_ids": [
+            "irs-orchard-guide"
+          ],
+          "text": "The signup deadline is Thursday at 17:00. Wheelchair users can enter through the North gate and follow a step-free ramp to the briefing room. The arrival window for the briefing is 08:40–08:55.",
+          "updated_ms": 12200
+        }
+      },
+      "final_intentions": [
+        {
+          "created_version": 1,
+          "history": [
+            {
+              "op": "add",
+              "patch_id": "intent-role-step-0",
+              "source_seqs": [
+                2
+              ],
+              "state": {
+                "owner": "Lina",
+                "status": "active",
+                "text": "I need to know whether I can enter with my wheelchair."
+              },
+              "version": 1
+            },
+            {
+              "op": "update",
+              "patch_id": "intent-role-step-12",
+              "source_seqs": [
+                44
+              ],
+              "state": {
+                "owner": "Lina",
+                "status": "active",
+                "text": "Keep my wheelchair-access question, and add the arrival window for the briefing."
+              },
+              "version": 2
+            }
+          ],
+          "intent_id": "orchard-accessibility",
+          "owner": "Lina",
+          "source_seqs": [
+            44
+          ],
+          "status": "active",
+          "text": "Keep my wheelchair-access question, and add the arrival window for the briefing.",
+          "updated_version": 2
+        },
+        {
+          "created_version": 1,
+          "history": [
+            {
+              "op": "add",
+              "patch_id": "intent-role-step-0",
+              "source_seqs": [
+                1
+              ],
+              "state": {
+                "owner": "Omar",
+                "status": "active",
+                "text": "From the Orchard Volunteer briefing note, I need the cancellation refund rule for my place."
+              },
+              "version": 1
+            },
+            {
+              "op": "update",
+              "patch_id": "intent-role-step-12",
+              "source_seqs": [
+                31
+              ],
+              "state": {
+                "owner": "Omar",
+                "status": "active",
+                "text": "Drop my refund question. I still need the signup deadline."
+              },
+              "version": 2
+            }
+          ],
+          "intent_id": "orchard-cancellation-refund",
+          "owner": "Omar",
+          "source_seqs": [
+            31
+          ],
+          "status": "active",
+          "text": "Drop my refund question. I still need the signup deadline.",
+          "updated_version": 2
+        },
+        {
+          "created_version": 1,
+          "history": [
+            {
+              "op": "add",
+              "patch_id": "intent-role-step-0",
+              "source_seqs": [
+                1
+              ],
+              "state": {
+                "owner": "Omar",
+                "status": "active",
+                "text": "From the Orchard Volunteer briefing note, I need the signup deadline for my place."
+              },
+              "version": 1
+            }
+          ],
+          "intent_id": "orchard-signup-deadline",
+          "owner": "Omar",
+          "source_seqs": [
+            1
+          ],
+          "status": "active",
+          "text": "From the Orchard Volunteer briefing note, I need the signup deadline for my place.",
+          "updated_version": 1
+        }
+      ],
+      "semantic_recovery_established": false
+    }
+  ],
+  "failure_calls": [
+    {
+      "run_id": "irs-combined-workshop-change--tracked--r2",
+      "family": "irs-combined-workshop-change",
+      "repeat": 2,
+      "stage_id": "stage-3",
+      "step": 12,
+      "first_rejected_operation_index": 0,
+      "failure_class": "update_of_withdrawn_target",
+      "operation": "update",
+      "intent_id": "workshop-info",
+      "target_pre_patch_status": "withdrawn",
+      "proposed_status": "active",
+      "error": {
+        "type": "IntentValidationError",
+        "message": "A withdrawn intention needs an explicit reopen operation."
+      },
+      "operations": [
+        {
+          "op": "update",
+          "intent_id": "workshop-info",
+          "text": "Find the cheapest Friday workshop at or below $25 from the Kiln Workshop list with step-free access and provide its room.",
+          "source_seqs": [
+            24,
+            43
+          ],
+          "status": "active"
+        },
+        {
+          "op": "withdraw",
+          "intent_id": "workshop-info-2",
+          "source_seqs": [
+            43
+          ]
+        }
+      ],
+      "invalid_references": [],
+      "call_id": "b1999d3f-e756-5278-bdbd-0e704a07db94",
+      "model_outcome": "completed",
+      "usage": {
+        "input_tokens": 5286,
+        "output_tokens": 93,
+        "total_tokens": 5379,
+        "wall_ms": 3299.347599997418
+      },
+      "whole_patch_rejected": true,
+      "patch_committed": false
+    },
+    {
+      "run_id": "irs-combined-workshop-change--tracked--r2",
+      "family": "irs-combined-workshop-change",
+      "repeat": 2,
+      "stage_id": "stage-3",
+      "step": 13,
+      "first_rejected_operation_index": 0,
+      "failure_class": "update_of_withdrawn_target",
+      "operation": "update",
+      "intent_id": "workshop-info",
+      "target_pre_patch_status": "withdrawn",
+      "proposed_status": "active",
+      "error": {
+        "type": "IntentValidationError",
+        "message": "A withdrawn intention needs an explicit reopen operation."
+      },
+      "operations": [
+        {
+          "op": "update",
+          "intent_id": "workshop-info",
+          "text": "Find the cheapest Friday workshop at or below $25 from the Kiln Workshop list with step-free access and provide its room.",
+          "source_seqs": [
+            24
+          ],
+          "status": "active"
+        },
+        {
+          "op": "withdraw",
+          "intent_id": "workshop-info-2",
+          "source_seqs": [
+            43
+          ]
+        }
+      ],
+      "invalid_references": [],
+      "call_id": "74d0b6a4-6294-5c8b-83b4-384d36fb98b1",
+      "model_outcome": "completed",
+      "usage": {
+        "input_tokens": 5286,
+        "output_tokens": 89,
+        "total_tokens": 5375,
+        "wall_ms": 3191.626899992116
+      },
+      "whole_patch_rejected": true,
+      "patch_committed": false
+    },
+    {
+      "run_id": "irs-combined-workshop-change--tracked--r2",
+      "family": "irs-combined-workshop-change",
+      "repeat": 2,
+      "stage_id": "stage-3",
+      "step": 14,
+      "first_rejected_operation_index": 0,
+      "failure_class": "update_of_withdrawn_target",
+      "operation": "update",
+      "intent_id": "workshop-info",
+      "target_pre_patch_status": "withdrawn",
+      "proposed_status": "active",
+      "error": {
+        "type": "IntentValidationError",
+        "message": "A withdrawn intention needs an explicit reopen operation."
+      },
+      "operations": [
+        {
+          "op": "update",
+          "intent_id": "workshop-info",
+          "text": "Find the cheapest Friday workshop at or below $25 from the Kiln Workshop list with step-free access and provide its room.",
+          "source_seqs": [
+            24
+          ],
+          "status": "active"
+        },
+        {
+          "op": "withdraw",
+          "intent_id": "workshop-info-2",
+          "source_seqs": [
+            43
+          ]
+        }
+      ],
+      "invalid_references": [],
+      "call_id": "0b1fceec-033b-5254-a402-3703fc12a808",
+      "model_outcome": "completed",
+      "usage": {
+        "input_tokens": 5286,
+        "output_tokens": 89,
+        "total_tokens": 5375,
+        "wall_ms": 3175.1792000140995
+      },
+      "whole_patch_rejected": true,
+      "patch_committed": false
+    },
+    {
+      "run_id": "irs-combined-workshop-change--tracked--r2",
+      "family": "irs-combined-workshop-change",
+      "repeat": 2,
+      "stage_id": "stage-3",
+      "step": 15,
+      "first_rejected_operation_index": 0,
+      "failure_class": "update_of_withdrawn_target",
+      "operation": "update",
+      "intent_id": "workshop-info",
+      "target_pre_patch_status": "withdrawn",
+      "proposed_status": "active",
+      "error": {
+        "type": "IntentValidationError",
+        "message": "A withdrawn intention needs an explicit reopen operation."
+      },
+      "operations": [
+        {
+          "op": "update",
+          "intent_id": "workshop-info",
+          "text": "Find the cheapest Friday workshop at or below $25 from the Kiln Workshop list with step-free access and provide its room.",
+          "source_seqs": [
+            24
+          ],
+          "status": "active"
+        },
+        {
+          "op": "withdraw",
+          "intent_id": "workshop-info-2",
+          "source_seqs": [
+            43
+          ]
+        }
+      ],
+      "invalid_references": [],
+      "call_id": "d4093d54-ec05-503b-af33-29eabd90414e",
+      "model_outcome": "completed",
+      "usage": {
+        "input_tokens": 5286,
+        "output_tokens": 89,
+        "total_tokens": 5375,
+        "wall_ms": 3172.4630999960937
+      },
+      "whole_patch_rejected": true,
+      "patch_committed": false
+    },
+    {
+      "run_id": "irs-combined-workshop-change--tracked--r2",
+      "family": "irs-combined-workshop-change",
+      "repeat": 2,
+      "stage_id": "stage-3",
+      "step": 16,
+      "first_rejected_operation_index": 0,
+      "failure_class": "update_of_withdrawn_target",
+      "operation": "update",
+      "intent_id": "workshop-info",
+      "target_pre_patch_status": "withdrawn",
+      "proposed_status": "active",
+      "error": {
+        "type": "IntentValidationError",
+        "message": "A withdrawn intention needs an explicit reopen operation."
+      },
+      "operations": [
+        {
+          "op": "update",
+          "intent_id": "workshop-info",
+          "text": "Find the cheapest Friday workshop at or below $25 from the Kiln Workshop list with step-free access and provide its room.",
+          "source_seqs": [
+            24
+          ],
+          "status": "active"
+        },
+        {
+          "op": "withdraw",
+          "intent_id": "workshop-info-2",
+          "source_seqs": [
+            43
+          ]
+        }
+      ],
+      "invalid_references": [],
+      "call_id": "01cc1822-705a-5f8c-9667-b57bb10dfd8f",
+      "model_outcome": "completed",
+      "usage": {
+        "input_tokens": 5286,
+        "output_tokens": 89,
+        "total_tokens": 5375,
+        "wall_ms": 3175.5979000008665
+      },
+      "whole_patch_rejected": true,
+      "patch_committed": false
+    },
+    {
+      "run_id": "irs-combined-workshop-change--tracked--r2",
+      "family": "irs-combined-workshop-change",
+      "repeat": 2,
+      "stage_id": "stage-3",
+      "step": 17,
+      "first_rejected_operation_index": 0,
+      "failure_class": "update_of_withdrawn_target",
+      "operation": "update",
+      "intent_id": "workshop-info",
+      "target_pre_patch_status": "withdrawn",
+      "proposed_status": "active",
+      "error": {
+        "type": "IntentValidationError",
+        "message": "A withdrawn intention needs an explicit reopen operation."
+      },
+      "operations": [
+        {
+          "op": "update",
+          "intent_id": "workshop-info",
+          "text": "Find the cheapest Friday workshop at or below $25 from the Kiln Workshop list with step-free access and provide its room.",
+          "source_seqs": [
+            24
+          ],
+          "status": "active"
+        },
+        {
+          "op": "withdraw",
+          "intent_id": "workshop-info-2",
+          "source_seqs": [
+            43
+          ]
+        }
+      ],
+      "invalid_references": [],
+      "call_id": "b158e30d-3513-5ac5-9d96-4ed0bb6b910e",
+      "model_outcome": "completed",
+      "usage": {
+        "input_tokens": 5286,
+        "output_tokens": 89,
+        "total_tokens": 5375,
+        "wall_ms": 3174.663199984934
+      },
+      "whole_patch_rejected": true,
+      "patch_committed": false
+    },
+    {
+      "run_id": "irs-unaccepted-assistant-proposal--tracked--r2",
+      "family": "irs-unaccepted-assistant-proposal",
+      "repeat": 2,
+      "stage_id": "stage-2",
+      "step": 6,
+      "first_rejected_operation_index": 0,
+      "failure_class": "non_conversation_evidence_reference",
+      "operation": "update",
+      "intent_id": "stable-id-1",
+      "target_pre_patch_status": "active",
+      "proposed_status": "active",
+      "error": {
+        "type": "IntentValidationError",
+        "message": "An intention source must be an arrived event within this patch."
+      },
+      "operations": [
+        {
+          "op": "update",
+          "intent_id": "stable-id-1",
+          "text": "Find the session start time and room for the Tidepool Demo notice. The session starts at 14:20 in Room T6.",
+          "source_seqs": [
+            1,
+            17
+          ],
+          "status": "active"
+        }
+      ],
+      "invalid_references": [
+        {
+          "seq": 17,
+          "record_kind": "environment_event",
+          "event_kind": "job_result",
+          "operation": "read",
+          "at_ms": 450,
+          "already_arrived": true,
+          "is_future_reference": false
+        }
+      ],
+      "call_id": "5b301901-4776-5a37-b96b-875b2d7ce7c6",
+      "model_outcome": "completed",
+      "usage": {
+        "input_tokens": 2760,
+        "output_tokens": 71,
+        "total_tokens": 2831,
+        "wall_ms": 1914.0751000086311
+      },
+      "whole_patch_rejected": true,
+      "patch_committed": false
+    },
+    {
+      "run_id": "irs-combined-workshop-change--tracked--r1",
+      "family": "irs-combined-workshop-change",
+      "repeat": 1,
+      "stage_id": "stage-3",
+      "step": 12,
+      "first_rejected_operation_index": 0,
+      "failure_class": "update_of_withdrawn_target",
+      "operation": "update",
+      "intent_id": "workshop-info",
+      "target_pre_patch_status": "withdrawn",
+      "proposed_status": "active",
+      "error": {
+        "type": "IntentValidationError",
+        "message": "A withdrawn intention needs an explicit reopen operation."
+      },
+      "operations": [
+        {
+          "op": "update",
+          "intent_id": "workshop-info",
+          "text": "Find the cheapest Friday workshop at or below $25 from the Kiln Workshop list that has step-free access and provide its room.",
+          "source_seqs": [
+            24,
+            43
+          ],
+          "status": "active"
+        },
+        {
+          "op": "withdraw",
+          "intent_id": "workshop-info-friday",
+          "source_seqs": [
+            43
+          ]
+        }
+      ],
+      "invalid_references": [],
+      "call_id": "f0dcbc32-dee3-5f95-91d4-eba3eeb42f5e",
+      "model_outcome": "completed",
+      "usage": {
+        "input_tokens": 5257,
+        "output_tokens": 94,
+        "total_tokens": 5351,
+        "wall_ms": 3306.378900015261
+      },
+      "whole_patch_rejected": true,
+      "patch_committed": false
+    },
+    {
+      "run_id": "irs-combined-workshop-change--tracked--r1",
+      "family": "irs-combined-workshop-change",
+      "repeat": 1,
+      "stage_id": "stage-3",
+      "step": 13,
+      "first_rejected_operation_index": 0,
+      "failure_class": "invalid_proposed_status",
+      "operation": "update",
+      "intent_id": "workshop-info",
+      "target_pre_patch_status": "withdrawn",
+      "proposed_status": "withdrawn",
+      "error": {
+        "type": "IntentValidationError",
+        "message": "A proposed status must be active or uncertain."
+      },
+      "operations": [
+        {
+          "op": "update",
+          "intent_id": "workshop-info",
+          "text": "Find the cheapest Tuesday workshop at or below $25 from the Kiln Workshop list and provide its room and parking location.",
+          "source_seqs": [
+            24
+          ],
+          "status": "withdrawn"
+        },
+        {
+          "op": "add",
+          "intent_id": "workshop-info-friday",
+          "owner": "Mara",
+          "text": "Find the cheapest Friday workshop at or below $25 from the Kiln Workshop list that has step-free access and provide its room.",
+          "source_seqs": [
+            24
+          ],
+          "status": "active"
+        }
+      ],
+      "invalid_references": [],
+      "call_id": "a8efef7a-ace0-5503-a511-b97c4ad0bdfb",
+      "model_outcome": "completed",
+      "usage": {
+        "input_tokens": 5257,
+        "output_tokens": 133,
+        "total_tokens": 5390,
+        "wall_ms": 4002.332399977604
+      },
+      "whole_patch_rejected": true,
+      "patch_committed": false
+    },
+    {
+      "run_id": "irs-combined-workshop-change--tracked--r1",
+      "family": "irs-combined-workshop-change",
+      "repeat": 1,
+      "stage_id": "stage-3",
+      "step": 14,
+      "first_rejected_operation_index": 0,
+      "failure_class": "update_of_withdrawn_target",
+      "operation": "update",
+      "intent_id": "workshop-info",
+      "target_pre_patch_status": "withdrawn",
+      "proposed_status": "active",
+      "error": {
+        "type": "IntentValidationError",
+        "message": "A withdrawn intention needs an explicit reopen operation."
+      },
+      "operations": [
+        {
+          "op": "update",
+          "intent_id": "workshop-info",
+          "text": "Find the cheapest Friday workshop at or below $25 from the Kiln Workshop list that has step-free access and provide its room.",
+          "source_seqs": [
+            24
+          ],
+          "status": "active"
+        },
+        {
+          "op": "withdraw",
+          "intent_id": "workshop-info-friday",
+          "source_seqs": [
+            43
+          ]
+        }
+      ],
+      "invalid_references": [],
+      "call_id": "4bc0b67c-a6bf-589b-9701-3df669b572b9",
+      "model_outcome": "completed",
+      "usage": {
+        "input_tokens": 5257,
+        "output_tokens": 90,
+        "total_tokens": 5347,
+        "wall_ms": 3170.611600013217
+      },
+      "whole_patch_rejected": true,
+      "patch_committed": false
+    },
+    {
+      "run_id": "irs-combined-workshop-change--tracked--r1",
+      "family": "irs-combined-workshop-change",
+      "repeat": 1,
+      "stage_id": "stage-3",
+      "step": 15,
+      "first_rejected_operation_index": 0,
+      "failure_class": "invalid_proposed_status",
+      "operation": "update",
+      "intent_id": "workshop-info",
+      "target_pre_patch_status": "withdrawn",
+      "proposed_status": "withdrawn",
+      "error": {
+        "type": "IntentValidationError",
+        "message": "A proposed status must be active or uncertain."
+      },
+      "operations": [
+        {
+          "op": "update",
+          "intent_id": "workshop-info",
+          "text": "Find the cheapest Tuesday workshop at or below $25 from the Kiln Workshop list and provide its room and parking location.",
+          "source_seqs": [
+            24
+          ],
+          "status": "withdrawn"
+        },
+        {
+          "op": "add",
+          "intent_id": "workshop-info-friday",
+          "owner": "Mara",
+          "text": "Find the cheapest Friday workshop at or below $25 from the Kiln Workshop list that has step-free access and provide its room.",
+          "source_seqs": [
+            24
+          ],
+          "status": "active"
+        },
+        {
+          "op": "update",
+          "intent_id": "workshop-info-friday",
+          "text": "Find the cheapest Friday workshop at or below $25 from the Kiln Workshop list that has step-free access and provide its room.",
+          "source_seqs": [
+            43
+          ],
+          "status": "active"
+        }
+      ],
+      "invalid_references": [],
+      "call_id": "a624b7e8-8c8d-584b-877c-56b28d183112",
+      "model_outcome": "completed",
+      "usage": {
+        "input_tokens": 5257,
+        "output_tokens": 195,
+        "total_tokens": 5452,
+        "wall_ms": 5010.44070001808
+      },
+      "whole_patch_rejected": true,
+      "patch_committed": false
+    },
+    {
+      "run_id": "irs-combined-workshop-change--tracked--r1",
+      "family": "irs-combined-workshop-change",
+      "repeat": 1,
+      "stage_id": "stage-3",
+      "step": 16,
+      "first_rejected_operation_index": 0,
+      "failure_class": "invalid_proposed_status",
+      "operation": "update",
+      "intent_id": "workshop-info",
+      "target_pre_patch_status": "withdrawn",
+      "proposed_status": "withdrawn",
+      "error": {
+        "type": "IntentValidationError",
+        "message": "A proposed status must be active or uncertain."
+      },
+      "operations": [
+        {
+          "op": "update",
+          "intent_id": "workshop-info",
+          "text": "Find the cheapest Tuesday workshop at or below $25 from the Kiln Workshop list and provide its room and parking location.",
+          "source_seqs": [
+            24
+          ],
+          "status": "withdrawn"
+        },
+        {
+          "op": "add",
+          "intent_id": "workshop-info-friday",
+          "owner": "Mara",
+          "text": "Find the cheapest Friday workshop at or below $25 from the Kiln Workshop list that has step-free access and provide its room.",
+          "source_seqs": [
+            24
+          ],
+          "status": "active"
+        }
+      ],
+      "invalid_references": [],
+      "call_id": "081b2462-f3f5-5562-858b-5da9f78b0085",
+      "model_outcome": "completed",
+      "usage": {
+        "input_tokens": 5257,
+        "output_tokens": 133,
+        "total_tokens": 5390,
+        "wall_ms": 3942.975200014189
+      },
+      "whole_patch_rejected": true,
+      "patch_committed": false
+    },
+    {
+      "run_id": "irs-combined-workshop-change--tracked--r1",
+      "family": "irs-combined-workshop-change",
+      "repeat": 1,
+      "stage_id": "stage-3",
+      "step": 17,
+      "first_rejected_operation_index": 0,
+      "failure_class": "update_of_withdrawn_target",
+      "operation": "update",
+      "intent_id": "workshop-info",
+      "target_pre_patch_status": "withdrawn",
+      "proposed_status": "active",
+      "error": {
+        "type": "IntentValidationError",
+        "message": "A withdrawn intention needs an explicit reopen operation."
+      },
+      "operations": [
+        {
+          "op": "update",
+          "intent_id": "workshop-info",
+          "text": "Find the cheapest Friday workshop at or below $25 from the Kiln Workshop list that has step-free access and provide its room.",
+          "source_seqs": [
+            24
+          ],
+          "status": "active"
+        },
+        {
+          "op": "withdraw",
+          "intent_id": "workshop-info-friday",
+          "source_seqs": [
+            43
+          ]
+        }
+      ],
+      "invalid_references": [],
+      "call_id": "a8045212-3065-5185-b57f-693cd9f3450d",
+      "model_outcome": "completed",
+      "usage": {
+        "input_tokens": 5257,
+        "output_tokens": 90,
+        "total_tokens": 5347,
+        "wall_ms": 3170.6283999956213
+      },
+      "whole_patch_rejected": true,
+      "patch_committed": false
+    },
+    {
+      "run_id": "irs-multiple-request-owners--tracked--r2",
+      "family": "irs-multiple-request-owners",
+      "repeat": 2,
+      "stage_id": "stage-2",
+      "step": 6,
+      "first_rejected_operation_index": 1,
+      "failure_class": "duplicate_target_in_patch",
+      "operation": "withdraw",
+      "intent_id": "orchard-cancellation-refund",
+      "target_pre_patch_status": "active",
+      "proposed_status": null,
+      "error": {
+        "type": "IntentValidationError",
+        "message": "A patch may touch each intention only once."
+      },
+      "operations": [
+        {
+          "op": "update",
+          "intent_id": "orchard-cancellation-refund",
+          "text": "Drop my refund question. I still need the signup deadline.",
+          "source_seqs": [
+            31
+          ],
+          "status": "active"
+        },
+        {
+          "op": "withdraw",
+          "intent_id": "orchard-cancellation-refund",
+          "source_seqs": [
+            31
+          ]
+        }
+      ],
+      "invalid_references": [],
+      "call_id": "f7733687-119f-5e3d-8100-2b6579422166",
+      "model_outcome": "completed",
+      "usage": {
+        "input_tokens": 4498,
+        "output_tokens": 79,
+        "total_tokens": 4577,
+        "wall_ms": 2695.3921999956947
+      },
+      "whole_patch_rejected": true,
+      "patch_committed": false
+    },
+    {
+      "run_id": "irs-multiple-request-owners--tracked--r2",
+      "family": "irs-multiple-request-owners",
+      "repeat": 2,
+      "stage_id": "stage-2",
+      "step": 7,
+      "first_rejected_operation_index": 1,
+      "failure_class": "duplicate_target_in_patch",
+      "operation": "withdraw",
+      "intent_id": "orchard-cancellation-refund",
+      "target_pre_patch_status": "active",
+      "proposed_status": null,
+      "error": {
+        "type": "IntentValidationError",
+        "message": "A patch may touch each intention only once."
+      },
+      "operations": [
+        {
+          "op": "update",
+          "intent_id": "orchard-cancellation-refund",
+          "text": "Drop my refund question. I still need the signup deadline.",
+          "source_seqs": [
+            31
+          ],
+          "status": "active"
+        },
+        {
+          "op": "withdraw",
+          "intent_id": "orchard-cancellation-refund",
+          "source_seqs": [
+            31
+          ]
+        }
+      ],
+      "invalid_references": [],
+      "call_id": "731b35f2-0a55-5c28-af61-f1fee9fcaaeb",
+      "model_outcome": "completed",
+      "usage": {
+        "input_tokens": 4498,
+        "output_tokens": 79,
+        "total_tokens": 4577,
+        "wall_ms": 2657.2737999958917
+      },
+      "whole_patch_rejected": true,
+      "patch_committed": false
+    },
+    {
+      "run_id": "irs-multiple-request-owners--tracked--r2",
+      "family": "irs-multiple-request-owners",
+      "repeat": 2,
+      "stage_id": "stage-2",
+      "step": 8,
+      "first_rejected_operation_index": 1,
+      "failure_class": "duplicate_target_in_patch",
+      "operation": "withdraw",
+      "intent_id": "orchard-cancellation-refund",
+      "target_pre_patch_status": "active",
+      "proposed_status": null,
+      "error": {
+        "type": "IntentValidationError",
+        "message": "A patch may touch each intention only once."
+      },
+      "operations": [
+        {
+          "op": "update",
+          "intent_id": "orchard-cancellation-refund",
+          "text": "Drop my refund question. I still need the signup deadline.",
+          "source_seqs": [
+            31
+          ],
+          "status": "active"
+        },
+        {
+          "op": "withdraw",
+          "intent_id": "orchard-cancellation-refund",
+          "source_seqs": [
+            31
+          ]
+        }
+      ],
+      "invalid_references": [],
+      "call_id": "8cdf9aa1-873a-5848-a4f5-c1e00250ae7a",
+      "model_outcome": "completed",
+      "usage": {
+        "input_tokens": 4498,
+        "output_tokens": 79,
+        "total_tokens": 4577,
+        "wall_ms": 2714.6255999978166
+      },
+      "whole_patch_rejected": true,
+      "patch_committed": false
+    },
+    {
+      "run_id": "irs-multiple-request-owners--tracked--r2",
+      "family": "irs-multiple-request-owners",
+      "repeat": 2,
+      "stage_id": "stage-2",
+      "step": 9,
+      "first_rejected_operation_index": 1,
+      "failure_class": "duplicate_target_in_patch",
+      "operation": "withdraw",
+      "intent_id": "orchard-cancellation-refund",
+      "target_pre_patch_status": "active",
+      "proposed_status": null,
+      "error": {
+        "type": "IntentValidationError",
+        "message": "A patch may touch each intention only once."
+      },
+      "operations": [
+        {
+          "op": "update",
+          "intent_id": "orchard-cancellation-refund",
+          "text": "Drop my refund question. I still need the signup deadline.",
+          "source_seqs": [
+            31
+          ],
+          "status": "active"
+        },
+        {
+          "op": "withdraw",
+          "intent_id": "orchard-cancellation-refund",
+          "source_seqs": [
+            31
+          ]
+        }
+      ],
+      "invalid_references": [],
+      "call_id": "345224ec-b974-5b63-87ed-d433c1913352",
+      "model_outcome": "completed",
+      "usage": {
+        "input_tokens": 4498,
+        "output_tokens": 79,
+        "total_tokens": 4577,
+        "wall_ms": 2707.189600012498
+      },
+      "whole_patch_rejected": true,
+      "patch_committed": false
+    },
+    {
+      "run_id": "irs-multiple-request-owners--tracked--r2",
+      "family": "irs-multiple-request-owners",
+      "repeat": 2,
+      "stage_id": "stage-2",
+      "step": 10,
+      "first_rejected_operation_index": 1,
+      "failure_class": "duplicate_target_in_patch",
+      "operation": "withdraw",
+      "intent_id": "orchard-cancellation-refund",
+      "target_pre_patch_status": "active",
+      "proposed_status": null,
+      "error": {
+        "type": "IntentValidationError",
+        "message": "A patch may touch each intention only once."
+      },
+      "operations": [
+        {
+          "op": "update",
+          "intent_id": "orchard-cancellation-refund",
+          "text": "Drop my refund question. I still need the signup deadline.",
+          "source_seqs": [
+            31
+          ],
+          "status": "active"
+        },
+        {
+          "op": "withdraw",
+          "intent_id": "orchard-cancellation-refund",
+          "source_seqs": [
+            31
+          ]
+        }
+      ],
+      "invalid_references": [],
+      "call_id": "70b597e9-1d6b-57bd-a8b2-25cab419ecb5",
+      "model_outcome": "completed",
+      "usage": {
+        "input_tokens": 4498,
+        "output_tokens": 79,
+        "total_tokens": 4577,
+        "wall_ms": 2664.260199991986
+      },
+      "whole_patch_rejected": true,
+      "patch_committed": false
+    },
+    {
+      "run_id": "irs-multiple-request-owners--tracked--r2",
+      "family": "irs-multiple-request-owners",
+      "repeat": 2,
+      "stage_id": "stage-2",
+      "step": 11,
+      "first_rejected_operation_index": 1,
+      "failure_class": "duplicate_target_in_patch",
+      "operation": "withdraw",
+      "intent_id": "orchard-cancellation-refund",
+      "target_pre_patch_status": "active",
+      "proposed_status": null,
+      "error": {
+        "type": "IntentValidationError",
+        "message": "A patch may touch each intention only once."
+      },
+      "operations": [
+        {
+          "op": "update",
+          "intent_id": "orchard-cancellation-refund",
+          "text": "Drop my refund question. I still need the signup deadline.",
+          "source_seqs": [
+            31
+          ],
+          "status": "active"
+        },
+        {
+          "op": "withdraw",
+          "intent_id": "orchard-cancellation-refund",
+          "source_seqs": [
+            31
+          ]
+        }
+      ],
+      "invalid_references": [],
+      "call_id": "f4f24c7f-e4c8-5083-b8dc-b0dc2937e019",
+      "model_outcome": "completed",
+      "usage": {
+        "input_tokens": 4498,
+        "output_tokens": 79,
+        "total_tokens": 4577,
+        "wall_ms": 2701.2638000014704
+      },
+      "whole_patch_rejected": true,
+      "patch_committed": false
+    },
+    {
+      "run_id": "irs-multiple-request-owners--tracked--r1",
+      "family": "irs-multiple-request-owners",
+      "repeat": 1,
+      "stage_id": "stage-2",
+      "step": 6,
+      "first_rejected_operation_index": 1,
+      "failure_class": "duplicate_target_in_patch",
+      "operation": "withdraw",
+      "intent_id": "orchard-cancellation-refund",
+      "target_pre_patch_status": "active",
+      "proposed_status": null,
+      "error": {
+        "type": "IntentValidationError",
+        "message": "A patch may touch each intention only once."
+      },
+      "operations": [
+        {
+          "op": "update",
+          "intent_id": "orchard-cancellation-refund",
+          "text": "Drop my refund question. I still need the signup deadline.",
+          "source_seqs": [
+            31
+          ],
+          "status": "active"
+        },
+        {
+          "op": "withdraw",
+          "intent_id": "orchard-cancellation-refund",
+          "source_seqs": [
+            31
+          ]
+        }
+      ],
+      "invalid_references": [],
+      "call_id": "c3aba391-cd4d-5f6d-9101-03f8d995600d",
+      "model_outcome": "completed",
+      "usage": {
+        "input_tokens": 4510,
+        "output_tokens": 79,
+        "total_tokens": 4589,
+        "wall_ms": 2708.784399990691
+      },
+      "whole_patch_rejected": true,
+      "patch_committed": false
+    },
+    {
+      "run_id": "irs-multiple-request-owners--tracked--r1",
+      "family": "irs-multiple-request-owners",
+      "repeat": 1,
+      "stage_id": "stage-2",
+      "step": 7,
+      "first_rejected_operation_index": 1,
+      "failure_class": "duplicate_target_in_patch",
+      "operation": "withdraw",
+      "intent_id": "orchard-cancellation-refund",
+      "target_pre_patch_status": "active",
+      "proposed_status": null,
+      "error": {
+        "type": "IntentValidationError",
+        "message": "A patch may touch each intention only once."
+      },
+      "operations": [
+        {
+          "op": "update",
+          "intent_id": "orchard-cancellation-refund",
+          "text": "Drop my refund question. I still need the signup deadline.",
+          "source_seqs": [
+            31
+          ],
+          "status": "active"
+        },
+        {
+          "op": "withdraw",
+          "intent_id": "orchard-cancellation-refund",
+          "source_seqs": [
+            31
+          ]
+        }
+      ],
+      "invalid_references": [],
+      "call_id": "a4f7d8e6-732c-5c41-8f6a-486db4de6a9b",
+      "model_outcome": "completed",
+      "usage": {
+        "input_tokens": 4510,
+        "output_tokens": 79,
+        "total_tokens": 4589,
+        "wall_ms": 2759.309699991718
+      },
+      "whole_patch_rejected": true,
+      "patch_committed": false
+    },
+    {
+      "run_id": "irs-multiple-request-owners--tracked--r1",
+      "family": "irs-multiple-request-owners",
+      "repeat": 1,
+      "stage_id": "stage-2",
+      "step": 8,
+      "first_rejected_operation_index": 1,
+      "failure_class": "duplicate_target_in_patch",
+      "operation": "withdraw",
+      "intent_id": "orchard-cancellation-refund",
+      "target_pre_patch_status": "active",
+      "proposed_status": null,
+      "error": {
+        "type": "IntentValidationError",
+        "message": "A patch may touch each intention only once."
+      },
+      "operations": [
+        {
+          "op": "update",
+          "intent_id": "orchard-cancellation-refund",
+          "text": "Drop my refund question. I still need the signup deadline.",
+          "source_seqs": [
+            31
+          ],
+          "status": "active"
+        },
+        {
+          "op": "withdraw",
+          "intent_id": "orchard-cancellation-refund",
+          "source_seqs": [
+            31
+          ]
+        }
+      ],
+      "invalid_references": [],
+      "call_id": "46a4192e-4d91-5f21-8adc-c56ebb9d6653",
+      "model_outcome": "completed",
+      "usage": {
+        "input_tokens": 4510,
+        "output_tokens": 79,
+        "total_tokens": 4589,
+        "wall_ms": 2737.4589999963064
+      },
+      "whole_patch_rejected": true,
+      "patch_committed": false
+    },
+    {
+      "run_id": "irs-multiple-request-owners--tracked--r1",
+      "family": "irs-multiple-request-owners",
+      "repeat": 1,
+      "stage_id": "stage-2",
+      "step": 9,
+      "first_rejected_operation_index": 1,
+      "failure_class": "duplicate_target_in_patch",
+      "operation": "withdraw",
+      "intent_id": "orchard-cancellation-refund",
+      "target_pre_patch_status": "active",
+      "proposed_status": null,
+      "error": {
+        "type": "IntentValidationError",
+        "message": "A patch may touch each intention only once."
+      },
+      "operations": [
+        {
+          "op": "update",
+          "intent_id": "orchard-cancellation-refund",
+          "text": "Drop my refund question. I still need the signup deadline.",
+          "source_seqs": [
+            31
+          ],
+          "status": "active"
+        },
+        {
+          "op": "withdraw",
+          "intent_id": "orchard-cancellation-refund",
+          "source_seqs": [
+            31
+          ]
+        }
+      ],
+      "invalid_references": [],
+      "call_id": "4f256c0c-d7d4-5dfc-8ce7-e976d868839b",
+      "model_outcome": "completed",
+      "usage": {
+        "input_tokens": 4510,
+        "output_tokens": 79,
+        "total_tokens": 4589,
+        "wall_ms": 2711.991999996826
+      },
+      "whole_patch_rejected": true,
+      "patch_committed": false
+    },
+    {
+      "run_id": "irs-multiple-request-owners--tracked--r1",
+      "family": "irs-multiple-request-owners",
+      "repeat": 1,
+      "stage_id": "stage-2",
+      "step": 10,
+      "first_rejected_operation_index": 1,
+      "failure_class": "duplicate_target_in_patch",
+      "operation": "withdraw",
+      "intent_id": "orchard-cancellation-refund",
+      "target_pre_patch_status": "active",
+      "proposed_status": null,
+      "error": {
+        "type": "IntentValidationError",
+        "message": "A patch may touch each intention only once."
+      },
+      "operations": [
+        {
+          "op": "update",
+          "intent_id": "orchard-cancellation-refund",
+          "text": "Drop my refund question. I still need the signup deadline.",
+          "source_seqs": [
+            31
+          ],
+          "status": "active"
+        },
+        {
+          "op": "withdraw",
+          "intent_id": "orchard-cancellation-refund",
+          "source_seqs": [
+            31
+          ]
+        }
+      ],
+      "invalid_references": [],
+      "call_id": "50208c2c-e494-5429-bf7d-e1beccf63f4b",
+      "model_outcome": "completed",
+      "usage": {
+        "input_tokens": 4510,
+        "output_tokens": 79,
+        "total_tokens": 4589,
+        "wall_ms": 2687.61860000086
+      },
+      "whole_patch_rejected": true,
+      "patch_committed": false
+    },
+    {
+      "run_id": "irs-multiple-request-owners--tracked--r1",
+      "family": "irs-multiple-request-owners",
+      "repeat": 1,
+      "stage_id": "stage-2",
+      "step": 11,
+      "first_rejected_operation_index": 1,
+      "failure_class": "duplicate_target_in_patch",
+      "operation": "withdraw",
+      "intent_id": "orchard-cancellation-refund",
+      "target_pre_patch_status": "active",
+      "proposed_status": null,
+      "error": {
+        "type": "IntentValidationError",
+        "message": "A patch may touch each intention only once."
+      },
+      "operations": [
+        {
+          "op": "update",
+          "intent_id": "orchard-cancellation-refund",
+          "text": "Drop my refund question. I still need the signup deadline.",
+          "source_seqs": [
+            31
+          ],
+          "status": "active"
+        },
+        {
+          "op": "withdraw",
+          "intent_id": "orchard-cancellation-refund",
+          "source_seqs": [
+            31
+          ]
+        }
+      ],
+      "invalid_references": [],
+      "call_id": "e98da33c-8ad6-5062-870f-1941314c31b9",
+      "model_outcome": "completed",
+      "usage": {
+        "input_tokens": 4510,
+        "output_tokens": 79,
+        "total_tokens": 4589,
+        "wall_ms": 2673.895799991442
+      },
+      "whole_patch_rejected": true,
+      "patch_committed": false
+    }
+  ],
+  "rejection_streaks": [
+    {
+      "run_id": "irs-combined-workshop-change--tracked--r2",
+      "stage_id": "stage-3",
+      "steps": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ]
+    },
+    {
+      "run_id": "irs-unaccepted-assistant-proposal--tracked--r2",
+      "stage_id": "stage-2",
+      "steps": [
+        6
+      ]
+    },
+    {
+      "run_id": "irs-combined-workshop-change--tracked--r1",
+      "stage_id": "stage-3",
+      "steps": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ]
+    },
+    {
+      "run_id": "irs-multiple-request-owners--tracked--r2",
+      "stage_id": "stage-2",
+      "steps": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ]
+    },
+    {
+      "run_id": "irs-multiple-request-owners--tracked--r1",
+      "stage_id": "stage-2",
+      "steps": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ]
+    }
+  ],
+  "retry_input_comparisons": [
+    {
+      "run_id": "irs-combined-workshop-change--tracked--r2",
+      "from_step": 12,
+      "to_step": 13,
+      "same_input_except_at_ms": true,
+      "same_system_prompt": true,
+      "next_call_committed": false,
+      "error_text_added_to_input": false
+    },
+    {
+      "run_id": "irs-combined-workshop-change--tracked--r2",
+      "from_step": 13,
+      "to_step": 14,
+      "same_input_except_at_ms": true,
+      "same_system_prompt": true,
+      "next_call_committed": false,
+      "error_text_added_to_input": false
+    },
+    {
+      "run_id": "irs-combined-workshop-change--tracked--r2",
+      "from_step": 14,
+      "to_step": 15,
+      "same_input_except_at_ms": true,
+      "same_system_prompt": true,
+      "next_call_committed": false,
+      "error_text_added_to_input": false
+    },
+    {
+      "run_id": "irs-combined-workshop-change--tracked--r2",
+      "from_step": 15,
+      "to_step": 16,
+      "same_input_except_at_ms": true,
+      "same_system_prompt": true,
+      "next_call_committed": false,
+      "error_text_added_to_input": false
+    },
+    {
+      "run_id": "irs-combined-workshop-change--tracked--r2",
+      "from_step": 16,
+      "to_step": 17,
+      "same_input_except_at_ms": true,
+      "same_system_prompt": true,
+      "next_call_committed": false,
+      "error_text_added_to_input": false
+    },
+    {
+      "run_id": "irs-unaccepted-assistant-proposal--tracked--r2",
+      "from_step": 6,
+      "to_step": 7,
+      "same_input_except_at_ms": true,
+      "same_system_prompt": true,
+      "next_call_committed": true,
+      "error_text_added_to_input": false
+    },
+    {
+      "run_id": "irs-combined-workshop-change--tracked--r1",
+      "from_step": 12,
+      "to_step": 13,
+      "same_input_except_at_ms": true,
+      "same_system_prompt": true,
+      "next_call_committed": false,
+      "error_text_added_to_input": false
+    },
+    {
+      "run_id": "irs-combined-workshop-change--tracked--r1",
+      "from_step": 13,
+      "to_step": 14,
+      "same_input_except_at_ms": true,
+      "same_system_prompt": true,
+      "next_call_committed": false,
+      "error_text_added_to_input": false
+    },
+    {
+      "run_id": "irs-combined-workshop-change--tracked--r1",
+      "from_step": 14,
+      "to_step": 15,
+      "same_input_except_at_ms": true,
+      "same_system_prompt": true,
+      "next_call_committed": false,
+      "error_text_added_to_input": false
+    },
+    {
+      "run_id": "irs-combined-workshop-change--tracked--r1",
+      "from_step": 15,
+      "to_step": 16,
+      "same_input_except_at_ms": true,
+      "same_system_prompt": true,
+      "next_call_committed": false,
+      "error_text_added_to_input": false
+    },
+    {
+      "run_id": "irs-combined-workshop-change--tracked--r1",
+      "from_step": 16,
+      "to_step": 17,
+      "same_input_except_at_ms": true,
+      "same_system_prompt": true,
+      "next_call_committed": false,
+      "error_text_added_to_input": false
+    },
+    {
+      "run_id": "irs-multiple-request-owners--tracked--r2",
+      "from_step": 6,
+      "to_step": 7,
+      "same_input_except_at_ms": true,
+      "same_system_prompt": true,
+      "next_call_committed": false,
+      "error_text_added_to_input": false
+    },
+    {
+      "run_id": "irs-multiple-request-owners--tracked--r2",
+      "from_step": 7,
+      "to_step": 8,
+      "same_input_except_at_ms": true,
+      "same_system_prompt": true,
+      "next_call_committed": false,
+      "error_text_added_to_input": false
+    },
+    {
+      "run_id": "irs-multiple-request-owners--tracked--r2",
+      "from_step": 8,
+      "to_step": 9,
+      "same_input_except_at_ms": true,
+      "same_system_prompt": true,
+      "next_call_committed": false,
+      "error_text_added_to_input": false
+    },
+    {
+      "run_id": "irs-multiple-request-owners--tracked--r2",
+      "from_step": 9,
+      "to_step": 10,
+      "same_input_except_at_ms": true,
+      "same_system_prompt": true,
+      "next_call_committed": false,
+      "error_text_added_to_input": false
+    },
+    {
+      "run_id": "irs-multiple-request-owners--tracked--r2",
+      "from_step": 10,
+      "to_step": 11,
+      "same_input_except_at_ms": true,
+      "same_system_prompt": true,
+      "next_call_committed": false,
+      "error_text_added_to_input": false
+    },
+    {
+      "run_id": "irs-multiple-request-owners--tracked--r1",
+      "from_step": 6,
+      "to_step": 7,
+      "same_input_except_at_ms": true,
+      "same_system_prompt": true,
+      "next_call_committed": false,
+      "error_text_added_to_input": false
+    },
+    {
+      "run_id": "irs-multiple-request-owners--tracked--r1",
+      "from_step": 7,
+      "to_step": 8,
+      "same_input_except_at_ms": true,
+      "same_system_prompt": true,
+      "next_call_committed": false,
+      "error_text_added_to_input": false
+    },
+    {
+      "run_id": "irs-multiple-request-owners--tracked--r1",
+      "from_step": 8,
+      "to_step": 9,
+      "same_input_except_at_ms": true,
+      "same_system_prompt": true,
+      "next_call_committed": false,
+      "error_text_added_to_input": false
+    },
+    {
+      "run_id": "irs-multiple-request-owners--tracked--r1",
+      "from_step": 9,
+      "to_step": 10,
+      "same_input_except_at_ms": true,
+      "same_system_prompt": true,
+      "next_call_committed": false,
+      "error_text_added_to_input": false
+    },
+    {
+      "run_id": "irs-multiple-request-owners--tracked--r1",
+      "from_step": 10,
+      "to_step": 11,
+      "same_input_except_at_ms": true,
+      "same_system_prompt": true,
+      "next_call_committed": false,
+      "error_text_added_to_input": false
+    }
+  ],
+  "late_result_cases": [
+    {
+      "run_id": "irs-late-obsolete-evidence--tracked--r1",
+      "condition": "tracked",
+      "repeat": 1,
+      "seed_read_requested_ms": 50,
+      "seed_read_due_ms": 6550,
+      "user_revision_ms": 6000,
+      "seed_read_actually_arrived": false,
+      "arrivals": [],
+      "actual_cancellation_receipts": [
+        {
+          "call_id": "intent-role-000008-tool-0",
+          "name": "cancel_job",
+          "args": {
+            "job_id": "job-2"
+          },
+          "result": {
+            "status": "cancelled"
+          },
+          "at_ms": 6300,
+          "seq": 36
+        }
+      ],
+      "final_visible_cards": {
+        "agent-card-2": {
+          "source_ids": [],
+          "text": "The Archivum Desktop handbook is no longer needed. For Archivum Mobile, I will find out if you can edit a downloaded notebook offline and what the PDF export page limit is.",
+          "updated_ms": 6200
+        },
+        "agent-card-3": {
+          "source_ids": [],
+          "text": "I have initiated searches for information on offline editing capabilities and the PDF export page limit for Archivum Mobile. Once I find the relevant sections in the Archivum Mobile handbook, I will provide you with the details.",
+          "updated_ms": 6600
+        },
+        "agent-card-4": {
+          "source_ids": [
+            "irs-archivum-mobile"
+          ],
+          "text": "For Archivum Mobile, you can edit a downloaded notebook offline. The PDF export page limit is five pages per PDF.",
+          "updated_ms": 13100
+        }
+      }
+    },
+    {
+      "run_id": "irs-late-obsolete-evidence--unified--r1",
+      "condition": "unified",
+      "repeat": 1,
+      "seed_read_requested_ms": 50,
+      "seed_read_due_ms": 6550,
+      "user_revision_ms": 6000,
+      "seed_read_actually_arrived": false,
+      "arrivals": [],
+      "actual_cancellation_receipts": [
+        {
+          "call_id": "intent-role-000006-tool-0",
+          "name": "cancel_job",
+          "args": {
+            "job_id": "job-2"
+          },
+          "result": {
+            "status": "cancelled"
+          },
+          "at_ms": 6100,
+          "seq": 29
+        }
+      ],
+      "final_visible_cards": {
+        "agent-card-1": {
+          "source_ids": [
+            "irs-archivum-mobile"
+          ],
+          "text": "You can edit a downloaded notebook offline with Archivum Mobile. The PDF export limit is five pages per PDF.",
+          "updated_ms": 12950
+        }
+      }
+    },
+    {
+      "run_id": "irs-late-obsolete-evidence--split--r1",
+      "condition": "split",
+      "repeat": 1,
+      "seed_read_requested_ms": 50,
+      "seed_read_due_ms": 6550,
+      "user_revision_ms": 6000,
+      "seed_read_actually_arrived": false,
+      "arrivals": [],
+      "actual_cancellation_receipts": [
+        {
+          "call_id": "intent-role-000006-tool-0",
+          "name": "cancel_job",
+          "args": {
+            "job_id": "job-2"
+          },
+          "result": {
+            "status": "cancelled"
+          },
+          "at_ms": 6100,
+          "seq": 28
+        }
+      ],
+      "final_visible_cards": {
+        "agent-card-1": {
+          "source_ids": [],
+          "text": "For Archivum Mobile, you can edit an already downloaded notebook offline. The PDF export page limit is five pages per PDF.",
+          "updated_ms": 12900
+        }
+      }
+    },
+    {
+      "run_id": "irs-late-obsolete-evidence--split--r2",
+      "condition": "split",
+      "repeat": 2,
+      "seed_read_requested_ms": 50,
+      "seed_read_due_ms": 6550,
+      "user_revision_ms": 6000,
+      "seed_read_actually_arrived": false,
+      "arrivals": [],
+      "actual_cancellation_receipts": [
+        {
+          "call_id": "intent-role-000006-tool-0",
+          "name": "cancel_job",
+          "args": {
+            "job_id": "job-2"
+          },
+          "result": {
+            "status": "cancelled"
+          },
+          "at_ms": 6100,
+          "seq": 26
+        }
+      ],
+      "final_visible_cards": {
+        "agent-card-1": {
+          "source_ids": [
+            "irs-archivum-mobile"
+          ],
+          "text": "For Archivum Mobile, you can edit a downloaded notebook offline. The PDF export limit is five pages per PDF.",
+          "updated_ms": 13100
+        }
+      }
+    },
+    {
+      "run_id": "irs-late-obsolete-evidence--unified--r2",
+      "condition": "unified",
+      "repeat": 2,
+      "seed_read_requested_ms": 50,
+      "seed_read_due_ms": 6550,
+      "user_revision_ms": 6000,
+      "seed_read_actually_arrived": false,
+      "arrivals": [],
+      "actual_cancellation_receipts": [
+        {
+          "call_id": "intent-role-000006-tool-0",
+          "name": "cancel_job",
+          "args": {
+            "job_id": "job-2"
+          },
+          "result": {
+            "status": "cancelled"
+          },
+          "at_ms": 6100,
+          "seq": 29
+        }
+      ],
+      "final_visible_cards": {
+        "agent-card-1": {
+          "source_ids": [
+            "irs-archivum-mobile"
+          ],
+          "text": "For Archivum Mobile, you can edit an already downloaded notebook offline. The PDF export limit is five pages per PDF.",
+          "updated_ms": 12900
+        }
+      }
+    },
+    {
+      "run_id": "irs-late-obsolete-evidence--tracked--r2",
+      "condition": "tracked",
+      "repeat": 2,
+      "seed_read_requested_ms": 50,
+      "seed_read_due_ms": 6550,
+      "user_revision_ms": 6000,
+      "seed_read_actually_arrived": false,
+      "arrivals": [],
+      "actual_cancellation_receipts": [
+        {
+          "call_id": "intent-role-000008-tool-1",
+          "name": "cancel_job",
+          "args": {
+            "job_id": "job-2"
+          },
+          "result": {
+            "status": "cancelled"
+          },
+          "at_ms": 6300,
+          "seq": 38
+        }
+      ],
+      "final_visible_cards": {
+        "agent-card-1": {
+          "source_ids": [
+            "irs-archivum-mobile"
+          ],
+          "text": "For Archivum Mobile, you can edit an already downloaded notebook offline. The PDF export page limit is five pages per PDF.",
+          "updated_ms": 13100
+        }
+      }
+    }
+  ],
+  "semantic_observations_not_blind_scores": [
+    "Both combined-workshop tracked repeats have no work/chat opportunity in stage 3. The final card is unchanged from stage 2 and states the budget ceiling but omits the actual $23 price explicitly requested in stage 3.",
+    "Both multiple-owner tracked repeats have no work/chat opportunity in stage 2. A valid patch is accepted after new stage-3 input, and the final visible cards include signup deadline, wheelchair access and arrival window. This valid patch still leaves the refund intent status active with text beginning Drop my refund question; schema recovery is not proof of correct intent-state semantics.",
+    "The unaccepted-assistant-proposal tracked r2 rejection cites seq17, an already arrived full-document job_result, as intent evidence. It is a source-type error, not a future-arrival error. The next tracker call commits within stage 2 and leaves four actor calls in that stage.",
+    "No failed-call classification is repeated withdrawal of an already withdrawn intention. Three workshop proposals contain later duplicate-add attempts, but the first operation rejects an invalid proposed status before those are reached."
+  ],
+  "late_result_limit": "All six actors cancelled the common inherited desktop read before its 6550ms due time. Zero old full results actually arrived. The formal matrix therefore observes handling/cancellation of inherited pending obsolete work, not resistance to already-arrived stale results.",
+  "interpretation": "The frozen tracker is atomic but lacks failure feedback and a local retry cap/fallback. Rejected patches retain an unprocessed cursor, selecting the tracker again. The repeated attempts consume shared actor opportunities; this is a concrete execution mechanism, not proof of a remedy.",
+  "independence_limits": "25 calls are clustered within five stages, five trajectories and three authored families; repeated calls and repeats are not independent cases. Semantic delivery and tracker accuracy scores are separate.",
+  "proposed_followup_status": "Structured validation feedback, bounded corrective retries and raw-conversation actor fallback remain unimplemented and untested; do not claim a repaired benefit.",
+  "evidence_hashes": {
+    "irs-combined-workshop-change--tracked--r2": {
+      "result.json": "0abb60ecd42ad6473efc538a51bf4a7cc14c3190564fda65f840084762fc9ebb",
+      "execution.json": "0c3546641266ceca5fbb432e7491dbd9323b6f492d175f4712749c30b8b72406",
+      "steps.jsonl": "0f906df18d1d1ca2376fcce5f218f3d20e92583f34d04bd2973c3bbfc51f9703",
+      "model_capture.jsonl": "d1bc099918bd81abd1bd0582d8beaeab5cd96b423bf0c62c27e9c8f16b365c8c"
+    },
+    "irs-room-withdrawal--tracked--r1": {
+      "result.json": "f5650c6a22f1bc9cb34956a81c49cec8d359f283a1adce5a03e33c5c50c27c9d",
+      "execution.json": "dc710e0b7f512ac29114fe8d454f9aaab5a45f18d735a7078b9372ac5f3c193f",
+      "steps.jsonl": "2a44fb7f17788a6bccde65f925f02507a44a8b4ba761c470f69128d8f8b1eae6",
+      "model_capture.jsonl": "96ccab78626d335092422b3a9b6fb563f71f13c984f4c99afa13f66c1973382c"
+    },
+    "irs-late-obsolete-evidence--tracked--r1": {
+      "result.json": "0224b2a09c208d42d148aa7c793364425df346df645c3fbf7a0fa99f983d7d30",
+      "execution.json": "7e393b892e87e20e6b1762e7ed669dae58e35c7a79d51b8c434d28d93bcc034e",
+      "steps.jsonl": "f70ad06a63dc12f6f54208e832d9d9c2f57cf88eb7dd7333db3b42fec9a03213",
+      "model_capture.jsonl": "ab7307ce6916d11373d5581a0292b959c96994c30d91e4048c202356fd14f08e"
+    },
+    "irs-shuttle-replacement--tracked--r2": {
+      "result.json": "fadd891de75fb519782fb2537866b058054fa187a86679a1dc029d5c066d45c6",
+      "execution.json": "556c7582dc3402ca12472f16e615ee5aefe2758479c81032e6f3195f419605d7",
+      "steps.jsonl": "4ebef4d2265451c63e1ef4fc13796f1fe68f001bb2090184454b5c2400906621",
+      "model_capture.jsonl": "b6ce5830bb2049c3f4e66fa832aef21b1020487226e9de40c608af439ee6a808"
+    },
+    "irs-practice-no-change--tracked--r1": {
+      "result.json": "e59246a036520b9a2e6de6c35be83524f4976c2d28c07c0b134f9b66fda80d8f",
+      "execution.json": "3e944346e63d7dce207e4e414c6b8e8338bb14582bd448eb226e7b3c31fce845",
+      "steps.jsonl": "3475c82289574d209dd2de9e05dd9a6714bd85cf1c6d04745e3762b84cdc4d84",
+      "model_capture.jsonl": "0bf324288c82ec840a39084c1e7ea7326e670c5654023bc91e282d92aff57d9b"
+    },
+    "irs-practice-no-change--tracked--r2": {
+      "result.json": "e99a8932231fb13e9f0dc8b6d04c8cb68f913a87f8acec4c082434c17c1c30cb",
+      "execution.json": "a63b1bc751c1334615834ba1ea9d1ab142d296964b9f2548562026e6e557f15d",
+      "steps.jsonl": "abb55c95e91b7dceaad36d80a84f10f84932374f4ceae7afb5cf87ca4855a9b1",
+      "model_capture.jsonl": "a96e67ff6675c98c3bc887eb78fbb406c054a1a38a1b972601116f1231b6d9f2"
+    },
+    "irs-unaccepted-assistant-proposal--tracked--r2": {
+      "result.json": "f8ffb6a23b9394b094cf120adc6250bc482e91395d2d0cb609916bc111197eca",
+      "execution.json": "7283e6806553ebab9bc2fa358676f86ca649e99cb3e78134af580852dd186e26",
+      "steps.jsonl": "25cc8b6b03807324293ff4e403b2929b1f6d2b49402fc6de8aec5d72c7cb67dd",
+      "model_capture.jsonl": "5ff9290e378c8939c126d4b524c136b3007b84e05d0d7f65e90aece44c023548"
+    },
+    "irs-shuttle-replacement--tracked--r1": {
+      "result.json": "c8925d2f761a017890643e8e84e0047ceaf256a97b4e36b4cc298e146f2462b1",
+      "execution.json": "ed9a2157c89b3f36207c6ed81b426f05935b4399e89ffc492d001d647836bbd3",
+      "steps.jsonl": "c43857294066e2cc96513128028a825c22d65f6ab2db7033162bb574cc2bc7de",
+      "model_capture.jsonl": "ff6d6ace92a94e2863b46e38c4f2622bdb0b426560c0d107982d677d00b13fcd"
+    },
+    "irs-combined-workshop-change--tracked--r1": {
+      "result.json": "10d629ea1a650ffe3d96165cea2549e472a3d59ab7274f4db204e7a8386a25e7",
+      "execution.json": "ba11cfb8400fc41865c6d2835ec6506f80d323c5c2781f04422c28af409e5d2d",
+      "steps.jsonl": "5c2470d386fa1567f0eb9c599990fddf9792e1ce1d32ee1f40de61b67df33e47",
+      "model_capture.jsonl": "a35762d7cdc8980693336909dbdc2fccdaa0c6bd55b5d164d35027b97aa5ee8e"
+    },
+    "irs-multiple-request-owners--tracked--r2": {
+      "result.json": "13c03e6a396db5ebc65b55bec23dc4afc55b4b478515c9fea3aebc12ec4d322f",
+      "execution.json": "e8aa162934691e85962e89480aa977a01e05660956dc997c899392f811d795af",
+      "steps.jsonl": "eac6d6b085dcb248c89230d252b36936517744892a12d7331dce958572bbb117",
+      "model_capture.jsonl": "ca0c74c125505593a6d9cb0c49950ad4ce5d6c9a8a33c179c83e9a085148fea4"
+    },
+    "irs-key-restoration--tracked--r2": {
+      "result.json": "0032dce1d37b9624eab8b54e9e2f1ff682b98efba537ce27a15c98be1c35c256",
+      "execution.json": "6bedffeabe1b14e9e21c9a0cddbe81112f1cb01efbc0e7e5ae64c6b7b44baff6",
+      "steps.jsonl": "b49f451d4ff3a0f8b243148bba8fe087986aa8810c1858dfa0a194acb341d75d",
+      "model_capture.jsonl": "746b383509c4a40b47e85db566f52fe2d581f7e53a2ab05be6f45c334622dfc4"
+    },
+    "irs-late-obsolete-evidence--tracked--r2": {
+      "result.json": "07f19c19c34026e43e1d94089ae13f044b7d38783749358b4a2b2137c6d44305",
+      "execution.json": "694011a2a2fad91138bb68747696b82bdbd9d8acd74251ed8c983aee529e133b",
+      "steps.jsonl": "80f5e19bade0db898a7230c3ab60c2013aa59d762f02fb3ff4c0c8cebb195fb7",
+      "model_capture.jsonl": "7aa6144b3c98733dd9638172a59d91aedd64be5c8089b5b774fb4952b58a859b"
+    },
+    "irs-room-withdrawal--tracked--r2": {
+      "result.json": "f9d6e6ada164a6e46594e1fd9b999073f7fc8a14dc9ec72ba8d2f22c84227ed4",
+      "execution.json": "3a1a22e70f6b1765a45ea9a129c3ca654fb5513d66de32ceafc528ec132819e2",
+      "steps.jsonl": "c9d5fb61067958923b7adcbc3ea3636ffe808e632dc0a46500ed134b42d90bce",
+      "model_capture.jsonl": "dc928a0127db43500b90bf3f44f7fce1d03d7e122a7ec5d5daba0fb8b205ce12"
+    },
+    "irs-multiple-request-owners--tracked--r1": {
+      "result.json": "7a6e1d2fb489d43aa3ddd248efc7f23c641a12c362218efb298cff5714a0b70a",
+      "execution.json": "20b67016bbf3744a88f0da0ca726844342fb159d2cfd9a14c7cfc4e857248cb6",
+      "steps.jsonl": "5f6c52a8b2ad58c6bd1823101642241efe2a660990b2867699e5dd0a2664cc50",
+      "model_capture.jsonl": "79411667b74ee95de5ce3eb7d78960658952de926f3168d263f21b18e1cf3295"
+    },
+    "irs-key-restoration--tracked--r1": {
+      "result.json": "1653277c4daf232ed6b8f94757a3f999a44e4f9106427b55740df647c613c194",
+      "execution.json": "8f8d60bbca7b90dfc835ab22f7c1f704f2f1dfc6a362a4932e1dea81d6903d48",
+      "steps.jsonl": "c11891047421f1d82214ba7e69b2819175a87aa9c723055b2d1b657c08b52307",
+      "model_capture.jsonl": "b7833f86ecf7782d68a57460e0ad9bf3c3be902d07bf0f7d121dded6c513afb6"
+    },
+    "irs-unaccepted-assistant-proposal--tracked--r1": {
+      "result.json": "bdff01a70050ee17928aee27cc74f26ae634e3949622b131048e4a1300e91065",
+      "execution.json": "d281e7a35463e3355dfcf5ef4ef5a1b1a1a4a6ae8092506d02d1ae94784cee26",
+      "steps.jsonl": "acf5defdcaf92ecdd01821ff20e0fb96598d9bc6ef11417c501b23c6fab7f989",
+      "model_capture.jsonl": "b958dbab22376ed58ee0a48289e02495d7e1de12cfde4a2873a0957abf4d3212"
+    }
+  },
+  "execution_audit_sha256": "2d8809c8cd83ce53314e93d1fcf42927625da18c020ca8da5b8b268d3f060e6f",
+  "diagnosis_sha256": "8008d5e32dc798850b20c8425a13a7b3fde4a1ab79e7e8d3c03dc3d2b576fc68"
+}

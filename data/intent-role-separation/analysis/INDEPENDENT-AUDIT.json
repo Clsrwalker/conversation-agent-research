@@ -1,0 +1,228 @@
+{
+  "schema_version": 1,
+  "kind": "separate_agent_report_and_trace_consistency_review",
+  "status": "reviewed",
+  "date": "2026-10-23",
+  "timezone": "America/Halifax",
+  "reviewed_at_utc": "2026-10-23T20:13:42.721266+00:00",
+  "independence": "This separate agent implemented the intention-state layer and some runner checks. This is trace/report consistency review, not external reproduction or a fresh blinded semantic re-score.",
+  "issues": [],
+  "checks": [
+    "48 unique packet/run IDs with actual boolean primary fields and per-intent coverage keys matching final gold; no unresolved primary labels. Final scores, mapping, results rows and CSV agree.",
+    "Independently recomputed 47 complete agreements across all five labels and intent coverage, with packet-047 resolved by the retained fresh blind adjudication. Both initial batch-1 reviews changed only packet-001 omission true to false. All declared review-source hashes match.",
+    "All 48 final packet cards equal execution-audited actual active cards; result/execution/audit metrics agree. Condition sums, intent coverage, family outcomes, repeat disagreement and paired counts independently reproduce.",
+    "All 144 unique secondary stage snapshots reproduce nine condition-stage aggregates. Final-stage completion agrees with primary labels. Ten earlier snapshots retain uncertainty; this remains nonblind single-session diagnostic review.",
+    "All 40 current frozen files and their archived copies match the manifest. Offline evidence records 40 unique tests passed (19 + 12 + 9), zero errors/failures/skips; the integrated rerun is not an additional 40 tests. Execution audit passed 48 runs, 864 calls and 2712832 tokens with zero issues.",
+    "Tracker failure aggregate hashes match all 16 tracked raw runs. 69 tracker calls, 44 commits and 25 rejections cluster in five trajectories/five stages/three families; four stages had no actor call. Failed-call tokens 122358, longest rejection streak six; 21 retry pairs retained the same packet except at_ms without validation feedback. Seq17 rejection concerns already-arrived document evidence, not future data.",
+    "Room tracked r2 step 8 privately selects Shaft at $12/sixteen seats without tool calls or receipts. Step 9 notes are empty and do not carry that work prose; chat republishes Gauge. Final state retains cheapest/current constraints. This is a trace observation, not isolated causal proof.",
+    "All six inherited desktop reads were cancelled before 6550ms: unified/split at 6100ms and tracked at 6300ms. Zero obsolete full results arrived. Early workshop gold over-specifies actual price; stage 3 explicitly requests it. Key-deposit gold adds refund timing beyond the amount request; primary review prioritizes raw requests.",
+    "Read-only website builder review confirms reviewed-status gates, results-derived tables and explicit pending-read cancellation limit. No build, visual QA, deployment or publication is certified here."
+  ],
+  "verified_numbers": {
+    "runs": 48,
+    "families": 8,
+    "repeats": 2,
+    "stages": 144,
+    "model_calls": 864,
+    "total_tokens": 2712832,
+    "condition_order": [
+      "unified",
+      "split",
+      "tracked"
+    ],
+    "complete_and_correct": [
+      12,
+      14,
+      12
+    ],
+    "omission": [
+      3,
+      2,
+      2
+    ],
+    "scope_error": [
+      2,
+      0,
+      2
+    ],
+    "factual_error": [
+      0,
+      0,
+      1
+    ],
+    "tokens": [
+      832988,
+      816689,
+      1063155
+    ],
+    "correct_intent_coverage": [
+      [
+        25,
+        28
+      ],
+      [
+        26,
+        28
+      ],
+      [
+        24,
+        28
+      ]
+    ],
+    "families_complete_both_repeats": [
+      5,
+      7,
+      6
+    ],
+    "families_with_repeat_disagreement": [
+      3,
+      0,
+      1
+    ],
+    "tracked_token_increase_over_split_percent": 30.178684909433095,
+    "primary_complete_agreements": 47,
+    "adjudicated_packets": 1,
+    "tracker_failure_summary": {
+      "tracked_trajectories": 16,
+      "tracked_stages": 48,
+      "tracker_calls": 69,
+      "valid_commits": 44,
+      "rejected_tracker_calls": 25,
+      "affected_trajectories": 5,
+      "affected_families": 3,
+      "affected_stages": 5,
+      "no_actor_stages": 4,
+      "recovered_commit_within_same_stage": 1,
+      "unrecovered_within_same_stage": 4,
+      "subsequently_committed_after_failed_stage": 2,
+      "longest_consecutive_rejection_streak": 6,
+      "all_tracker_usage": {
+        "input_tokens": 241396,
+        "output_tokens": 5788,
+        "total_tokens": 247184,
+        "wall_ms": 172407.01369999442
+      },
+      "failed_tracker_usage": {
+        "input_tokens": 120066,
+        "output_tokens": 2292,
+        "total_tokens": 122358,
+        "wall_ms": 76125.38489999133
+      },
+      "retries_after_failure_with_identical_packet_except_at_ms": 21,
+      "retry_pairs_inspected": 21,
+      "retries_with_validation_error_text_in_input": 0,
+      "late_seeded_trajectories": 6,
+      "late_seed_actually_arrived": 0,
+      "late_seed_cancelled_before_due": 6
+    },
+    "max_reported_prompt_tokens": 8279,
+    "no_observed_truncation_signal": true
+  },
+  "conclusion": "No tracker benefit is established by this pilot. Tracked complete/correct delivery equals unified and falls below split, while using 30.2 percent more tokens than split. Atomic state validity, semantic tracking and final delivery remain separate. Bounded recovery and persisted work-to-chat handoff are proposed, untested repairs.",
+  "limitations": [
+    "Reviewer participation in implementation limits independence; no external reproduction or new semantic labels were produced.",
+    "Primary labels are model judgments; separate blinded sessions and high agreement do not remove shared bias or possible inference of roles from style. Initial omission clarification is retained.",
+    "Secondary stage/state labels are condition-aware and weaker evidence. Early gold ambiguities are preserved, not retrospectively repaired.",
+    "Eight authored/exposed families with two correlated repeats and one local model support descriptive conclusions only.",
+    "All arms use the new stepping session. Prompts, role tool restrictions, scheduling and added context are bundled; equal call limits do not equalize tokens or actor opportunities.",
+    "Final cards do not summarize all intermediate user exposure. Six cancelled old reads do not test consumption of actually arrived obsolete evidence.",
+    "Captures are client LangChain messages and provider metadata, not raw HTTP or independent server-internals inspection; no observed truncation signal is not proof of server behavior.",
+    "No LoRA, training, native DeepAgents baseline, live Lab integration, ASR/audio, user study, long-history compaction, cross-model transfer or repaired benefit was tested.",
+    "Website build/export checks, visual QA and publication remain separate subsequent work."
+  ],
+  "requested_wording_corrections_verified": [
+    "Lead distinguishes complete/correct answers from all 48 finished runs.",
+    "Website comparison describes inherited pending obsolete read and cancellation before arrival."
+  ],
+  "changes_by_reviewer": [
+    "Set interpretation.status to reviewed.",
+    "Create this audit; no scores, frozen source, runtime artifacts or fixtures changed; no model calls made."
+  ],
+  "checked_artifact_sha256": {
+    "RESULTS.md": "95adb717e8b7ef1e1efce0aba1f15898f12376bf7ffc4d860b406ab7aa1fedfd",
+    "PROTOCOL.md": "06597ac3505bc89881a4b8fdc0c47adb103efdc6d9f5e857e8882d373d52b345",
+    "fixtures/cases.json": "61d9f5fa3d94937b181c45d065f0d012d240df30fb4211bf57f415a53560ba7a",
+    "evaluation/manifest.json": "e3ba2b0bfb41851b1a54fe43fffe994b84da3386268482b2dc14571c035aff4a",
+    "analysis/results.json": "e162bb6c10cb3bc328a9ce5ae9d7f058f5a825f7b6920b0610c22d3e619f3990",
+    "analysis/rows.csv": "25300599e139c6696685d237c2f812343f3f08c839f48c3817f46ae6a7013931",
+    "analysis/interpretation.json": "f8c2c270d01bcf54c6feab0f93f3de8db802effe35a51430d793a2721bbe75d0",
+    "analysis/additional-metrics.json": "17c01107a6e4ec3ad5ea20ac30ee10b12f08aa5793744d9e9fb79c826336969b",
+    "analysis/EXECUTION-AUDIT.json": "2d8809c8cd83ce53314e93d1fcf42927625da18c020ca8da5b8b268d3f060e6f",
+    "analysis/audit_execution.py": "1e34701887fc0b98e5239c2fc78dd044e0b4f38a016bbd716f43905dd1715a3c",
+    "analysis/TRACKER-FAILURE-AGGREGATE.json": "4c42b2bbb55a003c4afa2aa32be0887a90e6f15b181139c7c05c34d13bfe0571",
+    "analysis/TRACKER-FAILURE-AGGREGATE.md": "c660aafeb080a183aa4e31f7d945a7113d199edf9b5a06a71ab6e6285efe45f9",
+    "analysis/TRACKER-FAILURE-DIAGNOSIS.md": "8008d5e32dc798850b20c8425a13a7b3fde4a1ab79e7e8d3c03dc3d2b576fc68",
+    "engineering/validation.json": "6e99236b39b75944484e5bd219fcfd140bb24d220305756bca95fe0446557993",
+    "engineering/offline-tests.json": "76e494b3e861ea8d540cddd3fdd85fdfb3bbe17160cb5b4191cbb512fd34c9e4",
+    "engineering/offline-tests.txt": "1557acadd1e09036167505a385aa9e85da486acad4b91c6a1d0de8e07d8ca2f8",
+    "engineering/DEVELOPMENT-AUDIT.json": "090491dae31e516f0acec43012ed1bf70e6f46dda5d8f40a6a16afab5e51c9cb",
+    "scoring/REVIEW-PROCESS-AUDIT.json": "5d59d9d390c959f18de9b774993949eb2d087ab23077ebc206882be75679eee2",
+    "scoring/private-mapping.json": "d222fb59b6dc1823361142303bb8d418d3050fdaec8866b3204f3423fca75a10",
+    "scoring/blind-packets.json": "33b6a208ae164c3ea8031cb2f2cf816120b73428498466caed0e28c3e281174f",
+    "scoring/final-scores.json": "b06232d3971a7e1c2c6f8652da3c18f67155fd832a56ef46e51cc8af82ac737d",
+    "scoring/adjudication.json": "3c3a68fdad739eb16bba41a7037b39d72ecc461b387834b862c7fb8894e8eb90",
+    "analysis/secondary-batch-01.json": "810de080d293fbf79c0651a0eefc426b1326f533517aaa90abd5c738cc0c9ea6",
+    "analysis/secondary-batch-02.json": "58ce4258f86ca9069b32ea78173824a30aa8d8f6edbdb5540793e35d32adaf39",
+    "analysis/secondary-batch-03.json": "8e0e77785f58642abd38cb045f02d2fef89892cc8e70e2e9f610f14aa2948c11",
+    "analysis/secondary-batch-04.json": "f3637e8167973ed59dbbec32fdb3962516f62028e50323b8d7d6d6b97d4675a0",
+    "scoring/reviewer-a/batch-01.json": "e631787daa10bcc1a1d7da1751b95158e69f8273d5e4879bd066a1d99aeaf8d5",
+    "scoring/reviewer-a/batch-02.json": "26981564ba8a6afb0a167bcd37f81ffaba7dd5fdd705a404e50fa767528daac0",
+    "scoring/reviewer-a/batch-03.json": "76933bd42ff47e69af25b1a225b5828dd1fc80ce9df75a1d4a6bfb20e1f6a1fc",
+    "scoring/reviewer-a/batch-04.json": "f42c776d8227e33f515cd3aea9ba8688a6f2bf407378c490e5fd4a87649e67c9",
+    "scoring/reviewer-b/batch-01.json": "b5ac5879cc2fb3d406c34d7839387499fa37084e2fb82c8815afb9d71348ad55",
+    "scoring/reviewer-b/batch-02.json": "2d1dca3b127da72a11a4adb61c9d7b4dfd0b3d65422b063f529736ed487a05d6",
+    "scoring/reviewer-b/batch-03.json": "61e81570ba362421300e5df77e34b6f1ab9d687a74bc32f9a666ab7cc26e1c04",
+    "scoring/reviewer-b/batch-04.json": "9130dba25dfcdb2496a9aecb10a4c09e53ba9c64fdb2579a63c025b9ed672e9c",
+    "scoring/reviewer-a/batch-01.initial.json": "a8356dede840a7a07074146d16fa8f0b0235bb40431f25de4a6c872d0344c57b",
+    "scoring/reviewer-a/batch-01-clarification.json": "dda62ec4fa1dcdc24f3f9fd99a3e483b5c2964435002764b3674f32118bff819",
+    "scoring/reviewer-b/batch-01.initial.json": "eddd8c4e7fba9208aedb24e752951c74d96caf467efd0ff8e483ea9bfef3268e",
+    "scoring/reviewer-b/batch-01-clarification.json": "6b62b2b665f768a21849092439ecaa8ed1729a122faed40c90fd7dc9d4b0ea64"
+  },
+  "checked_website_builder": {
+    "path": "sites/conversation-agent-research/build_intent_roles.py",
+    "sha256": "20798452584f9ff733ed32a438f6cbad4a674e6773d898109206a580c224f9c3",
+    "mode": "read_only"
+  },
+  "frozen_source_hashes_rechecked": {
+    "experiments/deep_conversation/agent.py": "4f3a83c53bce2748df44b73fd70d291ee79b0a92aa940fd164daed51b0c71409",
+    "experiments/deep_conversation/config.py": "7bbe081c57042975a5af79a04cdad8d73de7f77f0910fe8c48b742c284410ec3",
+    "experiments/deep_conversation/world.py": "ed82e7100133f157ad0bf0139c5fbf0c6362812e8418901d09c78a1b6da9117e",
+    "experiments/deep_conversation/run.py": "2edb03e94e83f02f90b6033b1b2d5df1481c4cbfb1bc225662c44e1fee65d5f7",
+    "experiments/deep_conversation/orchestration.py": "ddeef0c1e42bf335aa3c9b5e71408b39b99bd3806f0719451a3da8c338ea5ef5",
+    "experiments/deep_conversation/stage_acceptance.py": "0c0b3e24150d677ee9347cc9cd80a803e5f88c6dcfe2d11779cab0b49f97e864",
+    "experiments/deep_conversation/conclusion_review.py": "e694b5587305abec146b63f435d0089dd627f035a90de6b987f713cdef48db07",
+    "experiments/deep_conversation/answer_contract.py": "19afe190587e7e53e48afbff6ae097b57cc3e41a8b2df772006b5a520646ab70",
+    "experiments/deep_conversation/calculation_checks.py": "383016328ccf265604e1fb53a397baedc8263da9cab7140b592f1f5c6d5744ef",
+    "experiments/deep_conversation/numeric_provenance.py": "fcf2bce3aa6b5afeb297118a59bde41f22933767753cbf761c5dd9c98fd868cd",
+    "experiments/deep_conversation/evidence_handles.py": "e0c7e3602ecd6ced007c418b1e78e6bb66e6c63cae5cdc72d7590984e148c28f",
+    "experiments/deep_conversation/calculation_plan.py": "f2367241cb66635f42238ccd3a94e0672e44a4a5480c057bcc50fb9fc1fbce66",
+    "experiments/deep_conversation/selected_answer.py": "525c1427d1cb93489a409a970866bc6dd9e1cf4a1f23ad8837ec4f1401111c72",
+    "experiments/deep_conversation/agent_led.py": "a6ba6031473ad9347c09d781f9c699d091b3f3e0bc079d8205afc67d586cd7f5",
+    "experiments/deep_conversation/agent_led_tools.py": "b1aa54cdecce53f88deb69f53cbb0aff2c97f021fd2f52a0d5a0f97ba9e97dfd",
+    "experiments/deep_conversation/providers.py": "5506b24015c9c7ff3846ac83bdec5294a3dee716485b696911b848b07a0857ca",
+    "experiments/deep_conversation/local_runtime.py": "f5e8dfb1a128900dfcbdfeaec6add889760849e34e41d361b1f9f77beb2de7ea",
+    "experiments/deep_conversation/monitor_runtime.py": "7088b0606fe98f67cd399fa07d20b3ed8fd8cd196ae6dcd07469340a944e2560",
+    "experiments/deep_conversation/investigation_progress.py": "0798c2ff2a3c1e2ef9e630a1bca7f1ec1fcfcb44f5d7815c39717708d1ff1d84",
+    "experiments/deep_conversation/answer_delivery.py": "2626b37d4ec93d3dbe11497d4419de43c0de13e657f83c018abafecd4e4af8b9",
+    "experiments/deep_conversation/model_capture.py": "5f28201df25034f8b87238e41be2d7614ee82ec7e32f11464da842965545072d",
+    "experiments/deep_conversation/summary_attribution.py": "8a87b69fd1f2663b70b4ab1c3e9ef19015d5c885107a4ba655e4afb2d4a1fa8d",
+    "experiments/deep_conversation/source_authority.py": "2bf061a12143a50a1267baf40d570078deab8b2188b51c6e9fcb1fffc2347df4",
+    "experiments/deep_conversation/budget_policy.py": "f9f1e48e7b383c68304c8ec6d4f732d95c0c64c89b7acba1cf56078f89ff50bd",
+    "experiments/deep_conversation/card_updates.py": "41e5291038b8842a76476ac6983d071c61711f4a7f75df11cd032c624a204817",
+    "experiments/deep_conversation/budget_state_delivery.py": "a7852cf96ecd1d883653b90119b722f20e0068faa815aa22a8e3115e5e89f95d",
+    "experiments/deep_conversation/smoke_model.py": "f9b77ab30f903a0cb0b3726e81ba1c83fa1f300eb7a276b14c74291d61df41da",
+    "experiments/deep_conversation/requirements.lock.txt": "e92e2a948a0a3d411d6cb70a3915d2868ee7dc71b159e05b6366581640caef42",
+    "experiments/conversation_harness/runner.py": "fd451f5d50792212a28d8ac81d81d428cde789d1ba31222abc22b13d8ac3ee30",
+    "experiments/conversation_harness/state_baseline.py": "1a3b0310f596def92e1a4a6de008f4b1a288b05c3d4e6a50522929eb828cf4b7",
+    "experiments/deep_conversation/intention_state.py": "e028a604a93520801a0f752755d80b305afb1eebd8792ea0aeaaa3cd5c722f73",
+    "experiments/deep_conversation/intent_roles.py": "befc382472aabc55efbda043aae5d377e12cce92a56804c73e25994305674d68",
+    "experiments/deep_conversation/run_intent_roles.py": "ff24075d929f49d1ff96e381d6f7de177f7b8c9d9d8bc32b9b5a13389b5a5d8d",
+    "experiments/deep_conversation/test_intention_state.py": "b0bfa4b407ee899103991645f1eb3ed593f12d7394ffd111d4bc810ac873112c",
+    "experiments/deep_conversation/test_intent_roles.py": "f0c3329b0622d053e38e2575c9dbe61ba18abfa759e623c81c073a147315d18c",
+    "experiments/deep_conversation/test_run_intent_roles.py": "2a1439a46b6ad32909542fb56ce1c9a5a0dff5eb109fe6f9fc4bb96279ab041c",
+    "experiments/deep_conversation/INTENTION_ROLES.md": "fd525fce696a3d83bf56e5ae49a21223544980b0d66463cfb02c5371b486c23b",
+    "experiments/deep_conversation/score_intent_roles.py": "1d595a058c0bb81adb0365f22f89be28307fefc739b2f1b5976435f029f7ccb4",
+    "output/research/2026-10-23/intent-role-separation/PROTOCOL.md": "06597ac3505bc89881a4b8fdc0c47adb103efdc6d9f5e857e8882d373d52b345",
+    "output/research/2026-10-23/intent-role-separation/fixtures/cases.json": "61d9f5fa3d94937b181c45d065f0d012d240df30fb4211bf57f415a53560ba7a"
+  }
+}

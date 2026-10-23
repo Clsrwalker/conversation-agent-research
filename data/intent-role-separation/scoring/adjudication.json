@@ -1,0 +1,15 @@
+[
+  {
+    "packet_id": "packet-047",
+    "complete_and_correct": false,
+    "omission": false,
+    "scope_error": true,
+    "unnecessary_clarification": false,
+    "factual_error": false,
+    "per_intent_coverage": {
+      "eligible-room": false
+    },
+    "reason": "After Nadia withdraws Wi-Fi, the still-effective request is to choose the cheapest room with at least twelve seats costing no more than $20. Shaft at $12 with sixteen seats satisfies those conditions and is cheaper than Gauge. The final card instead retains Gauge, making the selection incorrect under the updated scope. It directly provides a room name, price and capacity, so the failure is not an omission. The stated Gauge price of $18 and capacity of twelve seats both match the guide; the card neither explicitly claims Gauge is cheapest nor invents or contradicts a source fact. Thus the selection failure is a scope error without a separate factual error. No clarification is requested.",
+    "decision_source": "independent_blind_adjudication"
+  }
+]

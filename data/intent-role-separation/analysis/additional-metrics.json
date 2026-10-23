@@ -1,0 +1,2759 @@
+{
+  "kind": "secondary_descriptive_accounting",
+  "groups": [
+    {
+      "condition": "unified",
+      "per_intent_coverage": {
+        "total": 28,
+        "correct": 25,
+        "missing_or_incorrect": 3,
+        "uncertain": 0
+      },
+      "families_with_semantic_repeat_disagreement": 3,
+      "repeats": [
+        {
+          "case_id": "irs-combined-workshop-change",
+          "different_semantic_fields": [
+            "scope_error"
+          ],
+          "complete_in_both": false,
+          "run_ids": [
+            "irs-combined-workshop-change--unified--r1",
+            "irs-combined-workshop-change--unified--r2"
+          ]
+        },
+        {
+          "case_id": "irs-key-restoration",
+          "different_semantic_fields": [],
+          "complete_in_both": true,
+          "run_ids": [
+            "irs-key-restoration--unified--r1",
+            "irs-key-restoration--unified--r2"
+          ]
+        },
+        {
+          "case_id": "irs-late-obsolete-evidence",
+          "different_semantic_fields": [],
+          "complete_in_both": true,
+          "run_ids": [
+            "irs-late-obsolete-evidence--unified--r1",
+            "irs-late-obsolete-evidence--unified--r2"
+          ]
+        },
+        {
+          "case_id": "irs-multiple-request-owners",
+          "different_semantic_fields": [
+            "complete_and_correct",
+            "omission"
+          ],
+          "complete_in_both": false,
+          "run_ids": [
+            "irs-multiple-request-owners--unified--r1",
+            "irs-multiple-request-owners--unified--r2"
+          ]
+        },
+        {
+          "case_id": "irs-practice-no-change",
+          "different_semantic_fields": [],
+          "complete_in_both": true,
+          "run_ids": [
+            "irs-practice-no-change--unified--r1",
+            "irs-practice-no-change--unified--r2"
+          ]
+        },
+        {
+          "case_id": "irs-room-withdrawal",
+          "different_semantic_fields": [],
+          "complete_in_both": true,
+          "run_ids": [
+            "irs-room-withdrawal--unified--r1",
+            "irs-room-withdrawal--unified--r2"
+          ]
+        },
+        {
+          "case_id": "irs-shuttle-replacement",
+          "different_semantic_fields": [],
+          "complete_in_both": true,
+          "run_ids": [
+            "irs-shuttle-replacement--unified--r1",
+            "irs-shuttle-replacement--unified--r2"
+          ]
+        },
+        {
+          "case_id": "irs-unaccepted-assistant-proposal",
+          "different_semantic_fields": [
+            "complete_and_correct",
+            "scope_error"
+          ],
+          "complete_in_both": false,
+          "run_ids": [
+            "irs-unaccepted-assistant-proposal--unified--r1",
+            "irs-unaccepted-assistant-proposal--unified--r2"
+          ]
+        }
+      ]
+    },
+    {
+      "condition": "split",
+      "per_intent_coverage": {
+        "total": 28,
+        "correct": 26,
+        "missing_or_incorrect": 2,
+        "uncertain": 0
+      },
+      "families_with_semantic_repeat_disagreement": 0,
+      "repeats": [
+        {
+          "case_id": "irs-combined-workshop-change",
+          "different_semantic_fields": [],
+          "complete_in_both": false,
+          "run_ids": [
+            "irs-combined-workshop-change--split--r1",
+            "irs-combined-workshop-change--split--r2"
+          ]
+        },
+        {
+          "case_id": "irs-key-restoration",
+          "different_semantic_fields": [],
+          "complete_in_both": true,
+          "run_ids": [
+            "irs-key-restoration--split--r1",
+            "irs-key-restoration--split--r2"
+          ]
+        },
+        {
+          "case_id": "irs-late-obsolete-evidence",
+          "different_semantic_fields": [],
+          "complete_in_both": true,
+          "run_ids": [
+            "irs-late-obsolete-evidence--split--r1",
+            "irs-late-obsolete-evidence--split--r2"
+          ]
+        },
+        {
+          "case_id": "irs-multiple-request-owners",
+          "different_semantic_fields": [],
+          "complete_in_both": true,
+          "run_ids": [
+            "irs-multiple-request-owners--split--r1",
+            "irs-multiple-request-owners--split--r2"
+          ]
+        },
+        {
+          "case_id": "irs-practice-no-change",
+          "different_semantic_fields": [],
+          "complete_in_both": true,
+          "run_ids": [
+            "irs-practice-no-change--split--r1",
+            "irs-practice-no-change--split--r2"
+          ]
+        },
+        {
+          "case_id": "irs-room-withdrawal",
+          "different_semantic_fields": [],
+          "complete_in_both": true,
+          "run_ids": [
+            "irs-room-withdrawal--split--r1",
+            "irs-room-withdrawal--split--r2"
+          ]
+        },
+        {
+          "case_id": "irs-shuttle-replacement",
+          "different_semantic_fields": [],
+          "complete_in_both": true,
+          "run_ids": [
+            "irs-shuttle-replacement--split--r1",
+            "irs-shuttle-replacement--split--r2"
+          ]
+        },
+        {
+          "case_id": "irs-unaccepted-assistant-proposal",
+          "different_semantic_fields": [],
+          "complete_in_both": true,
+          "run_ids": [
+            "irs-unaccepted-assistant-proposal--split--r1",
+            "irs-unaccepted-assistant-proposal--split--r2"
+          ]
+        }
+      ]
+    },
+    {
+      "condition": "tracked",
+      "per_intent_coverage": {
+        "total": 28,
+        "correct": 24,
+        "missing_or_incorrect": 4,
+        "uncertain": 0
+      },
+      "families_with_semantic_repeat_disagreement": 1,
+      "repeats": [
+        {
+          "case_id": "irs-combined-workshop-change",
+          "different_semantic_fields": [],
+          "complete_in_both": false,
+          "run_ids": [
+            "irs-combined-workshop-change--tracked--r1",
+            "irs-combined-workshop-change--tracked--r2"
+          ]
+        },
+        {
+          "case_id": "irs-key-restoration",
+          "different_semantic_fields": [],
+          "complete_in_both": true,
+          "run_ids": [
+            "irs-key-restoration--tracked--r1",
+            "irs-key-restoration--tracked--r2"
+          ]
+        },
+        {
+          "case_id": "irs-late-obsolete-evidence",
+          "different_semantic_fields": [],
+          "complete_in_both": true,
+          "run_ids": [
+            "irs-late-obsolete-evidence--tracked--r1",
+            "irs-late-obsolete-evidence--tracked--r2"
+          ]
+        },
+        {
+          "case_id": "irs-multiple-request-owners",
+          "different_semantic_fields": [],
+          "complete_in_both": true,
+          "run_ids": [
+            "irs-multiple-request-owners--tracked--r1",
+            "irs-multiple-request-owners--tracked--r2"
+          ]
+        },
+        {
+          "case_id": "irs-practice-no-change",
+          "different_semantic_fields": [],
+          "complete_in_both": true,
+          "run_ids": [
+            "irs-practice-no-change--tracked--r1",
+            "irs-practice-no-change--tracked--r2"
+          ]
+        },
+        {
+          "case_id": "irs-room-withdrawal",
+          "different_semantic_fields": [
+            "factual_error"
+          ],
+          "complete_in_both": false,
+          "run_ids": [
+            "irs-room-withdrawal--tracked--r1",
+            "irs-room-withdrawal--tracked--r2"
+          ]
+        },
+        {
+          "case_id": "irs-shuttle-replacement",
+          "different_semantic_fields": [],
+          "complete_in_both": true,
+          "run_ids": [
+            "irs-shuttle-replacement--tracked--r1",
+            "irs-shuttle-replacement--tracked--r2"
+          ]
+        },
+        {
+          "case_id": "irs-unaccepted-assistant-proposal",
+          "different_semantic_fields": [],
+          "complete_in_both": true,
+          "run_ids": [
+            "irs-unaccepted-assistant-proposal--tracked--r1",
+            "irs-unaccepted-assistant-proposal--tracked--r2"
+          ]
+        }
+      ]
+    }
+  ],
+  "paired_completion": [
+    {
+      "left": "unified",
+      "right": "split",
+      "counts": {
+        "left_only": 0,
+        "right_only": 2,
+        "tie": 14,
+        "uncertain": 0
+      },
+      "pairs": [
+        {
+          "case_id": "irs-combined-workshop-change",
+          "repeat": 1,
+          "outcome": "tie",
+          "left_run": "irs-combined-workshop-change--unified--r1",
+          "right_run": "irs-combined-workshop-change--split--r1"
+        },
+        {
+          "case_id": "irs-combined-workshop-change",
+          "repeat": 2,
+          "outcome": "tie",
+          "left_run": "irs-combined-workshop-change--unified--r2",
+          "right_run": "irs-combined-workshop-change--split--r2"
+        },
+        {
+          "case_id": "irs-key-restoration",
+          "repeat": 1,
+          "outcome": "tie",
+          "left_run": "irs-key-restoration--unified--r1",
+          "right_run": "irs-key-restoration--split--r1"
+        },
+        {
+          "case_id": "irs-key-restoration",
+          "repeat": 2,
+          "outcome": "tie",
+          "left_run": "irs-key-restoration--unified--r2",
+          "right_run": "irs-key-restoration--split--r2"
+        },
+        {
+          "case_id": "irs-late-obsolete-evidence",
+          "repeat": 1,
+          "outcome": "tie",
+          "left_run": "irs-late-obsolete-evidence--unified--r1",
+          "right_run": "irs-late-obsolete-evidence--split--r1"
+        },
+        {
+          "case_id": "irs-late-obsolete-evidence",
+          "repeat": 2,
+          "outcome": "tie",
+          "left_run": "irs-late-obsolete-evidence--unified--r2",
+          "right_run": "irs-late-obsolete-evidence--split--r2"
+        },
+        {
+          "case_id": "irs-multiple-request-owners",
+          "repeat": 1,
+          "outcome": "tie",
+          "left_run": "irs-multiple-request-owners--unified--r1",
+          "right_run": "irs-multiple-request-owners--split--r1"
+        },
+        {
+          "case_id": "irs-multiple-request-owners",
+          "repeat": 2,
+          "outcome": "right_only",
+          "left_run": "irs-multiple-request-owners--unified--r2",
+          "right_run": "irs-multiple-request-owners--split--r2"
+        },
+        {
+          "case_id": "irs-practice-no-change",
+          "repeat": 1,
+          "outcome": "tie",
+          "left_run": "irs-practice-no-change--unified--r1",
+          "right_run": "irs-practice-no-change--split--r1"
+        },
+        {
+          "case_id": "irs-practice-no-change",
+          "repeat": 2,
+          "outcome": "tie",
+          "left_run": "irs-practice-no-change--unified--r2",
+          "right_run": "irs-practice-no-change--split--r2"
+        },
+        {
+          "case_id": "irs-room-withdrawal",
+          "repeat": 1,
+          "outcome": "tie",
+          "left_run": "irs-room-withdrawal--unified--r1",
+          "right_run": "irs-room-withdrawal--split--r1"
+        },
+        {
+          "case_id": "irs-room-withdrawal",
+          "repeat": 2,
+          "outcome": "tie",
+          "left_run": "irs-room-withdrawal--unified--r2",
+          "right_run": "irs-room-withdrawal--split--r2"
+        },
+        {
+          "case_id": "irs-shuttle-replacement",
+          "repeat": 1,
+          "outcome": "tie",
+          "left_run": "irs-shuttle-replacement--unified--r1",
+          "right_run": "irs-shuttle-replacement--split--r1"
+        },
+        {
+          "case_id": "irs-shuttle-replacement",
+          "repeat": 2,
+          "outcome": "tie",
+          "left_run": "irs-shuttle-replacement--unified--r2",
+          "right_run": "irs-shuttle-replacement--split--r2"
+        },
+        {
+          "case_id": "irs-unaccepted-assistant-proposal",
+          "repeat": 1,
+          "outcome": "right_only",
+          "left_run": "irs-unaccepted-assistant-proposal--unified--r1",
+          "right_run": "irs-unaccepted-assistant-proposal--split--r1"
+        },
+        {
+          "case_id": "irs-unaccepted-assistant-proposal",
+          "repeat": 2,
+          "outcome": "tie",
+          "left_run": "irs-unaccepted-assistant-proposal--unified--r2",
+          "right_run": "irs-unaccepted-assistant-proposal--split--r2"
+        }
+      ]
+    },
+    {
+      "left": "unified",
+      "right": "tracked",
+      "counts": {
+        "left_only": 2,
+        "right_only": 2,
+        "tie": 12,
+        "uncertain": 0
+      },
+      "pairs": [
+        {
+          "case_id": "irs-combined-workshop-change",
+          "repeat": 1,
+          "outcome": "tie",
+          "left_run": "irs-combined-workshop-change--unified--r1",
+          "right_run": "irs-combined-workshop-change--tracked--r1"
+        },
+        {
+          "case_id": "irs-combined-workshop-change",
+          "repeat": 2,
+          "outcome": "tie",
+          "left_run": "irs-combined-workshop-change--unified--r2",
+          "right_run": "irs-combined-workshop-change--tracked--r2"
+        },
+        {
+          "case_id": "irs-key-restoration",
+          "repeat": 1,
+          "outcome": "tie",
+          "left_run": "irs-key-restoration--unified--r1",
+          "right_run": "irs-key-restoration--tracked--r1"
+        },
+        {
+          "case_id": "irs-key-restoration",
+          "repeat": 2,
+          "outcome": "tie",
+          "left_run": "irs-key-restoration--unified--r2",
+          "right_run": "irs-key-restoration--tracked--r2"
+        },
+        {
+          "case_id": "irs-late-obsolete-evidence",
+          "repeat": 1,
+          "outcome": "tie",
+          "left_run": "irs-late-obsolete-evidence--unified--r1",
+          "right_run": "irs-late-obsolete-evidence--tracked--r1"
+        },
+        {
+          "case_id": "irs-late-obsolete-evidence",
+          "repeat": 2,
+          "outcome": "tie",
+          "left_run": "irs-late-obsolete-evidence--unified--r2",
+          "right_run": "irs-late-obsolete-evidence--tracked--r2"
+        },
+        {
+          "case_id": "irs-multiple-request-owners",
+          "repeat": 1,
+          "outcome": "tie",
+          "left_run": "irs-multiple-request-owners--unified--r1",
+          "right_run": "irs-multiple-request-owners--tracked--r1"
+        },
+        {
+          "case_id": "irs-multiple-request-owners",
+          "repeat": 2,
+          "outcome": "right_only",
+          "left_run": "irs-multiple-request-owners--unified--r2",
+          "right_run": "irs-multiple-request-owners--tracked--r2"
+        },
+        {
+          "case_id": "irs-practice-no-change",
+          "repeat": 1,
+          "outcome": "tie",
+          "left_run": "irs-practice-no-change--unified--r1",
+          "right_run": "irs-practice-no-change--tracked--r1"
+        },
+        {
+          "case_id": "irs-practice-no-change",
+          "repeat": 2,
+          "outcome": "tie",
+          "left_run": "irs-practice-no-change--unified--r2",
+          "right_run": "irs-practice-no-change--tracked--r2"
+        },
+        {
+          "case_id": "irs-room-withdrawal",
+          "repeat": 1,
+          "outcome": "left_only",
+          "left_run": "irs-room-withdrawal--unified--r1",
+          "right_run": "irs-room-withdrawal--tracked--r1"
+        },
+        {
+          "case_id": "irs-room-withdrawal",
+          "repeat": 2,
+          "outcome": "left_only",
+          "left_run": "irs-room-withdrawal--unified--r2",
+          "right_run": "irs-room-withdrawal--tracked--r2"
+        },
+        {
+          "case_id": "irs-shuttle-replacement",
+          "repeat": 1,
+          "outcome": "tie",
+          "left_run": "irs-shuttle-replacement--unified--r1",
+          "right_run": "irs-shuttle-replacement--tracked--r1"
+        },
+        {
+          "case_id": "irs-shuttle-replacement",
+          "repeat": 2,
+          "outcome": "tie",
+          "left_run": "irs-shuttle-replacement--unified--r2",
+          "right_run": "irs-shuttle-replacement--tracked--r2"
+        },
+        {
+          "case_id": "irs-unaccepted-assistant-proposal",
+          "repeat": 1,
+          "outcome": "right_only",
+          "left_run": "irs-unaccepted-assistant-proposal--unified--r1",
+          "right_run": "irs-unaccepted-assistant-proposal--tracked--r1"
+        },
+        {
+          "case_id": "irs-unaccepted-assistant-proposal",
+          "repeat": 2,
+          "outcome": "tie",
+          "left_run": "irs-unaccepted-assistant-proposal--unified--r2",
+          "right_run": "irs-unaccepted-assistant-proposal--tracked--r2"
+        }
+      ]
+    },
+    {
+      "left": "split",
+      "right": "tracked",
+      "counts": {
+        "left_only": 2,
+        "right_only": 0,
+        "tie": 14,
+        "uncertain": 0
+      },
+      "pairs": [
+        {
+          "case_id": "irs-combined-workshop-change",
+          "repeat": 1,
+          "outcome": "tie",
+          "left_run": "irs-combined-workshop-change--split--r1",
+          "right_run": "irs-combined-workshop-change--tracked--r1"
+        },
+        {
+          "case_id": "irs-combined-workshop-change",
+          "repeat": 2,
+          "outcome": "tie",
+          "left_run": "irs-combined-workshop-change--split--r2",
+          "right_run": "irs-combined-workshop-change--tracked--r2"
+        },
+        {
+          "case_id": "irs-key-restoration",
+          "repeat": 1,
+          "outcome": "tie",
+          "left_run": "irs-key-restoration--split--r1",
+          "right_run": "irs-key-restoration--tracked--r1"
+        },
+        {
+          "case_id": "irs-key-restoration",
+          "repeat": 2,
+          "outcome": "tie",
+          "left_run": "irs-key-restoration--split--r2",
+          "right_run": "irs-key-restoration--tracked--r2"
+        },
+        {
+          "case_id": "irs-late-obsolete-evidence",
+          "repeat": 1,
+          "outcome": "tie",
+          "left_run": "irs-late-obsolete-evidence--split--r1",
+          "right_run": "irs-late-obsolete-evidence--tracked--r1"
+        },
+        {
+          "case_id": "irs-late-obsolete-evidence",
+          "repeat": 2,
+          "outcome": "tie",
+          "left_run": "irs-late-obsolete-evidence--split--r2",
+          "right_run": "irs-late-obsolete-evidence--tracked--r2"
+        },
+        {
+          "case_id": "irs-multiple-request-owners",
+          "repeat": 1,
+          "outcome": "tie",
+          "left_run": "irs-multiple-request-owners--split--r1",
+          "right_run": "irs-multiple-request-owners--tracked--r1"
+        },
+        {
+          "case_id": "irs-multiple-request-owners",
+          "repeat": 2,
+          "outcome": "tie",
+          "left_run": "irs-multiple-request-owners--split--r2",
+          "right_run": "irs-multiple-request-owners--tracked--r2"
+        },
+        {
+          "case_id": "irs-practice-no-change",
+          "repeat": 1,
+          "outcome": "tie",
+          "left_run": "irs-practice-no-change--split--r1",
+          "right_run": "irs-practice-no-change--tracked--r1"
+        },
+        {
+          "case_id": "irs-practice-no-change",
+          "repeat": 2,
+          "outcome": "tie",
+          "left_run": "irs-practice-no-change--split--r2",
+          "right_run": "irs-practice-no-change--tracked--r2"
+        },
+        {
+          "case_id": "irs-room-withdrawal",
+          "repeat": 1,
+          "outcome": "left_only",
+          "left_run": "irs-room-withdrawal--split--r1",
+          "right_run": "irs-room-withdrawal--tracked--r1"
+        },
+        {
+          "case_id": "irs-room-withdrawal",
+          "repeat": 2,
+          "outcome": "left_only",
+          "left_run": "irs-room-withdrawal--split--r2",
+          "right_run": "irs-room-withdrawal--tracked--r2"
+        },
+        {
+          "case_id": "irs-shuttle-replacement",
+          "repeat": 1,
+          "outcome": "tie",
+          "left_run": "irs-shuttle-replacement--split--r1",
+          "right_run": "irs-shuttle-replacement--tracked--r1"
+        },
+        {
+          "case_id": "irs-shuttle-replacement",
+          "repeat": 2,
+          "outcome": "tie",
+          "left_run": "irs-shuttle-replacement--split--r2",
+          "right_run": "irs-shuttle-replacement--tracked--r2"
+        },
+        {
+          "case_id": "irs-unaccepted-assistant-proposal",
+          "repeat": 1,
+          "outcome": "tie",
+          "left_run": "irs-unaccepted-assistant-proposal--split--r1",
+          "right_run": "irs-unaccepted-assistant-proposal--tracked--r1"
+        },
+        {
+          "case_id": "irs-unaccepted-assistant-proposal",
+          "repeat": 2,
+          "outcome": "tie",
+          "left_run": "irs-unaccepted-assistant-proposal--split--r2",
+          "right_run": "irs-unaccepted-assistant-proposal--tracked--r2"
+        }
+      ]
+    }
+  ],
+  "independence_note": "Two repetitions are nested in eight families; no population significance inference.",
+  "primary_score_identity_checked": true,
+  "secondary_stage_review": {
+    "kind": "nonblind_model_review",
+    "groups": [
+      {
+        "condition": "unified",
+        "stage_id": "stage-1",
+        "n": 16,
+        "delivered_complete": {
+          "yes": 10,
+          "no": 5,
+          "uncertain": 1
+        },
+        "evidence_blocked": 2,
+        "tracker_semantically_correct": {
+          "yes": 0,
+          "no": 0,
+          "uncertain_or_not_applicable": 16
+        },
+        "redundant_semantic_updates": 0
+      },
+      {
+        "condition": "unified",
+        "stage_id": "stage-2",
+        "n": 16,
+        "delivered_complete": {
+          "yes": 11,
+          "no": 4,
+          "uncertain": 1
+        },
+        "evidence_blocked": 2,
+        "tracker_semantically_correct": {
+          "yes": 0,
+          "no": 0,
+          "uncertain_or_not_applicable": 16
+        },
+        "redundant_semantic_updates": 0
+      },
+      {
+        "condition": "unified",
+        "stage_id": "stage-3",
+        "n": 16,
+        "delivered_complete": {
+          "yes": 12,
+          "no": 4,
+          "uncertain": 0
+        },
+        "evidence_blocked": 0,
+        "tracker_semantically_correct": {
+          "yes": 0,
+          "no": 0,
+          "uncertain_or_not_applicable": 16
+        },
+        "redundant_semantic_updates": 0
+      },
+      {
+        "condition": "split",
+        "stage_id": "stage-1",
+        "n": 16,
+        "delivered_complete": {
+          "yes": 11,
+          "no": 3,
+          "uncertain": 2
+        },
+        "evidence_blocked": 2,
+        "tracker_semantically_correct": {
+          "yes": 0,
+          "no": 0,
+          "uncertain_or_not_applicable": 16
+        },
+        "redundant_semantic_updates": 0
+      },
+      {
+        "condition": "split",
+        "stage_id": "stage-2",
+        "n": 16,
+        "delivered_complete": {
+          "yes": 11,
+          "no": 3,
+          "uncertain": 2
+        },
+        "evidence_blocked": 2,
+        "tracker_semantically_correct": {
+          "yes": 0,
+          "no": 0,
+          "uncertain_or_not_applicable": 16
+        },
+        "redundant_semantic_updates": 0
+      },
+      {
+        "condition": "split",
+        "stage_id": "stage-3",
+        "n": 16,
+        "delivered_complete": {
+          "yes": 14,
+          "no": 2,
+          "uncertain": 0
+        },
+        "evidence_blocked": 0,
+        "tracker_semantically_correct": {
+          "yes": 0,
+          "no": 0,
+          "uncertain_or_not_applicable": 16
+        },
+        "redundant_semantic_updates": 0
+      },
+      {
+        "condition": "tracked",
+        "stage_id": "stage-1",
+        "n": 16,
+        "delivered_complete": {
+          "yes": 3,
+          "no": 11,
+          "uncertain": 2
+        },
+        "evidence_blocked": 2,
+        "tracker_semantically_correct": {
+          "yes": 16,
+          "no": 0,
+          "uncertain_or_not_applicable": 0
+        },
+        "redundant_semantic_updates": 0
+      },
+      {
+        "condition": "tracked",
+        "stage_id": "stage-2",
+        "n": 16,
+        "delivered_complete": {
+          "yes": 8,
+          "no": 6,
+          "uncertain": 2
+        },
+        "evidence_blocked": 2,
+        "tracker_semantically_correct": {
+          "yes": 14,
+          "no": 2,
+          "uncertain_or_not_applicable": 0
+        },
+        "redundant_semantic_updates": 4
+      },
+      {
+        "condition": "tracked",
+        "stage_id": "stage-3",
+        "n": 16,
+        "delivered_complete": {
+          "yes": 12,
+          "no": 4,
+          "uncertain": 0
+        },
+        "evidence_blocked": 0,
+        "tracker_semantically_correct": {
+          "yes": 10,
+          "no": 4,
+          "uncertain_or_not_applicable": 2
+        },
+        "redundant_semantic_updates": 10
+      }
+    ],
+    "limitations": [
+      "One model review session knows the conditions; descriptive diagnostics only.",
+      "Early combined-workshop gold asks for a price before the explicit user request; affected snapshots retain uncertainty and sensitivity labels.",
+      "Primary final-delivery results come from the two separate blind review sessions, not these labels."
+    ],
+    "rows": [
+      {
+        "run_id": "irs-combined-workshop-change--tracked--r2",
+        "stages": [
+          {
+            "stage_id": "stage-1",
+            "delivered_complete": null,
+            "evidence_blocked": false,
+            "reason": "The displayed card correctly identifies Clay Basics, Tuesday, Room C2 and South car park; full source arrived at 450 ms. It omits the $18 actual price. Frozen gold asks for price, but the arrived user explicitly asked for the cheapest option within $25, its room and parking, not its actual price. This annotation ambiguity is not attributed to the mechanism.",
+            "sensitivity": {
+              "under_frozen_gold": false,
+              "under_explicit_user_request": true
+            },
+            "tracker_semantically_correct": true,
+            "tracker_reason": "The committed active task preserves Mara, Tuesday, cheapest, the $25 ceiling, room and parking. Bundling the two requested outputs into one ID does not itself lose their meaning. The extra price-reporting requirement is not yet explicit in the raw conversation.",
+            "redundant_semantic_update": false
+          },
+          {
+            "stage_id": "stage-2",
+            "delivered_complete": null,
+            "evidence_blocked": false,
+            "reason": "The old Tuesday card was actually withdrawn and the visible replacement correctly selects Glaze Lab, Friday, Room G4 and step-free access, retaining the $25 ceiling and cheapest criterion. It omits actual price $23, required by frozen gold but not yet explicitly requested in the raw turns.",
+            "sensitivity": {
+              "under_frozen_gold": false,
+              "under_explicit_user_request": true
+            },
+            "tracker_semantically_correct": true,
+            "tracker_reason": "The old Tuesday/parking bundle is withdrawn; the replacement active task belongs to Mara and correctly preserves Friday, cheapest, $25, step-free access and room while removing parking. Changing IDs is an identity-stability concern, but the effective state matches the arrived request.",
+            "redundant_semantic_update": false
+          },
+          {
+            "stage_id": "stage-3",
+            "delivered_complete": false,
+            "evidence_blocked": false,
+            "reason": "The user now explicitly requests actual price. The unchanged stage-2 card still omits $23 although the full document has been available since 450 ms. All six stage-3 calls are rejected tracker proposals; no work or chat call executes in this stage.",
+            "tracker_semantically_correct": false,
+            "tracker_reason": "The final committed state is still version 2, processed seq 24 versus observed seq 43, and lacks the new price-reporting requirement. Each rejected proposal updates the withdrawn old ID and withdraws the active replacement; rollback preserves the previous state. Repeated rejection is not a valid semantic update.",
+            "redundant_semantic_update": false
+          }
+        ],
+        "notes": [
+          "Public-condition secondary model review; not blinded and not human adjudication. Stage-3 labels are diagnostic only; independent blinded reviewers determine the primary final-delivery metric.",
+          "Batch selection is exactly assignments 1 through 12 in evaluation/manifest.json. Sources read: fixtures/cases.json plus each selected run's result.json, execution.json and embedded step inputs/commits. Reviewer-a/b files were not read. No local model was invoked.",
+          "delivered_complete concerns actual active cards, not private prose or tool requests. evidence_blocked means insufficient evidence could not arrive within the stage under the fixture's timing, not merely that the model failed to retrieve or deliver it. Tracker semantics are judged against arrived original requests; redundant_semantic_update refers to committed state operations, not failed proposals or repeated card publication.",
+          "The frozen-gold/explicit-request price discrepancy affects stages 1 and 2 only. Stage 3 explicitly asks for price, so its omission is unambiguous.",
+          "See TRACKER-FAILURE-DIAGNOSIS.md for the independently logged update-of-withdrawn-ID rejection loop. No source or frozen run was modified."
+        ]
+      },
+      {
+        "run_id": "irs-combined-workshop-change--split--r2",
+        "stages": [
+          {
+            "stage_id": "stage-1",
+            "delivered_complete": null,
+            "evidence_blocked": false,
+            "reason": "A card displayed at 450 ms correctly provides Clay Basics, Tuesday, Room C2 and South car park after the full source arrived at 350 ms. It omits $18. Frozen gold asks for price, whereas the explicit raw request asks for selection within a budget, room and parking.",
+            "sensitivity": {
+              "under_frozen_gold": false,
+              "under_explicit_user_request": true
+            },
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the split condition.",
+            "redundant_semantic_update": null
+          },
+          {
+            "stage_id": "stage-2",
+            "delivered_complete": null,
+            "evidence_blocked": false,
+            "reason": "The obsolete card was withdrawn. The active replacement correctly gives Glaze Lab, Friday, G4 and step-free access under the retained cheapest/$25 constraints, without parking. Its missing $23 is a failure under frozen gold but is not an omitted explicit price request in the arrived turns.",
+            "sensitivity": {
+              "under_frozen_gold": false,
+              "under_explicit_user_request": true
+            },
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the split condition.",
+            "redundant_semantic_update": null
+          },
+          {
+            "stage_id": "stage-3",
+            "delivered_complete": false,
+            "evidence_blocked": false,
+            "reason": "The card is updated to state that the step-free requirement is met, but still omits the now explicitly requested actual price $23. The source has been fully available since 350 ms; this is delivery coverage, not missing evidence.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the split condition.",
+            "redundant_semantic_update": null
+          }
+        ],
+        "notes": [
+          "Public-condition secondary model diagnosis, not blind/human scoring; final primary judgment remains with independent reviewers.",
+          "Stage-1/2 price annotation ambiguity is retained as null with sensitivities. Repeated unchanged card calls are not tracker updates."
+        ]
+      },
+      {
+        "run_id": "irs-combined-workshop-change--unified--r2",
+        "stages": [
+          {
+            "stage_id": "stage-1",
+            "delivered_complete": false,
+            "evidence_blocked": false,
+            "reason": "There is no active card at the stage snapshot. The full workshop guide arrived at 350 ms, followed by three model opportunities with no delivery tools. The absence of any answer fails both the explicit request and frozen gold, independently of the price annotation ambiguity.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the unified condition.",
+            "redundant_semantic_update": null
+          },
+          {
+            "stage_id": "stage-2",
+            "delivered_complete": null,
+            "evidence_blocked": false,
+            "reason": "The displayed card correctly selects Glaze Lab, Friday, G4 and step-free access under the $25/cheapest requirements. It omits actual price $23; frozen gold requires that output before the raw user explicitly requests it.",
+            "sensitivity": {
+              "under_frozen_gold": false,
+              "under_explicit_user_request": true
+            },
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the unified condition.",
+            "redundant_semantic_update": null
+          },
+          {
+            "stage_id": "stage-3",
+            "delivered_complete": false,
+            "evidence_blocked": false,
+            "reason": "All six stage-3 calls have no tools; the retained stage-2 card omits the actual $23 price explicitly requested in stage 3. All required factual evidence was already in the full guide.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the unified condition.",
+            "redundant_semantic_update": null
+          }
+        ],
+        "notes": [
+          "Public-condition secondary model diagnosis, not blind/human scoring; final primary judgment remains with independent reviewers.",
+          "Stage 1 is a genuine nondelivery with available evidence. Stage-2 null reflects the gold/raw price mismatch, not an evidence shortage."
+        ]
+      },
+      {
+        "run_id": "irs-room-withdrawal--split--r1",
+        "stages": [
+          {
+            "stage_id": "stage-1",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "The final active card gives Gauge, $18, twelve seats and Wi-Fi, satisfying the original conditions. Full evidence arrived at 350 ms; an earlier publication rejected for new observations was successfully retried at 600 ms.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the split condition.",
+            "redundant_semantic_update": null
+          },
+          {
+            "stage_id": "stage-2",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "The active card correctly replaces Gauge with Shaft, $12 and sixteen seats, explicitly removes the Wi-Fi requirement, and retains capacity/budget and the cheapest selection. Receipts confirm replacement at 6200 ms.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the split condition.",
+            "redundant_semantic_update": null
+          },
+          {
+            "stage_id": "stage-3",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "The visible Shaft/$12/sixteen-seat answer already supplies the name, price and capacity reiterated in stage 3. No new factual output or reapproval is needed.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the split condition.",
+            "redundant_semantic_update": null
+          }
+        ],
+        "notes": [
+          "Public-condition secondary model diagnosis, not blind/human scoring; final primary judgment remains with independent reviewers.",
+          "Cards lack source IDs but cite the guide in prose and are supported by the actual arrived full document. Citation omission is recorded separately from request coverage."
+        ]
+      },
+      {
+        "run_id": "irs-room-withdrawal--tracked--r1",
+        "stages": [
+          {
+            "stage_id": "stage-1",
+            "delivered_complete": false,
+            "evidence_blocked": false,
+            "reason": "No card is active. Chat attempts at 300 and 500 ms were rejected because new search/read observations arrived during inference. Full evidence arrived at 450 ms and was available for the last work call, but the fixed role/budget schedule left no further chat slot. This is scheduling/delivery blockage, not evidence that was impossible to obtain within the stage.",
+            "tracker_semantically_correct": true,
+            "tracker_reason": "The active task preserves Nadia, cheapest room, at least twelve seats, at most $20, Wi-Fi, and all three requested outputs: name, price and capacity.",
+            "redundant_semantic_update": false
+          },
+          {
+            "stage_id": "stage-2",
+            "delivered_complete": false,
+            "evidence_blocked": false,
+            "reason": "The active card incorrectly calls Gauge at $18 the cheapest eligible room after Wi-Fi is removed. The fully arrived guide contains Shaft at $12 with sixteen seats, which satisfies the remaining requirements. This is a wrong selection despite available evidence.",
+            "tracker_semantically_correct": true,
+            "tracker_reason": "The committed state explicitly removes the Wi-Fi requirement and correctly retains owner, cheapest criterion, twelve-seat minimum, $20 ceiling, name, price and capacity. The wrong delivered choice does not imply that this tracker state is wrong.",
+            "redundant_semantic_update": false
+          },
+          {
+            "stage_id": "stage-3",
+            "delivered_complete": false,
+            "evidence_blocked": false,
+            "reason": "The incorrect Gauge/$18/twelve-seat card remains; Shaft/$12/sixteen is still the cheapest eligible answer. The stage-3 reminder did not trigger correction, although the source and correct constraints remained available.",
+            "tracker_semantically_correct": true,
+            "tracker_reason": "Owner, effective constraints and requested outputs remain correct. Step 12 commits an update with exactly the same task text and status as version 2, changing only source references; the raw user merely reiterates outputs already required.",
+            "redundant_semantic_update": true
+          }
+        ],
+        "notes": [
+          "Public-condition secondary model diagnosis, not blind/human scoring; final primary judgment remains with independent reviewers.",
+          "This run separates valid and semantically adequate tracker state from a wrong downstream recommendation. It does not justify equating state/schema correctness with assistance quality.",
+          "The stage-3 semantically redundant commit increments version but is not itself a semantic error."
+        ]
+      },
+      {
+        "run_id": "irs-room-withdrawal--unified--r1",
+        "stages": [
+          {
+            "stage_id": "stage-1",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "The displayed card correctly provides Gauge, $18 and twelve seats and identifies that it meets the Wi-Fi/budget/capacity requirements. The full document arrived at 350 ms before publication at 500 ms.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the unified condition.",
+            "redundant_semantic_update": null
+          },
+          {
+            "stage_id": "stage-2",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "The actual withdrawal and replacement at 6100 ms leave the correct Shaft/$12/sixteen-seat card active, explicitly reflecting that Wi-Fi is no longer required.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the unified condition.",
+            "redundant_semantic_update": null
+          },
+          {
+            "stage_id": "stage-3",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "The retained correct Shaft card already includes the name, price and capacity reiterated for the booking request. The absence of new tool calls does not remove a still-valid displayed answer.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the unified condition.",
+            "redundant_semantic_update": null
+          }
+        ],
+        "notes": [
+          "Public-condition secondary model diagnosis, not blind/human scoring; final primary judgment remains with independent reviewers."
+        ]
+      },
+      {
+        "run_id": "irs-late-obsolete-evidence--tracked--r1",
+        "stages": [
+          {
+            "stage_id": "stage-1",
+            "delivered_complete": false,
+            "evidence_blocked": true,
+            "reason": "The visible card truthfully reports a pending Desktop handbook read and retains both questions, but answers neither feature. The seeded read is due at 6550 ms, beyond stage 1; the arrived search excerpt contains neither feature answer. This is legitimate evidence-blocked noncompletion, not fabricated completion or failure to initiate a read.",
+            "tracker_semantically_correct": true,
+            "tracker_reason": "The active task correctly records Tomas, Desktop, offline editing of a downloaded notebook, and PDF page limit. Pending execution does not erase either intention.",
+            "redundant_semantic_update": false
+          },
+          {
+            "stage_id": "stage-2",
+            "delivered_complete": false,
+            "evidence_blocked": true,
+            "reason": "The active cards contain Mobile progress statements, not feature answers. The old Desktop job is actually cancelled at 6300 ms. Mobile search results arrive at 6350 ms, and a real Mobile read is initiated at 6500 ms with due time 13000 ms, beyond stage 2. The 6500 ms read latency makes a post-change Mobile full result impossible before 12000 ms, even with earlier initiation.",
+            "tracker_semantically_correct": true,
+            "tracker_reason": "The same task ID changes from Desktop to Mobile for both feature questions, preserving Tomas and not leaving a competing active Desktop request.",
+            "redundant_semantic_update": false
+          },
+          {
+            "stage_id": "stage-3",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "A real wait delivers the full Mobile guide at 13000 ms; publication at 13100 ms supplies both correct facts: downloaded notebooks can be edited offline and the limit is five pages per PDF. Two old progress cards remain alongside the complete answer; they are stale status clutter, not contrary feature answers.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "The committed task preserves Tomas, Mobile and both questions and never reactivates Desktop. Step 12 repeats exactly the previous task text/status while changing the source seq. The new raw turn also explicitly requests use of the Mobile handbook, a source preference not explicitly represented in the state; full semantic completeness is therefore left uncertain rather than inferred from schema acceptance. Core task/version correctness is supported.",
+            "redundant_semantic_update": true
+          }
+        ],
+        "notes": [
+          "Public-condition secondary model diagnosis, not blind/human scoring; final primary judgment remains with independent reviewers.",
+          "The Desktop read is cancelled before its due time and never produces an arrived full result. This run does not test resistance to an actually arriving obsolete Desktop full result.",
+          "Stage-3 redundant_semantic_update describes the unchanged committed task content. The new explicit handbook source preference makes this more than an unquestionable pure no-change input; tracker semantic completeness is null for that reason.",
+          "Final active progress cards were not cleaned up; the separate answer card nevertheless provides both requested Mobile facts. This is a secondary diagnosis, not a replacement for blinded primary scoring."
+        ]
+      },
+      {
+        "run_id": "irs-late-obsolete-evidence--unified--r1",
+        "stages": [
+          {
+            "stage_id": "stage-1",
+            "delivered_complete": false,
+            "evidence_blocked": true,
+            "reason": "There is no card, and all six calls wait. The common seeded Desktop read is genuinely pending until 6550 ms, beyond stage 1; the available snippet lacks both answers. Silence is not completed delivery, but evidence timing prevents a supported feature answer in this stage.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the unified condition.",
+            "redundant_semantic_update": null
+          },
+          {
+            "stage_id": "stage-2",
+            "delivered_complete": false,
+            "evidence_blocked": true,
+            "reason": "The old Desktop job is cancelled at 6100 ms. A real Mobile search arrives at 6150 ms and the Mobile read initiated at 6250 ms is due at 12750 ms. The displayed card truthfully reports the read in progress, without inventing either feature answer. The long read latency crosses the stage boundary.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the unified condition.",
+            "redundant_semantic_update": null
+          },
+          {
+            "stage_id": "stage-3",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "The full Mobile source arrives at 12750 ms and actual publication supplies offline editing for downloaded notebooks and the five-page PDF limit. The final single active card remains correct and version-specific.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the unified condition.",
+            "redundant_semantic_update": null
+          }
+        ],
+        "notes": [
+          "Public-condition secondary model diagnosis, not blind/human scoring; final primary judgment remains with independent reviewers.",
+          "The seeded Desktop read is successfully cancelled before arrival; there is no actual late obsolete Desktop full result to resist in this run."
+        ]
+      },
+      {
+        "run_id": "irs-late-obsolete-evidence--split--r1",
+        "stages": [
+          {
+            "stage_id": "stage-1",
+            "delivered_complete": false,
+            "evidence_blocked": true,
+            "reason": "The visible card accurately says the Desktop read is pending and retains both offline/PDF questions. The read's 6550 ms due time lies after stage 1, and the arrived snippet has no answers. This truthful pending output is not a completed feature answer.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the split condition.",
+            "redundant_semantic_update": null
+          },
+          {
+            "stage_id": "stage-2",
+            "delivered_complete": false,
+            "evidence_blocked": true,
+            "reason": "Desktop job cancellation succeeds at 6100 ms; Mobile search arrives at 6150 ms and the Mobile read initiated at 6300 ms is due at 12800 ms. The visible card at 6400 ms correctly switches the pending request to Mobile. The answers cannot yet be supported within stage 2 because of the read delay.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the split condition.",
+            "redundant_semantic_update": null
+          },
+          {
+            "stage_id": "stage-3",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "The actual full Mobile result arrives at 12800 ms and the same card is updated at 12900 ms with both correct answers: offline editing of already downloaded notebooks and five pages per PDF. No obsolete pending card remains.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the split condition.",
+            "redundant_semantic_update": null
+          }
+        ],
+        "notes": [
+          "Public-condition secondary model diagnosis, not blind/human scoring; final primary judgment remains with independent reviewers.",
+          "Desktop cancellation prevents an obsolete full result from arriving. Early rejected replacement tools did not alter the card, but later receipts confirm the Mobile replacement succeeded."
+        ]
+      },
+      {
+        "run_id": "irs-shuttle-replacement--tracked--r2",
+        "stages": [
+          {
+            "stage_id": "stage-1",
+            "delivered_complete": false,
+            "evidence_blocked": false,
+            "reason": "No card is active. Two chat attempts are rejected for new observations arriving during inference, and full shuttle evidence arrives at 450 ms. The last work call sees the full evidence but has no publication permission; the fixed six-call schedule provides no further chat slot. This is an execution/scheduling limitation, not an objectively unavailable source.",
+            "tracker_semantically_correct": true,
+            "tracker_reason": "The active Jules task accurately records Saturday, free, step-free, the requested sheet, departure time and exact boarding point.",
+            "redundant_semantic_update": false
+          },
+          {
+            "stage_id": "stage-2",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "The effective card correctly recommends Cove, Sunday, 10:00, West Quay, free and step-free, with no competing Saturday card. Facts are supported by the full guide received in stage 1. Invalid job-ID citations are discarded by the tool, but do not make these arrived-source facts false.",
+            "tracker_semantically_correct": true,
+            "tracker_reason": "The same Jules task ID changes only Saturday to Sunday while retaining free, step-free, departure time, exact boarding point and source sheet. No active Saturday instruction remains.",
+            "redundant_semantic_update": false
+          },
+          {
+            "stage_id": "stage-3",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "The retained correct Cove/10:00/West Quay recommendation already includes the fields reiterated in stage 3 and preserves the free/step-free requirements.",
+            "tracker_semantically_correct": true,
+            "tracker_reason": "The state remains semantically correct. Step 12 re-commits exactly the previous task text, owner and active status, adding event seq 42; the raw turn repeats time and boarding fields already included, so no semantic transition was needed.",
+            "redundant_semantic_update": true
+          }
+        ],
+        "notes": [
+          "Public-condition secondary model diagnosis, not blind/human scoring; final primary judgment remains with independent reviewers.",
+          "Job IDs used as source IDs are consistently ignored, leaving the final card without structured citations despite actual full-source support. This interface/provenance issue is separate from semantic coverage.",
+          "Correct tracker semantics coexist with stage-1 nondelivery caused by role timing and publication conflict."
+        ]
+      },
+      {
+        "run_id": "irs-shuttle-replacement--split--r2",
+        "stages": [
+          {
+            "stage_id": "stage-1",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "The actual card displayed after the 350 ms full read correctly gives Pike, Saturday, 09:00, East Pier, free and step-free boarding.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the split condition.",
+            "redundant_semantic_update": null
+          },
+          {
+            "stage_id": "stage-2",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "Actual card updates replace Pike with Cove, Sunday, 10:00 and West Quay while retaining free and step-free. The old Saturday recommendation is not active at the snapshot.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the split condition.",
+            "redundant_semantic_update": null
+          },
+          {
+            "stage_id": "stage-3",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "The existing Cove card remains complete for the repeated departure-time and boarding-point request, with the other still-valid conditions stated.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the split condition.",
+            "redundant_semantic_update": null
+          }
+        ],
+        "notes": [
+          "Public-condition secondary model diagnosis, not blind/human scoring; final primary judgment remains with independent reviewers.",
+          "Cards omit structured source IDs but their facts match the actually arrived full sheet; repeated notes/card calls are not tracker-state updates."
+        ]
+      },
+      {
+        "run_id": "irs-shuttle-replacement--unified--r2",
+        "stages": [
+          {
+            "stage_id": "stage-1",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "The displayed card correctly recommends Pike on Saturday at 09:00 from East Pier and states free/step-free eligibility, supported by the full sheet that arrived at 350 ms.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the unified condition.",
+            "redundant_semantic_update": null
+          },
+          {
+            "stage_id": "stage-2",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "The active replacement card correctly recommends Cove on Sunday at 10:00 from West Quay, free and step-free. Receipts confirm the Saturday card was replaced; the extra search/read is not required to infer missing evidence because the first full sheet already contained Sunday services.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the unified condition.",
+            "redundant_semantic_update": null
+          },
+          {
+            "stage_id": "stage-3",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "The retained correct Cove card supplies both fields reaffirmed in the final request. Six private/no-tool responses do not invalidate a complete answer already displayed.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the unified condition.",
+            "redundant_semantic_update": null
+          }
+        ],
+        "notes": [
+          "Public-condition secondary model diagnosis, not blind/human scoring; final primary judgment remains with independent reviewers."
+        ]
+      },
+      {
+        "run_id": "irs-practice-no-change--split--r1",
+        "kind": "nonblind-model-secondary",
+        "limitations": [
+          "Public-condition model diagnosis, not blinded or human review.",
+          "Stage-3 labels are secondary diagnostics; independent blinded reviews determine the primary final-delivery result."
+        ],
+        "stages": [
+          {
+            "stage_id": "stage-1",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "The active card gives Meridian Saturday hours 10:00-18:00 and correctly says amplified instruments are not allowed, with acoustic instruments permitted. The full house sheet arrived at 350 ms and publication succeeded at 450 ms after an earlier observation conflict.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the split condition.",
+            "redundant_semantic_update": null
+          },
+          {
+            "stage_id": "stage-2",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "The same complete Meridian/Saturday answer remains active. The explicitly irrelevant Lakeside/Sunday statement does not replace either requested detail or cause withdrawal.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the split condition.",
+            "redundant_semantic_update": null
+          },
+          {
+            "stage_id": "stage-3",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "The retained card already supplies both Saturday Meridian details reaffirmed in the final turn. Actual unchanged publication receipts preserve it; private replies are not needed for completion.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the split condition.",
+            "redundant_semantic_update": null
+          }
+        ],
+        "notes": [
+          "Fixed batch 2 is exactly evaluation/manifest.json assignments[12:24], in manifest order, comprising 12 runs and 36 stage snapshots.",
+          "Reviewed fixtures/cases.json, each selected result.json and execution.json, and embedded actual input/proposal/commit/receipt records. No reviewer-a/b files were read and no local model was invoked.",
+          "The original arrived user requests govern semantic interpretation; frozen gold is a reference, not a source of extra user requirements. No unresolved gold/raw ambiguity changes a label in this batch.",
+          "evidence_blocked distinguishes objective source timing from failed retrieval, scheduling or delivery. redundant_semantic_update concerns committed effective-intent content, not repeated cards or a failed proposal."
+        ]
+      },
+      {
+        "run_id": "irs-practice-no-change--tracked--r1",
+        "kind": "nonblind-model-secondary",
+        "limitations": [
+          "Public-condition model diagnosis, not blinded or human review.",
+          "Stage-3 labels are secondary diagnostics; independent blinded reviews determine the primary final-delivery result."
+        ],
+        "stages": [
+          {
+            "stage_id": "stage-1",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "After the full house sheet arrived at 450 ms, the card displayed at 550 ms gives Saturday 10:00-18:00 and prohibits amplified instruments. It additionally reports the correct Sunday hours, but does not substitute them for the Saturday request.",
+            "tracker_semantically_correct": true,
+            "tracker_reason": "The committed active task correctly retains Kaito, Saturday practice, Meridian, the house sheet, opening hours and the amplified-instrument question.",
+            "redundant_semantic_update": false
+          },
+          {
+            "stage_id": "stage-2",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "The complete Saturday Meridian answer remains visible. The card's correct optional Sunday Meridian hours were already present before the Lakeside/Sunday background turn; they are not evidence of switching the requested room or day.",
+            "tracker_semantically_correct": true,
+            "tracker_reason": "The input explicitly says the original booking/questions are unchanged. Step 6 commits exactly the same owner, active status and task text as version 1, adding source seq 24; no Lakeside or Sunday intention is introduced.",
+            "redundant_semantic_update": true
+          },
+          {
+            "stage_id": "stage-3",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "The active card still includes both correct Saturday Meridian facts, satisfying the reaffirmed request without needing a new answer.",
+            "tracker_semantically_correct": true,
+            "tracker_reason": "Step 12 again commits identical task text/owner/status, with references [1,24,38]. The raw turn reiterates the same two details, so this is a semantically redundant update while the effective state remains correct.",
+            "redundant_semantic_update": true
+          }
+        ],
+        "notes": [
+          "No successful empty-operations no-change patch is observed: both no-change turns produce nonempty but semantically redundant updates.",
+          "Extra correct Sunday hours are unnecessary detail, not a replacement of the explicit Saturday request."
+        ]
+      },
+      {
+        "run_id": "irs-practice-no-change--unified--r1",
+        "kind": "nonblind-model-secondary",
+        "limitations": [
+          "Public-condition model diagnosis, not blinded or human review.",
+          "Stage-3 labels are secondary diagnostics; independent blinded reviews determine the primary final-delivery result."
+        ],
+        "stages": [
+          {
+            "stage_id": "stage-1",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "The card published at 450 ms after the 350 ms full read gives correct Saturday 10:00-18:00 hours and the prohibition on amplified instruments. It also contains correct Sunday hours and acoustic-instrument permission, without losing either requested detail.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the unified condition.",
+            "redundant_semantic_update": null
+          },
+          {
+            "stage_id": "stage-2",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "No tool changes the complete card after the unrelated Lakeside/Sunday background. The original Meridian/Saturday answers remain valid and visible.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the unified condition.",
+            "redundant_semantic_update": null
+          },
+          {
+            "stage_id": "stage-3",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "A successful update at 12100 ms removes the unnecessary Sunday hours while preserving correct Saturday 10:00-18:00 and the amplified-instrument prohibition. Both requested details are present.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the unified condition.",
+            "redundant_semantic_update": null
+          }
+        ],
+        "notes": [
+          "The optional Sunday hours in the first two stages were factually correct and never replaced the Saturday answer. This is not classified as intent drift."
+        ]
+      },
+      {
+        "run_id": "irs-practice-no-change--split--r2",
+        "kind": "nonblind-model-secondary",
+        "limitations": [
+          "Public-condition model diagnosis, not blinded or human review.",
+          "Stage-3 labels are secondary diagnostics; independent blinded reviews determine the primary final-delivery result."
+        ],
+        "stages": [
+          {
+            "stage_id": "stage-1",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "The displayed card gives Meridian Saturday hours 10:00-18:00 and correctly prohibits amplified instruments. Full source text arrived at 350 ms before successful publication at 450 ms.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the split condition.",
+            "redundant_semantic_update": null
+          },
+          {
+            "stage_id": "stage-2",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "The existing complete Saturday Meridian card remains active despite the irrelevant Lakeside/Sunday background. Later unchanged tool receipts confirm preservation rather than withdrawal or substitution.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the split condition.",
+            "redundant_semantic_update": null
+          },
+          {
+            "stage_id": "stage-3",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "Both requested details remain visible on the retained card. The absence of new tools in this stage does not invalidate an already complete answer to an unchanged request.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the split condition.",
+            "redundant_semantic_update": null
+          }
+        ],
+        "notes": [
+          "The card lacks structured source IDs, but both claims are supported by the actual arrived full house sheet. Citation metadata is distinguished from semantic coverage."
+        ]
+      },
+      {
+        "run_id": "irs-practice-no-change--unified--r2",
+        "kind": "nonblind-model-secondary",
+        "limitations": [
+          "Public-condition model diagnosis, not blinded or human review.",
+          "Stage-3 labels are secondary diagnostics; independent blinded reviews determine the primary final-delivery result."
+        ],
+        "stages": [
+          {
+            "stage_id": "stage-1",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "Actual publication at 500 ms supplies Saturday 10:00-18:00 at Meridian and the correct prohibition on amplified instruments, supported by the full source received at 350 ms.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the unified condition.",
+            "redundant_semantic_update": null
+          },
+          {
+            "stage_id": "stage-2",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "The complete original card is retained with no change to Lakeside or Sunday. The user explicitly stated that the booking and questions were unchanged.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the unified condition.",
+            "redundant_semantic_update": null
+          },
+          {
+            "stage_id": "stage-3",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "The updated card explicitly addresses the user's Saturday Meridian practice and still supplies correct 10:00-18:00 hours and the amplified-instrument restriction.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the unified condition.",
+            "redundant_semantic_update": null
+          }
+        ],
+        "notes": [
+          "Stage-3 publication changes phrasing rather than the substantive answers. No independent tracker exists in this arm."
+        ]
+      },
+      {
+        "run_id": "irs-practice-no-change--tracked--r2",
+        "kind": "nonblind-model-secondary",
+        "limitations": [
+          "Public-condition model diagnosis, not blinded or human review.",
+          "Stage-3 labels are secondary diagnostics; independent blinded reviews determine the primary final-delivery result."
+        ],
+        "stages": [
+          {
+            "stage_id": "stage-1",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "The card displayed at 550 ms, after the full source arrived at 450 ms, gives correct Saturday 10:00-18:00 hours for Meridian and says amplified instruments are not allowed.",
+            "tracker_semantically_correct": true,
+            "tracker_reason": "The committed active task preserves Kaito, Saturday Meridian practice, the house sheet and both requested details without adding a new task.",
+            "redundant_semantic_update": false
+          },
+          {
+            "stage_id": "stage-2",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "The original complete Saturday Meridian card remains active. Lakeside/Sunday background causes no visible substitution or withdrawal.",
+            "tracker_semantically_correct": true,
+            "tracker_reason": "The raw input explicitly states no change. Step 6 repeats the prior task text, owner and active status, updating only references to [1,24]. No new or withdrawn intention is justified or committed.",
+            "redundant_semantic_update": true
+          },
+          {
+            "stage_id": "stage-3",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "Both correct facts remain visible and satisfy the final reaffirmation. Repeated unchanged publication calls do not create extra answered requirements.",
+            "tracker_semantically_correct": true,
+            "tracker_reason": "Step 12 again repeats the same effective task with references [1,38]. Both requested details and their owner/place/day remain correct; the new turn only reiterates them.",
+            "redundant_semantic_update": true
+          }
+        ],
+        "notes": [
+          "As in repetition 1, both no-change turns generate nonempty semantically redundant updates rather than empty operations. Correct state content and unnecessary version churn are reported separately."
+        ]
+      },
+      {
+        "run_id": "irs-unaccepted-assistant-proposal--tracked--r2",
+        "kind": "nonblind-model-secondary",
+        "limitations": [
+          "Public-condition model diagnosis, not blinded or human review.",
+          "Stage-3 labels are secondary diagnostics; independent blinded reviews determine the primary final-delivery result."
+        ],
+        "stages": [
+          {
+            "stage_id": "stage-1",
+            "delivered_complete": false,
+            "evidence_blocked": false,
+            "reason": "No card is active. Chat publication attempts at 300 and 500 ms are rejected because observations arrived during inference. The full notice arrived at 450 ms and was visible to the last work call, but the role schedule left no further chat slot. Source evidence was obtainable within the stage; this is delivery/scheduling failure.",
+            "tracker_semantically_correct": true,
+            "tracker_reason": "The active task contains Imani's two requested details, session start time and room from the Tidepool notice, with no recording-link request.",
+            "redundant_semantic_update": false
+          },
+          {
+            "stage_id": "stage-2",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "After one rejected tracker proposal and one successful retry, a real card is displayed at 6300 ms with both requested facts: 14:20 and Room T6. It does not include an unaccepted recording task or wait for further approval.",
+            "tracker_semantically_correct": true,
+            "tracker_reason": "The final committed task remains Imani's time-and-room request and appends the user's statement that no addition has been decided. The assistant suggestion does not become an active intention. The first proposal cites seq 17, an already-arrived document job_result rather than an eligible original conversation event; that source-type violation is rejected and its text is not final state.",
+            "redundant_semantic_update": true
+          },
+          {
+            "stage_id": "stage-3",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "The correct 14:20/Room T6 card remains visible and unchanged. Both original requested facts are delivered without treating recording information as an authorized deliverable.",
+            "tracker_semantically_correct": true,
+            "tracker_reason": "The committed task retains the same owner and time/room deliverables, replacing the no-addition acknowledgement with the user's 'give me the requested session details now' phrasing. This refresh adds no new effective deliverable and does not activate the recording proposal.",
+            "redundant_semantic_update": true
+          }
+        ],
+        "notes": [
+          "The first stage-2 tracker proposal tries to insert answer facts into intent text and cites [1,17]. Execution seq 17 is the full document job_result that arrived at 450 ms; it is excluded from the eligible original-conversation list [1,22,23]. This is a source-type boundary violation, not a citation of future or unavailable evidence. Runtime rejection prevents that proposal from committing, and the following call succeeds despite the lack of explicit validation-error feedback in the frozen session.",
+          "For redundant_semantic_update, retaining an acknowledgement or urgency phrase can be useful context, but here it changes no active requested output or authorization boundary. The valid final task state is not labeled wrong merely because these updates are semantically redundant.",
+          "Two tracker calls in stage 2 consume budget and shift the subsequent actor alternation; they are not free diagnostic calls."
+        ]
+      },
+      {
+        "run_id": "irs-unaccepted-assistant-proposal--split--r2",
+        "kind": "nonblind-model-secondary",
+        "limitations": [
+          "Public-condition model diagnosis, not blinded or human review.",
+          "Stage-3 labels are secondary diagnostics; independent blinded reviews determine the primary final-delivery result."
+        ],
+        "stages": [
+          {
+            "stage_id": "stage-1",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "Following earlier observation-conflict rejections, publication succeeds at 600 ms with correct 14:20 and Room T6. The full notice was available from 350 ms.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the split condition.",
+            "redundant_semantic_update": null
+          },
+          {
+            "stage_id": "stage-2",
+            "delivered_complete": false,
+            "evidence_blocked": false,
+            "reason": "The still-valid correct card is actually withdrawn at 6400 ms, leaving no active card at the stage snapshot. Imani only declined to decide on an additional request, not the original time/room facts. Private prose later repeats the answer but is not delivered. Evidence remains fully available.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the split condition. Working notes nevertheless misstate that Imani confirmed the time and room; the raw acknowledgement concerned only the optional suggestion.",
+            "redundant_semantic_update": null
+          },
+          {
+            "stage_id": "stage-3",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "The final explicit request prompts successful republication at 12200 ms, restoring the correct 14:20/Room T6 card without adding a recording-link task.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the split condition.",
+            "redundant_semantic_update": null
+          }
+        ],
+        "notes": [
+          "Working notes at steps 8 and 10 say 'Imani has confirmed the session start time and room location without requesting additional information'; the user actually said only that the optional suggestion had been read and no addition decided. The withdrawal and erroneous notes are observed together; this does not establish the model's internal causal reasoning.",
+          "The original answer was delivered in stage 1, then removed in stage 2, then restored in stage 3. Scoring only final delivery would miss this intermediate regression.",
+          "Structured source IDs are absent, but the full notice provides both correct facts."
+        ]
+      },
+      {
+        "run_id": "irs-unaccepted-assistant-proposal--unified--r2",
+        "kind": "nonblind-model-secondary",
+        "limitations": [
+          "Public-condition model diagnosis, not blinded or human review.",
+          "Stage-3 labels are secondary diagnostics; independent blinded reviews determine the primary final-delivery result."
+        ],
+        "stages": [
+          {
+            "stage_id": "stage-1",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "The full notice arrived at 350 ms and the card displayed at 450 ms correctly provides only the requested session start time 14:20 and room T6.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the unified condition.",
+            "redundant_semantic_update": null
+          },
+          {
+            "stage_id": "stage-2",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "Although the model withdraws and republishes the same card at 6200 ms, actual receipts leave the correct 14:20/Room T6 answer active at the snapshot. No recording detail is promoted into an authorized deliverable.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the unified condition.",
+            "redundant_semantic_update": null
+          },
+          {
+            "stage_id": "stage-3",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "The correct original two-fact card remains active. Repeated unchanged receipts confirm that the visible answer is preserved without requiring new approval or adding the suggestion.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the unified condition.",
+            "redundant_semantic_update": null
+          }
+        ],
+        "notes": [
+          "The unnecessary withdraw/republication sequence is an execution-efficiency issue, but does not leave the stage snapshot empty or change the effective answer. Structured source IDs are absent despite arrived-source support."
+        ]
+      },
+      {
+        "run_id": "irs-shuttle-replacement--split--r1",
+        "kind": "nonblind-model-secondary",
+        "limitations": [
+          "Public-condition model diagnosis, not blinded or human review.",
+          "Stage-3 labels are secondary diagnostics; independent blinded reviews determine the primary final-delivery result."
+        ],
+        "stages": [
+          {
+            "stage_id": "stage-1",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "The full sheet arrives at 350 ms and actual publication at 450 ms supplies Pike, Saturday, 09:00, East Pier, free and step-free boarding.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the split condition.",
+            "redundant_semantic_update": null
+          },
+          {
+            "stage_id": "stage-2",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "The effective replacement card correctly recommends Cove, Sunday, 10:00, West Quay, free and step-free. Repeated withdraw/republication operations all succeed and leave no competing Saturday recommendation active.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the split condition.",
+            "redundant_semantic_update": null
+          },
+          {
+            "stage_id": "stage-3",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "The retained correct Cove card already provides the departure time and boarding point reaffirmed in the last turn, as well as the still-valid free/step-free conditions.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the split condition.",
+            "redundant_semantic_update": null
+          }
+        ],
+        "notes": [
+          "Repeated card replacement is distinguished from intent-state changes. Cards lack structured source IDs but the facts are supported by the arrived full sheet."
+        ]
+      },
+      {
+        "run_id": "irs-shuttle-replacement--tracked--r1",
+        "kind": "nonblind-model-secondary",
+        "limitations": [
+          "Public-condition model diagnosis, not blinded or human review.",
+          "Stage-3 labels are secondary diagnostics; independent blinded reviews determine the primary final-delivery result."
+        ],
+        "stages": [
+          {
+            "stage_id": "stage-1",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "The work role reads and waits in one call, making the full sheet available at 450 ms before chat publishes the complete Pike/Saturday/09:00/East Pier/free/step-free answer at 550 ms.",
+            "tracker_semantically_correct": true,
+            "tracker_reason": "The active task correctly records Jules, Saturday, free and step-free eligibility, the Estuary sheet, departure time and exact boarding point.",
+            "redundant_semantic_update": false
+          },
+          {
+            "stage_id": "stage-2",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "Actual receipts withdraw the Saturday card and display a Sunday replacement at 6200 ms containing Cove, 10:00, West Quay, free and step-free. No obsolete recommendation remains active.",
+            "tracker_semantically_correct": true,
+            "tracker_reason": "The same task ID changes Saturday to Sunday while preserving Jules, free, step-free, departure time, boarding point and the requested sheet. This is a real semantic revision.",
+            "redundant_semantic_update": false
+          },
+          {
+            "stage_id": "stage-3",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "The visible Sunday Cove recommendation already contains the two details reiterated in stage 3 and remains fully correct without additional tool actions.",
+            "tracker_semantically_correct": true,
+            "tracker_reason": "Step 12 commits exactly the version-2 task text, owner and status with references [26,45]. The new turn repeats time and boarding requirements already retained, so the state is correct but the semantic update is redundant.",
+            "redundant_semantic_update": true
+          }
+        ],
+        "notes": [
+          "Unlike the same family's tracked repetition 2, stage 1 actually delivers because a work-role wait exposes the full read before the remaining chat call. This observed scheduling difference is descriptive, not an isolated causal experiment.",
+          "Cards have no structured source IDs despite full-source factual support."
+        ]
+      },
+      {
+        "run_id": "irs-shuttle-replacement--unified--r1",
+        "kind": "nonblind-model-secondary",
+        "limitations": [
+          "Public-condition model diagnosis, not blinded or human review.",
+          "Stage-3 labels are secondary diagnostics; independent blinded reviews determine the primary final-delivery result."
+        ],
+        "stages": [
+          {
+            "stage_id": "stage-1",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "The card displayed at 500 ms after the 350 ms full read correctly gives Pike, Saturday, 09:00, East Pier, free and step-free eligibility.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the unified condition.",
+            "redundant_semantic_update": null
+          },
+          {
+            "stage_id": "stage-2",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "The active card correctly replaces Saturday/Pike with Sunday/Cove, 10:00, West Quay, free and step-free. The source already contained both days before an additional search/read; receipts confirm actual successful replacement.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the unified condition.",
+            "redundant_semantic_update": null
+          },
+          {
+            "stage_id": "stage-3",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "The retained complete Cove card already satisfies the final reminder about departure time and boarding point. Private/no-tool calls do not remove an answer already displayed.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the unified condition.",
+            "redundant_semantic_update": null
+          }
+        ],
+        "notes": [
+          "No evidence-blocked stage is present in this batch: each family's required full document arrives within its initial stage, well before the next user revision."
+        ]
+      },
+      {
+        "run_id": "irs-combined-workshop-change--tracked--r1",
+        "kind": "nonblind-model-secondary",
+        "limitations": [
+          "Public-condition model diagnosis, not blinded or human review.",
+          "Stage-3 labels are secondary diagnostics; independent blinded reviews determine the primary final-delivery result."
+        ],
+        "stages": [
+          {
+            "stage_id": "stage-1",
+            "delivered_complete": null,
+            "evidence_blocked": false,
+            "reason": "The card correctly provides Clay Basics, Tuesday, Room C2 and South car park after the full source arrives at 450 ms. It omits actual price $18. Frozen gold explicitly adds price reporting, while the arrived raw request asks for the cheapest option within $25, its room and parking. This is an annotation ambiguity rather than a clear omission of an explicit request.",
+            "sensitivity": {
+              "under_frozen_gold": false,
+              "under_explicit_user_request": true
+            },
+            "tracker_semantically_correct": true,
+            "tracker_reason": "The committed task preserves Mara, Tuesday, cheapest, the $25 ceiling, room and parking. It captures the explicit original request; actual price reporting is not yet explicit in the raw turn.",
+            "redundant_semantic_update": false
+          },
+          {
+            "stage_id": "stage-2",
+            "delivered_complete": null,
+            "evidence_blocked": false,
+            "reason": "Actual receipts withdraw the Tuesday card and display Glaze Lab, Friday, G4 and step-free access under the cheapest/$25 requirements, with parking removed. Actual price $23 is missing, which fails the extra frozen-gold requirement but not an explicit price request at this point.",
+            "sensitivity": {
+              "under_frozen_gold": false,
+              "under_explicit_user_request": true
+            },
+            "tracker_semantically_correct": true,
+            "tracker_reason": "The Tuesday/parking bundle is withdrawn and replaced by Mara's active Friday, step-free, cheapest, $25-and-room task. Although identity is replaced rather than locally edited, effective requirements are correctly preserved and removed.",
+            "redundant_semantic_update": false
+          },
+          {
+            "stage_id": "stage-3",
+            "delivered_complete": false,
+            "evidence_blocked": false,
+            "reason": "The user now explicitly requests actual price; the retained stage-2 card still omits $23 despite the available full guide. All six stage-3 calls are rejected tracker proposals and there is no actor delivery opportunity.",
+            "tracker_semantically_correct": false,
+            "tracker_reason": "The final committed state remains version 2, processed seq 24 versus observed seq 43, and lacks the new price requirement. Three proposals try to update a withdrawn old ID as active; three use forbidden status withdrawn in update operations. All patches roll back, so neither apparent schema-shaped text nor repeated attempts count as a valid state update.",
+            "redundant_semantic_update": false
+          }
+        ],
+        "notes": [
+          "Fixed batch 3 is evaluation/manifest.json assignments[24:36], in manifest order: 12 runs and 36 stage snapshots.",
+          "Reviewed fixtures/cases.json and each selected result.json/execution.json, including actual inputs, proposals, final committed states and receipts. No reviewer-a/b files were read; no local model was invoked; no frozen source or output was modified.",
+          "Original arrived requests govern semantic interpretation. Frozen gold is a reference, not authority to invent extra user requirements. The workshop stages 1/2 price discrepancy is preserved as null with both sensitivities.",
+          "Step 12/14/17 errors are update-of-withdrawn-ID errors; step 13/15/16 first errors are invalid proposed status. Additional invalid operations occur later in some rejected proposals but were not the first reported rejection. No rejected proposal is counted as a committed redundant semantic update."
+        ]
+      },
+      {
+        "run_id": "irs-combined-workshop-change--unified--r1",
+        "kind": "nonblind-model-secondary",
+        "limitations": [
+          "Public-condition model diagnosis, not blinded or human review.",
+          "Stage-3 labels are secondary diagnostics; independent blinded reviews determine the primary final-delivery result."
+        ],
+        "stages": [
+          {
+            "stage_id": "stage-1",
+            "delivered_complete": null,
+            "evidence_blocked": false,
+            "reason": "The card displayed after the 350 ms full read correctly gives Clay Basics, Tuesday, Room C2 and South car park. It lacks $18, which frozen gold asks for before the original user explicitly requests actual price.",
+            "sensitivity": {
+              "under_frozen_gold": false,
+              "under_explicit_user_request": true
+            },
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the unified condition.",
+            "redundant_semantic_update": null
+          },
+          {
+            "stage_id": "stage-2",
+            "delivered_complete": false,
+            "evidence_blocked": false,
+            "reason": "The card changes to the correct Friday Glaze Lab/G4/step-free choice, but continues to include parking even though Mara explicitly dropped that question. This explicit scope error is separate from the early-stage price annotation ambiguity. Full source evidence was already available before the additional search/read.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the unified condition.",
+            "redundant_semantic_update": null
+          },
+          {
+            "stage_id": "stage-3",
+            "delivered_complete": false,
+            "evidence_blocked": false,
+            "reason": "The retained card still omits the now explicitly requested $23 price and still presents the dropped parking detail. No stage-3 tool call repairs it, although all facts are available in the full guide.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the unified condition.",
+            "redundant_semantic_update": null
+          }
+        ],
+        "notes": [
+          "Stage-2 failure is grounded in the actual dropped parking request, not solely in frozen gold's extra early price requirement. The parking statement is factually true but no longer requested."
+        ]
+      },
+      {
+        "run_id": "irs-combined-workshop-change--split--r1",
+        "kind": "nonblind-model-secondary",
+        "limitations": [
+          "Public-condition model diagnosis, not blinded or human review.",
+          "Stage-3 labels are secondary diagnostics; independent blinded reviews determine the primary final-delivery result."
+        ],
+        "stages": [
+          {
+            "stage_id": "stage-1",
+            "delivered_complete": null,
+            "evidence_blocked": false,
+            "reason": "The active card correctly supplies Clay Basics, Tuesday, Room C2 and South car park after the full guide arrives at 350 ms. It lacks $18, an output added by frozen gold before actual price is explicit in the original request.",
+            "sensitivity": {
+              "under_frozen_gold": false,
+              "under_explicit_user_request": true
+            },
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the split condition.",
+            "redundant_semantic_update": null
+          },
+          {
+            "stage_id": "stage-2",
+            "delivered_complete": null,
+            "evidence_blocked": false,
+            "reason": "The active card correctly replaces Tuesday with Friday, selects Glaze Lab/G4 under the cheapest/$25/step-free conditions, and removes parking. The omitted $23 actual price is the same frozen-gold versus explicit-request ambiguity as in the prior stage.",
+            "sensitivity": {
+              "under_frozen_gold": false,
+              "under_explicit_user_request": true
+            },
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the split condition.",
+            "redundant_semantic_update": null
+          },
+          {
+            "stage_id": "stage-3",
+            "delivered_complete": false,
+            "evidence_blocked": false,
+            "reason": "The updated card explains that the route to Room G4 is step-free and retains the correct workshop/room, but still omits the explicitly requested actual price $23. This is an answer omission with sufficient evidence.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the split condition.",
+            "redundant_semantic_update": null
+          }
+        ],
+        "notes": [
+          "A stage-2 cancel_job request for job-2 returns 'Job is not pending.' The prior full read had already arrived, and this failed cancellation does not block the answer or count as successful cancellation.",
+          "Repeated withdraw/publication operations leave the correct current card active; structured source IDs are absent despite arrived-source support."
+        ]
+      },
+      {
+        "run_id": "irs-multiple-request-owners--tracked--r2",
+        "kind": "nonblind-model-secondary",
+        "limitations": [
+          "Public-condition model diagnosis, not blinded or human review.",
+          "Stage-3 labels are secondary diagnostics; independent blinded reviews determine the primary final-delivery result.",
+          "State lifecycle consistency and the meaning of the model's free-text task are assessed separately; a misleading active record does not prove that the final actor still wanted to answer the withdrawn question."
+        ],
+        "stages": [
+          {
+            "stage_id": "stage-1",
+            "delivered_complete": false,
+            "evidence_blocked": false,
+            "reason": "No active card remains because both chat publication attempts are rejected on new observations arriving during inference. The full Orchard guide arrives at 450 ms and is available to the final work call, but no chat slot remains. This is scheduling/delivery blockage, not objective evidence unavailability.",
+            "tracker_semantically_correct": true,
+            "tracker_reason": "Three separate active records correctly assign signup deadline and refund rule to Omar and wheelchair access to Lina, with their own supporting original event seqs. Lina's question is not absorbed into Omar's ownership.",
+            "redundant_semantic_update": false
+          },
+          {
+            "stage_id": "stage-2",
+            "delivered_complete": false,
+            "evidence_blocked": false,
+            "reason": "All six calls are tracker retries; no chat/work call executes and no card is active. Full evidence was available from 450 ms, so the empty result is caused by failed state-update gating rather than retrieval delay.",
+            "tracker_semantically_correct": false,
+            "tracker_reason": "Every proposal first updates orchard-cancellation-refund and then withdraws that same ID in one patch, violating the one-operation-per-ID contract. Atomic rollback leaves version 1/processed seq 2 while observed seq is 31; the original refund question remains active despite Omar's explicit withdrawal. Lina access and Omar deadline remain present but the effective lifecycle state is stale.",
+            "redundant_semantic_update": false
+          },
+          {
+            "stage_id": "stage-3",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "A successful card at 12200 ms supplies all currently requested facts: Thursday 17:00 deadline, North-gate step-free wheelchair entry, and 08:40-08:55 arrival. The withdrawn refund rule is not presented.",
+            "tracker_semantically_correct": false,
+            "tracker_reason": "The committed patch adds arrival to Lina's access record and retains Omar's deadline, but leaves the original refund ID status active with text 'Drop my refund question. I still need the signup deadline.' This communicates cancellation in prose while failing to encode the record as withdrawn and duplicating the deadline meaning. The state is lifecycle-inconsistent, despite schema acceptance and the correct delivered answer; it is not accurate to say the text straightforwardly requests a refund answer.",
+            "redundant_semantic_update": false
+          }
+        ],
+        "notes": [
+          "Actual role counts are tracker 8, work 5, chat 5: one tracker call in stage 1, six rejected tracker calls in stage 2, and one accepted tracker call in stage 3.",
+          "Stage-2 steps 6-11 return the same operations: update orchard-cancellation-refund to active text 'Drop my refund question. I still need the signup deadline.' using source seq 31, then withdraw the same ID. Each fails with 'A patch may touch each intention only once.' No partial operation commits.",
+          "At stage-3 step 12 the model removes the explicit withdraw operation, updates the refund record to that imperative text, and updates Lina's access record from seq 44 to include arrival. This passes structural validation but creates the described semantic/lifecycle mismatch.",
+          "Evidence is in this run's result.json stage inputs/proposals/session snapshots and execution.json. The final card demonstrates that a correct delivered answer can coexist with an inadequate tracker representation; no new implementation is proposed or tested here."
+        ]
+      },
+      {
+        "run_id": "irs-multiple-request-owners--split--r2",
+        "kind": "nonblind-model-secondary",
+        "limitations": [
+          "Public-condition model diagnosis, not blinded or human review.",
+          "Stage-3 labels are secondary diagnostics; independent blinded reviews determine the primary final-delivery result."
+        ],
+        "stages": [
+          {
+            "stage_id": "stage-1",
+            "delivered_complete": false,
+            "evidence_blocked": false,
+            "reason": "The displayed card provides the signup deadline, wheelchair route and full-refund eligibility at least 48 hours before the briefing, but omits the other material branch of the requested cancellation rule: later cancellation gives no refund. The complete rule is in the full source received at 350 ms.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the split condition.",
+            "redundant_semantic_update": null
+          },
+          {
+            "stage_id": "stage-2",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "The card removes Omar's refund detail while retaining his Thursday 17:00 deadline and Lina's North-gate step-free wheelchair route. Both remaining requests are answered without cross-owner cancellation.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the split condition.",
+            "redundant_semantic_update": null
+          },
+          {
+            "stage_id": "stage-3",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "The active card preserves Omar's deadline and Lina's wheelchair access and adds Lina's 08:40-08:55 arrival window. It does not restore the withdrawn refund question.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the split condition.",
+            "redundant_semantic_update": null
+          }
+        ],
+        "notes": [
+          "The original user asks for the cancellation refund rule, so omitting the later-cancellation/no-refund branch is treated as incomplete policy coverage, rather than a literal-match penalty against incidental gold wording.",
+          "Different questions remain distinct clauses even when displayed on one card; separate physical cards are not required by the raw instruction to keep Lina's access question separate."
+        ]
+      },
+      {
+        "run_id": "irs-multiple-request-owners--unified--r2",
+        "kind": "nonblind-model-secondary",
+        "limitations": [
+          "Public-condition model diagnosis, not blinded or human review.",
+          "Stage-3 labels are secondary diagnostics; independent blinded reviews determine the primary final-delivery result."
+        ],
+        "stages": [
+          {
+            "stage_id": "stage-1",
+            "delivered_complete": false,
+            "evidence_blocked": false,
+            "reason": "Two cards are published at 500 ms but both are actually withdrawn at 600 ms, leaving the stage snapshot empty. The full Orchard guide had arrived at 350 ms; transient publication does not count as an answer still delivered at the checkpoint.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the unified condition.",
+            "redundant_semantic_update": null
+          },
+          {
+            "stage_id": "stage-2",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "The two active cards provide Omar's Thursday 17:00 deadline and Lina's North-gate step-free wheelchair route. The withdrawn refund question is omitted, and both still-valid owners' requests survive.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the unified condition.",
+            "redundant_semantic_update": null
+          },
+          {
+            "stage_id": "stage-3",
+            "delivered_complete": false,
+            "evidence_blocked": false,
+            "reason": "The two old cards retain correct deadline and wheelchair access but never add Lina's explicitly requested 08:40-08:55 arrival window. All six stage-3 calls have no tools despite the fact being in the full source.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the unified condition.",
+            "redundant_semantic_update": null
+          }
+        ],
+        "notes": [
+          "This run has both an intermediate self-withdrawal of visible answers and a later omitted addition. Neither is explained by unavailable source text."
+        ]
+      },
+      {
+        "run_id": "irs-key-restoration--unified--r2",
+        "kind": "nonblind-model-secondary",
+        "limitations": [
+          "Public-condition model diagnosis, not blinded or human review.",
+          "Stage-3 labels are secondary diagnostics; independent blinded reviews determine the primary final-delivery result."
+        ],
+        "stages": [
+          {
+            "stage_id": "stage-1",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "After the full note arrives at 350 ms, the card correctly gives Monday 16:00-18:00 at the service hatch and the refundable $7 key deposit. Those are the two requested details.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the unified condition.",
+            "redundant_semantic_update": null
+          },
+          {
+            "stage_id": "stage-2",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "Actual replacement at 6100 ms removes the collection window and leaves only the refundable $7 deposit, matching the explicit request to keep just the deposit amount.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the unified condition.",
+            "redundant_semantic_update": null
+          },
+          {
+            "stage_id": "stage-3",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "The card restores Monday 16:00-18:00 at the service hatch while retaining the refundable $7 deposit, without asking for confirmation of the explicit restoration.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the unified condition.",
+            "redundant_semantic_update": null
+          }
+        ],
+        "notes": [
+          "Frozen expected_answer includes the explanatory condition 'when the key is returned'; the raw request and gold.request ask for the refundable key deposit, and stage 2 explicitly asks only for its amount. 'Refundable $7' is treated as satisfying that request rather than turning every extra reference-answer fact into a new mandatory output. This differs from the workshop gold.request, which explicitly adds actual price reporting."
+        ]
+      },
+      {
+        "run_id": "irs-key-restoration--tracked--r2",
+        "kind": "nonblind-model-secondary",
+        "limitations": [
+          "Public-condition model diagnosis, not blinded or human review.",
+          "Stage-3 labels are secondary diagnostics; independent blinded reviews determine the primary final-delivery result."
+        ],
+        "stages": [
+          {
+            "stage_id": "stage-1",
+            "delivered_complete": false,
+            "evidence_blocked": false,
+            "reason": "No active card is delivered: both chat attempts conflict with newly arrived observations. Full evidence arrives at 450 ms, but the last allowed call is work and cannot publish. This is role scheduling/delivery failure, not an unavoidable source delay.",
+            "tracker_semantically_correct": true,
+            "tracker_reason": "The active Petra task correctly contains both the collection window and refundable key deposit from the Lantern note.",
+            "redundant_semantic_update": false
+          },
+          {
+            "stage_id": "stage-2",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "The displayed card correctly contains only the $7 refundable deposit and explains refund on key return. The collection window is absent as explicitly requested.",
+            "tracker_semantically_correct": true,
+            "tracker_reason": "The active bundled task is locally updated to contain only the refundable deposit. Its prior history retains the original two-part request without leaving collection active in the current text.",
+            "redundant_semantic_update": false
+          },
+          {
+            "stage_id": "stage-3",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "Actual publication restores Monday 16:00-18:00/service hatch and retains the $7 deposit/refund-on-return explanation. Both effective questions are answered.",
+            "tracker_semantically_correct": true,
+            "tracker_reason": "The same active bundled task changes from deposit-only back to collection plus deposit using the explicit restoration event. This is a genuine semantic change, not a redundant repeat merely because its text matches an older historical version.",
+            "redundant_semantic_update": false
+          }
+        ],
+        "notes": [
+          "The tracker represents collection withdrawal/restoration by editing one still-active bundled record, not by withdraw/reopen on an individually identified collection item. Its effective text is correct in this run, but this does not validate the explicit reopen operation itself."
+        ]
+      },
+      {
+        "run_id": "irs-key-restoration--split--r2",
+        "kind": "nonblind-model-secondary",
+        "limitations": [
+          "Public-condition model diagnosis, not blinded or human review.",
+          "Stage-3 labels are secondary diagnostics; independent blinded reviews determine the primary final-delivery result."
+        ],
+        "stages": [
+          {
+            "stage_id": "stage-1",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "Publication at 450 ms after the full read supplies Monday 16:00-18:00 at the service hatch and the refundable $7 deposit, satisfying both original requested details.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the split condition.",
+            "redundant_semantic_update": null
+          },
+          {
+            "stage_id": "stage-2",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "The active replacement correctly removes the collection window and states only the refundable $7 key deposit. Receipts confirm it remains active after the withdraw/republication sequence.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the split condition.",
+            "redundant_semantic_update": null
+          },
+          {
+            "stage_id": "stage-3",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "The visible card restores Monday 16:00-18:00/service hatch while keeping the refundable $7 deposit, as Petra explicitly requested. Neither item is lost.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the split condition.",
+            "redundant_semantic_update": null
+          }
+        ],
+        "notes": [
+          "As for the unified key run, the reference answer's refund-on-return explanation is not treated as an extra independent requirement when the user asks for a refundable deposit amount. Structured source IDs are absent, but full-source facts support the card."
+        ]
+      },
+      {
+        "run_id": "irs-late-obsolete-evidence--split--r2",
+        "kind": "nonblind-model-secondary",
+        "limitations": [
+          "Public-condition model diagnosis, not blinded or human review.",
+          "Stage-3 labels are secondary diagnostics; independent blinded reviews determine the primary final-delivery result.",
+          "evidence_blocked can coexist with an erroneous unsupported completion; it is not an excuse for fabricating a fact."
+        ],
+        "stages": [
+          {
+            "stage_id": "stage-1",
+            "delivered_complete": false,
+            "evidence_blocked": true,
+            "reason": "No card is shown while the common Desktop read is pending until 6550 ms, beyond stage 1. The arrived search excerpt contains neither feature answer; supported completion is objectively blocked by the read timing.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the split condition.",
+            "redundant_semantic_update": null
+          },
+          {
+            "stage_id": "stage-2",
+            "delivered_complete": false,
+            "evidence_blocked": true,
+            "reason": "The Mobile full read initiated at 6300 ms is due at 12800 ms, beyond stage 2, and arrived snippets contain no feature answers. Nevertheless a card at 6400 ms asserts offline editing and a PDF limit of 100 pages. The 100-page claim is wrong and unsupported; this is false completion during a genuine evidence block, not a truthful pending answer.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the split condition.",
+            "redundant_semantic_update": null
+          },
+          {
+            "stage_id": "stage-3",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "After the real Mobile full result arrives at 12800 ms, the card is replaced/corrected to offline editing of downloaded notebooks and five pages per PDF. The final active card is accurate and sourced; the prior incorrect stage remains an observed failure.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the split condition.",
+            "redundant_semantic_update": null
+          }
+        ],
+        "notes": [
+          "The Desktop job is cancelled at 6100 ms before its 6550 ms due time, so no obsolete Desktop full result arrives. The unsupported 100-page claim cannot be attributed to copying that missing Desktop result, whose actual limit would have been fifty pages anyway.",
+          "The input to the wrong-card call contains only truncated Desktop/Mobile search preambles. Neither the PDF limit nor offline-editing answer appears in them.",
+          "Final recovery does not erase the earlier wrong visible completion."
+        ]
+      },
+      {
+        "run_id": "irs-late-obsolete-evidence--unified--r2",
+        "kind": "nonblind-model-secondary",
+        "limitations": [
+          "Public-condition model diagnosis, not blinded or human review.",
+          "Stage-3 labels are secondary diagnostics; independent blinded reviews determine the primary final-delivery result."
+        ],
+        "stages": [
+          {
+            "stage_id": "stage-1",
+            "delivered_complete": false,
+            "evidence_blocked": true,
+            "reason": "The stage has no active card while all six calls wait on a seeded Desktop read due at 6550 ms. The current excerpt lacks both answers, so this is evidence-blocked noncompletion rather than an invented result.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the unified condition.",
+            "redundant_semantic_update": null
+          },
+          {
+            "stage_id": "stage-2",
+            "delivered_complete": false,
+            "evidence_blocked": true,
+            "reason": "Desktop cancellation succeeds at 6100 ms. Mobile search arrives at 6150 ms and the full read initiated at 6300 ms is due at 12800 ms, beyond the stage. No card invents an answer; the lack of completed feature answers reflects the actual evidence delay.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the unified condition.",
+            "redundant_semantic_update": null
+          },
+          {
+            "stage_id": "stage-3",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "The read arrives at 12800 ms and actual publication at 12900 ms gives both correct Mobile answers: downloaded notebooks can be edited offline, and PDF export is limited to five pages per PDF.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the unified condition.",
+            "redundant_semantic_update": null
+          }
+        ],
+        "notes": [
+          "The old Desktop read never arrives because cancellation succeeds before its due time; resistance to an actually arriving obsolete result is not tested in this run."
+        ]
+      },
+      {
+        "run_id": "irs-late-obsolete-evidence--tracked--r2",
+        "kind": "nonblind-model-secondary",
+        "limitations": [
+          "Public-condition model diagnosis, not blinded or human review.",
+          "Stage-3 labels are secondary diagnostics; independent blinded reviews determine the primary final-delivery result."
+        ],
+        "stages": [
+          {
+            "stage_id": "stage-1",
+            "delivered_complete": false,
+            "evidence_blocked": true,
+            "reason": "The visible card accurately reports that the Desktop read is pending and retains both feature questions. Its 6550 ms due time exceeds stage 1, and the available snippet does not contain the answers. This is truthful evidence-blocked noncompletion.",
+            "tracker_semantically_correct": true,
+            "tracker_reason": "The active Tomas task correctly records Desktop, offline editing of already downloaded notebooks and the PDF page limit.",
+            "redundant_semantic_update": false
+          },
+          {
+            "stage_id": "stage-2",
+            "delivered_complete": false,
+            "evidence_blocked": true,
+            "reason": "The final card says the Mobile handbook has been found and specific details still need a full read. The Mobile job is actually pending from 6500 ms with due time 13000 ms, beyond stage 2. No supported feature completion is possible yet.",
+            "tracker_semantically_correct": true,
+            "tracker_reason": "The same task changes Desktop to Mobile for both questions, preserving Tomas and not retaining a competing active Desktop request.",
+            "redundant_semantic_update": false
+          },
+          {
+            "stage_id": "stage-3",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "A real wait delivers the Mobile full source at 13000 ms and a successful publication at 13100 ms replaces the progress card with both correct Mobile facts: offline editing is possible and the PDF limit is five pages.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "The final state preserves Tomas, Mobile and both feature questions, but its identical text does not explicitly represent the final turn's instruction to use the Mobile handbook. As in repetition 1, core task/version correctness is supported while complete source-preference representation is left uncertain. Step 12 only refreshes the source seq to 52.",
+            "redundant_semantic_update": true
+          }
+        ],
+        "notes": [
+          "The actual Desktop job is cancelled at 6300 ms before its 6550 ms due time and never yields a full arrived result.",
+          "The stage-3 update is redundant in committed task content, but the input also makes the source preference explicit; this is not asserted to be an unquestionable pure no-change input.",
+          "The stage-2 progress text says it will now read the full document although the work role has already started that read. This is imprecise progress narration, not a fabricated feature answer."
+        ]
+      },
+      {
+        "run_id": "irs-room-withdrawal--tracked--r2",
+        "kind": "nonblind-model-secondary",
+        "limitations": [
+          "Public-condition model diagnosis, not blinded or human review.",
+          "Stage-3 labels are secondary diagnostics; independent blinded reviews determine the primary final-delivery result."
+        ],
+        "stages": [
+          {
+            "stage_id": "stage-1",
+            "delivered_complete": false,
+            "evidence_blocked": false,
+            "reason": "The checkpoint has no active card. Search and full-read results arrive at 250 and 450 ms, respectively; both chat publication attempts overlap these arrivals and are rejected. The sixth call is a work-role idle wait, leaving no final chat slot even though full evidence has arrived.",
+            "tracker_semantically_correct": true,
+            "tracker_reason": "The active Nadia task correctly includes cheapest, at least twelve seats, the $20 ceiling, Wi-Fi, and all three requested answer fields.",
+            "redundant_semantic_update": false
+          },
+          {
+            "stage_id": "stage-2",
+            "delivered_complete": false,
+            "evidence_blocked": false,
+            "reason": "The displayed card names Gauge, $18 and twelve seats as cheapest after Wi-Fi is removed. The full guide already establishes that Shaft, $12 and sixteen seats, is now the cheapest eligible choice. This is an incorrect recommendation despite available evidence and a correct tracker update.",
+            "tracker_semantically_correct": true,
+            "tracker_reason": "The committed task removes the Wi-Fi requirement while retaining cheapest, twelve seats, $20 and name/price/capacity. It does not incorrectly encode the displayed Gauge choice as the intent.",
+            "redundant_semantic_update": false
+          },
+          {
+            "stage_id": "stage-3",
+            "delivered_complete": false,
+            "evidence_blocked": false,
+            "reason": "The final displayed card again gives Gauge, $18 and twelve seats rather than the cheaper eligible Shaft. The request for final booking details does not restore Wi-Fi, and the necessary full-source facts remain available.",
+            "tracker_semantically_correct": true,
+            "tracker_reason": "The state retains all effective constraints correctly. The stage-3 turn reiterates name, price and capacity already required; the committed update changes source references but preserves identical owner, active status and task text.",
+            "redundant_semantic_update": true
+          }
+        ],
+        "notes": [
+          "Fixed batch 4 is evaluation/manifest.json assignments[36:48], in manifest order: 12 runs and 36 stage snapshots.",
+          "Reviewed fixtures/cases.json and selected result.json/execution.json, including actual inputs, proposals, committed states and receipts. No main-review files were read; no local model was invoked; no frozen source or log was modified.",
+          "Original arrived requests govern semantic interpretation. Gold is a reference; additional illustrative wording is not automatically a user requirement.",
+          "At step 8 the work role privately derives the correct Shaft/$12/sixteen result but makes no tool call. Step 9 chat input has empty notes and no persisted work conclusion, and chat republishes Gauge. This identifies a missing explicit handoff in this trajectory, not a measured causal effect of a hypothetical repair.",
+          "Structural tracker success, semantic state correctness, and final answer quality are different observations in this run."
+        ]
+      },
+      {
+        "run_id": "irs-room-withdrawal--split--r2",
+        "kind": "nonblind-model-secondary",
+        "limitations": [
+          "Public-condition model diagnosis, not blinded or human review.",
+          "Stage-3 labels are secondary diagnostics; independent blinded reviews determine the primary final-delivery result."
+        ],
+        "stages": [
+          {
+            "stage_id": "stage-1",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "The full guide arrives at 350 ms after read plus wait in one work call. The active card correctly gives Gauge, $18 and twelve seats under the original Wi-Fi requirement.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the split condition.",
+            "redundant_semantic_update": null
+          },
+          {
+            "stage_id": "stage-2",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "The card actually changes to Shaft, $12 and sixteen seats after Wi-Fi is dropped, preserving the budget and capacity constraints. Two invalid save_notes argument attempts are rejected but do not prevent correct delivery.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the split condition.",
+            "redundant_semantic_update": null
+          },
+          {
+            "stage_id": "stage-3",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "The retained active card provides the correct final room name, $12 price and sixteen-seat capacity. Repeated publication receipts are unchanged, not missing delivery.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the split condition.",
+            "redundant_semantic_update": null
+          }
+        ],
+        "notes": [
+          "Step 6 and 8 pass card_id/text to save_notes instead of its notes schema and receive invalid_tool_arguments; the first attempted note also contains the old Gauge recommendation. These errors are not counted as persisted notes or as failed final answers.",
+          "The initial work read-plus-wait action allows the following chat call to see the full source, unlike the recurring source-arrival publication race in several tracked runs."
+        ]
+      },
+      {
+        "run_id": "irs-room-withdrawal--unified--r2",
+        "kind": "nonblind-model-secondary",
+        "limitations": [
+          "Public-condition model diagnosis, not blinded or human review.",
+          "Stage-3 labels are secondary diagnostics; independent blinded reviews determine the primary final-delivery result."
+        ],
+        "stages": [
+          {
+            "stage_id": "stage-1",
+            "delivered_complete": false,
+            "evidence_blocked": false,
+            "reason": "No active card is delivered. The full guide arrives at 350 ms and the last two calls privately state the correct Gauge/$18/twelve answer, but neither invokes publish_card. Private prose is not a displayed answer in this harness.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the unified condition.",
+            "redundant_semantic_update": null
+          },
+          {
+            "stage_id": "stage-2",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "Actual publication gives Shaft, $12 and sixteen seats under the retained budget/capacity constraints after dropping Wi-Fi. A subsequent withdraw-and-republish sequence ends with this correct card active.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the unified condition.",
+            "redundant_semantic_update": null
+          },
+          {
+            "stage_id": "stage-3",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "The existing correct Shaft/$12/sixteen card remains active and fulfills the reiterated request for final booking details. No new publication is necessary for unchanged valid content.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the unified condition.",
+            "redundant_semantic_update": null
+          }
+        ],
+        "notes": [
+          "This is an additional example of correct private prose without initial delivery; the later correct active card counts even when subsequent model calls contain only prose."
+        ]
+      },
+      {
+        "run_id": "irs-multiple-request-owners--split--r1",
+        "kind": "nonblind-model-secondary",
+        "limitations": [
+          "Public-condition model diagnosis, not blinded or human review.",
+          "Stage-3 labels are secondary diagnostics; independent blinded reviews determine the primary final-delivery result."
+        ],
+        "stages": [
+          {
+            "stage_id": "stage-1",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "The active card reports Omar's Thursday 17:00 deadline and both refund branches, plus Lina's North-gate step-free access. Full source reads arrive at 350 ms and publication succeeds at 600 ms.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the split condition.",
+            "redundant_semantic_update": null
+          },
+          {
+            "stage_id": "stage-2",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "The replacement card removes only Omar's refund answer, retaining his Thursday deadline and Lina's wheelchair route. No other owner's request is lost.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the split condition.",
+            "redundant_semantic_update": null
+          },
+          {
+            "stage_id": "stage-3",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "The active card adds the 08:40-08:55 arrival window while retaining the deadline and wheelchair access, and does not restore the withdrawn refund question.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the split condition.",
+            "redundant_semantic_update": null
+          }
+        ],
+        "notes": [
+          "Separate requested questions remain separate clauses even on a shared card; the raw user request does not mandate a separate physical card per owner.",
+          "The work role persists an updated owner/request summary in save_notes before the final chat publication. This is an observed handoff, not an isolated causal comparison against other runs."
+        ]
+      },
+      {
+        "run_id": "irs-multiple-request-owners--tracked--r1",
+        "kind": "nonblind-model-secondary",
+        "limitations": [
+          "Public-condition model diagnosis, not blinded or human review.",
+          "Stage-3 labels are secondary diagnostics; independent blinded reviews determine the primary final-delivery result."
+        ],
+        "stages": [
+          {
+            "stage_id": "stage-1",
+            "delivered_complete": false,
+            "evidence_blocked": false,
+            "reason": "The checkpoint has no active card: both chat publication attempts are rejected when search/full-read results arrive. Full evidence is available at 450 ms and correct work notes are saved in the last slot, but no subsequent chat call remains in the stage.",
+            "tracker_semantically_correct": true,
+            "tracker_reason": "Three active records correctly separate Omar's deadline and refund requests from Lina's wheelchair-access request, with the correct owners and original source events.",
+            "redundant_semantic_update": false
+          },
+          {
+            "stage_id": "stage-2",
+            "delivered_complete": false,
+            "evidence_blocked": false,
+            "reason": "All six calls attempt rejected tracker patches, so no actor call delivers the retained deadline and wheelchair-access answers. The full source is already available and the active-card set stays empty.",
+            "tracker_semantically_correct": false,
+            "tracker_reason": "Each proposal updates then withdraws orchard-cancellation-refund in one patch, violating the one-touch-per-ID constraint. Atomic rollback leaves version 1, processed seq 2 versus observed seq 31, and the original refund task remains active instead of withdrawn.",
+            "redundant_semantic_update": false
+          },
+          {
+            "stage_id": "stage-3",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "Despite the defective tracker representation, the card actually delivers Thursday 17:00, North-gate step-free access and 08:40-08:55 arrival, with the refund question omitted. Correct delivery is evaluated independently from tracker lifecycle status.",
+            "tracker_semantically_correct": false,
+            "tracker_reason": "The accepted patch keeps the old refund ID active with imperative text 'Drop my refund question. I still need the signup deadline.' while a separate deadline record also stays active. The text communicates cancellation, but the structured lifecycle never withdraws the refund record. Lina's owner and access-plus-arrival content are retained correctly.",
+            "redundant_semantic_update": false
+          }
+        ],
+        "notes": [
+          "This run uses eight tracker calls: one initial commit, six stage-2 failures and one stage-3 commit. Steps 6-11 repeat the same update-plus-withdraw proposal for one ID and all fail with 'A patch may touch each intention only once.' No partial state change is accepted.",
+          "At step 12 the model drops the explicit withdraw operation, updates the refund record's text to the cancellation instruction and adds arrival within Lina's access record. This passes structural checks but is not a correct structured withdrawal.",
+          "The stage-3 visible answer is complete; the active refund ID is not evidence that the model actually re-delivered refund information. This reproduces the distinction seen in the other repeat.",
+          "Early progress publications also use job IDs as source IDs, but new_observations rejects them before display. Their proposed citations are not successful source citations."
+        ]
+      },
+      {
+        "run_id": "irs-multiple-request-owners--unified--r1",
+        "kind": "nonblind-model-secondary",
+        "limitations": [
+          "Public-condition model diagnosis, not blinded or human review.",
+          "Stage-3 labels are secondary diagnostics; independent blinded reviews determine the primary final-delivery result."
+        ],
+        "stages": [
+          {
+            "stage_id": "stage-1",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "Two active cards correctly report Omar's deadline and full two-branch refund rule, plus Lina's wheelchair route, after the full guide arrives at 350 ms.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the unified condition.",
+            "redundant_semantic_update": null
+          },
+          {
+            "stage_id": "stage-2",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "At the checkpoint, the deadline card omits refund and the wheelchair-access card is active with the correct route. Lina's card is unnecessarily withdrawn during earlier calls but is restored before the checkpoint.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the unified condition.",
+            "redundant_semantic_update": null
+          },
+          {
+            "stage_id": "stage-3",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "A third active card adds the correct 08:40-08:55 arrival window while the deadline and wheelchair route remain active. Refund remains omitted.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the unified condition.",
+            "redundant_semantic_update": null
+          }
+        ],
+        "notes": [
+          "Steps 6-7 temporarily withdraw Lina's still-valid card; step 8 restores it. Checkpoint completeness does not capture that intermediate cross-owner disturbance, which remains a trace-level limitation rather than a final snapshot failure."
+        ]
+      },
+      {
+        "run_id": "irs-key-restoration--tracked--r1",
+        "kind": "nonblind-model-secondary",
+        "limitations": [
+          "Public-condition model diagnosis, not blinded or human review.",
+          "Stage-3 labels are secondary diagnostics; independent blinded reviews determine the primary final-delivery result."
+        ],
+        "stages": [
+          {
+            "stage_id": "stage-1",
+            "delivered_complete": false,
+            "evidence_blocked": false,
+            "reason": "No active card survives to the checkpoint. Chat calls overlap search and read arrivals and are rejected; the full note arrives at 450 ms and the final work call saves the correct facts, without a remaining chat slot.",
+            "tracker_semantically_correct": true,
+            "tracker_reason": "The single active Petra record correctly includes the collection window and refundable key deposit from the named note.",
+            "redundant_semantic_update": false
+          },
+          {
+            "stage_id": "stage-2",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "The displayed card gives only the $7 refundable deposit and its return condition. The withdrawn collection-window detail is absent.",
+            "tracker_semantically_correct": true,
+            "tracker_reason": "The existing bundle is edited to deposit only, preserving Petra and the note while removing the collection-window requirement.",
+            "redundant_semantic_update": false
+          },
+          {
+            "stage_id": "stage-3",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "The active card restores Monday 16:00-18:00 at the service hatch and retains the $7 refundable deposit, matching the explicit restoration without another approval request.",
+            "tracker_semantically_correct": true,
+            "tracker_reason": "The active bundle restores collection window alongside deposit. Matching stage-1 wording is a real change from the deposit-only stage-2 state, not a redundant update.",
+            "redundant_semantic_update": false
+          }
+        ],
+        "notes": [
+          "This successful semantic restoration edits a continuously active bundle. It does not demonstrate that the model correctly uses the explicit reopen operation on a withdrawn record."
+        ]
+      },
+      {
+        "run_id": "irs-key-restoration--unified--r1",
+        "kind": "nonblind-model-secondary",
+        "limitations": [
+          "Public-condition model diagnosis, not blinded or human review.",
+          "Stage-3 labels are secondary diagnostics; independent blinded reviews determine the primary final-delivery result."
+        ],
+        "stages": [
+          {
+            "stage_id": "stage-1",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "The active card correctly gives Monday 16:00-18:00 at the service hatch and the refundable $7 deposit after the full note arrives at 350 ms. These are the two requested details.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the unified condition.",
+            "redundant_semantic_update": null
+          },
+          {
+            "stage_id": "stage-2",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "The actual withdraw-and-republish sequence leaves only the refundable $7 deposit, as Petra explicitly requests for this stage.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the unified condition.",
+            "redundant_semantic_update": null
+          },
+          {
+            "stage_id": "stage-3",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "The card restores the correct Monday collection window and service hatch while retaining the refundable $7 deposit.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the unified condition.",
+            "redundant_semantic_update": null
+          }
+        ],
+        "notes": [
+          "Gold expected_answer includes 'when the key is returned', whereas the original request asks for the refundable deposit and later explicitly just its amount. Correct $7/refundable coverage is not failed solely for omitting that extra illustrative condition, consistent with earlier batches."
+        ]
+      },
+      {
+        "run_id": "irs-key-restoration--split--r1",
+        "kind": "nonblind-model-secondary",
+        "limitations": [
+          "Public-condition model diagnosis, not blinded or human review.",
+          "Stage-3 labels are secondary diagnostics; independent blinded reviews determine the primary final-delivery result."
+        ],
+        "stages": [
+          {
+            "stage_id": "stage-1",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "After read plus wait makes the full note available at 350 ms, the active card correctly gives Monday 16:00-18:00 at the service hatch and the refundable $7 deposit.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the split condition.",
+            "redundant_semantic_update": null
+          },
+          {
+            "stage_id": "stage-2",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "The active replacement card reports only the refundable $7 deposit; the collection window is removed as requested.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the split condition.",
+            "redundant_semantic_update": null
+          },
+          {
+            "stage_id": "stage-3",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "The active card restores the correct Monday window/service hatch and keeps the refundable $7 deposit, without a new approval request.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the split condition.",
+            "redundant_semantic_update": null
+          }
+        ],
+        "notes": [
+          "The explicit user request governs the deposit label, rather than requiring every clause in gold expected_answer. Refund timing was not a separately requested policy item here.",
+          "The first stage-3 work prose still emphasizes deposit, but chat uses the raw restoration request and publishes both details. An imperfect private intermediate summary does not establish a wrong delivered answer."
+        ]
+      },
+      {
+        "run_id": "irs-unaccepted-assistant-proposal--unified--r1",
+        "kind": "nonblind-model-secondary",
+        "limitations": [
+          "Public-condition model diagnosis, not blinded or human review.",
+          "Stage-3 labels are secondary diagnostics; independent blinded reviews determine the primary final-delivery result."
+        ],
+        "stages": [
+          {
+            "stage_id": "stage-1",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "The active card correctly gives only the requested 14:20 start and Room T6 after the full notice arrives at 350 ms. Later private prose mentions recording, but it is not yet displayed.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the unified condition.",
+            "redundant_semantic_update": null
+          },
+          {
+            "stage_id": "stage-2",
+            "delivered_complete": false,
+            "evidence_blocked": false,
+            "reason": "The actual replacement card adds 'No recording will be made' to the correct time and room. Imani originally said only time and room and explicitly did not accept adding the assistant's recording proposal. This is a visible scope violation even though the added fact is true.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the unified condition.",
+            "redundant_semantic_update": null
+          },
+          {
+            "stage_id": "stage-3",
+            "delivered_complete": false,
+            "evidence_blocked": false,
+            "reason": "The retained card still adds the unaccepted recording detail to the requested time and room. The final request for the requested session details does not authorize this expansion.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the unified condition.",
+            "redundant_semantic_update": null
+          }
+        ],
+        "notes": [
+          "The two requested facts remain correct; failure labels reflect the raw user's explicit 'Only' scope, not factual inaccuracy or missing source evidence. The trajectory does not reveal the model's internal causal interpretation of the proposal."
+        ]
+      },
+      {
+        "run_id": "irs-unaccepted-assistant-proposal--split--r1",
+        "kind": "nonblind-model-secondary",
+        "limitations": [
+          "Public-condition model diagnosis, not blinded or human review.",
+          "Stage-3 labels are secondary diagnostics; independent blinded reviews determine the primary final-delivery result."
+        ],
+        "stages": [
+          {
+            "stage_id": "stage-1",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "The active card correctly provides 14:20 and Room T6 after the full notice arrives at 350 ms. A later withdraw-and-republish adds the source ID and ends with the correct card active.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the split condition.",
+            "redundant_semantic_update": null
+          },
+          {
+            "stage_id": "stage-2",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "The active card keeps only the originally requested time and room. Neither the assistant's proposal nor Imani's acknowledgment is promoted into a recording deliverable.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the split condition.",
+            "redundant_semantic_update": null
+          },
+          {
+            "stage_id": "stage-3",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "The correct time/room card remains active without recording details or any new approval demand.",
+            "tracker_semantically_correct": null,
+            "tracker_reason": "No independent tracker in the split condition.",
+            "redundant_semantic_update": null
+          }
+        ],
+        "notes": [
+          "Repeated save_notes and unchanged publish_card actions consume calls without changing requirements or final delivery. They are not tracker semantic updates because this arm has no tracker."
+        ]
+      },
+      {
+        "run_id": "irs-unaccepted-assistant-proposal--tracked--r1",
+        "kind": "nonblind-model-secondary",
+        "limitations": [
+          "Public-condition model diagnosis, not blinded or human review.",
+          "Stage-3 labels are secondary diagnostics; independent blinded reviews determine the primary final-delivery result."
+        ],
+        "stages": [
+          {
+            "stage_id": "stage-1",
+            "delivered_complete": false,
+            "evidence_blocked": false,
+            "reason": "The checkpoint has no active card. Full notice evidence arrives at 450 ms; both chat publications are rejected as new_observations and the last work call only privately states the correct facts. The rejected second proposal invents 14:00 and Room 304, but those incorrect values are never delivered.",
+            "tracker_semantically_correct": true,
+            "tracker_reason": "The active Imani task correctly retains time and room from the named notice, with no recording task.",
+            "redundant_semantic_update": false
+          },
+          {
+            "stage_id": "stage-2",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "The actually displayed card gives 14:20 and Room T6 only, preserving Imani's scope and not adding the unaccepted recording suggestion.",
+            "tracker_semantically_correct": true,
+            "tracker_reason": "The tracker input identifies the proposal as assistant seq 22 and the nonacceptance as user seq 23. The accepted patch keeps the same time/room text, owner and active status and only changes source references. This is a genuine no-change-intent input with a redundant semantic update.",
+            "redundant_semantic_update": true
+          },
+          {
+            "stage_id": "stage-3",
+            "delivered_complete": true,
+            "evidence_blocked": false,
+            "reason": "The correct active time/room card remains displayed. No recording detail or approval question is delivered; an optional question in private prose is not a published action.",
+            "tracker_semantically_correct": true,
+            "tracker_reason": "The final raw turn asks for the already requested details. The accepted patch again preserves identical owner, active status and task text while changing source references, so intent content is correct but redundantly rewritten.",
+            "redundant_semantic_update": true
+          }
+        ],
+        "notes": [
+          "The stage-1 observation guard prevents display of a false 14:00/Room 304 proposal; it does not semantically validate the proposal and also delays delivery. A rejected hallucinated action and an actually displayed hallucination must not be conflated.",
+          "Both later tracker proposals are nonempty source-reference updates on unchanged effective intent; they are not successful uses of operations:[] for the no-change path."
+        ]
+      }
+    ]
+  }
+}

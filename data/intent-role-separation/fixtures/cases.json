@@ -1,0 +1,1798 @@
+{
+  "schema_version": "intent-role-separation-cases-v1",
+  "authored_date": "2026-10-23",
+  "timezone": "America/Halifax",
+  "provenance": "New fictional microtasks authored for this role-separation pilot. No cases or names are imported from summary-placement. The author and engineering team can inspect these fixtures; this is not a hidden benchmark.",
+  "cases": [
+    {
+      "case_id": "irs-shuttle-replacement",
+      "family_id": "irs-shuttle-replacement",
+      "title": "Replace one constraint while retaining two others",
+      "tags": [
+        "scope_modification",
+        "constraint_retention"
+      ],
+      "replay": {
+        "case_id": "irs-shuttle-replacement",
+        "corpus_ids": [
+          "irs-shuttle-guide"
+        ],
+        "close_at_ms": 18000,
+        "tool_latency_ms": {
+          "search": 50,
+          "read": 50
+        },
+        "events": [
+          {
+            "kind": "asr_final",
+            "at_ms": 0,
+            "speaker": "Jules",
+            "segment_id": "shuttle-1",
+            "text": "Use the Estuary Shuttle sheet to recommend one free Saturday shuttle with step-free boarding. Tell me its departure time and exact boarding point."
+          },
+          {
+            "kind": "asr_final",
+            "at_ms": 6000,
+            "speaker": "Jules",
+            "segment_id": "shuttle-2",
+            "text": "Change Saturday to Sunday. Keep the free and step-free requirements, and replace the old recommendation."
+          },
+          {
+            "kind": "asr_final",
+            "at_ms": 12000,
+            "speaker": "Jules",
+            "segment_id": "shuttle-3",
+            "text": "Please make sure the final recommendation includes the departure time and the boarding point."
+          }
+        ]
+      },
+      "corpus": [
+        {
+          "id": "irs-shuttle-guide",
+          "title": "Estuary Shuttle sheet",
+          "kind": "document",
+          "available_at_ms": 0,
+          "text": "The Estuary Shuttle sheet describes the current community shuttle timetable. Boarding points, accessibility and ticket prices are recorded together so that a service can be selected against several requirements. Pike: Saturday, 09:00, East Pier, free, step-free ramp. Cove: Sunday, 10:00, West Quay, free, step-free ramp. Spruce: Sunday, 08:00, South Steps, free, stairs only. Sail: Sunday, 11:00, North Dock, $4, step-free ramp."
+        }
+      ],
+      "stages": [
+        {
+          "stage_id": "stage-1",
+          "at_ms": 0,
+          "end_at_ms": 6000,
+          "event_ids": [
+            "shuttle-1"
+          ]
+        },
+        {
+          "stage_id": "stage-2",
+          "at_ms": 6000,
+          "end_at_ms": 12000,
+          "event_ids": [
+            "shuttle-2"
+          ]
+        },
+        {
+          "stage_id": "stage-3",
+          "at_ms": 12000,
+          "end_at_ms": 18000,
+          "event_ids": [
+            "shuttle-3"
+          ]
+        }
+      ],
+      "scoring": {
+        "stage_gold": [
+          {
+            "stage_id": "stage-1",
+            "effective_intents": [
+              {
+                "intent_id": "shuttle-choice",
+                "owner": "Jules",
+                "request": "Recommend a free, step-free shuttle on the current day, with its departure time and boarding point.",
+                "expected_answer": "Pike; Saturday; 09:00; East Pier. It is free and has step-free boarding.",
+                "source_ids": [
+                  "irs-shuttle-guide"
+                ],
+                "evidence_event_ids": [
+                  "shuttle-1"
+                ]
+              }
+            ],
+            "inactive_intents": [],
+            "forbidden_outcomes": [],
+            "allowed_unresolved": []
+          },
+          {
+            "stage_id": "stage-2",
+            "effective_intents": [
+              {
+                "intent_id": "shuttle-choice",
+                "owner": "Jules",
+                "request": "Recommend a free, step-free shuttle on the current day, with its departure time and boarding point.",
+                "expected_answer": "Cove; Sunday; 10:00; West Quay. It is free and has step-free boarding.",
+                "source_ids": [
+                  "irs-shuttle-guide"
+                ],
+                "evidence_event_ids": [
+                  "shuttle-1",
+                  "shuttle-2"
+                ]
+              }
+            ],
+            "inactive_intents": [
+              {
+                "intent_id": "saturday-choice",
+                "reason": "The requester replaced Saturday with Sunday.",
+                "evidence_event_ids": [
+                  "shuttle-2"
+                ]
+              }
+            ],
+            "forbidden_outcomes": [
+              "Present Pike, Spruce or Sail as satisfying the current request."
+            ],
+            "allowed_unresolved": []
+          },
+          {
+            "stage_id": "stage-3",
+            "effective_intents": [
+              {
+                "intent_id": "shuttle-choice",
+                "owner": "Jules",
+                "request": "Recommend a free, step-free shuttle on the current day, with its departure time and boarding point.",
+                "expected_answer": "Cove; Sunday; 10:00; West Quay. It is free and has step-free boarding.",
+                "source_ids": [
+                  "irs-shuttle-guide"
+                ],
+                "evidence_event_ids": [
+                  "shuttle-1",
+                  "shuttle-2",
+                  "shuttle-3"
+                ]
+              }
+            ],
+            "inactive_intents": [
+              {
+                "intent_id": "saturday-choice",
+                "reason": "Saturday remains replaced.",
+                "evidence_event_ids": [
+                  "shuttle-2"
+                ]
+              }
+            ],
+            "forbidden_outcomes": [
+              "Drop the free or step-free requirement.",
+              "Ask again whether the explicitly requested day change is approved."
+            ],
+            "allowed_unresolved": []
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "irs-room-withdrawal",
+      "family_id": "irs-room-withdrawal",
+      "title": "Withdraw one requirement and recompute the answer",
+      "tags": [
+        "scope_withdrawal",
+        "dependent_answer_invalidation"
+      ],
+      "replay": {
+        "case_id": "irs-room-withdrawal",
+        "corpus_ids": [
+          "irs-room-guide"
+        ],
+        "close_at_ms": 18000,
+        "tool_latency_ms": {
+          "search": 50,
+          "read": 50
+        },
+        "events": [
+          {
+            "kind": "asr_final",
+            "at_ms": 0,
+            "speaker": "Nadia",
+            "segment_id": "room-1",
+            "text": "From the Foundry Room guide, choose the cheapest room that holds at least twelve people, costs no more than $20, and has Wi-Fi. Give its name, price and capacity."
+          },
+          {
+            "kind": "asr_final",
+            "at_ms": 6000,
+            "speaker": "Nadia",
+            "segment_id": "room-2",
+            "text": "We will use paper, so drop the Wi-Fi requirement. The minimum twelve seats and $20 limit still apply. Recheck the cheapest eligible room."
+          },
+          {
+            "kind": "asr_final",
+            "at_ms": 12000,
+            "speaker": "Nadia",
+            "segment_id": "room-3",
+            "text": "I need the final room name, price and capacity to put on the booking request."
+          }
+        ]
+      },
+      "corpus": [
+        {
+          "id": "irs-room-guide",
+          "title": "Foundry Room guide",
+          "kind": "document",
+          "available_at_ms": 0,
+          "text": "The Foundry Room guide lists the hire options for the community workshop. Each price is the complete price for one booking; capacities are seated capacities, and connectivity is listed separately for each room. Gauge: $18, twelve seats, Wi-Fi. Shaft: $12, sixteen seats, no Wi-Fi. Spindle: $10, eight seats, Wi-Fi. Furnace: $24, twenty seats, Wi-Fi."
+        }
+      ],
+      "stages": [
+        {
+          "stage_id": "stage-1",
+          "at_ms": 0,
+          "end_at_ms": 6000,
+          "event_ids": [
+            "room-1"
+          ]
+        },
+        {
+          "stage_id": "stage-2",
+          "at_ms": 6000,
+          "end_at_ms": 12000,
+          "event_ids": [
+            "room-2"
+          ]
+        },
+        {
+          "stage_id": "stage-3",
+          "at_ms": 12000,
+          "end_at_ms": 18000,
+          "event_ids": [
+            "room-3"
+          ]
+        }
+      ],
+      "scoring": {
+        "stage_gold": [
+          {
+            "stage_id": "stage-1",
+            "effective_intents": [
+              {
+                "intent_id": "eligible-room",
+                "owner": "Nadia",
+                "request": "Choose the cheapest room meeting the current constraints and report name, price and capacity.",
+                "expected_answer": "Gauge: $18, twelve seats; Wi-Fi is available.",
+                "source_ids": [
+                  "irs-room-guide"
+                ],
+                "evidence_event_ids": [
+                  "room-1"
+                ]
+              }
+            ],
+            "inactive_intents": [],
+            "forbidden_outcomes": [],
+            "allowed_unresolved": []
+          },
+          {
+            "stage_id": "stage-2",
+            "effective_intents": [
+              {
+                "intent_id": "eligible-room",
+                "owner": "Nadia",
+                "request": "Choose the cheapest room meeting the current constraints and report name, price and capacity.",
+                "expected_answer": "Shaft: $12, sixteen seats; the removed Wi-Fi condition must not disqualify it.",
+                "source_ids": [
+                  "irs-room-guide"
+                ],
+                "evidence_event_ids": [
+                  "room-1",
+                  "room-2"
+                ]
+              }
+            ],
+            "inactive_intents": [
+              {
+                "intent_id": "wifi-required",
+                "reason": "Nadia explicitly withdrew this condition.",
+                "evidence_event_ids": [
+                  "room-2"
+                ]
+              }
+            ],
+            "forbidden_outcomes": [
+              "Keep Gauge solely because it has Wi-Fi.",
+              "Choose Spindle while dropping the twelve-seat requirement."
+            ],
+            "allowed_unresolved": []
+          },
+          {
+            "stage_id": "stage-3",
+            "effective_intents": [
+              {
+                "intent_id": "eligible-room",
+                "owner": "Nadia",
+                "request": "Choose the cheapest room meeting the current constraints and report name, price and capacity.",
+                "expected_answer": "Shaft: $12, sixteen seats; the removed Wi-Fi condition must not disqualify it.",
+                "source_ids": [
+                  "irs-room-guide"
+                ],
+                "evidence_event_ids": [
+                  "room-1",
+                  "room-2",
+                  "room-3"
+                ]
+              }
+            ],
+            "inactive_intents": [
+              {
+                "intent_id": "wifi-required",
+                "reason": "Wi-Fi remains withdrawn.",
+                "evidence_event_ids": [
+                  "room-2"
+                ]
+              }
+            ],
+            "forbidden_outcomes": [
+              "Treat the prior recommendation as still cheapest under the changed constraints.",
+              "Ask for fresh approval to drop Wi-Fi."
+            ],
+            "allowed_unresolved": []
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "irs-key-restoration",
+      "family_id": "irs-key-restoration",
+      "title": "Restore an explicitly withdrawn intent",
+      "tags": [
+        "scope_withdrawal",
+        "scope_restoration",
+        "constraint_retention"
+      ],
+      "replay": {
+        "case_id": "irs-key-restoration",
+        "corpus_ids": [
+          "irs-key-guide"
+        ],
+        "close_at_ms": 18000,
+        "tool_latency_ms": {
+          "search": 50,
+          "read": 50
+        },
+        "events": [
+          {
+            "kind": "asr_final",
+            "at_ms": 0,
+            "speaker": "Petra",
+            "segment_id": "keys-1",
+            "text": "Check the Lantern Studio key collection note. I need the collection window and the refundable key deposit."
+          },
+          {
+            "kind": "asr_final",
+            "at_ms": 6000,
+            "speaker": "Petra",
+            "segment_id": "keys-2",
+            "text": "Leave out the collection window for now. Just keep the deposit amount in the answer."
+          },
+          {
+            "kind": "asr_final",
+            "at_ms": 12000,
+            "speaker": "Petra",
+            "segment_id": "keys-3",
+            "text": "Put the collection window back in after all. The deposit is still needed too."
+          }
+        ]
+      },
+      "corpus": [
+        {
+          "id": "irs-key-guide",
+          "title": "Lantern Studio key collection note",
+          "kind": "document",
+          "available_at_ms": 0,
+          "text": "The Lantern Studio key collection note records the arrangements for this week's booked studio users. It separates collection arrangements from the deposit so that either item can be communicated on its own. Keys can be collected Monday from 16:00 to 18:00 at the service hatch. The deposit is $7 and is refunded when the key is returned. A late return does not change the collection window."
+        }
+      ],
+      "stages": [
+        {
+          "stage_id": "stage-1",
+          "at_ms": 0,
+          "end_at_ms": 6000,
+          "event_ids": [
+            "keys-1"
+          ]
+        },
+        {
+          "stage_id": "stage-2",
+          "at_ms": 6000,
+          "end_at_ms": 12000,
+          "event_ids": [
+            "keys-2"
+          ]
+        },
+        {
+          "stage_id": "stage-3",
+          "at_ms": 12000,
+          "end_at_ms": 18000,
+          "event_ids": [
+            "keys-3"
+          ]
+        }
+      ],
+      "scoring": {
+        "stage_gold": [
+          {
+            "stage_id": "stage-1",
+            "effective_intents": [
+              {
+                "intent_id": "collection-window",
+                "owner": "Petra",
+                "request": "Report the studio key collection window.",
+                "expected_answer": "Monday 16:00–18:00 at the service hatch.",
+                "source_ids": [
+                  "irs-key-guide"
+                ],
+                "evidence_event_ids": [
+                  "keys-1"
+                ]
+              },
+              {
+                "intent_id": "key-deposit",
+                "owner": "Petra",
+                "request": "Report the refundable key deposit.",
+                "expected_answer": "$7, refundable when the key is returned.",
+                "source_ids": [
+                  "irs-key-guide"
+                ],
+                "evidence_event_ids": [
+                  "keys-1"
+                ]
+              }
+            ],
+            "inactive_intents": [],
+            "forbidden_outcomes": [],
+            "allowed_unresolved": []
+          },
+          {
+            "stage_id": "stage-2",
+            "effective_intents": [
+              {
+                "intent_id": "key-deposit",
+                "owner": "Petra",
+                "request": "Report the refundable key deposit.",
+                "expected_answer": "$7, refundable when the key is returned.",
+                "source_ids": [
+                  "irs-key-guide"
+                ],
+                "evidence_event_ids": [
+                  "keys-1",
+                  "keys-2"
+                ]
+              }
+            ],
+            "inactive_intents": [
+              {
+                "intent_id": "collection-window",
+                "reason": "Petra withdrew this item temporarily.",
+                "evidence_event_ids": [
+                  "keys-2"
+                ]
+              }
+            ],
+            "forbidden_outcomes": [
+              "Continue presenting the collection window as requested during stage 2."
+            ],
+            "allowed_unresolved": []
+          },
+          {
+            "stage_id": "stage-3",
+            "effective_intents": [
+              {
+                "intent_id": "collection-window",
+                "owner": "Petra",
+                "request": "Report the studio key collection window.",
+                "expected_answer": "Monday 16:00–18:00 at the service hatch.",
+                "source_ids": [
+                  "irs-key-guide"
+                ],
+                "evidence_event_ids": [
+                  "keys-1",
+                  "keys-3"
+                ]
+              },
+              {
+                "intent_id": "key-deposit",
+                "owner": "Petra",
+                "request": "Report the refundable key deposit.",
+                "expected_answer": "$7, refundable when the key is returned.",
+                "source_ids": [
+                  "irs-key-guide"
+                ],
+                "evidence_event_ids": [
+                  "keys-1",
+                  "keys-2",
+                  "keys-3"
+                ]
+              }
+            ],
+            "inactive_intents": [],
+            "forbidden_outcomes": [
+              "Keep the collection window inactive after the explicit restoration.",
+              "Restore the window but lose the deposit amount.",
+              "Request confirmation of the explicit restoration."
+            ],
+            "allowed_unresolved": []
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "irs-practice-no-change",
+      "family_id": "irs-practice-no-change",
+      "title": "No change despite a different place and day being mentioned",
+      "tags": [
+        "no_change_negative",
+        "background_scope"
+      ],
+      "replay": {
+        "case_id": "irs-practice-no-change",
+        "corpus_ids": [
+          "irs-practice-guide"
+        ],
+        "close_at_ms": 18000,
+        "tool_latency_ms": {
+          "search": 50,
+          "read": 50
+        },
+        "events": [
+          {
+            "kind": "asr_final",
+            "at_ms": 0,
+            "speaker": "Kaito",
+            "segment_id": "practice-1",
+            "text": "For my Saturday practice at the Meridian rehearsal room, check the house sheet for its opening hours and whether amplified instruments are allowed."
+          },
+          {
+            "kind": "asr_final",
+            "at_ms": 6000,
+            "speaker": "Kaito",
+            "segment_id": "practice-2",
+            "text": "My cousin says the Lakeside room is closed on Sundays. That is just background about his plans; my Meridian booking and the questions are unchanged."
+          },
+          {
+            "kind": "asr_final",
+            "at_ms": 12000,
+            "speaker": "Kaito",
+            "segment_id": "practice-3",
+            "text": "I still need the two details for my Saturday Meridian booking."
+          }
+        ]
+      },
+      "corpus": [
+        {
+          "id": "irs-practice-guide",
+          "title": "Meridian rehearsal room house sheet",
+          "kind": "document",
+          "available_at_ms": 0,
+          "text": "This house sheet covers the Meridian rehearsal room only. It is the current reference for opening hours and sound restrictions; statements about other buildings do not describe this room's arrangements. Meridian opens Saturday from 10:00 to 18:00 and Sunday from 12:00 to 16:00. Amplified instruments are not allowed. Acoustic instruments are allowed."
+        }
+      ],
+      "stages": [
+        {
+          "stage_id": "stage-1",
+          "at_ms": 0,
+          "end_at_ms": 6000,
+          "event_ids": [
+            "practice-1"
+          ]
+        },
+        {
+          "stage_id": "stage-2",
+          "at_ms": 6000,
+          "end_at_ms": 12000,
+          "event_ids": [
+            "practice-2"
+          ]
+        },
+        {
+          "stage_id": "stage-3",
+          "at_ms": 12000,
+          "end_at_ms": 18000,
+          "event_ids": [
+            "practice-3"
+          ]
+        }
+      ],
+      "scoring": {
+        "stage_gold": [
+          {
+            "stage_id": "stage-1",
+            "effective_intents": [
+              {
+                "intent_id": "meridian-hours",
+                "owner": "Kaito",
+                "request": "Report Saturday opening hours for Meridian.",
+                "expected_answer": "Saturday 10:00–18:00.",
+                "source_ids": [
+                  "irs-practice-guide"
+                ],
+                "evidence_event_ids": [
+                  "practice-1"
+                ]
+              },
+              {
+                "intent_id": "amplified-instruments",
+                "owner": "Kaito",
+                "request": "Report whether amplified instruments are allowed at Meridian.",
+                "expected_answer": "Amplified instruments are not allowed; acoustic instruments are allowed.",
+                "source_ids": [
+                  "irs-practice-guide"
+                ],
+                "evidence_event_ids": [
+                  "practice-1"
+                ]
+              }
+            ],
+            "inactive_intents": [],
+            "forbidden_outcomes": [],
+            "allowed_unresolved": []
+          },
+          {
+            "stage_id": "stage-2",
+            "effective_intents": [
+              {
+                "intent_id": "meridian-hours",
+                "owner": "Kaito",
+                "request": "Report Saturday opening hours for Meridian.",
+                "expected_answer": "Saturday 10:00–18:00.",
+                "source_ids": [
+                  "irs-practice-guide"
+                ],
+                "evidence_event_ids": [
+                  "practice-1",
+                  "practice-2"
+                ]
+              },
+              {
+                "intent_id": "amplified-instruments",
+                "owner": "Kaito",
+                "request": "Report whether amplified instruments are allowed at Meridian.",
+                "expected_answer": "Amplified instruments are not allowed; acoustic instruments are allowed.",
+                "source_ids": [
+                  "irs-practice-guide"
+                ],
+                "evidence_event_ids": [
+                  "practice-1",
+                  "practice-2"
+                ]
+              }
+            ],
+            "inactive_intents": [],
+            "forbidden_outcomes": [
+              "Switch the request to Lakeside or Sunday.",
+              "Withdraw either original question because background information was mentioned."
+            ],
+            "allowed_unresolved": []
+          },
+          {
+            "stage_id": "stage-3",
+            "effective_intents": [
+              {
+                "intent_id": "meridian-hours",
+                "owner": "Kaito",
+                "request": "Report Saturday opening hours for Meridian.",
+                "expected_answer": "Saturday 10:00–18:00.",
+                "source_ids": [
+                  "irs-practice-guide"
+                ],
+                "evidence_event_ids": [
+                  "practice-1",
+                  "practice-2",
+                  "practice-3"
+                ]
+              },
+              {
+                "intent_id": "amplified-instruments",
+                "owner": "Kaito",
+                "request": "Report whether amplified instruments are allowed at Meridian.",
+                "expected_answer": "Amplified instruments are not allowed; acoustic instruments are allowed.",
+                "source_ids": [
+                  "irs-practice-guide"
+                ],
+                "evidence_event_ids": [
+                  "practice-1",
+                  "practice-2",
+                  "practice-3"
+                ]
+              }
+            ],
+            "inactive_intents": [],
+            "forbidden_outcomes": [
+              "Ask which room or day is wanted when both have remained explicit."
+            ],
+            "allowed_unresolved": []
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "irs-unaccepted-assistant-proposal",
+      "family_id": "irs-unaccepted-assistant-proposal",
+      "title": "Do not promote an unaccepted assistant proposal",
+      "tags": [
+        "assistant_proposal_without_consent",
+        "no_change_negative"
+      ],
+      "replay": {
+        "case_id": "irs-unaccepted-assistant-proposal",
+        "corpus_ids": [
+          "irs-demo-guide"
+        ],
+        "close_at_ms": 18000,
+        "tool_latency_ms": {
+          "search": 50,
+          "read": 50
+        },
+        "events": [
+          {
+            "kind": "asr_final",
+            "at_ms": 0,
+            "speaker": "Imani",
+            "segment_id": "demo-1",
+            "text": "Use the Tidepool Demo notice. Only tell me the session start time and which room it is in."
+          },
+          {
+            "kind": "assistant_proposal",
+            "role": "assistant",
+            "at_ms": 6000,
+            "speaker": "Assistant",
+            "segment_id": "demo-2a",
+            "text": "I could also add a recording-link check to this task, if you want."
+          },
+          {
+            "kind": "asr_final",
+            "at_ms": 6000,
+            "speaker": "Imani",
+            "segment_id": "demo-2b",
+            "text": "I've read that suggestion. I have not decided to add anything to the request."
+          },
+          {
+            "kind": "asr_final",
+            "at_ms": 12000,
+            "speaker": "Imani",
+            "segment_id": "demo-3",
+            "text": "Please give me the requested session details now."
+          }
+        ]
+      },
+      "corpus": [
+        {
+          "id": "irs-demo-guide",
+          "title": "Tidepool Demo notice",
+          "kind": "document",
+          "available_at_ms": 0,
+          "text": "The Tidepool Demo notice is the organizer's reference for this session. Its practical attendance details and optional recording arrangements are separate facts and do not determine which details a participant has requested. The session starts at 14:20 in Room T6. No recording will be made, so no recording link will be available."
+        }
+      ],
+      "stages": [
+        {
+          "stage_id": "stage-1",
+          "at_ms": 0,
+          "end_at_ms": 6000,
+          "event_ids": [
+            "demo-1"
+          ]
+        },
+        {
+          "stage_id": "stage-2",
+          "at_ms": 6000,
+          "end_at_ms": 12000,
+          "event_ids": [
+            "demo-2a",
+            "demo-2b"
+          ]
+        },
+        {
+          "stage_id": "stage-3",
+          "at_ms": 12000,
+          "end_at_ms": 18000,
+          "event_ids": [
+            "demo-3"
+          ]
+        }
+      ],
+      "scoring": {
+        "stage_gold": [
+          {
+            "stage_id": "stage-1",
+            "effective_intents": [
+              {
+                "intent_id": "demo-start",
+                "owner": "Imani",
+                "request": "Report the session start time.",
+                "expected_answer": "14:20.",
+                "source_ids": [
+                  "irs-demo-guide"
+                ],
+                "evidence_event_ids": [
+                  "demo-1"
+                ]
+              },
+              {
+                "intent_id": "demo-room",
+                "owner": "Imani",
+                "request": "Report the session room.",
+                "expected_answer": "Room T6.",
+                "source_ids": [
+                  "irs-demo-guide"
+                ],
+                "evidence_event_ids": [
+                  "demo-1"
+                ]
+              }
+            ],
+            "inactive_intents": [],
+            "forbidden_outcomes": [],
+            "allowed_unresolved": []
+          },
+          {
+            "stage_id": "stage-2",
+            "effective_intents": [
+              {
+                "intent_id": "demo-start",
+                "owner": "Imani",
+                "request": "Report the session start time.",
+                "expected_answer": "14:20.",
+                "source_ids": [
+                  "irs-demo-guide"
+                ],
+                "evidence_event_ids": [
+                  "demo-1",
+                  "demo-2b"
+                ]
+              },
+              {
+                "intent_id": "demo-room",
+                "owner": "Imani",
+                "request": "Report the session room.",
+                "expected_answer": "Room T6.",
+                "source_ids": [
+                  "irs-demo-guide"
+                ],
+                "evidence_event_ids": [
+                  "demo-1",
+                  "demo-2b"
+                ]
+              }
+            ],
+            "inactive_intents": [
+              {
+                "intent_id": "recording-link",
+                "reason": "Only the assistant proposed this item; Imani has not accepted it.",
+                "evidence_event_ids": [
+                  "demo-2a",
+                  "demo-2b"
+                ]
+              }
+            ],
+            "forbidden_outcomes": [
+              "Treat the assistant proposal as an authorized new requirement.",
+              "Defer the two requested facts until Imani answers the optional suggestion."
+            ],
+            "allowed_unresolved": []
+          },
+          {
+            "stage_id": "stage-3",
+            "effective_intents": [
+              {
+                "intent_id": "demo-start",
+                "owner": "Imani",
+                "request": "Report the session start time.",
+                "expected_answer": "14:20.",
+                "source_ids": [
+                  "irs-demo-guide"
+                ],
+                "evidence_event_ids": [
+                  "demo-1",
+                  "demo-2b",
+                  "demo-3"
+                ]
+              },
+              {
+                "intent_id": "demo-room",
+                "owner": "Imani",
+                "request": "Report the session room.",
+                "expected_answer": "Room T6.",
+                "source_ids": [
+                  "irs-demo-guide"
+                ],
+                "evidence_event_ids": [
+                  "demo-1",
+                  "demo-2b",
+                  "demo-3"
+                ]
+              }
+            ],
+            "inactive_intents": [
+              {
+                "intent_id": "recording-link",
+                "reason": "The proposal remains unaccepted.",
+                "evidence_event_ids": [
+                  "demo-2a",
+                  "demo-2b"
+                ]
+              }
+            ],
+            "forbidden_outcomes": [
+              "Treat an unsolicited recording detail as a requested deliverable.",
+              "Ask Imani to approve the original two requested facts again."
+            ],
+            "allowed_unresolved": []
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "irs-combined-workshop-change",
+      "family_id": "irs-combined-workshop-change",
+      "title": "One message modifies, withdraws, adds and preserves requirements",
+      "tags": [
+        "combination_change",
+        "scope_modification",
+        "scope_withdrawal",
+        "scope_addition",
+        "constraint_retention"
+      ],
+      "replay": {
+        "case_id": "irs-combined-workshop-change",
+        "corpus_ids": [
+          "irs-workshop-guide"
+        ],
+        "close_at_ms": 18000,
+        "tool_latency_ms": {
+          "search": 50,
+          "read": 50
+        },
+        "events": [
+          {
+            "kind": "asr_final",
+            "at_ms": 0,
+            "speaker": "Mara",
+            "segment_id": "workshop-1",
+            "text": "From the Kiln Workshop list, pick the cheapest Tuesday workshop at or below $25 and give its room. Also tell me the parking location."
+          },
+          {
+            "kind": "asr_final",
+            "at_ms": 6000,
+            "speaker": "Mara",
+            "segment_id": "workshop-2",
+            "text": "Switch to Friday, drop the parking question, and add step-free access as a requirement. Keep the $25 limit and the cheapest-option rule."
+          },
+          {
+            "kind": "asr_final",
+            "at_ms": 12000,
+            "speaker": "Mara",
+            "segment_id": "workshop-3",
+            "text": "The final answer should identify the workshop, its price and room, and explain whether the step-free requirement is met."
+          }
+        ]
+      },
+      "corpus": [
+        {
+          "id": "irs-workshop-guide",
+          "title": "Kiln Workshop list",
+          "kind": "document",
+          "available_at_ms": 0,
+          "text": "The Kiln Workshop list describes the currently offered sessions. Prices are per participant, rooms identify the booked teaching space, and accessibility applies to the complete entrance route rather than merely the room. Clay Basics: Tuesday, $18, Room C2, stairs. Glaze Lab: Friday, $23, Room G4, step-free route. Wheel Start: Friday, $19, Room W1, stairs. Mosaic Studio: Friday, $27, Room M3, step-free route. Visitor parking is in the South car park."
+        }
+      ],
+      "stages": [
+        {
+          "stage_id": "stage-1",
+          "at_ms": 0,
+          "end_at_ms": 6000,
+          "event_ids": [
+            "workshop-1"
+          ]
+        },
+        {
+          "stage_id": "stage-2",
+          "at_ms": 6000,
+          "end_at_ms": 12000,
+          "event_ids": [
+            "workshop-2"
+          ]
+        },
+        {
+          "stage_id": "stage-3",
+          "at_ms": 12000,
+          "end_at_ms": 18000,
+          "event_ids": [
+            "workshop-3"
+          ]
+        }
+      ],
+      "scoring": {
+        "stage_gold": [
+          {
+            "stage_id": "stage-1",
+            "effective_intents": [
+              {
+                "intent_id": "workshop-choice",
+                "owner": "Mara",
+                "request": "Select the cheapest workshop meeting the current day, budget and access requirements; report its price and room.",
+                "expected_answer": "Clay Basics: Tuesday, $18, Room C2.",
+                "source_ids": [
+                  "irs-workshop-guide"
+                ],
+                "evidence_event_ids": [
+                  "workshop-1"
+                ]
+              },
+              {
+                "intent_id": "parking-location",
+                "owner": "Mara",
+                "request": "Report the parking location.",
+                "expected_answer": "South car park.",
+                "source_ids": [
+                  "irs-workshop-guide"
+                ],
+                "evidence_event_ids": [
+                  "workshop-1"
+                ]
+              }
+            ],
+            "inactive_intents": [],
+            "forbidden_outcomes": [],
+            "allowed_unresolved": []
+          },
+          {
+            "stage_id": "stage-2",
+            "effective_intents": [
+              {
+                "intent_id": "workshop-choice",
+                "owner": "Mara",
+                "request": "Select the cheapest workshop meeting the current day, budget and access requirements; report its price and room.",
+                "expected_answer": "Glaze Lab: Friday, $23, Room G4; step-free access is available.",
+                "source_ids": [
+                  "irs-workshop-guide"
+                ],
+                "evidence_event_ids": [
+                  "workshop-1",
+                  "workshop-2"
+                ]
+              }
+            ],
+            "inactive_intents": [
+              {
+                "intent_id": "parking-location",
+                "reason": "Mara explicitly dropped this question.",
+                "evidence_event_ids": [
+                  "workshop-2"
+                ]
+              },
+              {
+                "intent_id": "tuesday-choice",
+                "reason": "Mara replaced Tuesday with Friday.",
+                "evidence_event_ids": [
+                  "workshop-2"
+                ]
+              }
+            ],
+            "forbidden_outcomes": [
+              "Keep the Tuesday recommendation.",
+              "Choose the cheaper Friday workshop with stairs.",
+              "Choose the step-free workshop above $25."
+            ],
+            "allowed_unresolved": []
+          },
+          {
+            "stage_id": "stage-3",
+            "effective_intents": [
+              {
+                "intent_id": "workshop-choice",
+                "owner": "Mara",
+                "request": "Select the cheapest workshop meeting the current day, budget and access requirements; report its price and room.",
+                "expected_answer": "Glaze Lab: Friday, $23, Room G4; step-free access is available.",
+                "source_ids": [
+                  "irs-workshop-guide"
+                ],
+                "evidence_event_ids": [
+                  "workshop-1",
+                  "workshop-2",
+                  "workshop-3"
+                ]
+              }
+            ],
+            "inactive_intents": [
+              {
+                "intent_id": "parking-location",
+                "reason": "Parking remains withdrawn.",
+                "evidence_event_ids": [
+                  "workshop-2"
+                ]
+              },
+              {
+                "intent_id": "tuesday-choice",
+                "reason": "Tuesday remains replaced.",
+                "evidence_event_ids": [
+                  "workshop-2"
+                ]
+              }
+            ],
+            "forbidden_outcomes": [
+              "Lose the price ceiling while applying the new access requirement.",
+              "Present parking as an outstanding requested task.",
+              "Ask which of the explicit changes Mara wants applied."
+            ],
+            "allowed_unresolved": []
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "irs-multiple-request-owners",
+      "family_id": "irs-multiple-request-owners",
+      "title": "A speaker's cancellation does not cancel another speaker's question",
+      "tags": [
+        "multiple_speaker_attribution",
+        "scope_withdrawal",
+        "scope_addition"
+      ],
+      "replay": {
+        "case_id": "irs-multiple-request-owners",
+        "corpus_ids": [
+          "irs-orchard-guide"
+        ],
+        "close_at_ms": 18000,
+        "tool_latency_ms": {
+          "search": 50,
+          "read": 50
+        },
+        "events": [
+          {
+            "kind": "asr_final",
+            "at_ms": 0,
+            "speaker": "Omar",
+            "segment_id": "orchard-1a",
+            "text": "From the Orchard Volunteer briefing note, I need the signup deadline and the cancellation refund rule for my place."
+          },
+          {
+            "kind": "asr_final",
+            "at_ms": 0,
+            "speaker": "Lina",
+            "segment_id": "orchard-1b",
+            "text": "I need to know whether I can enter with my wheelchair. Please keep my access question separate from Omar's signup questions."
+          },
+          {
+            "kind": "asr_final",
+            "at_ms": 6000,
+            "speaker": "Omar",
+            "segment_id": "orchard-2",
+            "text": "Drop my refund question. I still need the signup deadline. I am only changing my request, not Lina's."
+          },
+          {
+            "kind": "asr_final",
+            "at_ms": 12000,
+            "speaker": "Lina",
+            "segment_id": "orchard-3",
+            "text": "Keep my wheelchair-access question, and add the arrival window for the briefing."
+          }
+        ]
+      },
+      "corpus": [
+        {
+          "id": "irs-orchard-guide",
+          "title": "Orchard Volunteer briefing note",
+          "kind": "document",
+          "available_at_ms": 0,
+          "text": "The Orchard Volunteer briefing note covers signup, cancellation, access and arrival for the same event. Each item can answer a different attendee's question; the policy does not combine those attendees into a single requester. Signup closes Thursday at 17:00. Cancellation at least 48 hours before the briefing gives a full refund; later cancellation gives no refund. Wheelchair users can enter through the North gate and follow a step-free ramp to the briefing room. The arrival window is 08:40–08:55."
+        }
+      ],
+      "stages": [
+        {
+          "stage_id": "stage-1",
+          "at_ms": 0,
+          "end_at_ms": 6000,
+          "event_ids": [
+            "orchard-1a",
+            "orchard-1b"
+          ]
+        },
+        {
+          "stage_id": "stage-2",
+          "at_ms": 6000,
+          "end_at_ms": 12000,
+          "event_ids": [
+            "orchard-2"
+          ]
+        },
+        {
+          "stage_id": "stage-3",
+          "at_ms": 12000,
+          "end_at_ms": 18000,
+          "event_ids": [
+            "orchard-3"
+          ]
+        }
+      ],
+      "scoring": {
+        "stage_gold": [
+          {
+            "stage_id": "stage-1",
+            "effective_intents": [
+              {
+                "intent_id": "signup-deadline",
+                "owner": "Omar",
+                "request": "Report the volunteer briefing signup deadline.",
+                "expected_answer": "Thursday at 17:00.",
+                "source_ids": [
+                  "irs-orchard-guide"
+                ],
+                "evidence_event_ids": [
+                  "orchard-1a"
+                ]
+              },
+              {
+                "intent_id": "cancellation-refund",
+                "owner": "Omar",
+                "request": "Report the cancellation refund rule.",
+                "expected_answer": "Full refund if cancelled at least 48 hours before the briefing; no refund later.",
+                "source_ids": [
+                  "irs-orchard-guide"
+                ],
+                "evidence_event_ids": [
+                  "orchard-1a"
+                ]
+              },
+              {
+                "intent_id": "wheelchair-access",
+                "owner": "Lina",
+                "request": "Report wheelchair entry access.",
+                "expected_answer": "Use the North gate; a step-free ramp leads to the briefing room.",
+                "source_ids": [
+                  "irs-orchard-guide"
+                ],
+                "evidence_event_ids": [
+                  "orchard-1b"
+                ]
+              }
+            ],
+            "inactive_intents": [],
+            "forbidden_outcomes": [],
+            "allowed_unresolved": []
+          },
+          {
+            "stage_id": "stage-2",
+            "effective_intents": [
+              {
+                "intent_id": "signup-deadline",
+                "owner": "Omar",
+                "request": "Report the volunteer briefing signup deadline.",
+                "expected_answer": "Thursday at 17:00.",
+                "source_ids": [
+                  "irs-orchard-guide"
+                ],
+                "evidence_event_ids": [
+                  "orchard-1a",
+                  "orchard-2"
+                ]
+              },
+              {
+                "intent_id": "wheelchair-access",
+                "owner": "Lina",
+                "request": "Report wheelchair entry access.",
+                "expected_answer": "Use the North gate; a step-free ramp leads to the briefing room.",
+                "source_ids": [
+                  "irs-orchard-guide"
+                ],
+                "evidence_event_ids": [
+                  "orchard-1b"
+                ]
+              }
+            ],
+            "inactive_intents": [
+              {
+                "intent_id": "cancellation-refund",
+                "reason": "Omar withdrew only his refund question.",
+                "evidence_event_ids": [
+                  "orchard-2"
+                ]
+              }
+            ],
+            "forbidden_outcomes": [
+              "Cancel Lina's wheelchair-access question.",
+              "Cancel Omar's deadline question together with his refund question."
+            ],
+            "allowed_unresolved": []
+          },
+          {
+            "stage_id": "stage-3",
+            "effective_intents": [
+              {
+                "intent_id": "signup-deadline",
+                "owner": "Omar",
+                "request": "Report the volunteer briefing signup deadline.",
+                "expected_answer": "Thursday at 17:00.",
+                "source_ids": [
+                  "irs-orchard-guide"
+                ],
+                "evidence_event_ids": [
+                  "orchard-1a",
+                  "orchard-2"
+                ]
+              },
+              {
+                "intent_id": "wheelchair-access",
+                "owner": "Lina",
+                "request": "Report wheelchair entry access.",
+                "expected_answer": "Use the North gate; a step-free ramp leads to the briefing room.",
+                "source_ids": [
+                  "irs-orchard-guide"
+                ],
+                "evidence_event_ids": [
+                  "orchard-1b",
+                  "orchard-3"
+                ]
+              },
+              {
+                "intent_id": "briefing-arrival",
+                "owner": "Lina",
+                "request": "Report the arrival window.",
+                "expected_answer": "08:40–08:55.",
+                "source_ids": [
+                  "irs-orchard-guide"
+                ],
+                "evidence_event_ids": [
+                  "orchard-3"
+                ]
+              }
+            ],
+            "inactive_intents": [
+              {
+                "intent_id": "cancellation-refund",
+                "reason": "Omar's refund question remains withdrawn.",
+                "evidence_event_ids": [
+                  "orchard-2"
+                ]
+              }
+            ],
+            "forbidden_outcomes": [
+              "Treat Lina's new arrival question as replacing her access question.",
+              "Lose Omar's still-active deadline question.",
+              "Ask for joint approval to implement the speakers' explicit requests."
+            ],
+            "allowed_unresolved": []
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "irs-late-obsolete-evidence",
+      "family_id": "irs-late-obsolete-evidence",
+      "title": "A late real tool result belongs to a superseded version",
+      "tags": [
+        "late_tool_result",
+        "scope_modification",
+        "stale_evidence"
+      ],
+      "replay": {
+        "case_id": "irs-late-obsolete-evidence",
+        "corpus_ids": [
+          "irs-archivum-desktop",
+          "irs-archivum-mobile"
+        ],
+        "close_at_ms": 18000,
+        "tool_latency_ms": {
+          "search": 50,
+          "read": 6500
+        },
+        "events": [
+          {
+            "kind": "asr_final",
+            "at_ms": 0,
+            "speaker": "Tomas",
+            "segment_id": "archive-1",
+            "text": "For Archivum Desktop, find out whether I can edit an already downloaded notebook offline and what the PDF export page limit is. A read of the desktop handbook was already requested and may still be pending."
+          },
+          {
+            "kind": "asr_final",
+            "at_ms": 6000,
+            "speaker": "Tomas",
+            "segment_id": "archive-2",
+            "text": "The desktop machine is unavailable. Replace Archivum Desktop with Archivum Mobile for both questions. An old desktop result arriving later must not change which version I am asking about."
+          },
+          {
+            "kind": "asr_final",
+            "at_ms": 12000,
+            "speaker": "Tomas",
+            "segment_id": "archive-3",
+            "text": "I still need both answers for Archivum Mobile. Please use the mobile handbook and keep the version clear."
+          }
+        ]
+      },
+      "corpus": [
+        {
+          "id": "irs-archivum-desktop",
+          "title": "Archivum Desktop handbook — DESKREF",
+          "kind": "document",
+          "available_at_ms": 0,
+          "text": "DESKREF is the reference identifier for the Archivum Desktop handbook. This handbook describes only the desktop edition and documents its offline editing and PDF export behavior separately from other editions. Archivum Desktop cannot edit downloaded notebooks offline. Its PDF export limit is fifty pages per PDF."
+        },
+        {
+          "id": "irs-archivum-mobile",
+          "title": "Archivum Mobile handbook — MOBREF",
+          "kind": "document",
+          "available_at_ms": 0,
+          "text": "MOBREF is the reference identifier for the Archivum Mobile handbook. This handbook describes only the mobile edition and documents its offline editing and PDF export behavior separately from other editions. Archivum Mobile can edit previously downloaded notebooks offline. Its PDF export limit is five pages per PDF."
+        }
+      ],
+      "stages": [
+        {
+          "stage_id": "stage-1",
+          "at_ms": 0,
+          "end_at_ms": 6000,
+          "event_ids": [
+            "archive-1"
+          ]
+        },
+        {
+          "stage_id": "stage-2",
+          "at_ms": 6000,
+          "end_at_ms": 12000,
+          "event_ids": [
+            "archive-2"
+          ]
+        },
+        {
+          "stage_id": "stage-3",
+          "at_ms": 12000,
+          "end_at_ms": 18000,
+          "event_ids": [
+            "archive-3"
+          ]
+        }
+      ],
+      "scoring": {
+        "stage_gold": [
+          {
+            "stage_id": "stage-1",
+            "effective_intents": [
+              {
+                "intent_id": "offline-editing",
+                "owner": "Tomas",
+                "request": "Report offline editing support for the currently requested version.",
+                "expected_answer": "Archivum Desktop cannot edit downloaded notebooks offline.",
+                "source_ids": [
+                  "irs-archivum-desktop"
+                ],
+                "evidence_event_ids": [
+                  "archive-1"
+                ]
+              },
+              {
+                "intent_id": "pdf-limit",
+                "owner": "Tomas",
+                "request": "Report the PDF export page limit for the currently requested version.",
+                "expected_answer": "Archivum Desktop allows up to fifty pages per PDF.",
+                "source_ids": [
+                  "irs-archivum-desktop"
+                ],
+                "evidence_event_ids": [
+                  "archive-1"
+                ]
+              }
+            ],
+            "inactive_intents": [],
+            "forbidden_outcomes": [
+              "Invent desktop feature answers before supporting evidence arrives."
+            ],
+            "allowed_unresolved": [
+              "The common seeded desktop read is still pending during stage 1. Explicitly pending answers are legitimate; score wrong completion separately from evidence-blocked noncompletion."
+            ]
+          },
+          {
+            "stage_id": "stage-2",
+            "effective_intents": [
+              {
+                "intent_id": "offline-editing",
+                "owner": "Tomas",
+                "request": "Report offline editing support for the currently requested version.",
+                "expected_answer": "Archivum Mobile can edit previously downloaded notebooks offline.",
+                "source_ids": [
+                  "irs-archivum-mobile"
+                ],
+                "evidence_event_ids": [
+                  "archive-1",
+                  "archive-2"
+                ]
+              },
+              {
+                "intent_id": "pdf-limit",
+                "owner": "Tomas",
+                "request": "Report the PDF export page limit for the currently requested version.",
+                "expected_answer": "Archivum Mobile allows up to five pages per PDF.",
+                "source_ids": [
+                  "irs-archivum-mobile"
+                ],
+                "evidence_event_ids": [
+                  "archive-1",
+                  "archive-2"
+                ]
+              }
+            ],
+            "inactive_intents": [
+              {
+                "intent_id": "desktop-version",
+                "reason": "Tomas replaced the version for both questions.",
+                "evidence_event_ids": [
+                  "archive-2"
+                ]
+              }
+            ],
+            "forbidden_outcomes": [
+              "Apply a late desktop result to Mobile.",
+              "Treat the old job's completion as permission to return to Desktop."
+            ],
+            "allowed_unresolved": [
+              "A newly requested mobile read may remain pending during stage 2; do not classify an explicit and truthful pending status as wrong completion."
+            ]
+          },
+          {
+            "stage_id": "stage-3",
+            "effective_intents": [
+              {
+                "intent_id": "offline-editing",
+                "owner": "Tomas",
+                "request": "Report offline editing support for the currently requested version.",
+                "expected_answer": "Archivum Mobile can edit previously downloaded notebooks offline.",
+                "source_ids": [
+                  "irs-archivum-mobile"
+                ],
+                "evidence_event_ids": [
+                  "archive-1",
+                  "archive-2",
+                  "archive-3"
+                ]
+              },
+              {
+                "intent_id": "pdf-limit",
+                "owner": "Tomas",
+                "request": "Report the PDF export page limit for the currently requested version.",
+                "expected_answer": "Archivum Mobile allows up to five pages per PDF.",
+                "source_ids": [
+                  "irs-archivum-mobile"
+                ],
+                "evidence_event_ids": [
+                  "archive-1",
+                  "archive-2",
+                  "archive-3"
+                ]
+              }
+            ],
+            "inactive_intents": [
+              {
+                "intent_id": "desktop-version",
+                "reason": "Desktop remains replaced.",
+                "evidence_event_ids": [
+                  "archive-2"
+                ]
+              }
+            ],
+            "forbidden_outcomes": [
+              "Report fifty pages as the Mobile limit.",
+              "Report that Mobile cannot edit downloaded notebooks offline.",
+              "Deliver only one of the two active feature answers."
+            ],
+            "allowed_unresolved": []
+          }
+        ]
+      },
+      "setup_actions": [
+        {
+          "action_id": "seed-desktop-search",
+          "operation": "search",
+          "arguments": {
+            "query": "DESKREF"
+          },
+          "actor": "fixture_setup"
+        },
+        {
+          "action_id": "seed-desktop-search-arrival",
+          "operation": "advance_to_next_event",
+          "actor": "fixture_setup"
+        },
+        {
+          "action_id": "seed-desktop-read",
+          "operation": "read_document",
+          "arguments": {
+            "source_id": "irs-archivum-desktop"
+          },
+          "actor": "fixture_setup"
+        }
+      ]
+    }
+  ],
+  "dev_cases": [
+    {
+      "case_id": "irs-development-depot",
+      "family_id": "irs-development-depot",
+      "title": "Development-only tool and handoff check",
+      "tags": [
+        "development_only",
+        "exclude_from_evaluation"
+      ],
+      "replay": {
+        "case_id": "irs-development-depot",
+        "corpus_ids": [
+          "irs-dev-depot-guide"
+        ],
+        "close_at_ms": 18000,
+        "tool_latency_ms": {
+          "search": 50,
+          "read": 50
+        },
+        "events": [
+          {
+            "kind": "asr_final",
+            "at_ms": 0,
+            "speaker": "Devon",
+            "segment_id": "dev-1",
+            "text": "Check the Parcel Depot hours sheet. What are the Monday opening hours and the collection counter number?"
+          },
+          {
+            "kind": "asr_final",
+            "at_ms": 6000,
+            "speaker": "Devon",
+            "segment_id": "dev-2",
+            "text": "Change the opening-hours question to Tuesday. I still need the collection counter number."
+          },
+          {
+            "kind": "asr_final",
+            "at_ms": 12000,
+            "speaker": "Devon",
+            "segment_id": "dev-3",
+            "text": "Please give the Tuesday hours and the counter number together."
+          }
+        ]
+      },
+      "corpus": [
+        {
+          "id": "irs-dev-depot-guide",
+          "title": "Parcel Depot hours sheet",
+          "kind": "document",
+          "available_at_ms": 0,
+          "text": "The Parcel Depot hours sheet gives the public collection hours for each weekday and identifies the counter used for collections. These arrangements apply to this depot only and do not describe other branches. Monday hours are 09:00–17:00. Tuesday hours are 11:00–19:00. Collections use Counter 4."
+        }
+      ],
+      "stages": [
+        {
+          "stage_id": "stage-1",
+          "at_ms": 0,
+          "end_at_ms": 6000,
+          "event_ids": [
+            "dev-1"
+          ]
+        },
+        {
+          "stage_id": "stage-2",
+          "at_ms": 6000,
+          "end_at_ms": 12000,
+          "event_ids": [
+            "dev-2"
+          ]
+        },
+        {
+          "stage_id": "stage-3",
+          "at_ms": 12000,
+          "end_at_ms": 18000,
+          "event_ids": [
+            "dev-3"
+          ]
+        }
+      ],
+      "scoring": {
+        "stage_gold": [
+          {
+            "stage_id": "stage-1",
+            "effective_intents": [
+              {
+                "intent_id": "depot-hours",
+                "owner": "Devon",
+                "request": "Report opening hours for the current requested day.",
+                "expected_answer": "Monday 09:00–17:00.",
+                "source_ids": [
+                  "irs-dev-depot-guide"
+                ],
+                "evidence_event_ids": [
+                  "dev-1"
+                ]
+              },
+              {
+                "intent_id": "depot-counter",
+                "owner": "Devon",
+                "request": "Report the collection counter number.",
+                "expected_answer": "Counter 4.",
+                "source_ids": [
+                  "irs-dev-depot-guide"
+                ],
+                "evidence_event_ids": [
+                  "dev-1"
+                ]
+              }
+            ],
+            "inactive_intents": [],
+            "forbidden_outcomes": [],
+            "allowed_unresolved": []
+          },
+          {
+            "stage_id": "stage-2",
+            "effective_intents": [
+              {
+                "intent_id": "depot-hours",
+                "owner": "Devon",
+                "request": "Report opening hours for the current requested day.",
+                "expected_answer": "Tuesday 11:00–19:00.",
+                "source_ids": [
+                  "irs-dev-depot-guide"
+                ],
+                "evidence_event_ids": [
+                  "dev-1",
+                  "dev-2"
+                ]
+              },
+              {
+                "intent_id": "depot-counter",
+                "owner": "Devon",
+                "request": "Report the collection counter number.",
+                "expected_answer": "Counter 4.",
+                "source_ids": [
+                  "irs-dev-depot-guide"
+                ],
+                "evidence_event_ids": [
+                  "dev-1",
+                  "dev-2"
+                ]
+              }
+            ],
+            "inactive_intents": [],
+            "forbidden_outcomes": [],
+            "allowed_unresolved": []
+          },
+          {
+            "stage_id": "stage-3",
+            "effective_intents": [
+              {
+                "intent_id": "depot-hours",
+                "owner": "Devon",
+                "request": "Report opening hours for the current requested day.",
+                "expected_answer": "Tuesday 11:00–19:00.",
+                "source_ids": [
+                  "irs-dev-depot-guide"
+                ],
+                "evidence_event_ids": [
+                  "dev-1",
+                  "dev-2",
+                  "dev-3"
+                ]
+              },
+              {
+                "intent_id": "depot-counter",
+                "owner": "Devon",
+                "request": "Report the collection counter number.",
+                "expected_answer": "Counter 4.",
+                "source_ids": [
+                  "irs-dev-depot-guide"
+                ],
+                "evidence_event_ids": [
+                  "dev-1",
+                  "dev-2",
+                  "dev-3"
+                ]
+              }
+            ],
+            "inactive_intents": [],
+            "forbidden_outcomes": [],
+            "allowed_unresolved": []
+          }
+        ]
+      }
+    }
+  ]
+}

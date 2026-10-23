@@ -1,0 +1,95 @@
+{
+  "id": "intent-role-separation-validation",
+  "type": "engineering_validation",
+  "kind": "engineering_validation",
+  "date": "2026-10-23",
+  "timezone": "America/Halifax",
+  "status": "passed",
+  "tested_revision": {
+    "evaluation_manifest_sha256": "e3ba2b0bfb41851b1a54fe43fffe994b84da3386268482b2dc14571c035aff4a",
+    "frozen_files": 40,
+    "identity": "evaluation/manifest.json and its 40 hashed source/protocol/fixture files"
+  },
+  "checks": [
+    {
+      "name": "Independent intention state",
+      "command": "python -B -m unittest discover -s experiments/deep_conversation -p test_intention_state.py -v",
+      "unique_tests": 19,
+      "passed": 19,
+      "failed": 0,
+      "evidence": "Agent execution chunk 7c94e3; final 19 tests in 0.804s."
+    },
+    {
+      "name": "Functional roles and actual simulated tools",
+      "command": "python -B -m unittest discover -s experiments/deep_conversation -p test_intent_roles.py -v",
+      "unique_tests": 12,
+      "passed": 12,
+      "failed": 0,
+      "evidence": "Final role-session test run: 12 tests in 2.809s; root integrated run chunk aac685 also passed all 12."
+    },
+    {
+      "name": "Runner freeze, boundaries and fixture setup",
+      "command": "python -B -m unittest discover -s experiments/deep_conversation -p test_run_intent_roles.py -v",
+      "unique_tests": 9,
+      "passed": 9,
+      "failed": 0,
+      "evidence": "Agent execution chunk e295c9; final 9 tests in 1.180s."
+    },
+    {
+      "name": "Fixture structure",
+      "passed": true,
+      "cases": 9,
+      "stages": 27,
+      "scope": "Unique IDs, stage boundaries, source references, scoring-event references and explicit assistant identity. Includes one development-only case."
+    },
+    {
+      "name": "Integrated frozen offline suite",
+      "command": "python -B analysis/run_offline_validation.py",
+      "tests_run": 40,
+      "passed": 40,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "unique_tests": 40,
+      "deduplication": "Same 19 + 12 + 9 checks listed above; not 40 additional unique tests.",
+      "evidence": "engineering/offline-tests.txt"
+    },
+    {
+      "name": "Formal execution integrity",
+      "command": "python -B analysis/audit_execution.py",
+      "passed": true,
+      "runs": 48,
+      "model_calls": 864,
+      "tokens": 2712832,
+      "issues": 0,
+      "scope": "Freeze, causal inputs, actual tools/receipts, shared budgets, captures and accounting; no semantic answer proof.",
+      "evidence": "analysis/EXECUTION-AUDIT.json"
+    }
+  ],
+  "unique_engineering_tests": 40,
+  "development_failures_and_repairs": [
+    "A Windows timezone preflight failed because tzdata was not installed (chunk c7fc5c, exit 1). Freeze timestamps now use UTC and preserve the explicit America/Halifax study date; no model call was made by that failing check.",
+    "Read-only review identified manifest metadata tampering, closure on export/constructor failures, inference crossing a stage deadline, missing assistant role and setup schema mismatch. All were corrected before the development freeze and covered by offline tests. No evaluation run was replaced."
+  ],
+  "limitations": [
+    "Engineering tests use scripted models and do not measure assistance quality.",
+    "SQLite guards local state only; source references and receipts do not establish semantic correctness.",
+    "The optional role session is not integrated into the live Lab and is not the native DeepAgents baseline.",
+    "No LoRA, ASR, user study, long-history compaction or external-service exactly-once behavior is tested."
+  ],
+  "publication": {
+    "tracking": "A separate deployment receipt records the final source SHA, Sites deployment and matching Pages build; artifact verification is not itself publication.",
+    "receipt": "output/publications/research-site/deployments/intent-role-separation-2026-10-23.json"
+  },
+  "research_outcomes": {
+    "status": "completed_scored",
+    "record": "analysis/results.json",
+    "note": "Research success/failure labels are separate from passing engineering checks."
+  },
+  "observed_remaining_defects": [
+    "Twenty-five tracker proposals were rejected; four stages had no actor opportunity. No recovery repair was applied to the frozen study.",
+    "Private work conclusions are only shared when persisted by the model; one recorded run computes the right room but fails to hand it to chat.",
+    "All six seeded old reads were cancelled before arrival, so obsolete-result consumption is untested.",
+    "Early workshop gold over-specifies price relative to raw requests; secondary scores preserve uncertainty and sensitivity."
+  ]
+}

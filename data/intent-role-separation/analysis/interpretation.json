@@ -1,0 +1,23 @@
+{
+  "status": "reviewed",
+  "date": "2026-10-23",
+  "timezone": "America/Halifax",
+  "lead": "Separate chat and work roles delivered complete, correct final answers in 14/16 trajectories; adding an independent intention tracker did so in 12/16, the same count as the unified actor. All 48 runs finished. This small pilot does not establish a tracker benefit.",
+  "findings": [
+    {
+      "title": "The tracker did not reduce omissions relative to the split roles.",
+      "text": "Omissions affected 3/16 unified runs, 2/16 split runs and 2/16 tracked runs. All six workshop runs missed the explicitly requested $23 price. The two tracked room runs kept the old, more expensive choice after Wi-Fi was removed."
+    },
+    {
+      "title": "Valid state and delivered help diverged.",
+      "text": "In one tracked room run, work privately identified the correct cheaper room, but that prose was not saved to shared notes and chat repeated the old answer. Conversely, both multiple-owner tracked runs ultimately answered correctly despite invalid intermediate patches and inconsistent tracker lifecycle state. These are diagnostic observations, not isolated causal effects."
+    },
+    {
+      "title": "No-change handling and late evidence remain limited tests.",
+      "text": "The secondary review records redundant updates that changed provenance without changing the request; those are not automatically false user-intent changes. All six seeded old desktop reads were cancelled before arrival. The study therefore does not test consumption of an actually late obsolete result."
+    }
+  ],
+  "cost_text": "Each condition used 288 calls. Tracked runs consumed 1,063,155 tokens, 30.2% more than split runs (816,689). Of 69 tracker calls, 44 committed structurally valid patches and 25 were rejected. Four stages spent all six calls on rejected patches, leaving no work/chat opportunity. Validation errors were absent from the next tracker input, so repeated attempts could receive no corrective information. These are completed model calls with rejected state operations, not provider failures.",
+  "engineering_text": "All 40 offline state, role-session and runner checks passed. The execution audit reconciled 48 trajectories, 864 model calls, 2,712,832 reported tokens and 40 frozen source files with no audit discrepancies or provider/accounting failures. A separate three-run development case used 54 calls and is excluded from evaluation. Captures cover client messages and returned provider metadata, not raw HTTP traffic or independent inspection of model-server internals.",
+  "next_steps": "Keep the independent tracker as an experimental component. The next version should test explicit work-to-chat handoff and a bounded tracker recovery path with precise validation feedback and raw-conversation fallback. Preserve atomic state checks, current-input cursors and shared budgets. Compare on fresh variants plus exposed regressions before considering LoRA or changing the Lab default. These repairs have not yet been implemented or evaluated."
+}

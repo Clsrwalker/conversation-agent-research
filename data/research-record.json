@@ -5851,6 +5851,13 @@
       "type": "engineering_validation",
       "record": "summary-placement-validation.json",
       "status": "passed"
+    },
+    {
+      "id": "intent-role-separation-validation",
+      "date": "2026-10-23",
+      "type": "engineering_validation",
+      "record": "intent-role-separation-validation.json",
+      "status": "passed"
     }
   ],
   "literature_reviews": [
@@ -5945,6 +5952,20 @@
         "deduplication": "Same case, complete message and stop, ignoring only native tool call IDs.",
         "human_review": false
       }
+    },
+    {
+      "id": "intent-role-separation",
+      "date": "2026-10-23",
+      "type": "controlled_executed_synthetic_replay",
+      "status": "completed_scored",
+      "record": "intent-role-separation/analysis/results.json",
+      "page": "intent-role-separation.html",
+      "new_model_calls": 864,
+      "trajectories": 48,
+      "scenario_families": 8,
+      "tools_executed": true,
+      "evidence": "intent-role-separation/evidence.zip",
+      "scoring": "two model reviewers with blind condition IDs; explicit adjudication of disagreements"
     }
   ],
   "october_studies": {

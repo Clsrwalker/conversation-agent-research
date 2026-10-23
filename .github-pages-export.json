@@ -45,8 +45,8 @@
     },
     {
       "path": "data.js",
-      "sha256": "78dba54342e2e724d6964d55d5823225a8c639e52840d17d3e4c287a918fe021",
-      "bytes": 197639
+      "sha256": "dd4d55380c91e940b840d9600a11f227057ca6c0ad11aa8197f6701aa19f0d5a",
+      "bytes": 198285
     },
     {
       "path": "data/analyze_harness_latency.py",
@@ -212,6 +212,106 @@
       "path": "data/harness-run-lab-validation.json",
       "sha256": "ebea99200a66ec95df008248499ef12b05c687548091f1eeef620373cb938ece",
       "bytes": 22381
+    },
+    {
+      "path": "data/intent-role-separation-validation.json",
+      "sha256": "e6542c17d21b76e6be1d1de28b156fecd39a74f8284d3019c132c2337f089ca3",
+      "bytes": 4652
+    },
+    {
+      "path": "data/intent-role-separation/PROTOCOL.md",
+      "sha256": "1ee5367e1141f63b18c6bb60d24b1d0e437580d38a03cd8da96c93e5b9ee3c4f",
+      "bytes": 14920
+    },
+    {
+      "path": "data/intent-role-separation/RESULTS.md",
+      "sha256": "4c60371f5f8f54bb58eb543f3cb39bdbbbf0017ef83838fcd26ca3045a9924ca",
+      "bytes": 13224
+    },
+    {
+      "path": "data/intent-role-separation/analysis/EXECUTION-AUDIT.json",
+      "sha256": "3875b82944cae2ffb1e1057f3fd38eba790d015a5a0230383945df0172a574a9",
+      "bytes": 481184
+    },
+    {
+      "path": "data/intent-role-separation/analysis/INDEPENDENT-AUDIT.json",
+      "sha256": "99a562c96aa86727a4948c62cc0ff09950480d631e9e54fdc80e0cda8f37dc39",
+      "bytes": 16651
+    },
+    {
+      "path": "data/intent-role-separation/analysis/TRACKER-FAILURE-AGGREGATE.json",
+      "sha256": "31605133973512c380140f7b9f0ea2b2756b1e491b3dc85a449a406ef5db12af",
+      "bytes": 81381
+    },
+    {
+      "path": "data/intent-role-separation/analysis/additional-metrics.json",
+      "sha256": "6973ef33e66c946e5c2a24a78accb1425cd11d82d01f0bd33a2b7d476f989911",
+      "bytes": 151161
+    },
+    {
+      "path": "data/intent-role-separation/analysis/interpretation.json",
+      "sha256": "8a7035fc720f1e42f7a81984f56639415991b21d84fc0fcce6affc882e8adbda",
+      "bytes": 3058
+    },
+    {
+      "path": "data/intent-role-separation/analysis/results.json",
+      "sha256": "e1b156ae740fcbf374f49d46dd144e5fdedbe105e5fbd58c029720326d83085a",
+      "bytes": 42286
+    },
+    {
+      "path": "data/intent-role-separation/analysis/rows.csv",
+      "sha256": "b55ce1ddf6ba682753ec4d4ab983159eeb360a1c389535ebfcc72e3699a0bc62",
+      "bytes": 15762
+    },
+    {
+      "path": "data/intent-role-separation/engineering/DEVELOPMENT-AUDIT.json",
+      "sha256": "45ffd1a3a090d203305f0210fe0ca31933a8fc93a2c28ae79bb7203ac7d537c6",
+      "bytes": 32476
+    },
+    {
+      "path": "data/intent-role-separation/engineering/offline-tests.txt",
+      "sha256": "5c4240df532f958286ffed09f9a052f59af51bb294a216b7249ee4546e3bc60f",
+      "bytes": 6962
+    },
+    {
+      "path": "data/intent-role-separation/engineering/validation.json",
+      "sha256": "e6542c17d21b76e6be1d1de28b156fecd39a74f8284d3019c132c2337f089ca3",
+      "bytes": 4652
+    },
+    {
+      "path": "data/intent-role-separation/evaluation/manifest.json",
+      "sha256": "a1d9ebdce800e71246e4a4fc9c9932f90b80c77622af88ac28b11dba90e25ffb",
+      "bytes": 14520
+    },
+    {
+      "path": "data/intent-role-separation/evidence.zip",
+      "sha256": "865cf0e08c7052d2d327bbbe1d7740c007047ea4542917eaa4796ca5f77452a5",
+      "bytes": 4855724
+    },
+    {
+      "path": "data/intent-role-separation/export-index.json",
+      "sha256": "2fc54e455e8c650a1d9e7bbad516b2eaeda65f3698d5438fd70c4acb5e3188b5",
+      "bytes": 114089
+    },
+    {
+      "path": "data/intent-role-separation/fixtures/cases.json",
+      "sha256": "61d9f5fa3d94937b181c45d065f0d012d240df30fb4211bf57f415a53560ba7a",
+      "bytes": 61103
+    },
+    {
+      "path": "data/intent-role-separation/scoring/REVIEW-PROCESS-AUDIT.json",
+      "sha256": "61cc955800baae8589330ed017caa6754d1193af8f183fcdc45f5938fe0d6a59",
+      "bytes": 3320
+    },
+    {
+      "path": "data/intent-role-separation/scoring/adjudication.json",
+      "sha256": "59e19e7f74c3188e704d62952540c8ff4d7aa620e6bf3dfb22cf0c1ce1d39f0c",
+      "bytes": 1027
+    },
+    {
+      "path": "data/intent-role-separation/scoring/final-scores.json",
+      "sha256": "f850bb4e903fb31126abf58b9906df70694718e03a443915f0d57e209487ae12",
+      "bytes": 24833
     },
     {
       "path": "data/intention-literature-2026-10-17.json",
@@ -440,8 +540,8 @@
     },
     {
       "path": "data/research-record.json",
-      "sha256": "ff9f3a959e5d00008ea0deffbb338ff1a8fb4155b9cfd654f8468b91000f436d",
-      "bytes": 291001
+      "sha256": "b0d0151a602b3e619842a7816f21eee0c6a5a7591ffe9afd3b434eb26d81f788",
+      "bytes": 291790
     },
     {
       "path": "data/results.csv",
@@ -735,8 +835,13 @@
     },
     {
       "path": "index.html",
-      "sha256": "5c22020ea16d5ee11ff8d842ed6021a1e8e2d69dc8c815511963644313c315bf",
-      "bytes": 70240
+      "sha256": "028377f86dcbf8dcd72af03afa3bd717c12ed2cf7eeee2b0c2089d737b285238",
+      "bytes": 70986
+    },
+    {
+      "path": "intent-role-separation.html",
+      "sha256": "102a9ba27a4a8b3d6f0f79cb7636b7e4c93d0dfce9f07e63b76e649a2b76d24f",
+      "bytes": 9219
     },
     {
       "path": "intention-literature.css",

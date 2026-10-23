@@ -1,0 +1,662 @@
+[
+  {
+    "packet_id": "packet-001",
+    "complete_and_correct": false,
+    "omission": false,
+    "scope_error": true,
+    "unnecessary_clarification": false,
+    "factual_error": true,
+    "per_intent_coverage": {
+      "eligible-room": false
+    },
+    "reason": "The card wrongly keeps Gauge as cheapest after Wi-Fi is dropped. Shaft costs $12 and seats sixteen, so it meets the retained limits and is cheaper than Gauge at $18; the required correct final selection is not delivered.",
+    "decision_source": "independent_agreement"
+  },
+  {
+    "packet_id": "packet-002",
+    "complete_and_correct": true,
+    "omission": false,
+    "scope_error": false,
+    "unnecessary_clarification": false,
+    "factual_error": false,
+    "per_intent_coverage": {
+      "offline-editing": true,
+      "pdf-limit": true
+    },
+    "reason": "The final substantive card clearly gives Mobile offline editing support and the five-page PDF limit. The other cards describe Mobile searches and the dropped Desktop request without giving a competing Desktop answer.",
+    "decision_source": "independent_agreement"
+  },
+  {
+    "packet_id": "packet-003",
+    "complete_and_correct": true,
+    "omission": false,
+    "scope_error": false,
+    "unnecessary_clarification": false,
+    "factual_error": false,
+    "per_intent_coverage": {
+      "collection-window": true,
+      "key-deposit": true
+    },
+    "reason": "The answer restores Monday 16:00 to 18:00 at the service hatch and retains the $7 refundable deposit, fully answering the user's window and deposit-amount requests.",
+    "decision_source": "independent_agreement"
+  },
+  {
+    "packet_id": "packet-004",
+    "complete_and_correct": true,
+    "omission": false,
+    "scope_error": false,
+    "unnecessary_clarification": false,
+    "factual_error": false,
+    "per_intent_coverage": {
+      "offline-editing": true,
+      "pdf-limit": true
+    },
+    "reason": "The card explicitly identifies Mobile and correctly answers both questions: offline editing of an already downloaded notebook is supported and PDF export has a five-page limit.",
+    "decision_source": "independent_agreement"
+  },
+  {
+    "packet_id": "packet-005",
+    "complete_and_correct": true,
+    "omission": false,
+    "scope_error": false,
+    "unnecessary_clarification": false,
+    "factual_error": false,
+    "per_intent_coverage": {
+      "demo-start": true,
+      "demo-room": true
+    },
+    "reason": "The session start time and room are correctly reported as 14:20 and Room T6, with no unaccepted recording addition.",
+    "decision_source": "independent_agreement"
+  },
+  {
+    "packet_id": "packet-006",
+    "complete_and_correct": true,
+    "omission": false,
+    "scope_error": false,
+    "unnecessary_clarification": false,
+    "factual_error": false,
+    "per_intent_coverage": {
+      "meridian-hours": true,
+      "amplified-instruments": true
+    },
+    "reason": "Both active Meridian questions are fully answered: Saturday 10:00 to 18:00 and amplified instruments not allowed.",
+    "decision_source": "independent_agreement"
+  },
+  {
+    "packet_id": "packet-007",
+    "complete_and_correct": true,
+    "omission": false,
+    "scope_error": false,
+    "unnecessary_clarification": false,
+    "factual_error": false,
+    "per_intent_coverage": {
+      "meridian-hours": true,
+      "amplified-instruments": true
+    },
+    "reason": "The card gives Meridian's Saturday hours as 10:00 to 18:00 and correctly says amplified instruments are forbidden. Cousin and Lakeside background does not alter the answer.",
+    "decision_source": "independent_agreement"
+  },
+  {
+    "packet_id": "packet-008",
+    "complete_and_correct": true,
+    "omission": false,
+    "scope_error": false,
+    "unnecessary_clarification": false,
+    "factual_error": false,
+    "per_intent_coverage": {
+      "offline-editing": true,
+      "pdf-limit": true
+    },
+    "reason": "Both answers clearly concern Archivum Mobile and match its handbook: downloaded notebooks can be edited offline and each PDF is limited to five pages.",
+    "decision_source": "independent_agreement"
+  },
+  {
+    "packet_id": "packet-009",
+    "complete_and_correct": true,
+    "omission": false,
+    "scope_error": false,
+    "unnecessary_clarification": false,
+    "factual_error": false,
+    "per_intent_coverage": {
+      "shuttle-choice": true
+    },
+    "reason": "Cove on Sunday at 10:00 from West Quay is explicitly free and step-free; every retained requirement is answered.",
+    "decision_source": "independent_agreement"
+  },
+  {
+    "packet_id": "packet-010",
+    "complete_and_correct": true,
+    "omission": false,
+    "scope_error": false,
+    "unnecessary_clarification": false,
+    "factual_error": false,
+    "per_intent_coverage": {
+      "demo-start": true,
+      "demo-room": true
+    },
+    "reason": "The answer gives exactly the requested session facts, 14:20 and Room T6, without adopting the unaccepted recording proposal.",
+    "decision_source": "independent_agreement"
+  },
+  {
+    "packet_id": "packet-011",
+    "complete_and_correct": false,
+    "omission": true,
+    "scope_error": false,
+    "unnecessary_clarification": false,
+    "factual_error": false,
+    "per_intent_coverage": {
+      "workshop-choice": false
+    },
+    "reason": "The selected workshop, Friday timing, room and step-free eligibility are correct, but the requested actual price of $23 is absent.",
+    "decision_source": "independent_agreement"
+  },
+  {
+    "packet_id": "packet-012",
+    "complete_and_correct": true,
+    "omission": false,
+    "scope_error": false,
+    "unnecessary_clarification": false,
+    "factual_error": false,
+    "per_intent_coverage": {
+      "offline-editing": true,
+      "pdf-limit": true
+    },
+    "reason": "The answer identifies Mobile and correctly supplies both offline editing support and the five-page PDF export limit.",
+    "decision_source": "independent_agreement"
+  },
+  {
+    "packet_id": "packet-013",
+    "complete_and_correct": true,
+    "omission": false,
+    "scope_error": false,
+    "unnecessary_clarification": false,
+    "factual_error": false,
+    "per_intent_coverage": {
+      "meridian-hours": true,
+      "amplified-instruments": true
+    },
+    "reason": "The card explicitly addresses the Saturday Meridian booking and provides both correct hours and the correct amplified-instrument restriction.",
+    "decision_source": "independent_agreement"
+  },
+  {
+    "packet_id": "packet-014",
+    "complete_and_correct": true,
+    "omission": false,
+    "scope_error": false,
+    "unnecessary_clarification": false,
+    "factual_error": false,
+    "per_intent_coverage": {
+      "meridian-hours": true,
+      "amplified-instruments": true
+    },
+    "reason": "Both requested Saturday Meridian details are present and correct: 10:00 to 18:00 opening hours and no amplified instruments. Acoustic instruments are correctly described as permitted.",
+    "decision_source": "independent_agreement"
+  },
+  {
+    "packet_id": "packet-015",
+    "complete_and_correct": true,
+    "omission": false,
+    "scope_error": false,
+    "unnecessary_clarification": false,
+    "factual_error": false,
+    "per_intent_coverage": {
+      "eligible-room": true
+    },
+    "reason": "The card correctly selects Shaft without requiring Wi-Fi and gives its $12 price and sixteen-seat capacity, satisfying every active requirement.",
+    "decision_source": "independent_agreement"
+  },
+  {
+    "packet_id": "packet-016",
+    "complete_and_correct": false,
+    "omission": false,
+    "scope_error": true,
+    "unnecessary_clarification": false,
+    "factual_error": false,
+    "per_intent_coverage": {
+      "demo-start": true,
+      "demo-room": true
+    },
+    "reason": "14:20 and Room T6 correctly cover both requested facts, but the added recording statement violates Imani's explicit instruction to give only the time and room; the recording proposal was never accepted. The recording fact itself matches the notice.",
+    "decision_source": "independent_agreement"
+  },
+  {
+    "packet_id": "packet-017",
+    "complete_and_correct": true,
+    "omission": false,
+    "scope_error": false,
+    "unnecessary_clarification": false,
+    "factual_error": false,
+    "per_intent_coverage": {
+      "offline-editing": true,
+      "pdf-limit": true
+    },
+    "reason": "Both answers are explicitly for Archivum Mobile and match its handbook: downloaded notebooks can be edited offline and PDFs have a five-page limit.",
+    "decision_source": "independent_agreement"
+  },
+  {
+    "packet_id": "packet-018",
+    "complete_and_correct": true,
+    "omission": false,
+    "scope_error": false,
+    "unnecessary_clarification": false,
+    "factual_error": false,
+    "per_intent_coverage": {
+      "signup-deadline": true,
+      "wheelchair-access": true,
+      "briefing-arrival": true
+    },
+    "reason": "All current questions are correctly answered separately by topic: signup closes Thursday 17:00, wheelchair entry uses the North gate and ramp, and arrival is 08:40 to 08:55. No withdrawn refund answer or incorrect ownership is introduced.",
+    "decision_source": "independent_agreement"
+  },
+  {
+    "packet_id": "packet-019",
+    "complete_and_correct": true,
+    "omission": false,
+    "scope_error": false,
+    "unnecessary_clarification": false,
+    "factual_error": false,
+    "per_intent_coverage": {
+      "signup-deadline": true,
+      "wheelchair-access": true,
+      "briefing-arrival": true
+    },
+    "reason": "Distinct statements correctly retain Omar's Thursday 17:00 signup deadline and Lina's North-gate ramp access, then add her 08:40 to 08:55 arrival window. The withdrawn refund question is absent.",
+    "decision_source": "independent_agreement"
+  },
+  {
+    "packet_id": "packet-020",
+    "complete_and_correct": true,
+    "omission": false,
+    "scope_error": false,
+    "unnecessary_clarification": false,
+    "factual_error": false,
+    "per_intent_coverage": {
+      "collection-window": true,
+      "key-deposit": true
+    },
+    "reason": "The restored collection window and retained deposit are both correct: Monday 16:00 to 18:00 at the service hatch, and $7 refunded when the key is returned.",
+    "decision_source": "independent_agreement"
+  },
+  {
+    "packet_id": "packet-021",
+    "complete_and_correct": true,
+    "omission": false,
+    "scope_error": false,
+    "unnecessary_clarification": false,
+    "factual_error": false,
+    "per_intent_coverage": {
+      "offline-editing": true,
+      "pdf-limit": true
+    },
+    "reason": "The answer clearly reports Mobile's supported offline editing and five-page PDF limit, with neither Desktop answer carried forward.",
+    "decision_source": "independent_agreement"
+  },
+  {
+    "packet_id": "packet-022",
+    "complete_and_correct": true,
+    "omission": false,
+    "scope_error": false,
+    "unnecessary_clarification": false,
+    "factual_error": false,
+    "per_intent_coverage": {
+      "meridian-hours": true,
+      "amplified-instruments": true
+    },
+    "reason": "The unchanged Saturday Meridian request is fully answered with 10:00 to 18:00 and the prohibition on amplified instruments.",
+    "decision_source": "independent_agreement"
+  },
+  {
+    "packet_id": "packet-023",
+    "complete_and_correct": true,
+    "omission": false,
+    "scope_error": false,
+    "unnecessary_clarification": false,
+    "factual_error": false,
+    "per_intent_coverage": {
+      "shuttle-choice": true
+    },
+    "reason": "The card correctly recommends the free, step-free Sunday Cove service and includes its 10:00 departure and West Quay boarding point.",
+    "decision_source": "independent_agreement"
+  },
+  {
+    "packet_id": "packet-024",
+    "complete_and_correct": true,
+    "omission": false,
+    "scope_error": false,
+    "unnecessary_clarification": false,
+    "factual_error": false,
+    "per_intent_coverage": {
+      "signup-deadline": true,
+      "wheelchair-access": true,
+      "briefing-arrival": true
+    },
+    "reason": "Across the three visible cards, the retained signup deadline and wheelchair access answer are correct, and the added arrival window is supplied as 08:40 to 08:55. No outdated refund answer remains.",
+    "decision_source": "independent_agreement"
+  },
+  {
+    "packet_id": "packet-025",
+    "complete_and_correct": true,
+    "omission": false,
+    "scope_error": false,
+    "unnecessary_clarification": false,
+    "factual_error": false,
+    "per_intent_coverage": {
+      "eligible-room": true
+    },
+    "reason": "The answer correctly rechecks eligibility without Wi-Fi and supplies Shaft, $12 and sixteen people.",
+    "decision_source": "independent_agreement"
+  },
+  {
+    "packet_id": "packet-026",
+    "complete_and_correct": false,
+    "omission": true,
+    "scope_error": true,
+    "unnecessary_clarification": false,
+    "factual_error": false,
+    "per_intent_coverage": {
+      "workshop-choice": false
+    },
+    "reason": "Glaze Lab, Friday, Room G4 and step-free access are correct, but the explicitly requested $23 price is omitted; the $25 ceiling is not its price. The answer also supplies the parking location as current answer content after Mara explicitly dropped that question.",
+    "decision_source": "independent_agreement"
+  },
+  {
+    "packet_id": "packet-027",
+    "complete_and_correct": true,
+    "omission": false,
+    "scope_error": false,
+    "unnecessary_clarification": false,
+    "factual_error": false,
+    "per_intent_coverage": {
+      "eligible-room": true
+    },
+    "reason": "Shaft is correctly selected after Wi-Fi is dropped, and its $12 price and sixteen seats satisfy the retained budget and minimum capacity.",
+    "decision_source": "independent_agreement"
+  },
+  {
+    "packet_id": "packet-028",
+    "complete_and_correct": false,
+    "omission": true,
+    "scope_error": false,
+    "unnecessary_clarification": false,
+    "factual_error": false,
+    "per_intent_coverage": {
+      "workshop-choice": false
+    },
+    "reason": "Glaze Lab in Room G4 is correctly described as the eligible step-free Friday option, but its actual $23 price is absent despite the final explicit request.",
+    "decision_source": "independent_agreement"
+  },
+  {
+    "packet_id": "packet-029",
+    "complete_and_correct": false,
+    "omission": true,
+    "scope_error": false,
+    "unnecessary_clarification": false,
+    "factual_error": false,
+    "per_intent_coverage": {
+      "workshop-choice": false
+    },
+    "reason": "The chosen Friday workshop, room and step-free status are correct, but the final request for its price is unanswered; the $25 budget ceiling is not Glaze Lab's $23 price.",
+    "decision_source": "independent_agreement"
+  },
+  {
+    "packet_id": "packet-030",
+    "complete_and_correct": true,
+    "omission": false,
+    "scope_error": false,
+    "unnecessary_clarification": false,
+    "factual_error": false,
+    "per_intent_coverage": {
+      "signup-deadline": true,
+      "wheelchair-access": true,
+      "briefing-arrival": true
+    },
+    "reason": "The answer preserves all three active questions in distinct statements: Thursday 17:00 signup, North gate with step-free ramp for wheelchair entry, and 08:40 to 08:55 arrival. It does not reintroduce the withdrawn refund question or misattribute either person's change.",
+    "decision_source": "independent_agreement"
+  },
+  {
+    "packet_id": "packet-031",
+    "complete_and_correct": false,
+    "omission": true,
+    "scope_error": false,
+    "unnecessary_clarification": false,
+    "factual_error": false,
+    "per_intent_coverage": {
+      "workshop-choice": false
+    },
+    "reason": "Glaze Lab, Friday, Room G4 and step-free eligibility are correct, but the explicitly requested actual price ($23) is missing; mentioning the $25 ceiling does not supply it.",
+    "decision_source": "independent_agreement"
+  },
+  {
+    "packet_id": "packet-032",
+    "complete_and_correct": true,
+    "omission": false,
+    "scope_error": false,
+    "unnecessary_clarification": false,
+    "factual_error": false,
+    "per_intent_coverage": {
+      "shuttle-choice": true
+    },
+    "reason": "Cove on Sunday, 10:00, West Quay, free fare and step-free boarding are all correctly supplied.",
+    "decision_source": "independent_agreement"
+  },
+  {
+    "packet_id": "packet-033",
+    "complete_and_correct": true,
+    "omission": false,
+    "scope_error": false,
+    "unnecessary_clarification": false,
+    "factual_error": false,
+    "per_intent_coverage": {
+      "meridian-hours": true,
+      "amplified-instruments": true
+    },
+    "reason": "Saturday Meridian hours and the amplified-instrument restriction are correct. The additional Sunday hours are also supported by the sheet and do not replace Saturday, adopt the cousin's plans, or violate an only/leave-out instruction.",
+    "decision_source": "independent_agreement"
+  },
+  {
+    "packet_id": "packet-034",
+    "complete_and_correct": true,
+    "omission": false,
+    "scope_error": false,
+    "unnecessary_clarification": false,
+    "factual_error": false,
+    "per_intent_coverage": {
+      "shuttle-choice": true
+    },
+    "reason": "The final recommendation is Cove on Sunday, correctly preserves free and step-free requirements, and gives 10:00 and West Quay.",
+    "decision_source": "independent_agreement"
+  },
+  {
+    "packet_id": "packet-035",
+    "complete_and_correct": false,
+    "omission": true,
+    "scope_error": false,
+    "unnecessary_clarification": false,
+    "factual_error": false,
+    "per_intent_coverage": {
+      "signup-deadline": true,
+      "wheelchair-access": true,
+      "briefing-arrival": false
+    },
+    "reason": "The two cards correctly answer Omar's signup deadline and Lina's wheelchair entry question, but neither provides Lina's added 08:40 to 08:55 arrival window.",
+    "decision_source": "independent_agreement"
+  },
+  {
+    "packet_id": "packet-036",
+    "complete_and_correct": true,
+    "omission": false,
+    "scope_error": false,
+    "unnecessary_clarification": false,
+    "factual_error": false,
+    "per_intent_coverage": {
+      "shuttle-choice": true
+    },
+    "reason": "Cove is correctly selected for Sunday with the free and step-free constraints retained, and the card includes 10:00 and West Quay.",
+    "decision_source": "independent_agreement"
+  },
+  {
+    "packet_id": "packet-037",
+    "complete_and_correct": true,
+    "omission": false,
+    "scope_error": false,
+    "unnecessary_clarification": false,
+    "factual_error": false,
+    "per_intent_coverage": {
+      "shuttle-choice": true
+    },
+    "reason": "The card recommends the free, step-free Cove on Sunday and supplies the correct 10:00 departure and West Quay boarding point.",
+    "decision_source": "independent_agreement"
+  },
+  {
+    "packet_id": "packet-038",
+    "complete_and_correct": true,
+    "omission": false,
+    "scope_error": false,
+    "unnecessary_clarification": false,
+    "factual_error": false,
+    "per_intent_coverage": {
+      "collection-window": true,
+      "key-deposit": true
+    },
+    "reason": "The card supplies the restored Monday 16:00 to 18:00 service-hatch collection window and the retained $7 refundable deposit. This answers the user's amount request without needing to reproduce every refund-detail phrase from the reference answer.",
+    "decision_source": "independent_agreement"
+  },
+  {
+    "packet_id": "packet-039",
+    "complete_and_correct": true,
+    "omission": false,
+    "scope_error": false,
+    "unnecessary_clarification": false,
+    "factual_error": false,
+    "per_intent_coverage": {
+      "signup-deadline": true,
+      "wheelchair-access": true,
+      "briefing-arrival": true
+    },
+    "reason": "All three active questions are correctly answered by topic: Thursday 17:00 signup, North gate with step-free ramp, and 08:40 to 08:55 arrival. No question is replaced, misattributed or reinstated from the withdrawn refund request.",
+    "decision_source": "independent_agreement"
+  },
+  {
+    "packet_id": "packet-040",
+    "complete_and_correct": true,
+    "omission": false,
+    "scope_error": false,
+    "unnecessary_clarification": false,
+    "factual_error": false,
+    "per_intent_coverage": {
+      "collection-window": true,
+      "key-deposit": true
+    },
+    "reason": "The restored collection window is correctly included as Monday 16:00 to 18:00 at the service hatch, together with the requested $7 refundable deposit. The user's request is for the deposit amount, not a separate explanation of refund timing.",
+    "decision_source": "independent_agreement"
+  },
+  {
+    "packet_id": "packet-041",
+    "complete_and_correct": true,
+    "omission": false,
+    "scope_error": false,
+    "unnecessary_clarification": false,
+    "factual_error": false,
+    "per_intent_coverage": {
+      "demo-start": true,
+      "demo-room": true
+    },
+    "reason": "The answer correctly provides only the requested start time, 14:20, and location, Room T6, without adopting the unaccepted recording suggestion.",
+    "decision_source": "independent_agreement"
+  },
+  {
+    "packet_id": "packet-042",
+    "complete_and_correct": true,
+    "omission": false,
+    "scope_error": false,
+    "unnecessary_clarification": false,
+    "factual_error": false,
+    "per_intent_coverage": {
+      "collection-window": true,
+      "key-deposit": true
+    },
+    "reason": "The final card correctly restores Monday 16:00 to 18:00 at the service hatch and retains the $7 deposit, including that it is refunded when the key is returned.",
+    "decision_source": "independent_agreement"
+  },
+  {
+    "packet_id": "packet-043",
+    "complete_and_correct": true,
+    "omission": false,
+    "scope_error": false,
+    "unnecessary_clarification": false,
+    "factual_error": false,
+    "per_intent_coverage": {
+      "collection-window": true,
+      "key-deposit": true
+    },
+    "reason": "Both active requests are satisfied by Monday 16:00 to 18:00 at the service hatch and the $7 refundable deposit; the collection window is correctly restored.",
+    "decision_source": "independent_agreement"
+  },
+  {
+    "packet_id": "packet-044",
+    "complete_and_correct": true,
+    "omission": false,
+    "scope_error": false,
+    "unnecessary_clarification": false,
+    "factual_error": false,
+    "per_intent_coverage": {
+      "demo-start": true,
+      "demo-room": true
+    },
+    "reason": "The card reports the correct start time and room, 14:20 and T6, and stays within the explicitly limited request.",
+    "decision_source": "independent_agreement"
+  },
+  {
+    "packet_id": "packet-045",
+    "complete_and_correct": true,
+    "omission": false,
+    "scope_error": false,
+    "unnecessary_clarification": false,
+    "factual_error": false,
+    "per_intent_coverage": {
+      "demo-start": true,
+      "demo-room": true
+    },
+    "reason": "14:20 and Room T6 correctly answer both active questions; no extra recording deliverable is included.",
+    "decision_source": "independent_agreement"
+  },
+  {
+    "packet_id": "packet-046",
+    "complete_and_correct": false,
+    "omission": true,
+    "scope_error": false,
+    "unnecessary_clarification": false,
+    "factual_error": false,
+    "per_intent_coverage": {
+      "workshop-choice": false
+    },
+    "reason": "Glaze Lab in Room G4 is correctly selected and the step-free route is explained, but its $23 price is not given despite the explicit final request.",
+    "decision_source": "independent_agreement"
+  },
+  {
+    "packet_id": "packet-047",
+    "complete_and_correct": false,
+    "omission": false,
+    "scope_error": true,
+    "unnecessary_clarification": false,
+    "factual_error": false,
+    "per_intent_coverage": {
+      "eligible-room": false
+    },
+    "reason": "After Nadia withdraws Wi-Fi, the still-effective request is to choose the cheapest room with at least twelve seats costing no more than $20. Shaft at $12 with sixteen seats satisfies those conditions and is cheaper than Gauge. The final card instead retains Gauge, making the selection incorrect under the updated scope. It directly provides a room name, price and capacity, so the failure is not an omission. The stated Gauge price of $18 and capacity of twelve seats both match the guide; the card neither explicitly claims Gauge is cheapest nor invents or contradicts a source fact. Thus the selection failure is a scope error without a separate factual error. No clarification is requested.",
+    "decision_source": "independent_blind_adjudication"
+  },
+  {
+    "packet_id": "packet-048",
+    "complete_and_correct": true,
+    "omission": false,
+    "scope_error": false,
+    "unnecessary_clarification": false,
+    "factual_error": false,
+    "per_intent_coverage": {
+      "eligible-room": true
+    },
+    "reason": "Shaft at $12 with sixteen seats is the cheapest eligible room after Wi-Fi is removed; name, price and capacity are supplied.",
+    "decision_source": "independent_agreement"
+  }
+]
