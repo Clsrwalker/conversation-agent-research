@@ -1,0 +1,219 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-23",
+  "timezone": "America/Halifax",
+  "reviewed_at_utc": "2026-10-23T20:53:17.904711+00:00",
+  "kind": "independent_read_only_evidence_and_claim_review",
+  "status": "reviewed",
+  "blockers": [],
+  "checks": [
+    {
+      "id": "combined_counts_and_validation_consistency",
+      "status": "pass",
+      "evidence": [
+        "SUMMARY.json",
+        "validation.json",
+        "tracker/run-01/diagnosis.json",
+        "handoff/results.json",
+        "delivery/publish-guard-diagnostic.json"
+      ],
+      "observed": "14 scenarios = 4 tracker + 4 handoff + 6 direct-tool cases; 82 scripted callbacks = 72 + 10. The six direct-tool cases record zero model calls. Components match between SUMMARY and validation."
+    },
+    {
+      "id": "original_capture_reconciliation",
+      "status": "pass",
+      "evidence": [
+        "../intent-role-separation/evaluation/runs/*/model_capture.jsonl",
+        "../intent-role-separation/evaluation/runs/*/steps.jsonl"
+      ],
+      "observed": "Independently parsed 48 runs and 864 steps. All 864 captured request packets match step inputs, all 864 captured AI responses match step responses, and every request has two messages. Capture files contain 864 request plus 864 response records, or 1728 JSONL records."
+    },
+    {
+      "id": "original_scores_preserved",
+      "status": "pass",
+      "evidence": [
+        "../intent-role-separation/scoring/final-scores.json",
+        "delivery/delivery-audit.json",
+        "source-integrity.json"
+      ],
+      "observed": "48 original scores contain 10 final failures. Component counts are tracked 4, unified 4, split 2; six workshop, two room, one scope, one arrival-window failure. Original score and analysis hashes match the preserved records; no rescoring was performed."
+    },
+    {
+      "id": "tracker_replay_counts",
+      "status": "pass",
+      "evidence": [
+        "tracker/run-01/diagnosis.json",
+        "tracker/run-01/recorded-errors.json",
+        "../intent-role-separation/evaluation/runs/*/steps.jsonl"
+      ],
+      "observed": "Raw tracked steps independently total 69 tracker calls: 44 completed, 25 error. Replay reports 16 trajectories, 288 pre-call snapshots, zero mismatches, and all 25 rejected patches atomic. Rejection-class counts sum to 25: 9 withdrawn-target updates, 3 invalid statuses, 12 duplicate targets, 1 non-conversation source."
+    },
+    {
+      "id": "source_seq17_classification",
+      "status": "pass",
+      "evidence": [
+        "../intent-role-separation/evaluation/runs/irs-unaccepted-assistant-proposal--tracked--r2/steps.jsonl:7",
+        "tracker/FINDINGS.md",
+        "REPORT.md"
+      ],
+      "observed": "The rejected operation cites seqs 1 and 17. Raw step 6 input includes seq 17 as an arrived full-document read result; observed seq is 23 and conversation seqs are [1,22,23]. Combined prose correctly describes a non-conversation reference, not future-information leakage."
+    },
+    {
+      "id": "desired_properties_vs_current_contract",
+      "status": "pass",
+      "evidence": [
+        "tracker/run-01/diagnosis.json",
+        "handoff/results.json",
+        "experiments/deep_conversation/intent_roles.py",
+        "SUMMARY.json",
+        "validation.json",
+        "REPORT.md"
+      ],
+      "observed": "Tracker retains five passing safety/control properties and two failed desired recovery properties; handoff retains seven passing controls/invariants and one failed desired interface property. Combined records explicitly distinguish desired capabilities from the documented fail-closed/private-prose contracts and do not construct a combined pass rate."
+    },
+    {
+      "id": "correct_private_content_vs_missing_content",
+      "status": "pass",
+      "evidence": [
+        "../intent-role-separation/evaluation/runs/irs-multiple-request-owners--unified--r2/steps.jsonl",
+        "delivery/delivery-audit.json",
+        "REPORT.md"
+      ],
+      "observed": "Independently inspected all six final private responses in multiple-owner unified repeat 2: each states the correct arrival window and has no tool call or receipt. The report distinguishes this delivery omission from workshop drafts that themselves omit price and from split drafts that publish incomplete content."
+    },
+    {
+      "id": "work_handoff_and_raw_evidence",
+      "status": "pass",
+      "evidence": [
+        "../intent-role-separation/evaluation/runs/irs-room-withdrawal--tracked--r2/steps.jsonl:9",
+        "handoff/trace-evidence.json",
+        "handoff/results.json",
+        "experiments/deep_conversation/intent_roles.py:261"
+      ],
+      "observed": "Raw work step 8 selects Shaft/$12/sixteen seats without a tool call; chat step 9 has empty notes and retains Gauge through an unchanged receipt. Both inputs have the complete source. The scripted explicit save_notes control carries the conclusion; its success is described as transport behavior, not proven real-model quality benefit."
+    },
+    {
+      "id": "proposal_receipt_and_delivery_separation",
+      "status": "pass",
+      "evidence": [
+        "handoff/trace-evidence.json",
+        "handoff/results.json",
+        "delivery/publish-guard-diagnostic.json",
+        "REPORT.md"
+      ],
+      "observed": "Reports distinguish false proposals rejected with new_observations from committed false text after observations settle. Six direct-tool controls record four displayed drafts, a blank-text rejection, and a stale-observation rejection; accepting incorrect drafts is explicitly not a quality success."
+    },
+    {
+      "id": "existing_answer_delivery_scope",
+      "status": "pass",
+      "evidence": [
+        "experiments/deep_conversation/agent_led.py:240",
+        "experiments/deep_conversation/config.py:35",
+        "experiments/deep_conversation/run_intent_roles.py:42",
+        "experiments/deep_conversation/intent_roles.py:240",
+        "REPORT.md"
+      ],
+      "observed": "Source confirms optional native AnswerDelivery exists. The evaluated runner uses agent-led settings and directly invokes IntentRoleSession.step; it does not exercise that graph node. The report does not claim a project-wide absence or tested repair benefit."
+    },
+    {
+      "id": "actual_current_and_frozen_source_hashes",
+      "status": "pass",
+      "evidence": [
+        "source-integrity.json",
+        "../intent-role-separation/evaluation/manifest.json",
+        "../intent-role-separation/evaluation/frozen-source/"
+      ],
+      "observed": "Independently hashed all 40 actual current files and all 40 actual frozen copies; every digest matches the integrity record. Evaluation manifest digest also matches."
+    },
+    {
+      "id": "original_input_hashes",
+      "status": "pass",
+      "evidence": [
+        "tracker/run-01/diagnosis.json",
+        "delivery/delivery-audit.json",
+        "source-integrity.json"
+      ],
+      "observed": "Independently verified 56 tracker preserved-input hashes, all 147 delivery-audit input hashes, and six prior score/analysis/validation record hashes. All match current bytes."
+    },
+    {
+      "id": "no_new_external_experiment_inference",
+      "status": "pass",
+      "evidence": [
+        "tracker/diagnose_tracker.py",
+        "handoff/diagnose_handoff.py",
+        "delivery/diagnose_publish_guard.py",
+        "tracker/run-01/diagnosis.json",
+        "handoff/results.json",
+        "delivery/publish-guard-diagnostic.json"
+      ],
+      "observed": "Scripts use deterministic model doubles or direct tool calls and block socket connections. Component results consistently record zero new real/external model experiment calls. This independent language-model review is not a participant-model rerun and is excluded from experiment counts."
+    },
+    {
+      "id": "limitations_and_future_work",
+      "status": "pass",
+      "evidence": [
+        "REPORT.md",
+        "SUMMARY.json",
+        "validation.json"
+      ],
+      "observed": "Combined records retain the workshop early-gold caveat, correlated-family limitation, source-availability versus comprehension distinction, original-label reuse, and absence of repair/model-comparison/ASR/live-user benefit evidence. Proposed architecture and repairs remain explicitly proposed."
+    },
+    {
+      "id": "website_section_claim_alignment",
+      "status": "pass",
+      "evidence": [
+        "sites/conversation-agent-research/build_intent_diagnostics.py"
+      ],
+      "observed": "Read-only review of the planned failure-diagnostics section found counts and claims aligned with reviewed evidence, including three failed desired properties and the existing AnswerDelivery distinction. This check does not assert the builder ran or that publication succeeded."
+    }
+  ],
+  "verified_counts": {
+    "original_trajectories": 48,
+    "original_final_failures": 10,
+    "original_captured_model_calls_reconciled": 864,
+    "original_tracker_proposals_replayed": 69,
+    "original_tracker_proposals_accepted": 44,
+    "original_tracker_proposals_rejected": 25,
+    "scripted_scenarios": 14,
+    "scripted_callback_invocations": 82,
+    "new_real_model_calls": 0,
+    "original_frozen_files_verified": 40,
+    "original_capture_jsonl_records": 1728,
+    "tracker_control_properties_passed": 5,
+    "tracker_desired_properties_failed": 2,
+    "handoff_control_checks_passed": 7,
+    "handoff_desired_properties_failed": 1,
+    "direct_tool_observed_behavior_assertions_matched": 6
+  },
+  "reviewed_artifact_sha256": {
+    "REPORT.md": "fe778d5dd945beda5c6d2845482302e7221ddad908ba721ef46262034ef82c85",
+    "SUMMARY.json": "bb5f2f1741a2107b099b06e077e604b7aebff616ed7151b8cb75ab31b867757e",
+    "validation.json": "5fc0147951ee296c7d54274bfbfa4fd07649388def76a362f40ce0f982cca9dc",
+    "source-integrity.json": "167c85e286de595ed8a90afc1c85e80f8affebed2c40d9b15903f214edd38efb",
+    "tracker/FINDINGS.md": "b6988c7c9316f206d2e546aac1b7314320ce02536523424a244e5e65976d48e4",
+    "tracker/run-01/diagnosis.json": "2ee72aaa112030d3084cc7814d7cc27bf856ab62953c23f868676604fdef8b43",
+    "tracker/run-01/recorded-errors.json": "a902db5ea6d67d45d89d93782709d6ce6d95831faa15ccbed80df638df9c2ed1",
+    "handoff/DIAGNOSIS.md": "676c46c410761b11fb016cac60723efe759cf30963d03b470b5e5a65ee855bde",
+    "handoff/results.json": "a1fdda857cc35f6a08b7b4d041c9c59ae5383a21829fe969b30df169ac37197c",
+    "handoff/trace-evidence.json": "10cc6902d4fc22f24209448c06bd364d3667bfb834b0fb8e695fd9bd896cca38",
+    "delivery/REPORT.md": "4e4b304d4736028066cbf374344db51353a7cf058c70e65cc03a5e1c6952aae2",
+    "delivery/delivery-audit.json": "4bf675a0f14eeec63752c5ba504af20876643cec6bb86f62a487e4e546da4a98",
+    "delivery/publish-guard-diagnostic.json": "72639bea7ea186347b1e2bbd3c18d9a355d993c20c2bc6929fb2d46a6d892f67"
+  },
+  "website_builder_sha256": "34af9e02ebbb811ee9e25ce7abb1c0b61f3afefe6155fb89408926a1598e2c59",
+  "review_activity": {
+    "new_external_model_experiment_calls": 0,
+    "diagnostic_reruns": 0,
+    "implementation_changes": 0,
+    "original_record_changes": 0,
+    "writes": [
+      "REVIEW.json"
+    ],
+    "clarification": "This review interaction uses a language model; zero applies to new participant-model experiment inference, not to the review itself."
+  },
+  "remaining_limits": [
+    "The three desired capabilities remain failed; review acceptance is not a repaired-product or assistance-quality pass.",
+    "No new semantic labels or causal-benefit estimates were produced.",
+    "Website build, exported-file link validation, and publication verification are separate follow-up work and are not certified by this record."
+  ]
+}

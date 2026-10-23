@@ -1,0 +1,498 @@
+{
+  "date": "2026-10-23",
+  "timezone": "America/Halifax",
+  "run_status": "completed",
+  "category": "scripted engineering diagnostics, not model quality experiment",
+  "desired_interface_status": "failed",
+  "implemented_fixes": false,
+  "external_model_calls": 0,
+  "scripted_model_calls": 10,
+  "checks": [
+    {
+      "name": "useful_private_work_conclusion_survives_role_boundary_without_explicit_tool",
+      "status": "fail",
+      "kind": "desired_interface_expectation",
+      "expected": true,
+      "observed": false
+    },
+    {
+      "name": "save_notes_makes_work_conclusion_visible_to_chat",
+      "status": "pass",
+      "kind": "positive_control",
+      "expected": true,
+      "observed": true
+    },
+    {
+      "name": "raw_document_available_to_both_roles_in_both_handoff_arms",
+      "status": "pass",
+      "kind": "isolation_control",
+      "expected": true,
+      "observed": {
+        "private_prose": [
+          true,
+          true
+        ],
+        "saved_notes": [
+          true,
+          true
+        ]
+      }
+    },
+    {
+      "name": "notes_control_uses_native_persisted_save_notes",
+      "status": "pass",
+      "kind": "positive_control",
+      "expected": "actual save_notes receipt and persisted notes",
+      "observed": [
+        {
+          "call_id": "intent-role-000001-tool-0",
+          "provider_call_id": "scripted-0",
+          "name": "save_notes",
+          "args": {
+            "notes": "WORK_CONCLUSION_742: Choose Shaft: $12, sixteen seats; Wi-Fi is no longer required."
+          },
+          "role": "work",
+          "result": {
+            "status": "saved"
+          }
+        }
+      ]
+    },
+    {
+      "name": "notes_control_delivers_through_native_publish_card",
+      "status": "pass",
+      "kind": "positive_control",
+      "expected": "displayed receipt plus committed card",
+      "observed": [
+        {
+          "call_id": "intent-role-000002-tool-0",
+          "provider_call_id": "scripted-0",
+          "name": "publish_card",
+          "args": {
+            "text": "Choose Shaft: $12, sixteen seats.",
+            "source_ids": [
+              "room-guide"
+            ]
+          },
+          "role": "chat",
+          "result": {
+            "card_id": "agent-card-1",
+            "status": "displayed",
+            "note": "Source-ID validity does not establish factual correctness.",
+            "committed_card": {
+              "text": "Choose Shaft: $12, sixteen seats.",
+              "source_ids": [
+                "room-guide"
+              ],
+              "updated_ms": 302
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "rejected_hallucinated_proposal_is_not_delivered",
+      "status": "pass",
+      "kind": "delivery_invariant",
+      "expected": "new_observations receipt and no committed card",
+      "observed": {
+        "receipt": [
+          {
+            "call_id": "intent-role-000001-tool-0",
+            "provider_call_id": "scripted-0",
+            "name": "publish_card",
+            "args": {
+              "text": "Shaft costs $999 and has nine hundred seats.",
+              "source_ids": [
+                "room-guide"
+              ]
+            },
+            "role": "chat",
+            "result": {
+              "status": "new_observations",
+              "reason": "New conversation or source evidence has arrived; read it before deciding whether this card still applies."
+            }
+          }
+        ],
+        "active_cards": {}
+      }
+    },
+    {
+      "name": "publish_guard_does_not_validate_factual_truth",
+      "status": "pass",
+      "kind": "scope_control_not_quality_pass",
+      "expected": "same false proposal can display when no input race",
+      "observed": {
+        "receipt": [
+          {
+            "call_id": "intent-role-000001-tool-0",
+            "provider_call_id": "scripted-0",
+            "name": "publish_card",
+            "args": {
+              "text": "Shaft costs $999 and has nine hundred seats.",
+              "source_ids": [
+                "room-guide"
+              ]
+            },
+            "role": "chat",
+            "result": {
+              "card_id": "agent-card-1",
+              "status": "displayed",
+              "note": "Source-ID validity does not establish factual correctness.",
+              "committed_card": {
+                "text": "Shaft costs $999 and has nine hundred seats.",
+                "source_ids": [
+                  "room-guide"
+                ],
+                "updated_ms": 202
+              }
+            }
+          }
+        ],
+        "active_cards": {
+          "agent-card-1": {
+            "source_ids": [
+              "room-guide"
+            ],
+            "text": "Shaft costs $999 and has nine hundred seats.",
+            "updated_ms": 202
+          }
+        }
+      }
+    },
+    {
+      "name": "all_diagnostics_use_same_instance_and_complete_with_no_network",
+      "status": "pass",
+      "kind": "execution_check",
+      "expected": true,
+      "observed": {
+        "scripted_calls": 10,
+        "external_calls": 0
+      }
+    }
+  ],
+  "cases": {
+    "private_prose": {
+      "case": "private_prose",
+      "condition": "tracked",
+      "same_model_instance": true,
+      "roles": [
+        "tracker",
+        "work",
+        "chat"
+      ],
+      "steps_status": [
+        "completed",
+        "completed",
+        "completed"
+      ],
+      "external_model_calls": 0,
+      "scripted_model_calls": 3,
+      "work_private_content": "WORK_CONCLUSION_742: Choose Shaft: $12, sixteen seats; Wi-Fi is no longer required.",
+      "work_tool_receipts": [],
+      "work_saw_full_document": true,
+      "chat_saw_full_document": true,
+      "chat_saw_exact_work_conclusion": false,
+      "chat_notes": "",
+      "chat_receipts": [],
+      "chat_content": "SCRIPTED_ABSTENTION: no explicit work conclusion was handed off.",
+      "active_cards": {},
+      "all_original_documents_remain_available_after_step": true,
+      "metrics": {
+        "model_calls": 3,
+        "token_usage": {
+          "input_tokens": 33,
+          "output_tokens": 9,
+          "total_tokens": 42
+        },
+        "api_wall_ms": 1.576,
+        "pending_or_failed_calls": 0,
+        "role_counts": {
+          "tracker": 1,
+          "work": 1,
+          "chat": 1
+        }
+      }
+    },
+    "saved_notes": {
+      "case": "saved_notes",
+      "condition": "tracked",
+      "same_model_instance": true,
+      "roles": [
+        "tracker",
+        "work",
+        "chat"
+      ],
+      "steps_status": [
+        "completed",
+        "completed",
+        "completed"
+      ],
+      "external_model_calls": 0,
+      "scripted_model_calls": 3,
+      "work_private_content": "WORK_CONCLUSION_742: Choose Shaft: $12, sixteen seats; Wi-Fi is no longer required.",
+      "work_tool_receipts": [
+        {
+          "call_id": "intent-role-000001-tool-0",
+          "provider_call_id": "scripted-0",
+          "name": "save_notes",
+          "args": {
+            "notes": "WORK_CONCLUSION_742: Choose Shaft: $12, sixteen seats; Wi-Fi is no longer required."
+          },
+          "role": "work",
+          "result": {
+            "status": "saved"
+          }
+        }
+      ],
+      "work_saw_full_document": true,
+      "chat_saw_full_document": true,
+      "chat_saw_exact_work_conclusion": true,
+      "chat_notes": "WORK_CONCLUSION_742: Choose Shaft: $12, sixteen seats; Wi-Fi is no longer required.",
+      "chat_receipts": [
+        {
+          "call_id": "intent-role-000002-tool-0",
+          "provider_call_id": "scripted-0",
+          "name": "publish_card",
+          "args": {
+            "text": "Choose Shaft: $12, sixteen seats.",
+            "source_ids": [
+              "room-guide"
+            ]
+          },
+          "role": "chat",
+          "result": {
+            "card_id": "agent-card-1",
+            "status": "displayed",
+            "note": "Source-ID validity does not establish factual correctness.",
+            "committed_card": {
+              "text": "Choose Shaft: $12, sixteen seats.",
+              "source_ids": [
+                "room-guide"
+              ],
+              "updated_ms": 302
+            }
+          }
+        }
+      ],
+      "chat_content": "",
+      "active_cards": {
+        "agent-card-1": {
+          "source_ids": [
+            "room-guide"
+          ],
+          "text": "Choose Shaft: $12, sixteen seats.",
+          "updated_ms": 302
+        }
+      },
+      "all_original_documents_remain_available_after_step": true,
+      "metrics": {
+        "model_calls": 3,
+        "token_usage": {
+          "input_tokens": 33,
+          "output_tokens": 9,
+          "total_tokens": 42
+        },
+        "api_wall_ms": 1.029,
+        "pending_or_failed_calls": 0,
+        "role_counts": {
+          "tracker": 1,
+          "work": 1,
+          "chat": 1
+        }
+      }
+    },
+    "publish_arrival_during_chat": {
+      "case": "publish_arrival_during_chat",
+      "condition": "split",
+      "same_model_instance": true,
+      "roles": [
+        "work",
+        "chat"
+      ],
+      "steps_status": [
+        "completed",
+        "completed"
+      ],
+      "external_model_calls": 0,
+      "scripted_model_calls": 2,
+      "work_private_content": "WORK_CONCLUSION_742: Choose Shaft: $12, sixteen seats; Wi-Fi is no longer required.",
+      "work_tool_receipts": [],
+      "work_saw_full_document": false,
+      "chat_saw_full_document": false,
+      "chat_saw_exact_work_conclusion": false,
+      "chat_notes": "",
+      "chat_receipts": [
+        {
+          "call_id": "intent-role-000001-tool-0",
+          "provider_call_id": "scripted-0",
+          "name": "publish_card",
+          "args": {
+            "text": "Shaft costs $999 and has nine hundred seats.",
+            "source_ids": [
+              "room-guide"
+            ]
+          },
+          "role": "chat",
+          "result": {
+            "status": "new_observations",
+            "reason": "New conversation or source evidence has arrived; read it before deciding whether this card still applies."
+          }
+        }
+      ],
+      "chat_content": "",
+      "active_cards": {},
+      "all_original_documents_remain_available_after_step": true,
+      "metrics": {
+        "model_calls": 2,
+        "token_usage": {
+          "input_tokens": 22,
+          "output_tokens": 6,
+          "total_tokens": 28
+        },
+        "api_wall_ms": 0.665,
+        "pending_or_failed_calls": 0,
+        "role_counts": {
+          "work": 1,
+          "chat": 1
+        }
+      }
+    },
+    "publish_settled": {
+      "case": "publish_settled",
+      "condition": "split",
+      "same_model_instance": true,
+      "roles": [
+        "work",
+        "chat"
+      ],
+      "steps_status": [
+        "completed",
+        "completed"
+      ],
+      "external_model_calls": 0,
+      "scripted_model_calls": 2,
+      "work_private_content": "WORK_CONCLUSION_742: Choose Shaft: $12, sixteen seats; Wi-Fi is no longer required.",
+      "work_tool_receipts": [],
+      "work_saw_full_document": true,
+      "chat_saw_full_document": true,
+      "chat_saw_exact_work_conclusion": false,
+      "chat_notes": "",
+      "chat_receipts": [
+        {
+          "call_id": "intent-role-000001-tool-0",
+          "provider_call_id": "scripted-0",
+          "name": "publish_card",
+          "args": {
+            "text": "Shaft costs $999 and has nine hundred seats.",
+            "source_ids": [
+              "room-guide"
+            ]
+          },
+          "role": "chat",
+          "result": {
+            "card_id": "agent-card-1",
+            "status": "displayed",
+            "note": "Source-ID validity does not establish factual correctness.",
+            "committed_card": {
+              "text": "Shaft costs $999 and has nine hundred seats.",
+              "source_ids": [
+                "room-guide"
+              ],
+              "updated_ms": 202
+            }
+          }
+        }
+      ],
+      "chat_content": "",
+      "active_cards": {
+        "agent-card-1": {
+          "source_ids": [
+            "room-guide"
+          ],
+          "text": "Shaft costs $999 and has nine hundred seats.",
+          "updated_ms": 202
+        }
+      },
+      "all_original_documents_remain_available_after_step": true,
+      "metrics": {
+        "model_calls": 2,
+        "token_usage": {
+          "input_tokens": 22,
+          "output_tokens": 6,
+          "total_tokens": 28
+        },
+        "api_wall_ms": 0.644,
+        "pending_or_failed_calls": 0,
+        "role_counts": {
+          "work": 1,
+          "chat": 1
+        }
+      }
+    }
+  },
+  "code_anchors": [
+    {
+      "path": "experiments/deep_conversation/intent_roles.py",
+      "line": 51,
+      "text": "'work': ('ROLE: work. Investigate the current needs using only your work tools. '"
+    },
+    {
+      "path": "experiments/deep_conversation/intent_roles.py",
+      "line": 256,
+      "text": "packet = {**observation, 'conversation': history,"
+    },
+    {
+      "path": "experiments/deep_conversation/intent_roles.py",
+      "line": 261,
+      "text": "messages = [SystemMessage(prompt),"
+    },
+    {
+      "path": "experiments/deep_conversation/intent_roles.py",
+      "line": 279,
+      "text": "record['response'] = response.model_dump(mode='json')"
+    },
+    {
+      "path": "experiments/deep_conversation/intent_roles.py",
+      "line": 299,
+      "text": "self.state['receipts'].append(receipt)"
+    },
+    {
+      "path": "experiments/deep_conversation/intent_roles.py",
+      "line": 314,
+      "text": "self._append(record)"
+    },
+    {
+      "path": "experiments/deep_conversation/world.py",
+      "line": 220,
+      "text": "def observation(self, after_seq: int) -> tuple[dict, int]:"
+    },
+    {
+      "path": "experiments/deep_conversation/world.py",
+      "line": 229,
+      "text": "\"at_ms\": replay.now, \"events\": events, \"notes\": copy.deepcopy(replay.notes),"
+    },
+    {
+      "path": "experiments/deep_conversation/world.py",
+      "line": 437,
+      "text": "result = {'status': 'new_observations',"
+    },
+    {
+      "path": "experiments/deep_conversation/agent.py",
+      "line": 246,
+      "text": "def save_notes(notes: str, runtime: ToolRuntime[RunContext]) -> str:"
+    },
+    {
+      "path": "experiments/deep_conversation/agent_led_tools.py",
+      "line": 222,
+      "text": "def publish_card(text: str, runtime: ToolRuntime[RunContext],"
+    }
+  ],
+  "limitations": [
+    "The scripted chat intentionally consumes an explicit work note; its abstention without a note is not evidence that a real model cannot rederive the answer.",
+    "Private prose is documented as private. The failed expectation is a desired cross-role handoff capability, not a contradiction of the existing tool contract.",
+    "The original trace establishes co-occurring handoff loss and wrong chat choice, not that a handoff repair alone would improve end-to-end quality.",
+    "Rejected hallucination is rejected for a new-observation race, not for false content.",
+    "No real inference, ASR, user study, or production deployment was performed."
+  ]
+}

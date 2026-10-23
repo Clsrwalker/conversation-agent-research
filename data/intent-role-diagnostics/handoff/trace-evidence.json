@@ -1,0 +1,121 @@
+{
+  "run_id": "irs-room-withdrawal--tracked--r2",
+  "work_step": 8,
+  "chat_step": 9,
+  "work_content": "The current request is to find the cheapest room that holds at least twelve people, costs no more than $20, and does not require Wi-Fi. From the Foundry Room guide, the eligible rooms are:\n\n- **Gauge**: $18, twelve seats, Wi-Fi\n- **Shaft**: $12, sixteen seats, no Wi-Fi\n- **Spindle**: $10, eight seats, Wi-Fi\n- **Furnace**: $24, twenty seats, Wi-Fi\n\nThe cheapest room that meets the criteria (minimum twelve seats, no more than $20, and no Wi-Fi requirement) is the **Shaft** room. It costs $12 and has a capacity of sixteen seats.\n\nLet's confirm this information and publish the card.\n",
+  "work_receipts": [],
+  "next_chat_notes": "",
+  "exact_work_content_in_chat_input": false,
+  "raw_read_events_work": [
+    {
+      "job_id": "job-2",
+      "kind": "job_result",
+      "operation": "read",
+      "result": {
+        "content_level": "full",
+        "kind": "document",
+        "source_id": "irs-room-guide",
+        "text": "The Foundry Room guide lists the hire options for the community workshop. Each price is the complete price for one booking; capacities are seated capacities, and connectivity is listed separately for each room. Gauge: $18, twelve seats, Wi-Fi. Shaft: $12, sixteen seats, no Wi-Fi. Spindle: $10, eight seats, Wi-Fi. Furnace: $24, twenty seats, Wi-Fi.",
+        "title": "Foundry Room guide",
+        "truncated": false
+      },
+      "seq": 17,
+      "at_ms": 450
+    }
+  ],
+  "raw_read_events_chat": [
+    {
+      "job_id": "job-2",
+      "kind": "job_result",
+      "operation": "read",
+      "result": {
+        "content_level": "full",
+        "kind": "document",
+        "source_id": "irs-room-guide",
+        "text": "The Foundry Room guide lists the hire options for the community workshop. Each price is the complete price for one booking; capacities are seated capacities, and connectivity is listed separately for each room. Gauge: $18, twelve seats, Wi-Fi. Shaft: $12, sixteen seats, no Wi-Fi. Spindle: $10, eight seats, Wi-Fi. Furnace: $24, twenty seats, Wi-Fi.",
+        "title": "Foundry Room guide",
+        "truncated": false
+      },
+      "seq": 17,
+      "at_ms": 450
+    }
+  ],
+  "chat_receipts": [
+    {
+      "call_id": "intent-role-000009-tool-0",
+      "provider_call_id": "e3f7ca68-84d2-44b6-8e01-a769030e4c8d",
+      "name": "publish_card",
+      "args": {
+        "card_id": "agent-card-1",
+        "text": "The cheapest room that holds at least twelve people, costs no more than $20, and does not require Wi-Fi is the Gauge room. It costs $18 and has a capacity of twelve seats."
+      },
+      "role": "chat",
+      "result": {
+        "status": "unchanged",
+        "card_id": "agent-card-1",
+        "retained_card": {
+          "source_ids": [],
+          "text": "The cheapest room that holds at least twelve people, costs no more than $20, and does not require Wi-Fi is the Gauge room. It costs $18 and has a capacity of twelve seats.",
+          "updated_ms": 6200
+        },
+        "committed_card": {
+          "source_ids": [],
+          "text": "The cheapest room that holds at least twelve people, costs no more than $20, and does not require Wi-Fi is the Gauge room. It costs $18 and has a capacity of twelve seats.",
+          "updated_ms": 6200
+        }
+      }
+    }
+  ],
+  "final_active_cards": {
+    "agent-card-1": {
+      "source_ids": [],
+      "text": "The final room name is the Gauge room, which costs $18 and has a capacity of twelve seats.",
+      "updated_ms": 12500
+    }
+  },
+  "rejected_hallucination_example": {
+    "run_id": "irs-unaccepted-assistant-proposal--split--r2",
+    "steps": [
+      {
+        "step": 1,
+        "receipts": [
+          {
+            "call_id": "intent-role-000001-tool-0",
+            "provider_call_id": "abad69c8-7f53-4022-963b-607fe0efc7c0",
+            "name": "publish_card",
+            "args": {
+              "card_id": "agent-card-1",
+              "text": "The Tidepool Demo notice indicates that the session starts at 10:00 AM and is located in Room 201."
+            },
+            "role": "chat",
+            "result": {
+              "status": "new_observations",
+              "reason": "New conversation or source evidence has arrived; read it before deciding whether this card still applies."
+            }
+          }
+        ],
+        "next_step_active_cards": {}
+      },
+      {
+        "step": 3,
+        "receipts": [
+          {
+            "call_id": "intent-role-000003-tool-0",
+            "provider_call_id": "d9b1031c-1f8e-4021-be86-b1395ca1d9e1",
+            "name": "publish_card",
+            "args": {
+              "card_id": "agent-card-1",
+              "text": "The Tidepool Demo notice indicates that the session starts at 10:00 AM and is located in Room 201."
+            },
+            "role": "chat",
+            "result": {
+              "status": "new_observations",
+              "reason": "New conversation or source evidence has arrived; read it before deciding whether this card still applies."
+            }
+          }
+        ],
+        "next_step_active_cards": {}
+      }
+    ]
+  }
+}

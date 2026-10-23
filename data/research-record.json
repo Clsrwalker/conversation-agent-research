@@ -5858,6 +5858,13 @@
       "type": "engineering_validation",
       "record": "intent-role-separation-validation.json",
       "status": "passed"
+    },
+    {
+      "id": "intent-role-diagnostics",
+      "date": "2026-10-23",
+      "type": "engineering_validation",
+      "record": "intent-role-diagnostics-validation.json",
+      "status": "completed_with_findings"
     }
   ],
   "literature_reviews": [

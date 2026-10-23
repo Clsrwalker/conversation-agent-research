@@ -1,0 +1,237 @@
+{
+  "id": "intent-role-diagnostics",
+  "type": "engineering_validation",
+  "date": "2026-10-23",
+  "timezone": "America/Halifax",
+  "status": "completed_with_findings",
+  "tested_subject": "Existing experimental IntentRoleSession, IntentStore and publication boundary; original 48-trajectory pilot",
+  "tested_revision": {
+    "identity": "original evaluation source freeze",
+    "manifest_sha256": "e3ba2b0bfb41851b1a54fe43fffe994b84da3386268482b2dc14571c035aff4a",
+    "current_and_frozen_files_matched": 40,
+    "evidence": "source-integrity.json"
+  },
+  "execution": {
+    "scripted_scenarios": 14,
+    "scripted_callback_invocations": 82,
+    "new_real_model_calls": 0,
+    "network_blocked_in_scripted_tests": true,
+    "repairs_implemented": false
+  },
+  "components": {
+    "tracker": {
+      "scenario_count": 4,
+      "scripted_callback_invocations": 72,
+      "real_model_calls": 0,
+      "control_and_existing_behavior_properties_passed": 5,
+      "desired_recovery_properties_failed": 2,
+      "diagnostic_exit_code": 1,
+      "status": "completed_with_recovery_properties_failing",
+      "evidence": "tracker/run-01/diagnosis.json",
+      "properties": [
+        {
+          "id": "recorded_trace_replay",
+          "expected": "All recorded pre-call snapshots, commits and rejections reproduce.",
+          "status": "pass"
+        },
+        {
+          "id": "rejected_patch_atomicity",
+          "expected": "Invalid proposal leaves durable intent and cursor unchanged.",
+          "status": "pass"
+        },
+        {
+          "id": "rejection_feedback_visible",
+          "expected": "Next tracker request receives the actual preceding validation rejection.",
+          "status": "fail",
+          "classification": "diagnostic recovery requirement; not an existing implemented contract"
+        },
+        {
+          "id": "actor_opportunity_after_persistent_tracker_failure",
+          "expected": "Persistent invalid tracker output does not consume every one of the six stage calls.",
+          "status": "fail",
+          "classification": "diagnostic recovery requirement; current policy intentionally fails closed but has no bounded fallback"
+        },
+        {
+          "id": "global_budget_accounting",
+          "expected": "All rejected scripted calls count and the nineteenth call is stopped.",
+          "status": "pass"
+        },
+        {
+          "id": "valid_update_and_explicit_reopen_controls",
+          "expected": "Valid transitions commit, permitting five actor calls per stage.",
+          "status": "pass"
+        },
+        {
+          "id": "restart_does_not_recover_or_forgive_failed_state",
+          "expected": "Restart preserves the cursor and reproduced six-rejection starvation pattern.",
+          "status": "pass",
+          "interpretation": "Reproduced persistence; not successful error recovery."
+        }
+      ]
+    },
+    "handoff": {
+      "scenario_count": 4,
+      "scripted_callback_invocations": 10,
+      "real_model_calls": 0,
+      "controls_and_invariants_passed": 7,
+      "desired_interface_properties_failed": 1,
+      "diagnostic_exit_code": 1,
+      "status": "completed_with_desired_interface_failure",
+      "evidence": "handoff/results.json",
+      "checks": [
+        {
+          "name": "useful_private_work_conclusion_survives_role_boundary_without_explicit_tool",
+          "status": "fail",
+          "kind": "desired_interface_expectation"
+        },
+        {
+          "name": "save_notes_makes_work_conclusion_visible_to_chat",
+          "status": "pass",
+          "kind": "positive_control"
+        },
+        {
+          "name": "raw_document_available_to_both_roles_in_both_handoff_arms",
+          "status": "pass",
+          "kind": "isolation_control"
+        },
+        {
+          "name": "notes_control_uses_native_persisted_save_notes",
+          "status": "pass",
+          "kind": "positive_control"
+        },
+        {
+          "name": "notes_control_delivers_through_native_publish_card",
+          "status": "pass",
+          "kind": "positive_control"
+        },
+        {
+          "name": "rejected_hallucinated_proposal_is_not_delivered",
+          "status": "pass",
+          "kind": "delivery_invariant"
+        },
+        {
+          "name": "publish_guard_does_not_validate_factual_truth",
+          "status": "pass",
+          "kind": "scope_control_not_quality_pass"
+        },
+        {
+          "name": "all_diagnostics_use_same_instance_and_complete_with_no_network",
+          "status": "pass",
+          "kind": "execution_check"
+        }
+      ]
+    },
+    "direct_publication": {
+      "scenario_count": 6,
+      "scripted_callback_invocations": 0,
+      "real_model_calls": 0,
+      "observed_behavior_assertions_matched": 6,
+      "diagnostic_exit_code": 0,
+      "status": "completed_current_boundary_reproduced",
+      "evidence": "delivery/publish-guard-diagnostic.json",
+      "quality_success_count": null,
+      "quality_success_count_reason": "Scripted incorrect drafts being accepted is a reproduced boundary finding, not a quality success.",
+      "outcomes": [
+        {
+          "scenario": "workshop_missing_price",
+          "actual_status": "displayed",
+          "assertion": "passed"
+        },
+        {
+          "scenario": "workshop_complete_control",
+          "actual_status": "displayed",
+          "assertion": "passed"
+        },
+        {
+          "scenario": "room_wrong_selection",
+          "actual_status": "displayed",
+          "assertion": "passed"
+        },
+        {
+          "scenario": "demo_unrequested_recording",
+          "actual_status": "displayed",
+          "assertion": "passed"
+        },
+        {
+          "scenario": "blank_control",
+          "actual_status": "not_published",
+          "assertion": "passed"
+        },
+        {
+          "scenario": "stale_observation_control",
+          "actual_status": "new_observations",
+          "assertion": "passed"
+        }
+      ]
+    }
+  },
+  "checks": [
+    {
+      "id": "source_integrity",
+      "status": "pass",
+      "evidence": "source-integrity.json",
+      "observed": "40 original frozen files matched current sources and frozen copies."
+    },
+    {
+      "id": "original_trace_reconciliation",
+      "status": "pass",
+      "evidence": "delivery/delivery-audit.json",
+      "observed": "48 result/step logs and five semantic labels per run reconciled; 864 captured input/response pairs matched. All 10 final failures inspected."
+    },
+    {
+      "id": "captured_tracker_replay",
+      "status": "pass",
+      "evidence": "tracker/run-01/diagnosis.json",
+      "observed": "16 trajectories, 288 pre-call snapshots and 69 proposals reproduced; 44 accepted, 25 rejected, zero mismatches, all rejected patches atomic."
+    },
+    {
+      "id": "tracker_rejection_feedback",
+      "status": "fail",
+      "classification": "desired recovery capability",
+      "evidence": "tracker/run-01/diagnosis.json"
+    },
+    {
+      "id": "tracker_bounded_recovery",
+      "status": "fail",
+      "classification": "desired recovery capability",
+      "evidence": "tracker/run-01/diagnosis.json"
+    },
+    {
+      "id": "private_work_conclusion_transport",
+      "status": "fail",
+      "classification": "desired interface capability",
+      "evidence": "handoff/results.json"
+    },
+    {
+      "id": "explicit_notes_and_freshness_controls",
+      "status": "pass",
+      "classification": "existing boundary behavior, not quality benefit",
+      "evidence": "handoff/results.json"
+    },
+    {
+      "id": "semantic_publication_boundary",
+      "status": "finding_confirmed",
+      "classification": "incorrect drafts accepted; not a quality pass",
+      "evidence": "delivery/publish-guard-diagnostic.json"
+    }
+  ],
+  "limitations": [
+    "No new real model inference, repair, training, LoRA, default Lab change or new model-quality comparison.",
+    "Scripted callbacks are deterministic test doubles. Their usage values are synthetic and are not measured inference tokens or costs.",
+    "Original labels are reused; trace string presence is not semantic rescoring. Full source and raw request availability does not establish attention or comprehension.",
+    "The original pilot has eight authored families with correlated repeats, not 48 independent users.",
+    "The three failed desired capabilities are diagnostic expectations, distinct from the current documented fail-closed and private-prose contracts.",
+    "Semantic errors being accepted by a current publication guard are not quality passes.",
+    "The native optional AnswerDelivery node exists but is not used by this experimental IntentRoleSession path; its ability to repair these cases was not tested.",
+    "Workshop price is explicit in the raw user request only in stage 3; earlier gold wording is not treated as an earlier user requirement.",
+    "Observed gaps do not establish the causal quality benefit of any proposed fix. No ASR, live-user or long-conversation benefit was evaluated.",
+    "Client model captures do not inspect raw HTTP or model-server internals."
+  ],
+  "remaining_work": [
+    "Implementing proposed recovery and handoff changes is outside this diagnostic; no repair has been made.",
+    "Any quality benefit requires a separate controlled comparison with new model runs."
+  ],
+  "summary": "SUMMARY.json",
+  "report": "REPORT.md",
+  "reproducible_scripts_and_logs": "evidence.zip"
+}

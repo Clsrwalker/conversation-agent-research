@@ -1,0 +1,2417 @@
+{
+  "kind": "scripted_engineering_diagnostic_not_model_quality_evaluation",
+  "date": "2026-10-23",
+  "timezone": "America/Halifax",
+  "status": "passed",
+  "new_model_calls": 0,
+  "network_connections_permitted": false,
+  "fixture_sha256": "61d9f5fa3d94937b181c45d065f0d012d240df30fb4211bf57f415a53560ba7a",
+  "conditions": "Same current agent-led publish_card.func and WorldStore transaction path; isolated worlds; scripted drafts; real search/read receipts; no gold runtime guard or changed production code.",
+  "tests": [
+    {
+      "script_id": "workshop_missing_price",
+      "case_id": "irs-combined-workshop-change",
+      "expected_code_boundary_status": "displayed",
+      "actual_receipt": {
+        "card_id": "diagnostic-card",
+        "status": "displayed",
+        "note": "Source-ID validity does not establish factual correctness.",
+        "committed_card": {
+          "text": "Glaze Lab is the cheapest Friday workshop at or below $25, in Room G4 with a step-free route.",
+          "source_ids": [
+            "irs-workshop-guide"
+          ],
+          "updated_ms": 12000
+        }
+      },
+      "draft": "Glaze Lab is the cheapest Friday workshop at or below $25, in Room G4 with a step-free route.",
+      "source_read_receipt": {
+        "job_id": "job-2",
+        "job_started": true,
+        "status": "pending",
+        "due_ms": 100
+      },
+      "observation_cursor": 9,
+      "model_visible_snapshot": {
+        "at_ms": 12000,
+        "events": [
+          {
+            "at_ms": 0,
+            "kind": "asr_final",
+            "segment_id": "workshop-1",
+            "speaker": "Mara",
+            "text": "From the Kiln Workshop list, pick the cheapest Tuesday workshop at or below $25 and give its room. Also tell me the parking location.",
+            "seq": 1
+          },
+          {
+            "job_id": "job-1",
+            "kind": "job_result",
+            "operation": "search",
+            "result": {
+              "retriever": "lexical-overlap-diagnostic-only",
+              "sources": [
+                {
+                  "content_level": "excerpt",
+                  "excerpt": "The Kiln Workshop list describes the currently offered sessions. Prices are per participant, rooms identify the booked teaching space, and accessibili",
+                  "kind": "document",
+                  "read_hint": "Call read_document with this source_id to request the full document, then wait for the read result.",
+                  "retrieval_score": 0.4009,
+                  "source_id": "irs-workshop-guide",
+                  "title": "Kiln Workshop list",
+                  "truncated": true
+                }
+              ]
+            },
+            "seq": 4,
+            "at_ms": 50
+          },
+          {
+            "job_id": "job-2",
+            "kind": "job_result",
+            "operation": "read",
+            "result": {
+              "content_level": "full",
+              "kind": "document",
+              "source_id": "irs-workshop-guide",
+              "text": "The Kiln Workshop list describes the currently offered sessions. Prices are per participant, rooms identify the booked teaching space, and accessibility applies to the complete entrance route rather than merely the room. Clay Basics: Tuesday, $18, Room C2, stairs. Glaze Lab: Friday, $23, Room G4, step-free route. Wheel Start: Friday, $19, Room W1, stairs. Mosaic Studio: Friday, $27, Room M3, step-free route. Visitor parking is in the South car park.",
+              "title": "Kiln Workshop list",
+              "truncated": false
+            },
+            "seq": 7,
+            "at_ms": 100
+          },
+          {
+            "at_ms": 6000,
+            "kind": "asr_final",
+            "segment_id": "workshop-2",
+            "speaker": "Mara",
+            "text": "Switch to Friday, drop the parking question, and add step-free access as a requirement. Keep the $25 limit and the cheapest-option rule.",
+            "seq": 8
+          },
+          {
+            "at_ms": 12000,
+            "kind": "asr_final",
+            "segment_id": "workshop-3",
+            "speaker": "Mara",
+            "text": "The final answer should identify the workshop, its price and room, and explain whether the step-free requirement is met.",
+            "seq": 9
+          }
+        ],
+        "notes": "",
+        "active_cards": {},
+        "pending_jobs": [],
+        "context_revision": 3,
+        "conversation": [
+          {
+            "at_ms": 0,
+            "kind": "asr_final",
+            "segment_id": "workshop-1",
+            "speaker": "Mara",
+            "text": "From the Kiln Workshop list, pick the cheapest Tuesday workshop at or below $25 and give its room. Also tell me the parking location.",
+            "seq": 1,
+            "role": "user"
+          },
+          {
+            "at_ms": 6000,
+            "kind": "asr_final",
+            "segment_id": "workshop-2",
+            "speaker": "Mara",
+            "text": "Switch to Friday, drop the parking question, and add step-free access as a requirement. Keep the $25 limit and the cheapest-option rule.",
+            "seq": 8,
+            "role": "user"
+          },
+          {
+            "at_ms": 12000,
+            "kind": "asr_final",
+            "segment_id": "workshop-3",
+            "speaker": "Mara",
+            "text": "The final answer should identify the workshop, its price and room, and explain whether the step-free requirement is met.",
+            "seq": 9,
+            "role": "user"
+          }
+        ]
+      },
+      "persisted_tool_record": {
+        "name": "publish_card",
+        "args": {
+          "card_id": "diagnostic-card",
+          "context_revision": 3,
+          "question": "",
+          "source_ids": [
+            "irs-workshop-guide"
+          ],
+          "text": "Glaze Lab is the cheapest Friday workshop at or below $25, in Room G4 with a step-free route."
+        },
+        "result": {
+          "card_id": "diagnostic-card",
+          "committed_card": {
+            "source_ids": [
+              "irs-workshop-guide"
+            ],
+            "text": "Glaze Lab is the cheapest Friday workshop at or below $25, in Room G4 with a step-free route.",
+            "updated_ms": 12000
+          },
+          "note": "Source-ID validity does not establish factual correctness.",
+          "status": "displayed"
+        }
+      },
+      "final_active_cards": {
+        "diagnostic-card": {
+          "source_ids": [
+            "irs-workshop-guide"
+          ],
+          "text": "Glaze Lab is the cheapest Friday workshop at or below $25, in Room G4 with a step-free route.",
+          "updated_ms": 12000
+        }
+      },
+      "execution": {
+        "environment_log": [
+          {
+            "at_ms": 0,
+            "case_id": "irs-combined-workshop-change",
+            "close_at_ms": 18000,
+            "kind": "run_start",
+            "mode": "virtual",
+            "model_latency_ms": 250,
+            "seq": 0
+          },
+          {
+            "at_ms": 0,
+            "event": {
+              "at_ms": 0,
+              "kind": "asr_final",
+              "segment_id": "workshop-1",
+              "speaker": "Mara",
+              "text": "From the Kiln Workshop list, pick the cheapest Tuesday workshop at or below $25 and give its room. Also tell me the parking location."
+            },
+            "kind": "environment_event",
+            "seq": 1
+          },
+          {
+            "at_ms": 0,
+            "job": {
+              "argument": "Kiln Workshop list",
+              "due_ms": 50,
+              "operation": "search",
+              "started_ms": 0,
+              "status": "pending"
+            },
+            "job_id": "job-1",
+            "kind": "job_started",
+            "seq": 2
+          },
+          {
+            "args": {
+              "query": "Kiln Workshop list"
+            },
+            "at_ms": 0,
+            "call_id": "setup-search",
+            "kind": "tool_result",
+            "name": "search",
+            "result": {
+              "due_ms": 50,
+              "job_id": "job-1",
+              "job_started": true,
+              "status": "pending"
+            },
+            "seq": 3
+          },
+          {
+            "at_ms": 50,
+            "event": {
+              "job_id": "job-1",
+              "kind": "job_result",
+              "operation": "search",
+              "result": {
+                "retriever": "lexical-overlap-diagnostic-only",
+                "sources": [
+                  {
+                    "content_level": "excerpt",
+                    "excerpt": "The Kiln Workshop list describes the currently offered sessions. Prices are per participant, rooms identify the booked teaching space, and accessibili",
+                    "kind": "document",
+                    "read_hint": "Call read_document with this source_id to request the full document, then wait for the read result.",
+                    "retrieval_score": 0.4009,
+                    "source_id": "irs-workshop-guide",
+                    "title": "Kiln Workshop list",
+                    "truncated": true
+                  }
+                ]
+              }
+            },
+            "kind": "environment_event",
+            "seq": 4
+          },
+          {
+            "at_ms": 50,
+            "job": {
+              "argument": "irs-workshop-guide",
+              "due_ms": 100,
+              "operation": "read",
+              "started_ms": 50,
+              "status": "pending"
+            },
+            "job_id": "job-2",
+            "kind": "job_started",
+            "seq": 5
+          },
+          {
+            "args": {
+              "source_id": "irs-workshop-guide"
+            },
+            "at_ms": 50,
+            "call_id": "setup-read",
+            "kind": "tool_result",
+            "name": "read_document",
+            "result": {
+              "due_ms": 100,
+              "job_id": "job-2",
+              "job_started": true,
+              "status": "pending"
+            },
+            "seq": 6
+          },
+          {
+            "at_ms": 100,
+            "event": {
+              "job_id": "job-2",
+              "kind": "job_result",
+              "operation": "read",
+              "result": {
+                "content_level": "full",
+                "kind": "document",
+                "source_id": "irs-workshop-guide",
+                "text": "The Kiln Workshop list describes the currently offered sessions. Prices are per participant, rooms identify the booked teaching space, and accessibility applies to the complete entrance route rather than merely the room. Clay Basics: Tuesday, $18, Room C2, stairs. Glaze Lab: Friday, $23, Room G4, step-free route. Wheel Start: Friday, $19, Room W1, stairs. Mosaic Studio: Friday, $27, Room M3, step-free route. Visitor parking is in the South car park.",
+                "title": "Kiln Workshop list",
+                "truncated": false
+              }
+            },
+            "kind": "environment_event",
+            "seq": 7
+          },
+          {
+            "at_ms": 6000,
+            "event": {
+              "at_ms": 6000,
+              "kind": "asr_final",
+              "segment_id": "workshop-2",
+              "speaker": "Mara",
+              "text": "Switch to Friday, drop the parking question, and add step-free access as a requirement. Keep the $25 limit and the cheapest-option rule."
+            },
+            "kind": "environment_event",
+            "seq": 8
+          },
+          {
+            "at_ms": 12000,
+            "event": {
+              "at_ms": 12000,
+              "kind": "asr_final",
+              "segment_id": "workshop-3",
+              "speaker": "Mara",
+              "text": "The final answer should identify the workshop, its price and room, and explain whether the step-free requirement is met."
+            },
+            "kind": "environment_event",
+            "seq": 9
+          },
+          {
+            "at_ms": 12000,
+            "card": {
+              "source_ids": [
+                "irs-workshop-guide"
+              ],
+              "text": "Glaze Lab is the cheapest Friday workshop at or below $25, in Room G4 with a step-free route.",
+              "updated_ms": 12000
+            },
+            "card_id": "diagnostic-card",
+            "kind": "card_created",
+            "seq": 10
+          },
+          {
+            "args": {
+              "card_id": "diagnostic-card",
+              "context_revision": 3,
+              "question": "",
+              "source_ids": [
+                "irs-workshop-guide"
+              ],
+              "text": "Glaze Lab is the cheapest Friday workshop at or below $25, in Room G4 with a step-free route."
+            },
+            "at_ms": 12000,
+            "call_id": "scripted-publish",
+            "kind": "tool_result",
+            "name": "publish_card",
+            "result": {
+              "card_id": "diagnostic-card",
+              "committed_card": {
+                "source_ids": [
+                  "irs-workshop-guide"
+                ],
+                "text": "Glaze Lab is the cheapest Friday workshop at or below $25, in Room G4 with a step-free route.",
+                "updated_ms": 12000
+              },
+              "note": "Source-ID validity does not establish factual correctness.",
+              "status": "displayed"
+            },
+            "seq": 11
+          }
+        ],
+        "model_calls": [],
+        "tool_calls": [
+          {
+            "call_id": "setup-search",
+            "name": "search",
+            "args": {
+              "query": "Kiln Workshop list"
+            },
+            "result": {
+              "due_ms": 50,
+              "job_id": "job-1",
+              "job_started": true,
+              "status": "pending"
+            },
+            "at_ms": 0,
+            "seq": 3
+          },
+          {
+            "call_id": "setup-read",
+            "name": "read_document",
+            "args": {
+              "source_id": "irs-workshop-guide"
+            },
+            "result": {
+              "due_ms": 100,
+              "job_id": "job-2",
+              "job_started": true,
+              "status": "pending"
+            },
+            "at_ms": 50,
+            "seq": 6
+          },
+          {
+            "call_id": "scripted-publish",
+            "name": "publish_card",
+            "args": {
+              "card_id": "diagnostic-card",
+              "context_revision": 3,
+              "question": "",
+              "source_ids": [
+                "irs-workshop-guide"
+              ],
+              "text": "Glaze Lab is the cheapest Friday workshop at or below $25, in Room G4 with a step-free route."
+            },
+            "result": {
+              "card_id": "diagnostic-card",
+              "committed_card": {
+                "source_ids": [
+                  "irs-workshop-guide"
+                ],
+                "text": "Glaze Lab is the cheapest Friday workshop at or below $25, in Room G4 with a step-free route.",
+                "updated_ms": 12000
+              },
+              "note": "Source-ID validity does not establish factual correctness.",
+              "status": "displayed"
+            },
+            "at_ms": 12000,
+            "seq": 11
+          }
+        ],
+        "metrics": {
+          "model_calls": 0,
+          "token_usage": {
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "total_tokens": 0
+          },
+          "api_wall_ms": 0,
+          "pending_or_failed_calls": 0,
+          "role_counts": {}
+        }
+      },
+      "check": "passed"
+    },
+    {
+      "script_id": "workshop_complete_control",
+      "case_id": "irs-combined-workshop-change",
+      "expected_code_boundary_status": "displayed",
+      "actual_receipt": {
+        "card_id": "diagnostic-card",
+        "status": "displayed",
+        "note": "Source-ID validity does not establish factual correctness.",
+        "committed_card": {
+          "text": "Glaze Lab on Friday costs $23, is in Room G4 and has a step-free route.",
+          "source_ids": [
+            "irs-workshop-guide"
+          ],
+          "updated_ms": 12000
+        }
+      },
+      "draft": "Glaze Lab on Friday costs $23, is in Room G4 and has a step-free route.",
+      "source_read_receipt": {
+        "job_id": "job-2",
+        "job_started": true,
+        "status": "pending",
+        "due_ms": 100
+      },
+      "observation_cursor": 9,
+      "model_visible_snapshot": {
+        "at_ms": 12000,
+        "events": [
+          {
+            "at_ms": 0,
+            "kind": "asr_final",
+            "segment_id": "workshop-1",
+            "speaker": "Mara",
+            "text": "From the Kiln Workshop list, pick the cheapest Tuesday workshop at or below $25 and give its room. Also tell me the parking location.",
+            "seq": 1
+          },
+          {
+            "job_id": "job-1",
+            "kind": "job_result",
+            "operation": "search",
+            "result": {
+              "retriever": "lexical-overlap-diagnostic-only",
+              "sources": [
+                {
+                  "content_level": "excerpt",
+                  "excerpt": "The Kiln Workshop list describes the currently offered sessions. Prices are per participant, rooms identify the booked teaching space, and accessibili",
+                  "kind": "document",
+                  "read_hint": "Call read_document with this source_id to request the full document, then wait for the read result.",
+                  "retrieval_score": 0.4009,
+                  "source_id": "irs-workshop-guide",
+                  "title": "Kiln Workshop list",
+                  "truncated": true
+                }
+              ]
+            },
+            "seq": 4,
+            "at_ms": 50
+          },
+          {
+            "job_id": "job-2",
+            "kind": "job_result",
+            "operation": "read",
+            "result": {
+              "content_level": "full",
+              "kind": "document",
+              "source_id": "irs-workshop-guide",
+              "text": "The Kiln Workshop list describes the currently offered sessions. Prices are per participant, rooms identify the booked teaching space, and accessibility applies to the complete entrance route rather than merely the room. Clay Basics: Tuesday, $18, Room C2, stairs. Glaze Lab: Friday, $23, Room G4, step-free route. Wheel Start: Friday, $19, Room W1, stairs. Mosaic Studio: Friday, $27, Room M3, step-free route. Visitor parking is in the South car park.",
+              "title": "Kiln Workshop list",
+              "truncated": false
+            },
+            "seq": 7,
+            "at_ms": 100
+          },
+          {
+            "at_ms": 6000,
+            "kind": "asr_final",
+            "segment_id": "workshop-2",
+            "speaker": "Mara",
+            "text": "Switch to Friday, drop the parking question, and add step-free access as a requirement. Keep the $25 limit and the cheapest-option rule.",
+            "seq": 8
+          },
+          {
+            "at_ms": 12000,
+            "kind": "asr_final",
+            "segment_id": "workshop-3",
+            "speaker": "Mara",
+            "text": "The final answer should identify the workshop, its price and room, and explain whether the step-free requirement is met.",
+            "seq": 9
+          }
+        ],
+        "notes": "",
+        "active_cards": {},
+        "pending_jobs": [],
+        "context_revision": 3,
+        "conversation": [
+          {
+            "at_ms": 0,
+            "kind": "asr_final",
+            "segment_id": "workshop-1",
+            "speaker": "Mara",
+            "text": "From the Kiln Workshop list, pick the cheapest Tuesday workshop at or below $25 and give its room. Also tell me the parking location.",
+            "seq": 1,
+            "role": "user"
+          },
+          {
+            "at_ms": 6000,
+            "kind": "asr_final",
+            "segment_id": "workshop-2",
+            "speaker": "Mara",
+            "text": "Switch to Friday, drop the parking question, and add step-free access as a requirement. Keep the $25 limit and the cheapest-option rule.",
+            "seq": 8,
+            "role": "user"
+          },
+          {
+            "at_ms": 12000,
+            "kind": "asr_final",
+            "segment_id": "workshop-3",
+            "speaker": "Mara",
+            "text": "The final answer should identify the workshop, its price and room, and explain whether the step-free requirement is met.",
+            "seq": 9,
+            "role": "user"
+          }
+        ]
+      },
+      "persisted_tool_record": {
+        "name": "publish_card",
+        "args": {
+          "card_id": "diagnostic-card",
+          "context_revision": 3,
+          "question": "",
+          "source_ids": [
+            "irs-workshop-guide"
+          ],
+          "text": "Glaze Lab on Friday costs $23, is in Room G4 and has a step-free route."
+        },
+        "result": {
+          "card_id": "diagnostic-card",
+          "committed_card": {
+            "source_ids": [
+              "irs-workshop-guide"
+            ],
+            "text": "Glaze Lab on Friday costs $23, is in Room G4 and has a step-free route.",
+            "updated_ms": 12000
+          },
+          "note": "Source-ID validity does not establish factual correctness.",
+          "status": "displayed"
+        }
+      },
+      "final_active_cards": {
+        "diagnostic-card": {
+          "source_ids": [
+            "irs-workshop-guide"
+          ],
+          "text": "Glaze Lab on Friday costs $23, is in Room G4 and has a step-free route.",
+          "updated_ms": 12000
+        }
+      },
+      "execution": {
+        "environment_log": [
+          {
+            "at_ms": 0,
+            "case_id": "irs-combined-workshop-change",
+            "close_at_ms": 18000,
+            "kind": "run_start",
+            "mode": "virtual",
+            "model_latency_ms": 250,
+            "seq": 0
+          },
+          {
+            "at_ms": 0,
+            "event": {
+              "at_ms": 0,
+              "kind": "asr_final",
+              "segment_id": "workshop-1",
+              "speaker": "Mara",
+              "text": "From the Kiln Workshop list, pick the cheapest Tuesday workshop at or below $25 and give its room. Also tell me the parking location."
+            },
+            "kind": "environment_event",
+            "seq": 1
+          },
+          {
+            "at_ms": 0,
+            "job": {
+              "argument": "Kiln Workshop list",
+              "due_ms": 50,
+              "operation": "search",
+              "started_ms": 0,
+              "status": "pending"
+            },
+            "job_id": "job-1",
+            "kind": "job_started",
+            "seq": 2
+          },
+          {
+            "args": {
+              "query": "Kiln Workshop list"
+            },
+            "at_ms": 0,
+            "call_id": "setup-search",
+            "kind": "tool_result",
+            "name": "search",
+            "result": {
+              "due_ms": 50,
+              "job_id": "job-1",
+              "job_started": true,
+              "status": "pending"
+            },
+            "seq": 3
+          },
+          {
+            "at_ms": 50,
+            "event": {
+              "job_id": "job-1",
+              "kind": "job_result",
+              "operation": "search",
+              "result": {
+                "retriever": "lexical-overlap-diagnostic-only",
+                "sources": [
+                  {
+                    "content_level": "excerpt",
+                    "excerpt": "The Kiln Workshop list describes the currently offered sessions. Prices are per participant, rooms identify the booked teaching space, and accessibili",
+                    "kind": "document",
+                    "read_hint": "Call read_document with this source_id to request the full document, then wait for the read result.",
+                    "retrieval_score": 0.4009,
+                    "source_id": "irs-workshop-guide",
+                    "title": "Kiln Workshop list",
+                    "truncated": true
+                  }
+                ]
+              }
+            },
+            "kind": "environment_event",
+            "seq": 4
+          },
+          {
+            "at_ms": 50,
+            "job": {
+              "argument": "irs-workshop-guide",
+              "due_ms": 100,
+              "operation": "read",
+              "started_ms": 50,
+              "status": "pending"
+            },
+            "job_id": "job-2",
+            "kind": "job_started",
+            "seq": 5
+          },
+          {
+            "args": {
+              "source_id": "irs-workshop-guide"
+            },
+            "at_ms": 50,
+            "call_id": "setup-read",
+            "kind": "tool_result",
+            "name": "read_document",
+            "result": {
+              "due_ms": 100,
+              "job_id": "job-2",
+              "job_started": true,
+              "status": "pending"
+            },
+            "seq": 6
+          },
+          {
+            "at_ms": 100,
+            "event": {
+              "job_id": "job-2",
+              "kind": "job_result",
+              "operation": "read",
+              "result": {
+                "content_level": "full",
+                "kind": "document",
+                "source_id": "irs-workshop-guide",
+                "text": "The Kiln Workshop list describes the currently offered sessions. Prices are per participant, rooms identify the booked teaching space, and accessibility applies to the complete entrance route rather than merely the room. Clay Basics: Tuesday, $18, Room C2, stairs. Glaze Lab: Friday, $23, Room G4, step-free route. Wheel Start: Friday, $19, Room W1, stairs. Mosaic Studio: Friday, $27, Room M3, step-free route. Visitor parking is in the South car park.",
+                "title": "Kiln Workshop list",
+                "truncated": false
+              }
+            },
+            "kind": "environment_event",
+            "seq": 7
+          },
+          {
+            "at_ms": 6000,
+            "event": {
+              "at_ms": 6000,
+              "kind": "asr_final",
+              "segment_id": "workshop-2",
+              "speaker": "Mara",
+              "text": "Switch to Friday, drop the parking question, and add step-free access as a requirement. Keep the $25 limit and the cheapest-option rule."
+            },
+            "kind": "environment_event",
+            "seq": 8
+          },
+          {
+            "at_ms": 12000,
+            "event": {
+              "at_ms": 12000,
+              "kind": "asr_final",
+              "segment_id": "workshop-3",
+              "speaker": "Mara",
+              "text": "The final answer should identify the workshop, its price and room, and explain whether the step-free requirement is met."
+            },
+            "kind": "environment_event",
+            "seq": 9
+          },
+          {
+            "at_ms": 12000,
+            "card": {
+              "source_ids": [
+                "irs-workshop-guide"
+              ],
+              "text": "Glaze Lab on Friday costs $23, is in Room G4 and has a step-free route.",
+              "updated_ms": 12000
+            },
+            "card_id": "diagnostic-card",
+            "kind": "card_created",
+            "seq": 10
+          },
+          {
+            "args": {
+              "card_id": "diagnostic-card",
+              "context_revision": 3,
+              "question": "",
+              "source_ids": [
+                "irs-workshop-guide"
+              ],
+              "text": "Glaze Lab on Friday costs $23, is in Room G4 and has a step-free route."
+            },
+            "at_ms": 12000,
+            "call_id": "scripted-publish",
+            "kind": "tool_result",
+            "name": "publish_card",
+            "result": {
+              "card_id": "diagnostic-card",
+              "committed_card": {
+                "source_ids": [
+                  "irs-workshop-guide"
+                ],
+                "text": "Glaze Lab on Friday costs $23, is in Room G4 and has a step-free route.",
+                "updated_ms": 12000
+              },
+              "note": "Source-ID validity does not establish factual correctness.",
+              "status": "displayed"
+            },
+            "seq": 11
+          }
+        ],
+        "model_calls": [],
+        "tool_calls": [
+          {
+            "call_id": "setup-search",
+            "name": "search",
+            "args": {
+              "query": "Kiln Workshop list"
+            },
+            "result": {
+              "due_ms": 50,
+              "job_id": "job-1",
+              "job_started": true,
+              "status": "pending"
+            },
+            "at_ms": 0,
+            "seq": 3
+          },
+          {
+            "call_id": "setup-read",
+            "name": "read_document",
+            "args": {
+              "source_id": "irs-workshop-guide"
+            },
+            "result": {
+              "due_ms": 100,
+              "job_id": "job-2",
+              "job_started": true,
+              "status": "pending"
+            },
+            "at_ms": 50,
+            "seq": 6
+          },
+          {
+            "call_id": "scripted-publish",
+            "name": "publish_card",
+            "args": {
+              "card_id": "diagnostic-card",
+              "context_revision": 3,
+              "question": "",
+              "source_ids": [
+                "irs-workshop-guide"
+              ],
+              "text": "Glaze Lab on Friday costs $23, is in Room G4 and has a step-free route."
+            },
+            "result": {
+              "card_id": "diagnostic-card",
+              "committed_card": {
+                "source_ids": [
+                  "irs-workshop-guide"
+                ],
+                "text": "Glaze Lab on Friday costs $23, is in Room G4 and has a step-free route.",
+                "updated_ms": 12000
+              },
+              "note": "Source-ID validity does not establish factual correctness.",
+              "status": "displayed"
+            },
+            "at_ms": 12000,
+            "seq": 11
+          }
+        ],
+        "metrics": {
+          "model_calls": 0,
+          "token_usage": {
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "total_tokens": 0
+          },
+          "api_wall_ms": 0,
+          "pending_or_failed_calls": 0,
+          "role_counts": {}
+        }
+      },
+      "check": "passed"
+    },
+    {
+      "script_id": "room_wrong_selection",
+      "case_id": "irs-room-withdrawal",
+      "expected_code_boundary_status": "displayed",
+      "actual_receipt": {
+        "card_id": "diagnostic-card",
+        "status": "displayed",
+        "note": "Source-ID validity does not establish factual correctness.",
+        "committed_card": {
+          "text": "The cheapest eligible room after dropping Wi-Fi is Gauge, $18, twelve seats.",
+          "source_ids": [
+            "irs-room-guide"
+          ],
+          "updated_ms": 12000
+        }
+      },
+      "draft": "The cheapest eligible room after dropping Wi-Fi is Gauge, $18, twelve seats.",
+      "source_read_receipt": {
+        "job_id": "job-2",
+        "job_started": true,
+        "status": "pending",
+        "due_ms": 100
+      },
+      "observation_cursor": 9,
+      "model_visible_snapshot": {
+        "at_ms": 12000,
+        "events": [
+          {
+            "at_ms": 0,
+            "kind": "asr_final",
+            "segment_id": "room-1",
+            "speaker": "Nadia",
+            "text": "From the Foundry Room guide, choose the cheapest room that holds at least twelve people, costs no more than $20, and has Wi-Fi. Give its name, price and capacity.",
+            "seq": 1
+          },
+          {
+            "job_id": "job-1",
+            "kind": "job_result",
+            "operation": "search",
+            "result": {
+              "retriever": "lexical-overlap-diagnostic-only",
+              "sources": [
+                {
+                  "content_level": "excerpt",
+                  "excerpt": "The Foundry Room guide lists the hire options for the community workshop. Each price is the complete price for one booking; capacities are seated capa",
+                  "kind": "document",
+                  "read_hint": "Call read_document with this source_id to request the full document, then wait for the read result.",
+                  "retrieval_score": 0.4804,
+                  "source_id": "irs-room-guide",
+                  "title": "Foundry Room guide",
+                  "truncated": true
+                }
+              ]
+            },
+            "seq": 4,
+            "at_ms": 50
+          },
+          {
+            "job_id": "job-2",
+            "kind": "job_result",
+            "operation": "read",
+            "result": {
+              "content_level": "full",
+              "kind": "document",
+              "source_id": "irs-room-guide",
+              "text": "The Foundry Room guide lists the hire options for the community workshop. Each price is the complete price for one booking; capacities are seated capacities, and connectivity is listed separately for each room. Gauge: $18, twelve seats, Wi-Fi. Shaft: $12, sixteen seats, no Wi-Fi. Spindle: $10, eight seats, Wi-Fi. Furnace: $24, twenty seats, Wi-Fi.",
+              "title": "Foundry Room guide",
+              "truncated": false
+            },
+            "seq": 7,
+            "at_ms": 100
+          },
+          {
+            "at_ms": 6000,
+            "kind": "asr_final",
+            "segment_id": "room-2",
+            "speaker": "Nadia",
+            "text": "We will use paper, so drop the Wi-Fi requirement. The minimum twelve seats and $20 limit still apply. Recheck the cheapest eligible room.",
+            "seq": 8
+          },
+          {
+            "at_ms": 12000,
+            "kind": "asr_final",
+            "segment_id": "room-3",
+            "speaker": "Nadia",
+            "text": "I need the final room name, price and capacity to put on the booking request.",
+            "seq": 9
+          }
+        ],
+        "notes": "",
+        "active_cards": {},
+        "pending_jobs": [],
+        "context_revision": 3,
+        "conversation": [
+          {
+            "at_ms": 0,
+            "kind": "asr_final",
+            "segment_id": "room-1",
+            "speaker": "Nadia",
+            "text": "From the Foundry Room guide, choose the cheapest room that holds at least twelve people, costs no more than $20, and has Wi-Fi. Give its name, price and capacity.",
+            "seq": 1,
+            "role": "user"
+          },
+          {
+            "at_ms": 6000,
+            "kind": "asr_final",
+            "segment_id": "room-2",
+            "speaker": "Nadia",
+            "text": "We will use paper, so drop the Wi-Fi requirement. The minimum twelve seats and $20 limit still apply. Recheck the cheapest eligible room.",
+            "seq": 8,
+            "role": "user"
+          },
+          {
+            "at_ms": 12000,
+            "kind": "asr_final",
+            "segment_id": "room-3",
+            "speaker": "Nadia",
+            "text": "I need the final room name, price and capacity to put on the booking request.",
+            "seq": 9,
+            "role": "user"
+          }
+        ]
+      },
+      "persisted_tool_record": {
+        "name": "publish_card",
+        "args": {
+          "card_id": "diagnostic-card",
+          "context_revision": 3,
+          "question": "",
+          "source_ids": [
+            "irs-room-guide"
+          ],
+          "text": "The cheapest eligible room after dropping Wi-Fi is Gauge, $18, twelve seats."
+        },
+        "result": {
+          "card_id": "diagnostic-card",
+          "committed_card": {
+            "source_ids": [
+              "irs-room-guide"
+            ],
+            "text": "The cheapest eligible room after dropping Wi-Fi is Gauge, $18, twelve seats.",
+            "updated_ms": 12000
+          },
+          "note": "Source-ID validity does not establish factual correctness.",
+          "status": "displayed"
+        }
+      },
+      "final_active_cards": {
+        "diagnostic-card": {
+          "source_ids": [
+            "irs-room-guide"
+          ],
+          "text": "The cheapest eligible room after dropping Wi-Fi is Gauge, $18, twelve seats.",
+          "updated_ms": 12000
+        }
+      },
+      "execution": {
+        "environment_log": [
+          {
+            "at_ms": 0,
+            "case_id": "irs-room-withdrawal",
+            "close_at_ms": 18000,
+            "kind": "run_start",
+            "mode": "virtual",
+            "model_latency_ms": 250,
+            "seq": 0
+          },
+          {
+            "at_ms": 0,
+            "event": {
+              "at_ms": 0,
+              "kind": "asr_final",
+              "segment_id": "room-1",
+              "speaker": "Nadia",
+              "text": "From the Foundry Room guide, choose the cheapest room that holds at least twelve people, costs no more than $20, and has Wi-Fi. Give its name, price and capacity."
+            },
+            "kind": "environment_event",
+            "seq": 1
+          },
+          {
+            "at_ms": 0,
+            "job": {
+              "argument": "Foundry Room guide",
+              "due_ms": 50,
+              "operation": "search",
+              "started_ms": 0,
+              "status": "pending"
+            },
+            "job_id": "job-1",
+            "kind": "job_started",
+            "seq": 2
+          },
+          {
+            "args": {
+              "query": "Foundry Room guide"
+            },
+            "at_ms": 0,
+            "call_id": "setup-search",
+            "kind": "tool_result",
+            "name": "search",
+            "result": {
+              "due_ms": 50,
+              "job_id": "job-1",
+              "job_started": true,
+              "status": "pending"
+            },
+            "seq": 3
+          },
+          {
+            "at_ms": 50,
+            "event": {
+              "job_id": "job-1",
+              "kind": "job_result",
+              "operation": "search",
+              "result": {
+                "retriever": "lexical-overlap-diagnostic-only",
+                "sources": [
+                  {
+                    "content_level": "excerpt",
+                    "excerpt": "The Foundry Room guide lists the hire options for the community workshop. Each price is the complete price for one booking; capacities are seated capa",
+                    "kind": "document",
+                    "read_hint": "Call read_document with this source_id to request the full document, then wait for the read result.",
+                    "retrieval_score": 0.4804,
+                    "source_id": "irs-room-guide",
+                    "title": "Foundry Room guide",
+                    "truncated": true
+                  }
+                ]
+              }
+            },
+            "kind": "environment_event",
+            "seq": 4
+          },
+          {
+            "at_ms": 50,
+            "job": {
+              "argument": "irs-room-guide",
+              "due_ms": 100,
+              "operation": "read",
+              "started_ms": 50,
+              "status": "pending"
+            },
+            "job_id": "job-2",
+            "kind": "job_started",
+            "seq": 5
+          },
+          {
+            "args": {
+              "source_id": "irs-room-guide"
+            },
+            "at_ms": 50,
+            "call_id": "setup-read",
+            "kind": "tool_result",
+            "name": "read_document",
+            "result": {
+              "due_ms": 100,
+              "job_id": "job-2",
+              "job_started": true,
+              "status": "pending"
+            },
+            "seq": 6
+          },
+          {
+            "at_ms": 100,
+            "event": {
+              "job_id": "job-2",
+              "kind": "job_result",
+              "operation": "read",
+              "result": {
+                "content_level": "full",
+                "kind": "document",
+                "source_id": "irs-room-guide",
+                "text": "The Foundry Room guide lists the hire options for the community workshop. Each price is the complete price for one booking; capacities are seated capacities, and connectivity is listed separately for each room. Gauge: $18, twelve seats, Wi-Fi. Shaft: $12, sixteen seats, no Wi-Fi. Spindle: $10, eight seats, Wi-Fi. Furnace: $24, twenty seats, Wi-Fi.",
+                "title": "Foundry Room guide",
+                "truncated": false
+              }
+            },
+            "kind": "environment_event",
+            "seq": 7
+          },
+          {
+            "at_ms": 6000,
+            "event": {
+              "at_ms": 6000,
+              "kind": "asr_final",
+              "segment_id": "room-2",
+              "speaker": "Nadia",
+              "text": "We will use paper, so drop the Wi-Fi requirement. The minimum twelve seats and $20 limit still apply. Recheck the cheapest eligible room."
+            },
+            "kind": "environment_event",
+            "seq": 8
+          },
+          {
+            "at_ms": 12000,
+            "event": {
+              "at_ms": 12000,
+              "kind": "asr_final",
+              "segment_id": "room-3",
+              "speaker": "Nadia",
+              "text": "I need the final room name, price and capacity to put on the booking request."
+            },
+            "kind": "environment_event",
+            "seq": 9
+          },
+          {
+            "at_ms": 12000,
+            "card": {
+              "source_ids": [
+                "irs-room-guide"
+              ],
+              "text": "The cheapest eligible room after dropping Wi-Fi is Gauge, $18, twelve seats.",
+              "updated_ms": 12000
+            },
+            "card_id": "diagnostic-card",
+            "kind": "card_created",
+            "seq": 10
+          },
+          {
+            "args": {
+              "card_id": "diagnostic-card",
+              "context_revision": 3,
+              "question": "",
+              "source_ids": [
+                "irs-room-guide"
+              ],
+              "text": "The cheapest eligible room after dropping Wi-Fi is Gauge, $18, twelve seats."
+            },
+            "at_ms": 12000,
+            "call_id": "scripted-publish",
+            "kind": "tool_result",
+            "name": "publish_card",
+            "result": {
+              "card_id": "diagnostic-card",
+              "committed_card": {
+                "source_ids": [
+                  "irs-room-guide"
+                ],
+                "text": "The cheapest eligible room after dropping Wi-Fi is Gauge, $18, twelve seats.",
+                "updated_ms": 12000
+              },
+              "note": "Source-ID validity does not establish factual correctness.",
+              "status": "displayed"
+            },
+            "seq": 11
+          }
+        ],
+        "model_calls": [],
+        "tool_calls": [
+          {
+            "call_id": "setup-search",
+            "name": "search",
+            "args": {
+              "query": "Foundry Room guide"
+            },
+            "result": {
+              "due_ms": 50,
+              "job_id": "job-1",
+              "job_started": true,
+              "status": "pending"
+            },
+            "at_ms": 0,
+            "seq": 3
+          },
+          {
+            "call_id": "setup-read",
+            "name": "read_document",
+            "args": {
+              "source_id": "irs-room-guide"
+            },
+            "result": {
+              "due_ms": 100,
+              "job_id": "job-2",
+              "job_started": true,
+              "status": "pending"
+            },
+            "at_ms": 50,
+            "seq": 6
+          },
+          {
+            "call_id": "scripted-publish",
+            "name": "publish_card",
+            "args": {
+              "card_id": "diagnostic-card",
+              "context_revision": 3,
+              "question": "",
+              "source_ids": [
+                "irs-room-guide"
+              ],
+              "text": "The cheapest eligible room after dropping Wi-Fi is Gauge, $18, twelve seats."
+            },
+            "result": {
+              "card_id": "diagnostic-card",
+              "committed_card": {
+                "source_ids": [
+                  "irs-room-guide"
+                ],
+                "text": "The cheapest eligible room after dropping Wi-Fi is Gauge, $18, twelve seats.",
+                "updated_ms": 12000
+              },
+              "note": "Source-ID validity does not establish factual correctness.",
+              "status": "displayed"
+            },
+            "at_ms": 12000,
+            "seq": 11
+          }
+        ],
+        "metrics": {
+          "model_calls": 0,
+          "token_usage": {
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "total_tokens": 0
+          },
+          "api_wall_ms": 0,
+          "pending_or_failed_calls": 0,
+          "role_counts": {}
+        }
+      },
+      "check": "passed"
+    },
+    {
+      "script_id": "demo_unrequested_recording",
+      "case_id": "irs-unaccepted-assistant-proposal",
+      "expected_code_boundary_status": "displayed",
+      "actual_receipt": {
+        "card_id": "diagnostic-card",
+        "status": "displayed",
+        "note": "Source-ID validity does not establish factual correctness.",
+        "committed_card": {
+          "text": "The session starts at 14:20 in Room T6. No recording will be made.",
+          "source_ids": [
+            "irs-demo-guide"
+          ],
+          "updated_ms": 12000
+        }
+      },
+      "draft": "The session starts at 14:20 in Room T6. No recording will be made.",
+      "source_read_receipt": {
+        "job_id": "job-2",
+        "job_started": true,
+        "status": "pending",
+        "due_ms": 100
+      },
+      "observation_cursor": 10,
+      "model_visible_snapshot": {
+        "at_ms": 12000,
+        "events": [
+          {
+            "at_ms": 0,
+            "kind": "asr_final",
+            "segment_id": "demo-1",
+            "speaker": "Imani",
+            "text": "Use the Tidepool Demo notice. Only tell me the session start time and which room it is in.",
+            "seq": 1
+          },
+          {
+            "job_id": "job-1",
+            "kind": "job_result",
+            "operation": "search",
+            "result": {
+              "retriever": "lexical-overlap-diagnostic-only",
+              "sources": [
+                {
+                  "content_level": "excerpt",
+                  "excerpt": "The Tidepool Demo notice is the organizer's reference for this session. Its practical attendance details and optional recording arrangements are separ",
+                  "kind": "document",
+                  "read_hint": "Call read_document with this source_id to request the full document, then wait for the read result.",
+                  "retrieval_score": 0.4523,
+                  "source_id": "irs-demo-guide",
+                  "title": "Tidepool Demo notice",
+                  "truncated": true
+                }
+              ]
+            },
+            "seq": 4,
+            "at_ms": 50
+          },
+          {
+            "job_id": "job-2",
+            "kind": "job_result",
+            "operation": "read",
+            "result": {
+              "content_level": "full",
+              "kind": "document",
+              "source_id": "irs-demo-guide",
+              "text": "The Tidepool Demo notice is the organizer's reference for this session. Its practical attendance details and optional recording arrangements are separate facts and do not determine which details a participant has requested. The session starts at 14:20 in Room T6. No recording will be made, so no recording link will be available.",
+              "title": "Tidepool Demo notice",
+              "truncated": false
+            },
+            "seq": 7,
+            "at_ms": 100
+          },
+          {
+            "at_ms": 6000,
+            "kind": "assistant_proposal",
+            "role": "assistant",
+            "segment_id": "demo-2a",
+            "speaker": "Assistant",
+            "text": "I could also add a recording-link check to this task, if you want.",
+            "seq": 8
+          },
+          {
+            "at_ms": 6000,
+            "kind": "asr_final",
+            "segment_id": "demo-2b",
+            "speaker": "Imani",
+            "text": "I've read that suggestion. I have not decided to add anything to the request.",
+            "seq": 9
+          },
+          {
+            "at_ms": 12000,
+            "kind": "asr_final",
+            "segment_id": "demo-3",
+            "speaker": "Imani",
+            "text": "Please give me the requested session details now.",
+            "seq": 10
+          }
+        ],
+        "notes": "",
+        "active_cards": {},
+        "pending_jobs": [],
+        "context_revision": 4,
+        "conversation": [
+          {
+            "at_ms": 0,
+            "kind": "asr_final",
+            "segment_id": "demo-1",
+            "speaker": "Imani",
+            "text": "Use the Tidepool Demo notice. Only tell me the session start time and which room it is in.",
+            "seq": 1,
+            "role": "user"
+          },
+          {
+            "at_ms": 6000,
+            "kind": "assistant_proposal",
+            "role": "assistant",
+            "segment_id": "demo-2a",
+            "speaker": "Assistant",
+            "text": "I could also add a recording-link check to this task, if you want.",
+            "seq": 8
+          },
+          {
+            "at_ms": 6000,
+            "kind": "asr_final",
+            "segment_id": "demo-2b",
+            "speaker": "Imani",
+            "text": "I've read that suggestion. I have not decided to add anything to the request.",
+            "seq": 9,
+            "role": "user"
+          },
+          {
+            "at_ms": 12000,
+            "kind": "asr_final",
+            "segment_id": "demo-3",
+            "speaker": "Imani",
+            "text": "Please give me the requested session details now.",
+            "seq": 10,
+            "role": "user"
+          }
+        ]
+      },
+      "persisted_tool_record": {
+        "name": "publish_card",
+        "args": {
+          "card_id": "diagnostic-card",
+          "context_revision": 4,
+          "question": "",
+          "source_ids": [
+            "irs-demo-guide"
+          ],
+          "text": "The session starts at 14:20 in Room T6. No recording will be made."
+        },
+        "result": {
+          "card_id": "diagnostic-card",
+          "committed_card": {
+            "source_ids": [
+              "irs-demo-guide"
+            ],
+            "text": "The session starts at 14:20 in Room T6. No recording will be made.",
+            "updated_ms": 12000
+          },
+          "note": "Source-ID validity does not establish factual correctness.",
+          "status": "displayed"
+        }
+      },
+      "final_active_cards": {
+        "diagnostic-card": {
+          "source_ids": [
+            "irs-demo-guide"
+          ],
+          "text": "The session starts at 14:20 in Room T6. No recording will be made.",
+          "updated_ms": 12000
+        }
+      },
+      "execution": {
+        "environment_log": [
+          {
+            "at_ms": 0,
+            "case_id": "irs-unaccepted-assistant-proposal",
+            "close_at_ms": 18000,
+            "kind": "run_start",
+            "mode": "virtual",
+            "model_latency_ms": 250,
+            "seq": 0
+          },
+          {
+            "at_ms": 0,
+            "event": {
+              "at_ms": 0,
+              "kind": "asr_final",
+              "segment_id": "demo-1",
+              "speaker": "Imani",
+              "text": "Use the Tidepool Demo notice. Only tell me the session start time and which room it is in."
+            },
+            "kind": "environment_event",
+            "seq": 1
+          },
+          {
+            "at_ms": 0,
+            "job": {
+              "argument": "Tidepool Demo notice",
+              "due_ms": 50,
+              "operation": "search",
+              "started_ms": 0,
+              "status": "pending"
+            },
+            "job_id": "job-1",
+            "kind": "job_started",
+            "seq": 2
+          },
+          {
+            "args": {
+              "query": "Tidepool Demo notice"
+            },
+            "at_ms": 0,
+            "call_id": "setup-search",
+            "kind": "tool_result",
+            "name": "search",
+            "result": {
+              "due_ms": 50,
+              "job_id": "job-1",
+              "job_started": true,
+              "status": "pending"
+            },
+            "seq": 3
+          },
+          {
+            "at_ms": 50,
+            "event": {
+              "job_id": "job-1",
+              "kind": "job_result",
+              "operation": "search",
+              "result": {
+                "retriever": "lexical-overlap-diagnostic-only",
+                "sources": [
+                  {
+                    "content_level": "excerpt",
+                    "excerpt": "The Tidepool Demo notice is the organizer's reference for this session. Its practical attendance details and optional recording arrangements are separ",
+                    "kind": "document",
+                    "read_hint": "Call read_document with this source_id to request the full document, then wait for the read result.",
+                    "retrieval_score": 0.4523,
+                    "source_id": "irs-demo-guide",
+                    "title": "Tidepool Demo notice",
+                    "truncated": true
+                  }
+                ]
+              }
+            },
+            "kind": "environment_event",
+            "seq": 4
+          },
+          {
+            "at_ms": 50,
+            "job": {
+              "argument": "irs-demo-guide",
+              "due_ms": 100,
+              "operation": "read",
+              "started_ms": 50,
+              "status": "pending"
+            },
+            "job_id": "job-2",
+            "kind": "job_started",
+            "seq": 5
+          },
+          {
+            "args": {
+              "source_id": "irs-demo-guide"
+            },
+            "at_ms": 50,
+            "call_id": "setup-read",
+            "kind": "tool_result",
+            "name": "read_document",
+            "result": {
+              "due_ms": 100,
+              "job_id": "job-2",
+              "job_started": true,
+              "status": "pending"
+            },
+            "seq": 6
+          },
+          {
+            "at_ms": 100,
+            "event": {
+              "job_id": "job-2",
+              "kind": "job_result",
+              "operation": "read",
+              "result": {
+                "content_level": "full",
+                "kind": "document",
+                "source_id": "irs-demo-guide",
+                "text": "The Tidepool Demo notice is the organizer's reference for this session. Its practical attendance details and optional recording arrangements are separate facts and do not determine which details a participant has requested. The session starts at 14:20 in Room T6. No recording will be made, so no recording link will be available.",
+                "title": "Tidepool Demo notice",
+                "truncated": false
+              }
+            },
+            "kind": "environment_event",
+            "seq": 7
+          },
+          {
+            "at_ms": 6000,
+            "event": {
+              "at_ms": 6000,
+              "kind": "assistant_proposal",
+              "role": "assistant",
+              "segment_id": "demo-2a",
+              "speaker": "Assistant",
+              "text": "I could also add a recording-link check to this task, if you want."
+            },
+            "kind": "environment_event",
+            "seq": 8
+          },
+          {
+            "at_ms": 6000,
+            "event": {
+              "at_ms": 6000,
+              "kind": "asr_final",
+              "segment_id": "demo-2b",
+              "speaker": "Imani",
+              "text": "I've read that suggestion. I have not decided to add anything to the request."
+            },
+            "kind": "environment_event",
+            "seq": 9
+          },
+          {
+            "at_ms": 12000,
+            "event": {
+              "at_ms": 12000,
+              "kind": "asr_final",
+              "segment_id": "demo-3",
+              "speaker": "Imani",
+              "text": "Please give me the requested session details now."
+            },
+            "kind": "environment_event",
+            "seq": 10
+          },
+          {
+            "at_ms": 12000,
+            "card": {
+              "source_ids": [
+                "irs-demo-guide"
+              ],
+              "text": "The session starts at 14:20 in Room T6. No recording will be made.",
+              "updated_ms": 12000
+            },
+            "card_id": "diagnostic-card",
+            "kind": "card_created",
+            "seq": 11
+          },
+          {
+            "args": {
+              "card_id": "diagnostic-card",
+              "context_revision": 4,
+              "question": "",
+              "source_ids": [
+                "irs-demo-guide"
+              ],
+              "text": "The session starts at 14:20 in Room T6. No recording will be made."
+            },
+            "at_ms": 12000,
+            "call_id": "scripted-publish",
+            "kind": "tool_result",
+            "name": "publish_card",
+            "result": {
+              "card_id": "diagnostic-card",
+              "committed_card": {
+                "source_ids": [
+                  "irs-demo-guide"
+                ],
+                "text": "The session starts at 14:20 in Room T6. No recording will be made.",
+                "updated_ms": 12000
+              },
+              "note": "Source-ID validity does not establish factual correctness.",
+              "status": "displayed"
+            },
+            "seq": 12
+          }
+        ],
+        "model_calls": [],
+        "tool_calls": [
+          {
+            "call_id": "setup-search",
+            "name": "search",
+            "args": {
+              "query": "Tidepool Demo notice"
+            },
+            "result": {
+              "due_ms": 50,
+              "job_id": "job-1",
+              "job_started": true,
+              "status": "pending"
+            },
+            "at_ms": 0,
+            "seq": 3
+          },
+          {
+            "call_id": "setup-read",
+            "name": "read_document",
+            "args": {
+              "source_id": "irs-demo-guide"
+            },
+            "result": {
+              "due_ms": 100,
+              "job_id": "job-2",
+              "job_started": true,
+              "status": "pending"
+            },
+            "at_ms": 50,
+            "seq": 6
+          },
+          {
+            "call_id": "scripted-publish",
+            "name": "publish_card",
+            "args": {
+              "card_id": "diagnostic-card",
+              "context_revision": 4,
+              "question": "",
+              "source_ids": [
+                "irs-demo-guide"
+              ],
+              "text": "The session starts at 14:20 in Room T6. No recording will be made."
+            },
+            "result": {
+              "card_id": "diagnostic-card",
+              "committed_card": {
+                "source_ids": [
+                  "irs-demo-guide"
+                ],
+                "text": "The session starts at 14:20 in Room T6. No recording will be made.",
+                "updated_ms": 12000
+              },
+              "note": "Source-ID validity does not establish factual correctness.",
+              "status": "displayed"
+            },
+            "at_ms": 12000,
+            "seq": 12
+          }
+        ],
+        "metrics": {
+          "model_calls": 0,
+          "token_usage": {
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "total_tokens": 0
+          },
+          "api_wall_ms": 0,
+          "pending_or_failed_calls": 0,
+          "role_counts": {}
+        }
+      },
+      "check": "passed"
+    },
+    {
+      "script_id": "blank_control",
+      "case_id": "irs-combined-workshop-change",
+      "expected_code_boundary_status": "not_published",
+      "actual_receipt": {
+        "status": "not_published",
+        "reason": "There is no text to display."
+      },
+      "draft": "   ",
+      "source_read_receipt": {
+        "job_id": "job-2",
+        "job_started": true,
+        "status": "pending",
+        "due_ms": 100
+      },
+      "observation_cursor": 9,
+      "model_visible_snapshot": {
+        "at_ms": 12000,
+        "events": [
+          {
+            "at_ms": 0,
+            "kind": "asr_final",
+            "segment_id": "workshop-1",
+            "speaker": "Mara",
+            "text": "From the Kiln Workshop list, pick the cheapest Tuesday workshop at or below $25 and give its room. Also tell me the parking location.",
+            "seq": 1
+          },
+          {
+            "job_id": "job-1",
+            "kind": "job_result",
+            "operation": "search",
+            "result": {
+              "retriever": "lexical-overlap-diagnostic-only",
+              "sources": [
+                {
+                  "content_level": "excerpt",
+                  "excerpt": "The Kiln Workshop list describes the currently offered sessions. Prices are per participant, rooms identify the booked teaching space, and accessibili",
+                  "kind": "document",
+                  "read_hint": "Call read_document with this source_id to request the full document, then wait for the read result.",
+                  "retrieval_score": 0.4009,
+                  "source_id": "irs-workshop-guide",
+                  "title": "Kiln Workshop list",
+                  "truncated": true
+                }
+              ]
+            },
+            "seq": 4,
+            "at_ms": 50
+          },
+          {
+            "job_id": "job-2",
+            "kind": "job_result",
+            "operation": "read",
+            "result": {
+              "content_level": "full",
+              "kind": "document",
+              "source_id": "irs-workshop-guide",
+              "text": "The Kiln Workshop list describes the currently offered sessions. Prices are per participant, rooms identify the booked teaching space, and accessibility applies to the complete entrance route rather than merely the room. Clay Basics: Tuesday, $18, Room C2, stairs. Glaze Lab: Friday, $23, Room G4, step-free route. Wheel Start: Friday, $19, Room W1, stairs. Mosaic Studio: Friday, $27, Room M3, step-free route. Visitor parking is in the South car park.",
+              "title": "Kiln Workshop list",
+              "truncated": false
+            },
+            "seq": 7,
+            "at_ms": 100
+          },
+          {
+            "at_ms": 6000,
+            "kind": "asr_final",
+            "segment_id": "workshop-2",
+            "speaker": "Mara",
+            "text": "Switch to Friday, drop the parking question, and add step-free access as a requirement. Keep the $25 limit and the cheapest-option rule.",
+            "seq": 8
+          },
+          {
+            "at_ms": 12000,
+            "kind": "asr_final",
+            "segment_id": "workshop-3",
+            "speaker": "Mara",
+            "text": "The final answer should identify the workshop, its price and room, and explain whether the step-free requirement is met.",
+            "seq": 9
+          }
+        ],
+        "notes": "",
+        "active_cards": {},
+        "pending_jobs": [],
+        "context_revision": 3,
+        "conversation": [
+          {
+            "at_ms": 0,
+            "kind": "asr_final",
+            "segment_id": "workshop-1",
+            "speaker": "Mara",
+            "text": "From the Kiln Workshop list, pick the cheapest Tuesday workshop at or below $25 and give its room. Also tell me the parking location.",
+            "seq": 1,
+            "role": "user"
+          },
+          {
+            "at_ms": 6000,
+            "kind": "asr_final",
+            "segment_id": "workshop-2",
+            "speaker": "Mara",
+            "text": "Switch to Friday, drop the parking question, and add step-free access as a requirement. Keep the $25 limit and the cheapest-option rule.",
+            "seq": 8,
+            "role": "user"
+          },
+          {
+            "at_ms": 12000,
+            "kind": "asr_final",
+            "segment_id": "workshop-3",
+            "speaker": "Mara",
+            "text": "The final answer should identify the workshop, its price and room, and explain whether the step-free requirement is met.",
+            "seq": 9,
+            "role": "user"
+          }
+        ]
+      },
+      "persisted_tool_record": {
+        "name": "publish_card",
+        "args": {
+          "card_id": "diagnostic-card",
+          "context_revision": 3,
+          "question": "",
+          "source_ids": [
+            "irs-workshop-guide"
+          ],
+          "text": "   "
+        },
+        "result": {
+          "reason": "There is no text to display.",
+          "status": "not_published"
+        }
+      },
+      "final_active_cards": {},
+      "execution": {
+        "environment_log": [
+          {
+            "at_ms": 0,
+            "case_id": "irs-combined-workshop-change",
+            "close_at_ms": 18000,
+            "kind": "run_start",
+            "mode": "virtual",
+            "model_latency_ms": 250,
+            "seq": 0
+          },
+          {
+            "at_ms": 0,
+            "event": {
+              "at_ms": 0,
+              "kind": "asr_final",
+              "segment_id": "workshop-1",
+              "speaker": "Mara",
+              "text": "From the Kiln Workshop list, pick the cheapest Tuesday workshop at or below $25 and give its room. Also tell me the parking location."
+            },
+            "kind": "environment_event",
+            "seq": 1
+          },
+          {
+            "at_ms": 0,
+            "job": {
+              "argument": "Kiln Workshop list",
+              "due_ms": 50,
+              "operation": "search",
+              "started_ms": 0,
+              "status": "pending"
+            },
+            "job_id": "job-1",
+            "kind": "job_started",
+            "seq": 2
+          },
+          {
+            "args": {
+              "query": "Kiln Workshop list"
+            },
+            "at_ms": 0,
+            "call_id": "setup-search",
+            "kind": "tool_result",
+            "name": "search",
+            "result": {
+              "due_ms": 50,
+              "job_id": "job-1",
+              "job_started": true,
+              "status": "pending"
+            },
+            "seq": 3
+          },
+          {
+            "at_ms": 50,
+            "event": {
+              "job_id": "job-1",
+              "kind": "job_result",
+              "operation": "search",
+              "result": {
+                "retriever": "lexical-overlap-diagnostic-only",
+                "sources": [
+                  {
+                    "content_level": "excerpt",
+                    "excerpt": "The Kiln Workshop list describes the currently offered sessions. Prices are per participant, rooms identify the booked teaching space, and accessibili",
+                    "kind": "document",
+                    "read_hint": "Call read_document with this source_id to request the full document, then wait for the read result.",
+                    "retrieval_score": 0.4009,
+                    "source_id": "irs-workshop-guide",
+                    "title": "Kiln Workshop list",
+                    "truncated": true
+                  }
+                ]
+              }
+            },
+            "kind": "environment_event",
+            "seq": 4
+          },
+          {
+            "at_ms": 50,
+            "job": {
+              "argument": "irs-workshop-guide",
+              "due_ms": 100,
+              "operation": "read",
+              "started_ms": 50,
+              "status": "pending"
+            },
+            "job_id": "job-2",
+            "kind": "job_started",
+            "seq": 5
+          },
+          {
+            "args": {
+              "source_id": "irs-workshop-guide"
+            },
+            "at_ms": 50,
+            "call_id": "setup-read",
+            "kind": "tool_result",
+            "name": "read_document",
+            "result": {
+              "due_ms": 100,
+              "job_id": "job-2",
+              "job_started": true,
+              "status": "pending"
+            },
+            "seq": 6
+          },
+          {
+            "at_ms": 100,
+            "event": {
+              "job_id": "job-2",
+              "kind": "job_result",
+              "operation": "read",
+              "result": {
+                "content_level": "full",
+                "kind": "document",
+                "source_id": "irs-workshop-guide",
+                "text": "The Kiln Workshop list describes the currently offered sessions. Prices are per participant, rooms identify the booked teaching space, and accessibility applies to the complete entrance route rather than merely the room. Clay Basics: Tuesday, $18, Room C2, stairs. Glaze Lab: Friday, $23, Room G4, step-free route. Wheel Start: Friday, $19, Room W1, stairs. Mosaic Studio: Friday, $27, Room M3, step-free route. Visitor parking is in the South car park.",
+                "title": "Kiln Workshop list",
+                "truncated": false
+              }
+            },
+            "kind": "environment_event",
+            "seq": 7
+          },
+          {
+            "at_ms": 6000,
+            "event": {
+              "at_ms": 6000,
+              "kind": "asr_final",
+              "segment_id": "workshop-2",
+              "speaker": "Mara",
+              "text": "Switch to Friday, drop the parking question, and add step-free access as a requirement. Keep the $25 limit and the cheapest-option rule."
+            },
+            "kind": "environment_event",
+            "seq": 8
+          },
+          {
+            "at_ms": 12000,
+            "event": {
+              "at_ms": 12000,
+              "kind": "asr_final",
+              "segment_id": "workshop-3",
+              "speaker": "Mara",
+              "text": "The final answer should identify the workshop, its price and room, and explain whether the step-free requirement is met."
+            },
+            "kind": "environment_event",
+            "seq": 9
+          },
+          {
+            "args": {
+              "card_id": "diagnostic-card",
+              "context_revision": 3,
+              "question": "",
+              "source_ids": [
+                "irs-workshop-guide"
+              ],
+              "text": "   "
+            },
+            "at_ms": 12000,
+            "call_id": "scripted-publish",
+            "kind": "tool_result",
+            "name": "publish_card",
+            "result": {
+              "reason": "There is no text to display.",
+              "status": "not_published"
+            },
+            "seq": 10
+          }
+        ],
+        "model_calls": [],
+        "tool_calls": [
+          {
+            "call_id": "setup-search",
+            "name": "search",
+            "args": {
+              "query": "Kiln Workshop list"
+            },
+            "result": {
+              "due_ms": 50,
+              "job_id": "job-1",
+              "job_started": true,
+              "status": "pending"
+            },
+            "at_ms": 0,
+            "seq": 3
+          },
+          {
+            "call_id": "setup-read",
+            "name": "read_document",
+            "args": {
+              "source_id": "irs-workshop-guide"
+            },
+            "result": {
+              "due_ms": 100,
+              "job_id": "job-2",
+              "job_started": true,
+              "status": "pending"
+            },
+            "at_ms": 50,
+            "seq": 6
+          },
+          {
+            "call_id": "scripted-publish",
+            "name": "publish_card",
+            "args": {
+              "card_id": "diagnostic-card",
+              "context_revision": 3,
+              "question": "",
+              "source_ids": [
+                "irs-workshop-guide"
+              ],
+              "text": "   "
+            },
+            "result": {
+              "reason": "There is no text to display.",
+              "status": "not_published"
+            },
+            "at_ms": 12000,
+            "seq": 10
+          }
+        ],
+        "metrics": {
+          "model_calls": 0,
+          "token_usage": {
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "total_tokens": 0
+          },
+          "api_wall_ms": 0,
+          "pending_or_failed_calls": 0,
+          "role_counts": {}
+        }
+      },
+      "check": "passed"
+    },
+    {
+      "script_id": "stale_observation_control",
+      "case_id": "irs-combined-workshop-change",
+      "expected_code_boundary_status": "new_observations",
+      "actual_receipt": {
+        "status": "new_observations",
+        "reason": "New conversation or source evidence has arrived; read it before deciding whether this card still applies."
+      },
+      "draft": "Clay Basics on Tuesday costs $18 and is in Room C2.",
+      "source_read_receipt": {
+        "job_id": "job-2",
+        "job_started": true,
+        "status": "pending",
+        "due_ms": 100
+      },
+      "observation_cursor": 7,
+      "model_visible_snapshot": {
+        "at_ms": 100,
+        "events": [
+          {
+            "at_ms": 0,
+            "kind": "asr_final",
+            "segment_id": "workshop-1",
+            "speaker": "Mara",
+            "text": "From the Kiln Workshop list, pick the cheapest Tuesday workshop at or below $25 and give its room. Also tell me the parking location.",
+            "seq": 1
+          },
+          {
+            "job_id": "job-1",
+            "kind": "job_result",
+            "operation": "search",
+            "result": {
+              "retriever": "lexical-overlap-diagnostic-only",
+              "sources": [
+                {
+                  "content_level": "excerpt",
+                  "excerpt": "The Kiln Workshop list describes the currently offered sessions. Prices are per participant, rooms identify the booked teaching space, and accessibili",
+                  "kind": "document",
+                  "read_hint": "Call read_document with this source_id to request the full document, then wait for the read result.",
+                  "retrieval_score": 0.4009,
+                  "source_id": "irs-workshop-guide",
+                  "title": "Kiln Workshop list",
+                  "truncated": true
+                }
+              ]
+            },
+            "seq": 4,
+            "at_ms": 50
+          },
+          {
+            "job_id": "job-2",
+            "kind": "job_result",
+            "operation": "read",
+            "result": {
+              "content_level": "full",
+              "kind": "document",
+              "source_id": "irs-workshop-guide",
+              "text": "The Kiln Workshop list describes the currently offered sessions. Prices are per participant, rooms identify the booked teaching space, and accessibility applies to the complete entrance route rather than merely the room. Clay Basics: Tuesday, $18, Room C2, stairs. Glaze Lab: Friday, $23, Room G4, step-free route. Wheel Start: Friday, $19, Room W1, stairs. Mosaic Studio: Friday, $27, Room M3, step-free route. Visitor parking is in the South car park.",
+              "title": "Kiln Workshop list",
+              "truncated": false
+            },
+            "seq": 7,
+            "at_ms": 100
+          }
+        ],
+        "notes": "",
+        "active_cards": {},
+        "pending_jobs": [],
+        "context_revision": 1,
+        "conversation": [
+          {
+            "at_ms": 0,
+            "kind": "asr_final",
+            "segment_id": "workshop-1",
+            "speaker": "Mara",
+            "text": "From the Kiln Workshop list, pick the cheapest Tuesday workshop at or below $25 and give its room. Also tell me the parking location.",
+            "seq": 1,
+            "role": "user"
+          }
+        ]
+      },
+      "persisted_tool_record": {
+        "name": "publish_card",
+        "args": {
+          "card_id": "diagnostic-card",
+          "context_revision": 1,
+          "question": "",
+          "source_ids": [
+            "irs-workshop-guide"
+          ],
+          "text": "Clay Basics on Tuesday costs $18 and is in Room C2."
+        },
+        "result": {
+          "reason": "New conversation or source evidence has arrived; read it before deciding whether this card still applies.",
+          "status": "new_observations"
+        }
+      },
+      "final_active_cards": {},
+      "execution": {
+        "environment_log": [
+          {
+            "at_ms": 0,
+            "case_id": "irs-combined-workshop-change",
+            "close_at_ms": 18000,
+            "kind": "run_start",
+            "mode": "virtual",
+            "model_latency_ms": 250,
+            "seq": 0
+          },
+          {
+            "at_ms": 0,
+            "event": {
+              "at_ms": 0,
+              "kind": "asr_final",
+              "segment_id": "workshop-1",
+              "speaker": "Mara",
+              "text": "From the Kiln Workshop list, pick the cheapest Tuesday workshop at or below $25 and give its room. Also tell me the parking location."
+            },
+            "kind": "environment_event",
+            "seq": 1
+          },
+          {
+            "at_ms": 0,
+            "job": {
+              "argument": "Kiln Workshop list",
+              "due_ms": 50,
+              "operation": "search",
+              "started_ms": 0,
+              "status": "pending"
+            },
+            "job_id": "job-1",
+            "kind": "job_started",
+            "seq": 2
+          },
+          {
+            "args": {
+              "query": "Kiln Workshop list"
+            },
+            "at_ms": 0,
+            "call_id": "setup-search",
+            "kind": "tool_result",
+            "name": "search",
+            "result": {
+              "due_ms": 50,
+              "job_id": "job-1",
+              "job_started": true,
+              "status": "pending"
+            },
+            "seq": 3
+          },
+          {
+            "at_ms": 50,
+            "event": {
+              "job_id": "job-1",
+              "kind": "job_result",
+              "operation": "search",
+              "result": {
+                "retriever": "lexical-overlap-diagnostic-only",
+                "sources": [
+                  {
+                    "content_level": "excerpt",
+                    "excerpt": "The Kiln Workshop list describes the currently offered sessions. Prices are per participant, rooms identify the booked teaching space, and accessibili",
+                    "kind": "document",
+                    "read_hint": "Call read_document with this source_id to request the full document, then wait for the read result.",
+                    "retrieval_score": 0.4009,
+                    "source_id": "irs-workshop-guide",
+                    "title": "Kiln Workshop list",
+                    "truncated": true
+                  }
+                ]
+              }
+            },
+            "kind": "environment_event",
+            "seq": 4
+          },
+          {
+            "at_ms": 50,
+            "job": {
+              "argument": "irs-workshop-guide",
+              "due_ms": 100,
+              "operation": "read",
+              "started_ms": 50,
+              "status": "pending"
+            },
+            "job_id": "job-2",
+            "kind": "job_started",
+            "seq": 5
+          },
+          {
+            "args": {
+              "source_id": "irs-workshop-guide"
+            },
+            "at_ms": 50,
+            "call_id": "setup-read",
+            "kind": "tool_result",
+            "name": "read_document",
+            "result": {
+              "due_ms": 100,
+              "job_id": "job-2",
+              "job_started": true,
+              "status": "pending"
+            },
+            "seq": 6
+          },
+          {
+            "at_ms": 100,
+            "event": {
+              "job_id": "job-2",
+              "kind": "job_result",
+              "operation": "read",
+              "result": {
+                "content_level": "full",
+                "kind": "document",
+                "source_id": "irs-workshop-guide",
+                "text": "The Kiln Workshop list describes the currently offered sessions. Prices are per participant, rooms identify the booked teaching space, and accessibility applies to the complete entrance route rather than merely the room. Clay Basics: Tuesday, $18, Room C2, stairs. Glaze Lab: Friday, $23, Room G4, step-free route. Wheel Start: Friday, $19, Room W1, stairs. Mosaic Studio: Friday, $27, Room M3, step-free route. Visitor parking is in the South car park.",
+                "title": "Kiln Workshop list",
+                "truncated": false
+              }
+            },
+            "kind": "environment_event",
+            "seq": 7
+          },
+          {
+            "at_ms": 6000,
+            "event": {
+              "at_ms": 6000,
+              "kind": "asr_final",
+              "segment_id": "workshop-2",
+              "speaker": "Mara",
+              "text": "Switch to Friday, drop the parking question, and add step-free access as a requirement. Keep the $25 limit and the cheapest-option rule."
+            },
+            "kind": "environment_event",
+            "seq": 8
+          },
+          {
+            "args": {
+              "card_id": "diagnostic-card",
+              "context_revision": 1,
+              "question": "",
+              "source_ids": [
+                "irs-workshop-guide"
+              ],
+              "text": "Clay Basics on Tuesday costs $18 and is in Room C2."
+            },
+            "at_ms": 6000,
+            "call_id": "scripted-publish",
+            "kind": "tool_result",
+            "name": "publish_card",
+            "result": {
+              "reason": "New conversation or source evidence has arrived; read it before deciding whether this card still applies.",
+              "status": "new_observations"
+            },
+            "seq": 9
+          }
+        ],
+        "model_calls": [],
+        "tool_calls": [
+          {
+            "call_id": "setup-search",
+            "name": "search",
+            "args": {
+              "query": "Kiln Workshop list"
+            },
+            "result": {
+              "due_ms": 50,
+              "job_id": "job-1",
+              "job_started": true,
+              "status": "pending"
+            },
+            "at_ms": 0,
+            "seq": 3
+          },
+          {
+            "call_id": "setup-read",
+            "name": "read_document",
+            "args": {
+              "source_id": "irs-workshop-guide"
+            },
+            "result": {
+              "due_ms": 100,
+              "job_id": "job-2",
+              "job_started": true,
+              "status": "pending"
+            },
+            "at_ms": 50,
+            "seq": 6
+          },
+          {
+            "call_id": "scripted-publish",
+            "name": "publish_card",
+            "args": {
+              "card_id": "diagnostic-card",
+              "context_revision": 1,
+              "question": "",
+              "source_ids": [
+                "irs-workshop-guide"
+              ],
+              "text": "Clay Basics on Tuesday costs $18 and is in Room C2."
+            },
+            "result": {
+              "reason": "New conversation or source evidence has arrived; read it before deciding whether this card still applies.",
+              "status": "new_observations"
+            },
+            "at_ms": 6000,
+            "seq": 9
+          }
+        ],
+        "metrics": {
+          "model_calls": 0,
+          "token_usage": {
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "total_tokens": 0
+          },
+          "api_wall_ms": 0,
+          "pending_or_failed_calls": 0,
+          "role_counts": {}
+        }
+      },
+      "check": "passed"
+    }
+  ],
+  "result": "Four nonempty current drafts were displayed, including an omitted requested price, a wrong room selection and an unrequested recording fact. Blank and stale-observation controls were rejected. The boundary guards freshness/transaction conditions, not semantic coverage or correctness.",
+  "limitations": [
+    "No model generated these drafts. This is not a new assistance-quality score.",
+    "No proposed semantic checker was implemented or tested.",
+    "No claim that existing optional AnswerDelivery would repair any case; this experiment uses IntentRoleSession with agent-led settings, not the optional native graph delivery node."
+  ]
+}

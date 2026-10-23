@@ -1,0 +1,852 @@
+{
+  "schema_version": 1,
+  "kind": "scripted_diagnostic_and_captured_proposal_replay",
+  "created_at_utc": "2026-10-23T20:43:25.719177+00:00",
+  "study_date": "2026-10-23",
+  "display_timezone": "America/Halifax",
+  "real_model_calls": 0,
+  "repairs_implemented": false,
+  "status": "completed_with_recovery_properties_failing",
+  "source_locations": [
+    {
+      "path": "experiments/deep_conversation/intent_roles.py",
+      "sha256": "befc382472aabc55efbda043aae5d377e12cce92a56804c73e25994305674d68",
+      "locations": {
+        "tracker_role_gate": 173,
+        "packet_construction": 256,
+        "tracker_commit": 287,
+        "exception_logged_only": 311,
+        "global_budget_gate": 246
+      }
+    },
+    {
+      "path": "experiments/deep_conversation/intention_state.py",
+      "sha256": "e028a604a93520801a0f752755d80b305afb1eebd8792ea0aeaaa3cd5c722f73",
+      "locations": {
+        "commit_transaction": 192,
+        "one_operation_per_id": 263,
+        "source_event_guard": 272,
+        "withdrawn_requires_explicit_reopen": 297
+      }
+    },
+    {
+      "path": "experiments/deep_conversation/test_intent_roles.py",
+      "sha256": "f0c3329b0622d053e38e2575c9dbe61ba18abfa759e623c81c073a147315d18c",
+      "locations": {
+        "existing_test_expects_retry_without_recovery": 168
+      }
+    }
+  ],
+  "diagnostic_script_sha256": "aa268727fbe6e32c44d1af80b0c6c20f94478af264b668ffc37f1449b6b82c95",
+  "frozen_source_match_count": 40,
+  "preserved_input_sha256": {
+    "output/research/2026-10-23/intent-role-separation/evaluation/runs/irs-combined-workshop-change--tracked--r1/steps.jsonl": "5c2470d386fa1567f0eb9c599990fddf9792e1ce1d32ee1f40de61b67df33e47",
+    "output/research/2026-10-23/intent-role-separation/evaluation/runs/irs-combined-workshop-change--tracked--r2/steps.jsonl": "0f906df18d1d1ca2376fcce5f218f3d20e92583f34d04bd2973c3bbfc51f9703",
+    "output/research/2026-10-23/intent-role-separation/evaluation/runs/irs-key-restoration--tracked--r1/steps.jsonl": "c11891047421f1d82214ba7e69b2819175a87aa9c723055b2d1b657c08b52307",
+    "output/research/2026-10-23/intent-role-separation/evaluation/runs/irs-key-restoration--tracked--r2/steps.jsonl": "b49f451d4ff3a0f8b243148bba8fe087986aa8810c1858dfa0a194acb341d75d",
+    "output/research/2026-10-23/intent-role-separation/evaluation/runs/irs-late-obsolete-evidence--tracked--r1/steps.jsonl": "f70ad06a63dc12f6f54208e832d9d9c2f57cf88eb7dd7333db3b42fec9a03213",
+    "output/research/2026-10-23/intent-role-separation/evaluation/runs/irs-late-obsolete-evidence--tracked--r2/steps.jsonl": "80f5e19bade0db898a7230c3ab60c2013aa59d762f02fb3ff4c0c8cebb195fb7",
+    "output/research/2026-10-23/intent-role-separation/evaluation/runs/irs-multiple-request-owners--tracked--r1/steps.jsonl": "5f6c52a8b2ad58c6bd1823101642241efe2a660990b2867699e5dd0a2664cc50",
+    "output/research/2026-10-23/intent-role-separation/evaluation/runs/irs-multiple-request-owners--tracked--r2/steps.jsonl": "eac6d6b085dcb248c89230d252b36936517744892a12d7331dce958572bbb117",
+    "output/research/2026-10-23/intent-role-separation/evaluation/runs/irs-practice-no-change--tracked--r1/steps.jsonl": "3475c82289574d209dd2de9e05dd9a6714bd85cf1c6d04745e3762b84cdc4d84",
+    "output/research/2026-10-23/intent-role-separation/evaluation/runs/irs-practice-no-change--tracked--r2/steps.jsonl": "abb55c95e91b7dceaad36d80a84f10f84932374f4ceae7afb5cf87ca4855a9b1",
+    "output/research/2026-10-23/intent-role-separation/evaluation/runs/irs-room-withdrawal--tracked--r1/steps.jsonl": "2a44fb7f17788a6bccde65f925f02507a44a8b4ba761c470f69128d8f8b1eae6",
+    "output/research/2026-10-23/intent-role-separation/evaluation/runs/irs-room-withdrawal--tracked--r2/steps.jsonl": "c9d5fb61067958923b7adcbc3ea3636ffe808e632dc0a46500ed134b42d90bce",
+    "output/research/2026-10-23/intent-role-separation/evaluation/runs/irs-shuttle-replacement--tracked--r1/steps.jsonl": "c43857294066e2cc96513128028a825c22d65f6ab2db7033162bb574cc2bc7de",
+    "output/research/2026-10-23/intent-role-separation/evaluation/runs/irs-shuttle-replacement--tracked--r2/steps.jsonl": "4ebef4d2265451c63e1ef4fc13796f1fe68f001bb2090184454b5c2400906621",
+    "output/research/2026-10-23/intent-role-separation/evaluation/runs/irs-unaccepted-assistant-proposal--tracked--r1/steps.jsonl": "acf5defdcaf92ecdd01821ff20e0fb96598d9bc6ef11417c501b23c6fab7f989",
+    "output/research/2026-10-23/intent-role-separation/evaluation/runs/irs-unaccepted-assistant-proposal--tracked--r2/steps.jsonl": "25cc8b6b03807324293ff4e403b2929b1f6d2b49402fc6de8aec5d72c7cb67dd",
+    "experiments/deep_conversation/agent.py": "4f3a83c53bce2748df44b73fd70d291ee79b0a92aa940fd164daed51b0c71409",
+    "experiments/deep_conversation/config.py": "7bbe081c57042975a5af79a04cdad8d73de7f77f0910fe8c48b742c284410ec3",
+    "experiments/deep_conversation/world.py": "ed82e7100133f157ad0bf0139c5fbf0c6362812e8418901d09c78a1b6da9117e",
+    "experiments/deep_conversation/run.py": "2edb03e94e83f02f90b6033b1b2d5df1481c4cbfb1bc225662c44e1fee65d5f7",
+    "experiments/deep_conversation/orchestration.py": "ddeef0c1e42bf335aa3c9b5e71408b39b99bd3806f0719451a3da8c338ea5ef5",
+    "experiments/deep_conversation/stage_acceptance.py": "0c0b3e24150d677ee9347cc9cd80a803e5f88c6dcfe2d11779cab0b49f97e864",
+    "experiments/deep_conversation/conclusion_review.py": "e694b5587305abec146b63f435d0089dd627f035a90de6b987f713cdef48db07",
+    "experiments/deep_conversation/answer_contract.py": "19afe190587e7e53e48afbff6ae097b57cc3e41a8b2df772006b5a520646ab70",
+    "experiments/deep_conversation/calculation_checks.py": "383016328ccf265604e1fb53a397baedc8263da9cab7140b592f1f5c6d5744ef",
+    "experiments/deep_conversation/numeric_provenance.py": "fcf2bce3aa6b5afeb297118a59bde41f22933767753cbf761c5dd9c98fd868cd",
+    "experiments/deep_conversation/evidence_handles.py": "e0c7e3602ecd6ced007c418b1e78e6bb66e6c63cae5cdc72d7590984e148c28f",
+    "experiments/deep_conversation/calculation_plan.py": "f2367241cb66635f42238ccd3a94e0672e44a4a5480c057bcc50fb9fc1fbce66",
+    "experiments/deep_conversation/selected_answer.py": "525c1427d1cb93489a409a970866bc6dd9e1cf4a1f23ad8837ec4f1401111c72",
+    "experiments/deep_conversation/agent_led.py": "a6ba6031473ad9347c09d781f9c699d091b3f3e0bc079d8205afc67d586cd7f5",
+    "experiments/deep_conversation/agent_led_tools.py": "b1aa54cdecce53f88deb69f53cbb0aff2c97f021fd2f52a0d5a0f97ba9e97dfd",
+    "experiments/deep_conversation/providers.py": "5506b24015c9c7ff3846ac83bdec5294a3dee716485b696911b848b07a0857ca",
+    "experiments/deep_conversation/local_runtime.py": "f5e8dfb1a128900dfcbdfeaec6add889760849e34e41d361b1f9f77beb2de7ea",
+    "experiments/deep_conversation/monitor_runtime.py": "7088b0606fe98f67cd399fa07d20b3ed8fd8cd196ae6dcd07469340a944e2560",
+    "experiments/deep_conversation/investigation_progress.py": "0798c2ff2a3c1e2ef9e630a1bca7f1ec1fcfcb44f5d7815c39717708d1ff1d84",
+    "experiments/deep_conversation/answer_delivery.py": "2626b37d4ec93d3dbe11497d4419de43c0de13e657f83c018abafecd4e4af8b9",
+    "experiments/deep_conversation/model_capture.py": "5f28201df25034f8b87238e41be2d7614ee82ec7e32f11464da842965545072d",
+    "experiments/deep_conversation/summary_attribution.py": "8a87b69fd1f2663b70b4ab1c3e9ef19015d5c885107a4ba655e4afb2d4a1fa8d",
+    "experiments/deep_conversation/source_authority.py": "2bf061a12143a50a1267baf40d570078deab8b2188b51c6e9fcb1fffc2347df4",
+    "experiments/deep_conversation/budget_policy.py": "f9f1e48e7b383c68304c8ec6d4f732d95c0c64c89b7acba1cf56078f89ff50bd",
+    "experiments/deep_conversation/card_updates.py": "41e5291038b8842a76476ac6983d071c61711f4a7f75df11cd032c624a204817",
+    "experiments/deep_conversation/budget_state_delivery.py": "a7852cf96ecd1d883653b90119b722f20e0068faa815aa22a8e3115e5e89f95d",
+    "experiments/deep_conversation/smoke_model.py": "f9b77ab30f903a0cb0b3726e81ba1c83fa1f300eb7a276b14c74291d61df41da",
+    "experiments/deep_conversation/requirements.lock.txt": "e92e2a948a0a3d411d6cb70a3915d2868ee7dc71b159e05b6366581640caef42",
+    "experiments/conversation_harness/runner.py": "fd451f5d50792212a28d8ac81d81d428cde789d1ba31222abc22b13d8ac3ee30",
+    "experiments/conversation_harness/state_baseline.py": "1a3b0310f596def92e1a4a6de008f4b1a288b05c3d4e6a50522929eb828cf4b7",
+    "experiments/deep_conversation/intention_state.py": "e028a604a93520801a0f752755d80b305afb1eebd8792ea0aeaaa3cd5c722f73",
+    "experiments/deep_conversation/intent_roles.py": "befc382472aabc55efbda043aae5d377e12cce92a56804c73e25994305674d68",
+    "experiments/deep_conversation/run_intent_roles.py": "ff24075d929f49d1ff96e381d6f7de177f7b8c9d9d8bc32b9b5a13389b5a5d8d",
+    "experiments/deep_conversation/test_intention_state.py": "b0bfa4b407ee899103991645f1eb3ed593f12d7394ffd111d4bc810ac873112c",
+    "experiments/deep_conversation/test_intent_roles.py": "f0c3329b0622d053e38e2575c9dbe61ba18abfa759e623c81c073a147315d18c",
+    "experiments/deep_conversation/test_run_intent_roles.py": "2a1439a46b6ad32909542fb56ce1c9a5a0dff5eb109fe6f9fc4bb96279ab041c",
+    "experiments/deep_conversation/INTENTION_ROLES.md": "fd525fce696a3d83bf56e5ae49a21223544980b0d66463cfb02c5371b486c23b",
+    "experiments/deep_conversation/score_intent_roles.py": "1d595a058c0bb81adb0365f22f89be28307fefc739b2f1b5976435f029f7ccb4",
+    "output/research/2026-10-23/intent-role-separation/PROTOCOL.md": "06597ac3505bc89881a4b8fdc0c47adb103efdc6d9f5e857e8882d373d52b345",
+    "output/research/2026-10-23/intent-role-separation/fixtures/cases.json": "61d9f5fa3d94937b181c45d065f0d012d240df30fb4211bf57f415a53560ba7a"
+  },
+  "all_inputs_unchanged_after": true,
+  "recorded_replay": {
+    "runs": [
+      {
+        "run_id": "irs-combined-workshop-change--tracked--r1",
+        "steps_reconstructed": 18,
+        "tracker_proposals_replayed": 8
+      },
+      {
+        "run_id": "irs-combined-workshop-change--tracked--r2",
+        "steps_reconstructed": 18,
+        "tracker_proposals_replayed": 8
+      },
+      {
+        "run_id": "irs-key-restoration--tracked--r1",
+        "steps_reconstructed": 18,
+        "tracker_proposals_replayed": 3
+      },
+      {
+        "run_id": "irs-key-restoration--tracked--r2",
+        "steps_reconstructed": 18,
+        "tracker_proposals_replayed": 3
+      },
+      {
+        "run_id": "irs-late-obsolete-evidence--tracked--r1",
+        "steps_reconstructed": 18,
+        "tracker_proposals_replayed": 3
+      },
+      {
+        "run_id": "irs-late-obsolete-evidence--tracked--r2",
+        "steps_reconstructed": 18,
+        "tracker_proposals_replayed": 3
+      },
+      {
+        "run_id": "irs-multiple-request-owners--tracked--r1",
+        "steps_reconstructed": 18,
+        "tracker_proposals_replayed": 8
+      },
+      {
+        "run_id": "irs-multiple-request-owners--tracked--r2",
+        "steps_reconstructed": 18,
+        "tracker_proposals_replayed": 8
+      },
+      {
+        "run_id": "irs-practice-no-change--tracked--r1",
+        "steps_reconstructed": 18,
+        "tracker_proposals_replayed": 3
+      },
+      {
+        "run_id": "irs-practice-no-change--tracked--r2",
+        "steps_reconstructed": 18,
+        "tracker_proposals_replayed": 3
+      },
+      {
+        "run_id": "irs-room-withdrawal--tracked--r1",
+        "steps_reconstructed": 18,
+        "tracker_proposals_replayed": 3
+      },
+      {
+        "run_id": "irs-room-withdrawal--tracked--r2",
+        "steps_reconstructed": 18,
+        "tracker_proposals_replayed": 3
+      },
+      {
+        "run_id": "irs-shuttle-replacement--tracked--r1",
+        "steps_reconstructed": 18,
+        "tracker_proposals_replayed": 3
+      },
+      {
+        "run_id": "irs-shuttle-replacement--tracked--r2",
+        "steps_reconstructed": 18,
+        "tracker_proposals_replayed": 3
+      },
+      {
+        "run_id": "irs-unaccepted-assistant-proposal--tracked--r1",
+        "steps_reconstructed": 18,
+        "tracker_proposals_replayed": 3
+      },
+      {
+        "run_id": "irs-unaccepted-assistant-proposal--tracked--r2",
+        "steps_reconstructed": 18,
+        "tracker_proposals_replayed": 4
+      }
+    ],
+    "run_count": 16,
+    "pre_call_snapshots_reconstructed": 288,
+    "tracker_proposals_replayed": 69,
+    "rejected_proposals": 25,
+    "failure_classes": {
+      "update_withdrawn_intent": 9,
+      "A proposed status must be active or uncertain.": 3,
+      "duplicate_target_in_one_patch": 12,
+      "unregistered_or_future_source_seq": 1
+    },
+    "affected_runs": [
+      "irs-combined-workshop-change--tracked--r1",
+      "irs-combined-workshop-change--tracked--r2",
+      "irs-multiple-request-owners--tracked--r1",
+      "irs-multiple-request-owners--tracked--r2",
+      "irs-unaccepted-assistant-proposal--tracked--r2"
+    ],
+    "affected_run_stages": [
+      "irs-combined-workshop-change--tracked--r1::stage-3",
+      "irs-combined-workshop-change--tracked--r2::stage-3",
+      "irs-multiple-request-owners--tracked--r1::stage-2",
+      "irs-multiple-request-owners--tracked--r2::stage-2",
+      "irs-unaccepted-assistant-proposal--tracked--r2::stage-2"
+    ],
+    "all_failed_patches_rolled_back": true,
+    "mismatches": [],
+    "interpretation": "Replays recorded proposals through current validation. No model rerun and no new quality score."
+  },
+  "scripted_results": [
+    {
+      "scenario": "repeated_invalid",
+      "restart_after_third_rejection": false,
+      "stages": [
+        {
+          "stage": 1,
+          "roles": {
+            "tracker": 1,
+            "work": 3,
+            "chat": 2
+          },
+          "errors": 0
+        },
+        {
+          "stage": 2,
+          "roles": {
+            "tracker": 1,
+            "chat": 3,
+            "work": 2
+          },
+          "errors": 0
+        },
+        {
+          "stage": 3,
+          "roles": {
+            "tracker": 6
+          },
+          "errors": 6
+        }
+      ],
+      "calls": 18,
+      "synthetic_callback_usage_not_real_tokens": {
+        "input_tokens": 198,
+        "output_tokens": 54,
+        "total_tokens": 252
+      },
+      "error_count": 6,
+      "error_types": {
+        "A withdrawn intention needs an explicit reopen operation.": 6
+      },
+      "all_rejected_patches_preserved_prestate": true,
+      "retry_pairs": [
+        {
+          "from_step": 12,
+          "to_step": 13,
+          "same_packet_except_at_ms": true,
+          "rejection_message_in_next_messages": false,
+          "next_input_keys": [
+            "active_cards",
+            "at_ms",
+            "context_revision",
+            "conversation",
+            "events",
+            "intention_state",
+            "notes",
+            "pending_jobs",
+            "tool_receipts"
+          ]
+        },
+        {
+          "from_step": 13,
+          "to_step": 14,
+          "same_packet_except_at_ms": true,
+          "rejection_message_in_next_messages": false,
+          "next_input_keys": [
+            "active_cards",
+            "at_ms",
+            "context_revision",
+            "conversation",
+            "events",
+            "intention_state",
+            "notes",
+            "pending_jobs",
+            "tool_receipts"
+          ]
+        },
+        {
+          "from_step": 14,
+          "to_step": 15,
+          "same_packet_except_at_ms": true,
+          "rejection_message_in_next_messages": false,
+          "next_input_keys": [
+            "active_cards",
+            "at_ms",
+            "context_revision",
+            "conversation",
+            "events",
+            "intention_state",
+            "notes",
+            "pending_jobs",
+            "tool_receipts"
+          ]
+        },
+        {
+          "from_step": 15,
+          "to_step": 16,
+          "same_packet_except_at_ms": true,
+          "rejection_message_in_next_messages": false,
+          "next_input_keys": [
+            "active_cards",
+            "at_ms",
+            "context_revision",
+            "conversation",
+            "events",
+            "intention_state",
+            "notes",
+            "pending_jobs",
+            "tool_receipts"
+          ]
+        },
+        {
+          "from_step": 16,
+          "to_step": 17,
+          "same_packet_except_at_ms": true,
+          "rejection_message_in_next_messages": false,
+          "next_input_keys": [
+            "active_cards",
+            "at_ms",
+            "context_revision",
+            "conversation",
+            "events",
+            "intention_state",
+            "notes",
+            "pending_jobs",
+            "tool_receipts"
+          ]
+        }
+      ],
+      "stopped": {
+        "status": "stopped",
+        "reason": "budget_exhausted",
+        "model_called": false
+      },
+      "final_intention_state": {
+        "version": 2,
+        "processed_event_seq": 14,
+        "observed_event_seq": 27,
+        "intents": [
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "intent-role-step-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "Ada",
+                  "status": "active",
+                  "text": "Explain Beacon desktop offline support, using a free option."
+                },
+                "version": 1
+              },
+              {
+                "op": "withdraw",
+                "patch_id": "intent-role-step-6",
+                "source_seqs": [
+                  14
+                ],
+                "state": {
+                  "owner": "Ada",
+                  "status": "withdrawn",
+                  "text": "Explain Beacon desktop offline support, using a free option."
+                },
+                "version": 2
+              }
+            ],
+            "intent_id": "request",
+            "owner": "Ada",
+            "source_seqs": [
+              14
+            ],
+            "status": "withdrawn",
+            "text": "Explain Beacon desktop offline support, using a free option.",
+            "updated_version": 2
+          }
+        ],
+        "receipts": []
+      },
+      "actor_calls": 10,
+      "actual_tools_executed": 0,
+      "path": "output/research/2026-10-23/intent-role-diagnostics/tracker/run-01/scripted/repeated_invalid"
+    },
+    {
+      "scenario": "valid_update",
+      "restart_after_third_rejection": false,
+      "stages": [
+        {
+          "stage": 1,
+          "roles": {
+            "tracker": 1,
+            "work": 3,
+            "chat": 2
+          },
+          "errors": 0
+        },
+        {
+          "stage": 2,
+          "roles": {
+            "tracker": 1,
+            "chat": 3,
+            "work": 2
+          },
+          "errors": 0
+        },
+        {
+          "stage": 3,
+          "roles": {
+            "tracker": 1,
+            "work": 3,
+            "chat": 2
+          },
+          "errors": 0
+        }
+      ],
+      "calls": 18,
+      "synthetic_callback_usage_not_real_tokens": {
+        "input_tokens": 198,
+        "output_tokens": 54,
+        "total_tokens": 252
+      },
+      "error_count": 0,
+      "error_types": {},
+      "all_rejected_patches_preserved_prestate": null,
+      "retry_pairs": [],
+      "stopped": {
+        "status": "stopped",
+        "reason": "budget_exhausted",
+        "model_called": false
+      },
+      "final_intention_state": {
+        "version": 3,
+        "processed_event_seq": 27,
+        "observed_event_seq": 27,
+        "intents": [
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "intent-role-step-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "Ada",
+                  "status": "active",
+                  "text": "Explain Beacon desktop offline support, using a free option."
+                },
+                "version": 1
+              },
+              {
+                "op": "update",
+                "patch_id": "intent-role-step-6",
+                "source_seqs": [
+                  14
+                ],
+                "state": {
+                  "owner": "Ada",
+                  "status": "active",
+                  "text": "Explain Beacon mobile offline support, using a free option."
+                },
+                "version": 2
+              },
+              {
+                "op": "update",
+                "patch_id": "intent-role-step-12",
+                "source_seqs": [
+                  27
+                ],
+                "state": {
+                  "owner": "Ada",
+                  "status": "active",
+                  "text": "Explain Beacon mobile offline support and export, using a free option."
+                },
+                "version": 3
+              }
+            ],
+            "intent_id": "request",
+            "owner": "Ada",
+            "source_seqs": [
+              27
+            ],
+            "status": "active",
+            "text": "Explain Beacon mobile offline support and export, using a free option.",
+            "updated_version": 3
+          }
+        ],
+        "receipts": []
+      },
+      "actor_calls": 15,
+      "actual_tools_executed": 0,
+      "path": "output/research/2026-10-23/intent-role-diagnostics/tracker/run-01/scripted/valid_update"
+    },
+    {
+      "scenario": "explicit_reopen",
+      "restart_after_third_rejection": false,
+      "stages": [
+        {
+          "stage": 1,
+          "roles": {
+            "tracker": 1,
+            "work": 3,
+            "chat": 2
+          },
+          "errors": 0
+        },
+        {
+          "stage": 2,
+          "roles": {
+            "tracker": 1,
+            "chat": 3,
+            "work": 2
+          },
+          "errors": 0
+        },
+        {
+          "stage": 3,
+          "roles": {
+            "tracker": 1,
+            "work": 3,
+            "chat": 2
+          },
+          "errors": 0
+        }
+      ],
+      "calls": 18,
+      "synthetic_callback_usage_not_real_tokens": {
+        "input_tokens": 198,
+        "output_tokens": 54,
+        "total_tokens": 252
+      },
+      "error_count": 0,
+      "error_types": {},
+      "all_rejected_patches_preserved_prestate": null,
+      "retry_pairs": [],
+      "stopped": {
+        "status": "stopped",
+        "reason": "budget_exhausted",
+        "model_called": false
+      },
+      "final_intention_state": {
+        "version": 3,
+        "processed_event_seq": 27,
+        "observed_event_seq": 27,
+        "intents": [
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "intent-role-step-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "Ada",
+                  "status": "active",
+                  "text": "Explain Beacon desktop offline support, using a free option."
+                },
+                "version": 1
+              },
+              {
+                "op": "withdraw",
+                "patch_id": "intent-role-step-6",
+                "source_seqs": [
+                  14
+                ],
+                "state": {
+                  "owner": "Ada",
+                  "status": "withdrawn",
+                  "text": "Explain Beacon desktop offline support, using a free option."
+                },
+                "version": 2
+              },
+              {
+                "op": "reopen",
+                "patch_id": "intent-role-step-12",
+                "source_seqs": [
+                  27
+                ],
+                "state": {
+                  "owner": "Ada",
+                  "status": "active",
+                  "text": "Explain Beacon desktop offline support, using a free option."
+                },
+                "version": 3
+              }
+            ],
+            "intent_id": "request",
+            "owner": "Ada",
+            "source_seqs": [
+              27
+            ],
+            "status": "active",
+            "text": "Explain Beacon desktop offline support, using a free option.",
+            "updated_version": 3
+          }
+        ],
+        "receipts": []
+      },
+      "actor_calls": 15,
+      "actual_tools_executed": 0,
+      "path": "output/research/2026-10-23/intent-role-diagnostics/tracker/run-01/scripted/explicit_reopen"
+    },
+    {
+      "scenario": "repeated_invalid",
+      "restart_after_third_rejection": true,
+      "stages": [
+        {
+          "stage": 1,
+          "roles": {
+            "tracker": 1,
+            "work": 3,
+            "chat": 2
+          },
+          "errors": 0
+        },
+        {
+          "stage": 2,
+          "roles": {
+            "tracker": 1,
+            "chat": 3,
+            "work": 2
+          },
+          "errors": 0
+        },
+        {
+          "stage": 3,
+          "roles": {
+            "tracker": 6
+          },
+          "errors": 6
+        }
+      ],
+      "calls": 18,
+      "synthetic_callback_usage_not_real_tokens": {
+        "input_tokens": 198,
+        "output_tokens": 54,
+        "total_tokens": 252
+      },
+      "error_count": 6,
+      "error_types": {
+        "A withdrawn intention needs an explicit reopen operation.": 6
+      },
+      "all_rejected_patches_preserved_prestate": true,
+      "retry_pairs": [
+        {
+          "from_step": 12,
+          "to_step": 13,
+          "same_packet_except_at_ms": true,
+          "rejection_message_in_next_messages": false,
+          "next_input_keys": [
+            "active_cards",
+            "at_ms",
+            "context_revision",
+            "conversation",
+            "events",
+            "intention_state",
+            "notes",
+            "pending_jobs",
+            "tool_receipts"
+          ]
+        },
+        {
+          "from_step": 13,
+          "to_step": 14,
+          "same_packet_except_at_ms": true,
+          "rejection_message_in_next_messages": false,
+          "next_input_keys": [
+            "active_cards",
+            "at_ms",
+            "context_revision",
+            "conversation",
+            "events",
+            "intention_state",
+            "notes",
+            "pending_jobs",
+            "tool_receipts"
+          ]
+        },
+        {
+          "from_step": 14,
+          "to_step": 15,
+          "same_packet_except_at_ms": true,
+          "rejection_message_in_next_messages": false,
+          "next_input_keys": [
+            "active_cards",
+            "at_ms",
+            "context_revision",
+            "conversation",
+            "events",
+            "intention_state",
+            "notes",
+            "pending_jobs",
+            "tool_receipts"
+          ]
+        },
+        {
+          "from_step": 15,
+          "to_step": 16,
+          "same_packet_except_at_ms": true,
+          "rejection_message_in_next_messages": false,
+          "next_input_keys": [
+            "active_cards",
+            "at_ms",
+            "context_revision",
+            "conversation",
+            "events",
+            "intention_state",
+            "notes",
+            "pending_jobs",
+            "tool_receipts"
+          ]
+        },
+        {
+          "from_step": 16,
+          "to_step": 17,
+          "same_packet_except_at_ms": true,
+          "rejection_message_in_next_messages": false,
+          "next_input_keys": [
+            "active_cards",
+            "at_ms",
+            "context_revision",
+            "conversation",
+            "events",
+            "intention_state",
+            "notes",
+            "pending_jobs",
+            "tool_receipts"
+          ]
+        }
+      ],
+      "stopped": {
+        "status": "stopped",
+        "reason": "budget_exhausted",
+        "model_called": false
+      },
+      "final_intention_state": {
+        "version": 2,
+        "processed_event_seq": 14,
+        "observed_event_seq": 27,
+        "intents": [
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "intent-role-step-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "Ada",
+                  "status": "active",
+                  "text": "Explain Beacon desktop offline support, using a free option."
+                },
+                "version": 1
+              },
+              {
+                "op": "withdraw",
+                "patch_id": "intent-role-step-6",
+                "source_seqs": [
+                  14
+                ],
+                "state": {
+                  "owner": "Ada",
+                  "status": "withdrawn",
+                  "text": "Explain Beacon desktop offline support, using a free option."
+                },
+                "version": 2
+              }
+            ],
+            "intent_id": "request",
+            "owner": "Ada",
+            "source_seqs": [
+              14
+            ],
+            "status": "withdrawn",
+            "text": "Explain Beacon desktop offline support, using a free option.",
+            "updated_version": 2
+          }
+        ],
+        "receipts": []
+      },
+      "actor_calls": 10,
+      "actual_tools_executed": 0,
+      "path": "output/research/2026-10-23/intent-role-diagnostics/tracker/run-01/scripted/repeated_invalid-restart"
+    }
+  ],
+  "properties": [
+    {
+      "id": "recorded_trace_replay",
+      "expected": "All recorded pre-call snapshots, commits and rejections reproduce.",
+      "status": "pass"
+    },
+    {
+      "id": "rejected_patch_atomicity",
+      "expected": "Invalid proposal leaves durable intent and cursor unchanged.",
+      "status": "pass"
+    },
+    {
+      "id": "rejection_feedback_visible",
+      "expected": "Next tracker request receives the actual preceding validation rejection.",
+      "status": "fail",
+      "classification": "diagnostic recovery requirement; not an existing implemented contract"
+    },
+    {
+      "id": "actor_opportunity_after_persistent_tracker_failure",
+      "expected": "Persistent invalid tracker output does not consume every one of the six stage calls.",
+      "status": "fail",
+      "classification": "diagnostic recovery requirement; current policy intentionally fails closed but has no bounded fallback"
+    },
+    {
+      "id": "global_budget_accounting",
+      "expected": "All rejected scripted calls count and the nineteenth call is stopped.",
+      "status": "pass"
+    },
+    {
+      "id": "valid_update_and_explicit_reopen_controls",
+      "expected": "Valid transitions commit, permitting five actor calls per stage.",
+      "status": "pass"
+    },
+    {
+      "id": "restart_does_not_recover_or_forgive_failed_state",
+      "expected": "Restart preserves the cursor and reproduced six-rejection starvation pattern.",
+      "status": "pass",
+      "interpretation": "Reproduced persistence; not successful error recovery."
+    }
+  ],
+  "limitations": [
+    "Deterministic scripted model outputs do not measure model quality or a repair benefit.",
+    "Scripted usage numbers are fixed callback fixtures, not measured tokens or latency.",
+    "Actor calls return private text; their availability is measured, not useful answer delivery.",
+    "Observed patch replay tests structure and exact rollback, not whether valid intentions are semantically correct.",
+    "No retry cap, feedback, fallback or model change was implemented.",
+    "Recovery expectations are diagnostic desired properties; failing them does not mean the storage guard should accept invalid patches."
+  ]
+}

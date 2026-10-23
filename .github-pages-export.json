@@ -45,8 +45,8 @@
     },
     {
       "path": "data.js",
-      "sha256": "dd4d55380c91e940b840d9600a11f227057ca6c0ad11aa8197f6701aa19f0d5a",
-      "bytes": 198285
+      "sha256": "619ebf327448a0b91e3a12d917d4eb899250601013ba091af9b5edcb99d2e830",
+      "bytes": 198466
     },
     {
       "path": "data/analyze_harness_latency.py",
@@ -212,6 +212,81 @@
       "path": "data/harness-run-lab-validation.json",
       "sha256": "ebea99200a66ec95df008248499ef12b05c687548091f1eeef620373cb938ece",
       "bytes": 22381
+    },
+    {
+      "path": "data/intent-role-diagnostics-validation.json",
+      "sha256": "21a5e407efe0438247f6c716fade9a2dfb5b2e6aa6d263bf80e052af72cc02c8",
+      "bytes": 9426
+    },
+    {
+      "path": "data/intent-role-diagnostics/REPORT.md",
+      "sha256": "fe778d5dd945beda5c6d2845482302e7221ddad908ba721ef46262034ef82c85",
+      "bytes": 9651
+    },
+    {
+      "path": "data/intent-role-diagnostics/REVIEW.json",
+      "sha256": "4be848c59c81afedf6f2ef5a9f31e8ea16ac5bf54ac3b33da003b5923ab35872",
+      "bytes": 11618
+    },
+    {
+      "path": "data/intent-role-diagnostics/SUMMARY.json",
+      "sha256": "0b51a6e4e1222a4c50e522e93ca603a295f6cd15f7a045cf57766e9b27bc3f5a",
+      "bytes": 11230
+    },
+    {
+      "path": "data/intent-role-diagnostics/delivery/delivery-audit.json",
+      "sha256": "b4efdcd95662db83a3209e83956685192562a429ebcacde64c48b12418007e5e",
+      "bytes": 1148577
+    },
+    {
+      "path": "data/intent-role-diagnostics/delivery/publish-guard-diagnostic.json",
+      "sha256": "301ea268c8e02b79154f2ee5334d399d86426835d7068543339f1a01e808f70b",
+      "bytes": 84478
+    },
+    {
+      "path": "data/intent-role-diagnostics/evidence.zip",
+      "sha256": "32e6d9566b1f989195dfc023a36e312f281ac61e97c277a8d769784914def613",
+      "bytes": 286605
+    },
+    {
+      "path": "data/intent-role-diagnostics/export-index.json",
+      "sha256": "6b5f5d850128a32cc0c5326440621bf68658c3221acc9e12923f98de34fd2ddf",
+      "bytes": 15569
+    },
+    {
+      "path": "data/intent-role-diagnostics/handoff/results.json",
+      "sha256": "7d59202ac4a1e531a8ef2b26ea0757eef887b67a23b069d7fe6fa81d40668c7d",
+      "bytes": 15085
+    },
+    {
+      "path": "data/intent-role-diagnostics/handoff/source-hashes.json",
+      "sha256": "a442ca238714b9ad10d6435fdf990e02b75f4efae5d627bb4d69762aed430c24",
+      "bytes": 2119
+    },
+    {
+      "path": "data/intent-role-diagnostics/handoff/trace-evidence.json",
+      "sha256": "2069d27918f6999b7b8db47d2c0c90b829460c164365fee588492902ce4c1556",
+      "bytes": 5172
+    },
+    {
+      "path": "data/intent-role-diagnostics/source-integrity.json",
+      "sha256": "b6f910dc4d5e1ddcbf286088a1f981ffac8302f0819922abb5db6860c9d22235",
+      "bytes": 15500
+    },
+    {
+      "path": "data/intent-role-diagnostics/tracker/run-01/diagnosis.json",
+      "sha256": "6eb7c91dff177fdc40b61f6f56bb8e7b741fa2c308498a214700506e3cd9e415",
+      "bytes": 31435
+    },
+    {
+      "path": "data/intent-role-diagnostics/tracker/run-01/recorded-errors.json",
+      "sha256": "6db52d4e98d944920c84b363f20c582c44dc63559bf7817afc7c64d40b0086d1",
+      "bytes": 278614
+    },
+    {
+      "path": "data/intent-role-diagnostics/validation.json",
+      "sha256": "21a5e407efe0438247f6c716fade9a2dfb5b2e6aa6d263bf80e052af72cc02c8",
+      "bytes": 9426
     },
     {
       "path": "data/intent-role-separation-validation.json",
@@ -540,8 +615,8 @@
     },
     {
       "path": "data/research-record.json",
-      "sha256": "b0d0151a602b3e619842a7816f21eee0c6a5a7591ffe9afd3b434eb26d81f788",
-      "bytes": 291790
+      "sha256": "655dc9dc675c2dedd2464ed501f6440165d1cbb6110cc2e2e09bfb2c05e19b61",
+      "bytes": 292018
     },
     {
       "path": "data/results.csv",
@@ -840,8 +915,8 @@
     },
     {
       "path": "intent-role-separation.html",
-      "sha256": "102a9ba27a4a8b3d6f0f79cb7636b7e4c93d0dfce9f07e63b76e649a2b76d24f",
-      "bytes": 9219
+      "sha256": "55a7b0c35c1f75309ce38b7dc89acc93fba569d7359c53278c0e7e7a9317d3c6",
+      "bytes": 13596
     },
     {
       "path": "intention-literature.css",

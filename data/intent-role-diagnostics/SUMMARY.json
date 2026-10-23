@@ -1,0 +1,264 @@
+{
+  "id": "intent-role-diagnostics",
+  "date": "2026-10-23",
+  "timezone": "America/Halifax",
+  "kind": "scripted_engineering_diagnostics_and_original_trace_audit",
+  "status": "completed_with_findings",
+  "original_trajectories": 48,
+  "original_final_failures": 10,
+  "original_failures_by_condition": {
+    "tracked": 4,
+    "unified": 4,
+    "split": 2
+  },
+  "original_captured_model_calls_reconciled": 864,
+  "original_tracker_proposals_replayed": 69,
+  "original_tracker_proposals_accepted": 44,
+  "original_tracker_proposals_rejected": 25,
+  "scripted_scenarios": 14,
+  "scripted_callback_invocations": 82,
+  "new_real_model_calls": 0,
+  "repairs_implemented": false,
+  "original_semantic_labels_changed": false,
+  "original_frozen_files_verified": 40,
+  "all_failed_runs_final_stage_inputs_contain_latest_raw_request_and_full_source": 10,
+  "components": {
+    "tracker": {
+      "scenario_count": 4,
+      "scripted_callback_invocations": 72,
+      "real_model_calls": 0,
+      "control_and_existing_behavior_properties_passed": 5,
+      "desired_recovery_properties_failed": 2,
+      "diagnostic_exit_code": 1,
+      "status": "completed_with_recovery_properties_failing",
+      "evidence": "tracker/run-01/diagnosis.json",
+      "properties": [
+        {
+          "id": "recorded_trace_replay",
+          "expected": "All recorded pre-call snapshots, commits and rejections reproduce.",
+          "status": "pass"
+        },
+        {
+          "id": "rejected_patch_atomicity",
+          "expected": "Invalid proposal leaves durable intent and cursor unchanged.",
+          "status": "pass"
+        },
+        {
+          "id": "rejection_feedback_visible",
+          "expected": "Next tracker request receives the actual preceding validation rejection.",
+          "status": "fail",
+          "classification": "diagnostic recovery requirement; not an existing implemented contract"
+        },
+        {
+          "id": "actor_opportunity_after_persistent_tracker_failure",
+          "expected": "Persistent invalid tracker output does not consume every one of the six stage calls.",
+          "status": "fail",
+          "classification": "diagnostic recovery requirement; current policy intentionally fails closed but has no bounded fallback"
+        },
+        {
+          "id": "global_budget_accounting",
+          "expected": "All rejected scripted calls count and the nineteenth call is stopped.",
+          "status": "pass"
+        },
+        {
+          "id": "valid_update_and_explicit_reopen_controls",
+          "expected": "Valid transitions commit, permitting five actor calls per stage.",
+          "status": "pass"
+        },
+        {
+          "id": "restart_does_not_recover_or_forgive_failed_state",
+          "expected": "Restart preserves the cursor and reproduced six-rejection starvation pattern.",
+          "status": "pass",
+          "interpretation": "Reproduced persistence; not successful error recovery."
+        }
+      ]
+    },
+    "handoff": {
+      "scenario_count": 4,
+      "scripted_callback_invocations": 10,
+      "real_model_calls": 0,
+      "controls_and_invariants_passed": 7,
+      "desired_interface_properties_failed": 1,
+      "diagnostic_exit_code": 1,
+      "status": "completed_with_desired_interface_failure",
+      "evidence": "handoff/results.json",
+      "checks": [
+        {
+          "name": "useful_private_work_conclusion_survives_role_boundary_without_explicit_tool",
+          "status": "fail",
+          "kind": "desired_interface_expectation"
+        },
+        {
+          "name": "save_notes_makes_work_conclusion_visible_to_chat",
+          "status": "pass",
+          "kind": "positive_control"
+        },
+        {
+          "name": "raw_document_available_to_both_roles_in_both_handoff_arms",
+          "status": "pass",
+          "kind": "isolation_control"
+        },
+        {
+          "name": "notes_control_uses_native_persisted_save_notes",
+          "status": "pass",
+          "kind": "positive_control"
+        },
+        {
+          "name": "notes_control_delivers_through_native_publish_card",
+          "status": "pass",
+          "kind": "positive_control"
+        },
+        {
+          "name": "rejected_hallucinated_proposal_is_not_delivered",
+          "status": "pass",
+          "kind": "delivery_invariant"
+        },
+        {
+          "name": "publish_guard_does_not_validate_factual_truth",
+          "status": "pass",
+          "kind": "scope_control_not_quality_pass"
+        },
+        {
+          "name": "all_diagnostics_use_same_instance_and_complete_with_no_network",
+          "status": "pass",
+          "kind": "execution_check"
+        }
+      ]
+    },
+    "direct_publication": {
+      "scenario_count": 6,
+      "scripted_callback_invocations": 0,
+      "real_model_calls": 0,
+      "observed_behavior_assertions_matched": 6,
+      "diagnostic_exit_code": 0,
+      "status": "completed_current_boundary_reproduced",
+      "evidence": "delivery/publish-guard-diagnostic.json",
+      "quality_success_count": null,
+      "quality_success_count_reason": "Scripted incorrect drafts being accepted is a reproduced boundary finding, not a quality success.",
+      "outcomes": [
+        {
+          "scenario": "workshop_missing_price",
+          "actual_status": "displayed",
+          "assertion": "passed"
+        },
+        {
+          "scenario": "workshop_complete_control",
+          "actual_status": "displayed",
+          "assertion": "passed"
+        },
+        {
+          "scenario": "room_wrong_selection",
+          "actual_status": "displayed",
+          "assertion": "passed"
+        },
+        {
+          "scenario": "demo_unrequested_recording",
+          "actual_status": "displayed",
+          "assertion": "passed"
+        },
+        {
+          "scenario": "blank_control",
+          "actual_status": "not_published",
+          "assertion": "passed"
+        },
+        {
+          "scenario": "stale_observation_control",
+          "actual_status": "new_observations",
+          "assertion": "passed"
+        }
+      ]
+    }
+  },
+  "desired_capability_failures": [
+    "rejection_feedback_visible",
+    "actor_opportunity_after_persistent_tracker_failure",
+    "useful_private_work_conclusion_survives_role_boundary_without_explicit_tool"
+  ],
+  "aggregate_pass_rate": null,
+  "aggregate_pass_rate_reason": "Scenarios, properties, trace checks and original quality endpoints are different overlapping denominators.",
+  "findings": [
+    {
+      "id": "tracker_feedback_and_recovery",
+      "title": "Tracker rejection feedback and bounded recovery are missing",
+      "demonstrated": "Rejected patches roll back, but the next input lacks the rejection and persistent failures consume all six stage calls.",
+      "source_locations": [
+        "experiments/deep_conversation/intent_roles.py:173",
+        "experiments/deep_conversation/intent_roles.py:246",
+        "experiments/deep_conversation/intent_roles.py:256",
+        "experiments/deep_conversation/intent_roles.py:311"
+      ],
+      "evidence": "tracker/run-01/diagnosis.json",
+      "proposed_only": "Precise validation feedback and a bounded recovery path preserving atomic guards."
+    },
+    {
+      "id": "explicit_work_handoff",
+      "title": "Private work conclusions are not transported across role calls",
+      "demonstrated": "Fresh two-message inputs omit previous private work prose. An actual save_notes control transports the same conclusion and permits publication.",
+      "source_locations": [
+        "experiments/deep_conversation/intent_roles.py:261",
+        "experiments/deep_conversation/intent_roles.py:299",
+        "experiments/deep_conversation/agent.py:246",
+        "experiments/deep_conversation/world.py:229"
+      ],
+      "evidence": "handoff/results.json",
+      "proposed_only": "Explicit versioned work results with sources and acknowledgment by chat."
+    },
+    {
+      "id": "computed_vs_delivered",
+      "title": "A correct private answer can remain undelivered",
+      "demonstrated": "The original multiple-owner unified repeat 2 states the correct arrival window in all six final private answers but never calls publish_card.",
+      "source_locations": [
+        "experiments/deep_conversation/intent_roles.py:38",
+        "experiments/deep_conversation/intent_roles.py:291"
+      ],
+      "evidence": "delivery/delivery-audit.json",
+      "proposed_only": "Record computed and delivered states separately and evaluate the actual display."
+    },
+    {
+      "id": "publication_semantic_boundary",
+      "title": "Publication guards do not enforce answer coverage or scope",
+      "demonstrated": "Scripted incomplete, wrong-choice and out-of-scope drafts were displayed; blank and stale-observation controls were rejected.",
+      "source_locations": [
+        "experiments/deep_conversation/agent_led_tools.py:222",
+        "experiments/deep_conversation/world.py:413",
+        "experiments/deep_conversation/world.py:435"
+      ],
+      "evidence": "delivery/publish-guard-diagnostic.json",
+      "proposed_only": "Test coverage against the current request without treating citation validity or freshness as semantic correctness."
+    }
+  ],
+  "architecture_proposal": {
+    "status": "proposed_only",
+    "model": "same base model",
+    "roles": [
+      "independent persisted intention tracker",
+      "work",
+      "chat"
+    ],
+    "work_result": "Explicit source-linked result tied to the current intention version",
+    "completion_state": "Distinguish computed content from delivered content",
+    "domain_expert_or_lora_required": false
+  },
+  "limitations": [
+    "No new real model inference, repair, training, LoRA, default Lab change or new model-quality comparison.",
+    "Scripted callbacks are deterministic test doubles. Their usage values are synthetic and are not measured inference tokens or costs.",
+    "Original labels are reused; trace string presence is not semantic rescoring. Full source and raw request availability does not establish attention or comprehension.",
+    "The original pilot has eight authored families with correlated repeats, not 48 independent users.",
+    "The three failed desired capabilities are diagnostic expectations, distinct from the current documented fail-closed and private-prose contracts.",
+    "Semantic errors being accepted by a current publication guard are not quality passes.",
+    "The native optional AnswerDelivery node exists but is not used by this experimental IntentRoleSession path; its ability to repair these cases was not tested.",
+    "Workshop price is explicit in the raw user request only in stage 3; earlier gold wording is not treated as an earlier user requirement.",
+    "Observed gaps do not establish the causal quality benefit of any proposed fix. No ASR, live-user or long-conversation benefit was evaluated.",
+    "Client model captures do not inspect raw HTTP or model-server internals."
+  ],
+  "evidence": [
+    "tracker/run-01/diagnosis.json",
+    "tracker/run-01/recorded-errors.json",
+    "handoff/results.json",
+    "handoff/trace-evidence.json",
+    "delivery/delivery-audit.json",
+    "delivery/publish-guard-diagnostic.json",
+    "source-integrity.json"
+  ],
+  "report": "REPORT.md"
+}

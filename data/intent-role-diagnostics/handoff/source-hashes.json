@@ -1,0 +1,16 @@
+{
+  "experiments/deep_conversation/intent_roles.py": "befc382472aabc55efbda043aae5d377e12cce92a56804c73e25994305674d68",
+  "experiments/deep_conversation/world.py": "ed82e7100133f157ad0bf0139c5fbf0c6362812e8418901d09c78a1b6da9117e",
+  "experiments/deep_conversation/agent_led_tools.py": "b1aa54cdecce53f88deb69f53cbb0aff2c97f021fd2f52a0d5a0f97ba9e97dfd",
+  "experiments/deep_conversation/agent.py": "4f3a83c53bce2748df44b73fd70d291ee79b0a92aa940fd164daed51b0c71409",
+  "experiments/deep_conversation/config.py": "7bbe081c57042975a5af79a04cdad8d73de7f77f0910fe8c48b742c284410ec3",
+  "experiments/deep_conversation/test_intent_roles.py": "f0c3329b0622d053e38e2575c9dbe61ba18abfa759e623c81c073a147315d18c",
+  "experiments/conversation_harness/runner.py": "fd451f5d50792212a28d8ac81d81d428cde789d1ba31222abc22b13d8ac3ee30",
+  "output/research/2026-10-23/intent-role-separation/evaluation/runs/irs-room-withdrawal--tracked--r2/steps.jsonl": "c9d5fb61067958923b7adcbc3ea3636ffe808e632dc0a46500ed134b42d90bce",
+  "output/research/2026-10-23/intent-role-separation/evaluation/runs/irs-room-withdrawal--tracked--r2/result.json": "f9d6e6ada164a6e46594e1fd9b999073f7fc8a14dc9ec72ba8d2f22c84227ed4",
+  "output/research/2026-10-23/intent-role-separation/evaluation/runs/irs-room-withdrawal--tracked--r2/execution.json": "3a1a22e70f6b1765a45ea9a129c3ca654fb5513d66de32ceafc528ec132819e2",
+  "output/research/2026-10-23/intent-role-separation/evaluation/runs/irs-unaccepted-assistant-proposal--split--r2/steps.jsonl": "841fcc10dfc1ef3d702c9229848a1817cdc2f8eb6caff6cbe82eee058fa09aa4",
+  "output/research/2026-10-23/intent-role-separation/evaluation/runs/irs-unaccepted-assistant-proposal--split--r2/result.json": "54be1bdb49a971b5cd369d999a8b5036b6dfd21940e988cc5d55c1fa2a4a24ed",
+  "output/research/2026-10-23/intent-role-separation/evaluation/runs/irs-unaccepted-assistant-proposal--split--r2/execution.json": "6dd1632a3dd506b9aae92d0d4cc750dcb2d38fa8b5786b085917c97494d71e11",
+  "output/research/2026-10-23/intent-role-diagnostics/handoff/diagnose_handoff.py": "1acc025cc4c3448aa7b929d2faf8c526ac4bc153f96a7cf31114ee131a6bbd8d"
+}
