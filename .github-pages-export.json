@@ -45,8 +45,8 @@
     },
     {
       "path": "data.js",
-      "sha256": "619ebf327448a0b91e3a12d917d4eb899250601013ba091af9b5edcb99d2e830",
-      "bytes": 198466
+      "sha256": "39415e081ca75f9341464193c9707e5ca86d4f222781d21533a2cb0c49f7e25a",
+      "bytes": 198647
     },
     {
       "path": "data/analyze_harness_latency.py",
@@ -615,8 +615,8 @@
     },
     {
       "path": "data/research-record.json",
-      "sha256": "655dc9dc675c2dedd2464ed501f6440165d1cbb6110cc2e2e09bfb2c05e19b61",
-      "bytes": 292018
+      "sha256": "e5b4f5c35651187cf369d3299cbbacc6f335b1a5ddcec1dcff74b059649ffd2e",
+      "bytes": 292246
     },
     {
       "path": "data/results.csv",
@@ -829,6 +829,81 @@
       "bytes": 20155
     },
     {
+      "path": "data/tracker-lora-data-validation.json",
+      "sha256": "d2c91552af70a33eeb9de57fe666e66420210bf8f35775a7cd9e188ac81673de",
+      "bytes": 3110
+    },
+    {
+      "path": "data/tracker-lora-plan/PROTOCOL.md",
+      "sha256": "14c24a74552093f1e019e50bc739c20d8529a109bbf9d14294c2c314dea5400a",
+      "bytes": 15934
+    },
+    {
+      "path": "data/tracker-lora-plan/REVIEW.json",
+      "sha256": "231af4eef719b3a75423547edfaada636858ffba2563103007c99c9c7abe6f03",
+      "bytes": 14515
+    },
+    {
+      "path": "data/tracker-lora-plan/SUMMARY.json",
+      "sha256": "33ce6e65999919e7b386e97d0e8c6d5fcdb3be1e1a5a61553fe1ce73fb8901b7",
+      "bytes": 2203
+    },
+    {
+      "path": "data/tracker-lora-plan/data-audit/inventory.json",
+      "sha256": "b8dc4a0b004e1c900f72ed55299c08df03b244139882c0a9dec5e0cac7184c4d",
+      "bytes": 26818
+    },
+    {
+      "path": "data/tracker-lora-plan/data/sft_manifest.json",
+      "sha256": "25887f42535f81a46a470662c757d9524a8e873264cefe904095782307ba261a",
+      "bytes": 4177
+    },
+    {
+      "path": "data/tracker-lora-plan/data/validation.json",
+      "sha256": "10ddff7ff0f1c9b9fb98d6bdc06877d09df77661841ebdabd007ff3c0cb67386",
+      "bytes": 10570
+    },
+    {
+      "path": "data/tracker-lora-plan/data/validation_attempt_history.json",
+      "sha256": "dffc24dbda7c82c39015684d5d45341b2f1fcc490f62f499b8a5ab60c532acea",
+      "bytes": 1392
+    },
+    {
+      "path": "data/tracker-lora-plan/evidence.zip",
+      "sha256": "061027b393a7ff07ca4255aa4f740fd4eda308e1ec7b70dc13e90e7161a64aac",
+      "bytes": 85358
+    },
+    {
+      "path": "data/tracker-lora-plan/examples.json",
+      "sha256": "f06a452aa175bc86cbd83ba6d1d05fb09feb85746cc119807f2e04c65edc9a67",
+      "bytes": 178844
+    },
+    {
+      "path": "data/tracker-lora-plan/export-index.json",
+      "sha256": "2030186759dcd5a926bec99c2a66497294d19a8a85c3bb04836d374f6f8a7f8f",
+      "bytes": 5413
+    },
+    {
+      "path": "data/tracker-lora-plan/plan.json",
+      "sha256": "82c98b4df996e9435e5e961dc405680dc0dcea26bdbea9c018d7753e1bc04f09",
+      "bytes": 2832
+    },
+    {
+      "path": "data/tracker-lora-plan/sft-examples.json",
+      "sha256": "a232acc2a21e98612f957b982418b07316c187f794f60817119c5025ce5b689c",
+      "bytes": 115795
+    },
+    {
+      "path": "data/tracker-lora-plan/sources.json",
+      "sha256": "839c9c71682a3f01e9aec841a9e6b57b409c31b09b5fd93adb4b0bec0e63dc84",
+      "bytes": 1892
+    },
+    {
+      "path": "data/tracker-lora-plan/validation.json",
+      "sha256": "d2c91552af70a33eeb9de57fe666e66420210bf8f35775a7cd9e188ac81673de",
+      "bytes": 3110
+    },
+    {
       "path": "data/web-knowledge-diagnostics.json",
       "sha256": "2e46aca18e2de2949fc07cbfecd731163290fd2efc06cf99476a5f7ff487dc90",
       "bytes": 317356
@@ -915,8 +990,8 @@
     },
     {
       "path": "intent-role-separation.html",
-      "sha256": "55a7b0c35c1f75309ce38b7dc89acc93fba569d7359c53278c0e7e7a9317d3c6",
-      "bytes": 13596
+      "sha256": "2a017d9ff722b756c296f3ecd3e61da681cdec9a825ac28f787f996e28974843",
+      "bytes": 18921
     },
     {
       "path": "intention-literature.css",

@@ -1,0 +1,6356 @@
+[
+  {
+    "example_id": "add-constraint-zh",
+    "input": {
+      "conversation": [
+        {
+          "role": "user",
+          "seq": 1,
+          "speaker": "林",
+          "text": "帮我选择一个笔记工具。"
+        },
+        {
+          "role": "user",
+          "seq": 4,
+          "speaker": "林",
+          "text": "另外，必须能离线使用。"
+        }
+      ],
+      "intention_state": {
+        "intents": [
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "林",
+                  "status": "active",
+                  "text": "选择一个笔记工具"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "task",
+            "owner": "林",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "选择一个笔记工具",
+            "updated_version": 1
+          }
+        ],
+        "observed_event_seq": 4,
+        "processed_event_seq": 1,
+        "receipts": [],
+        "version": 1
+      },
+      "tool_receipts": []
+    },
+    "metadata": {
+      "annotation_note": "Add the newly required property without replacing the existing goal.",
+      "atomic_requirement_annotations": [
+        {
+          "intent_id": "task",
+          "owner": "林",
+          "status": "active",
+          "text": "选择一个笔记工具"
+        },
+        {
+          "intent_id": "offline",
+          "owner": "林",
+          "status": "active",
+          "text": "必须能离线使用"
+        }
+      ],
+      "authorship": "agent-authored fictional scenarios",
+      "candidate_runtime_error_input": false,
+      "current_runtime_supplies_previous_error": false,
+      "expected_post_state": {
+        "intents": [
+          {
+            "created_version": 2,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "decision-0",
+                "source_seqs": [
+                  4
+                ],
+                "state": {
+                  "owner": "林",
+                  "status": "active",
+                  "text": "必须能离线使用"
+                },
+                "version": 2
+              }
+            ],
+            "intent_id": "offline",
+            "owner": "林",
+            "source_seqs": [
+              4
+            ],
+            "status": "active",
+            "text": "必须能离线使用",
+            "updated_version": 2
+          },
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "林",
+                  "status": "active",
+                  "text": "选择一个笔记工具"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "task",
+            "owner": "林",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "选择一个笔记工具",
+            "updated_version": 1
+          }
+        ],
+        "observed_event_seq": 4,
+        "processed_event_seq": 4,
+        "receipts": [],
+        "version": 2
+      },
+      "family_id": "add-constraint",
+      "language": "zh",
+      "preserve_unchanged_ids": [
+        "task"
+      ],
+      "role": "intention_tracker",
+      "semantic_review_status": "independent semantic and human review pending",
+      "setup_patches": [
+        {
+          "expected_version": 0,
+          "operations": [
+            {
+              "intent_id": "task",
+              "op": "add",
+              "owner": "林",
+              "source_seqs": [
+                1
+              ],
+              "status": "active",
+              "text": "选择一个笔记工具"
+            }
+          ],
+          "patch_id": "setup-0",
+          "through_seq": 1
+        }
+      ],
+      "sibling_group_policy": "Keep every family_id together in any future split; these examples are already exposed development material.",
+      "split": "illustrative_development_only",
+      "target_commit_identity": {
+        "expected_version": 1,
+        "patch_id": "decision-0",
+        "through_seq": 4
+      }
+    },
+    "schema_version": 1,
+    "target": {
+      "operations": [
+        {
+          "intent_id": "offline",
+          "op": "add",
+          "owner": "林",
+          "source_seqs": [
+            4
+          ],
+          "status": "active",
+          "text": "必须能离线使用"
+        }
+      ]
+    }
+  },
+  {
+    "example_id": "local-update-zh",
+    "input": {
+      "conversation": [
+        {
+          "role": "user",
+          "seq": 1,
+          "speaker": "林",
+          "text": "找一个免费的桌面端笔记工具。"
+        },
+        {
+          "role": "user",
+          "seq": 4,
+          "speaker": "林",
+          "text": "换成移动端，免费要求保持。"
+        }
+      ],
+      "intention_state": {
+        "intents": [
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "林",
+                  "status": "active",
+                  "text": "必须免费"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "cost",
+            "owner": "林",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "必须免费",
+            "updated_version": 1
+          },
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "林",
+                  "status": "active",
+                  "text": "使用桌面端"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "platform",
+            "owner": "林",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "使用桌面端",
+            "updated_version": 1
+          },
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "林",
+                  "status": "active",
+                  "text": "选择一个笔记工具"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "task",
+            "owner": "林",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "选择一个笔记工具",
+            "updated_version": 1
+          }
+        ],
+        "observed_event_seq": 4,
+        "processed_event_seq": 1,
+        "receipts": [],
+        "version": 1
+      },
+      "tool_receipts": []
+    },
+    "metadata": {
+      "annotation_note": "Only platform changes; zero price and the original goal remain active.",
+      "atomic_requirement_annotations": [
+        {
+          "intent_id": "task",
+          "owner": "林",
+          "status": "active",
+          "text": "选择一个笔记工具"
+        },
+        {
+          "intent_id": "cost",
+          "owner": "林",
+          "status": "active",
+          "text": "必须免费"
+        },
+        {
+          "intent_id": "platform",
+          "owner": "林",
+          "status": "active",
+          "text": "使用移动端"
+        }
+      ],
+      "authorship": "agent-authored fictional scenarios",
+      "candidate_runtime_error_input": false,
+      "current_runtime_supplies_previous_error": false,
+      "expected_post_state": {
+        "intents": [
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "林",
+                  "status": "active",
+                  "text": "必须免费"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "cost",
+            "owner": "林",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "必须免费",
+            "updated_version": 1
+          },
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "林",
+                  "status": "active",
+                  "text": "使用桌面端"
+                },
+                "version": 1
+              },
+              {
+                "op": "update",
+                "patch_id": "decision-0",
+                "source_seqs": [
+                  4
+                ],
+                "state": {
+                  "owner": "林",
+                  "status": "active",
+                  "text": "使用移动端"
+                },
+                "version": 2
+              }
+            ],
+            "intent_id": "platform",
+            "owner": "林",
+            "source_seqs": [
+              4
+            ],
+            "status": "active",
+            "text": "使用移动端",
+            "updated_version": 2
+          },
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "林",
+                  "status": "active",
+                  "text": "选择一个笔记工具"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "task",
+            "owner": "林",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "选择一个笔记工具",
+            "updated_version": 1
+          }
+        ],
+        "observed_event_seq": 4,
+        "processed_event_seq": 4,
+        "receipts": [],
+        "version": 2
+      },
+      "family_id": "local-update",
+      "language": "zh",
+      "preserve_unchanged_ids": [
+        "task",
+        "cost"
+      ],
+      "role": "intention_tracker",
+      "semantic_review_status": "independent semantic and human review pending",
+      "setup_patches": [
+        {
+          "expected_version": 0,
+          "operations": [
+            {
+              "intent_id": "task",
+              "op": "add",
+              "owner": "林",
+              "source_seqs": [
+                1
+              ],
+              "status": "active",
+              "text": "选择一个笔记工具"
+            },
+            {
+              "intent_id": "cost",
+              "op": "add",
+              "owner": "林",
+              "source_seqs": [
+                1
+              ],
+              "status": "active",
+              "text": "必须免费"
+            },
+            {
+              "intent_id": "platform",
+              "op": "add",
+              "owner": "林",
+              "source_seqs": [
+                1
+              ],
+              "status": "active",
+              "text": "使用桌面端"
+            }
+          ],
+          "patch_id": "setup-0",
+          "through_seq": 1
+        }
+      ],
+      "sibling_group_policy": "Keep every family_id together in any future split; these examples are already exposed development material.",
+      "split": "illustrative_development_only",
+      "target_commit_identity": {
+        "expected_version": 1,
+        "patch_id": "decision-0",
+        "through_seq": 4
+      }
+    },
+    "schema_version": 1,
+    "target": {
+      "operations": [
+        {
+          "intent_id": "platform",
+          "op": "update",
+          "source_seqs": [
+            4
+          ],
+          "text": "使用移动端"
+        }
+      ]
+    }
+  },
+  {
+    "example_id": "withdraw-zh",
+    "input": {
+      "conversation": [
+        {
+          "role": "user",
+          "seq": 1,
+          "speaker": "林",
+          "text": "找一个能离线用、带云同步的笔记工具。"
+        },
+        {
+          "role": "user",
+          "seq": 4,
+          "speaker": "林",
+          "text": "云同步先取消，离线仍然必须支持。"
+        }
+      ],
+      "intention_state": {
+        "intents": [
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "林",
+                  "status": "active",
+                  "text": "必须能离线使用"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "offline",
+            "owner": "林",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "必须能离线使用",
+            "updated_version": 1
+          },
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "林",
+                  "status": "active",
+                  "text": "需要云同步"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "sync",
+            "owner": "林",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "需要云同步",
+            "updated_version": 1
+          },
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "林",
+                  "status": "active",
+                  "text": "选择一个笔记工具"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "task",
+            "owner": "林",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "选择一个笔记工具",
+            "updated_version": 1
+          }
+        ],
+        "observed_event_seq": 4,
+        "processed_event_seq": 1,
+        "receipts": [],
+        "version": 1
+      },
+      "tool_receipts": []
+    },
+    "metadata": {
+      "annotation_note": "Withdrawal retains the sync record and history; it does not delete unrelated needs.",
+      "atomic_requirement_annotations": [
+        {
+          "intent_id": "task",
+          "owner": "林",
+          "status": "active",
+          "text": "选择一个笔记工具"
+        },
+        {
+          "intent_id": "offline",
+          "owner": "林",
+          "status": "active",
+          "text": "必须能离线使用"
+        },
+        {
+          "intent_id": "sync",
+          "owner": "林",
+          "status": "withdrawn",
+          "text": "需要云同步"
+        }
+      ],
+      "authorship": "agent-authored fictional scenarios",
+      "candidate_runtime_error_input": false,
+      "current_runtime_supplies_previous_error": false,
+      "expected_post_state": {
+        "intents": [
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "林",
+                  "status": "active",
+                  "text": "必须能离线使用"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "offline",
+            "owner": "林",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "必须能离线使用",
+            "updated_version": 1
+          },
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "林",
+                  "status": "active",
+                  "text": "需要云同步"
+                },
+                "version": 1
+              },
+              {
+                "op": "withdraw",
+                "patch_id": "decision-0",
+                "source_seqs": [
+                  4
+                ],
+                "state": {
+                  "owner": "林",
+                  "status": "withdrawn",
+                  "text": "需要云同步"
+                },
+                "version": 2
+              }
+            ],
+            "intent_id": "sync",
+            "owner": "林",
+            "source_seqs": [
+              4
+            ],
+            "status": "withdrawn",
+            "text": "需要云同步",
+            "updated_version": 2
+          },
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "林",
+                  "status": "active",
+                  "text": "选择一个笔记工具"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "task",
+            "owner": "林",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "选择一个笔记工具",
+            "updated_version": 1
+          }
+        ],
+        "observed_event_seq": 4,
+        "processed_event_seq": 4,
+        "receipts": [],
+        "version": 2
+      },
+      "family_id": "withdraw",
+      "language": "zh",
+      "preserve_unchanged_ids": [
+        "task",
+        "offline"
+      ],
+      "role": "intention_tracker",
+      "semantic_review_status": "independent semantic and human review pending",
+      "setup_patches": [
+        {
+          "expected_version": 0,
+          "operations": [
+            {
+              "intent_id": "task",
+              "op": "add",
+              "owner": "林",
+              "source_seqs": [
+                1
+              ],
+              "status": "active",
+              "text": "选择一个笔记工具"
+            },
+            {
+              "intent_id": "offline",
+              "op": "add",
+              "owner": "林",
+              "source_seqs": [
+                1
+              ],
+              "status": "active",
+              "text": "必须能离线使用"
+            },
+            {
+              "intent_id": "sync",
+              "op": "add",
+              "owner": "林",
+              "source_seqs": [
+                1
+              ],
+              "status": "active",
+              "text": "需要云同步"
+            }
+          ],
+          "patch_id": "setup-0",
+          "through_seq": 1
+        }
+      ],
+      "sibling_group_policy": "Keep every family_id together in any future split; these examples are already exposed development material.",
+      "split": "illustrative_development_only",
+      "target_commit_identity": {
+        "expected_version": 1,
+        "patch_id": "decision-0",
+        "through_seq": 4
+      }
+    },
+    "schema_version": 1,
+    "target": {
+      "operations": [
+        {
+          "intent_id": "sync",
+          "op": "withdraw",
+          "source_seqs": [
+            4
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "example_id": "reopen-zh",
+    "input": {
+      "conversation": [
+        {
+          "role": "user",
+          "seq": 1,
+          "speaker": "林",
+          "text": "工具需要云同步，也必须免费。"
+        },
+        {
+          "role": "user",
+          "seq": 4,
+          "speaker": "林",
+          "text": "先取消云同步。"
+        },
+        {
+          "role": "user",
+          "seq": 9,
+          "speaker": "林",
+          "text": "还是恢复云同步吧，免费要求不变。"
+        }
+      ],
+      "intention_state": {
+        "intents": [
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "林",
+                  "status": "active",
+                  "text": "必须免费"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "cost",
+            "owner": "林",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "必须免费",
+            "updated_version": 1
+          },
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "林",
+                  "status": "active",
+                  "text": "需要云同步"
+                },
+                "version": 1
+              },
+              {
+                "op": "withdraw",
+                "patch_id": "setup-1",
+                "source_seqs": [
+                  4
+                ],
+                "state": {
+                  "owner": "林",
+                  "status": "withdrawn",
+                  "text": "需要云同步"
+                },
+                "version": 2
+              }
+            ],
+            "intent_id": "sync",
+            "owner": "林",
+            "source_seqs": [
+              4
+            ],
+            "status": "withdrawn",
+            "text": "需要云同步",
+            "updated_version": 2
+          }
+        ],
+        "observed_event_seq": 9,
+        "processed_event_seq": 4,
+        "receipts": [],
+        "version": 2
+      },
+      "tool_receipts": []
+    },
+    "metadata": {
+      "annotation_note": "Restore the same stable ID rather than adding a duplicate or updating a withdrawn record.",
+      "atomic_requirement_annotations": [
+        {
+          "intent_id": "sync",
+          "owner": "林",
+          "status": "active",
+          "text": "需要云同步"
+        },
+        {
+          "intent_id": "cost",
+          "owner": "林",
+          "status": "active",
+          "text": "必须免费"
+        }
+      ],
+      "authorship": "agent-authored fictional scenarios",
+      "candidate_runtime_error_input": false,
+      "current_runtime_supplies_previous_error": false,
+      "expected_post_state": {
+        "intents": [
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "林",
+                  "status": "active",
+                  "text": "必须免费"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "cost",
+            "owner": "林",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "必须免费",
+            "updated_version": 1
+          },
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "林",
+                  "status": "active",
+                  "text": "需要云同步"
+                },
+                "version": 1
+              },
+              {
+                "op": "withdraw",
+                "patch_id": "setup-1",
+                "source_seqs": [
+                  4
+                ],
+                "state": {
+                  "owner": "林",
+                  "status": "withdrawn",
+                  "text": "需要云同步"
+                },
+                "version": 2
+              },
+              {
+                "op": "reopen",
+                "patch_id": "decision-0",
+                "source_seqs": [
+                  9
+                ],
+                "state": {
+                  "owner": "林",
+                  "status": "active",
+                  "text": "需要云同步"
+                },
+                "version": 3
+              }
+            ],
+            "intent_id": "sync",
+            "owner": "林",
+            "source_seqs": [
+              9
+            ],
+            "status": "active",
+            "text": "需要云同步",
+            "updated_version": 3
+          }
+        ],
+        "observed_event_seq": 9,
+        "processed_event_seq": 9,
+        "receipts": [],
+        "version": 3
+      },
+      "family_id": "reopen",
+      "language": "zh",
+      "preserve_unchanged_ids": [
+        "cost"
+      ],
+      "role": "intention_tracker",
+      "semantic_review_status": "independent semantic and human review pending",
+      "setup_patches": [
+        {
+          "expected_version": 0,
+          "operations": [
+            {
+              "intent_id": "sync",
+              "op": "add",
+              "owner": "林",
+              "source_seqs": [
+                1
+              ],
+              "status": "active",
+              "text": "需要云同步"
+            },
+            {
+              "intent_id": "cost",
+              "op": "add",
+              "owner": "林",
+              "source_seqs": [
+                1
+              ],
+              "status": "active",
+              "text": "必须免费"
+            }
+          ],
+          "patch_id": "setup-0",
+          "through_seq": 1
+        },
+        {
+          "expected_version": 1,
+          "operations": [
+            {
+              "intent_id": "sync",
+              "op": "withdraw",
+              "source_seqs": [
+                4
+              ]
+            }
+          ],
+          "patch_id": "setup-1",
+          "through_seq": 4
+        }
+      ],
+      "sibling_group_policy": "Keep every family_id together in any future split; these examples are already exposed development material.",
+      "split": "illustrative_development_only",
+      "target_commit_identity": {
+        "expected_version": 2,
+        "patch_id": "decision-0",
+        "through_seq": 9
+      }
+    },
+    "schema_version": 1,
+    "target": {
+      "operations": [
+        {
+          "intent_id": "sync",
+          "op": "reopen",
+          "source_seqs": [
+            9
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "example_id": "validation-repair-zh",
+    "input": {
+      "conversation": [
+        {
+          "role": "user",
+          "seq": 1,
+          "speaker": "林",
+          "text": "报告用中文，结果还要导出为CSV文件。"
+        },
+        {
+          "role": "user",
+          "seq": 4,
+          "speaker": "林",
+          "text": "CSV导出先取消。"
+        },
+        {
+          "role": "user",
+          "seq": 9,
+          "speaker": "林",
+          "text": "恢复CSV导出，报告语言保持中文。"
+        }
+      ],
+      "intention_state": {
+        "intents": [
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "林",
+                  "status": "active",
+                  "text": "导出结果为CSV文件"
+                },
+                "version": 1
+              },
+              {
+                "op": "withdraw",
+                "patch_id": "setup-1",
+                "source_seqs": [
+                  4
+                ],
+                "state": {
+                  "owner": "林",
+                  "status": "withdrawn",
+                  "text": "导出结果为CSV文件"
+                },
+                "version": 2
+              }
+            ],
+            "intent_id": "csv-export",
+            "owner": "林",
+            "source_seqs": [
+              4
+            ],
+            "status": "withdrawn",
+            "text": "导出结果为CSV文件",
+            "updated_version": 2
+          },
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "林",
+                  "status": "active",
+                  "text": "报告使用中文"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "language",
+            "owner": "林",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "报告使用中文",
+            "updated_version": 1
+          }
+        ],
+        "observed_event_seq": 9,
+        "processed_event_seq": 4,
+        "receipts": [],
+        "version": 2
+      },
+      "previous_error": {
+        "error_type": "IntentValidationError",
+        "message": "A withdrawn intention needs an explicit reopen operation.",
+        "proposal": {
+          "operations": [
+            {
+              "intent_id": "csv-export",
+              "op": "update",
+              "source_seqs": [
+                9
+              ],
+              "text": "导出结果为CSV文件"
+            }
+          ]
+        }
+      },
+      "tool_receipts": []
+    },
+    "metadata": {
+      "annotation_note": "Repair a rejected update by explicit reopen, using the unchanged current state. previous_error is a proposed input field absent from the current runtime.",
+      "atomic_requirement_annotations": [
+        {
+          "intent_id": "csv-export",
+          "owner": "林",
+          "status": "active",
+          "text": "导出结果为CSV文件"
+        },
+        {
+          "intent_id": "language",
+          "owner": "林",
+          "status": "active",
+          "text": "报告使用中文"
+        }
+      ],
+      "authorship": "agent-authored fictional scenarios",
+      "candidate_runtime_error_input": true,
+      "current_runtime_supplies_previous_error": false,
+      "expected_post_state": {
+        "intents": [
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "林",
+                  "status": "active",
+                  "text": "导出结果为CSV文件"
+                },
+                "version": 1
+              },
+              {
+                "op": "withdraw",
+                "patch_id": "setup-1",
+                "source_seqs": [
+                  4
+                ],
+                "state": {
+                  "owner": "林",
+                  "status": "withdrawn",
+                  "text": "导出结果为CSV文件"
+                },
+                "version": 2
+              },
+              {
+                "op": "reopen",
+                "patch_id": "decision-0",
+                "source_seqs": [
+                  9
+                ],
+                "state": {
+                  "owner": "林",
+                  "status": "active",
+                  "text": "导出结果为CSV文件"
+                },
+                "version": 3
+              }
+            ],
+            "intent_id": "csv-export",
+            "owner": "林",
+            "source_seqs": [
+              9
+            ],
+            "status": "active",
+            "text": "导出结果为CSV文件",
+            "updated_version": 3
+          },
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "林",
+                  "status": "active",
+                  "text": "报告使用中文"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "language",
+            "owner": "林",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "报告使用中文",
+            "updated_version": 1
+          }
+        ],
+        "observed_event_seq": 9,
+        "processed_event_seq": 9,
+        "receipts": [],
+        "version": 3
+      },
+      "family_id": "validation-repair",
+      "language": "zh",
+      "preserve_unchanged_ids": [
+        "language"
+      ],
+      "role": "intention_tracker",
+      "semantic_review_status": "independent semantic and human review pending",
+      "setup_patches": [
+        {
+          "expected_version": 0,
+          "operations": [
+            {
+              "intent_id": "csv-export",
+              "op": "add",
+              "owner": "林",
+              "source_seqs": [
+                1
+              ],
+              "status": "active",
+              "text": "导出结果为CSV文件"
+            },
+            {
+              "intent_id": "language",
+              "op": "add",
+              "owner": "林",
+              "source_seqs": [
+                1
+              ],
+              "status": "active",
+              "text": "报告使用中文"
+            }
+          ],
+          "patch_id": "setup-0",
+          "through_seq": 1
+        },
+        {
+          "expected_version": 1,
+          "operations": [
+            {
+              "intent_id": "csv-export",
+              "op": "withdraw",
+              "source_seqs": [
+                4
+              ]
+            }
+          ],
+          "patch_id": "setup-1",
+          "through_seq": 4
+        }
+      ],
+      "sibling_group_policy": "Keep every family_id together in any future split; these examples are already exposed development material.",
+      "split": "illustrative_development_only",
+      "target_commit_identity": {
+        "expected_version": 2,
+        "patch_id": "decision-0",
+        "through_seq": 9
+      }
+    },
+    "schema_version": 1,
+    "target": {
+      "operations": [
+        {
+          "intent_id": "csv-export",
+          "op": "reopen",
+          "source_seqs": [
+            9
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "example_id": "no-change-zh",
+    "input": {
+      "conversation": [
+        {
+          "role": "user",
+          "seq": 1,
+          "speaker": "林",
+          "text": "工具必须免费并且可以离线。"
+        },
+        {
+          "role": "user",
+          "seq": 4,
+          "speaker": "林",
+          "text": "明白了，谢谢。"
+        }
+      ],
+      "intention_state": {
+        "intents": [
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "林",
+                  "status": "active",
+                  "text": "必须免费"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "cost",
+            "owner": "林",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "必须免费",
+            "updated_version": 1
+          },
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "林",
+                  "status": "active",
+                  "text": "必须能离线使用"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "offline",
+            "owner": "林",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "必须能离线使用",
+            "updated_version": 1
+          }
+        ],
+        "observed_event_seq": 4,
+        "processed_event_seq": 1,
+        "receipts": [],
+        "version": 1
+      },
+      "tool_receipts": []
+    },
+    "metadata": {
+      "annotation_note": "Acknowledgement is not a changed request; empty operations still advances the processed cursor.",
+      "atomic_requirement_annotations": [
+        {
+          "intent_id": "cost",
+          "owner": "林",
+          "status": "active",
+          "text": "必须免费"
+        },
+        {
+          "intent_id": "offline",
+          "owner": "林",
+          "status": "active",
+          "text": "必须能离线使用"
+        }
+      ],
+      "authorship": "agent-authored fictional scenarios",
+      "candidate_runtime_error_input": false,
+      "current_runtime_supplies_previous_error": false,
+      "expected_post_state": {
+        "intents": [
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "林",
+                  "status": "active",
+                  "text": "必须免费"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "cost",
+            "owner": "林",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "必须免费",
+            "updated_version": 1
+          },
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "林",
+                  "status": "active",
+                  "text": "必须能离线使用"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "offline",
+            "owner": "林",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "必须能离线使用",
+            "updated_version": 1
+          }
+        ],
+        "observed_event_seq": 4,
+        "processed_event_seq": 4,
+        "receipts": [],
+        "version": 2
+      },
+      "family_id": "no-change",
+      "language": "zh",
+      "preserve_unchanged_ids": [
+        "cost",
+        "offline"
+      ],
+      "role": "intention_tracker",
+      "semantic_review_status": "independent semantic and human review pending",
+      "setup_patches": [
+        {
+          "expected_version": 0,
+          "operations": [
+            {
+              "intent_id": "cost",
+              "op": "add",
+              "owner": "林",
+              "source_seqs": [
+                1
+              ],
+              "status": "active",
+              "text": "必须免费"
+            },
+            {
+              "intent_id": "offline",
+              "op": "add",
+              "owner": "林",
+              "source_seqs": [
+                1
+              ],
+              "status": "active",
+              "text": "必须能离线使用"
+            }
+          ],
+          "patch_id": "setup-0",
+          "through_seq": 1
+        }
+      ],
+      "sibling_group_policy": "Keep every family_id together in any future split; these examples are already exposed development material.",
+      "split": "illustrative_development_only",
+      "target_commit_identity": {
+        "expected_version": 1,
+        "patch_id": "decision-0",
+        "through_seq": 4
+      }
+    },
+    "schema_version": 1,
+    "target": {
+      "operations": []
+    }
+  },
+  {
+    "example_id": "unaccepted-proposal-zh",
+    "input": {
+      "conversation": [
+        {
+          "role": "user",
+          "seq": 1,
+          "speaker": "林",
+          "text": "工具必须免费并且可以离线。"
+        },
+        {
+          "role": "assistant",
+          "seq": 4,
+          "speaker": "assistant",
+          "text": "我建议改成付费的在线服务。"
+        }
+      ],
+      "intention_state": {
+        "intents": [
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "林",
+                  "status": "active",
+                  "text": "必须免费"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "cost",
+            "owner": "林",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "必须免费",
+            "updated_version": 1
+          },
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "林",
+                  "status": "active",
+                  "text": "必须能离线使用"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "offline",
+            "owner": "林",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "必须能离线使用",
+            "updated_version": 1
+          }
+        ],
+        "observed_event_seq": 4,
+        "processed_event_seq": 1,
+        "receipts": [],
+        "version": 1
+      },
+      "tool_receipts": []
+    },
+    "metadata": {
+      "annotation_note": "An assistant proposal is not user acceptance; do not revise either active constraint.",
+      "atomic_requirement_annotations": [
+        {
+          "intent_id": "cost",
+          "owner": "林",
+          "status": "active",
+          "text": "必须免费"
+        },
+        {
+          "intent_id": "offline",
+          "owner": "林",
+          "status": "active",
+          "text": "必须能离线使用"
+        }
+      ],
+      "authorship": "agent-authored fictional scenarios",
+      "candidate_runtime_error_input": false,
+      "current_runtime_supplies_previous_error": false,
+      "expected_post_state": {
+        "intents": [
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "林",
+                  "status": "active",
+                  "text": "必须免费"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "cost",
+            "owner": "林",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "必须免费",
+            "updated_version": 1
+          },
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "林",
+                  "status": "active",
+                  "text": "必须能离线使用"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "offline",
+            "owner": "林",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "必须能离线使用",
+            "updated_version": 1
+          }
+        ],
+        "observed_event_seq": 4,
+        "processed_event_seq": 4,
+        "receipts": [],
+        "version": 2
+      },
+      "family_id": "unaccepted-proposal",
+      "language": "zh",
+      "preserve_unchanged_ids": [
+        "cost",
+        "offline"
+      ],
+      "role": "intention_tracker",
+      "semantic_review_status": "independent semantic and human review pending",
+      "setup_patches": [
+        {
+          "expected_version": 0,
+          "operations": [
+            {
+              "intent_id": "cost",
+              "op": "add",
+              "owner": "林",
+              "source_seqs": [
+                1
+              ],
+              "status": "active",
+              "text": "必须免费"
+            },
+            {
+              "intent_id": "offline",
+              "op": "add",
+              "owner": "林",
+              "source_seqs": [
+                1
+              ],
+              "status": "active",
+              "text": "必须能离线使用"
+            }
+          ],
+          "patch_id": "setup-0",
+          "through_seq": 1
+        }
+      ],
+      "sibling_group_policy": "Keep every family_id together in any future split; these examples are already exposed development material.",
+      "split": "illustrative_development_only",
+      "target_commit_identity": {
+        "expected_version": 1,
+        "patch_id": "decision-0",
+        "through_seq": 4
+      }
+    },
+    "schema_version": 1,
+    "target": {
+      "operations": []
+    }
+  },
+  {
+    "example_id": "quoted-third-party-zh",
+    "input": {
+      "conversation": [
+        {
+          "role": "user",
+          "seq": 1,
+          "speaker": "林",
+          "text": "工具必须免费并且可以离线。"
+        },
+        {
+          "role": "user",
+          "seq": 4,
+          "speaker": "林",
+          "text": "同事说：“预算放宽，用在线的吧。”这只是他的建议，我的要求没改。"
+        }
+      ],
+      "intention_state": {
+        "intents": [
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "林",
+                  "status": "active",
+                  "text": "必须免费"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "cost",
+            "owner": "林",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "必须免费",
+            "updated_version": 1
+          },
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "林",
+                  "status": "active",
+                  "text": "必须能离线使用"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "offline",
+            "owner": "林",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "必须能离线使用",
+            "updated_version": 1
+          }
+        ],
+        "observed_event_seq": 4,
+        "processed_event_seq": 1,
+        "receipts": [],
+        "version": 1
+      },
+      "tool_receipts": []
+    },
+    "metadata": {
+      "annotation_note": "Quoted third-party instructions plus explicit non-adoption produce no operations.",
+      "atomic_requirement_annotations": [
+        {
+          "intent_id": "cost",
+          "owner": "林",
+          "status": "active",
+          "text": "必须免费"
+        },
+        {
+          "intent_id": "offline",
+          "owner": "林",
+          "status": "active",
+          "text": "必须能离线使用"
+        }
+      ],
+      "authorship": "agent-authored fictional scenarios",
+      "candidate_runtime_error_input": false,
+      "current_runtime_supplies_previous_error": false,
+      "expected_post_state": {
+        "intents": [
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "林",
+                  "status": "active",
+                  "text": "必须免费"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "cost",
+            "owner": "林",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "必须免费",
+            "updated_version": 1
+          },
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "林",
+                  "status": "active",
+                  "text": "必须能离线使用"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "offline",
+            "owner": "林",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "必须能离线使用",
+            "updated_version": 1
+          }
+        ],
+        "observed_event_seq": 4,
+        "processed_event_seq": 4,
+        "receipts": [],
+        "version": 2
+      },
+      "family_id": "quoted-third-party",
+      "language": "zh",
+      "preserve_unchanged_ids": [
+        "cost",
+        "offline"
+      ],
+      "role": "intention_tracker",
+      "semantic_review_status": "independent semantic and human review pending",
+      "setup_patches": [
+        {
+          "expected_version": 0,
+          "operations": [
+            {
+              "intent_id": "cost",
+              "op": "add",
+              "owner": "林",
+              "source_seqs": [
+                1
+              ],
+              "status": "active",
+              "text": "必须免费"
+            },
+            {
+              "intent_id": "offline",
+              "op": "add",
+              "owner": "林",
+              "source_seqs": [
+                1
+              ],
+              "status": "active",
+              "text": "必须能离线使用"
+            }
+          ],
+          "patch_id": "setup-0",
+          "through_seq": 1
+        }
+      ],
+      "sibling_group_policy": "Keep every family_id together in any future split; these examples are already exposed development material.",
+      "split": "illustrative_development_only",
+      "target_commit_identity": {
+        "expected_version": 1,
+        "patch_id": "decision-0",
+        "through_seq": 4
+      }
+    },
+    "schema_version": 1,
+    "target": {
+      "operations": []
+    }
+  },
+  {
+    "example_id": "owner-ambiguity-zh",
+    "input": {
+      "conversation": [
+        {
+          "role": "user",
+          "seq": 1,
+          "speaker": "林",
+          "text": "帮我选一个免费的笔记工具。"
+        },
+        {
+          "role": "user",
+          "seq": 4,
+          "speaker": "林",
+          "text": "我们可能还要字幕，不过是谁需要、是不是必须，我现在不确定。"
+        }
+      ],
+      "intention_state": {
+        "intents": [
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "林",
+                  "status": "active",
+                  "text": "必须免费"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "cost",
+            "owner": "林",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "必须免费",
+            "updated_version": 1
+          },
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "林",
+                  "status": "active",
+                  "text": "选择一个笔记工具"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "task",
+            "owner": "林",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "选择一个笔记工具",
+            "updated_version": 1
+          }
+        ],
+        "observed_event_seq": 4,
+        "processed_event_seq": 1,
+        "receipts": [],
+        "version": 1
+      },
+      "tool_receipts": []
+    },
+    "metadata": {
+      "annotation_note": "Candidate convention: preserve the uncertainty explicitly, with an unresolved-owner label; do not invent an individual owner. The current store has no dedicated owner-resolution field.",
+      "atomic_requirement_annotations": [
+        {
+          "intent_id": "task",
+          "owner": "林",
+          "status": "active",
+          "text": "选择一个笔记工具"
+        },
+        {
+          "intent_id": "cost",
+          "owner": "林",
+          "status": "active",
+          "text": "必须免费"
+        },
+        {
+          "intent_id": "caption-candidate",
+          "owner": "团队（待确认）",
+          "status": "uncertain",
+          "text": "可能需要团队的字幕支持；需求是否确定及归属待澄清"
+        }
+      ],
+      "authorship": "agent-authored fictional scenarios",
+      "candidate_runtime_error_input": false,
+      "current_runtime_supplies_previous_error": false,
+      "expected_post_state": {
+        "intents": [
+          {
+            "created_version": 2,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "decision-0",
+                "source_seqs": [
+                  4
+                ],
+                "state": {
+                  "owner": "团队（待确认）",
+                  "status": "uncertain",
+                  "text": "可能需要团队的字幕支持；需求是否确定及归属待澄清"
+                },
+                "version": 2
+              }
+            ],
+            "intent_id": "caption-candidate",
+            "owner": "团队（待确认）",
+            "source_seqs": [
+              4
+            ],
+            "status": "uncertain",
+            "text": "可能需要团队的字幕支持；需求是否确定及归属待澄清",
+            "updated_version": 2
+          },
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "林",
+                  "status": "active",
+                  "text": "必须免费"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "cost",
+            "owner": "林",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "必须免费",
+            "updated_version": 1
+          },
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "林",
+                  "status": "active",
+                  "text": "选择一个笔记工具"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "task",
+            "owner": "林",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "选择一个笔记工具",
+            "updated_version": 1
+          }
+        ],
+        "observed_event_seq": 4,
+        "processed_event_seq": 4,
+        "receipts": [],
+        "version": 2
+      },
+      "family_id": "owner-ambiguity",
+      "language": "zh",
+      "preserve_unchanged_ids": [
+        "task",
+        "cost"
+      ],
+      "role": "intention_tracker",
+      "semantic_review_status": "independent semantic and human review pending",
+      "setup_patches": [
+        {
+          "expected_version": 0,
+          "operations": [
+            {
+              "intent_id": "task",
+              "op": "add",
+              "owner": "林",
+              "source_seqs": [
+                1
+              ],
+              "status": "active",
+              "text": "选择一个笔记工具"
+            },
+            {
+              "intent_id": "cost",
+              "op": "add",
+              "owner": "林",
+              "source_seqs": [
+                1
+              ],
+              "status": "active",
+              "text": "必须免费"
+            }
+          ],
+          "patch_id": "setup-0",
+          "through_seq": 1
+        }
+      ],
+      "sibling_group_policy": "Keep every family_id together in any future split; these examples are already exposed development material.",
+      "split": "illustrative_development_only",
+      "target_commit_identity": {
+        "expected_version": 1,
+        "patch_id": "decision-0",
+        "through_seq": 4
+      }
+    },
+    "schema_version": 1,
+    "target": {
+      "operations": [
+        {
+          "intent_id": "caption-candidate",
+          "op": "add",
+          "owner": "团队（待确认）",
+          "source_seqs": [
+            4
+          ],
+          "status": "uncertain",
+          "text": "可能需要团队的字幕支持；需求是否确定及归属待澄清"
+        }
+      ]
+    }
+  },
+  {
+    "example_id": "multiple-owners-zh",
+    "input": {
+      "conversation": [
+        {
+          "role": "user",
+          "seq": 1,
+          "speaker": "林",
+          "text": "我的预算每月最多18元。"
+        },
+        {
+          "role": "user",
+          "seq": 3,
+          "speaker": "周",
+          "text": "我的预算每月最多9元，而且必须离线。"
+        },
+        {
+          "role": "user",
+          "seq": 6,
+          "speaker": "林",
+          "text": "只把我的预算提高到每月24元，别改周的要求。"
+        }
+      ],
+      "intention_state": {
+        "intents": [
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "林",
+                  "status": "active",
+                  "text": "每月预算不超过18元"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "first-budget",
+            "owner": "林",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "每月预算不超过18元",
+            "updated_version": 1
+          },
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  3
+                ],
+                "state": {
+                  "owner": "周",
+                  "status": "active",
+                  "text": "每月预算不超过9元"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "second-budget",
+            "owner": "周",
+            "source_seqs": [
+              3
+            ],
+            "status": "active",
+            "text": "每月预算不超过9元",
+            "updated_version": 1
+          },
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  3
+                ],
+                "state": {
+                  "owner": "周",
+                  "status": "active",
+                  "text": "必须能离线使用"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "second-offline",
+            "owner": "周",
+            "source_seqs": [
+              3
+            ],
+            "status": "active",
+            "text": "必须能离线使用",
+            "updated_version": 1
+          }
+        ],
+        "observed_event_seq": 6,
+        "processed_event_seq": 3,
+        "receipts": [],
+        "version": 1
+      },
+      "tool_receipts": []
+    },
+    "metadata": {
+      "annotation_note": "One speaker changes only that speaker's budget; the other owner's budget and offline constraint survive.",
+      "atomic_requirement_annotations": [
+        {
+          "intent_id": "first-budget",
+          "owner": "林",
+          "status": "active",
+          "text": "每月预算不超过24元"
+        },
+        {
+          "intent_id": "second-budget",
+          "owner": "周",
+          "status": "active",
+          "text": "每月预算不超过9元"
+        },
+        {
+          "intent_id": "second-offline",
+          "owner": "周",
+          "status": "active",
+          "text": "必须能离线使用"
+        }
+      ],
+      "authorship": "agent-authored fictional scenarios",
+      "candidate_runtime_error_input": false,
+      "current_runtime_supplies_previous_error": false,
+      "expected_post_state": {
+        "intents": [
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "林",
+                  "status": "active",
+                  "text": "每月预算不超过18元"
+                },
+                "version": 1
+              },
+              {
+                "op": "update",
+                "patch_id": "decision-0",
+                "source_seqs": [
+                  6
+                ],
+                "state": {
+                  "owner": "林",
+                  "status": "active",
+                  "text": "每月预算不超过24元"
+                },
+                "version": 2
+              }
+            ],
+            "intent_id": "first-budget",
+            "owner": "林",
+            "source_seqs": [
+              6
+            ],
+            "status": "active",
+            "text": "每月预算不超过24元",
+            "updated_version": 2
+          },
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  3
+                ],
+                "state": {
+                  "owner": "周",
+                  "status": "active",
+                  "text": "每月预算不超过9元"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "second-budget",
+            "owner": "周",
+            "source_seqs": [
+              3
+            ],
+            "status": "active",
+            "text": "每月预算不超过9元",
+            "updated_version": 1
+          },
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  3
+                ],
+                "state": {
+                  "owner": "周",
+                  "status": "active",
+                  "text": "必须能离线使用"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "second-offline",
+            "owner": "周",
+            "source_seqs": [
+              3
+            ],
+            "status": "active",
+            "text": "必须能离线使用",
+            "updated_version": 1
+          }
+        ],
+        "observed_event_seq": 6,
+        "processed_event_seq": 6,
+        "receipts": [],
+        "version": 2
+      },
+      "family_id": "multiple-owners",
+      "language": "zh",
+      "preserve_unchanged_ids": [
+        "second-budget",
+        "second-offline"
+      ],
+      "role": "intention_tracker",
+      "semantic_review_status": "independent semantic and human review pending",
+      "setup_patches": [
+        {
+          "expected_version": 0,
+          "operations": [
+            {
+              "intent_id": "first-budget",
+              "op": "add",
+              "owner": "林",
+              "source_seqs": [
+                1
+              ],
+              "status": "active",
+              "text": "每月预算不超过18元"
+            },
+            {
+              "intent_id": "second-budget",
+              "op": "add",
+              "owner": "周",
+              "source_seqs": [
+                3
+              ],
+              "status": "active",
+              "text": "每月预算不超过9元"
+            },
+            {
+              "intent_id": "second-offline",
+              "op": "add",
+              "owner": "周",
+              "source_seqs": [
+                3
+              ],
+              "status": "active",
+              "text": "必须能离线使用"
+            }
+          ],
+          "patch_id": "setup-0",
+          "through_seq": 3
+        }
+      ],
+      "sibling_group_policy": "Keep every family_id together in any future split; these examples are already exposed development material.",
+      "split": "illustrative_development_only",
+      "target_commit_identity": {
+        "expected_version": 1,
+        "patch_id": "decision-0",
+        "through_seq": 6
+      }
+    },
+    "schema_version": 1,
+    "target": {
+      "operations": [
+        {
+          "intent_id": "first-budget",
+          "op": "update",
+          "source_seqs": [
+            6
+          ],
+          "text": "每月预算不超过24元"
+        }
+      ]
+    }
+  },
+  {
+    "example_id": "combined-operations-zh",
+    "input": {
+      "conversation": [
+        {
+          "role": "user",
+          "seq": 1,
+          "speaker": "林",
+          "text": "我要免费的桌面笔记工具，还需要云同步。"
+        },
+        {
+          "role": "user",
+          "seq": 5,
+          "speaker": "林",
+          "text": "换成移动端，取消云同步，另外要离线；免费要求保留。"
+        }
+      ],
+      "intention_state": {
+        "intents": [
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "林",
+                  "status": "active",
+                  "text": "必须免费"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "cost",
+            "owner": "林",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "必须免费",
+            "updated_version": 1
+          },
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "林",
+                  "status": "active",
+                  "text": "使用桌面端"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "platform",
+            "owner": "林",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "使用桌面端",
+            "updated_version": 1
+          },
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "林",
+                  "status": "active",
+                  "text": "需要云同步"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "sync",
+            "owner": "林",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "需要云同步",
+            "updated_version": 1
+          },
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "林",
+                  "status": "active",
+                  "text": "选择一个笔记工具"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "task",
+            "owner": "林",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "选择一个笔记工具",
+            "updated_version": 1
+          }
+        ],
+        "observed_event_seq": 5,
+        "processed_event_seq": 1,
+        "receipts": [],
+        "version": 1
+      },
+      "tool_receipts": []
+    },
+    "metadata": {
+      "annotation_note": "Apply three changes atomically, touching each ID once, and preserve the independent price constraint.",
+      "atomic_requirement_annotations": [
+        {
+          "intent_id": "task",
+          "owner": "林",
+          "status": "active",
+          "text": "选择一个笔记工具"
+        },
+        {
+          "intent_id": "cost",
+          "owner": "林",
+          "status": "active",
+          "text": "必须免费"
+        },
+        {
+          "intent_id": "platform",
+          "owner": "林",
+          "status": "active",
+          "text": "使用移动端"
+        },
+        {
+          "intent_id": "sync",
+          "owner": "林",
+          "status": "withdrawn",
+          "text": "需要云同步"
+        },
+        {
+          "intent_id": "offline",
+          "owner": "林",
+          "status": "active",
+          "text": "必须能离线使用"
+        }
+      ],
+      "authorship": "agent-authored fictional scenarios",
+      "candidate_runtime_error_input": false,
+      "current_runtime_supplies_previous_error": false,
+      "expected_post_state": {
+        "intents": [
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "林",
+                  "status": "active",
+                  "text": "必须免费"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "cost",
+            "owner": "林",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "必须免费",
+            "updated_version": 1
+          },
+          {
+            "created_version": 2,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "decision-0",
+                "source_seqs": [
+                  5
+                ],
+                "state": {
+                  "owner": "林",
+                  "status": "active",
+                  "text": "必须能离线使用"
+                },
+                "version": 2
+              }
+            ],
+            "intent_id": "offline",
+            "owner": "林",
+            "source_seqs": [
+              5
+            ],
+            "status": "active",
+            "text": "必须能离线使用",
+            "updated_version": 2
+          },
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "林",
+                  "status": "active",
+                  "text": "使用桌面端"
+                },
+                "version": 1
+              },
+              {
+                "op": "update",
+                "patch_id": "decision-0",
+                "source_seqs": [
+                  5
+                ],
+                "state": {
+                  "owner": "林",
+                  "status": "active",
+                  "text": "使用移动端"
+                },
+                "version": 2
+              }
+            ],
+            "intent_id": "platform",
+            "owner": "林",
+            "source_seqs": [
+              5
+            ],
+            "status": "active",
+            "text": "使用移动端",
+            "updated_version": 2
+          },
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "林",
+                  "status": "active",
+                  "text": "需要云同步"
+                },
+                "version": 1
+              },
+              {
+                "op": "withdraw",
+                "patch_id": "decision-0",
+                "source_seqs": [
+                  5
+                ],
+                "state": {
+                  "owner": "林",
+                  "status": "withdrawn",
+                  "text": "需要云同步"
+                },
+                "version": 2
+              }
+            ],
+            "intent_id": "sync",
+            "owner": "林",
+            "source_seqs": [
+              5
+            ],
+            "status": "withdrawn",
+            "text": "需要云同步",
+            "updated_version": 2
+          },
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "林",
+                  "status": "active",
+                  "text": "选择一个笔记工具"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "task",
+            "owner": "林",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "选择一个笔记工具",
+            "updated_version": 1
+          }
+        ],
+        "observed_event_seq": 5,
+        "processed_event_seq": 5,
+        "receipts": [],
+        "version": 2
+      },
+      "family_id": "combined-operations",
+      "language": "zh",
+      "preserve_unchanged_ids": [
+        "task",
+        "cost"
+      ],
+      "role": "intention_tracker",
+      "semantic_review_status": "independent semantic and human review pending",
+      "setup_patches": [
+        {
+          "expected_version": 0,
+          "operations": [
+            {
+              "intent_id": "task",
+              "op": "add",
+              "owner": "林",
+              "source_seqs": [
+                1
+              ],
+              "status": "active",
+              "text": "选择一个笔记工具"
+            },
+            {
+              "intent_id": "cost",
+              "op": "add",
+              "owner": "林",
+              "source_seqs": [
+                1
+              ],
+              "status": "active",
+              "text": "必须免费"
+            },
+            {
+              "intent_id": "platform",
+              "op": "add",
+              "owner": "林",
+              "source_seqs": [
+                1
+              ],
+              "status": "active",
+              "text": "使用桌面端"
+            },
+            {
+              "intent_id": "sync",
+              "op": "add",
+              "owner": "林",
+              "source_seqs": [
+                1
+              ],
+              "status": "active",
+              "text": "需要云同步"
+            }
+          ],
+          "patch_id": "setup-0",
+          "through_seq": 1
+        }
+      ],
+      "sibling_group_policy": "Keep every family_id together in any future split; these examples are already exposed development material.",
+      "split": "illustrative_development_only",
+      "target_commit_identity": {
+        "expected_version": 1,
+        "patch_id": "decision-0",
+        "through_seq": 5
+      }
+    },
+    "schema_version": 1,
+    "target": {
+      "operations": [
+        {
+          "intent_id": "platform",
+          "op": "update",
+          "source_seqs": [
+            5
+          ],
+          "text": "使用移动端"
+        },
+        {
+          "intent_id": "sync",
+          "op": "withdraw",
+          "source_seqs": [
+            5
+          ]
+        },
+        {
+          "intent_id": "offline",
+          "op": "add",
+          "owner": "林",
+          "source_seqs": [
+            5
+          ],
+          "status": "active",
+          "text": "必须能离线使用"
+        }
+      ]
+    }
+  },
+  {
+    "example_id": "stale-state-correction-zh",
+    "input": {
+      "conversation": [
+        {
+          "role": "user",
+          "seq": 1,
+          "speaker": "林",
+          "text": "预算每月最多12元，必须能离线用。"
+        },
+        {
+          "role": "user",
+          "seq": 4,
+          "speaker": "林",
+          "text": "提醒一下，预算一直是12元，不是120元；离线要求不变。"
+        }
+      ],
+      "intention_state": {
+        "intents": [
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "林",
+                  "status": "active",
+                  "text": "每月预算不超过120元"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "budget",
+            "owner": "林",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "每月预算不超过120元",
+            "updated_version": 1
+          },
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "林",
+                  "status": "active",
+                  "text": "必须能离线使用"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "offline",
+            "owner": "林",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "必须能离线使用",
+            "updated_version": 1
+          }
+        ],
+        "observed_event_seq": 4,
+        "processed_event_seq": 1,
+        "receipts": [],
+        "version": 1
+      },
+      "tool_receipts": []
+    },
+    "metadata": {
+      "annotation_note": "The prior patch is deliberately semantically wrong but structurally valid. Correct the advisory state from original words; this is not a user budget change.",
+      "atomic_requirement_annotations": [
+        {
+          "intent_id": "budget",
+          "owner": "林",
+          "status": "active",
+          "text": "每月预算不超过12元"
+        },
+        {
+          "intent_id": "offline",
+          "owner": "林",
+          "status": "active",
+          "text": "必须能离线使用"
+        }
+      ],
+      "authorship": "agent-authored fictional scenarios",
+      "candidate_runtime_error_input": false,
+      "current_runtime_supplies_previous_error": false,
+      "expected_post_state": {
+        "intents": [
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "林",
+                  "status": "active",
+                  "text": "每月预算不超过120元"
+                },
+                "version": 1
+              },
+              {
+                "op": "update",
+                "patch_id": "decision-0",
+                "source_seqs": [
+                  4
+                ],
+                "state": {
+                  "owner": "林",
+                  "status": "active",
+                  "text": "每月预算不超过12元"
+                },
+                "version": 2
+              }
+            ],
+            "intent_id": "budget",
+            "owner": "林",
+            "source_seqs": [
+              4
+            ],
+            "status": "active",
+            "text": "每月预算不超过12元",
+            "updated_version": 2
+          },
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "林",
+                  "status": "active",
+                  "text": "必须能离线使用"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "offline",
+            "owner": "林",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "必须能离线使用",
+            "updated_version": 1
+          }
+        ],
+        "observed_event_seq": 4,
+        "processed_event_seq": 4,
+        "receipts": [],
+        "version": 2
+      },
+      "family_id": "stale-state-correction",
+      "language": "zh",
+      "preserve_unchanged_ids": [
+        "offline"
+      ],
+      "role": "intention_tracker",
+      "semantic_review_status": "independent semantic and human review pending",
+      "setup_patches": [
+        {
+          "expected_version": 0,
+          "operations": [
+            {
+              "intent_id": "budget",
+              "op": "add",
+              "owner": "林",
+              "source_seqs": [
+                1
+              ],
+              "status": "active",
+              "text": "每月预算不超过120元"
+            },
+            {
+              "intent_id": "offline",
+              "op": "add",
+              "owner": "林",
+              "source_seqs": [
+                1
+              ],
+              "status": "active",
+              "text": "必须能离线使用"
+            }
+          ],
+          "patch_id": "setup-0",
+          "through_seq": 1
+        }
+      ],
+      "sibling_group_policy": "Keep every family_id together in any future split; these examples are already exposed development material.",
+      "split": "illustrative_development_only",
+      "target_commit_identity": {
+        "expected_version": 1,
+        "patch_id": "decision-0",
+        "through_seq": 4
+      }
+    },
+    "schema_version": 1,
+    "target": {
+      "operations": [
+        {
+          "intent_id": "budget",
+          "op": "update",
+          "source_seqs": [
+            4
+          ],
+          "text": "每月预算不超过12元"
+        }
+      ]
+    }
+  },
+  {
+    "example_id": "add-constraint-en",
+    "input": {
+      "conversation": [
+        {
+          "role": "user",
+          "seq": 1,
+          "speaker": "Mira",
+          "text": "Help me choose a note-taking tool."
+        },
+        {
+          "role": "user",
+          "seq": 4,
+          "speaker": "Mira",
+          "text": "Also, it must work offline."
+        }
+      ],
+      "intention_state": {
+        "intents": [
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "Mira",
+                  "status": "active",
+                  "text": "Choose a note-taking tool"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "task",
+            "owner": "Mira",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "Choose a note-taking tool",
+            "updated_version": 1
+          }
+        ],
+        "observed_event_seq": 4,
+        "processed_event_seq": 1,
+        "receipts": [],
+        "version": 1
+      },
+      "tool_receipts": []
+    },
+    "metadata": {
+      "annotation_note": "Add the newly required property without replacing the existing goal.",
+      "atomic_requirement_annotations": [
+        {
+          "intent_id": "task",
+          "owner": "Mira",
+          "status": "active",
+          "text": "Choose a note-taking tool"
+        },
+        {
+          "intent_id": "offline",
+          "owner": "Mira",
+          "status": "active",
+          "text": "Must work offline"
+        }
+      ],
+      "authorship": "agent-authored fictional scenarios",
+      "candidate_runtime_error_input": false,
+      "current_runtime_supplies_previous_error": false,
+      "expected_post_state": {
+        "intents": [
+          {
+            "created_version": 2,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "decision-0",
+                "source_seqs": [
+                  4
+                ],
+                "state": {
+                  "owner": "Mira",
+                  "status": "active",
+                  "text": "Must work offline"
+                },
+                "version": 2
+              }
+            ],
+            "intent_id": "offline",
+            "owner": "Mira",
+            "source_seqs": [
+              4
+            ],
+            "status": "active",
+            "text": "Must work offline",
+            "updated_version": 2
+          },
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "Mira",
+                  "status": "active",
+                  "text": "Choose a note-taking tool"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "task",
+            "owner": "Mira",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "Choose a note-taking tool",
+            "updated_version": 1
+          }
+        ],
+        "observed_event_seq": 4,
+        "processed_event_seq": 4,
+        "receipts": [],
+        "version": 2
+      },
+      "family_id": "add-constraint",
+      "language": "en",
+      "preserve_unchanged_ids": [
+        "task"
+      ],
+      "role": "intention_tracker",
+      "semantic_review_status": "independent semantic and human review pending",
+      "setup_patches": [
+        {
+          "expected_version": 0,
+          "operations": [
+            {
+              "intent_id": "task",
+              "op": "add",
+              "owner": "Mira",
+              "source_seqs": [
+                1
+              ],
+              "status": "active",
+              "text": "Choose a note-taking tool"
+            }
+          ],
+          "patch_id": "setup-0",
+          "through_seq": 1
+        }
+      ],
+      "sibling_group_policy": "Keep every family_id together in any future split; these examples are already exposed development material.",
+      "split": "illustrative_development_only",
+      "target_commit_identity": {
+        "expected_version": 1,
+        "patch_id": "decision-0",
+        "through_seq": 4
+      }
+    },
+    "schema_version": 1,
+    "target": {
+      "operations": [
+        {
+          "intent_id": "offline",
+          "op": "add",
+          "owner": "Mira",
+          "source_seqs": [
+            4
+          ],
+          "status": "active",
+          "text": "Must work offline"
+        }
+      ]
+    }
+  },
+  {
+    "example_id": "local-update-en",
+    "input": {
+      "conversation": [
+        {
+          "role": "user",
+          "seq": 1,
+          "speaker": "Mira",
+          "text": "Find a free desktop note-taking tool."
+        },
+        {
+          "role": "user",
+          "seq": 4,
+          "speaker": "Mira",
+          "text": "Switch to mobile; keep the free requirement."
+        }
+      ],
+      "intention_state": {
+        "intents": [
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "Mira",
+                  "status": "active",
+                  "text": "Must be free"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "cost",
+            "owner": "Mira",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "Must be free",
+            "updated_version": 1
+          },
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "Mira",
+                  "status": "active",
+                  "text": "Use a desktop app"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "platform",
+            "owner": "Mira",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "Use a desktop app",
+            "updated_version": 1
+          },
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "Mira",
+                  "status": "active",
+                  "text": "Choose a note-taking tool"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "task",
+            "owner": "Mira",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "Choose a note-taking tool",
+            "updated_version": 1
+          }
+        ],
+        "observed_event_seq": 4,
+        "processed_event_seq": 1,
+        "receipts": [],
+        "version": 1
+      },
+      "tool_receipts": []
+    },
+    "metadata": {
+      "annotation_note": "Only platform changes; zero price and the original goal remain active.",
+      "atomic_requirement_annotations": [
+        {
+          "intent_id": "task",
+          "owner": "Mira",
+          "status": "active",
+          "text": "Choose a note-taking tool"
+        },
+        {
+          "intent_id": "cost",
+          "owner": "Mira",
+          "status": "active",
+          "text": "Must be free"
+        },
+        {
+          "intent_id": "platform",
+          "owner": "Mira",
+          "status": "active",
+          "text": "Use a mobile app"
+        }
+      ],
+      "authorship": "agent-authored fictional scenarios",
+      "candidate_runtime_error_input": false,
+      "current_runtime_supplies_previous_error": false,
+      "expected_post_state": {
+        "intents": [
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "Mira",
+                  "status": "active",
+                  "text": "Must be free"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "cost",
+            "owner": "Mira",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "Must be free",
+            "updated_version": 1
+          },
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "Mira",
+                  "status": "active",
+                  "text": "Use a desktop app"
+                },
+                "version": 1
+              },
+              {
+                "op": "update",
+                "patch_id": "decision-0",
+                "source_seqs": [
+                  4
+                ],
+                "state": {
+                  "owner": "Mira",
+                  "status": "active",
+                  "text": "Use a mobile app"
+                },
+                "version": 2
+              }
+            ],
+            "intent_id": "platform",
+            "owner": "Mira",
+            "source_seqs": [
+              4
+            ],
+            "status": "active",
+            "text": "Use a mobile app",
+            "updated_version": 2
+          },
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "Mira",
+                  "status": "active",
+                  "text": "Choose a note-taking tool"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "task",
+            "owner": "Mira",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "Choose a note-taking tool",
+            "updated_version": 1
+          }
+        ],
+        "observed_event_seq": 4,
+        "processed_event_seq": 4,
+        "receipts": [],
+        "version": 2
+      },
+      "family_id": "local-update",
+      "language": "en",
+      "preserve_unchanged_ids": [
+        "task",
+        "cost"
+      ],
+      "role": "intention_tracker",
+      "semantic_review_status": "independent semantic and human review pending",
+      "setup_patches": [
+        {
+          "expected_version": 0,
+          "operations": [
+            {
+              "intent_id": "task",
+              "op": "add",
+              "owner": "Mira",
+              "source_seqs": [
+                1
+              ],
+              "status": "active",
+              "text": "Choose a note-taking tool"
+            },
+            {
+              "intent_id": "cost",
+              "op": "add",
+              "owner": "Mira",
+              "source_seqs": [
+                1
+              ],
+              "status": "active",
+              "text": "Must be free"
+            },
+            {
+              "intent_id": "platform",
+              "op": "add",
+              "owner": "Mira",
+              "source_seqs": [
+                1
+              ],
+              "status": "active",
+              "text": "Use a desktop app"
+            }
+          ],
+          "patch_id": "setup-0",
+          "through_seq": 1
+        }
+      ],
+      "sibling_group_policy": "Keep every family_id together in any future split; these examples are already exposed development material.",
+      "split": "illustrative_development_only",
+      "target_commit_identity": {
+        "expected_version": 1,
+        "patch_id": "decision-0",
+        "through_seq": 4
+      }
+    },
+    "schema_version": 1,
+    "target": {
+      "operations": [
+        {
+          "intent_id": "platform",
+          "op": "update",
+          "source_seqs": [
+            4
+          ],
+          "text": "Use a mobile app"
+        }
+      ]
+    }
+  },
+  {
+    "example_id": "withdraw-en",
+    "input": {
+      "conversation": [
+        {
+          "role": "user",
+          "seq": 1,
+          "speaker": "Mira",
+          "text": "Find a note-taking tool with offline use and cloud sync."
+        },
+        {
+          "role": "user",
+          "seq": 4,
+          "speaker": "Mira",
+          "text": "Cancel cloud sync for now; offline use is still required."
+        }
+      ],
+      "intention_state": {
+        "intents": [
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "Mira",
+                  "status": "active",
+                  "text": "Must work offline"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "offline",
+            "owner": "Mira",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "Must work offline",
+            "updated_version": 1
+          },
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "Mira",
+                  "status": "active",
+                  "text": "Require cloud synchronization"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "sync",
+            "owner": "Mira",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "Require cloud synchronization",
+            "updated_version": 1
+          },
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "Mira",
+                  "status": "active",
+                  "text": "Choose a note-taking tool"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "task",
+            "owner": "Mira",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "Choose a note-taking tool",
+            "updated_version": 1
+          }
+        ],
+        "observed_event_seq": 4,
+        "processed_event_seq": 1,
+        "receipts": [],
+        "version": 1
+      },
+      "tool_receipts": []
+    },
+    "metadata": {
+      "annotation_note": "Withdrawal retains the sync record and history; it does not delete unrelated needs.",
+      "atomic_requirement_annotations": [
+        {
+          "intent_id": "task",
+          "owner": "Mira",
+          "status": "active",
+          "text": "Choose a note-taking tool"
+        },
+        {
+          "intent_id": "offline",
+          "owner": "Mira",
+          "status": "active",
+          "text": "Must work offline"
+        },
+        {
+          "intent_id": "sync",
+          "owner": "Mira",
+          "status": "withdrawn",
+          "text": "Require cloud synchronization"
+        }
+      ],
+      "authorship": "agent-authored fictional scenarios",
+      "candidate_runtime_error_input": false,
+      "current_runtime_supplies_previous_error": false,
+      "expected_post_state": {
+        "intents": [
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "Mira",
+                  "status": "active",
+                  "text": "Must work offline"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "offline",
+            "owner": "Mira",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "Must work offline",
+            "updated_version": 1
+          },
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "Mira",
+                  "status": "active",
+                  "text": "Require cloud synchronization"
+                },
+                "version": 1
+              },
+              {
+                "op": "withdraw",
+                "patch_id": "decision-0",
+                "source_seqs": [
+                  4
+                ],
+                "state": {
+                  "owner": "Mira",
+                  "status": "withdrawn",
+                  "text": "Require cloud synchronization"
+                },
+                "version": 2
+              }
+            ],
+            "intent_id": "sync",
+            "owner": "Mira",
+            "source_seqs": [
+              4
+            ],
+            "status": "withdrawn",
+            "text": "Require cloud synchronization",
+            "updated_version": 2
+          },
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "Mira",
+                  "status": "active",
+                  "text": "Choose a note-taking tool"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "task",
+            "owner": "Mira",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "Choose a note-taking tool",
+            "updated_version": 1
+          }
+        ],
+        "observed_event_seq": 4,
+        "processed_event_seq": 4,
+        "receipts": [],
+        "version": 2
+      },
+      "family_id": "withdraw",
+      "language": "en",
+      "preserve_unchanged_ids": [
+        "task",
+        "offline"
+      ],
+      "role": "intention_tracker",
+      "semantic_review_status": "independent semantic and human review pending",
+      "setup_patches": [
+        {
+          "expected_version": 0,
+          "operations": [
+            {
+              "intent_id": "task",
+              "op": "add",
+              "owner": "Mira",
+              "source_seqs": [
+                1
+              ],
+              "status": "active",
+              "text": "Choose a note-taking tool"
+            },
+            {
+              "intent_id": "offline",
+              "op": "add",
+              "owner": "Mira",
+              "source_seqs": [
+                1
+              ],
+              "status": "active",
+              "text": "Must work offline"
+            },
+            {
+              "intent_id": "sync",
+              "op": "add",
+              "owner": "Mira",
+              "source_seqs": [
+                1
+              ],
+              "status": "active",
+              "text": "Require cloud synchronization"
+            }
+          ],
+          "patch_id": "setup-0",
+          "through_seq": 1
+        }
+      ],
+      "sibling_group_policy": "Keep every family_id together in any future split; these examples are already exposed development material.",
+      "split": "illustrative_development_only",
+      "target_commit_identity": {
+        "expected_version": 1,
+        "patch_id": "decision-0",
+        "through_seq": 4
+      }
+    },
+    "schema_version": 1,
+    "target": {
+      "operations": [
+        {
+          "intent_id": "sync",
+          "op": "withdraw",
+          "source_seqs": [
+            4
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "example_id": "reopen-en",
+    "input": {
+      "conversation": [
+        {
+          "role": "user",
+          "seq": 1,
+          "speaker": "Mira",
+          "text": "The tool needs cloud sync and must be free."
+        },
+        {
+          "role": "user",
+          "seq": 4,
+          "speaker": "Mira",
+          "text": "Cancel cloud sync for now."
+        },
+        {
+          "role": "user",
+          "seq": 9,
+          "speaker": "Mira",
+          "text": "Restore cloud sync after all; the free requirement stays."
+        }
+      ],
+      "intention_state": {
+        "intents": [
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "Mira",
+                  "status": "active",
+                  "text": "Must be free"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "cost",
+            "owner": "Mira",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "Must be free",
+            "updated_version": 1
+          },
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "Mira",
+                  "status": "active",
+                  "text": "Require cloud synchronization"
+                },
+                "version": 1
+              },
+              {
+                "op": "withdraw",
+                "patch_id": "setup-1",
+                "source_seqs": [
+                  4
+                ],
+                "state": {
+                  "owner": "Mira",
+                  "status": "withdrawn",
+                  "text": "Require cloud synchronization"
+                },
+                "version": 2
+              }
+            ],
+            "intent_id": "sync",
+            "owner": "Mira",
+            "source_seqs": [
+              4
+            ],
+            "status": "withdrawn",
+            "text": "Require cloud synchronization",
+            "updated_version": 2
+          }
+        ],
+        "observed_event_seq": 9,
+        "processed_event_seq": 4,
+        "receipts": [],
+        "version": 2
+      },
+      "tool_receipts": []
+    },
+    "metadata": {
+      "annotation_note": "Restore the same stable ID rather than adding a duplicate or updating a withdrawn record.",
+      "atomic_requirement_annotations": [
+        {
+          "intent_id": "sync",
+          "owner": "Mira",
+          "status": "active",
+          "text": "Require cloud synchronization"
+        },
+        {
+          "intent_id": "cost",
+          "owner": "Mira",
+          "status": "active",
+          "text": "Must be free"
+        }
+      ],
+      "authorship": "agent-authored fictional scenarios",
+      "candidate_runtime_error_input": false,
+      "current_runtime_supplies_previous_error": false,
+      "expected_post_state": {
+        "intents": [
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "Mira",
+                  "status": "active",
+                  "text": "Must be free"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "cost",
+            "owner": "Mira",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "Must be free",
+            "updated_version": 1
+          },
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "Mira",
+                  "status": "active",
+                  "text": "Require cloud synchronization"
+                },
+                "version": 1
+              },
+              {
+                "op": "withdraw",
+                "patch_id": "setup-1",
+                "source_seqs": [
+                  4
+                ],
+                "state": {
+                  "owner": "Mira",
+                  "status": "withdrawn",
+                  "text": "Require cloud synchronization"
+                },
+                "version": 2
+              },
+              {
+                "op": "reopen",
+                "patch_id": "decision-0",
+                "source_seqs": [
+                  9
+                ],
+                "state": {
+                  "owner": "Mira",
+                  "status": "active",
+                  "text": "Require cloud synchronization"
+                },
+                "version": 3
+              }
+            ],
+            "intent_id": "sync",
+            "owner": "Mira",
+            "source_seqs": [
+              9
+            ],
+            "status": "active",
+            "text": "Require cloud synchronization",
+            "updated_version": 3
+          }
+        ],
+        "observed_event_seq": 9,
+        "processed_event_seq": 9,
+        "receipts": [],
+        "version": 3
+      },
+      "family_id": "reopen",
+      "language": "en",
+      "preserve_unchanged_ids": [
+        "cost"
+      ],
+      "role": "intention_tracker",
+      "semantic_review_status": "independent semantic and human review pending",
+      "setup_patches": [
+        {
+          "expected_version": 0,
+          "operations": [
+            {
+              "intent_id": "sync",
+              "op": "add",
+              "owner": "Mira",
+              "source_seqs": [
+                1
+              ],
+              "status": "active",
+              "text": "Require cloud synchronization"
+            },
+            {
+              "intent_id": "cost",
+              "op": "add",
+              "owner": "Mira",
+              "source_seqs": [
+                1
+              ],
+              "status": "active",
+              "text": "Must be free"
+            }
+          ],
+          "patch_id": "setup-0",
+          "through_seq": 1
+        },
+        {
+          "expected_version": 1,
+          "operations": [
+            {
+              "intent_id": "sync",
+              "op": "withdraw",
+              "source_seqs": [
+                4
+              ]
+            }
+          ],
+          "patch_id": "setup-1",
+          "through_seq": 4
+        }
+      ],
+      "sibling_group_policy": "Keep every family_id together in any future split; these examples are already exposed development material.",
+      "split": "illustrative_development_only",
+      "target_commit_identity": {
+        "expected_version": 2,
+        "patch_id": "decision-0",
+        "through_seq": 9
+      }
+    },
+    "schema_version": 1,
+    "target": {
+      "operations": [
+        {
+          "intent_id": "sync",
+          "op": "reopen",
+          "source_seqs": [
+            9
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "example_id": "validation-repair-en",
+    "input": {
+      "conversation": [
+        {
+          "role": "user",
+          "seq": 1,
+          "speaker": "Mira",
+          "text": "Write the report in English and export results as a CSV file."
+        },
+        {
+          "role": "user",
+          "seq": 4,
+          "speaker": "Mira",
+          "text": "Cancel the CSV export for now."
+        },
+        {
+          "role": "user",
+          "seq": 9,
+          "speaker": "Mira",
+          "text": "Restore the CSV export; keep the report in English."
+        }
+      ],
+      "intention_state": {
+        "intents": [
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "Mira",
+                  "status": "active",
+                  "text": "Export results as a CSV file"
+                },
+                "version": 1
+              },
+              {
+                "op": "withdraw",
+                "patch_id": "setup-1",
+                "source_seqs": [
+                  4
+                ],
+                "state": {
+                  "owner": "Mira",
+                  "status": "withdrawn",
+                  "text": "Export results as a CSV file"
+                },
+                "version": 2
+              }
+            ],
+            "intent_id": "csv-export",
+            "owner": "Mira",
+            "source_seqs": [
+              4
+            ],
+            "status": "withdrawn",
+            "text": "Export results as a CSV file",
+            "updated_version": 2
+          },
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "Mira",
+                  "status": "active",
+                  "text": "Write the report in English"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "language",
+            "owner": "Mira",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "Write the report in English",
+            "updated_version": 1
+          }
+        ],
+        "observed_event_seq": 9,
+        "processed_event_seq": 4,
+        "receipts": [],
+        "version": 2
+      },
+      "previous_error": {
+        "error_type": "IntentValidationError",
+        "message": "A withdrawn intention needs an explicit reopen operation.",
+        "proposal": {
+          "operations": [
+            {
+              "intent_id": "csv-export",
+              "op": "update",
+              "source_seqs": [
+                9
+              ],
+              "text": "Export results as a CSV file"
+            }
+          ]
+        }
+      },
+      "tool_receipts": []
+    },
+    "metadata": {
+      "annotation_note": "Repair a rejected update by explicit reopen, using the unchanged current state. previous_error is a proposed input field absent from the current runtime.",
+      "atomic_requirement_annotations": [
+        {
+          "intent_id": "csv-export",
+          "owner": "Mira",
+          "status": "active",
+          "text": "Export results as a CSV file"
+        },
+        {
+          "intent_id": "language",
+          "owner": "Mira",
+          "status": "active",
+          "text": "Write the report in English"
+        }
+      ],
+      "authorship": "agent-authored fictional scenarios",
+      "candidate_runtime_error_input": true,
+      "current_runtime_supplies_previous_error": false,
+      "expected_post_state": {
+        "intents": [
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "Mira",
+                  "status": "active",
+                  "text": "Export results as a CSV file"
+                },
+                "version": 1
+              },
+              {
+                "op": "withdraw",
+                "patch_id": "setup-1",
+                "source_seqs": [
+                  4
+                ],
+                "state": {
+                  "owner": "Mira",
+                  "status": "withdrawn",
+                  "text": "Export results as a CSV file"
+                },
+                "version": 2
+              },
+              {
+                "op": "reopen",
+                "patch_id": "decision-0",
+                "source_seqs": [
+                  9
+                ],
+                "state": {
+                  "owner": "Mira",
+                  "status": "active",
+                  "text": "Export results as a CSV file"
+                },
+                "version": 3
+              }
+            ],
+            "intent_id": "csv-export",
+            "owner": "Mira",
+            "source_seqs": [
+              9
+            ],
+            "status": "active",
+            "text": "Export results as a CSV file",
+            "updated_version": 3
+          },
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "Mira",
+                  "status": "active",
+                  "text": "Write the report in English"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "language",
+            "owner": "Mira",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "Write the report in English",
+            "updated_version": 1
+          }
+        ],
+        "observed_event_seq": 9,
+        "processed_event_seq": 9,
+        "receipts": [],
+        "version": 3
+      },
+      "family_id": "validation-repair",
+      "language": "en",
+      "preserve_unchanged_ids": [
+        "language"
+      ],
+      "role": "intention_tracker",
+      "semantic_review_status": "independent semantic and human review pending",
+      "setup_patches": [
+        {
+          "expected_version": 0,
+          "operations": [
+            {
+              "intent_id": "csv-export",
+              "op": "add",
+              "owner": "Mira",
+              "source_seqs": [
+                1
+              ],
+              "status": "active",
+              "text": "Export results as a CSV file"
+            },
+            {
+              "intent_id": "language",
+              "op": "add",
+              "owner": "Mira",
+              "source_seqs": [
+                1
+              ],
+              "status": "active",
+              "text": "Write the report in English"
+            }
+          ],
+          "patch_id": "setup-0",
+          "through_seq": 1
+        },
+        {
+          "expected_version": 1,
+          "operations": [
+            {
+              "intent_id": "csv-export",
+              "op": "withdraw",
+              "source_seqs": [
+                4
+              ]
+            }
+          ],
+          "patch_id": "setup-1",
+          "through_seq": 4
+        }
+      ],
+      "sibling_group_policy": "Keep every family_id together in any future split; these examples are already exposed development material.",
+      "split": "illustrative_development_only",
+      "target_commit_identity": {
+        "expected_version": 2,
+        "patch_id": "decision-0",
+        "through_seq": 9
+      }
+    },
+    "schema_version": 1,
+    "target": {
+      "operations": [
+        {
+          "intent_id": "csv-export",
+          "op": "reopen",
+          "source_seqs": [
+            9
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "example_id": "no-change-en",
+    "input": {
+      "conversation": [
+        {
+          "role": "user",
+          "seq": 1,
+          "speaker": "Mira",
+          "text": "The tool must be free and work offline."
+        },
+        {
+          "role": "user",
+          "seq": 4,
+          "speaker": "Mira",
+          "text": "Understood, thanks."
+        }
+      ],
+      "intention_state": {
+        "intents": [
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "Mira",
+                  "status": "active",
+                  "text": "Must be free"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "cost",
+            "owner": "Mira",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "Must be free",
+            "updated_version": 1
+          },
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "Mira",
+                  "status": "active",
+                  "text": "Must work offline"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "offline",
+            "owner": "Mira",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "Must work offline",
+            "updated_version": 1
+          }
+        ],
+        "observed_event_seq": 4,
+        "processed_event_seq": 1,
+        "receipts": [],
+        "version": 1
+      },
+      "tool_receipts": []
+    },
+    "metadata": {
+      "annotation_note": "Acknowledgement is not a changed request; empty operations still advances the processed cursor.",
+      "atomic_requirement_annotations": [
+        {
+          "intent_id": "cost",
+          "owner": "Mira",
+          "status": "active",
+          "text": "Must be free"
+        },
+        {
+          "intent_id": "offline",
+          "owner": "Mira",
+          "status": "active",
+          "text": "Must work offline"
+        }
+      ],
+      "authorship": "agent-authored fictional scenarios",
+      "candidate_runtime_error_input": false,
+      "current_runtime_supplies_previous_error": false,
+      "expected_post_state": {
+        "intents": [
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "Mira",
+                  "status": "active",
+                  "text": "Must be free"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "cost",
+            "owner": "Mira",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "Must be free",
+            "updated_version": 1
+          },
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "Mira",
+                  "status": "active",
+                  "text": "Must work offline"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "offline",
+            "owner": "Mira",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "Must work offline",
+            "updated_version": 1
+          }
+        ],
+        "observed_event_seq": 4,
+        "processed_event_seq": 4,
+        "receipts": [],
+        "version": 2
+      },
+      "family_id": "no-change",
+      "language": "en",
+      "preserve_unchanged_ids": [
+        "cost",
+        "offline"
+      ],
+      "role": "intention_tracker",
+      "semantic_review_status": "independent semantic and human review pending",
+      "setup_patches": [
+        {
+          "expected_version": 0,
+          "operations": [
+            {
+              "intent_id": "cost",
+              "op": "add",
+              "owner": "Mira",
+              "source_seqs": [
+                1
+              ],
+              "status": "active",
+              "text": "Must be free"
+            },
+            {
+              "intent_id": "offline",
+              "op": "add",
+              "owner": "Mira",
+              "source_seqs": [
+                1
+              ],
+              "status": "active",
+              "text": "Must work offline"
+            }
+          ],
+          "patch_id": "setup-0",
+          "through_seq": 1
+        }
+      ],
+      "sibling_group_policy": "Keep every family_id together in any future split; these examples are already exposed development material.",
+      "split": "illustrative_development_only",
+      "target_commit_identity": {
+        "expected_version": 1,
+        "patch_id": "decision-0",
+        "through_seq": 4
+      }
+    },
+    "schema_version": 1,
+    "target": {
+      "operations": []
+    }
+  },
+  {
+    "example_id": "unaccepted-proposal-en",
+    "input": {
+      "conversation": [
+        {
+          "role": "user",
+          "seq": 1,
+          "speaker": "Mira",
+          "text": "The tool must be free and work offline."
+        },
+        {
+          "role": "assistant",
+          "seq": 4,
+          "speaker": "assistant",
+          "text": "I suggest switching to a paid online service."
+        }
+      ],
+      "intention_state": {
+        "intents": [
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "Mira",
+                  "status": "active",
+                  "text": "Must be free"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "cost",
+            "owner": "Mira",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "Must be free",
+            "updated_version": 1
+          },
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "Mira",
+                  "status": "active",
+                  "text": "Must work offline"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "offline",
+            "owner": "Mira",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "Must work offline",
+            "updated_version": 1
+          }
+        ],
+        "observed_event_seq": 4,
+        "processed_event_seq": 1,
+        "receipts": [],
+        "version": 1
+      },
+      "tool_receipts": []
+    },
+    "metadata": {
+      "annotation_note": "An assistant proposal is not user acceptance; do not revise either active constraint.",
+      "atomic_requirement_annotations": [
+        {
+          "intent_id": "cost",
+          "owner": "Mira",
+          "status": "active",
+          "text": "Must be free"
+        },
+        {
+          "intent_id": "offline",
+          "owner": "Mira",
+          "status": "active",
+          "text": "Must work offline"
+        }
+      ],
+      "authorship": "agent-authored fictional scenarios",
+      "candidate_runtime_error_input": false,
+      "current_runtime_supplies_previous_error": false,
+      "expected_post_state": {
+        "intents": [
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "Mira",
+                  "status": "active",
+                  "text": "Must be free"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "cost",
+            "owner": "Mira",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "Must be free",
+            "updated_version": 1
+          },
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "Mira",
+                  "status": "active",
+                  "text": "Must work offline"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "offline",
+            "owner": "Mira",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "Must work offline",
+            "updated_version": 1
+          }
+        ],
+        "observed_event_seq": 4,
+        "processed_event_seq": 4,
+        "receipts": [],
+        "version": 2
+      },
+      "family_id": "unaccepted-proposal",
+      "language": "en",
+      "preserve_unchanged_ids": [
+        "cost",
+        "offline"
+      ],
+      "role": "intention_tracker",
+      "semantic_review_status": "independent semantic and human review pending",
+      "setup_patches": [
+        {
+          "expected_version": 0,
+          "operations": [
+            {
+              "intent_id": "cost",
+              "op": "add",
+              "owner": "Mira",
+              "source_seqs": [
+                1
+              ],
+              "status": "active",
+              "text": "Must be free"
+            },
+            {
+              "intent_id": "offline",
+              "op": "add",
+              "owner": "Mira",
+              "source_seqs": [
+                1
+              ],
+              "status": "active",
+              "text": "Must work offline"
+            }
+          ],
+          "patch_id": "setup-0",
+          "through_seq": 1
+        }
+      ],
+      "sibling_group_policy": "Keep every family_id together in any future split; these examples are already exposed development material.",
+      "split": "illustrative_development_only",
+      "target_commit_identity": {
+        "expected_version": 1,
+        "patch_id": "decision-0",
+        "through_seq": 4
+      }
+    },
+    "schema_version": 1,
+    "target": {
+      "operations": []
+    }
+  },
+  {
+    "example_id": "quoted-third-party-en",
+    "input": {
+      "conversation": [
+        {
+          "role": "user",
+          "seq": 1,
+          "speaker": "Mira",
+          "text": "The tool must be free and work offline."
+        },
+        {
+          "role": "user",
+          "seq": 4,
+          "speaker": "Mira",
+          "text": "My colleague said, \"Raise the budget and use an online tool.\" That is only his suggestion; my requirements have not changed."
+        }
+      ],
+      "intention_state": {
+        "intents": [
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "Mira",
+                  "status": "active",
+                  "text": "Must be free"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "cost",
+            "owner": "Mira",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "Must be free",
+            "updated_version": 1
+          },
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "Mira",
+                  "status": "active",
+                  "text": "Must work offline"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "offline",
+            "owner": "Mira",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "Must work offline",
+            "updated_version": 1
+          }
+        ],
+        "observed_event_seq": 4,
+        "processed_event_seq": 1,
+        "receipts": [],
+        "version": 1
+      },
+      "tool_receipts": []
+    },
+    "metadata": {
+      "annotation_note": "Quoted third-party instructions plus explicit non-adoption produce no operations.",
+      "atomic_requirement_annotations": [
+        {
+          "intent_id": "cost",
+          "owner": "Mira",
+          "status": "active",
+          "text": "Must be free"
+        },
+        {
+          "intent_id": "offline",
+          "owner": "Mira",
+          "status": "active",
+          "text": "Must work offline"
+        }
+      ],
+      "authorship": "agent-authored fictional scenarios",
+      "candidate_runtime_error_input": false,
+      "current_runtime_supplies_previous_error": false,
+      "expected_post_state": {
+        "intents": [
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "Mira",
+                  "status": "active",
+                  "text": "Must be free"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "cost",
+            "owner": "Mira",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "Must be free",
+            "updated_version": 1
+          },
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "Mira",
+                  "status": "active",
+                  "text": "Must work offline"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "offline",
+            "owner": "Mira",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "Must work offline",
+            "updated_version": 1
+          }
+        ],
+        "observed_event_seq": 4,
+        "processed_event_seq": 4,
+        "receipts": [],
+        "version": 2
+      },
+      "family_id": "quoted-third-party",
+      "language": "en",
+      "preserve_unchanged_ids": [
+        "cost",
+        "offline"
+      ],
+      "role": "intention_tracker",
+      "semantic_review_status": "independent semantic and human review pending",
+      "setup_patches": [
+        {
+          "expected_version": 0,
+          "operations": [
+            {
+              "intent_id": "cost",
+              "op": "add",
+              "owner": "Mira",
+              "source_seqs": [
+                1
+              ],
+              "status": "active",
+              "text": "Must be free"
+            },
+            {
+              "intent_id": "offline",
+              "op": "add",
+              "owner": "Mira",
+              "source_seqs": [
+                1
+              ],
+              "status": "active",
+              "text": "Must work offline"
+            }
+          ],
+          "patch_id": "setup-0",
+          "through_seq": 1
+        }
+      ],
+      "sibling_group_policy": "Keep every family_id together in any future split; these examples are already exposed development material.",
+      "split": "illustrative_development_only",
+      "target_commit_identity": {
+        "expected_version": 1,
+        "patch_id": "decision-0",
+        "through_seq": 4
+      }
+    },
+    "schema_version": 1,
+    "target": {
+      "operations": []
+    }
+  },
+  {
+    "example_id": "owner-ambiguity-en",
+    "input": {
+      "conversation": [
+        {
+          "role": "user",
+          "seq": 1,
+          "speaker": "Mira",
+          "text": "Help me choose a free note-taking tool."
+        },
+        {
+          "role": "user",
+          "seq": 4,
+          "speaker": "Mira",
+          "text": "We might also need captions, but I am not sure who needs them or whether they are required."
+        }
+      ],
+      "intention_state": {
+        "intents": [
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "Mira",
+                  "status": "active",
+                  "text": "Must be free"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "cost",
+            "owner": "Mira",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "Must be free",
+            "updated_version": 1
+          },
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "Mira",
+                  "status": "active",
+                  "text": "Choose a note-taking tool"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "task",
+            "owner": "Mira",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "Choose a note-taking tool",
+            "updated_version": 1
+          }
+        ],
+        "observed_event_seq": 4,
+        "processed_event_seq": 1,
+        "receipts": [],
+        "version": 1
+      },
+      "tool_receipts": []
+    },
+    "metadata": {
+      "annotation_note": "Candidate convention: preserve the uncertainty explicitly, with an unresolved-owner label; do not invent an individual owner. The current store has no dedicated owner-resolution field.",
+      "atomic_requirement_annotations": [
+        {
+          "intent_id": "task",
+          "owner": "Mira",
+          "status": "active",
+          "text": "Choose a note-taking tool"
+        },
+        {
+          "intent_id": "cost",
+          "owner": "Mira",
+          "status": "active",
+          "text": "Must be free"
+        },
+        {
+          "intent_id": "caption-candidate",
+          "owner": "team (unconfirmed)",
+          "status": "uncertain",
+          "text": "Possible team caption support; whether it is required and who owns it need clarification"
+        }
+      ],
+      "authorship": "agent-authored fictional scenarios",
+      "candidate_runtime_error_input": false,
+      "current_runtime_supplies_previous_error": false,
+      "expected_post_state": {
+        "intents": [
+          {
+            "created_version": 2,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "decision-0",
+                "source_seqs": [
+                  4
+                ],
+                "state": {
+                  "owner": "team (unconfirmed)",
+                  "status": "uncertain",
+                  "text": "Possible team caption support; whether it is required and who owns it need clarification"
+                },
+                "version": 2
+              }
+            ],
+            "intent_id": "caption-candidate",
+            "owner": "team (unconfirmed)",
+            "source_seqs": [
+              4
+            ],
+            "status": "uncertain",
+            "text": "Possible team caption support; whether it is required and who owns it need clarification",
+            "updated_version": 2
+          },
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "Mira",
+                  "status": "active",
+                  "text": "Must be free"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "cost",
+            "owner": "Mira",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "Must be free",
+            "updated_version": 1
+          },
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "Mira",
+                  "status": "active",
+                  "text": "Choose a note-taking tool"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "task",
+            "owner": "Mira",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "Choose a note-taking tool",
+            "updated_version": 1
+          }
+        ],
+        "observed_event_seq": 4,
+        "processed_event_seq": 4,
+        "receipts": [],
+        "version": 2
+      },
+      "family_id": "owner-ambiguity",
+      "language": "en",
+      "preserve_unchanged_ids": [
+        "task",
+        "cost"
+      ],
+      "role": "intention_tracker",
+      "semantic_review_status": "independent semantic and human review pending",
+      "setup_patches": [
+        {
+          "expected_version": 0,
+          "operations": [
+            {
+              "intent_id": "task",
+              "op": "add",
+              "owner": "Mira",
+              "source_seqs": [
+                1
+              ],
+              "status": "active",
+              "text": "Choose a note-taking tool"
+            },
+            {
+              "intent_id": "cost",
+              "op": "add",
+              "owner": "Mira",
+              "source_seqs": [
+                1
+              ],
+              "status": "active",
+              "text": "Must be free"
+            }
+          ],
+          "patch_id": "setup-0",
+          "through_seq": 1
+        }
+      ],
+      "sibling_group_policy": "Keep every family_id together in any future split; these examples are already exposed development material.",
+      "split": "illustrative_development_only",
+      "target_commit_identity": {
+        "expected_version": 1,
+        "patch_id": "decision-0",
+        "through_seq": 4
+      }
+    },
+    "schema_version": 1,
+    "target": {
+      "operations": [
+        {
+          "intent_id": "caption-candidate",
+          "op": "add",
+          "owner": "team (unconfirmed)",
+          "source_seqs": [
+            4
+          ],
+          "status": "uncertain",
+          "text": "Possible team caption support; whether it is required and who owns it need clarification"
+        }
+      ]
+    }
+  },
+  {
+    "example_id": "multiple-owners-en",
+    "input": {
+      "conversation": [
+        {
+          "role": "user",
+          "seq": 1,
+          "speaker": "Mira",
+          "text": "My monthly budget is at most 18 credits."
+        },
+        {
+          "role": "user",
+          "seq": 3,
+          "speaker": "Owen",
+          "text": "My monthly budget is at most 9 credits, and I need offline use."
+        },
+        {
+          "role": "user",
+          "seq": 6,
+          "speaker": "Mira",
+          "text": "Raise only my monthly budget to 24 credits; do not change Owen's requirements."
+        }
+      ],
+      "intention_state": {
+        "intents": [
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "Mira",
+                  "status": "active",
+                  "text": "Monthly budget at most 18 credits"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "first-budget",
+            "owner": "Mira",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "Monthly budget at most 18 credits",
+            "updated_version": 1
+          },
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  3
+                ],
+                "state": {
+                  "owner": "Owen",
+                  "status": "active",
+                  "text": "Monthly budget at most 9 credits"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "second-budget",
+            "owner": "Owen",
+            "source_seqs": [
+              3
+            ],
+            "status": "active",
+            "text": "Monthly budget at most 9 credits",
+            "updated_version": 1
+          },
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  3
+                ],
+                "state": {
+                  "owner": "Owen",
+                  "status": "active",
+                  "text": "Must work offline"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "second-offline",
+            "owner": "Owen",
+            "source_seqs": [
+              3
+            ],
+            "status": "active",
+            "text": "Must work offline",
+            "updated_version": 1
+          }
+        ],
+        "observed_event_seq": 6,
+        "processed_event_seq": 3,
+        "receipts": [],
+        "version": 1
+      },
+      "tool_receipts": []
+    },
+    "metadata": {
+      "annotation_note": "One speaker changes only that speaker's budget; the other owner's budget and offline constraint survive.",
+      "atomic_requirement_annotations": [
+        {
+          "intent_id": "first-budget",
+          "owner": "Mira",
+          "status": "active",
+          "text": "Monthly budget at most 24 credits"
+        },
+        {
+          "intent_id": "second-budget",
+          "owner": "Owen",
+          "status": "active",
+          "text": "Monthly budget at most 9 credits"
+        },
+        {
+          "intent_id": "second-offline",
+          "owner": "Owen",
+          "status": "active",
+          "text": "Must work offline"
+        }
+      ],
+      "authorship": "agent-authored fictional scenarios",
+      "candidate_runtime_error_input": false,
+      "current_runtime_supplies_previous_error": false,
+      "expected_post_state": {
+        "intents": [
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "Mira",
+                  "status": "active",
+                  "text": "Monthly budget at most 18 credits"
+                },
+                "version": 1
+              },
+              {
+                "op": "update",
+                "patch_id": "decision-0",
+                "source_seqs": [
+                  6
+                ],
+                "state": {
+                  "owner": "Mira",
+                  "status": "active",
+                  "text": "Monthly budget at most 24 credits"
+                },
+                "version": 2
+              }
+            ],
+            "intent_id": "first-budget",
+            "owner": "Mira",
+            "source_seqs": [
+              6
+            ],
+            "status": "active",
+            "text": "Monthly budget at most 24 credits",
+            "updated_version": 2
+          },
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  3
+                ],
+                "state": {
+                  "owner": "Owen",
+                  "status": "active",
+                  "text": "Monthly budget at most 9 credits"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "second-budget",
+            "owner": "Owen",
+            "source_seqs": [
+              3
+            ],
+            "status": "active",
+            "text": "Monthly budget at most 9 credits",
+            "updated_version": 1
+          },
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  3
+                ],
+                "state": {
+                  "owner": "Owen",
+                  "status": "active",
+                  "text": "Must work offline"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "second-offline",
+            "owner": "Owen",
+            "source_seqs": [
+              3
+            ],
+            "status": "active",
+            "text": "Must work offline",
+            "updated_version": 1
+          }
+        ],
+        "observed_event_seq": 6,
+        "processed_event_seq": 6,
+        "receipts": [],
+        "version": 2
+      },
+      "family_id": "multiple-owners",
+      "language": "en",
+      "preserve_unchanged_ids": [
+        "second-budget",
+        "second-offline"
+      ],
+      "role": "intention_tracker",
+      "semantic_review_status": "independent semantic and human review pending",
+      "setup_patches": [
+        {
+          "expected_version": 0,
+          "operations": [
+            {
+              "intent_id": "first-budget",
+              "op": "add",
+              "owner": "Mira",
+              "source_seqs": [
+                1
+              ],
+              "status": "active",
+              "text": "Monthly budget at most 18 credits"
+            },
+            {
+              "intent_id": "second-budget",
+              "op": "add",
+              "owner": "Owen",
+              "source_seqs": [
+                3
+              ],
+              "status": "active",
+              "text": "Monthly budget at most 9 credits"
+            },
+            {
+              "intent_id": "second-offline",
+              "op": "add",
+              "owner": "Owen",
+              "source_seqs": [
+                3
+              ],
+              "status": "active",
+              "text": "Must work offline"
+            }
+          ],
+          "patch_id": "setup-0",
+          "through_seq": 3
+        }
+      ],
+      "sibling_group_policy": "Keep every family_id together in any future split; these examples are already exposed development material.",
+      "split": "illustrative_development_only",
+      "target_commit_identity": {
+        "expected_version": 1,
+        "patch_id": "decision-0",
+        "through_seq": 6
+      }
+    },
+    "schema_version": 1,
+    "target": {
+      "operations": [
+        {
+          "intent_id": "first-budget",
+          "op": "update",
+          "source_seqs": [
+            6
+          ],
+          "text": "Monthly budget at most 24 credits"
+        }
+      ]
+    }
+  },
+  {
+    "example_id": "combined-operations-en",
+    "input": {
+      "conversation": [
+        {
+          "role": "user",
+          "seq": 1,
+          "speaker": "Mira",
+          "text": "I want a free desktop note-taking tool with cloud sync."
+        },
+        {
+          "role": "user",
+          "seq": 5,
+          "speaker": "Mira",
+          "text": "Switch to mobile, cancel cloud sync, and add offline use; keep it free."
+        }
+      ],
+      "intention_state": {
+        "intents": [
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "Mira",
+                  "status": "active",
+                  "text": "Must be free"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "cost",
+            "owner": "Mira",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "Must be free",
+            "updated_version": 1
+          },
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "Mira",
+                  "status": "active",
+                  "text": "Use a desktop app"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "platform",
+            "owner": "Mira",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "Use a desktop app",
+            "updated_version": 1
+          },
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "Mira",
+                  "status": "active",
+                  "text": "Require cloud synchronization"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "sync",
+            "owner": "Mira",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "Require cloud synchronization",
+            "updated_version": 1
+          },
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "Mira",
+                  "status": "active",
+                  "text": "Choose a note-taking tool"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "task",
+            "owner": "Mira",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "Choose a note-taking tool",
+            "updated_version": 1
+          }
+        ],
+        "observed_event_seq": 5,
+        "processed_event_seq": 1,
+        "receipts": [],
+        "version": 1
+      },
+      "tool_receipts": []
+    },
+    "metadata": {
+      "annotation_note": "Apply three changes atomically, touching each ID once, and preserve the independent price constraint.",
+      "atomic_requirement_annotations": [
+        {
+          "intent_id": "task",
+          "owner": "Mira",
+          "status": "active",
+          "text": "Choose a note-taking tool"
+        },
+        {
+          "intent_id": "cost",
+          "owner": "Mira",
+          "status": "active",
+          "text": "Must be free"
+        },
+        {
+          "intent_id": "platform",
+          "owner": "Mira",
+          "status": "active",
+          "text": "Use a mobile app"
+        },
+        {
+          "intent_id": "sync",
+          "owner": "Mira",
+          "status": "withdrawn",
+          "text": "Require cloud synchronization"
+        },
+        {
+          "intent_id": "offline",
+          "owner": "Mira",
+          "status": "active",
+          "text": "Must work offline"
+        }
+      ],
+      "authorship": "agent-authored fictional scenarios",
+      "candidate_runtime_error_input": false,
+      "current_runtime_supplies_previous_error": false,
+      "expected_post_state": {
+        "intents": [
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "Mira",
+                  "status": "active",
+                  "text": "Must be free"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "cost",
+            "owner": "Mira",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "Must be free",
+            "updated_version": 1
+          },
+          {
+            "created_version": 2,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "decision-0",
+                "source_seqs": [
+                  5
+                ],
+                "state": {
+                  "owner": "Mira",
+                  "status": "active",
+                  "text": "Must work offline"
+                },
+                "version": 2
+              }
+            ],
+            "intent_id": "offline",
+            "owner": "Mira",
+            "source_seqs": [
+              5
+            ],
+            "status": "active",
+            "text": "Must work offline",
+            "updated_version": 2
+          },
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "Mira",
+                  "status": "active",
+                  "text": "Use a desktop app"
+                },
+                "version": 1
+              },
+              {
+                "op": "update",
+                "patch_id": "decision-0",
+                "source_seqs": [
+                  5
+                ],
+                "state": {
+                  "owner": "Mira",
+                  "status": "active",
+                  "text": "Use a mobile app"
+                },
+                "version": 2
+              }
+            ],
+            "intent_id": "platform",
+            "owner": "Mira",
+            "source_seqs": [
+              5
+            ],
+            "status": "active",
+            "text": "Use a mobile app",
+            "updated_version": 2
+          },
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "Mira",
+                  "status": "active",
+                  "text": "Require cloud synchronization"
+                },
+                "version": 1
+              },
+              {
+                "op": "withdraw",
+                "patch_id": "decision-0",
+                "source_seqs": [
+                  5
+                ],
+                "state": {
+                  "owner": "Mira",
+                  "status": "withdrawn",
+                  "text": "Require cloud synchronization"
+                },
+                "version": 2
+              }
+            ],
+            "intent_id": "sync",
+            "owner": "Mira",
+            "source_seqs": [
+              5
+            ],
+            "status": "withdrawn",
+            "text": "Require cloud synchronization",
+            "updated_version": 2
+          },
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "Mira",
+                  "status": "active",
+                  "text": "Choose a note-taking tool"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "task",
+            "owner": "Mira",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "Choose a note-taking tool",
+            "updated_version": 1
+          }
+        ],
+        "observed_event_seq": 5,
+        "processed_event_seq": 5,
+        "receipts": [],
+        "version": 2
+      },
+      "family_id": "combined-operations",
+      "language": "en",
+      "preserve_unchanged_ids": [
+        "task",
+        "cost"
+      ],
+      "role": "intention_tracker",
+      "semantic_review_status": "independent semantic and human review pending",
+      "setup_patches": [
+        {
+          "expected_version": 0,
+          "operations": [
+            {
+              "intent_id": "task",
+              "op": "add",
+              "owner": "Mira",
+              "source_seqs": [
+                1
+              ],
+              "status": "active",
+              "text": "Choose a note-taking tool"
+            },
+            {
+              "intent_id": "cost",
+              "op": "add",
+              "owner": "Mira",
+              "source_seqs": [
+                1
+              ],
+              "status": "active",
+              "text": "Must be free"
+            },
+            {
+              "intent_id": "platform",
+              "op": "add",
+              "owner": "Mira",
+              "source_seqs": [
+                1
+              ],
+              "status": "active",
+              "text": "Use a desktop app"
+            },
+            {
+              "intent_id": "sync",
+              "op": "add",
+              "owner": "Mira",
+              "source_seqs": [
+                1
+              ],
+              "status": "active",
+              "text": "Require cloud synchronization"
+            }
+          ],
+          "patch_id": "setup-0",
+          "through_seq": 1
+        }
+      ],
+      "sibling_group_policy": "Keep every family_id together in any future split; these examples are already exposed development material.",
+      "split": "illustrative_development_only",
+      "target_commit_identity": {
+        "expected_version": 1,
+        "patch_id": "decision-0",
+        "through_seq": 5
+      }
+    },
+    "schema_version": 1,
+    "target": {
+      "operations": [
+        {
+          "intent_id": "platform",
+          "op": "update",
+          "source_seqs": [
+            5
+          ],
+          "text": "Use a mobile app"
+        },
+        {
+          "intent_id": "sync",
+          "op": "withdraw",
+          "source_seqs": [
+            5
+          ]
+        },
+        {
+          "intent_id": "offline",
+          "op": "add",
+          "owner": "Mira",
+          "source_seqs": [
+            5
+          ],
+          "status": "active",
+          "text": "Must work offline"
+        }
+      ]
+    }
+  },
+  {
+    "example_id": "stale-state-correction-en",
+    "input": {
+      "conversation": [
+        {
+          "role": "user",
+          "seq": 1,
+          "speaker": "Mira",
+          "text": "Budget at most 12 credits per month; offline use is required."
+        },
+        {
+          "role": "user",
+          "seq": 4,
+          "speaker": "Mira",
+          "text": "Reminder: the budget has always been 12 credits, not 120; offline use still matters."
+        }
+      ],
+      "intention_state": {
+        "intents": [
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "Mira",
+                  "status": "active",
+                  "text": "Monthly budget at most 120 credits"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "budget",
+            "owner": "Mira",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "Monthly budget at most 120 credits",
+            "updated_version": 1
+          },
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "Mira",
+                  "status": "active",
+                  "text": "Must work offline"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "offline",
+            "owner": "Mira",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "Must work offline",
+            "updated_version": 1
+          }
+        ],
+        "observed_event_seq": 4,
+        "processed_event_seq": 1,
+        "receipts": [],
+        "version": 1
+      },
+      "tool_receipts": []
+    },
+    "metadata": {
+      "annotation_note": "The prior patch is deliberately semantically wrong but structurally valid. Correct the advisory state from original words; this is not a user budget change.",
+      "atomic_requirement_annotations": [
+        {
+          "intent_id": "budget",
+          "owner": "Mira",
+          "status": "active",
+          "text": "Monthly budget at most 12 credits"
+        },
+        {
+          "intent_id": "offline",
+          "owner": "Mira",
+          "status": "active",
+          "text": "Must work offline"
+        }
+      ],
+      "authorship": "agent-authored fictional scenarios",
+      "candidate_runtime_error_input": false,
+      "current_runtime_supplies_previous_error": false,
+      "expected_post_state": {
+        "intents": [
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "Mira",
+                  "status": "active",
+                  "text": "Monthly budget at most 120 credits"
+                },
+                "version": 1
+              },
+              {
+                "op": "update",
+                "patch_id": "decision-0",
+                "source_seqs": [
+                  4
+                ],
+                "state": {
+                  "owner": "Mira",
+                  "status": "active",
+                  "text": "Monthly budget at most 12 credits"
+                },
+                "version": 2
+              }
+            ],
+            "intent_id": "budget",
+            "owner": "Mira",
+            "source_seqs": [
+              4
+            ],
+            "status": "active",
+            "text": "Monthly budget at most 12 credits",
+            "updated_version": 2
+          },
+          {
+            "created_version": 1,
+            "history": [
+              {
+                "op": "add",
+                "patch_id": "setup-0",
+                "source_seqs": [
+                  1
+                ],
+                "state": {
+                  "owner": "Mira",
+                  "status": "active",
+                  "text": "Must work offline"
+                },
+                "version": 1
+              }
+            ],
+            "intent_id": "offline",
+            "owner": "Mira",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "Must work offline",
+            "updated_version": 1
+          }
+        ],
+        "observed_event_seq": 4,
+        "processed_event_seq": 4,
+        "receipts": [],
+        "version": 2
+      },
+      "family_id": "stale-state-correction",
+      "language": "en",
+      "preserve_unchanged_ids": [
+        "offline"
+      ],
+      "role": "intention_tracker",
+      "semantic_review_status": "independent semantic and human review pending",
+      "setup_patches": [
+        {
+          "expected_version": 0,
+          "operations": [
+            {
+              "intent_id": "budget",
+              "op": "add",
+              "owner": "Mira",
+              "source_seqs": [
+                1
+              ],
+              "status": "active",
+              "text": "Monthly budget at most 120 credits"
+            },
+            {
+              "intent_id": "offline",
+              "op": "add",
+              "owner": "Mira",
+              "source_seqs": [
+                1
+              ],
+              "status": "active",
+              "text": "Must work offline"
+            }
+          ],
+          "patch_id": "setup-0",
+          "through_seq": 1
+        }
+      ],
+      "sibling_group_policy": "Keep every family_id together in any future split; these examples are already exposed development material.",
+      "split": "illustrative_development_only",
+      "target_commit_identity": {
+        "expected_version": 1,
+        "patch_id": "decision-0",
+        "through_seq": 4
+      }
+    },
+    "schema_version": 1,
+    "target": {
+      "operations": [
+        {
+          "intent_id": "budget",
+          "op": "update",
+          "source_seqs": [
+            4
+          ],
+          "text": "Monthly budget at most 12 credits"
+        }
+      ]
+    }
+  }
+]

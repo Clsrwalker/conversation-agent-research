@@ -1,0 +1,12 @@
+{
+  "date_checked": "2026-10-24",
+  "timezone": "America/Halifax",
+  "kind": "primary_source_notes_not_experimental_results",
+  "sources": [
+    {"title": "TRL SFT Trainer", "url": "https://huggingface.co/docs/trl/sft_trainer", "supports": "Conversational prompt-completion format, completion-only loss, PEFT integration, assistant-only chat-template generation-mask requirement.", "application": "Proposed tracker target is operations JSON; verify actual token loss mask. No package compatibility established."},
+    {"title": "PEFT Quantization", "url": "https://huggingface.co/docs/peft/developer_guides/quantization", "supports": "Training extra adapter parameters on a quantized base; NF4 and k-bit preparation guidance.", "application": "Candidate memory-saving training method; does not establish 14B fit on this 16 GB GPU."},
+    {"title": "Qwen2.5-14B-Instruct model card", "url": "https://huggingface.co/Qwen/Qwen2.5-14B-Instruct", "supports": "Official model identifier and Transformers loading interface.", "application": "Candidate shared checkpoint lineage; exact revision and historical GGUF provenance must be pinned, not assumed byte-identical."},
+    {"title": "Schema-Guided Dialogue dataset", "url": "https://github.com/google-research-datasets/dstc8-schema-guided-dialogue", "supports": "Annotations include active_intent, requested_slots and slot_values, with unseen service/domain evaluation and dataset provenance.", "application": "Potential supplemental data requiring conversion and review; not imported into the seed pack."},
+    {"title": "MultiWOZ official repository", "url": "https://github.com/budzianowski/multiwoz", "supports": "Belief-state annotations and documented annotation/scoring distinctions.", "application": "Potential supplemental data; repository warns that goal and belief-state labels can be wrong. No direct gold conversion assumed."}
+  ]
+}

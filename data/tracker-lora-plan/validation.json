@@ -1,0 +1,68 @@
+{
+  "id": "tracker-lora-data-validation",
+  "type": "engineering_validation",
+  "date": "2026-10-24",
+  "timezone": "America/Halifax",
+  "status": "passed_with_scope_limits",
+  "tested_revision": {
+    "source_sha256": {
+      "experiments/deep_conversation/intention_state.py": "e028a604a93520801a0f752755d80b305afb1eebd8792ea0aeaaa3cd5c722f73",
+      "experiments/deep_conversation/intent_roles.py": "befc382472aabc55efbda043aae5d377e12cce92a56804c73e25994305674d68"
+    },
+    "data_artifact_sha256": {
+      "examples.jsonl": "95822748277ad447f8c027ee3e1866d73dc934a3df036c44fa5bf25c778e39b9",
+      "sft_examples.jsonl": "a3ee8de9113c03a54633f7009d15f16f6918e9573ac45a17686add230f9c8b5a",
+      "sft_manifest.json": "29bc26e5009349c7a0b0619dfda79fd9833aae342cfe38324490fbc2fad4ed8b",
+      "build_examples.py": "8eafca3bf54743c4d8cf21a4c487cfdfc2aaecd6601fe42b8205f36efb5477b6",
+      "validate_data.py": "3967a76864adbd4d4d1455b06fb6b3863a88a993a5512fbac058a852fb95efe4",
+      "system_prompt.txt": "6fd1f961e157a48013a5f8ff11919c422cf4d60f804b542567362b47f1ade3cc",
+      "validation_attempt_history.json": "124509060d2b83cc11013cab74bd951ebacf93427327ebf654e4937810b02755"
+    }
+  },
+  "checks": [
+    {
+      "name": "24 example state replay and 24 SFT prompt/completion pairs",
+      "status": "passed",
+      "record": "data/validation.json"
+    },
+    {
+      "name": "40 unchanged records and 6 semantic no-change examples",
+      "status": "passed",
+      "record": "data/validation.json"
+    },
+    {
+      "name": "Three invalid patches rejected atomically",
+      "status": "passed",
+      "record": "data/validation.json"
+    },
+    {
+      "name": "One omitted requirement accepted by runtime but detected by authored expected-state oracle",
+      "status": "boundary_confirmed_not_quality_pass",
+      "record": "data/validation.json"
+    },
+    {
+      "name": "Semantic labels removed from runtime patch IDs",
+      "status": "corrected_and_rechecked",
+      "record": "data/validation_attempt_history.json"
+    },
+    {
+      "name": "Source identity, current artifact hashes and proposed budget arithmetic",
+      "status": "passed",
+      "record": "SUMMARY.json"
+    }
+  ],
+  "inventory": "Read-only source and package inventory; no training compatibility claim.",
+  "new_real_model_calls": 0,
+  "training_runs": 0,
+  "label_review": "Independent model review in REVIEW.json; unresolved owner convention and human review remain open.",
+  "limitations": [
+    "24 agent-authored short examples are illustrative development data, not collected train/dev/test sets.",
+    "Expected-state agreement and schema acceptance do not prove user-intent correctness or LoRA quality.",
+    "Family separation policy is specified; no unseen split has been constructed or evaluated.",
+    "Recovery error input is not yet wired into the current runtime.",
+    "No adapter, training-fit test, semantic evaluation runner or end-to-end LoRA comparison has run.",
+    "Original no-LoRA study and diagnostics remain unchanged."
+  ],
+  "study_status": "planned_not_trained",
+  "protocol": "PROTOCOL.md"
+}

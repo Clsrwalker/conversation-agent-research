@@ -1,0 +1,21 @@
+{
+  "completed_prior_attempts": [
+    {
+      "artifact": "attempts/attempt-01/validation.json",
+      "sha256": "5971c6a6e41890b533778ba1d5c7e76080f49343ee1921400dfa9200e131f54d",
+      "status": "passed",
+      "old_artifact_hashes": {
+        "examples.jsonl": "49d94fa5f074e8a4b017b5dff6f08f53c21c95c0cf85bca980c1b806dc3e049c",
+        "sft_examples.jsonl": "679979402713a2c65817318919b7da70136c1599e9d27b9a94eb5eb6c9e84248",
+        "sft_manifest.json": "6bcf8776acfb7aee4a65d7c213b304e7517b5ce0a316974db9f72609c464ddb6",
+        "build_examples.py": "8836ea592fadb8b318d306ee849d17d8027de377e8eb09ea1d6c4bab3d9f3c49",
+        "validate_data.py": "84659cf8f4ffd31f9d7a98f9364650169871ebdf90844699427ca2204869e0d5",
+        "system_prompt.txt": "6fd1f961e157a48013a5f8ff11919c422cf4d60f804b542567362b47f1ade3cc"
+      },
+      "limitation_found_after_run": "Prior patch IDs exposed authored example/family labels in state history; the initial engineering checks did not check this shortcut."
+    }
+  ],
+  "current_attempt": 2,
+  "rerun_reason": "Neutralized all prior, target, and rejected-attempt patch IDs; added an explicit check against authored-label leakage in runtime history.",
+  "interpretation": "The initial run passed its then-existing structural checks. Later inspection found an input-shortcut risk; this is retained rather than rewritten as an earlier tested guarantee."
+}

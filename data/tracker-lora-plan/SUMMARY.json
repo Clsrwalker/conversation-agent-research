@@ -1,0 +1,62 @@
+{
+  "id": "tracker-lora-plan",
+  "date": "2026-10-24",
+  "timezone": "America/Halifax",
+  "kind": "prospective_protocol_with_completed_data_contract_checks",
+  "status": "data_contract_checked_training_not_started",
+  "actual": {
+    "examples_checked": 24,
+    "families": 12,
+    "languages": {
+      "zh": 12,
+      "en": 12
+    },
+    "sft_pairs_checked": 24,
+    "no_change_examples": 6,
+    "target_operations": 22,
+    "preserved_records_checked": 40,
+    "corruption_cases": 4,
+    "runtime_rejected_corruptions": 3,
+    "authored_oracle_only_corruptions": 1,
+    "new_real_model_calls": 0,
+    "training_runs": 0
+  },
+  "planned_only": {
+    "training_examples_target": 800,
+    "development_examples_target": 200,
+    "heldout_examples_target": 400,
+    "family_targets": {
+      "train": 200,
+      "development": 50,
+      "heldout": 100
+    },
+    "planned_end_to_end": {
+      "heldout_families": 40,
+      "arms": 2,
+      "inference_repeats": 2,
+      "stages": 3,
+      "calls_per_stage": 6,
+      "trajectories": 160,
+      "model_call_ceiling": 2880,
+      "status": "unexecuted; cohort chosen before any test outputs are read"
+    },
+    "comparison": [
+      "same base and tracker prompt, adapter disabled",
+      "same base and tracker prompt, tracker LoRA enabled"
+    ]
+  },
+  "measured_omission_reduction": null,
+  "semantic_labels": "Agent-authored; independent model review in REVIEW.json; human adjudication pending.",
+  "illustrative_data_usage": "Development only; never a claimed unseen benchmark or automatically training-approved.",
+  "unresolved_owner_examples": "Two examples use an uncertain owner-label convention, not unique settled gold.",
+  "input_shortcut_repair": "Semantic category was removed from runtime patch IDs after review; attempt 1 preserved, attempt 2 revalidated.",
+  "runtime_changes": "None. previous_error and bounded recovery remain proposed interfaces.",
+  "training_readiness": "16 GB GPU observed; exact training stack, checkpoint, memory fit and adapter deployment unverified.",
+  "sources": [
+    "plan.json",
+    "data/validation.json",
+    "data/validation_attempt_history.json",
+    "data-audit/inventory.json",
+    "REVIEW.json"
+  ]
+}

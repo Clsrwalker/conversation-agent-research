@@ -1,0 +1,300 @@
+{
+  "schema_version": 1,
+  "id": "tracker-lora-illustrative-data-validation-2026-10-24",
+  "type": "engineering_validation",
+  "date": "2026-10-24",
+  "timezone": "America/Halifax",
+  "created_at_utc": "2026-10-24T10:18:50.383020+00:00",
+  "status": "passed",
+  "scope": "Offline structure, causal source availability, replay, authored-target consistency, and corruption detection; not semantic quality or LoRA benefit.",
+  "examples_checked": 24,
+  "families": 12,
+  "languages": {
+    "zh": 12,
+    "en": 12
+  },
+  "sft_pairs_checked": 24,
+  "sft_metadata_excluded": true,
+  "neutral_patch_identity_examples_checked": 24,
+  "no_change_examples": 6,
+  "recovery_examples_with_candidate_input": 2,
+  "target_operations": 22,
+  "preserved_records_checked": 40,
+  "corruption_cases": 4,
+  "runtime_rejected_corruptions": 3,
+  "authored_oracle_only_corruptions": 1,
+  "new_real_model_calls": 0,
+  "training_runs": 0,
+  "downloads": 0,
+  "semantic_review_status": "independent semantic and human review pending",
+  "current_runtime_supports_previous_error_input": false,
+  "examples": [
+    {
+      "example_id": "add-constraint-zh",
+      "status": "passed",
+      "operations": 1,
+      "preserved_ids": 1,
+      "repair_error_reproduced": false
+    },
+    {
+      "example_id": "local-update-zh",
+      "status": "passed",
+      "operations": 1,
+      "preserved_ids": 2,
+      "repair_error_reproduced": false
+    },
+    {
+      "example_id": "withdraw-zh",
+      "status": "passed",
+      "operations": 1,
+      "preserved_ids": 2,
+      "repair_error_reproduced": false
+    },
+    {
+      "example_id": "reopen-zh",
+      "status": "passed",
+      "operations": 1,
+      "preserved_ids": 1,
+      "repair_error_reproduced": false
+    },
+    {
+      "example_id": "validation-repair-zh",
+      "status": "passed",
+      "operations": 1,
+      "preserved_ids": 1,
+      "repair_error_reproduced": true
+    },
+    {
+      "example_id": "no-change-zh",
+      "status": "passed",
+      "operations": 0,
+      "preserved_ids": 2,
+      "repair_error_reproduced": false
+    },
+    {
+      "example_id": "unaccepted-proposal-zh",
+      "status": "passed",
+      "operations": 0,
+      "preserved_ids": 2,
+      "repair_error_reproduced": false
+    },
+    {
+      "example_id": "quoted-third-party-zh",
+      "status": "passed",
+      "operations": 0,
+      "preserved_ids": 2,
+      "repair_error_reproduced": false
+    },
+    {
+      "example_id": "owner-ambiguity-zh",
+      "status": "passed",
+      "operations": 1,
+      "preserved_ids": 2,
+      "repair_error_reproduced": false
+    },
+    {
+      "example_id": "multiple-owners-zh",
+      "status": "passed",
+      "operations": 1,
+      "preserved_ids": 2,
+      "repair_error_reproduced": false
+    },
+    {
+      "example_id": "combined-operations-zh",
+      "status": "passed",
+      "operations": 3,
+      "preserved_ids": 2,
+      "repair_error_reproduced": false
+    },
+    {
+      "example_id": "stale-state-correction-zh",
+      "status": "passed",
+      "operations": 1,
+      "preserved_ids": 1,
+      "repair_error_reproduced": false
+    },
+    {
+      "example_id": "add-constraint-en",
+      "status": "passed",
+      "operations": 1,
+      "preserved_ids": 1,
+      "repair_error_reproduced": false
+    },
+    {
+      "example_id": "local-update-en",
+      "status": "passed",
+      "operations": 1,
+      "preserved_ids": 2,
+      "repair_error_reproduced": false
+    },
+    {
+      "example_id": "withdraw-en",
+      "status": "passed",
+      "operations": 1,
+      "preserved_ids": 2,
+      "repair_error_reproduced": false
+    },
+    {
+      "example_id": "reopen-en",
+      "status": "passed",
+      "operations": 1,
+      "preserved_ids": 1,
+      "repair_error_reproduced": false
+    },
+    {
+      "example_id": "validation-repair-en",
+      "status": "passed",
+      "operations": 1,
+      "preserved_ids": 1,
+      "repair_error_reproduced": true
+    },
+    {
+      "example_id": "no-change-en",
+      "status": "passed",
+      "operations": 0,
+      "preserved_ids": 2,
+      "repair_error_reproduced": false
+    },
+    {
+      "example_id": "unaccepted-proposal-en",
+      "status": "passed",
+      "operations": 0,
+      "preserved_ids": 2,
+      "repair_error_reproduced": false
+    },
+    {
+      "example_id": "quoted-third-party-en",
+      "status": "passed",
+      "operations": 0,
+      "preserved_ids": 2,
+      "repair_error_reproduced": false
+    },
+    {
+      "example_id": "owner-ambiguity-en",
+      "status": "passed",
+      "operations": 1,
+      "preserved_ids": 2,
+      "repair_error_reproduced": false
+    },
+    {
+      "example_id": "multiple-owners-en",
+      "status": "passed",
+      "operations": 1,
+      "preserved_ids": 2,
+      "repair_error_reproduced": false
+    },
+    {
+      "example_id": "combined-operations-en",
+      "status": "passed",
+      "operations": 3,
+      "preserved_ids": 2,
+      "repair_error_reproduced": false
+    },
+    {
+      "example_id": "stale-state-correction-en",
+      "status": "passed",
+      "operations": 1,
+      "preserved_ids": 1,
+      "repair_error_reproduced": false
+    }
+  ],
+  "corruptions": [
+    {
+      "name": "future-source",
+      "status": "expected_corruption_detected",
+      "layer": "runtime_structure",
+      "runtime_rejected": true,
+      "rollback_verified": true,
+      "error": {
+        "type": "IntentValidationError",
+        "message": "An intention source must be an arrived event within this patch."
+      },
+      "interpretation": "Runtime rejects this structurally invalid patch and preserves the entire pre-state."
+    },
+    {
+      "name": "duplicate-target-after-valid-operations",
+      "status": "expected_corruption_detected",
+      "layer": "runtime_structure_and_atomicity",
+      "runtime_rejected": true,
+      "rollback_verified": true,
+      "error": {
+        "type": "IntentValidationError",
+        "message": "A patch may touch each intention only once."
+      },
+      "interpretation": "Runtime rejects this structurally invalid patch and preserves the entire pre-state."
+    },
+    {
+      "name": "withdrawn-update-without-reopen",
+      "status": "expected_corruption_detected",
+      "layer": "runtime_transition",
+      "runtime_rejected": true,
+      "rollback_verified": true,
+      "error": {
+        "type": "IntentValidationError",
+        "message": "A withdrawn intention needs an explicit reopen operation."
+      },
+      "interpretation": "Runtime rejects this structurally invalid patch and preserves the entire pre-state."
+    },
+    {
+      "name": "omitted-required-add",
+      "status": "expected_corruption_detected",
+      "layer": "authored_expected_state_oracle_only",
+      "runtime_rejected": false,
+      "rollback_verified": false,
+      "error": {
+        "type": "AssertionError",
+        "message": "Authored expected state mismatch: omitted required intention"
+      },
+      "interpretation": "The real store accepts an empty patch; only an external authored target detects this semantic omission."
+    }
+  ],
+  "source_hashes_before": {
+    "experiments/deep_conversation/intention_state.py": "e028a604a93520801a0f752755d80b305afb1eebd8792ea0aeaaa3cd5c722f73",
+    "experiments/deep_conversation/intent_roles.py": "befc382472aabc55efbda043aae5d377e12cce92a56804c73e25994305674d68"
+  },
+  "source_hashes_after": {
+    "experiments/deep_conversation/intention_state.py": "e028a604a93520801a0f752755d80b305afb1eebd8792ea0aeaaa3cd5c722f73",
+    "experiments/deep_conversation/intent_roles.py": "befc382472aabc55efbda043aae5d377e12cce92a56804c73e25994305674d68"
+  },
+  "artifact_hashes": {
+    "examples.jsonl": "95822748277ad447f8c027ee3e1866d73dc934a3df036c44fa5bf25c778e39b9",
+    "sft_examples.jsonl": "a3ee8de9113c03a54633f7009d15f16f6918e9573ac45a17686add230f9c8b5a",
+    "sft_manifest.json": "29bc26e5009349c7a0b0619dfda79fd9833aae342cfe38324490fbc2fad4ed8b",
+    "build_examples.py": "8eafca3bf54743c4d8cf21a4c487cfdfc2aaecd6601fe42b8205f36efb5477b6",
+    "validate_data.py": "3967a76864adbd4d4d1455b06fb6b3863a88a993a5512fbac058a852fb95efe4",
+    "system_prompt.txt": "6fd1f961e157a48013a5f8ff11919c422cf4d60f804b542567362b47f1ade3cc",
+    "validation_attempt_history.json": "124509060d2b83cc11013cab74bd951ebacf93427327ebf654e4937810b02755"
+  },
+  "attempts": {
+    "validation_execution": 2,
+    "unexpected_failed_validation_attempts": 0,
+    "intended_rejection_precursors": 2,
+    "prior_attempts_preserved": [
+      {
+        "artifact": "attempts/attempt-01/validation.json",
+        "sha256": "5971c6a6e41890b533778ba1d5c7e76080f49343ee1921400dfa9200e131f54d",
+        "status": "passed",
+        "old_artifact_hashes": {
+          "examples.jsonl": "49d94fa5f074e8a4b017b5dff6f08f53c21c95c0cf85bca980c1b806dc3e049c",
+          "sft_examples.jsonl": "679979402713a2c65817318919b7da70136c1599e9d27b9a94eb5eb6c9e84248",
+          "sft_manifest.json": "6bcf8776acfb7aee4a65d7c213b304e7517b5ce0a316974db9f72609c464ddb6",
+          "build_examples.py": "8836ea592fadb8b318d306ee849d17d8027de377e8eb09ea1d6c4bab3d9f3c49",
+          "validate_data.py": "84659cf8f4ffd31f9d7a98f9364650169871ebdf90844699427ca2204869e0d5",
+          "system_prompt.txt": "6fd1f961e157a48013a5f8ff11919c422cf4d60f804b542567362b47f1ade3cc"
+        },
+        "limitation_found_after_run": "Prior patch IDs exposed authored example/family labels in state history; the initial engineering checks did not check this shortcut."
+      }
+    ],
+    "rerun_reason": "Neutralized all prior, target, and rejected-attempt patch IDs; added an explicit check against authored-label leakage in runtime history.",
+    "preparatory_missing_directory_inventory": "An initial rg inventory returned path-not-found before this new output directory was created; no validation had run."
+  },
+  "limitations": [
+    "Labels and requirement wording are agent-authored; independent semantic/human review is pending.",
+    "Paired bilingual siblings are not independent tests; all 24 are exposed illustrative development examples.",
+    "24 short examples are not a collected training dataset, sample-size justification, or held-out benchmark.",
+    "Structural replay cannot show that an intention represents the user correctly.",
+    "Recovery examples use a proposed previous_error field not supplied by the current IntentRoleSession.",
+    "Unresolved ownership is represented in an uncertain text label because the current schema has no owner-resolution field.",
+    "No adapters were trained, loaded, or evaluated; reduction in intention omission remains untested."
+  ]
+}

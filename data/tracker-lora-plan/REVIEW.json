@@ -1,0 +1,272 @@
+{
+  "id": "tracker-lora-plan-independent-model-review",
+  "date": "2026-10-24",
+  "timezone": "America/Halifax",
+  "created_at_utc": "2026-10-24T10:21:03.822559+00:00",
+  "kind": "independent_model_review_of_prospective_protocol_and_illustrative_data",
+  "status": "reviewed",
+  "blockers": [],
+  "reviewer": "Separate model reviewer agent; not a human annotator, blind quality evaluator, or training run.",
+  "scope": "Publication of a prospective plan and illustrative development contract. This review does not approve a production training corpus or establish omission reduction.",
+  "author_files_modified": false,
+  "human_adjudication": "pending",
+  "training_approved": false,
+  "experimental_model_inference_calls": 0,
+  "training_runs": 0,
+  "dataset_or_weight_downloads": 0,
+  "semantic_review_counts": {
+    "accepted": 22,
+    "ambiguous": 2,
+    "requires_correction": 0
+  },
+  "semantic_review": [
+    {
+      "example_id": "add-constraint-zh",
+      "family_id": "add-constraint",
+      "status": "accepted",
+      "reason": "New offline requirement is supported; original task is retained."
+    },
+    {
+      "example_id": "local-update-zh",
+      "family_id": "local-update",
+      "status": "accepted",
+      "reason": "Only platform changes to mobile; free price and task are retained."
+    },
+    {
+      "example_id": "withdraw-zh",
+      "family_id": "withdraw",
+      "status": "accepted",
+      "reason": "Cloud sync is withdrawn under the same ID; offline and task survive."
+    },
+    {
+      "example_id": "reopen-zh",
+      "family_id": "reopen",
+      "status": "accepted",
+      "reason": "Explicit restore supports reopen of existing sync ID; cost remains unchanged."
+    },
+    {
+      "example_id": "validation-repair-zh",
+      "family_id": "validation-repair",
+      "status": "accepted",
+      "reason": "Raw request supports restoring CSV export; actual rejected update is repaired with reopen while language is retained. previous_error remains a proposed runtime extension."
+    },
+    {
+      "example_id": "no-change-zh",
+      "family_id": "no-change",
+      "status": "accepted",
+      "reason": "Acknowledgment adds no request; empty operations is appropriate."
+    },
+    {
+      "example_id": "unaccepted-proposal-zh",
+      "family_id": "unaccepted-proposal",
+      "status": "accepted",
+      "reason": "Assistant suggestion lacks user acceptance; preserving both user constraints is correct."
+    },
+    {
+      "example_id": "quoted-third-party-zh",
+      "family_id": "quoted-third-party",
+      "status": "accepted",
+      "reason": "User explicitly disclaims adopting the quotation; empty operations is correct."
+    },
+    {
+      "example_id": "owner-ambiguity-zh",
+      "family_id": "owner-ambiguity",
+      "status": "ambiguous",
+      "reason": "Uncertain status preserves the expressed possibility without assigning an individual. The team (unconfirmed) owner convention is reasonable but not uniquely entailed; alternative unresolved-owner representations need adjudication before training approval."
+    },
+    {
+      "example_id": "multiple-owners-zh",
+      "family_id": "multiple-owners",
+      "status": "accepted",
+      "reason": "Only the first speaker budget changes; second speaker budget and offline constraint survive."
+    },
+    {
+      "example_id": "combined-operations-zh",
+      "family_id": "combined-operations",
+      "status": "accepted",
+      "reason": "Platform update, sync withdrawal and offline addition are each supported; task and price survive."
+    },
+    {
+      "example_id": "stale-state-correction-zh",
+      "family_id": "stale-state-correction",
+      "status": "accepted",
+      "reason": "Corrects semantically wrong prior budget from 120 to 12 using raw evidence; it does not reinterpret this as a new user preference."
+    },
+    {
+      "example_id": "add-constraint-en",
+      "family_id": "add-constraint",
+      "status": "accepted",
+      "reason": "New offline requirement is supported; original task is retained."
+    },
+    {
+      "example_id": "local-update-en",
+      "family_id": "local-update",
+      "status": "accepted",
+      "reason": "Only platform changes to mobile; free price and task are retained."
+    },
+    {
+      "example_id": "withdraw-en",
+      "family_id": "withdraw",
+      "status": "accepted",
+      "reason": "Cloud sync is withdrawn under the same ID; offline and task survive."
+    },
+    {
+      "example_id": "reopen-en",
+      "family_id": "reopen",
+      "status": "accepted",
+      "reason": "Explicit restore supports reopen of existing sync ID; cost remains unchanged."
+    },
+    {
+      "example_id": "validation-repair-en",
+      "family_id": "validation-repair",
+      "status": "accepted",
+      "reason": "Raw request supports restoring CSV export; actual rejected update is repaired with reopen while language is retained. previous_error remains a proposed runtime extension."
+    },
+    {
+      "example_id": "no-change-en",
+      "family_id": "no-change",
+      "status": "accepted",
+      "reason": "Acknowledgment adds no request; empty operations is appropriate."
+    },
+    {
+      "example_id": "unaccepted-proposal-en",
+      "family_id": "unaccepted-proposal",
+      "status": "accepted",
+      "reason": "Assistant suggestion lacks user acceptance; preserving both user constraints is correct."
+    },
+    {
+      "example_id": "quoted-third-party-en",
+      "family_id": "quoted-third-party",
+      "status": "accepted",
+      "reason": "User explicitly disclaims adopting the quotation; empty operations is correct."
+    },
+    {
+      "example_id": "owner-ambiguity-en",
+      "family_id": "owner-ambiguity",
+      "status": "ambiguous",
+      "reason": "Uncertain status preserves the expressed possibility without assigning an individual. The team (unconfirmed) owner convention is reasonable but not uniquely entailed; alternative unresolved-owner representations need adjudication before training approval."
+    },
+    {
+      "example_id": "multiple-owners-en",
+      "family_id": "multiple-owners",
+      "status": "accepted",
+      "reason": "Only the first speaker budget changes; second speaker budget and offline constraint survive."
+    },
+    {
+      "example_id": "combined-operations-en",
+      "family_id": "combined-operations",
+      "status": "accepted",
+      "reason": "Platform update, sync withdrawal and offline addition are each supported; task and price survive."
+    },
+    {
+      "example_id": "stale-state-correction-en",
+      "family_id": "stale-state-correction",
+      "status": "accepted",
+      "reason": "Corrects semantically wrong prior budget from 120 to 12 using raw evidence; it does not reinterpret this as a new user preference."
+    }
+  ],
+  "resolved_findings": [
+    {
+      "id": "input-category-shortcut",
+      "original_issue": "Initial setup patch IDs embedded the authored example/family category inside model-visible intention history. Metadata exclusion alone did not remove this shortcut.",
+      "resolution": "Current model-visible histories use setup-0/setup-1 only; current 24 exported inputs contain no example_id or family_id label. Attempt 1 and its limitation are preserved.",
+      "verification": "Independent read-only comparison of all 24 current SFT inputs/targets and artifact hashes; source validator now checks neutral identity format."
+    },
+    {
+      "id": "zero-active-gold-denominator",
+      "original_issue": "Omission denominator on zero-active-requirement turns needed an explicit rule.",
+      "resolution": "Amended protocol excludes undefined turns/families from omission rate, reports their counts and retains unsupported-addition negative analysis."
+    }
+  ],
+  "checks": [
+    {
+      "name": "raw-prefix semantics and preservation",
+      "status": "reviewed",
+      "details": "All 24 raw conversations, pre-state projections, target patches and authored atomic requirements read. Twenty-two accepted labels; two ownership conventions remain ambiguous. All stated untouched requirements are retained."
+    },
+    {
+      "name": "SFT projection and shortcut repair",
+      "status": "passed",
+      "details": "24 prompt/completion pairs match input/target records; no metadata or expected post-state in user input. Model-visible prior patch IDs contain no authored category."
+    },
+    {
+      "name": "validator scope",
+      "status": "reviewed",
+      "details": "Real IntentStore replay and preservation checks are appropriate engineering checks. Three invalid corruptions must be rejected atomically; the omitted addition is accepted by runtime and detected only by the authored oracle. This is not semantic quality validation."
+    },
+    {
+      "name": "family split interpretation",
+      "status": "reviewed",
+      "details": "12 Chinese/English sibling families and all 24 rows are exposed development-only. No split leakage claim or unseen generalization claim is made. Similar task templates across family names must also be grouped in the future corpus."
+    },
+    {
+      "name": "runtime interface status",
+      "status": "reviewed",
+      "details": "Two recovery examples use a clearly marked previous_error candidate field; current runtime does not provide it. Owner-resolution and plan-invalidation schema limitations are explicit."
+    },
+    {
+      "name": "causal comparison",
+      "status": "reviewed",
+      "details": "A/B use identical pinned base, backend, quantization, input, role prompt, decoding and budgets; only tracker adapter toggles. Work/chat and any recovery/handoff repair remain identical. Historical Ollama GGUF runs are not the causal control for new PEFT inference."
+    },
+    {
+      "name": "component versus end-to-end evaluation",
+      "status": "reviewed",
+      "details": "One-step gold-prior and own-state rollout are separate; final visible-answer omission is separate from tracker recall. Rejections, unresolved runs, safety errors, family clustering and seed variability are disclosed."
+    },
+    {
+      "name": "planned arithmetic versus actual",
+      "status": "passed",
+      "details": "800/200/400 and 200/50/100 families are future targets, not current records. Current pack has 24 rows, 12 families, 24 SFT pairs, 22 target operations, 6 no-change rows, 40 preserved records and 4 corruption cases. Planned 40 x 2 x 2 = 160 end-to-end trajectories and 160 x 3 x 6 = 2880 calls."
+    },
+    {
+      "name": "inventory independent spot checks",
+      "status": "passed",
+      "details": "Recomputed counts/events/hashes for all 10 enumerated older project case sets, all 11 evidence hashes, all 7 downloaded-source hashes and all 4 enumerated JSONL nonempty-row counts. Rechecked 48/3 evaluation/development assignments, 24/3 stage prefixes, required-need distribution 8x2+12x1+4x0=28, and reused 69/44/25 tracker summary counts. GPU/package availability is treated only as recorded inventory; no training-fit test was rerun."
+    },
+    {
+      "name": "root summary and grouped validation",
+      "status": "passed",
+      "details": "Actual count fields match data/validation.json; root data artifact hashes match current bytes; no measured benefit, trained adapter or completed runtime repair is claimed."
+    },
+    {
+      "name": "primary source notes",
+      "status": "reviewed",
+      "details": "Official TRL, PEFT, Qwen, SGD and MultiWOZ pages checked. They support the narrow documented interfaces/data descriptions, not training-fit or omission-reduction claims."
+    }
+  ],
+  "nonblocking_open_items": [
+    "The two ownership examples need a frozen convention and accepted alternatives before training approval; human review is still pending for the whole pack.",
+    "Current examples are short and largely explicit. They do not cover long distraction histories, genuinely implicit changes or naturally occurring prior errors sufficiently for an evaluation corpus.",
+    "Collect fresh source-family-separated data and semantic labels; exposed examples and old failures remain regression/development material.",
+    "Pin exact model/tokenizer/package revisions and verify loss masks, context retention, memory fit, optimizer step, adapter save/reload and actual adapter routing before model experiments.",
+    "Power and practical margins remain prospective development-informed decisions. The pilot may be inconclusive; no quality claim follows from these checks."
+  ],
+  "primary_source_urls": [
+    "https://huggingface.co/docs/trl/sft_trainer",
+    "https://huggingface.co/docs/peft/developer_guides/quantization",
+    "https://huggingface.co/Qwen/Qwen2.5-14B-Instruct",
+    "https://github.com/google-research-datasets/dstc8-schema-guided-dialogue",
+    "https://github.com/budzianowski/multiwoz"
+  ],
+  "reviewed_artifact_sha256": {
+    "PROTOCOL.md": "14c24a74552093f1e019e50bc739c20d8529a109bbf9d14294c2c314dea5400a",
+    "plan.json": "82c98b4df996e9435e5e961dc405680dc0dcea26bdbea9c018d7753e1bc04f09",
+    "sources.json": "839c9c71682a3f01e9aec841a9e6b57b409c31b09b5fd93adb4b0bec0e63dc84",
+    "SUMMARY.json": "b1bdd90ef9172171df67166ed0dd64fdfc248796093533dae0cf734687a1b785",
+    "validation.json": "1c1f5f92e9bd9ae9b9a8d97ac45f906a87084f2e998de52bd47d86d62c4f65c7",
+    "build_summary.py": "bb2757a370ed7d4f09a019e7e50b4d62ca45023ba08a33785f0a031b3c206910",
+    "data/build_examples.py": "8eafca3bf54743c4d8cf21a4c487cfdfc2aaecd6601fe42b8205f36efb5477b6",
+    "data/validate_data.py": "3967a76864adbd4d4d1455b06fb6b3863a88a993a5512fbac058a852fb95efe4",
+    "data/examples.jsonl": "95822748277ad447f8c027ee3e1866d73dc934a3df036c44fa5bf25c778e39b9",
+    "data/sft_examples.jsonl": "a3ee8de9113c03a54633f7009d15f16f6918e9573ac45a17686add230f9c8b5a",
+    "data/sft_manifest.json": "29bc26e5009349c7a0b0619dfda79fd9833aae342cfe38324490fbc2fad4ed8b",
+    "data/system_prompt.txt": "6fd1f961e157a48013a5f8ff11919c422cf4d60f804b542567362b47f1ade3cc",
+    "data/readme.md": "54efeb8c6ad799ce512a867bc215322cad87670d20d0af6c4f8eef0fc9bdf759",
+    "data/validation.json": "f9c5ccb508db5d0d02e42f09784a6204ba8fefe605a6ab558b4afef055807572",
+    "data/validation_attempt_history.json": "124509060d2b83cc11013cab74bd951ebacf93427327ebf654e4937810b02755",
+    "data-audit/inventory_sources.py": "f5ba943518b22f070055fb1197c5678f12b81d86433924cbd5a8ea8c63134c82",
+    "data-audit/inventory.json": "0199230daf56134b2ffa117cb9902c430585bd089c374719e0e0d72a8cfd3ced",
+    "data-audit/INVENTORY.md": "c89a26c30640415560f9ea091da667074b4afd51f9891b1af971ec7467ce5aff"
+  }
+}

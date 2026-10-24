@@ -1,0 +1,156 @@
+{
+  "usage": "illustrative development only; not training-approved",
+  "split": "all_development_no_heldout",
+  "semantic_review": "pending",
+  "line_mapping": [
+    {
+      "line": 1,
+      "example_id": "add-constraint-zh",
+      "family_id": "add-constraint",
+      "candidate_runtime_error_input": false
+    },
+    {
+      "line": 2,
+      "example_id": "local-update-zh",
+      "family_id": "local-update",
+      "candidate_runtime_error_input": false
+    },
+    {
+      "line": 3,
+      "example_id": "withdraw-zh",
+      "family_id": "withdraw",
+      "candidate_runtime_error_input": false
+    },
+    {
+      "line": 4,
+      "example_id": "reopen-zh",
+      "family_id": "reopen",
+      "candidate_runtime_error_input": false
+    },
+    {
+      "line": 5,
+      "example_id": "validation-repair-zh",
+      "family_id": "validation-repair",
+      "candidate_runtime_error_input": true
+    },
+    {
+      "line": 6,
+      "example_id": "no-change-zh",
+      "family_id": "no-change",
+      "candidate_runtime_error_input": false
+    },
+    {
+      "line": 7,
+      "example_id": "unaccepted-proposal-zh",
+      "family_id": "unaccepted-proposal",
+      "candidate_runtime_error_input": false
+    },
+    {
+      "line": 8,
+      "example_id": "quoted-third-party-zh",
+      "family_id": "quoted-third-party",
+      "candidate_runtime_error_input": false
+    },
+    {
+      "line": 9,
+      "example_id": "owner-ambiguity-zh",
+      "family_id": "owner-ambiguity",
+      "candidate_runtime_error_input": false
+    },
+    {
+      "line": 10,
+      "example_id": "multiple-owners-zh",
+      "family_id": "multiple-owners",
+      "candidate_runtime_error_input": false
+    },
+    {
+      "line": 11,
+      "example_id": "combined-operations-zh",
+      "family_id": "combined-operations",
+      "candidate_runtime_error_input": false
+    },
+    {
+      "line": 12,
+      "example_id": "stale-state-correction-zh",
+      "family_id": "stale-state-correction",
+      "candidate_runtime_error_input": false
+    },
+    {
+      "line": 13,
+      "example_id": "add-constraint-en",
+      "family_id": "add-constraint",
+      "candidate_runtime_error_input": false
+    },
+    {
+      "line": 14,
+      "example_id": "local-update-en",
+      "family_id": "local-update",
+      "candidate_runtime_error_input": false
+    },
+    {
+      "line": 15,
+      "example_id": "withdraw-en",
+      "family_id": "withdraw",
+      "candidate_runtime_error_input": false
+    },
+    {
+      "line": 16,
+      "example_id": "reopen-en",
+      "family_id": "reopen",
+      "candidate_runtime_error_input": false
+    },
+    {
+      "line": 17,
+      "example_id": "validation-repair-en",
+      "family_id": "validation-repair",
+      "candidate_runtime_error_input": true
+    },
+    {
+      "line": 18,
+      "example_id": "no-change-en",
+      "family_id": "no-change",
+      "candidate_runtime_error_input": false
+    },
+    {
+      "line": 19,
+      "example_id": "unaccepted-proposal-en",
+      "family_id": "unaccepted-proposal",
+      "candidate_runtime_error_input": false
+    },
+    {
+      "line": 20,
+      "example_id": "quoted-third-party-en",
+      "family_id": "quoted-third-party",
+      "candidate_runtime_error_input": false
+    },
+    {
+      "line": 21,
+      "example_id": "owner-ambiguity-en",
+      "family_id": "owner-ambiguity",
+      "candidate_runtime_error_input": false
+    },
+    {
+      "line": 22,
+      "example_id": "multiple-owners-en",
+      "family_id": "multiple-owners",
+      "candidate_runtime_error_input": false
+    },
+    {
+      "line": 23,
+      "example_id": "combined-operations-en",
+      "family_id": "combined-operations",
+      "candidate_runtime_error_input": false
+    },
+    {
+      "line": 24,
+      "example_id": "stale-state-correction-en",
+      "family_id": "stale-state-correction",
+      "candidate_runtime_error_input": false
+    }
+  ],
+  "files_sha256": {
+    "examples.jsonl": "95822748277ad447f8c027ee3e1866d73dc934a3df036c44fa5bf25c778e39b9",
+    "sft_examples.jsonl": "a3ee8de9113c03a54633f7009d15f16f6918e9573ac45a17686add230f9c8b5a",
+    "system_prompt.txt": "6fd1f961e157a48013a5f8ff11919c422cf4d60f804b542567362b47f1ade3cc"
+  }
+}

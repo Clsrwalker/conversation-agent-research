@@ -1,0 +1,695 @@
+{
+  "id": "tracker-lora-data-and-readiness-inventory",
+  "date": "2026-10-24",
+  "timezone": "America/Halifax",
+  "created_at_utc": "2026-10-24T10:14:22.915491+00:00",
+  "kind": "read_only_inventory_not_training_or_quality_experiment",
+  "new_real_model_calls": 0,
+  "training_runs": 0,
+  "downloads": 0,
+  "installations": 0,
+  "personal_raw_data_accessed": false,
+  "personal_raw_data_training_permission_obtained": false,
+  "human_annotations_obtained": false,
+  "scope_of_personal_data_statement": "No user-private conversation or personal training data was accessed. Existing public dataset files were read for hashes and row counts.",
+  "pilot": {
+    "evaluation": {
+      "authored_case_count": 8,
+      "family_id_count": 8,
+      "unique_authored_stage_prefixes": 24,
+      "authored_human_event_count": 26,
+      "trajectory_assignments": 48,
+      "conditions": [
+        "split",
+        "tracked",
+        "unified"
+      ],
+      "repetitions": 2,
+      "calls_per_stage": 6,
+      "planned_executed_calls_from_assignment_structure": 864,
+      "cases": [
+        {
+          "case_id": "irs-shuttle-replacement",
+          "family_id": "irs-shuttle-replacement",
+          "stage_count": 3,
+          "tags": [
+            "scope_modification",
+            "constraint_retention"
+          ]
+        },
+        {
+          "case_id": "irs-room-withdrawal",
+          "family_id": "irs-room-withdrawal",
+          "stage_count": 3,
+          "tags": [
+            "scope_withdrawal",
+            "dependent_answer_invalidation"
+          ]
+        },
+        {
+          "case_id": "irs-key-restoration",
+          "family_id": "irs-key-restoration",
+          "stage_count": 3,
+          "tags": [
+            "scope_withdrawal",
+            "scope_restoration",
+            "constraint_retention"
+          ]
+        },
+        {
+          "case_id": "irs-practice-no-change",
+          "family_id": "irs-practice-no-change",
+          "stage_count": 3,
+          "tags": [
+            "no_change_negative",
+            "background_scope"
+          ]
+        },
+        {
+          "case_id": "irs-unaccepted-assistant-proposal",
+          "family_id": "irs-unaccepted-assistant-proposal",
+          "stage_count": 3,
+          "tags": [
+            "assistant_proposal_without_consent",
+            "no_change_negative"
+          ]
+        },
+        {
+          "case_id": "irs-combined-workshop-change",
+          "family_id": "irs-combined-workshop-change",
+          "stage_count": 3,
+          "tags": [
+            "combination_change",
+            "scope_modification",
+            "scope_withdrawal",
+            "scope_addition",
+            "constraint_retention"
+          ]
+        },
+        {
+          "case_id": "irs-multiple-request-owners",
+          "family_id": "irs-multiple-request-owners",
+          "stage_count": 3,
+          "tags": [
+            "multiple_speaker_attribution",
+            "scope_withdrawal",
+            "scope_addition"
+          ]
+        },
+        {
+          "case_id": "irs-late-obsolete-evidence",
+          "family_id": "irs-late-obsolete-evidence",
+          "stage_count": 3,
+          "tags": [
+            "late_tool_result",
+            "scope_modification",
+            "stale_evidence"
+          ]
+        }
+      ],
+      "new_tracker_lora_split_eligibility": "exposed regression/development only; not a new held-out set"
+    },
+    "development": {
+      "authored_case_count": 1,
+      "family_id_count": 1,
+      "unique_authored_stage_prefixes": 3,
+      "authored_human_event_count": 3,
+      "trajectory_assignments": 3,
+      "conditions": [
+        "split",
+        "tracked",
+        "unified"
+      ],
+      "repetitions": 1,
+      "calls_per_stage": 6,
+      "planned_executed_calls_from_assignment_structure": 54,
+      "cases": [
+        {
+          "case_id": "irs-development-depot",
+          "family_id": "irs-development-depot",
+          "stage_count": 3,
+          "tags": [
+            "development_only",
+            "exclude_from_evaluation"
+          ]
+        }
+      ],
+      "new_tracker_lora_split_eligibility": "exposed regression/development only; not a new held-out set"
+    }
+  },
+  "original_tracker_traces": {
+    "original_tracker_proposals_replayed": 69,
+    "original_tracker_proposals_accepted": 44,
+    "original_tracker_proposals_rejected": 25,
+    "original_trajectories": 48,
+    "original_captured_model_calls_reconciled": 864,
+    "original_final_failures": 10
+  },
+  "original_trace_label_limit": "44 accepted proposals passed state-store structural rules; this is not semantic gold. All 69 proposals need independent prefix-based semantic labeling before possible training reuse. Retries are correlated; split by originating family/conversation.",
+  "known_gold_issue": "Workshop price is in earlier stage gold before explicitly requested in stage 3; do not turn that early gold into a training requirement. Preserve old scoring; author revised labels separately.",
+  "older_project_datasets": [
+    {
+      "path": "experiments/deep_conversation/benchmarks/intent-coverage-v1/public-cases.json",
+      "sha256": "ddf721b01dca53c0f9a3c9581dbe4a4ba380b7b5c32350fcdd7172d91f7b0763",
+      "bytes": 6306,
+      "top_level_keys": null,
+      "case_count": 24,
+      "new_tracker_lora_split_eligibility": "existing exposed project material; reserve as regression, not fresh held-out",
+      "case_record_keys": [
+        "case_id",
+        "pair_id",
+        "category",
+        "transcript"
+      ],
+      "pair_id_counts": {
+        "icv1-p01": 2,
+        "icv1-p02": 2,
+        "icv1-p03": 2,
+        "icv1-p04": 2,
+        "icv1-p05": 2,
+        "icv1-p06": 2,
+        "icv1-p07": 2,
+        "icv1-p08": 2,
+        "icv1-p09": 2,
+        "icv1-p10": 2,
+        "icv1-p11": 2,
+        "icv1-p12": 2
+      },
+      "category_counts": {
+        "explicit_compound": 2,
+        "filtered_information": 2,
+        "pragmatic_information_gap": 2,
+        "background_scope": 2,
+        "resolved_question": 2,
+        "rhetorical_vs_genuine": 2,
+        "role_statement": 2,
+        "action_vs_information": 2,
+        "partial_compound": 2,
+        "pragmatic_partial_resolution": 2,
+        "quoted_practice_vs_current": 2,
+        "settled_vs_open_dimensions": 2
+      },
+      "event_count_if_replay_schema": 0
+    },
+    {
+      "path": "experiments/deep_conversation/benchmarks/intention-diagnostic-v1/cases.json",
+      "sha256": "5937eff6b139a1021e1960d8d9dfe6ff6f2c054f30590dd5b85c8074eec6bf2e",
+      "bytes": 8280,
+      "top_level_keys": null,
+      "case_count": 6,
+      "new_tracker_lora_split_eligibility": "existing exposed project material; reserve as regression, not fresh held-out",
+      "case_record_keys": [
+        "case_id",
+        "corpus_ids",
+        "close_at_ms",
+        "tool_latency_ms",
+        "events"
+      ],
+      "event_count_if_replay_schema": 27
+    },
+    {
+      "path": "experiments/deep_conversation/benchmarks/meeting-intention-v1/cases.json",
+      "sha256": "56cbbe41bfb6e9365d62933c92fa002d4712653462fd0693d0987c0d792220ec",
+      "bytes": 8820,
+      "top_level_keys": null,
+      "case_count": 3,
+      "new_tracker_lora_split_eligibility": "existing exposed project material; reserve as regression, not fresh held-out",
+      "case_record_keys": [
+        "case_id",
+        "corpus_ids",
+        "close_at_ms",
+        "tool_latency_ms",
+        "events"
+      ],
+      "event_count_if_replay_schema": 27
+    },
+    {
+      "path": "experiments/deep_conversation/benchmarks/meeting-factorial-v1/cases.json",
+      "sha256": "ff8817467aff13d32763e6be4e2e2a6b16a0afa28ac9f8acb5d4bd82ab4b0f0e",
+      "bytes": 11509,
+      "top_level_keys": null,
+      "case_count": 4,
+      "new_tracker_lora_split_eligibility": "existing exposed project material; reserve as regression, not fresh held-out",
+      "case_record_keys": [
+        "case_id",
+        "corpus_ids",
+        "close_at_ms",
+        "tool_latency_ms",
+        "events"
+      ],
+      "event_count_if_replay_schema": 36
+    },
+    {
+      "path": "experiments/deep_conversation/benchmarks/goal-directed-v1/benchmark.json",
+      "sha256": "de93b0fb646993c68e39df744a9aaef2e0f2d11fa2811c95b2078b77a0a8117f",
+      "bytes": 137751,
+      "top_level_keys": [
+        "schema_version",
+        "benchmark_id",
+        "status",
+        "date_halifax",
+        "source_manifest",
+        "human_review",
+        "conditions",
+        "planned_repetitions",
+        "planned_runs",
+        "interpretation",
+        "cases"
+      ],
+      "case_count": 24,
+      "new_tracker_lora_split_eligibility": "existing exposed project material; reserve as regression, not fresh held-out",
+      "case_record_keys": [
+        "id",
+        "family",
+        "domain",
+        "condition",
+        "source_refs",
+        "authorship",
+        "public",
+        "private",
+        "environment",
+        "gold"
+      ],
+      "family_counts": {
+        "auto-request": 4,
+        "auto-authorization": 4,
+        "auto-record": 4,
+        "telecom-loyalty": 4,
+        "telecom-correction": 4,
+        "telecom-receipt": 4
+      },
+      "event_count_if_replay_schema": 0
+    },
+    {
+      "path": "experiments/deep_conversation/benchmarks/investigation-progress-v1/dev/cases.json",
+      "sha256": "ed5cd9f693a18f608fc62d8d0a046c9fbfffcade47c317da2cc276dd4ca9c3b2",
+      "bytes": 1600,
+      "top_level_keys": null,
+      "case_count": 2,
+      "new_tracker_lora_split_eligibility": "existing exposed project material; reserve as regression, not fresh held-out",
+      "case_record_keys": [
+        "case_id",
+        "corpus_ids",
+        "close_at_ms",
+        "tool_latency_ms",
+        "events"
+      ],
+      "event_count_if_replay_schema": 4
+    },
+    {
+      "path": "experiments/deep_conversation/benchmarks/investigation-progress-v1/heldout/cases.json",
+      "sha256": "69c1e23ac121ec13feb3fcb4f678b6da8c74d4a46899733a81459c4b000ca9dc",
+      "bytes": 9160,
+      "top_level_keys": null,
+      "case_count": 10,
+      "new_tracker_lora_split_eligibility": "existing exposed project material; reserve as regression, not fresh held-out",
+      "case_record_keys": [
+        "case_id",
+        "corpus_ids",
+        "close_at_ms",
+        "tool_latency_ms",
+        "events"
+      ],
+      "event_count_if_replay_schema": 25
+    },
+    {
+      "path": "experiments/deep_conversation/benchmarks/discovery/cases.json",
+      "sha256": "1d0cc10629dd9144150622abf334ef087d2d5ff5fe02cee0f0b7f0a5d19c5b02",
+      "bytes": 7389,
+      "top_level_keys": null,
+      "case_count": 6,
+      "new_tracker_lora_split_eligibility": "existing exposed project material; reserve as regression, not fresh held-out",
+      "case_record_keys": [
+        "case_id",
+        "family_id",
+        "language",
+        "input_mode",
+        "events",
+        "close_at_ms",
+        "corpus_ids",
+        "tool_latency_ms",
+        "clarifications"
+      ],
+      "family_id_counts": {
+        "discovery-scope": 2,
+        "discovery-evidence": 2,
+        "discovery-resolution": 2
+      },
+      "event_count_if_replay_schema": 22
+    },
+    {
+      "path": "experiments/deep_conversation/benchmarks/holdout/cases.json",
+      "sha256": "5fcd422aa52922d111f526af8214833caf74aadd42d6762557f78fa9b0cdd7d0",
+      "bytes": 7503,
+      "top_level_keys": null,
+      "case_count": 6,
+      "new_tracker_lora_split_eligibility": "existing exposed project material; reserve as regression, not fresh held-out",
+      "case_record_keys": [
+        "case_id",
+        "corpus_ids",
+        "close_at_ms",
+        "tool_latency_ms",
+        "events"
+      ],
+      "event_count_if_replay_schema": 22
+    },
+    {
+      "path": "experiments/deep_conversation/benchmarks/orchestration-holdout-v1/cases.json",
+      "sha256": "65e1bd16bc4c8388acb4dda322334e402569793bf4b3d70c5003837ca415e606",
+      "bytes": 5614,
+      "top_level_keys": null,
+      "case_count": 6,
+      "new_tracker_lora_split_eligibility": "existing exposed project material; reserve as regression, not fresh held-out",
+      "case_record_keys": [
+        "case_id",
+        "corpus_ids",
+        "close_at_ms",
+        "tool_latency_ms",
+        "events"
+      ],
+      "event_count_if_replay_schema": 16
+    }
+  ],
+  "intent_coverage_labels": {
+    "cases": 24,
+    "required_needs": 28,
+    "need_count_distribution": {
+      "2": 8,
+      "1": 12,
+      "0": 4
+    },
+    "label_origin": "Existing AI-authored and AI-reviewed diagnostic; no human labels obtained in this audit",
+    "evidence": {
+      "path": "experiments/deep_conversation/benchmarks/intent-coverage-v1/gold.json",
+      "sha256": "7e98b48f5c9a94191974d18b14d131743759fa74f781063b99f813c8eb877aca",
+      "bytes": 28123
+    }
+  },
+  "downloaded_candidate_sources": [
+    {
+      "path": "output/research/2026-10-06/datasets/multi-party-dialogue/downloaded/ami/train/train_samples.jsonl",
+      "exists": true,
+      "repository": "ishiki-labs/multi-party-dialogue",
+      "revision": "356c30b9dc74cbfa115ab7b9a89991d92ce0a315",
+      "sha256": "38f0eee6bd62a834940ffc5b96b897a20c27130b2cc35a285e8eb6701c4f5a2d",
+      "bytes": 33727490,
+      "matches_recorded_sha256": true,
+      "nonempty_rows": 11270
+    },
+    {
+      "path": "output/research/2026-10-06/datasets/multi-party-dialogue/downloaded/ami/val/val_samples.jsonl",
+      "exists": true,
+      "repository": "ishiki-labs/multi-party-dialogue",
+      "revision": "356c30b9dc74cbfa115ab7b9a89991d92ce0a315",
+      "sha256": "734a4b5f4e78997d8a2325934422ef57b5ce506c659346abcd7249b0b8a40aa5",
+      "bytes": 5044666,
+      "matches_recorded_sha256": true,
+      "nonempty_rows": 1408
+    },
+    {
+      "path": "output/research/2026-10-06/datasets/multi-party-dialogue/downloaded/ami/test/test_samples.jsonl",
+      "exists": true,
+      "repository": "ishiki-labs/multi-party-dialogue",
+      "revision": "356c30b9dc74cbfa115ab7b9a89991d92ce0a315",
+      "sha256": "bc770473c45277223445b8ca05f751c9a4b6c53195e37356c46ba5ff9f839c93",
+      "bytes": 4166218,
+      "matches_recorded_sha256": true,
+      "nonempty_rows": 1410
+    },
+    {
+      "path": "output/research/2026-10-06/datasets/discussllm/downloaded/data/generated_discussion_data.zip",
+      "exists": true,
+      "repository": "deepsworld/discussllm",
+      "revision": "71e6348058d13c35acb1125aeeedd4dfe154ccbb",
+      "sha256": "c40aedfeb08bc25a1b7a9bb962288a61cbc4d87b5ecad2186bc8fa866f8833eb",
+      "bytes": 103759592,
+      "matches_recorded_sha256": true
+    },
+    {
+      "path": "output/research/2026-10-06/datasets/discussllm/downloaded/data/train_data.txt",
+      "exists": true,
+      "repository": "deepsworld/discussllm",
+      "revision": "71e6348058d13c35acb1125aeeedd4dfe154ccbb",
+      "sha256": "53e4e7364c1a153acd350ba20eb8b9004b8754db11e874e188a4d851e2d237c6",
+      "bytes": 3091851,
+      "matches_recorded_sha256": true
+    },
+    {
+      "path": "output/research/2026-10-06/datasets/discussllm/downloaded/data/test_data.txt",
+      "exists": true,
+      "repository": "deepsworld/discussllm",
+      "revision": "71e6348058d13c35acb1125aeeedd4dfe154ccbb",
+      "sha256": "0d39653a1fe1802c8f654e37d73e29312e964e2af6413c52ec6e1cdd6514423c",
+      "bytes": 545587,
+      "matches_recorded_sha256": true
+    },
+    {
+      "path": "output/research/2026-10-06/datasets/When2Speak/downloaded/finetune_val_token.jsonl",
+      "exists": true,
+      "repository": "duke-trust-lab/When2Speak",
+      "revision": "092e40995896b0c278a1e32954297ef125b70112",
+      "sha256": "49d2ab934cfcead6edc5567361a6c6de05688bee10e6213b7df1dea3c9dc6469",
+      "bytes": 26250937,
+      "matches_recorded_sha256": true,
+      "nonempty_rows": 21788
+    }
+  ],
+  "public_data_previous_audit": {
+    "path": "output/research/2026-10-06/datasets/public_data_audit.json",
+    "limit": "Read-only prior audit reused. Existing SPEAK/SILENT or intervention-location labels are not tracker state-transition targets; license and task fit need review before training."
+  },
+  "public_data_leakage_evidence": {
+    "ami_train_test_meeting_id_overlap": 21,
+    "ami_test_rows_from_train_meetings": 1410,
+    "ami_test_rows_with_exact_train_context_and_target": 1,
+    "interpretation": "Published row splits do not imply unseen-meeting splits. Exact-input overlap and meeting overlap are separate issues; split by source conversation/meeting for tracker evaluation."
+  },
+  "runtime": {
+    "gpu_query": {
+      "command": [
+        "nvidia-smi",
+        "--query-gpu=name,memory.total,memory.free,driver_version",
+        "--format=csv,noheader"
+      ],
+      "exit_code": 0,
+      "stdout": "NVIDIA GeForce RTX 4080 SUPER, 16376 MiB, 11611 MiB, 617.14",
+      "stderr": ""
+    },
+    "python_environments": [
+      {
+        "command": [
+          ".\\experiments\\deep_conversation\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-c",
+          "import importlib.metadata,json,sys; names=['torch','transformers','peft','accelerate','bitsandbytes','trl','datasets','safetensors']; out={};\nfor n in names:\n try: out[n]=importlib.metadata.version(n)\n except importlib.metadata.PackageNotFoundError: out[n]=None\nprint(json.dumps({'python':sys.version,'executable':sys.executable,'packages':out}))"
+        ],
+        "exit_code": 0,
+        "stdout": "{\"python\": \"3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]\", \"executable\": \".\\\\experiments\\\\deep_conversation\\\\.venv\\\\Scripts\\\\python.exe\", \"packages\": {\"torch\": null, \"transformers\": null, \"peft\": null, \"accelerate\": null, \"bitsandbytes\": null, \"trl\": null, \"datasets\": null, \"safetensors\": null}}",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "python",
+          "-B",
+          "-c",
+          "import importlib.metadata,json,sys; names=['torch','transformers','peft','accelerate','bitsandbytes','trl','datasets','safetensors']; out={};\nfor n in names:\n try: out[n]=importlib.metadata.version(n)\n except importlib.metadata.PackageNotFoundError: out[n]=None\nprint(json.dumps({'python':sys.version,'executable':sys.executable,'packages':out}))"
+        ],
+        "exit_code": 0,
+        "stdout": "{\"python\": \"3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]\", \"executable\": \"<user-home>\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\python\\\\python.exe\", \"packages\": {\"torch\": null, \"transformers\": null, \"peft\": null, \"accelerate\": null, \"bitsandbytes\": null, \"trl\": null, \"datasets\": null, \"safetensors\": null}}",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "<user-home>\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+          "-B",
+          "-c",
+          "import importlib.metadata,json,sys; names=['torch','transformers','peft','accelerate','bitsandbytes','trl','datasets','safetensors']; out={};\nfor n in names:\n try: out[n]=importlib.metadata.version(n)\n except importlib.metadata.PackageNotFoundError: out[n]=None\nprint(json.dumps({'python':sys.version,'executable':sys.executable,'packages':out}))"
+        ],
+        "exit_code": 0,
+        "stdout": "{\"python\": \"3.13.1 (tags/v3.13.1:0671451, Dec  3 2024, 19:06:28) [MSC v.1942 64 bit (AMD64)]\", \"executable\": \"<user-home>\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python313\\\\python.exe\", \"packages\": {\"torch\": \"2.12.0+cu130\", \"transformers\": \"5.14.1\", \"peft\": null, \"accelerate\": \"1.14.0\", \"bitsandbytes\": \"0.50.0\", \"trl\": null, \"datasets\": \"5.0.0\", \"safetensors\": \"0.8.0\"}}",
+        "stderr": ""
+      }
+    ],
+    "archived_pilot_model": {
+      "model": "qwen2.5:14b-instruct",
+      "digest": "7cdf5a0187d5c58cc5d369b255592f7841d1c4696d45a8c8a9489440385b22f6",
+      "size_bytes": 8988124069,
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "qwen2",
+        "families": [
+          "qwen2"
+        ],
+        "parameter_size": "14.8B",
+        "quantization_level": "Q4_K_M"
+      },
+      "capabilities": [
+        "completion",
+        "tools"
+      ],
+      "ollama_version": "0.40.6",
+      "context_window": 16384,
+      "endpoint": "http://127.0.0.1:11434",
+      "inference_location": "local",
+      "paid_api_fallback": false
+    },
+    "cache_scopes_checked": [
+      {
+        "scope": "user_home/.cache/huggingface/hub",
+        "exists": true,
+        "immediate_directory_names": [
+          ".locks",
+          "datasets--elricwan--dailydialog",
+          "datasets--huuuyeah--meetingbank",
+          "datasets--roskoN--dailydialog",
+          "datasets--seantw--DEBATE_LLM"
+        ],
+        "scope_limit": "Known cache only, not exhaustive filesystem search"
+      },
+      {
+        "scope": "user_home/.cache/huggingface/transformers",
+        "exists": false,
+        "immediate_directory_names": [],
+        "scope_limit": "Known cache only, not exhaustive filesystem search"
+      }
+    ],
+    "readiness_status": "not established: package presence and GPU metadata do not establish training fit or adapter deployment compatibility",
+    "ollama_show_read_only": {
+      "endpoint": "http://127.0.0.1:11434/api/show",
+      "request_model": "qwen2.5:14b-instruct",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "qwen2",
+        "families": [
+          "qwen2"
+        ],
+        "parameter_size": "14.8B",
+        "quantization_level": "Q4_K_M"
+      },
+      "capabilities": [
+        "completion",
+        "tools"
+      ],
+      "status": "available",
+      "model_inference": false
+    }
+  },
+  "evidence": [
+    {
+      "path": "output/research/2026-10-23/intent-role-separation/fixtures/cases.json",
+      "sha256": "61d9f5fa3d94937b181c45d065f0d012d240df30fb4211bf57f415a53560ba7a",
+      "bytes": 61103
+    },
+    {
+      "path": "output/research/2026-10-23/intent-role-separation/evaluation/manifest.json",
+      "sha256": "e3ba2b0bfb41851b1a54fe43fffe994b84da3386268482b2dc14571c035aff4a",
+      "bytes": 14915
+    },
+    {
+      "path": "output/research/2026-10-23/intent-role-separation/development/manifest.json",
+      "sha256": "9fec06b8bcbc792664361b237d02c8ac63448c4d2237ddcdcd7ed0903d4df646",
+      "bytes": 7293
+    },
+    {
+      "path": "output/research/2026-10-23/intent-role-diagnostics/SUMMARY.json",
+      "sha256": "bb5f2f1741a2107b099b06e077e604b7aebff616ed7151b8cb75ab31b867757e",
+      "bytes": 11494
+    },
+    {
+      "path": "output/research/2026-10-23/intent-role-diagnostics/REPORT.md",
+      "sha256": "fe778d5dd945beda5c6d2845482302e7221ddad908ba721ef46262034ef82c85",
+      "bytes": 9651
+    },
+    {
+      "path": "experiments/deep_conversation/INTENTION_ROLES.md",
+      "sha256": "fd525fce696a3d83bf56e5ae49a21223544980b0d66463cfb02c5371b486c23b",
+      "bytes": 3425
+    },
+    {
+      "path": "experiments/deep_conversation/intention_state.py",
+      "sha256": "e028a604a93520801a0f752755d80b305afb1eebd8792ea0aeaaa3cd5c722f73",
+      "bytes": 17645
+    },
+    {
+      "path": "experiments/deep_conversation/intent_roles.py",
+      "sha256": "befc382472aabc55efbda043aae5d377e12cce92a56804c73e25994305674d68",
+      "bytes": 18448
+    },
+    {
+      "path": "output/research/2026-10-06/datasets/download_manifest.json",
+      "sha256": "e313e6258bfeb4aae585d3841f4903fbcc20aeb496f7b5ead7a540d314ae36f4",
+      "bytes": 3682
+    },
+    {
+      "path": "output/research/2026-10-06/datasets/public_data_audit.json",
+      "sha256": "46877b9c6bf3ca19de56a703846013fb2d758a9a7fcde0a780115899cea48007",
+      "bytes": 5300
+    },
+    {
+      "path": "output/research/2026-10-06/datasets/discussllm/development/manifest.json",
+      "sha256": "48402e1f6af40a2d690c9c2f21f65620b88ecf69bc37d097e18edb6a8e6d790c",
+      "bytes": 1758
+    }
+  ],
+  "commands": [
+    "python -B output/research/2026-10-24/tracker-lora-plan/data-audit/inventory_sources.py",
+    "nvidia-smi --query-gpu=name,memory.total,memory.free,driver_version --format=csv,noheader",
+    "Python importlib.metadata reads in project .venv and default python; no training packages imported",
+    "POST localhost Ollama /api/show metadata only; no /api/generate or /api/chat"
+  ],
+  "script_sha256": "f5ba943518b22f070055fb1197c5678f12b81d86433924cbd5a8ea8c63134c82",
+  "execution_notes": [
+    "First execution reached output assembly but failed because this Python lacks tzdata for ZoneInfo('UTC'). Replaced that timestamp-only dependency with datetime.timezone.utc and reran. No dataset or model state changed.",
+    "One exploratory PowerShell read named a nonexistent analysis/report.md, and an rg path wildcard was unsupported; actual diagnosis REPORT.md and direct file paths were used instead."
+  ],
+  "limitations": [
+    "Counts are inventory, not training sufficiency or independent sample-size claims.",
+    "Existing named holdout folders are historically evaluated project material; no fresh held-out claim is made.",
+    "Cache and package inventory is scoped; software or base weights may exist outside checked locations.",
+    "No fresh public data downloaded, no model loaded, no training fit benchmark performed."
+  ],
+  "report_supporting_documents": [
+    {
+      "path": "experiments/deep_conversation/benchmarks/intent-coverage-v1/DATASET.md",
+      "sha256": "339a395d8cf796f50513f8b2ae6d9c79f3f2f59433f641ad734e347fa01ed838",
+      "bytes": 7844
+    },
+    {
+      "path": "experiments/deep_conversation/benchmarks/intention-diagnostic-v1/README.md",
+      "sha256": "5f9d574464091438a02ce14500802a8804256323c8326f5e63f7a6014018d02e",
+      "bytes": 8130
+    },
+    {
+      "path": "experiments/deep_conversation/benchmarks/meeting-intention-v1/README.md",
+      "sha256": "8cf1ac141bd43c3a9b161b8317ee3f31b5c68001fcaa1c1d7559dc018490fa5c",
+      "bytes": 6845
+    },
+    {
+      "path": "experiments/deep_conversation/benchmarks/meeting-factorial-v1/README.md",
+      "sha256": "f46d50e2da6776ec26888140a11072dd07216e4e18de01a5483500fb49b953eb",
+      "bytes": 3932
+    },
+    {
+      "path": "experiments/deep_conversation/benchmarks/goal-directed-v1/README.md",
+      "sha256": "81bab0de15773081ad20bf84a8f3999330cbf55845b893e7b76df20599e6eb8f",
+      "bytes": 7606
+    },
+    {
+      "path": "experiments/deep_conversation/benchmarks/goal-directed-v1/sources.json",
+      "sha256": "d24dea2074512b60d6bdfdefe075d5d25510152b84c34930a9680c6eb38757cf",
+      "bytes": 53718
+    },
+    {
+      "path": "output/research/2026-10-06/datasets/When2Speak/README.md",
+      "sha256": "b72d71dfc3dbb9edf6f80318b9e1c8423e202fb9ebf067f536927878f5ed56ba",
+      "bytes": 8609
+    },
+    {
+      "path": "output/research/2026-10-06/datasets/discussllm/README.md",
+      "sha256": "1cadaeb053cd286934775fb528504cc7115737e883b9373ad788d0d1397b99ba",
+      "bytes": 821
+    }
+  ]
+}
