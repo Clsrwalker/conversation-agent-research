@@ -1,0 +1,33 @@
+{
+  "kind": "engineering_attempt_accounting_not_quality_score",
+  "durable_assigned_results": 200,
+  "extra_interrupted_unreturned_attempts": 1,
+  "total_started_generation_attempts": 201,
+  "interrupted_input_tokens": 1030,
+  "interrupted_output_tokens": null,
+  "interrupted_wall_time_bounds": {
+    "not_before_pre_interrupt_snapshot_utc": "2026-10-24T12:36:50.935557+00:00",
+    "not_after_process_absence_confirmation_utc": "2026-10-24T12:37:19.446621+00:00",
+    "unreturned_elapsed_lower_bound_seconds": 449.746818,
+    "unreturned_elapsed_upper_bound_seconds": 478.257882,
+    "note": "Exact process-exit wall timestamp was not emitted; do not present the confirmation upper bound as exact generation cost."
+  },
+  "cost_note": "Recorded completed-call tokens exclude the unknown output tokens of one extra interrupted attempt. Quality assignment remains 200, not 201.",
+  "statuses": {
+    "completed": 200
+  },
+  "token_cap_hits": 0,
+  "recorded_completed_input_tokens": 227998,
+  "recorded_completed_output_tokens": 10796,
+  "cost_limits": [
+    "The abandoned attempt is absent from completed-call aggregates. Report its 449.746818-to-478.257882-second elapsed bound and unknown output-token cost separately.",
+    "Do not treat the stop-confirmation timestamp or the 478.257882-second upper bound as exact generation duration.",
+    "Do not convert unknown output tokens to zero, omit recovery overhead, claim total cost from completed calls alone, or infer dollar cost without prices/billing evidence.",
+    "End-to-end wall time includes model loading/restarts/pauses and is a different measure from summed completed generation time.",
+    "Latency is descriptive; memory/cache reset, reload, row length and arm/order effects prevent a controlled speedup claim."
+  ],
+  "cross_process_pairing_exception": {
+    "row_index": 36,
+    "reason": "One assigned arm was durable before the interrupt while its paired arm was unreturned and resumed in a fresh process. Both use the frozen checkpoint/quantization/configuration but are not the identical in-memory object. Do not rerun or drop the durable arm."
+  }
+}

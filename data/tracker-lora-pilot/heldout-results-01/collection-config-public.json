@@ -1,0 +1,21 @@
+{
+  "base_id": "Qwen/Qwen2.5-14B-Instruct",
+  "base_revision": "cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8",
+  "data_sha256": "c885d355efc667a73670008012e240d35b0d1e0a58c79dbd2c951a35efd24ff9",
+  "collector_sha256": "da6c2e025438dcc609a34ef34f1d4dd717fbcb41192a0dcf47b252ebdc830b51",
+  "base_loading_implementation_sha256": "b60fd53f91c62d854ef0cf71a15b29fac850fad1aaddd5d07e335831a94ed1a8",
+  "base_generation_config_sha256": "ea35dfb6fc5051b01114f9b995820d55dab01ed33ee490f6378b442af82c09f9",
+  "adapter_weights_sha256": "70af35505394ebc53d81aa839ad78165166d5ad7fd9be36314a3f0962265a707",
+  "adapter_config_sha256": "4b10f017bee9d111bb544e6dd9ee025b5c2353317839fc5e3bc183fb38b3e7e2",
+  "max_prompt_tokens": 2048,
+  "max_new_tokens": 512,
+  "seed": 20261024,
+  "do_sample": false,
+  "repetition_penalty": 1.0,
+  "num_beams": 1,
+  "limit": 0,
+  "system_prompt_sha256": "7587583ff3fb2f46f64a32ca598a9f2bd980d8b0c3ff24915d80f5e31cda5abd",
+  "cache_implementation": "dynamic",
+  "kind": "one_step_generation_collection_not_semantic_score",
+  "base_representation": "same_object_nf4_double_quant_bfloat16_compute_norms_fp32"
+}

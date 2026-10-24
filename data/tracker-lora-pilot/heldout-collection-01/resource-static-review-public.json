@@ -1,0 +1,120 @@
+{
+  "kind": "independent_static_inference_resource_review",
+  "date": "2026-10-24",
+  "timezone": "America/Halifax",
+  "reviewer": "tracker_annotation_v2",
+  "status": "review_complete_no_confirmed_success_path_accumulation_bug",
+  "collector": "experiments/deep_conversation/tracker_lora/collect_ab.py",
+  "collector_sha256": "da6c2e025438dcc609a34ef34f1d4dd717fbcb41192a0dcf47b252ebdc830b51",
+  "lock_binding": "Matches collector entry in evaluation/protocol-lock-memory-guard-v2.json.",
+  "scope": {
+    "read": [
+      "Frozen collector source",
+      "v2 lock metadata",
+      "Pinned base generation_config.json",
+      "Installed PEFT and Transformers generation source"
+    ],
+    "generation_outputs_read": false,
+    "gpu_or_model_calls_started": 0,
+    "source_changes": 0,
+    "live_process_intervention": false
+  },
+  "conclusion": "No explicit successful-call path retains a growing list of GPU outputs, autograd graphs or dynamic KV caches across requests. One confirmed exception-cleanup weakness exists, but its applicability is unknown because no output/failure records were inspected. Allocator caching and longer input/output sequences remain possible explanations for elapsed-time changes; neither is established as the cause of the reported slowdown.",
+  "findings": [
+    {
+      "topic": "Autograd and persistent model state",
+      "classification": "no_explicit_accumulation_found",
+      "locations": [
+        "collect_ab.py:65",
+        "collect_ab.py:66",
+        "collect_ab.py:67",
+        "collect_ab.py:69",
+        "collect_ab.py:92",
+        "transformers/generation/utils.py:2273"
+      ],
+      "evidence": "One frozen base plus one nontrainable adapter is created before the loops; model.eval is set and any gradient checkpointing is disabled. Each generate call runs inside torch.inference_mode and bfloat16 autocast; installed Transformers generate is also no_grad. There is no backward or optimizer in the collector.",
+      "interpretation": "The persistent model tensors are expected. No inference computation graph accumulation is visible in the collector."
+    },
+    {
+      "topic": "Successful output lifetime",
+      "classification": "no_explicit_accumulation_found",
+      "locations": [
+        "collect_ab.py:89",
+        "collect_ab.py:93",
+        "collect_ab.py:103",
+        "collect_ab.py:113"
+      ],
+      "evidence": "Generated token IDs are copied to a Python list with tolist, decoded into a string and represented in JSON-compatible record fields. The successful path deletes generated and inputs. The layers list references modules already owned by the same model and is reassigned rather than appended across calls. Tokenized prompts, prior JSON records, completed keys and parsed outputs are CPU Python data.",
+      "interpretation": "There is no growing collector-owned GPU tensor list. Replacing per-call local Python objects is not equivalent to accumulating GPU outputs."
+    },
+    {
+      "topic": "Dynamic KV cache lifetime",
+      "classification": "no_explicit_cross_call_cache_reuse_found",
+      "locations": [
+        "collect_ab.py:98",
+        "collect_ab.py:100",
+        "collect_ab.py:101",
+        "transformers/generation/utils.py:1920",
+        "transformers/generation/utils.py:2011",
+        "transformers/generation/utils.py:2954",
+        "transformers/generation/utils.py:2986"
+      ],
+      "evidence": "The collector supplies no past_key_values and uses the declared dynamic cache. Installed Transformers constructs a fresh DynamicCache in local model_kwargs for this path. The decode loop deletes each forward outputs object; per-token scores/hidden states are stored only if explicitly requested. The pinned generation config does not request those outputs or return_dict_in_generate; the ordinary return is the token-ID tensor. DynamicCache is excluded from the inspected automatic compilation path.",
+      "interpretation": "No deliberate sharing of previous-request KV state between adapter arms or rows is visible. The static-cache reuse mechanism is not the configured path.",
+      "limit": "This is source inspection, not a live heap or CUDA allocation trace; library-level cycles or driver behavior are not excluded."
+    },
+    {
+      "topic": "Adapter off/on restoration",
+      "classification": "no_state_restoration_bug_found",
+      "locations": [
+        "collect_ab.py:90",
+        "collect_ab.py:92",
+        "collect_ab.py:94",
+        "collect_ab.py:95",
+        "peft/peft_model.py:1061",
+        "peft/peft_model.py:1069",
+        "peft/peft_model.py:1073",
+        "peft/peft_model.py:2229"
+      ],
+      "evidence": "The baseline uses model.disable_adapter as a context manager. Installed PEFT restores LoRA enablement in finally, including exception exits. Collector assertions check every LoRA layer's disabled count inside each arm before generation. PEFT's causal-LM generation wrapper restores prepare_inputs_for_generation on both success and ordinary Exception.",
+      "interpretation": "No visible arm-switch path repeatedly loads adapters, duplicates model weights or leaves the baseline disabling context active on successful return. This review did not inspect recorded arm-state outputs."
+    },
+    {
+      "topic": "Exception cleanup ordering",
+      "classification": "confirmed_code_risk_conditional_on_exception",
+      "locations": [
+        "collect_ab.py:113",
+        "collect_ab.py:114",
+        "collect_ab.py:117",
+        "collect_ab.py:118"
+      ],
+      "evidence": "The explicit deletion of inputs/generated is only on the success path. gc.collect and empty_cache execute inside the except block while exc and its traceback are still alive. A generation traceback can retain frames containing transient GPU tensors/KV state during those cleanup calls. If an exception happens after generated is assigned, generated can remain a local reference until replaced or the function exits; inputs likewise is not explicitly cleared on failure.",
+      "interpretation": "The exception handler cannot guarantee that failed-call live allocations are reclaimable at the moment empty_cache runs. Python clears the exception binding at handler exit, so this does not establish an unbounded leak. Successfully returning token sequences are small compared with model/KV storage.",
+      "applicability": "Unknown. No failure/output records were read, and no claim is made that the current slowdown follows an exception."
+    },
+    {
+      "topic": "Reserved cache and elapsed time",
+      "classification": "measurement_limit_not_confirmed_bug",
+      "locations": [
+        "collect_ab.py:98",
+        "collect_ab.py:100",
+        "collect_ab.py:103",
+        "collect_ab.py:119",
+        "collect_ab.py:120",
+        "collect_ab.py:125"
+      ],
+      "evidence": "Successful calls do not invoke empty_cache; freed tensor storage can remain reserved in the CUDA allocator. Each call permits up to 512 newly generated tokens and inputs vary in length. The measured interval includes generation, token copy/readback and decode; it ends before memory reporting and durable file flush/fsync.",
+      "interpretation": "Reserved memory may remain high without a live tensor leak. Longer generation can increase latency without any lifecycle error. Delayed progress reporting can also include work outside the recorded interval. Source alone cannot distinguish these from resource pressure."
+    }
+  ],
+  "limited_followup_suggestions": [
+    "The collector owner can compare non-content per-call token counts, elapsed time and allocated/reserved memory to distinguish token-length variation from declining tokens-per-second. This reviewer did not open those records.",
+    "If failures are observed, examine exception cleanup in a separately versioned diagnostic; scope per-call tensor references tightly or release them after traceback lifetime ends. Do not patch the frozen live run based on this static review.",
+    "A high reserved-memory number alone is insufficient to prescribe cache clearing. Any future cleanup or stage-timing experiment should preserve the current run and frozen comparison conditions."
+  ],
+  "limits": [
+    "No runtime performance or allocator measurements were collected for this task.",
+    "The reported live CPU progress and slowdown after 73 records came from root; they were not independently verified by reading collection artifacts.",
+    "No confirmed root cause, current generation failure, answer defect or quality conclusion is established."
+  ]
+}

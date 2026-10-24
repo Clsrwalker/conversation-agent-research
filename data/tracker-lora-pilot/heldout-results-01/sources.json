@@ -1,0 +1,298 @@
+{
+  "schema_version": 1,
+  "kind": "aggregate_only_public_result_provenance",
+  "source_and_export_files": {
+    "results.json": {
+      "source_path_relative_to_study": "analysis/one-step-results.json",
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-pilot/analysis/one-step-results.json",
+      "source_sha256": "4f225f88a465db6ec0168a5fbdc646ff86f86c53a99b94272a19069d14e6b8ef",
+      "export_sha256": "4b43ce8db4afc391744961e37e36190a7847a9b508bd119a3be0ade64c2e1ab8",
+      "export_bytes": 65184,
+      "byte_identical_to_source": false,
+      "sanitizations": [],
+      "transform": "Explicit aggregate top-level allowlist; the entire per_decision field is omitted, including blind-ID-to-arm joins. No semantic values are relabeled or recalculated."
+    },
+    "blind-review-final-lock-public.json": {
+      "source_path_relative_to_study": "audit/blind-review-final-lock.json",
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-pilot/audit/blind-review-final-lock.json",
+      "source_sha256": "478c945d2b841e97e56c7c696ca362d6b2928059f6b8b8a974f7dbef6427f087",
+      "export_sha256": "478c945d2b841e97e56c7c696ca362d6b2928059f6b8b8a974f7dbef6427f087",
+      "export_bytes": 2120,
+      "byte_identical_to_source": true,
+      "sanitizations": []
+    },
+    "adjudication-signoff-public.json": {
+      "source_path_relative_to_study": "evaluation/adjudication-01/final-signoff.json",
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-pilot/evaluation/adjudication-01/final-signoff.json",
+      "source_sha256": "09576f99c0b79742c3148715d496cc0b5f79b94c5e3d938eced510d5b801dc99",
+      "export_sha256": "3d4ae5ec22cd3fcb207ec1afa7fc7ef28712af34be14c1f67dcc2a2fb0eb3736",
+      "export_bytes": 3844,
+      "byte_identical_to_source": false,
+      "sanitizations": [],
+      "transform": "Metadata projection omits actual blind-ID lists, retains coverage/counts/times/hash commitments and limitations."
+    },
+    "preparation-public.json": {
+      "source_path_relative_to_study": "evaluation/blind-review-01/preparation.json",
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-pilot/evaluation/blind-review-01/preparation.json",
+      "source_sha256": "5d816538735f8aded52a8d1261baa36d0a9dd78e39066487e33f81b375d46eb7",
+      "export_sha256": "5d816538735f8aded52a8d1261baa36d0a9dd78e39066487e33f81b375d46eb7",
+      "export_bytes": 913,
+      "byte_identical_to_source": true,
+      "sanitizations": [],
+      "transform": "PRIVATE artifact names occur only as hash commitments in this receipt; their contents are never exported."
+    },
+    "dispatch-structural-validation.json": {
+      "source_path_relative_to_study": "evaluation/blind-dispatch-01/structural-validation.json",
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-pilot/evaluation/blind-dispatch-01/structural-validation.json",
+      "source_sha256": "ececb07d7ead8bfa36ee221824569fdb3ac901ac51bd423f777134f1b08589ba",
+      "export_sha256": "ececb07d7ead8bfa36ee221824569fdb3ac901ac51bd423f777134f1b08589ba",
+      "export_bytes": 647,
+      "byte_identical_to_source": true,
+      "sanitizations": []
+    },
+    "initial-review-a-completion-public.json": {
+      "source_path_relative_to_study": "evaluation/blind-dispatch-01/reviewer_A/reviewer-completion.json",
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-pilot/evaluation/blind-dispatch-01/reviewer_A/reviewer-completion.json",
+      "source_sha256": "9ec4cd09bce72096bf70d4a0efc59e479890e108b469485c226915f8ab39d25a",
+      "export_sha256": "03823e12544ac794494c71dbdd075d772fa81935e51319a5841bec092678e92b",
+      "export_bytes": 3108,
+      "byte_identical_to_source": false,
+      "sanitizations": [
+        {
+          "path": "$.file_hash_metadata[].path",
+          "action": "converted absolute path value to project-relative reference"
+        },
+        {
+          "path": "$.file_hash_metadata[].path",
+          "action": "converted absolute path value to project-relative reference"
+        },
+        {
+          "path": "$.file_hash_metadata[].path",
+          "action": "converted absolute path value to project-relative reference"
+        },
+        {
+          "path": "$.file_hash_metadata[].path",
+          "action": "converted absolute path value to project-relative reference"
+        },
+        {
+          "path": "$.file_hash_metadata[].path",
+          "action": "converted absolute path value to project-relative reference"
+        },
+        {
+          "path": "$.file_hash_metadata[].path",
+          "action": "converted absolute path value to project-relative reference"
+        },
+        {
+          "path": "$.file_hash_metadata[].path",
+          "action": "converted absolute path value to project-relative reference"
+        },
+        {
+          "path": "$.file_hash_metadata[].path",
+          "action": "converted absolute path value to project-relative reference"
+        },
+        {
+          "path": "$.file_hash_metadata[].path",
+          "action": "converted absolute path value to project-relative reference"
+        },
+        {
+          "path": "$.file_hash_metadata[].path",
+          "action": "converted absolute path value to project-relative reference"
+        },
+        {
+          "path": "$.file_hash_metadata[].path",
+          "action": "converted absolute path value to project-relative reference"
+        },
+        {
+          "path": "$.file_hash_metadata[].path",
+          "action": "converted absolute path value to project-relative reference"
+        }
+      ],
+      "transform": "Metadata-only projection; preserve original initial-review files elsewhere unchanged."
+    },
+    "initial-review-b-completion-public.json": {
+      "source_path_relative_to_study": "evaluation/blind-dispatch-01/reviewer_B/reviewer-completion.json",
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-pilot/evaluation/blind-dispatch-01/reviewer_B/reviewer-completion.json",
+      "source_sha256": "23d42d9bf01a019252263c7b451a798acefd5cd4b2f8b73ccd0bcf07b3c193e7",
+      "export_sha256": "b318f7605c4413d958437a05c1791ca599d12ff6ca31a5c2296a0921122ec32b",
+      "export_bytes": 3136,
+      "byte_identical_to_source": false,
+      "sanitizations": [
+        {
+          "path": "$.file_hash_metadata",
+          "action": "converted absolute path key to project-relative reference"
+        },
+        {
+          "path": "$.file_hash_metadata",
+          "action": "converted absolute path key to project-relative reference"
+        },
+        {
+          "path": "$.file_hash_metadata",
+          "action": "converted absolute path key to project-relative reference"
+        },
+        {
+          "path": "$.file_hash_metadata",
+          "action": "converted absolute path key to project-relative reference"
+        },
+        {
+          "path": "$.file_hash_metadata",
+          "action": "converted absolute path key to project-relative reference"
+        },
+        {
+          "path": "$.file_hash_metadata",
+          "action": "converted absolute path key to project-relative reference"
+        },
+        {
+          "path": "$.file_hash_metadata",
+          "action": "converted absolute path key to project-relative reference"
+        },
+        {
+          "path": "$.file_hash_metadata",
+          "action": "converted absolute path key to project-relative reference"
+        },
+        {
+          "path": "$.file_hash_metadata",
+          "action": "converted absolute path key to project-relative reference"
+        },
+        {
+          "path": "$.file_hash_metadata",
+          "action": "converted absolute path key to project-relative reference"
+        },
+        {
+          "path": "$.file_hash_metadata",
+          "action": "converted absolute path key to project-relative reference"
+        },
+        {
+          "path": "$.file_hash_metadata",
+          "action": "converted absolute path key to project-relative reference"
+        },
+        {
+          "path": "$.file_hash_metadata",
+          "action": "converted absolute path key to project-relative reference"
+        },
+        {
+          "path": "$.file_hash_metadata",
+          "action": "converted absolute path key to project-relative reference"
+        }
+      ],
+      "transform": "Metadata-only projection; omit individual pending adjudication details and normalize source-path hash keys."
+    },
+    "collection-publication-independent-review.json": {
+      "source_path_relative_to_study": "audit/heldout-collection-publication-independent-review.json",
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-pilot/audit/heldout-collection-publication-independent-review.json",
+      "source_sha256": "80eb34bb8c2430f57851dcf557daca1766267469cd644320669d5636a67e9234",
+      "export_sha256": "80eb34bb8c2430f57851dcf557daca1766267469cd644320669d5636a67e9234",
+      "export_bytes": 20300,
+      "byte_identical_to_source": true,
+      "sanitizations": []
+    },
+    "protocol-v2.json": {
+      "source_path_relative_to_study": "evaluation/protocol-memory-guard-v2.json",
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-pilot/evaluation/protocol-memory-guard-v2.json",
+      "source_sha256": "ba2499114856b0241d0525f9da8010736682475714afb6da0d60b35c2e43595f",
+      "export_sha256": "ba2499114856b0241d0525f9da8010736682475714afb6da0d60b35c2e43595f",
+      "export_bytes": 14558,
+      "byte_identical_to_source": true,
+      "sanitizations": []
+    },
+    "protocol-lock-v2.json": {
+      "source_path_relative_to_study": "evaluation/protocol-lock-memory-guard-v2.json",
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-pilot/evaluation/protocol-lock-memory-guard-v2.json",
+      "source_sha256": "8fb6a8e23e0256f3c78760d17314e4597aa46426c527ec3a0f776d1873999e4b",
+      "export_sha256": "54e646a5b78fee5cb8a57742dec9ab76c700e5a5781a06c249aca89c1f6813e4",
+      "export_bytes": 1803,
+      "byte_identical_to_source": false,
+      "sanitizations": [
+        {
+          "path": "$.files.protocol.path",
+          "action": "converted absolute path value to project-relative reference"
+        },
+        {
+          "path": "$.files.test_records.path",
+          "action": "converted absolute path value to project-relative reference"
+        },
+        {
+          "path": "$.files.dataset_manifest.path",
+          "action": "converted absolute path value to project-relative reference"
+        },
+        {
+          "path": "$.files.system_prompt.path",
+          "action": "converted absolute path value to project-relative reference"
+        },
+        {
+          "path": "$.files.evaluator.path",
+          "action": "converted absolute path value to project-relative reference"
+        },
+        {
+          "path": "$.files.runtime.path",
+          "action": "converted absolute path value to project-relative reference"
+        },
+        {
+          "path": "$.files.model_loader_and_trainer.path",
+          "action": "converted absolute path value to project-relative reference"
+        },
+        {
+          "path": "$.files.collector.path",
+          "action": "converted absolute path value to project-relative reference"
+        }
+      ]
+    },
+    "attempt-accounting-public.json": {
+      "source_path_relative_to_study": "publication/heldout-collection-01-manifest-v2/attempt-accounting-public.json",
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-pilot/publication/heldout-collection-01-manifest-v2/attempt-accounting-public.json",
+      "source_sha256": "6d5d96c0967de162e4e7c576d18a02dbc3ece9d91eb6a58a0340891119b7520f",
+      "export_sha256": "6d5d96c0967de162e4e7c576d18a02dbc3ece9d91eb6a58a0340891119b7520f",
+      "export_bytes": 2123,
+      "byte_identical_to_source": true,
+      "sanitizations": [],
+      "transform": "Byte-identical copy of the separately audited safe collection metadata export."
+    },
+    "collection-completion-public.json": {
+      "source_path_relative_to_study": "publication/heldout-collection-01-manifest-v2/collection-completion-public.json",
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-pilot/publication/heldout-collection-01-manifest-v2/collection-completion-public.json",
+      "source_sha256": "6b5ff55fbd923cf877fd46c0931d12f241747fff2d67ca133f73f8b9cb26b59a",
+      "export_sha256": "6b5ff55fbd923cf877fd46c0931d12f241747fff2d67ca133f73f8b9cb26b59a",
+      "export_bytes": 6403,
+      "byte_identical_to_source": true,
+      "sanitizations": [],
+      "transform": "Byte-identical copy of the separately audited safe collection metadata export."
+    },
+    "collection-config-public.json": {
+      "source_path_relative_to_study": "publication/heldout-collection-01-manifest-v2/collection-config-public.json",
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-pilot/publication/heldout-collection-01-manifest-v2/collection-config-public.json",
+      "source_sha256": "beebe2a6c448131b3f3f071f24f81263d7bb51d853ace61333aecccbcc86e946",
+      "export_sha256": "beebe2a6c448131b3f3f071f24f81263d7bb51d853ace61333aecccbcc86e946",
+      "export_bytes": 1121,
+      "byte_identical_to_source": true,
+      "sanitizations": [],
+      "transform": "Byte-identical copy of the separately audited safe collection metadata export."
+    },
+    "evaluate_tracker.py": {
+      "source_path_relative_to_project": "experiments/deep_conversation/tracker_lora/evaluate_tracker.py",
+      "source_sha256": "6e628968b52307f8160bcc673cb5abba8043490c810b22f0bd286fb9a4f33a6f",
+      "export_sha256": "6e628968b52307f8160bcc673cb5abba8043490c810b22f0bd286fb9a4f33a6f",
+      "export_bytes": 38450,
+      "byte_identical_to_source": true,
+      "sanitizations": [],
+      "scope": "Frozen evaluator source only. Generic code references to PRIVATE filenames contain no private file payloads. The evaluator is not run by packaging."
+    },
+    "results-independent-review.json": {
+      "source_path_relative_to_study": "audit/heldout-results-independent-review.json",
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-pilot/audit/heldout-results-independent-review.json",
+      "source_sha256": "30569ce2bb779c4fd7399c670371b371b859a8bee5311e1d58f6438a0a8ef19d",
+      "export_sha256": "30569ce2bb779c4fd7399c670371b371b859a8bee5311e1d58f6438a0a8ef19d",
+      "export_bytes": 19891,
+      "byte_identical_to_source": true,
+      "sanitizations": []
+    },
+    "interpretation.json": {
+      "source_path_relative_to_study": "analysis/interpretation.json",
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-pilot/analysis/interpretation.json",
+      "source_sha256": "1f0792974ddca083bfc067e67666fda3bc1d941cb9c389b5c0fdf61b658c096c",
+      "export_sha256": "3d68a62e730b20e23a1a9170a05dc95551592386023f757753e4af01bceaf844",
+      "export_bytes": 6564,
+      "byte_identical_to_source": false,
+      "sanitizations": [],
+      "transform": "Exact root-reviewed site fields only; other internal interpretation metadata omitted."
+    }
+  }
+}

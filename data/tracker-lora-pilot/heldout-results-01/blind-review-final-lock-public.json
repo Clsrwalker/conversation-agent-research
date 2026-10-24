@@ -1,0 +1,49 @@
+{
+  "kind": "final_blind_review_lock_before_arm_aggregation",
+  "status": "ready_for_unblinding",
+  "locked_at_utc": "2026-10-24T13:13:49.030041+00:00",
+  "assigned_packets": 200,
+  "adjudicated_packets": 200,
+  "structurally_scoreable_packets": 200,
+  "private_mapping_contents_read": false,
+  "private_file_hashes_verified_only": true,
+  "all_frozen_protocol_bindings_unchanged": true,
+  "original_initial_judgments_preserved": true,
+  "reference_corrections": 0,
+  "final_judgments_sha256": "1ae2536359747771bdb77e72a189cc7baa8aec0bb533fe0b4866ef77f2c71807",
+  "adjudication_signoff_sha256": "09576f99c0b79742c3148715d496cc0b5f79b94c5e3d938eced510d5b801dc99",
+  "adjudication_decisions_sha256": "4b3f8f95d9773afe1fb25f31ae0771b5d8fbd2490072ce6010a46ee965c469cb",
+  "prepared_manifest_sha256": "5d816538735f8aded52a8d1261baa36d0a9dd78e39066487e33f81b375d46eb7",
+  "protocol_lock_sha256": "8fb6a8e23e0256f3c78760d17314e4597aa46426c527ec3a0f776d1873999e4b",
+  "evaluator_sha256": "6e628968b52307f8160bcc673cb5abba8043490c810b22f0bd286fb9a4f33a6f",
+  "review_scope": {
+    "packet_count": 200,
+    "unique_final_blind_ids": 200,
+    "final_status_counts": {
+      "adjudicated": 200
+    },
+    "initial_status_counts": {
+      "needs_adjudication": 4,
+      "reviewed": 196
+    },
+    "all_initial_flags_resolved": true,
+    "unresolved_count": 0,
+    "reference_defects_found": 0,
+    "reference_corrections": 0,
+    "all_reference_ids_covered": true,
+    "all_candidate_ids_accounted": true,
+    "structural_validation_issues": [],
+    "prospective_sample_selection_verified": true,
+    "full_semantic_review_count": 37,
+    "prospective_spotcheck_count": 20,
+    "flagged_count": 4,
+    "prospective_flagged_overlap": 1,
+    "additional_lifecycle_full_review_count": 13,
+    "additional_negative_update_full_review_count": 1,
+    "expanded_source_review_packet_count": 119,
+    "expanded_source_review_operation_count": 166,
+    "union_reviewed_packet_count": 132,
+    "accepted_initial_only_after_structural_checks": 68,
+    "changed_nonstatus_packet_count": 21
+  }
+}

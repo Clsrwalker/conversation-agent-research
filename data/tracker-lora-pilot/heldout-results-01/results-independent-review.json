@@ -1,0 +1,479 @@
+{
+  "schema_version": 1,
+  "kind": "independent_numerical_and_provenance_audit",
+  "created_at_utc": "2026-10-24T13:18:12.222975+00:00",
+  "status": "passed",
+  "reviewer_role": "independent_model_audit_no_semantic_relabeling",
+  "scope": {
+    "unblinding_authorized_after_final_review_lock": true,
+    "frozen_counts_recomputed": true,
+    "semantic_labels_changed": false,
+    "gpu_or_model_calls": 0,
+    "cpu_runtime_replays": 200,
+    "frozen_source_score_or_review_files_modified": false,
+    "raw_model_text_included": false,
+    "blind_id_to_arm_joins_included": false
+  },
+  "check_totals": {
+    "total": 65,
+    "passed": 65,
+    "failed": 0
+  },
+  "checks": [
+    {
+      "check": "result_requested_sha256",
+      "passed": true
+    },
+    {
+      "check": "prepared_artifact_hash:PRIVATE-mapping.json",
+      "passed": true
+    },
+    {
+      "check": "prepared_artifact_hash:PRIVATE-runtime-results.json",
+      "passed": true
+    },
+    {
+      "check": "prepared_artifact_hash:review-packets.json",
+      "passed": true
+    },
+    {
+      "check": "prepared_artifact_hash:review-template.json",
+      "passed": true
+    },
+    {
+      "check": "protocol_bound_source_hash:protocol",
+      "passed": true
+    },
+    {
+      "check": "protocol_bound_source_hash:test_records",
+      "passed": true
+    },
+    {
+      "check": "protocol_bound_source_hash:dataset_manifest",
+      "passed": true
+    },
+    {
+      "check": "protocol_bound_source_hash:system_prompt",
+      "passed": true
+    },
+    {
+      "check": "protocol_bound_source_hash:evaluator",
+      "passed": true
+    },
+    {
+      "check": "protocol_bound_source_hash:runtime",
+      "passed": true
+    },
+    {
+      "check": "protocol_bound_source_hash:model_loader_and_trainer",
+      "passed": true
+    },
+    {
+      "check": "protocol_bound_source_hash:collector",
+      "passed": true
+    },
+    {
+      "check": "adjudicator_input_unchanged:instructions.txt",
+      "passed": true
+    },
+    {
+      "check": "adjudicator_input_unchanged:policy.json",
+      "passed": true
+    },
+    {
+      "check": "adjudicator_input_unchanged:review-packets.json",
+      "passed": true
+    },
+    {
+      "check": "adjudicator_input_unchanged:initial-judgments.json",
+      "passed": true
+    },
+    {
+      "check": "adjudicator_input_unchanged:intake.json",
+      "passed": true
+    },
+    {
+      "check": "adjudicator_final_hash:final-judgments.json",
+      "passed": true
+    },
+    {
+      "check": "adjudicator_final_hash:adjudication-decisions.json",
+      "passed": true
+    },
+    {
+      "check": "lock_complete_before_unblinding",
+      "passed": true
+    },
+    {
+      "check": "lock_source_bindings",
+      "passed": true
+    },
+    {
+      "check": "review_lock_precedes_result_file",
+      "passed": true
+    },
+    {
+      "check": "packet_copy_unchanged",
+      "passed": true
+    },
+    {
+      "check": "collection_hash_bound_to_preparation",
+      "passed": true
+    },
+    {
+      "check": "all_200_records_exactly_once",
+      "passed": true
+    },
+    {
+      "check": "all_final_judgments_adjudicated",
+      "passed": true
+    },
+    {
+      "check": "source_rows_families_strata",
+      "passed": true
+    },
+    {
+      "check": "assignments_100_per_arm_two_per_row",
+      "passed": true
+    },
+    {
+      "check": "per_decision_metadata_matches_prepared_mapping",
+      "passed": true
+    },
+    {
+      "check": "packet_reference_and_metadata_matches_frozen_source",
+      "passed": true
+    },
+    {
+      "check": "candidate_state_and_validity_match_runtime_records",
+      "passed": true
+    },
+    {
+      "check": "all_invalid_outputs_keep_previous_state",
+      "passed": true
+    },
+    {
+      "check": "reference_candidate_coverage_and_source_indices_valid",
+      "passed": true
+    },
+    {
+      "check": "every_per_decision_count_independently_reconciled",
+      "passed": true
+    },
+    {
+      "check": "cpu_actual_runtime_replay_all_200_exact",
+      "passed": true
+    },
+    {
+      "check": "all_arm_count_totals",
+      "passed": true
+    },
+    {
+      "check": "all_40_family_count_totals",
+      "passed": true
+    },
+    {
+      "check": "all_eight_stratum_count_totals",
+      "passed": true
+    },
+    {
+      "check": "all_arm_and_stratum_rates",
+      "passed": true
+    },
+    {
+      "check": "paired_equal_active_denominators",
+      "passed": true
+    },
+    {
+      "check": "20_families_5_decisions_each",
+      "passed": true
+    },
+    {
+      "check": "independent_family_macro_and_reduction",
+      "passed": true
+    },
+    {
+      "check": "independent_seeded_paired_bootstrap_10000",
+      "passed": true,
+      "detail": {
+        "seed": 20261024,
+        "families_sampled_with_replacement": 20,
+        "resamples": 10000,
+        "zero_based_order_statistic_indices": [
+          249,
+          9749
+        ]
+      }
+    },
+    {
+      "check": "primary_interval_contains_zero",
+      "passed": true
+    },
+    {
+      "check": "all_completed_generation_costs",
+      "passed": true
+    },
+    {
+      "check": "cost_totals_match_terminal",
+      "passed": true
+    },
+    {
+      "check": "invalid_patches_not_generation_failures",
+      "passed": true
+    },
+    {
+      "check": "201_attempts_recovery_and_unknown_cost_preserved",
+      "passed": true
+    },
+    {
+      "check": "one_cross_process_pair_retained_in_results",
+      "passed": true
+    },
+    {
+      "check": "reviewer_bundle_binding:reviewer_A",
+      "passed": true
+    },
+    {
+      "check": "reviewer_bundle_binding:reviewer_B",
+      "passed": true
+    },
+    {
+      "check": "reviewer_assignments_disjoint_complete",
+      "passed": true
+    },
+    {
+      "check": "each_pair_split_between_reviewers",
+      "passed": true
+    },
+    {
+      "check": "frozen_sources_unchanged_during_audit",
+      "passed": true
+    },
+    {
+      "check": "final_interpretation_requested_sha256",
+      "passed": true
+    },
+    {
+      "check": "interpretation_binds_results_and_primary_values",
+      "passed": true
+    },
+    {
+      "check": "previous_interpretation_preserved_and_revision_bound",
+      "passed": true
+    },
+    {
+      "check": "interpretation_training_and_comparison_methods_supported",
+      "passed": true
+    },
+    {
+      "check": "interpretation_primary_inconclusive_not_causal_gain",
+      "passed": true
+    },
+    {
+      "check": "interpretation_negative_subgroups_and_source_errors_retained",
+      "passed": true,
+      "detail": "All cited counts independently recomputed in this audit; descriptive regressions and remaining source errors are explicit."
+    },
+    {
+      "check": "interpretation_review_coverage_supported",
+      "passed": true
+    },
+    {
+      "check": "interpretation_final_family_lengths_vs_prefix_lengths_supported",
+      "passed": true
+    },
+    {
+      "check": "interpretation_reviewer_arm_imbalance_disclosed",
+      "passed": true
+    },
+    {
+      "check": "all_bound_sources_still_unchanged_at_final_signoff",
+      "passed": true
+    }
+  ],
+  "source_hashes": {
+    "output/research/2026-10-24/tracker-lora-pilot/analysis/one-step-results.json": "4f225f88a465db6ec0168a5fbdc646ff86f86c53a99b94272a19069d14e6b8ef",
+    "output/research/2026-10-24/tracker-lora-pilot/audit/blind-review-final-lock.json": "478c945d2b841e97e56c7c696ca362d6b2928059f6b8b8a974f7dbef6427f087",
+    "output/research/2026-10-24/tracker-lora-pilot/evaluation/protocol-lock-memory-guard-v2.json": "8fb6a8e23e0256f3c78760d17314e4597aa46426c527ec3a0f776d1873999e4b",
+    "output/research/2026-10-24/tracker-lora-pilot/evaluation/blind-review-01/preparation.json": "5d816538735f8aded52a8d1261baa36d0a9dd78e39066487e33f81b375d46eb7",
+    "output/research/2026-10-24/tracker-lora-pilot/evaluation/adjudication-01/final-signoff.json": "09576f99c0b79742c3148715d496cc0b5f79b94c5e3d938eced510d5b801dc99",
+    "output/research/2026-10-24/tracker-lora-pilot/evaluation/adjudication-01/final-judgments.json": "1ae2536359747771bdb77e72a189cc7baa8aec0bb533fe0b4866ef77f2c71807",
+    "output/research/2026-10-24/tracker-lora-pilot/evaluation/adjudication-01/adjudication-decisions.json": "4b3f8f95d9773afe1fb25f31ae0771b5d8fbd2490072ce6010a46ee965c469cb",
+    "output/research/2026-10-24/tracker-lora-pilot/evaluation/adjudication-01/initial-judgments.json": "787e33c5df906427d26271d16b6afa7d3e0ff1f0640b7ea94a6fc79a0f670f55",
+    "output/research/2026-10-24/tracker-lora-pilot/evaluation/collection-01-terminal-receipt.json": "5c462a8878afb687323620c0072e6df5f7785ce1c69bd65d8f3cf54b85a0d73a",
+    "output/research/2026-10-24/tracker-lora-pilot/evaluation/collection-01-recovery-01/interruption-and-resume.json": "acd4f822b25d424aa984b592d3332c48add3abf326bf0674addae7d5c71487b5",
+    "output/research/2026-10-24/tracker-lora-pilot/evaluation/blind-dispatch-01/dispatch-manifest.json": "8625c5040fad1ac5c36822a70a24c417977dddff898ec7208bb282564b6cc3da",
+    "output/research/2026-10-24/tracker-lora-pilot/evaluation/blind-review-01/PRIVATE-mapping.json": "e18b36893b6c04eb25f164b7fa9e11969a7a45814f295e0ef928d3e0f603547d",
+    "output/research/2026-10-24/tracker-lora-pilot/evaluation/blind-review-01/PRIVATE-runtime-results.json": "6e0922ab2963aa70cf4077e0dbae851b2e5816c5a0ee7bf144937126fce3ee68",
+    "output/research/2026-10-24/tracker-lora-pilot/evaluation/blind-review-01/review-packets.json": "2d820c73064f56f6b959082bc8c24097b34629ce5e114f0fa2ff4dbaf9dc4793",
+    "output/research/2026-10-24/tracker-lora-pilot/evaluation/blind-review-01/review-template.json": "fd25c2c21a6454f8e481fcdaa82655fb6d7b1819afc512ee44730a2b32108d55",
+    "output/research/2026-10-24/tracker-lora-pilot/evaluation/protocol-memory-guard-v2.json": "ba2499114856b0241d0525f9da8010736682475714afb6da0d60b35c2e43595f",
+    "output/research/2026-10-24/tracker-lora-pilot/data/compiled/test.records.jsonl": "c885d355efc667a73670008012e240d35b0d1e0a58c79dbd2c951a35efd24ff9",
+    "output/research/2026-10-24/tracker-lora-pilot/data/compiled/manifest.json": "94280f80ff17e990f189f1fc18b3ca4d8b579422770e81a5acd5ea12c920b873",
+    "output/research/2026-10-24/tracker-lora-pilot/annotation/system_prompt.txt": "7587583ff3fb2f46f64a32ca598a9f2bd980d8b0c3ff24915d80f5e31cda5abd",
+    "experiments/deep_conversation/tracker_lora/evaluate_tracker.py": "6e628968b52307f8160bcc673cb5abba8043490c810b22f0bd286fb9a4f33a6f",
+    "experiments/deep_conversation/intention_state.py": "e028a604a93520801a0f752755d80b305afb1eebd8792ea0aeaaa3cd5c722f73",
+    "experiments/deep_conversation/tracker_lora/train_tracker.py": "b60fd53f91c62d854ef0cf71a15b29fac850fad1aaddd5d07e335831a94ed1a8",
+    "experiments/deep_conversation/tracker_lora/collect_ab.py": "da6c2e025438dcc609a34ef34f1d4dd717fbcb41192a0dcf47b252ebdc830b51",
+    "output/research/2026-10-24/tracker-lora-pilot/evaluation/blind-dispatch-01/reviewer_A/review-packets.json": "2da2b89c4b6494dd068d5944b118f1315d687c0031d029d315b26a4e8ccf6605",
+    "output/research/2026-10-24/tracker-lora-pilot/evaluation/blind-dispatch-01/reviewer_B/review-packets.json": "50097225b8116fdb15cce854cc6f9de9e6ec55a52ecd93d47bd1dc4b330f4e4e",
+    "output/research/2026-10-24/tracker-lora-pilot/analysis/interpretation.json": "1f0792974ddca083bfc067e67666fda3bc1d941cb9c389b5c0fdf61b658c096c",
+    "output/research/2026-10-24/tracker-lora-pilot/analysis/interpretation-before-independent-review.json": "4811e32aefe42319ca566d438205d0a8829bbfea87c4ee0143eef331570c2aa4"
+  },
+  "timing_evidence": {
+    "adjudication_signed_at_utc": "2026-10-24T13:12:38.9297852+00:00",
+    "final_judgments_file_mtime_utc": "2026-10-24T13:12:38.904722+00:00",
+    "review_locked_at_utc": "2026-10-24T13:13:49.030041+00:00",
+    "review_lock_file_mtime_utc": "2026-10-24T13:13:49.031039+00:00",
+    "result_file_mtime_utc": "2026-10-24T13:13:53.094261+00:00",
+    "interpretation": "Recorded review completion and lock precede observed aggregate result modification time; local timestamps are not immutable external attestation."
+  },
+  "recomputed_findings": {
+    "family_macro_active_omission_percent": {
+      "adapter_disabled": 1.9144183989385228,
+      "tracker_lora_enabled": 1.5718954248366013
+    },
+    "paired_omission_reduction_percentage_points": 0.34252297410192145,
+    "paired_bootstrap_95_interval_percentage_points": [
+      -1.0,
+      1.7234753550543023
+    ],
+    "fully_correct_active": {
+      "adapter_disabled": {
+        "correct": 302,
+        "denominator": 335
+      },
+      "tracker_lora_enabled": {
+        "correct": 311,
+        "denominator": 335
+      }
+    },
+    "wrong_prior_fully_correct_active": {
+      "adapter_disabled": {
+        "correct": 27,
+        "denominator": 36
+      },
+      "tracker_lora_enabled": {
+        "correct": 26,
+        "denominator": 36
+      }
+    },
+    "english_wrong_value_active": {
+      "adapter_disabled": 7,
+      "tracker_lora_enabled": 9
+    },
+    "uncertain_wrong_owner": {
+      "adapter_disabled": {
+        "errors": 0,
+        "denominator": 8
+      },
+      "tracker_lora_enabled": {
+        "errors": 1,
+        "denominator": 8
+      }
+    },
+    "runtime_invalid_patch_decisions": {
+      "adapter_disabled": 13,
+      "tracker_lora_enabled": 2
+    },
+    "source_error_decisions": {
+      "adapter_disabled": 53,
+      "tracker_lora_enabled": 37
+    }
+  },
+  "completed_generation_costs": {
+    "adapter_disabled": {
+      "assigned_calls": 100,
+      "completed_calls": 100,
+      "failed_calls_excluded_from_completed_cost_summary": 0,
+      "completed_elapsed_seconds_total": 388.7957787999185,
+      "completed_elapsed_seconds_mean": 3.8879577879991847,
+      "completed_elapsed_seconds_median": 3.0132123999937903,
+      "completed_input_tokens_total": 113999,
+      "completed_output_tokens_total": 6003,
+      "completed_token_cap_hits": 0,
+      "completed_token_cap_rate": 0.0
+    },
+    "tracker_lora_enabled": {
+      "assigned_calls": 100,
+      "completed_calls": 100,
+      "failed_calls_excluded_from_completed_cost_summary": 0,
+      "completed_elapsed_seconds_total": 513.627879999869,
+      "completed_elapsed_seconds_mean": 5.13627879999869,
+      "completed_elapsed_seconds_median": 4.180303050001385,
+      "completed_input_tokens_total": 113999,
+      "completed_output_tokens_total": 4793,
+      "completed_token_cap_hits": 0,
+      "completed_token_cap_rate": 0.0
+    }
+  },
+  "reviewer_assignment_counts_by_arm": {
+    "reviewer_A": {
+      "tracker_lora_enabled": 45,
+      "adapter_disabled": 55
+    },
+    "reviewer_B": {
+      "tracker_lora_enabled": 55,
+      "adapter_disabled": 45
+    }
+  },
+  "runtime_validities": {
+    "valid_patch": 185,
+    "invalid_patch": 15
+  },
+  "attempt_accounting": {
+    "durable_assigned_results": 200,
+    "extra_interrupted_unreturned_attempts": 1,
+    "total_started_generation_attempts": 201,
+    "interrupted_input_tokens": 1030,
+    "interrupted_output_tokens": null,
+    "interrupted_wall_time_bounds": {
+      "not_before_pre_interrupt_snapshot_utc": "2026-10-24T12:36:50.935557+00:00",
+      "not_after_process_absence_confirmation_utc": "2026-10-24T12:37:19.446621+00:00",
+      "unreturned_elapsed_lower_bound_seconds": 449.746818,
+      "unreturned_elapsed_upper_bound_seconds": 478.257882,
+      "note": "Exact process-exit wall timestamp was not emitted; do not present the confirmation upper bound as exact generation cost."
+    },
+    "cost_note": "Recorded completed-call tokens exclude the unknown output tokens of one extra interrupted attempt. Quality assignment remains 200, not 201."
+  },
+  "cross_process_pair_limit": {
+    "pairs": 1,
+    "row_index_zero_based": 36,
+    "retained": true,
+    "same_in_memory_model_object_condition_not_met_for_this_pair": true
+  },
+  "narrative_supported": true,
+  "interpretation": "The primary omission reduction point estimate is positive, but its frozen family bootstrap interval crosses zero. Numerical changes are mixed: fully correct active counts and patch validity improve descriptively; wrong-prior fully correct counts, English wrong-value counts and uncertain-owner errors worsen. This pilot does not establish a reliable causal reduction in intention omissions or deployment benefit.",
+  "limitations": [
+    "Semantic categories are frozen independent model judgments, not human gold; this audit re-counts them without relabeling. Numerical agreement cannot establish semantic annotation correctness.",
+    "Only 20 correlated held-out families, five single-step decisions each, one training seed and one checkpoint. This is not own-state rollout, final-answer evaluation, or a broad model comparison.",
+    "Bootstrap resamples whole paired families; it measures variation over these families and does not include training, model-reviewer or decoding uncertainty. Secondary measures and subgroups are descriptive and were not given multiplicity-adjusted intervals.",
+    "Wrong-prior subgroup has only 10 decisions and 36 active requirements; uncertain-owner denominator is eight. Do not treat their rates as precise population estimates.",
+    "Each packet had one initial independent model review; only 37 packets had a second full semantic review. Expanded source-only review is not full state re-review. No interrater reliability was estimated.",
+    "Reviewer streams received random hash assignment without forced arm balance. Aggregate reviewer-arm assignment counts are reported; reviewer-specific judgment differences can confound descriptive arm comparisons.",
+    "One row pair crosses model-loading processes, so identical frozen files do not establish identical live quantized tensors. The pair remains included, with no rerun or post-hoc removal.",
+    "The extra interrupted attempt has unknown output-token cost and bounded duration. Completed-call token and latency summaries exclude this incomplete attempt and are not full end-to-end cost estimates.",
+    "Generation completed for all 200 calls; 15 runtime-invalid patches are distinct from failed generations. Invalid patches retained the input state and stayed in all quality denominators.",
+    "No raw model outputs, semantic rationales, private identifiers or blind-ID/arm mapping are copied into this audit. Local filesystem chronology supports ordering but is not tamper-proof timestamp attestation."
+  ],
+  "interpretation_review": {
+    "status": "supported_with_explicit_limitations",
+    "interpretation_path_relative_to_project": "output/research/2026-10-24/tracker-lora-pilot/analysis/interpretation.json",
+    "interpretation_sha256": "1f0792974ddca083bfc067e67666fda3bc1d941cb9c389b5c0fdf61b658c096c",
+    "reviewed_at_utc": "2026-10-24T13:20:18.897302+00:00",
+    "assessment": "The narrative distinguishes the positive omission point estimate from an interval crossing zero, reports descriptive patch-validity and state-coverage changes alongside wrong-prior, English wrong-value and uncertain-owner regressions, retains 37 percent source-error decisions, and limits claims to the single-step synthetic pilot. Reviewer imbalance, model-based judgment limits, short prefixes, incomplete interruption cost and one cross-process pair are explicit. No quality labels or scores were changed.",
+    "event_length_distribution_per_decision": {
+      "1": 20,
+      "2": 20,
+      "3": 13,
+      "4": 15,
+      "5": 20,
+      "6": 12
+    },
+    "final_family_event_lengths": {
+      "5": 8,
+      "6": 12
+    }
+  },
+  "finalized_at_utc": "2026-10-24T13:20:18.897302+00:00"
+}

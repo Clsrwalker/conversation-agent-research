@@ -1,0 +1,86 @@
+{
+  "status": "resumed_collection_completed_prefix_verified",
+  "kind": "operational_resume_not_quality_result",
+  "utc_after_stop": "2026-10-24T12:37:19.446621+00:00",
+  "terminal_exit_code": 1,
+  "termination_method": "Ctrl+C on owned session; no Stop-Process required",
+  "authorization_path": "audit/collection-01-resume-decision.json",
+  "authorization_sha256": "ea7852caeb5f295cdfb2be57ff859b249a887527611510d02d9bf47ee48c3e01",
+  "durable_count_before_stop": 73,
+  "durable_count_at_stop": 73,
+  "before_stop_prefix_preserved_exact": true,
+  "durable_prefix_at_stop_bytes": 108114,
+  "durable_prefix_at_stop_sha256": "34ce51cda27f455e32bbaef7d266cf6e8d89443da43d3672995024c133c367bb",
+  "original_log_sha256": "f61287def9bfee756f79a8e79918e6be95ba5ff4202fac97b203c46dac8c0fbc",
+  "unreturned_assignment_at_stop": true,
+  "elapsed_until_stop_confirmation_seconds": 478.257882,
+  "output_token_cost_of_unreturned_attempt": null,
+  "semantic_outputs_inspected_for_decision": false,
+  "no_source_or_parameter_change": true,
+  "prestop_receipt_assembly_note": "All three raw snapshots were copied successfully before interruption. Initial receipt assembly then failed because default Windows text decoding was GBK; this metadata assembly uses explicit UTF-8. No raw snapshot was altered.",
+  "resume_preflight": {
+    "status": "passed",
+    "locked_files": {
+      "protocol": {
+        "expected": "ba2499114856b0241d0525f9da8010736682475714afb6da0d60b35c2e43595f",
+        "actual": "ba2499114856b0241d0525f9da8010736682475714afb6da0d60b35c2e43595f"
+      },
+      "test_records": {
+        "expected": "c885d355efc667a73670008012e240d35b0d1e0a58c79dbd2c951a35efd24ff9",
+        "actual": "c885d355efc667a73670008012e240d35b0d1e0a58c79dbd2c951a35efd24ff9"
+      },
+      "dataset_manifest": {
+        "expected": "94280f80ff17e990f189f1fc18b3ca4d8b579422770e81a5acd5ea12c920b873",
+        "actual": "94280f80ff17e990f189f1fc18b3ca4d8b579422770e81a5acd5ea12c920b873"
+      },
+      "system_prompt": {
+        "expected": "7587583ff3fb2f46f64a32ca598a9f2bd980d8b0c3ff24915d80f5e31cda5abd",
+        "actual": "7587583ff3fb2f46f64a32ca598a9f2bd980d8b0c3ff24915d80f5e31cda5abd"
+      },
+      "evaluator": {
+        "expected": "6e628968b52307f8160bcc673cb5abba8043490c810b22f0bd286fb9a4f33a6f",
+        "actual": "6e628968b52307f8160bcc673cb5abba8043490c810b22f0bd286fb9a4f33a6f"
+      },
+      "runtime": {
+        "expected": "e028a604a93520801a0f752755d80b305afb1eebd8792ea0aeaaa3cd5c722f73",
+        "actual": "e028a604a93520801a0f752755d80b305afb1eebd8792ea0aeaaa3cd5c722f73"
+      },
+      "model_loader_and_trainer": {
+        "expected": "b60fd53f91c62d854ef0cf71a15b29fac850fad1aaddd5d07e335831a94ed1a8",
+        "actual": "b60fd53f91c62d854ef0cf71a15b29fac850fad1aaddd5d07e335831a94ed1a8"
+      },
+      "collector": {
+        "expected": "da6c2e025438dcc609a34ef34f1d4dd717fbcb41192a0dcf47b252ebdc830b51",
+        "actual": "da6c2e025438dcc609a34ef34f1d4dd717fbcb41192a0dcf47b252ebdc830b51"
+      }
+    },
+    "collection_config_sha256": "746707f2294b7659df4a61a973da7fc5f39e9d066f7b5ee358e07676a2b6a88d",
+    "source_snapshot_sha256": "da6c2e025438dcc609a34ef34f1d4dd717fbcb41192a0dcf47b252ebdc830b51",
+    "adapter_weights_sha256": "70af35505394ebc53d81aa839ad78165166d5ad7fd9be36314a3f0962265a707",
+    "expected_completed_prior": 73,
+    "data_prompt_base_config_and_source_snapshot_checked": true
+  },
+  "interruption_wall_time_bounds": {
+    "not_before_pre_interrupt_snapshot_utc": "2026-10-24T12:36:50.935557+00:00",
+    "not_after_process_absence_confirmation_utc": "2026-10-24T12:37:19.446621+00:00",
+    "unreturned_elapsed_lower_bound_seconds": 449.746818,
+    "unreturned_elapsed_upper_bound_seconds": 478.257882,
+    "note": "Exact process-exit wall timestamp was not emitted; do not present the confirmation upper bound as exact generation cost."
+  },
+  "resumed_at_utc": "2026-10-24T12:38:41.930129+00:00",
+  "native_completed_prior": 73,
+  "post_resume_prefix_byte_equal": true,
+  "post_resume_prefix_verified_at_utc": "2026-10-24T12:39:37.137324+00:00",
+  "cross_process_pairing_exception": {
+    "row_index": 36,
+    "reason": "One assigned arm was durable before the interrupt while its paired arm was unreturned and resumed in a fresh process. Both use the frozen checkpoint/quantization/configuration but are not the identical in-memory object. Do not rerun or drop the durable arm."
+  },
+  "terminal_receipt_observed_at_utc": "2026-10-24T12:48:13.947744+00:00",
+  "resume_terminal_exit_code": 0,
+  "final_durable_records": 200,
+  "final_outputs_sha256": "bf02aa173084fc470c7a071fdd55298a226236acd2b7429757b1c64bd59721b3",
+  "final_prefix_byte_equal": true,
+  "previously_unreturned_assignment_now_has_durable_result": true,
+  "original_collector_termination_confirmed": true,
+  "resumed_collector_termination_confirmed": true
+}

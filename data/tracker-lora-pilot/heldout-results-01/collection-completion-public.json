@@ -1,0 +1,126 @@
+{
+  "status": "passed",
+  "kind": "collection_execution_and_integrity_receipt_not_semantic_quality_score",
+  "utc_recorded": "2026-10-24T12:48:13.948248+00:00",
+  "last_durable_record_utc": "2026-10-24T12:46:32.819895+00:00",
+  "original_exit_code": 1,
+  "resume_exit_code": 0,
+  "assigned_calls": 200,
+  "unique_assigned_records": 200,
+  "paired_rows": 100,
+  "exact_frozen_assignment_order_preserved": true,
+  "statuses": {
+    "completed": 200
+  },
+  "token_cap_hits": 0,
+  "recorded_completed_input_tokens": 227998,
+  "recorded_completed_output_tokens": 10796,
+  "input_hashes_equal_within_all_pairs": true,
+  "actual_adapter_layer_enablement_verified_for_all_completed": true,
+  "locked_files": {
+    "protocol": {
+      "path": "output/research/2026-10-24/tracker-lora-pilot/evaluation/protocol-memory-guard-v2.json",
+      "expected_sha256": "ba2499114856b0241d0525f9da8010736682475714afb6da0d60b35c2e43595f",
+      "actual_sha256": "ba2499114856b0241d0525f9da8010736682475714afb6da0d60b35c2e43595f"
+    },
+    "test_records": {
+      "path": "output/research/2026-10-24/tracker-lora-pilot/data/compiled/test.records.jsonl",
+      "expected_sha256": "c885d355efc667a73670008012e240d35b0d1e0a58c79dbd2c951a35efd24ff9",
+      "actual_sha256": "c885d355efc667a73670008012e240d35b0d1e0a58c79dbd2c951a35efd24ff9"
+    },
+    "dataset_manifest": {
+      "path": "output/research/2026-10-24/tracker-lora-pilot/data/compiled/manifest.json",
+      "expected_sha256": "94280f80ff17e990f189f1fc18b3ca4d8b579422770e81a5acd5ea12c920b873",
+      "actual_sha256": "94280f80ff17e990f189f1fc18b3ca4d8b579422770e81a5acd5ea12c920b873"
+    },
+    "system_prompt": {
+      "path": "output/research/2026-10-24/tracker-lora-pilot/annotation/system_prompt.txt",
+      "expected_sha256": "7587583ff3fb2f46f64a32ca598a9f2bd980d8b0c3ff24915d80f5e31cda5abd",
+      "actual_sha256": "7587583ff3fb2f46f64a32ca598a9f2bd980d8b0c3ff24915d80f5e31cda5abd"
+    },
+    "evaluator": {
+      "path": "experiments/deep_conversation/tracker_lora/evaluate_tracker.py",
+      "expected_sha256": "6e628968b52307f8160bcc673cb5abba8043490c810b22f0bd286fb9a4f33a6f",
+      "actual_sha256": "6e628968b52307f8160bcc673cb5abba8043490c810b22f0bd286fb9a4f33a6f"
+    },
+    "runtime": {
+      "path": "experiments/deep_conversation/intention_state.py",
+      "expected_sha256": "e028a604a93520801a0f752755d80b305afb1eebd8792ea0aeaaa3cd5c722f73",
+      "actual_sha256": "e028a604a93520801a0f752755d80b305afb1eebd8792ea0aeaaa3cd5c722f73"
+    },
+    "model_loader_and_trainer": {
+      "path": "experiments/deep_conversation/tracker_lora/train_tracker.py",
+      "expected_sha256": "b60fd53f91c62d854ef0cf71a15b29fac850fad1aaddd5d07e335831a94ed1a8",
+      "actual_sha256": "b60fd53f91c62d854ef0cf71a15b29fac850fad1aaddd5d07e335831a94ed1a8"
+    },
+    "collector": {
+      "path": "experiments/deep_conversation/tracker_lora/collect_ab.py",
+      "expected_sha256": "da6c2e025438dcc609a34ef34f1d4dd717fbcb41192a0dcf47b252ebdc830b51",
+      "actual_sha256": "da6c2e025438dcc609a34ef34f1d4dd717fbcb41192a0dcf47b252ebdc830b51"
+    }
+  },
+  "source_and_result_hashes": {
+    "outputs": "bf02aa173084fc470c7a071fdd55298a226236acd2b7429757b1c64bd59721b3",
+    "collection_result": "537efc43ded4fb8086f81afa0c018850c960faf4227cb19778cf02d784c72bf1",
+    "collection_config": "746707f2294b7659df4a61a973da7fc5f39e9d066f7b5ee358e07676a2b6a88d",
+    "collector_snapshot": "da6c2e025438dcc609a34ef34f1d4dd717fbcb41192a0dcf47b252ebdc830b51",
+    "protocol_lock": "8fb6a8e23e0256f3c78760d17314e4597aa46426c527ec3a0f776d1873999e4b",
+    "adapter_weights": "70af35505394ebc53d81aa839ad78165166d5ad7fd9be36314a3f0962265a707",
+    "adapter_config": "4b10f017bee9d111bb544e6dd9ee025b5c2353317839fc5e3bc183fb38b3e7e2",
+    "precollection_gate": "eaf5fc2b1b3a567bc8e8a7cd2655300831a0111ce7689501e38cf712613d3422",
+    "recovery_receipt": "acd4f822b25d424aa984b592d3332c48add3abf326bf0674addae7d5c71487b5"
+  },
+  "logs": {
+    "collection-01.log": {
+      "sha256": "f61287def9bfee756f79a8e79918e6be95ba5ff4202fac97b203c46dac8c0fbc",
+      "started": {
+        "event": "collection_started",
+        "utc": "2026-10-24T12:22:07.773606+00:00",
+        "assigned_calls": 200,
+        "completed_prior": 0
+      },
+      "recorded_calls": 73,
+      "last_recorded_utc": "2026-10-24T12:29:21.187859+00:00"
+    },
+    "collection-01-resume-01.log": {
+      "sha256": "4b51c530cd2cc2e9e2366bcab867ee08e1cc25b301fa924b4cfcf93881a1debc",
+      "started": {
+        "event": "collection_started",
+        "utc": "2026-10-24T12:38:41.930129+00:00",
+        "assigned_calls": 200,
+        "completed_prior": 73
+      },
+      "recorded_calls": 127,
+      "last_recorded_utc": "2026-10-24T12:46:32.819895+00:00"
+    }
+  },
+  "resume_completed_prior": 73,
+  "original_prefix_bytes": 108114,
+  "original_prefix_sha256": "34ce51cda27f455e32bbaef7d266cf6e8d89443da43d3672995024c133c367bb",
+  "original_prefix_byte_equal": true,
+  "attempt_accounting": {
+    "durable_assigned_results": 200,
+    "extra_interrupted_unreturned_attempts": 1,
+    "total_started_generation_attempts": 201,
+    "interrupted_input_tokens": 1030,
+    "interrupted_output_tokens": null,
+    "interrupted_wall_time_bounds": {
+      "not_before_pre_interrupt_snapshot_utc": "2026-10-24T12:36:50.935557+00:00",
+      "not_after_process_absence_confirmation_utc": "2026-10-24T12:37:19.446621+00:00",
+      "unreturned_elapsed_lower_bound_seconds": 449.746818,
+      "unreturned_elapsed_upper_bound_seconds": 478.257882,
+      "note": "Exact process-exit wall timestamp was not emitted; do not present the confirmation upper bound as exact generation cost."
+    },
+    "cost_note": "Recorded completed-call tokens exclude the unknown output tokens of one extra interrupted attempt. Quality assignment remains 200, not 201."
+  },
+  "cross_process_pairing_exception": {
+    "row_index": 36,
+    "reason": "One assigned arm was durable before the interrupt while its paired arm was unreturned and resumed in a fresh process. Both use the frozen checkpoint/quantization/configuration but are not the identical in-memory object. Do not rerun or drop the durable arm."
+  },
+  "semantic_text_reviewed": false,
+  "semantic_quality_scored": false,
+  "raw_outputs_config_and_logs_modified_after_completion": false,
+  "collector_terminated_normally": true,
+  "collector_process_absence_confirmed": true,
+  "quality_results": null
+}

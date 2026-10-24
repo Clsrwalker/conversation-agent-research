@@ -45,8 +45,8 @@
     },
     {
       "path": "data.js",
-      "sha256": "d2d579b85a38a535693726cb29f00e2ebcf203ff943d442b89dd6b6c02675f09",
-      "bytes": 199083
+      "sha256": "53c7221b1d95eb682203958319cf02b6e7810c6448476f7681444d2885c74521",
+      "bytes": 199807
     },
     {
       "path": "data/analyze_harness_latency.py",
@@ -615,8 +615,8 @@
     },
     {
       "path": "data/research-record.json",
-      "sha256": "10467c2bc4404f00ba8926e3b475f579dbdfb877ae5e9a60492ef87f291ff11b",
-      "bytes": 292776
+      "sha256": "11eb129f4be9f6560491bff39658485827ceade282935cb0e25e90b1c28e2d26",
+      "bytes": 293643
     },
     {
       "path": "data/results.csv",
@@ -834,6 +834,11 @@
       "bytes": 3110
     },
     {
+      "path": "data/tracker-lora-heldout-validation.json",
+      "sha256": "62fc94ddd295b90597d88b63e65eb409b5db06be14b6922ec1d2ac5ddfae23c9",
+      "bytes": 2295
+    },
+    {
       "path": "data/tracker-lora-pilot-followup-validation.json",
       "sha256": "938dd5eec55338d28699b3ebb0be50bfe6660cbe1b1576b531d4f8078fe29405",
       "bytes": 388
@@ -982,6 +987,156 @@
       "path": "data/tracker-lora-pilot/formal-training-02/token-lengths.json",
       "sha256": "b9b077c450150db8b53b33d8d25787e6ac6a728239cde18ea820b2c4c84d75d9",
       "bytes": 61225
+    },
+    {
+      "path": "data/tracker-lora-pilot/heldout-collection-01/attempt-accounting-public.json",
+      "sha256": "6d5d96c0967de162e4e7c576d18a02dbc3ece9d91eb6a58a0340891119b7520f",
+      "bytes": 2123
+    },
+    {
+      "path": "data/tracker-lora-pilot/heldout-collection-01/collection-completion-public.json",
+      "sha256": "6b5ff55fbd923cf877fd46c0931d12f241747fff2d67ca133f73f8b9cb26b59a",
+      "bytes": 6403
+    },
+    {
+      "path": "data/tracker-lora-pilot/heldout-collection-01/collection-config-public.json",
+      "sha256": "beebe2a6c448131b3f3f071f24f81263d7bb51d853ace61333aecccbcc86e946",
+      "bytes": 1121
+    },
+    {
+      "path": "data/tracker-lora-pilot/heldout-collection-01/collection-result-public.json",
+      "sha256": "e528b018784367a0546aee137e8e45549e81501ab1ffeb9bc20c68ded942cf64",
+      "bytes": 197
+    },
+    {
+      "path": "data/tracker-lora-pilot/heldout-collection-01/evidence.zip",
+      "sha256": "96f035dde9ca638f3846543ba8ee0b29fe75d6ffa9774b13a63c459fb57fd37c",
+      "bytes": 30804
+    },
+    {
+      "path": "data/tracker-lora-pilot/heldout-collection-01/interruption-and-resume-public.json",
+      "sha256": "4a420a281bca4825e51a82766ac6ec6b50a37dc6e540b25fadf873bf73ae9d2f",
+      "bytes": 4863
+    },
+    {
+      "path": "data/tracker-lora-pilot/heldout-collection-01/protocol-lock-v2.json",
+      "sha256": "54e646a5b78fee5cb8a57742dec9ab76c700e5a5781a06c249aca89c1f6813e4",
+      "bytes": 1803
+    },
+    {
+      "path": "data/tracker-lora-pilot/heldout-collection-01/protocol-v2.json",
+      "sha256": "c99f21a099a28f9d093957e5f4dd9ee55dae5056039c27d7508d06a863cccb14",
+      "bytes": 14169
+    },
+    {
+      "path": "data/tracker-lora-pilot/heldout-collection-01/resource-static-review-public.json",
+      "sha256": "5711b4d77db4941b7e7d9a9433e30b24ed28b867f855244130e2daf03fde3c30",
+      "bytes": 8530
+    },
+    {
+      "path": "data/tracker-lora-pilot/heldout-collection-01/resume-decision-public.json",
+      "sha256": "ea7852caeb5f295cdfb2be57ff859b249a887527611510d02d9bf47ee48c3e01",
+      "bytes": 2213
+    },
+    {
+      "path": "data/tracker-lora-pilot/heldout-collection-01/sources.json",
+      "sha256": "753605288c030de3d86c7e8ca73b6cd20c45497acc202a66a54a1174bba6f639",
+      "bytes": 13647
+    },
+    {
+      "path": "data/tracker-lora-pilot/heldout-collection-01/summary.json",
+      "sha256": "fbd12d709ce3c565940a41cab75d5a4c7f45a1e7ddabf5b10ebd7e9b3902bee3",
+      "bytes": 15231
+    },
+    {
+      "path": "data/tracker-lora-pilot/heldout-results-01/adjudication-signoff-public.json",
+      "sha256": "3d4ae5ec22cd3fcb207ec1afa7fc7ef28712af34be14c1f67dcc2a2fb0eb3736",
+      "bytes": 3844
+    },
+    {
+      "path": "data/tracker-lora-pilot/heldout-results-01/attempt-accounting-public.json",
+      "sha256": "6d5d96c0967de162e4e7c576d18a02dbc3ece9d91eb6a58a0340891119b7520f",
+      "bytes": 2123
+    },
+    {
+      "path": "data/tracker-lora-pilot/heldout-results-01/blind-review-final-lock-public.json",
+      "sha256": "478c945d2b841e97e56c7c696ca362d6b2928059f6b8b8a974f7dbef6427f087",
+      "bytes": 2120
+    },
+    {
+      "path": "data/tracker-lora-pilot/heldout-results-01/collection-completion-public.json",
+      "sha256": "6b5ff55fbd923cf877fd46c0931d12f241747fff2d67ca133f73f8b9cb26b59a",
+      "bytes": 6403
+    },
+    {
+      "path": "data/tracker-lora-pilot/heldout-results-01/collection-config-public.json",
+      "sha256": "beebe2a6c448131b3f3f071f24f81263d7bb51d853ace61333aecccbcc86e946",
+      "bytes": 1121
+    },
+    {
+      "path": "data/tracker-lora-pilot/heldout-results-01/collection-publication-independent-review.json",
+      "sha256": "80eb34bb8c2430f57851dcf557daca1766267469cd644320669d5636a67e9234",
+      "bytes": 20300
+    },
+    {
+      "path": "data/tracker-lora-pilot/heldout-results-01/dispatch-structural-validation.json",
+      "sha256": "ececb07d7ead8bfa36ee221824569fdb3ac901ac51bd423f777134f1b08589ba",
+      "bytes": 647
+    },
+    {
+      "path": "data/tracker-lora-pilot/heldout-results-01/evidence.zip",
+      "sha256": "90edfd00b0a02f940d17440f23a431ff1007da81df316a2907f2e0e84be10110",
+      "bytes": 54864
+    },
+    {
+      "path": "data/tracker-lora-pilot/heldout-results-01/initial-review-a-completion-public.json",
+      "sha256": "03823e12544ac794494c71dbdd075d772fa81935e51319a5841bec092678e92b",
+      "bytes": 3108
+    },
+    {
+      "path": "data/tracker-lora-pilot/heldout-results-01/initial-review-b-completion-public.json",
+      "sha256": "b318f7605c4413d958437a05c1791ca599d12ff6ca31a5c2296a0921122ec32b",
+      "bytes": 3136
+    },
+    {
+      "path": "data/tracker-lora-pilot/heldout-results-01/interpretation.json",
+      "sha256": "3d68a62e730b20e23a1a9170a05dc95551592386023f757753e4af01bceaf844",
+      "bytes": 6564
+    },
+    {
+      "path": "data/tracker-lora-pilot/heldout-results-01/preparation-public.json",
+      "sha256": "5d816538735f8aded52a8d1261baa36d0a9dd78e39066487e33f81b375d46eb7",
+      "bytes": 913
+    },
+    {
+      "path": "data/tracker-lora-pilot/heldout-results-01/protocol-lock-v2.json",
+      "sha256": "54e646a5b78fee5cb8a57742dec9ab76c700e5a5781a06c249aca89c1f6813e4",
+      "bytes": 1803
+    },
+    {
+      "path": "data/tracker-lora-pilot/heldout-results-01/protocol-v2.json",
+      "sha256": "ba2499114856b0241d0525f9da8010736682475714afb6da0d60b35c2e43595f",
+      "bytes": 14558
+    },
+    {
+      "path": "data/tracker-lora-pilot/heldout-results-01/results-independent-review.json",
+      "sha256": "30569ce2bb779c4fd7399c670371b371b859a8bee5311e1d58f6438a0a8ef19d",
+      "bytes": 19891
+    },
+    {
+      "path": "data/tracker-lora-pilot/heldout-results-01/results.json",
+      "sha256": "4b43ce8db4afc391744961e37e36190a7847a9b508bd119a3be0ade64c2e1ab8",
+      "bytes": 65184
+    },
+    {
+      "path": "data/tracker-lora-pilot/heldout-results-01/sources.json",
+      "sha256": "3bfaa4fbb4ba430ea38a9e0ea757e75d481c330456a76dad18839e1abd8b1317",
+      "bytes": 15264
+    },
+    {
+      "path": "data/tracker-lora-pilot/heldout-results-01/summary.json",
+      "sha256": "cd652470ce12e26d8e38f416a87044d7f57b55c819e4d37c4febd6f684523a17",
+      "bytes": 23463
     },
     {
       "path": "data/tracker-lora-pilot/memory-revision-01/evidence.zip",
@@ -1265,13 +1420,13 @@
     },
     {
       "path": "index.html",
-      "sha256": "028377f86dcbf8dcd72af03afa3bd717c12ed2cf7eeee2b0c2089d737b285238",
-      "bytes": 70986
+      "sha256": "b01a2fa725752b665fae9d3ffcd1561028abc24821292e82f6b71791353a7376",
+      "bytes": 71887
     },
     {
       "path": "intent-role-separation.html",
-      "sha256": "23e07985246c3c69dc9b15753d05b98123089fdfd15bb3eb7f82818228c41d74",
-      "bytes": 28698
+      "sha256": "1af8897f2d0c10d0b657df8cb3bb28ba0cf9fba066ead651664888e9f0a6989d",
+      "bytes": 40153
     },
     {
       "path": "intention-literature.css",

@@ -1,0 +1,54 @@
+{
+  "id": "tracker-lora-heldout-validation",
+  "date": "2026-10-24",
+  "type": "engineering_validation",
+  "status": "passed_with_documented_collection_deviation",
+  "timezone": "America/Halifax",
+  "tested_run": "formal-pilot-02 / collection-01 / blind-review-01",
+  "tested_artifacts": {
+    "scored_results_sha256": "4b43ce8db4afc391744961e37e36190a7847a9b508bd119a3be0ade64c2e1ab8",
+    "result_package_summary_sha256": "cd652470ce12e26d8e38f416a87044d7f57b55c819e4d37c4febd6f684523a17",
+    "builder_sha256": "2c3f5a6471f6c0cc2f4bb9842408b58d9b8c16a66429c0de421b2a055c59b411"
+  },
+  "checks": [
+    {
+      "check": "Independent numerical and provenance audit",
+      "status": "passed",
+      "passed": 65,
+      "total": 65,
+      "record": "tracker-lora-pilot/heldout-results-01/results-independent-review.json"
+    },
+    {
+      "check": "Collection publication audit",
+      "status": "passed",
+      "passed": 103,
+      "total": 103,
+      "record": "tracker-lora-pilot/heldout-results-01/collection-publication-independent-review.json"
+    },
+    {
+      "check": "All 200 recorded patches replayed through the frozen runtime",
+      "status": "passed"
+    },
+    {
+      "check": "Source/export hashes, UTF-8, path privacy and seven earlier ZIP hashes",
+      "status": "passed"
+    },
+    {
+      "check": "Results, overview and data-index builders",
+      "status": "passed"
+    },
+    {
+      "check": "Local HTTP and rendered result section at 319px viewport",
+      "status": "passed",
+      "detail": "HTTP 200; document width equals client width (304px); tables scroll within their containers."
+    }
+  ],
+  "remaining_limits": [
+    "One interrupted extra generation attempt and one pair across process restart; see collection record.",
+    "Browser QA covers the local narrow viewport, not an exhaustive device or accessibility review.",
+    "Engineering checks cannot establish semantic-label correctness or reduced delivered-answer omissions."
+  ],
+  "research_result": "tracker-lora-pilot/heldout-results-01/summary.json",
+  "collection_record": "tracker-lora-pilot/heldout-collection-01/summary.json",
+  "note": "Engineering checks do not establish quality; separately adjudicated research metrics are linked."
+}

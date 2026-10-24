@@ -1,0 +1,61 @@
+{
+  "reviewer": "reviewer_A",
+  "assigned_count": 100,
+  "completed_count": 100,
+  "reviewed_count": 99,
+  "needs_adjudication_count": 1,
+  "completed_at": "2026-10-24T09:58:41.8640550-03:00",
+  "timezone": "America/Halifax",
+  "first_batch_persisted_at": "2026-10-24T09:49:48.8468349-03:00",
+  "file_hash_metadata": [
+    {
+      "path": "output/research/2026-10-24/tracker-lora-pilot/audit/blind-review-instructions-v2.txt",
+      "sha256": "611d199b2ae022401b986837782727377181edbff6c65fe94210d3ce073cd8d2"
+    },
+    {
+      "path": "output/research/2026-10-24/tracker-lora-pilot/evaluation/blind-dispatch-01/reviewer_A/review-packets.json",
+      "sha256": "2da2b89c4b6494dd068d5944b118f1315d687c0031d029d315b26a4e8ccf6605"
+    },
+    {
+      "path": "output/research/2026-10-24/tracker-lora-pilot/evaluation/blind-dispatch-01/reviewer_A/review-template.json",
+      "sha256": "84ae9a22f2d93d5f91857fd20593c5ee98ef23cc038ba9d7eafd03f3abb27c25"
+    },
+    {
+      "path": "output/research/2026-10-24/tracker-lora-pilot/evaluation/blind-dispatch-01/reviewer_A/batch-01.json",
+      "sha256": "187f7a958a0efa6a60c5e13a3d0b82a6bcffc1bbe9ccaed45bb2355e5fc798f3"
+    },
+    {
+      "path": "output/research/2026-10-24/tracker-lora-pilot/evaluation/blind-dispatch-01/reviewer_A/batch-02.json",
+      "sha256": "7d18eca4f665ed09920a0c5ab181b32b3eca66fb103d327743742c94f5d83f18"
+    },
+    {
+      "path": "output/research/2026-10-24/tracker-lora-pilot/evaluation/blind-dispatch-01/reviewer_A/batch-03.json",
+      "sha256": "7fe2a237c3306561836a4dbd6b1c3238da6061ffb47f25eed41ea20cb0eace48"
+    },
+    {
+      "path": "output/research/2026-10-24/tracker-lora-pilot/evaluation/blind-dispatch-01/reviewer_A/batch-04.json",
+      "sha256": "2bd965d4f63c8b19f1b4c79c0249aef1c0317f27573ff36b23e19ed3354e229d"
+    },
+    {
+      "path": "output/research/2026-10-24/tracker-lora-pilot/evaluation/blind-dispatch-01/reviewer_A/batch-05.json",
+      "sha256": "862f14c978ad20c0635ff639d0973bbded37f5f9462ce7af2bccb31864b689c7"
+    },
+    {
+      "path": "output/research/2026-10-24/tracker-lora-pilot/evaluation/blind-dispatch-01/reviewer_A/batch-06.json",
+      "sha256": "73625509f87aee74c8d9a3d384d75d48de5351878f3323efc3ba0c2fd266345d"
+    },
+    {
+      "path": "output/research/2026-10-24/tracker-lora-pilot/evaluation/blind-dispatch-01/reviewer_A/batch-07.json",
+      "sha256": "7b4566d4e52e18ce668a8620f89f210caad7d6e60d5560876d9754d6cd8b657d"
+    },
+    {
+      "path": "output/research/2026-10-24/tracker-lora-pilot/evaluation/blind-dispatch-01/reviewer_A/batch-08.json",
+      "sha256": "78edcf2979536c8f10ca4c93d00179815c1e410be3b90a5c20d3de936ed9d49a"
+    },
+    {
+      "path": "output/research/2026-10-24/tracker-lora-pilot/evaluation/blind-dispatch-01/reviewer_A/initial-judgments.json",
+      "sha256": "92cc5b0f0806ebbc36981f8c5d021554f8e099d8abb59af4201d9af0c99b8910"
+    }
+  ],
+  "public_projection": "Completion counts, timestamps and source-provided file hashes only. No judgment files, packet contents, individual labels, pending-item details or blind IDs were opened or exported by packaging."
+}

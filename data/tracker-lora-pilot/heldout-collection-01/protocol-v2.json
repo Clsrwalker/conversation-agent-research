@@ -1,0 +1,189 @@
+{
+  "protocol_id": "tracker-lora-one-step-v2-memory-managed-training",
+  "date": "2026-10-24",
+  "timezone": "America/Halifax",
+  "status": "root_reviewed_memory_amendment_use_protocol_lock_for_freeze_status",
+  "question": "Does a tracker-role LoRA reduce missing requirements and improve complete intention-state accuracy under the same base model, prompt and inference budget?",
+  "claim_scope": "One-step state-update pilot on independently model-reviewed fictional held-out families. No deployment, own-state rollout, user-study or final-answer benefit is established by this design.",
+  "model": {
+    "id": "Qwen/Qwen2.5-14B-Instruct",
+    "revision": "cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8",
+    "representation": "same_object_nf4_double_quant_bfloat16_compute_norms_fp32",
+    "quantization": "bitsandbytes NF4 with double quantization",
+    "compute_dtype": "bfloat16",
+    "nonquantized_embedding_and_head_dtype": "bfloat16",
+    "norm_dtype": "float32",
+    "attention": "SDPA",
+    "arms": [
+      "adapter_disabled",
+      "tracker_lora_enabled"
+    ],
+    "paired_control": "Both arms use the same in-memory quantized PEFT model object, eval mode and bfloat16 autocast. Only adapter enablement changes. Record actual LoRA layer enablement for each completed call."
+  },
+  "training": {
+    "epochs": 1,
+    "learning_rate": 0.0001,
+    "rank": 16,
+    "alpha": 32,
+    "dropout": 0.05,
+    "target_modules": "all-linear",
+    "microbatch": 1,
+    "gradient_accumulation": 16,
+    "optimizer": "bitsandbytes.optim.AdamW8bit",
+    "weight_decay": 0.0,
+    "seed": 20261024,
+    "maximum_total_sequence_tokens": 2048,
+    "loss": "Completion-only causal cross entropy; no input or target truncation.",
+    "memory_policy": "Frozen base weights; unchanged non-reentrant activation checkpointing and activation offload. Training releases eligible unused device allocator cache after each microstep backward and detached loss logging; phase-level host-wall-time and allocator counters are logged. This does not change training math, model precision, row order or epoch count. Evaluation remains the identical adapter-off/on dynamic-cache design.",
+    "checkpoint_selection": "Use the final checkpoint after the single predetermined epoch. No test-based checkpoint, hyperparameter, prompt, decoding or label selection. Failed infrastructure attempts must be preserved and distinguished from formal training.",
+    "release_unused_cache_per_microstep": true,
+    "log_microstep_phases": true
+  },
+  "data": {
+    "train": {
+      "families": 100,
+      "updates": 500,
+      "ordinary_updates": 450,
+      "wrong_text_prior_updates": 50
+    },
+    "dev": {
+      "families": 10,
+      "updates": 50,
+      "ordinary_updates": 45,
+      "wrong_text_prior_updates": 5
+    },
+    "test": {
+      "families": 20,
+      "updates": 100,
+      "ordinary_updates": 90,
+      "wrong_text_prior_updates": 10
+    },
+    "test_languages": {
+      "zh": 50,
+      "en": 50
+    },
+    "split_unit": "All five decisions and every prefix or corrupted-prior variant of a scenario family stay in one split. Families are disjoint; broad domains are not guaranteed disjoint.",
+    "authorship": "Fictional model-authored scenarios with independent model semantic review and author corrections. No human annotation or human truth claim.",
+    "prior_faults": "Wrong-text variants replace ordinary updates, never increase sample counts. The current input has one plausible wrong prior text and no wrongness label. Repair evidence arrived before the current decision; the ordinary current target did not touch that ID. Expected repaired semantics equal the ordinary reference state.",
+    "excluded": "Earlier 24 illustrative examples and smoke fixtures are not the 500 training updates or held-out test examples.",
+    "input_fields": [
+      "conversation",
+      "intention_state",
+      "tool_receipts"
+    ],
+    "never_generation_input": [
+      "target",
+      "expected_post_state",
+      "expected_semantic_state",
+      "preserve_ids",
+      "evidence_note",
+      "critical_checks",
+      "prior_fault_annotation",
+      "family_id",
+      "split",
+      "domain",
+      "tags"
+    ],
+    "one_step_limitation": "Each call receives the independently compiled prior state, including 10 designed text faults. Prior model mistakes do not propagate into later calls. This is teacher-forced prior-state evaluation, not own-state rollout."
+  },
+  "decoding": {
+    "seed": 20261024,
+    "do_sample": false,
+    "repetition_penalty": 1.0,
+    "num_beams": 1,
+    "max_prompt_tokens": 2048,
+    "max_new_tokens": 512,
+    "cache_implementation": "dynamic",
+    "calls_per_arm": 100,
+    "assigned_calls": 200,
+    "arm_order": "Alternate which arm runs first by row parity. Reset the same seed for every call; preserve raw outputs and actual token hashes.",
+    "context_policy": "No prompt or evidence truncation. Inputs over the cap are infrastructure failures to resolve prospectively, not rows to drop.",
+    "failure_policy": "Every assigned call must have a completed or failed durable record. Failed calls, token-cap outputs and invalid patches remain in the quality denominators. An unrecorded interrupted call is unresolved collection, not a completed evaluation."
+  },
+  "runtime_evaluation": {
+    "implementation": "experiments/deep_conversation/tracker_lora/evaluate_tracker.py",
+    "store": "experiments/deep_conversation/intention_state.py:IntentStore",
+    "restore": "Replay the supplied snapshot's history using public IntentStore methods, including empty versions; then observe arrived current events. Require exact equality with the supplied pre-state. Never restore by applying the current gold target or editing SQLite state directly.",
+    "parse": "One strict JSON object with exactly an operations list. Reject Markdown fences, trailing prose, duplicate JSON keys and nonfinite numbers. No extraction, format repair, retry or patch substitution.",
+    "apply": "Apply the proposal atomically with the trusted current version and arrived-event cursor. Preserve the entire input state after invalid JSON, invalid patch or generation failure.",
+    "distinction": "Runtime validity checks schema, IDs, source arrival and transaction legality. It does not establish that a source supports an intention or that any intention is complete."
+  },
+  "blind_review": {
+    "packet": "Random anonymous ID; raw conversation; projected prior, reference and candidate states; candidate raw output, parsed operations and validity; unchanged reference IDs and reference no-change flag. No arm, model, adapter, token, timing, example, family, language or fault labels.",
+    "review_process": "Independent model reviewer evaluates meaning against raw evidence, without private mapping or model performance data. A separate adjudicator resolves needs_adjudication cases before aggregation. Preserve initial judgments and correction reasons; do not call model review human validation.",
+    "reference_correction": "If blind review discovers a reference defect, stop affected scoring and document it before unblinding. Apply the same adjudicated reference to both arms; preserve original labels and hashes. Never alter training or select a checkpoint in response.",
+    "matching": "Match by meaning, not exact text or ID. Equivalent wording and alternate new-ID spelling can fully cover an intention. Existing stable-ID replacement or duplicates are separately counted identity errors.",
+    "unit": "The benchmark unit is one independently reviewed intention record, with qualifiers and coupled conditions retained as part of that unit. This is operational record-level atomicity, not a claim that every linguistic clause is an independent unit.",
+    "missing_vs_wrong_value": "Missing means the requirement concept has no candidate counterpart. Missing scope, condition, unit, polarity, strength or parameter within a matched concept is wrong_value. Fully-correct coverage fails in either case; never report reduced missing-concept rate alone as reduced all-cause omission.",
+    "source_checks": "For every valid candidate patch, inspect whether cited original events sufficiently establish the operation, including owner, acceptance, antecedent and conditions. Arrived but insufficient or referent-only evidence is source_error_operation_indices; source existence alone is insufficient."
+  },
+  "metrics": {
+    "primary": "Family-macro active-unit concept omission: per family total omitted active reference units divided by total active reference units across five decisions, then mean over eligible families. Positive paired reduction means baseline omission minus adapter omission.",
+    "required_companion": "Fully-correct active-unit coverage requires equivalent meaning plus correct owner and status. Also report wrong value, owner and status, old-constraint loss or corruption, wrong withdrawal, unsupported active or uncertain additions, false changes on true no-op, identity errors, source errors and all invalid outputs.",
+    "uncertain": "Separately count omission, wrong value, wrong owner, wrong status, fully-correct coverage and unsupported promotion from uncertain to active.",
+    "failure_denominator": "Score the actual retained pre-state of invalid or failed calls against the reference after-state. A failure is not dropped and is not automatically declared wrong for every unchanged requirement.",
+    "granularity": "Report both unit counts/rates and affected-decision rates where defined. Error categories can overlap and must not be summed into a purported disjoint total.",
+    "strata": [
+      "ordinary 90 updates per arm",
+      "wrong-text-prior 10 updates per arm",
+      "Chinese 50 updates per arm",
+      "English 50 updates per arm"
+    ],
+    "confidence_interval": {
+      "unit": "paired scenario family",
+      "families": 20,
+      "method": "percentile paired bootstrap of family-level rate differences",
+      "resamples": 10000,
+      "seed": 20261024,
+      "sorted_zero_based_endpoints": [
+        249,
+        9749
+      ],
+      "confidence": 0.95
+    },
+    "zero_denominator": "Return null when a rate has no eligible units. Families with no active units are excluded only from the active-omission mean and explicitly counted; their decisions remain in other metrics.",
+    "cost": "After unblinding, separately summarize completed-call input/output tokens, token-cap hits and elapsed time per arm. Report failed counts; do not mix failed-call durations into completed-call summaries. Latency is descriptive, not a controlled speed benchmark.",
+    "interpretation": "This small pilot can be negative or inconclusive. Do not imply significant or general improvement from raw point estimates, a valid JSON rate, completed training or lower training loss. Inspect companion harms and wide uncertainty before recommending a subsequent phase."
+  },
+  "next_phase_not_run": {
+    "name": "own-state rollout",
+    "design": "Use the same 20 families and five decision points per family in each arm. Start from the same empty state, release only arrived raw events, and feed each arm its own actual previous committed state. Keep state unchanged after a rejected patch. No reference state is inserted between decisions. Use the same fixed prompt, token budget and runtime.",
+    "planned_calls": 200,
+    "planned_outcomes": "Cumulative final-state coverage, per-step misses, error recovery, false revision, owner/status drift and persistent error duration. Treat comparison with this one-step study as diagnostic, not an independent fresh test set.",
+    "not_in_scope": "No actual chat/work agent integration, final-answer correctness, user outcomes or long real conversation deployment is measured in the present pilot."
+  },
+  "freeze": {
+    "authority": "Root reviews this prospective protocol and evaluator, then invokes freeze before formal test collection. This JSON alone does not claim a completed freeze.",
+    "artifacts": [
+      "protocol JSON",
+      "approved dataset manifest",
+      "100 test records",
+      "shared system prompt",
+      "evaluator",
+      "IntentStore runtime",
+      "collect_ab.py",
+      "train_tracker.py model-loading dependency"
+    ],
+    "checkpoint_binding": "The collector separately freezes final adapter weight/config hashes before its first assigned test call, with model revision and input/prompt hashes. Use only the predetermined final one-epoch checkpoint.",
+    "amendments": "Preserve the old protocol, lock, failures and outputs. Record any prospective infrastructure amendment explicitly before new collection; never silently relabel a changed run as the originally frozen comparison."
+  },
+  "infrastructure_amendment": {
+    "id": "tracker-lora-memory-management-amendment-01",
+    "decision": "training/memory-management-amendment-01.json",
+    "previous_protocol": "evaluation/protocol.json",
+    "previous_protocol_sha256": "e9eaf85c64f9eb8e593c0d70981750fa5123480ce6705dd17636df2ea331a65f",
+    "previous_lock": "evaluation/protocol-lock.json",
+    "previous_runner_archive": "training/formal-pilot-01/runner_source.py",
+    "interrupted_run": "training/formal-pilot-01/interruption.json",
+    "reason": "Live training was deliberately stopped after repeated throughput decline and high unused reserved/shared memory. No test outputs exist; cause and remedy are not established by the observation.",
+    "new_formal_run": "formal-pilot-02",
+    "checkpoint_policy": "Start a fresh role LoRA from the same pinned base and train the full original 500-row epoch. Never use the stopped partial run or a synthetic adapter. Use the final predetermined checkpoint only.",
+    "unchanged": "Data, prompt, base model/precision, loss, optimization recipe and held-out comparison/scoring remain unchanged. Verify the core loader/precision/loss functions against the archived source before freezing.",
+    "review_evidence": [
+      "review/memory-management-independent-ast-check.json",
+      "training/memory-management-source-check.json",
+      "training/memory-management-smoke-check.json",
+      "training/smoke-2048-offload-cleanup-01/result.json"
+    ]
+  }
+}

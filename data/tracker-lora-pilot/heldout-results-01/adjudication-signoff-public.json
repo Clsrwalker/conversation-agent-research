@@ -1,0 +1,74 @@
+{
+  "kind": "final_blinded_semantic_adjudication_signoff",
+  "status": "complete",
+  "signed_at_utc": "2026-10-24T13:12:38.9297852+00:00",
+  "input_hashes": {
+    "instructions.txt": "611d199b2ae022401b986837782727377181edbff6c65fe94210d3ce073cd8d2",
+    "policy.json": "30f3c32183a77630725034c5e9fabea98b1ffa2845e3a053a063168231191eaf",
+    "review-packets.json": "2d820c73064f56f6b959082bc8c24097b34629ce5e114f0fa2ff4dbaf9dc4793",
+    "initial-judgments.json": "787e33c5df906427d26271d16b6afa7d3e0ff1f0640b7ea94a6fc79a0f670f55",
+    "intake.json": "f512c71233b8ed51e02ce9305dbeda3731c1b95273bb394aa1707cd605ffe710"
+  },
+  "final_hashes": {
+    "final-judgments.json": "1ae2536359747771bdb77e72a189cc7baa8aec0bb533fe0b4866ef77f2c71807",
+    "adjudication-decisions.json": "4b3f8f95d9773afe1fb25f31ae0771b5d8fbd2490072ce6010a46ee965c469cb"
+  },
+  "coverage": {
+    "packet_count": 200,
+    "unique_final_blind_ids": 200,
+    "final_status_counts": {
+      "adjudicated": 200
+    },
+    "initial_status_counts": {
+      "needs_adjudication": 4,
+      "reviewed": 196
+    },
+    "all_initial_flags_resolved": true,
+    "unresolved_count": 0,
+    "reference_defects_found": 0,
+    "reference_corrections": 0,
+    "all_reference_ids_covered": true,
+    "all_candidate_ids_accounted": true,
+    "structural_validation_issues": [],
+    "prospective_sample_selection_verified": true,
+    "full_semantic_review_count": 37,
+    "prospective_spotcheck_count": 20,
+    "flagged_count": 4,
+    "prospective_flagged_overlap": 1,
+    "additional_lifecycle_full_review_count": 13,
+    "additional_negative_update_full_review_count": 1,
+    "expanded_source_review_packet_count": 119,
+    "expanded_source_review_operation_count": 166,
+    "union_reviewed_packet_count": 132,
+    "accepted_initial_only_after_structural_checks": 68,
+    "changed_nonstatus_packet_count": 21
+  },
+  "provenance_assertions": {
+    "source_only_expansion_distinguished_from_full_review": true,
+    "arm_information_read": false,
+    "model_generation_or_gpu_calls": false,
+    "review_frozen_before_unblinding": true,
+    "candidate_and_runtime_states_unchanged": true,
+    "private_mapping_read": false,
+    "original_inputs_unchanged": true
+  },
+  "limitations": [
+    "Model-based adjudication, not human gold.",
+    "One initial independent semantic review per packet; second full semantic review only for the listed targeted packets. Expanded source-only review does not imply full re-review of every reference state.",
+    "No interrater reliability estimate, no private mapping access, no arm comparison, no generation, no runtime repair.",
+    "Other initial reviewed judgments are accepted after structural validation; unobserved semantic mistakes remain possible."
+  ],
+  "policy_scope": {
+    "kind": "prospective_blinded_adjudication_procedure",
+    "date": "2026-10-24",
+    "timezone": "America/Halifax",
+    "created_at_utc": "2026-10-24T09:55:58.079481-03:00",
+    "metric_or_decoding_change": false,
+    "private_mapping_read": false,
+    "initial_judgments_read_for_selection": false,
+    "required_review": "Resolve every needs_adjudication item and every discovered reference defect before unblinding. Preserve initial labels; final signoff covers all 200.",
+    "non_spotchecked_reviewed_items": "Accepted from initial independent review after structural coverage checks unless a discovered rule or reference issue requires expansion. This is not a second semantic review of all200.",
+    "claim_limit": "One initial independent model review perpacket, separate targeted adjudication and20 content-independent spotchecks. Not human gold or measured interrater reliability."
+  },
+  "public_projection": "Actual blind-ID lists and content selection identifiers are omitted. Coverage counts, timestamps, hash commitments and review limitations are preserved."
+}

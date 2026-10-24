@@ -5886,6 +5886,13 @@
       "type": "engineering_validation",
       "record": "tracker-lora-pilot-followup-validation.json",
       "status": "training_completed_quality_pending"
+    },
+    {
+      "id": "tracker-lora-heldout-validation",
+      "date": "2026-10-24",
+      "type": "engineering_validation",
+      "record": "tracker-lora-heldout-validation.json",
+      "status": "passed_with_documented_collection_deviation"
     }
   ],
   "literature_reviews": [
@@ -5994,6 +6001,20 @@
       "tools_executed": true,
       "evidence": "intent-role-separation/evidence.zip",
       "scoring": "two model reviewers with blind condition IDs; explicit adjudication of disagreements"
+    },
+    {
+      "id": "tracker-lora-one-step-pilot",
+      "date": "2026-10-24",
+      "type": "research_experiment",
+      "status": "completed_scored",
+      "record": "tracker-lora-pilot/heldout-results-01/summary.json",
+      "page": "intent-role-separation.html#tracker-lora-results",
+      "assigned_model_calls": 200,
+      "extra_interrupted_attempts": 1,
+      "scenario_families": 20,
+      "adjudicated_packets": 200,
+      "evidence": "tracker-lora-pilot/heldout-results-01/evidence.zip",
+      "scoring": "Independent blinded model review with separate adjudication; not human gold."
     }
   ],
   "october_studies": {

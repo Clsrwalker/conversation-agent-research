@@ -1,0 +1,360 @@
+{
+  "schema_version": 1,
+  "type": "research_experiment",
+  "id": "tracker-lora-heldout-results-01",
+  "date": "2026-10-24",
+  "timezone": "America/Halifax",
+  "status": "completed_scored",
+  "frozen_at_utc": "2026-10-24T13:21:21.214323+00:00",
+  "assigned_calls": 200,
+  "adjudicated_packets": 200,
+  "heldout_decisions": 100,
+  "heldout_families": 20,
+  "training_updates": 500,
+  "training_families": 100,
+  "quality_results": {
+    "file": "results.json",
+    "kind": "one_step_blind_semantic_pilot_results",
+    "review_kind": "independent model judgments unless separately documented human review exists"
+  },
+  "title": "Fewer rejected patches; omission benefit remains inconclusive",
+  "lead": "After one epoch on 500 synthetic updates, the tracker LoRA produced fewer rejected state patches and higher observed active-requirement coverage. The primary omission result remains inconclusive: the paired-family uncertainty interval includes no improvement and worsening. This pilot does not establish that the adapter reduces intention omissions in conversation.",
+  "methods": "Compare the final tracker adapter disabled versus enabled on the same pinned Qwen2.5-14B-Instruct checkpoint, NF4 quantization, shared prompt, arrived input and greedy decoding budget. Training used 500 updates from 100 scenario families, with 50 separate development updates. Test: 100 paired updates from 20 family-disjoint scenarios, 50 Chinese and 50 English; 90 ordinary prior states and 10 designed wrong-text prior states. Each call receives the compiled prior state, so errors do not propagate between steps. A recorded process restart creates one pairing exception described below.",
+  "findings": [
+    "The primary family-average concept-omission rate changed from 1.91% to 1.57%. The paired reduction is 0.34 percentage points, with a 95% bootstrap interval from -1.00 to 1.72 points. This is not reliable evidence of an omission benefit.",
+    "Active concepts missing across all update states changed from 6/335 to 5/335; fully correct meaning, owner and status changed from 302/335 (90.15%) to 311/335 (92.84%). These are requirement-unit point estimates, not whole-dialogue success rates or independently replicated gains.",
+    "Runtime-rejected patches fell from 13/100 to 2/100. False semantic changes on the nine true no-change inputs fell from 4/9 to 0/9, and unchanged active requirements lost or corrupted fell from 4/217 to 1/217. Both arms still generated all assigned outputs; generation completion does not mean a valid or correct patch.",
+    "Important negative result: in the 10 wrong-prior inputs, fully correct active units declined from 27/36 to 26/36, while wrong-value units increased from 6 to 8. Fewer concept misses in that subgroup (3 to 2) therefore do not establish better repair. English wrong-value units also increased from 7 to 9; uncertain-owner errors increased from 0/8 to 1/8.",
+    "Evidence support remains weak: source-error decisions fell from 53/100 to 37/100, with 81/137 versus 38/126 valid patch operations flagged for insufficient supporting citations. The rubric requires necessary antecedents and user acceptance; source arrival alone is insufficient. These errors are separate from state-content coverage."
+  ],
+  "limits": [
+    "Fictional, model-authored and model-reviewed data; 100 test updates are five correlated decisions in each of 20 families. Family separation does not guarantee domain separation.",
+    "Each held-out family ends after five or six events; evaluated prefixes contain one to six events. There is no own-state rollout, long-conversation stress test, actual chat/work integration, delivered-answer scoring or user study. The high amount of retained prior state limits how much overall unit coverage measures new extraction ability.",
+    "Only one training seed and final checkpoint, chosen by the prospective one-epoch recipe. Companion improvements are descriptive point estimates; only the prespecified omission endpoint has the reported family-bootstrap interval.",
+    "Hash-based reviewer assignment was not forced to balance arms: reviewer A assessed 55 adapter-disabled and 45 adapter-enabled outputs; reviewer B assessed 45 and 55. No interrater-reliability estimate was made, so reviewer variation is not ruled out by the family bootstrap interval.",
+    "The eight uncertain requirement units and nine true no-change inputs are small subgroups. Prior-fault coverage is text replacement, not adequate coverage of wholly omitted intentions, wrong owners or corrupted status histories.",
+    "A single status field combines several uncertainty dimensions. The current runtime cannot reopen and modify the same record in one patch; this capability was excluded rather than silently approximated.",
+    "One interrupted attempt adds unknown output-token cost, and one pair crosses a reload. Completed-call latency is descriptive and excludes interruption/reload overhead; do not interpret it as a controlled speed comparison.",
+    "Public downloads contain aggregate results, frozen methods and hash-bound audit attestations. Raw model outputs, initial/final item judgments and the private arm mapping remain preserved locally, so the public bundle alone does not reproduce every semantic judgment."
+  ],
+  "review_note": "Each of 200 anonymous packets received one initial independent model review. A separate fresh blinded adjudicator resolved four flagged cases, completed 20 preselected spotchecks and expanded review after inconsistent lifecycle and evidence judgments. The final scope was 37 full semantic rereviews plus source checks on 166 operations across 119 packets (132 packets in their union); 21 judgments changed before unblinding. The other 68 initial judgments received structural signoff. All 200 final judgments were frozen before arm aggregation; no reference corrections were needed. This is model review, not human gold or a measured interrater-reliability study.",
+  "collection_note": "There are 200 assigned durable results and 201 physical generation attempts: one unreturned attempt was interrupted after approximately 450–478 seconds, then its assignment was resumed. Its output-token cost is unknown and excluded from completed-call summaries. All 200 durable results completed generation, with zero token-cap hits. One of 100 pairs spans the process restart, so the comparison cannot claim an identical in-memory model object for every pair. Frozen files/configuration and the original 73-result prefix were preserved. Slowdown cause and a controlled latency benefit were not established.",
+  "next_step": "The next data revision should prioritize evidence-complete minimal contrasts, preservation of qualifiers and ownership, and recovery from genuinely missing or erroneous prior intentions. Use a fresh family-held-out set for any retraining claim. A separate own-state rollout can then test error accumulation; the planned rollout, additional training and chat/work integration have not run.",
+  "index_text": "Family-average concept omission: 1.91% → 1.57%, inconclusive. Rejected patches: 13/100 → 2/100. Repair of wrong prior states remains a weakness.",
+  "source_and_export_files": {
+    "results.json": {
+      "source_path_relative_to_study": "analysis/one-step-results.json",
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-pilot/analysis/one-step-results.json",
+      "source_sha256": "4f225f88a465db6ec0168a5fbdc646ff86f86c53a99b94272a19069d14e6b8ef",
+      "export_sha256": "4b43ce8db4afc391744961e37e36190a7847a9b508bd119a3be0ade64c2e1ab8",
+      "export_bytes": 65184,
+      "byte_identical_to_source": false,
+      "sanitizations": [],
+      "transform": "Explicit aggregate top-level allowlist; the entire per_decision field is omitted, including blind-ID-to-arm joins. No semantic values are relabeled or recalculated."
+    },
+    "blind-review-final-lock-public.json": {
+      "source_path_relative_to_study": "audit/blind-review-final-lock.json",
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-pilot/audit/blind-review-final-lock.json",
+      "source_sha256": "478c945d2b841e97e56c7c696ca362d6b2928059f6b8b8a974f7dbef6427f087",
+      "export_sha256": "478c945d2b841e97e56c7c696ca362d6b2928059f6b8b8a974f7dbef6427f087",
+      "export_bytes": 2120,
+      "byte_identical_to_source": true,
+      "sanitizations": []
+    },
+    "adjudication-signoff-public.json": {
+      "source_path_relative_to_study": "evaluation/adjudication-01/final-signoff.json",
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-pilot/evaluation/adjudication-01/final-signoff.json",
+      "source_sha256": "09576f99c0b79742c3148715d496cc0b5f79b94c5e3d938eced510d5b801dc99",
+      "export_sha256": "3d4ae5ec22cd3fcb207ec1afa7fc7ef28712af34be14c1f67dcc2a2fb0eb3736",
+      "export_bytes": 3844,
+      "byte_identical_to_source": false,
+      "sanitizations": [],
+      "transform": "Metadata projection omits actual blind-ID lists, retains coverage/counts/times/hash commitments and limitations."
+    },
+    "preparation-public.json": {
+      "source_path_relative_to_study": "evaluation/blind-review-01/preparation.json",
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-pilot/evaluation/blind-review-01/preparation.json",
+      "source_sha256": "5d816538735f8aded52a8d1261baa36d0a9dd78e39066487e33f81b375d46eb7",
+      "export_sha256": "5d816538735f8aded52a8d1261baa36d0a9dd78e39066487e33f81b375d46eb7",
+      "export_bytes": 913,
+      "byte_identical_to_source": true,
+      "sanitizations": [],
+      "transform": "PRIVATE artifact names occur only as hash commitments in this receipt; their contents are never exported."
+    },
+    "dispatch-structural-validation.json": {
+      "source_path_relative_to_study": "evaluation/blind-dispatch-01/structural-validation.json",
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-pilot/evaluation/blind-dispatch-01/structural-validation.json",
+      "source_sha256": "ececb07d7ead8bfa36ee221824569fdb3ac901ac51bd423f777134f1b08589ba",
+      "export_sha256": "ececb07d7ead8bfa36ee221824569fdb3ac901ac51bd423f777134f1b08589ba",
+      "export_bytes": 647,
+      "byte_identical_to_source": true,
+      "sanitizations": []
+    },
+    "initial-review-a-completion-public.json": {
+      "source_path_relative_to_study": "evaluation/blind-dispatch-01/reviewer_A/reviewer-completion.json",
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-pilot/evaluation/blind-dispatch-01/reviewer_A/reviewer-completion.json",
+      "source_sha256": "9ec4cd09bce72096bf70d4a0efc59e479890e108b469485c226915f8ab39d25a",
+      "export_sha256": "03823e12544ac794494c71dbdd075d772fa81935e51319a5841bec092678e92b",
+      "export_bytes": 3108,
+      "byte_identical_to_source": false,
+      "sanitizations": [
+        {
+          "path": "$.file_hash_metadata[].path",
+          "action": "converted absolute path value to project-relative reference"
+        },
+        {
+          "path": "$.file_hash_metadata[].path",
+          "action": "converted absolute path value to project-relative reference"
+        },
+        {
+          "path": "$.file_hash_metadata[].path",
+          "action": "converted absolute path value to project-relative reference"
+        },
+        {
+          "path": "$.file_hash_metadata[].path",
+          "action": "converted absolute path value to project-relative reference"
+        },
+        {
+          "path": "$.file_hash_metadata[].path",
+          "action": "converted absolute path value to project-relative reference"
+        },
+        {
+          "path": "$.file_hash_metadata[].path",
+          "action": "converted absolute path value to project-relative reference"
+        },
+        {
+          "path": "$.file_hash_metadata[].path",
+          "action": "converted absolute path value to project-relative reference"
+        },
+        {
+          "path": "$.file_hash_metadata[].path",
+          "action": "converted absolute path value to project-relative reference"
+        },
+        {
+          "path": "$.file_hash_metadata[].path",
+          "action": "converted absolute path value to project-relative reference"
+        },
+        {
+          "path": "$.file_hash_metadata[].path",
+          "action": "converted absolute path value to project-relative reference"
+        },
+        {
+          "path": "$.file_hash_metadata[].path",
+          "action": "converted absolute path value to project-relative reference"
+        },
+        {
+          "path": "$.file_hash_metadata[].path",
+          "action": "converted absolute path value to project-relative reference"
+        }
+      ],
+      "transform": "Metadata-only projection; preserve original initial-review files elsewhere unchanged."
+    },
+    "initial-review-b-completion-public.json": {
+      "source_path_relative_to_study": "evaluation/blind-dispatch-01/reviewer_B/reviewer-completion.json",
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-pilot/evaluation/blind-dispatch-01/reviewer_B/reviewer-completion.json",
+      "source_sha256": "23d42d9bf01a019252263c7b451a798acefd5cd4b2f8b73ccd0bcf07b3c193e7",
+      "export_sha256": "b318f7605c4413d958437a05c1791ca599d12ff6ca31a5c2296a0921122ec32b",
+      "export_bytes": 3136,
+      "byte_identical_to_source": false,
+      "sanitizations": [
+        {
+          "path": "$.file_hash_metadata",
+          "action": "converted absolute path key to project-relative reference"
+        },
+        {
+          "path": "$.file_hash_metadata",
+          "action": "converted absolute path key to project-relative reference"
+        },
+        {
+          "path": "$.file_hash_metadata",
+          "action": "converted absolute path key to project-relative reference"
+        },
+        {
+          "path": "$.file_hash_metadata",
+          "action": "converted absolute path key to project-relative reference"
+        },
+        {
+          "path": "$.file_hash_metadata",
+          "action": "converted absolute path key to project-relative reference"
+        },
+        {
+          "path": "$.file_hash_metadata",
+          "action": "converted absolute path key to project-relative reference"
+        },
+        {
+          "path": "$.file_hash_metadata",
+          "action": "converted absolute path key to project-relative reference"
+        },
+        {
+          "path": "$.file_hash_metadata",
+          "action": "converted absolute path key to project-relative reference"
+        },
+        {
+          "path": "$.file_hash_metadata",
+          "action": "converted absolute path key to project-relative reference"
+        },
+        {
+          "path": "$.file_hash_metadata",
+          "action": "converted absolute path key to project-relative reference"
+        },
+        {
+          "path": "$.file_hash_metadata",
+          "action": "converted absolute path key to project-relative reference"
+        },
+        {
+          "path": "$.file_hash_metadata",
+          "action": "converted absolute path key to project-relative reference"
+        },
+        {
+          "path": "$.file_hash_metadata",
+          "action": "converted absolute path key to project-relative reference"
+        },
+        {
+          "path": "$.file_hash_metadata",
+          "action": "converted absolute path key to project-relative reference"
+        }
+      ],
+      "transform": "Metadata-only projection; omit individual pending adjudication details and normalize source-path hash keys."
+    },
+    "collection-publication-independent-review.json": {
+      "source_path_relative_to_study": "audit/heldout-collection-publication-independent-review.json",
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-pilot/audit/heldout-collection-publication-independent-review.json",
+      "source_sha256": "80eb34bb8c2430f57851dcf557daca1766267469cd644320669d5636a67e9234",
+      "export_sha256": "80eb34bb8c2430f57851dcf557daca1766267469cd644320669d5636a67e9234",
+      "export_bytes": 20300,
+      "byte_identical_to_source": true,
+      "sanitizations": []
+    },
+    "protocol-v2.json": {
+      "source_path_relative_to_study": "evaluation/protocol-memory-guard-v2.json",
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-pilot/evaluation/protocol-memory-guard-v2.json",
+      "source_sha256": "ba2499114856b0241d0525f9da8010736682475714afb6da0d60b35c2e43595f",
+      "export_sha256": "ba2499114856b0241d0525f9da8010736682475714afb6da0d60b35c2e43595f",
+      "export_bytes": 14558,
+      "byte_identical_to_source": true,
+      "sanitizations": []
+    },
+    "protocol-lock-v2.json": {
+      "source_path_relative_to_study": "evaluation/protocol-lock-memory-guard-v2.json",
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-pilot/evaluation/protocol-lock-memory-guard-v2.json",
+      "source_sha256": "8fb6a8e23e0256f3c78760d17314e4597aa46426c527ec3a0f776d1873999e4b",
+      "export_sha256": "54e646a5b78fee5cb8a57742dec9ab76c700e5a5781a06c249aca89c1f6813e4",
+      "export_bytes": 1803,
+      "byte_identical_to_source": false,
+      "sanitizations": [
+        {
+          "path": "$.files.protocol.path",
+          "action": "converted absolute path value to project-relative reference"
+        },
+        {
+          "path": "$.files.test_records.path",
+          "action": "converted absolute path value to project-relative reference"
+        },
+        {
+          "path": "$.files.dataset_manifest.path",
+          "action": "converted absolute path value to project-relative reference"
+        },
+        {
+          "path": "$.files.system_prompt.path",
+          "action": "converted absolute path value to project-relative reference"
+        },
+        {
+          "path": "$.files.evaluator.path",
+          "action": "converted absolute path value to project-relative reference"
+        },
+        {
+          "path": "$.files.runtime.path",
+          "action": "converted absolute path value to project-relative reference"
+        },
+        {
+          "path": "$.files.model_loader_and_trainer.path",
+          "action": "converted absolute path value to project-relative reference"
+        },
+        {
+          "path": "$.files.collector.path",
+          "action": "converted absolute path value to project-relative reference"
+        }
+      ]
+    },
+    "attempt-accounting-public.json": {
+      "source_path_relative_to_study": "publication/heldout-collection-01-manifest-v2/attempt-accounting-public.json",
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-pilot/publication/heldout-collection-01-manifest-v2/attempt-accounting-public.json",
+      "source_sha256": "6d5d96c0967de162e4e7c576d18a02dbc3ece9d91eb6a58a0340891119b7520f",
+      "export_sha256": "6d5d96c0967de162e4e7c576d18a02dbc3ece9d91eb6a58a0340891119b7520f",
+      "export_bytes": 2123,
+      "byte_identical_to_source": true,
+      "sanitizations": [],
+      "transform": "Byte-identical copy of the separately audited safe collection metadata export."
+    },
+    "collection-completion-public.json": {
+      "source_path_relative_to_study": "publication/heldout-collection-01-manifest-v2/collection-completion-public.json",
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-pilot/publication/heldout-collection-01-manifest-v2/collection-completion-public.json",
+      "source_sha256": "6b5ff55fbd923cf877fd46c0931d12f241747fff2d67ca133f73f8b9cb26b59a",
+      "export_sha256": "6b5ff55fbd923cf877fd46c0931d12f241747fff2d67ca133f73f8b9cb26b59a",
+      "export_bytes": 6403,
+      "byte_identical_to_source": true,
+      "sanitizations": [],
+      "transform": "Byte-identical copy of the separately audited safe collection metadata export."
+    },
+    "collection-config-public.json": {
+      "source_path_relative_to_study": "publication/heldout-collection-01-manifest-v2/collection-config-public.json",
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-pilot/publication/heldout-collection-01-manifest-v2/collection-config-public.json",
+      "source_sha256": "beebe2a6c448131b3f3f071f24f81263d7bb51d853ace61333aecccbcc86e946",
+      "export_sha256": "beebe2a6c448131b3f3f071f24f81263d7bb51d853ace61333aecccbcc86e946",
+      "export_bytes": 1121,
+      "byte_identical_to_source": true,
+      "sanitizations": [],
+      "transform": "Byte-identical copy of the separately audited safe collection metadata export."
+    },
+    "evaluate_tracker.py": {
+      "source_path_relative_to_project": "experiments/deep_conversation/tracker_lora/evaluate_tracker.py",
+      "source_sha256": "6e628968b52307f8160bcc673cb5abba8043490c810b22f0bd286fb9a4f33a6f",
+      "export_sha256": "6e628968b52307f8160bcc673cb5abba8043490c810b22f0bd286fb9a4f33a6f",
+      "export_bytes": 38450,
+      "byte_identical_to_source": true,
+      "sanitizations": [],
+      "scope": "Frozen evaluator source only. Generic code references to PRIVATE filenames contain no private file payloads. The evaluator is not run by packaging."
+    },
+    "results-independent-review.json": {
+      "source_path_relative_to_study": "audit/heldout-results-independent-review.json",
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-pilot/audit/heldout-results-independent-review.json",
+      "source_sha256": "30569ce2bb779c4fd7399c670371b371b859a8bee5311e1d58f6438a0a8ef19d",
+      "export_sha256": "30569ce2bb779c4fd7399c670371b371b859a8bee5311e1d58f6438a0a8ef19d",
+      "export_bytes": 19891,
+      "byte_identical_to_source": true,
+      "sanitizations": []
+    },
+    "interpretation.json": {
+      "source_path_relative_to_study": "analysis/interpretation.json",
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-pilot/analysis/interpretation.json",
+      "source_sha256": "1f0792974ddca083bfc067e67666fda3bc1d941cb9c389b5c0fdf61b658c096c",
+      "export_sha256": "3d68a62e730b20e23a1a9170a05dc95551592386023f757753e4af01bceaf844",
+      "export_bytes": 6564,
+      "byte_identical_to_source": false,
+      "sanitizations": [],
+      "transform": "Exact root-reviewed site fields only; other internal interpretation metadata omitted."
+    }
+  },
+  "root_reviewed_interpretation_source_sha256": "1f0792974ddca083bfc067e67666fda3bc1d941cb9c389b5c0fdf61b658c096c",
+  "root_reviewed_independent_audit_source_sha256": "30569ce2bb779c4fd7399c670371b371b859a8bee5311e1d58f6438a0a8ef19d",
+  "blind_review_finalized_at_utc": "2026-10-24T13:13:49.030041+00:00",
+  "public_export_contract": {
+    "aggregate_per_decision_omitted": true,
+    "actual_blind_identifiers_omitted": true,
+    "private_files_raw_outputs_labels_and_weights_not_exported": true,
+    "source_and_export_hashes_distinct_when_transformed": true,
+    "all_export_filenames_flat": true
+  },
+  "preservation": {
+    "seven_prior_ZIPs_byte_unchanged": true,
+    "initial_review_files_not_modified": true,
+    "no_website_edits_by_packager": true
+  },
+  "packaging_scope": "Read-only projection of frozen aggregate results and metadata; no semantic relabeling, model/GPU calls or raw candidate/PRIVATE access.",
+  "generated_metadata": {
+    "sources.json": {
+      "export_sha256": "3bfaa4fbb4ba430ea38a9e0ea757e75d481c330456a76dad18839e1abd8b1317",
+      "export_bytes": 15264
+    }
+  }
+}

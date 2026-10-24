@@ -1,0 +1,18 @@
+{
+  "kind": "offline_runtime_replay_and_blind_review_preparation_not_quality_score",
+  "packets": 200,
+  "assigned_outputs": 200,
+  "runtime_validities": {
+    "valid_patch": 185,
+    "invalid_patch": 15
+  },
+  "input_lock_sha256": "8fb6a8e23e0256f3c78760d17314e4597aa46426c527ec3a0f776d1873999e4b",
+  "outputs_sha256": "bf02aa173084fc470c7a071fdd55298a226236acd2b7429757b1c64bd59721b3",
+  "collection_config_sha256": "746707f2294b7659df4a61a973da7fc5f39e9d066f7b5ee358e07676a2b6a88d",
+  "files": {
+    "PRIVATE-mapping.json": "e18b36893b6c04eb25f164b7fa9e11969a7a45814f295e0ef928d3e0f603547d",
+    "PRIVATE-runtime-results.json": "6e0922ab2963aa70cf4077e0dbae851b2e5816c5a0ee7bf144937126fce3ee68",
+    "review-packets.json": "2d820c73064f56f6b959082bc8c24097b34629ce5e114f0fa2ff4dbaf9dc4793",
+    "review-template.json": "fd25c2c21a6454f8e481fcdaa82655fb6d7b1819afc512ee44730a2b32108d55"
+  }
+}

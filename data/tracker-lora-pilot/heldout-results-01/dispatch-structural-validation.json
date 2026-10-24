@@ -1,0 +1,15 @@
+{
+  "kind": "blind_dispatch_structural_validation_not_quality",
+  "status": "passed",
+  "utc": "2026-10-24T12:47:48.866295+00:00",
+  "packets": 200,
+  "reviewers": 2,
+  "per_reviewer": 100,
+  "identical_public_packet_meaning": true,
+  "one_candidate_per_input_per_reviewer": true,
+  "no_private_mapping_read": true,
+  "initial_reviews_per_packet": 1,
+  "dispatch_manifest_sha256": "8625c5040fad1ac5c36822a70a24c417977dddff898ec7208bb282564b6cc3da",
+  "public_packets_sha256": "2d820c73064f56f6b959082bc8c24097b34629ce5e114f0fa2ff4dbaf9dc4793",
+  "helper_sha256": "dad1e6444079132b3fa94bcf2545afc6c294f0ac90bb6280ba7fa2cc9b5c1ffa"
+}

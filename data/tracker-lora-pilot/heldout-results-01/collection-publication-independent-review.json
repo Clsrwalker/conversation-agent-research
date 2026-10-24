@@ -1,0 +1,578 @@
+{
+  "schema_version": 1,
+  "kind": "independent_metadata_export_audit",
+  "reviewer_role": "independent_model_reviewer",
+  "created_at_utc": "2026-10-24T13:00:11.044739+00:00",
+  "status": "passed",
+  "package_path_relative_to_project": "output/research/2026-10-24/tracker-lora-pilot/publication/heldout-collection-01-manifest-v2",
+  "package_summary_sha256": "fbd12d709ce3c565940a41cab75d5a4c7f45a1e7ddabf5b10ebd7e9b3902bee3",
+  "scope": {
+    "metadata_and_hash_audit_only": true,
+    "heldout_output_text_read": false,
+    "private_mapping_read": false,
+    "semantic_labels_read": false,
+    "gpu_or_model_calls": 0,
+    "package_or_site_mutated": false,
+    "quality_claim": null
+  },
+  "check_totals": {
+    "total": 103,
+    "passed": 103,
+    "failed": 0
+  },
+  "checks": [
+    {
+      "check": "exact_thirteen_file_set",
+      "passed": true
+    },
+    {
+      "check": "export_hash_size:collection-result-public.json",
+      "passed": true
+    },
+    {
+      "check": "source_binding:collection-result-public.json:output/research/2026-10-24/tracker-lora-pilot/evaluation/collection-01/collection-result.json",
+      "passed": true
+    },
+    {
+      "check": "flat_source_binding:collection-result-public.json",
+      "passed": true
+    },
+    {
+      "check": "byte_identity_declaration:collection-result-public.json",
+      "passed": true
+    },
+    {
+      "check": "sources_summary_agreement:collection-result-public.json",
+      "passed": true
+    },
+    {
+      "check": "export_hash_size:collection-config-public.json",
+      "passed": true
+    },
+    {
+      "check": "source_binding:collection-config-public.json:output/research/2026-10-24/tracker-lora-pilot/evaluation/collection-01/collection-config.json",
+      "passed": true
+    },
+    {
+      "check": "flat_source_binding:collection-config-public.json",
+      "passed": true
+    },
+    {
+      "check": "byte_identity_declaration:collection-config-public.json",
+      "passed": true
+    },
+    {
+      "check": "sources_summary_agreement:collection-config-public.json",
+      "passed": true
+    },
+    {
+      "check": "export_hash_size:resume-decision-public.json",
+      "passed": true
+    },
+    {
+      "check": "source_binding:resume-decision-public.json:output/research/2026-10-24/tracker-lora-pilot/audit/collection-01-resume-decision.json",
+      "passed": true
+    },
+    {
+      "check": "flat_source_binding:resume-decision-public.json",
+      "passed": true
+    },
+    {
+      "check": "byte_identity_declaration:resume-decision-public.json",
+      "passed": true
+    },
+    {
+      "check": "sources_summary_agreement:resume-decision-public.json",
+      "passed": true
+    },
+    {
+      "check": "export_hash_size:resource-static-review-public.json",
+      "passed": true
+    },
+    {
+      "check": "source_binding:resource-static-review-public.json:output/research/2026-10-24/tracker-lora-pilot/audit/collection-resource-static-review.json",
+      "passed": true
+    },
+    {
+      "check": "flat_source_binding:resource-static-review-public.json",
+      "passed": true
+    },
+    {
+      "check": "byte_identity_declaration:resource-static-review-public.json",
+      "passed": true
+    },
+    {
+      "check": "sources_summary_agreement:resource-static-review-public.json",
+      "passed": true
+    },
+    {
+      "check": "export_hash_size:protocol-v2.json",
+      "passed": true
+    },
+    {
+      "check": "source_binding:protocol-v2.json:output/research/2026-10-24/tracker-lora-pilot/evaluation/protocol-memory-guard-v2.json",
+      "passed": true
+    },
+    {
+      "check": "flat_source_binding:protocol-v2.json",
+      "passed": true
+    },
+    {
+      "check": "byte_identity_declaration:protocol-v2.json",
+      "passed": true
+    },
+    {
+      "check": "sources_summary_agreement:protocol-v2.json",
+      "passed": true
+    },
+    {
+      "check": "export_hash_size:protocol-lock-v2.json",
+      "passed": true
+    },
+    {
+      "check": "source_binding:protocol-lock-v2.json:output/research/2026-10-24/tracker-lora-pilot/evaluation/protocol-lock-memory-guard-v2.json",
+      "passed": true
+    },
+    {
+      "check": "flat_source_binding:protocol-lock-v2.json",
+      "passed": true
+    },
+    {
+      "check": "byte_identity_declaration:protocol-lock-v2.json",
+      "passed": true
+    },
+    {
+      "check": "sources_summary_agreement:protocol-lock-v2.json",
+      "passed": true
+    },
+    {
+      "check": "export_hash_size:collection-completion-public.json",
+      "passed": true
+    },
+    {
+      "check": "source_binding:collection-completion-public.json:output/research/2026-10-24/tracker-lora-pilot/evaluation/collection-01-terminal-receipt.json",
+      "passed": true
+    },
+    {
+      "check": "flat_source_binding:collection-completion-public.json",
+      "passed": true
+    },
+    {
+      "check": "byte_identity_declaration:collection-completion-public.json",
+      "passed": true
+    },
+    {
+      "check": "sources_summary_agreement:collection-completion-public.json",
+      "passed": true
+    },
+    {
+      "check": "export_hash_size:interruption-and-resume-public.json",
+      "passed": true
+    },
+    {
+      "check": "source_binding:interruption-and-resume-public.json:output/research/2026-10-24/tracker-lora-pilot/evaluation/collection-01-recovery-01/interruption-and-resume.json",
+      "passed": true
+    },
+    {
+      "check": "flat_source_binding:interruption-and-resume-public.json",
+      "passed": true
+    },
+    {
+      "check": "byte_identity_declaration:interruption-and-resume-public.json",
+      "passed": true
+    },
+    {
+      "check": "sources_summary_agreement:interruption-and-resume-public.json",
+      "passed": true
+    },
+    {
+      "check": "export_hash_size:collection-events-original.jsonl",
+      "passed": true
+    },
+    {
+      "check": "source_binding:collection-events-original.jsonl:output/research/2026-10-24/tracker-lora-pilot/evaluation/collection-01.log",
+      "passed": true
+    },
+    {
+      "check": "flat_source_binding:collection-events-original.jsonl",
+      "passed": true
+    },
+    {
+      "check": "byte_identity_declaration:collection-events-original.jsonl",
+      "passed": true
+    },
+    {
+      "check": "sources_summary_agreement:collection-events-original.jsonl",
+      "passed": true
+    },
+    {
+      "check": "export_hash_size:collection-events-resume.jsonl",
+      "passed": true
+    },
+    {
+      "check": "source_binding:collection-events-resume.jsonl:output/research/2026-10-24/tracker-lora-pilot/evaluation/collection-01-resume-01.log",
+      "passed": true
+    },
+    {
+      "check": "flat_source_binding:collection-events-resume.jsonl",
+      "passed": true
+    },
+    {
+      "check": "byte_identity_declaration:collection-events-resume.jsonl",
+      "passed": true
+    },
+    {
+      "check": "sources_summary_agreement:collection-events-resume.jsonl",
+      "passed": true
+    },
+    {
+      "check": "export_hash_size:attempt-accounting-public.json",
+      "passed": true
+    },
+    {
+      "check": "source_binding:attempt-accounting-public.json:output/research/2026-10-24/tracker-lora-pilot/evaluation/collection-01-terminal-receipt.json",
+      "passed": true
+    },
+    {
+      "check": "source_binding:attempt-accounting-public.json:output/research/2026-10-24/tracker-lora-pilot/evaluation/collection-01-recovery-01/interruption-and-resume.json",
+      "passed": true
+    },
+    {
+      "check": "source_binding:attempt-accounting-public.json:output/research/2026-10-24/tracker-lora-pilot/audit/heldout-final-publication-plan.json",
+      "passed": true
+    },
+    {
+      "check": "sources_summary_agreement:attempt-accounting-public.json",
+      "passed": true
+    },
+    {
+      "check": "sources_json_hash_size",
+      "passed": true
+    },
+    {
+      "check": "summary_source_binding:output/research/2026-10-24/tracker-lora-pilot/evaluation/collection-01-terminal-receipt.json",
+      "passed": true
+    },
+    {
+      "check": "summary_source_binding:output/research/2026-10-24/tracker-lora-pilot/evaluation/collection-01-recovery-01/interruption-and-resume.json",
+      "passed": true
+    },
+    {
+      "check": "summary_source_binding:output/research/2026-10-24/tracker-lora-pilot/audit/heldout-final-publication-plan.json",
+      "passed": true
+    },
+    {
+      "check": "summary_source_binding:output/research/2026-10-24/tracker-lora-pilot/publication/formal-training-02/summary.json",
+      "passed": true
+    },
+    {
+      "check": "summary_source_binding:output/research/2026-10-24/tracker-lora-pilot/audit/heldout-final-publication-plan.json",
+      "passed": true
+    },
+    {
+      "check": "upstream_summary",
+      "passed": true
+    },
+    {
+      "check": "upstream_sources",
+      "passed": true
+    },
+    {
+      "check": "eleven_export_bytes_equal_upstream",
+      "passed": true
+    },
+    {
+      "check": "exact_source_event_allowlist:collection-events-original.jsonl",
+      "passed": true
+    },
+    {
+      "check": "exact_source_event_allowlist:collection-events-resume.jsonl",
+      "passed": true
+    },
+    {
+      "check": "durable_log_partition_73_127",
+      "passed": true
+    },
+    {
+      "check": "two_hundred_unique_assignments",
+      "passed": true
+    },
+    {
+      "check": "metadata_completion_order_status",
+      "passed": true
+    },
+    {
+      "check": "hundred_pairs_one_cross_process",
+      "passed": true,
+      "evidence": {
+        "cross_process_rows": [
+          36
+        ],
+        "same_process_pairs": 99
+      }
+    },
+    {
+      "check": "summary_counts_200_201",
+      "passed": true
+    },
+    {
+      "check": "receipt_counts_zero_failures",
+      "passed": true
+    },
+    {
+      "check": "zero_caps_receipt_binding",
+      "passed": true,
+      "evidence": "Receipt binding only; raw output records not inspected."
+    },
+    {
+      "check": "terminal_summary_hashes_equal",
+      "passed": true
+    },
+    {
+      "check": "public_values_preserved:collection-result-public.json",
+      "passed": true
+    },
+    {
+      "check": "public_values_preserved:collection-config-public.json",
+      "passed": true
+    },
+    {
+      "check": "result_durable_count_no_quality",
+      "passed": true
+    },
+    {
+      "check": "frozen_2048_512_greedy_dynamic",
+      "passed": true
+    },
+    {
+      "check": "public_completion_value:assigned_calls",
+      "passed": true
+    },
+    {
+      "check": "public_completion_value:unique_assigned_records",
+      "passed": true
+    },
+    {
+      "check": "public_completion_value:paired_rows",
+      "passed": true
+    },
+    {
+      "check": "public_completion_value:statuses",
+      "passed": true
+    },
+    {
+      "check": "public_completion_value:token_cap_hits",
+      "passed": true
+    },
+    {
+      "check": "public_completion_value:recorded_completed_input_tokens",
+      "passed": true
+    },
+    {
+      "check": "public_completion_value:recorded_completed_output_tokens",
+      "passed": true
+    },
+    {
+      "check": "public_completion_value:source_and_result_hashes",
+      "passed": true
+    },
+    {
+      "check": "public_completion_value:original_prefix_sha256",
+      "passed": true
+    },
+    {
+      "check": "public_completion_value:original_prefix_bytes",
+      "passed": true
+    },
+    {
+      "check": "public_completion_value:original_prefix_byte_equal",
+      "passed": true
+    },
+    {
+      "check": "public_completion_value:attempt_accounting",
+      "passed": true
+    },
+    {
+      "check": "summary_attempt_account_equal",
+      "passed": true
+    },
+    {
+      "check": "public_attempt_account_core_equal",
+      "passed": true
+    },
+    {
+      "check": "201_attempts_unknown_interrupted_output",
+      "passed": true
+    },
+    {
+      "check": "elapsed_bounds_not_exact",
+      "passed": true
+    },
+    {
+      "check": "completed_only_token_costs",
+      "passed": true
+    },
+    {
+      "check": "final_normal_exit_original_interruption_retained",
+      "passed": true
+    },
+    {
+      "check": "prefix_preservation_receipt_binding",
+      "passed": true
+    },
+    {
+      "check": "cross_process_limit_explicit",
+      "passed": true
+    },
+    {
+      "check": "quality_explicitly_absent",
+      "passed": true
+    },
+    {
+      "check": "public_identity_path_payload_scan",
+      "passed": true,
+      "evidence": []
+    },
+    {
+      "check": "seven_historical_zip_bytes_preserved",
+      "passed": true
+    },
+    {
+      "check": "public_zip_manifest_matches_plan",
+      "passed": true
+    }
+  ],
+  "package_files": [
+    {
+      "path": "attempt-accounting-public.json",
+      "sha256": "6d5d96c0967de162e4e7c576d18a02dbc3ece9d91eb6a58a0340891119b7520f",
+      "bytes": 2123
+    },
+    {
+      "path": "collection-completion-public.json",
+      "sha256": "6b5ff55fbd923cf877fd46c0931d12f241747fff2d67ca133f73f8b9cb26b59a",
+      "bytes": 6403
+    },
+    {
+      "path": "collection-config-public.json",
+      "sha256": "beebe2a6c448131b3f3f071f24f81263d7bb51d853ace61333aecccbcc86e946",
+      "bytes": 1121
+    },
+    {
+      "path": "collection-events-original.jsonl",
+      "sha256": "2a4f0463ece7dcd45b07345c20648e2a051d2fd151d50804c1409e82a5d66058",
+      "bytes": 15515
+    },
+    {
+      "path": "collection-events-resume.jsonl",
+      "sha256": "995de1a79edd4450a1ab7676c89667fef73fb5921ea229614ec6c5f208929389",
+      "bytes": 27071
+    },
+    {
+      "path": "collection-result-public.json",
+      "sha256": "e528b018784367a0546aee137e8e45549e81501ab1ffeb9bc20c68ded942cf64",
+      "bytes": 197
+    },
+    {
+      "path": "interruption-and-resume-public.json",
+      "sha256": "4a420a281bca4825e51a82766ac6ec6b50a37dc6e540b25fadf873bf73ae9d2f",
+      "bytes": 4863
+    },
+    {
+      "path": "protocol-lock-v2.json",
+      "sha256": "54e646a5b78fee5cb8a57742dec9ab76c700e5a5781a06c249aca89c1f6813e4",
+      "bytes": 1803
+    },
+    {
+      "path": "protocol-v2.json",
+      "sha256": "c99f21a099a28f9d093957e5f4dd9ee55dae5056039c27d7508d06a863cccb14",
+      "bytes": 14169
+    },
+    {
+      "path": "resource-static-review-public.json",
+      "sha256": "5711b4d77db4941b7e7d9a9433e30b24ed28b867f855244130e2daf03fde3c30",
+      "bytes": 8530
+    },
+    {
+      "path": "resume-decision-public.json",
+      "sha256": "ea7852caeb5f295cdfb2be57ff859b249a887527611510d02d9bf47ee48c3e01",
+      "bytes": 2213
+    },
+    {
+      "path": "sources.json",
+      "sha256": "753605288c030de3d86c7e8ca73b6cd20c45497acc202a66a54a1174bba6f639",
+      "bytes": 13647
+    },
+    {
+      "path": "summary.json",
+      "sha256": "fbd12d709ce3c565940a41cab75d5a4c7f45a1e7ddabf5b10ebd7e9b3902bee3",
+      "bytes": 15231
+    }
+  ],
+  "verified_source_hashes": {
+    "output/research/2026-10-24/tracker-lora-pilot/evaluation/collection-01/collection-result.json": "537efc43ded4fb8086f81afa0c018850c960faf4227cb19778cf02d784c72bf1",
+    "output/research/2026-10-24/tracker-lora-pilot/evaluation/collection-01/collection-config.json": "746707f2294b7659df4a61a973da7fc5f39e9d066f7b5ee358e07676a2b6a88d",
+    "output/research/2026-10-24/tracker-lora-pilot/audit/collection-01-resume-decision.json": "ea7852caeb5f295cdfb2be57ff859b249a887527611510d02d9bf47ee48c3e01",
+    "output/research/2026-10-24/tracker-lora-pilot/audit/collection-resource-static-review.json": "7ee00bb26a03b7feaabc81eb09fca25ba0a97f5e82eb3597ca7181329dd71e0b",
+    "output/research/2026-10-24/tracker-lora-pilot/evaluation/protocol-memory-guard-v2.json": "ba2499114856b0241d0525f9da8010736682475714afb6da0d60b35c2e43595f",
+    "output/research/2026-10-24/tracker-lora-pilot/evaluation/protocol-lock-memory-guard-v2.json": "8fb6a8e23e0256f3c78760d17314e4597aa46426c527ec3a0f776d1873999e4b",
+    "output/research/2026-10-24/tracker-lora-pilot/evaluation/collection-01-terminal-receipt.json": "5c462a8878afb687323620c0072e6df5f7785ce1c69bd65d8f3cf54b85a0d73a",
+    "output/research/2026-10-24/tracker-lora-pilot/evaluation/collection-01-recovery-01/interruption-and-resume.json": "acd4f822b25d424aa984b592d3332c48add3abf326bf0674addae7d5c71487b5",
+    "output/research/2026-10-24/tracker-lora-pilot/evaluation/collection-01.log": "f61287def9bfee756f79a8e79918e6be95ba5ff4202fac97b203c46dac8c0fbc",
+    "output/research/2026-10-24/tracker-lora-pilot/evaluation/collection-01-resume-01.log": "4b51c530cd2cc2e9e2366bcab867ee08e1cc25b301fa924b4cfcf93881a1debc",
+    "output/research/2026-10-24/tracker-lora-pilot/audit/heldout-final-publication-plan.json": "fd40a5bb97170330adcef48f68fbb911d745e4690e409d870b01397762823bde"
+  },
+  "preserved_zip_files": [
+    {
+      "path_relative_to_project": "sites/conversation-agent-research/dist/data/intent-role-separation/evidence.zip",
+      "sha256": "865cf0e08c7052d2d327bbbe1d7740c007047ea4542917eaa4796ca5f77452a5",
+      "bytes": 4855724,
+      "matches_preserved": true
+    },
+    {
+      "path_relative_to_project": "sites/conversation-agent-research/dist/data/intent-role-diagnostics/evidence.zip",
+      "sha256": "32e6d9566b1f989195dfc023a36e312f281ac61e97c277a8d769784914def613",
+      "bytes": 286605,
+      "matches_preserved": true
+    },
+    {
+      "path_relative_to_project": "sites/conversation-agent-research/dist/data/tracker-lora-plan/evidence.zip",
+      "sha256": "061027b393a7ff07ca4255aa4f740fd4eda308e1ec7b70dc13e90e7161a64aac",
+      "bytes": 85358,
+      "matches_preserved": true
+    },
+    {
+      "path_relative_to_project": "sites/conversation-agent-research/dist/data/tracker-lora-pilot/evidence.zip",
+      "sha256": "7e4018e684cd4a92fe12b333a931170105ba7d61649048ddecd512e58aed5c80",
+      "bytes": 1259706,
+      "matches_preserved": true
+    },
+    {
+      "path_relative_to_project": "sites/conversation-agent-research/dist/data/tracker-lora-pilot/followup-01/evidence.zip",
+      "sha256": "0d25311a746e3461b7bb3d22ab1d0ba1609213bf2c4c89f055904f4399c50bff",
+      "bytes": 28594,
+      "matches_preserved": true
+    },
+    {
+      "path_relative_to_project": "sites/conversation-agent-research/dist/data/tracker-lora-pilot/memory-revision-01/evidence.zip",
+      "sha256": "b63049ba6ea557c798e715cbaeb250a826add84a804d272469387c554ea292a4",
+      "bytes": 64424,
+      "matches_preserved": true
+    },
+    {
+      "path_relative_to_project": "sites/conversation-agent-research/dist/data/tracker-lora-pilot/formal-training-02/evidence.zip",
+      "sha256": "e4f9601655aa624fbd7e37837cf6774829874a4003a18840a268046c2d88f0d5",
+      "bytes": 148068,
+      "matches_preserved": true
+    }
+  ],
+  "conclusion": "The public metadata package preserves collection accounting, provenance and explicit recovery limitations. This is engineering evidence only; it establishes neither semantic correctness, reduced intention omissions, adapter benefit nor deployment benefit.",
+  "limitations": [
+    "Raw held-out outputs were not opened. Token-cap count, adapter enablement, original prefix preservation and output-file digest are bound to terminal receipt metadata rather than independently rederived from generated records.",
+    "No semantic scoring or PRIVATE/label access. Completed generation is not a quality result.",
+    "Row 36 spans two model-loading processes. Matching frozen files does not prove identical live tensors. All 200 assigned records remain included.",
+    "Interrupted output tokens remain unknown; 449.746818 to 478.257882 seconds is a bound, not exact generation duration. Completed token totals exclude this unknown output cost.",
+    "Seven ZIPs were checked locally as opaque bytes without extraction; remote published download bytes were not checked.",
+    "The prospective publication plan recovery hash predates terminal receipt finalization. Current exports bind the finalized receipt; future quality-release artifacts are outside this metadata package audit."
+  ]
+}

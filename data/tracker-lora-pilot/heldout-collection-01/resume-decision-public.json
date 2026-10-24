@@ -1,0 +1,29 @@
+{
+  "kind": "prospective_operational_resume_decision_not_quality_result",
+  "status": "authorized_conditional_controlled_restart",
+  "decided_at_utc": "2026-10-24 12:35:38 UTC",
+  "reason": "A live call has been much slower than the recent completed-call distribution while device memory is near capacity and unused reserved allocator memory is high. This is an operational cache-reset intervention, not a diagnosis of a dead process or proven slowdown cause.",
+  "evidence_at_2026_10_24_123331_utc": {
+    "durable_records": 73,
+    "current_call_elapsed_seconds": 250.39,
+    "recent_20_median_seconds": 4.5041,
+    "recent_20_max_seconds": 51.5085,
+    "last_completed_allocated_gb": 10.248,
+    "last_completed_reserved_gb": 15.011,
+    "process_gpu_dedicated_gb": 15.065,
+    "process_gpu_shared_gb": 0.315,
+    "process_live": true,
+    "process_cpu_advancing": true
+  },
+  "conditions": [
+    "Operator must refresh live process and current-call progress immediately before acting; if the long call has resolved and normal progress resumed, report that evidence first.",
+    "Freeze raw metadata and exact durable-output prefix; after stopping reconcile any additional fully recorded calls and preserve them all.",
+    "Use one controlled interrupt on the owned collector session; verify its terminal result and process absence before restarting.",
+    "Resume the same output directory with the identical frozen source, data, model, adapter, prompt, generation configuration and order; never remove, rerun or repair completed or failed durable records.",
+    "Verify configuration and all protocol dependencies before resume, and exact preservation of the previous output prefix afterwards.",
+    "Retain the interrupted unfinished attempt as separate execution evidence, including elapsed time and unknown output-token cost; it remains unresolved until its assigned durable result exists.",
+    "The frozen collector natively supports resume and rejects different configuration; no source/protocol/model/data amendment is authorized here.",
+    "Do not infer quality, change stopping criteria, select checkpoints, or inspect generated text to decide whether to restart."
+  ],
+  "quality_results": null
+}

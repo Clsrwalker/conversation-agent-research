@@ -1,0 +1,244 @@
+{
+  "schema_version": 1,
+  "kind": "engineering_validation",
+  "status": "completed_collection_integrity_verified",
+  "date": "2026-10-24",
+  "timezone": "America/Halifax",
+  "frozen_at_utc": "2026-10-24T12:52:26.628188+00:00",
+  "quality_results": null,
+  "semantic_quality_scored_by_this_export": false,
+  "new_test_model_inference_calls": 200,
+  "new_test_model_inference_calls_unit": "Assigned benchmark records with durable results; the extra interrupted attempt is accounted separately.",
+  "extra_interrupted_attempts": 1,
+  "actual_started_generation_attempts": 201,
+  "assigned_records": 200,
+  "unique_assignments": 200,
+  "paired_rows": 100,
+  "completed_generation_records": 200,
+  "failed_generation_records": 0,
+  "token_cap_hits": 0,
+  "last_durable_record_utc": "2026-10-24T12:46:32.819895+00:00",
+  "normal_final_exit": true,
+  "original_durable_prefix_records": 73,
+  "original_prefix_preserved_byte_for_byte": true,
+  "source_and_result_hashes": {
+    "outputs": "bf02aa173084fc470c7a071fdd55298a226236acd2b7429757b1c64bd59721b3",
+    "collection_result": "537efc43ded4fb8086f81afa0c018850c960faf4227cb19778cf02d784c72bf1",
+    "collection_config": "746707f2294b7659df4a61a973da7fc5f39e9d066f7b5ee358e07676a2b6a88d",
+    "collector_snapshot": "da6c2e025438dcc609a34ef34f1d4dd717fbcb41192a0dcf47b252ebdc830b51",
+    "protocol_lock": "8fb6a8e23e0256f3c78760d17314e4597aa46426c527ec3a0f776d1873999e4b",
+    "adapter_weights": "70af35505394ebc53d81aa839ad78165166d5ad7fd9be36314a3f0962265a707",
+    "adapter_config": "4b10f017bee9d111bb544e6dd9ee025b5c2353317839fc5e3bc183fb38b3e7e2",
+    "precollection_gate": "eaf5fc2b1b3a567bc8e8a7cd2655300831a0111ce7689501e38cf712613d3422",
+    "recovery_receipt": "acd4f822b25d424aa984b592d3332c48add3abf326bf0674addae7d5c71487b5"
+  },
+  "training_package_reference": {
+    "source_path_relative": "output/research/2026-10-24/tracker-lora-pilot/publication/formal-training-02/summary.json",
+    "source_sha256": "aaf949a534c0fea15e74d966a111c83033f56cb08b056d4d79887304b6314e49"
+  },
+  "physical_pairing_limit": {
+    "cross_process_pairs": 1,
+    "row_index_zero_based": 36,
+    "statement": "This pair does not satisfy the protocol statement that both arms use the identical in-memory quantized model object. Matching files/configuration does not prove identical live quantized tensors or identical transient execution conditions.",
+    "disposition": "Retain the pair in all 200 assigned records; do not drop or rerun it."
+  },
+  "attempt_accounting": {
+    "durable_assigned_results": 200,
+    "extra_interrupted_unreturned_attempts": 1,
+    "total_started_generation_attempts": 201,
+    "interrupted_input_tokens": 1030,
+    "interrupted_output_tokens": null,
+    "interrupted_wall_time_bounds": {
+      "not_before_pre_interrupt_snapshot_utc": "2026-10-24T12:36:50.935557+00:00",
+      "not_after_process_absence_confirmation_utc": "2026-10-24T12:37:19.446621+00:00",
+      "unreturned_elapsed_lower_bound_seconds": 449.746818,
+      "unreturned_elapsed_upper_bound_seconds": 478.257882,
+      "note": "Exact process-exit wall timestamp was not emitted; do not present the confirmation upper bound as exact generation cost."
+    },
+    "cost_note": "Recorded completed-call tokens exclude the unknown output tokens of one extra interrupted attempt. Quality assignment remains 200, not 201."
+  },
+  "comparison_scope": "Same frozen checkpoint/configuration; 99 complete pairs run within one process, with the disclosed row36 cross-process exception. Identical files do not prove identical live quantized tensors across reloads.",
+  "limits": [
+    "Fictional model-authored, model-reviewed examples are not human gold or live-user evidence.",
+    "500 training updates are 100 families; test100 are20 correlated families.",
+    "Teacher-forced one-step prior state including10 designed wrong-text priors; no own-state rollout or accumulated error recovery.",
+    "No chat/work integration, final-answer correctness, deployment/user outcome or arbitrary model-transfer benefit is tested.",
+    "Single training/evaluation pilot with an operational restart; no causal claim about why slowdown occurred or why resumption progressed.",
+    "Completed generation and integrity checks do not establish successful answers or reduced intention omission.",
+    "No raw held-out outputs, blind packets, mappings, labels, weights, tokenizer payloads or semantic results are included.",
+    "No inference was started by this export operation; the reported 200 records and extra attempt are the completed study execution."
+  ],
+  "source_and_export_files": {
+    "collection-result-public.json": {
+      "export_sha256": "e528b018784367a0546aee137e8e45549e81501ab1ffeb9bc20c68ded942cf64",
+      "export_bytes": 197,
+      "source_bindings": [
+        {
+          "source_path_relative": "output/research/2026-10-24/tracker-lora-pilot/evaluation/collection-01/collection-result.json",
+          "source_sha256": "537efc43ded4fb8086f81afa0c018850c960faf4227cb19778cf02d784c72bf1"
+        }
+      ],
+      "transformation": "Parse JSON; remove local identity/process/session/private-access fields; convert project absolute paths to project-relative references; serialize UTF-8. No model output or labels accessed.",
+      "byte_identical_to_source": false,
+      "source_path_relative_to_study": "evaluation/collection-01/collection-result.json",
+      "source_sha256": "537efc43ded4fb8086f81afa0c018850c960faf4227cb19778cf02d784c72bf1"
+    },
+    "collection-config-public.json": {
+      "export_sha256": "beebe2a6c448131b3f3f071f24f81263d7bb51d853ace61333aecccbcc86e946",
+      "export_bytes": 1121,
+      "source_bindings": [
+        {
+          "source_path_relative": "output/research/2026-10-24/tracker-lora-pilot/evaluation/collection-01/collection-config.json",
+          "source_sha256": "746707f2294b7659df4a61a973da7fc5f39e9d066f7b5ee358e07676a2b6a88d"
+        }
+      ],
+      "transformation": "Parse JSON; remove local identity/process/session/private-access fields; convert project absolute paths to project-relative references; serialize UTF-8. No model output or labels accessed.",
+      "byte_identical_to_source": false,
+      "source_path_relative_to_study": "evaluation/collection-01/collection-config.json",
+      "source_sha256": "746707f2294b7659df4a61a973da7fc5f39e9d066f7b5ee358e07676a2b6a88d"
+    },
+    "resume-decision-public.json": {
+      "export_sha256": "ea7852caeb5f295cdfb2be57ff859b249a887527611510d02d9bf47ee48c3e01",
+      "export_bytes": 2213,
+      "source_bindings": [
+        {
+          "source_path_relative": "output/research/2026-10-24/tracker-lora-pilot/audit/collection-01-resume-decision.json",
+          "source_sha256": "ea7852caeb5f295cdfb2be57ff859b249a887527611510d02d9bf47ee48c3e01"
+        }
+      ],
+      "transformation": "Parse JSON; remove local identity/process/session/private-access fields; convert project absolute paths to project-relative references; serialize UTF-8. No model output or labels accessed.",
+      "byte_identical_to_source": true,
+      "source_path_relative_to_study": "audit/collection-01-resume-decision.json",
+      "source_sha256": "ea7852caeb5f295cdfb2be57ff859b249a887527611510d02d9bf47ee48c3e01"
+    },
+    "resource-static-review-public.json": {
+      "export_sha256": "5711b4d77db4941b7e7d9a9433e30b24ed28b867f855244130e2daf03fde3c30",
+      "export_bytes": 8530,
+      "source_bindings": [
+        {
+          "source_path_relative": "output/research/2026-10-24/tracker-lora-pilot/audit/collection-resource-static-review.json",
+          "source_sha256": "7ee00bb26a03b7feaabc81eb09fca25ba0a97f5e82eb3597ca7181329dd71e0b"
+        }
+      ],
+      "transformation": "Parse JSON; remove local identity/process/session/private-access fields; convert project absolute paths to project-relative references; serialize UTF-8. No model output or labels accessed.",
+      "byte_identical_to_source": false,
+      "source_path_relative_to_study": "audit/collection-resource-static-review.json",
+      "source_sha256": "7ee00bb26a03b7feaabc81eb09fca25ba0a97f5e82eb3597ca7181329dd71e0b"
+    },
+    "protocol-v2.json": {
+      "export_sha256": "c99f21a099a28f9d093957e5f4dd9ee55dae5056039c27d7508d06a863cccb14",
+      "export_bytes": 14169,
+      "source_bindings": [
+        {
+          "source_path_relative": "output/research/2026-10-24/tracker-lora-pilot/evaluation/protocol-memory-guard-v2.json",
+          "source_sha256": "ba2499114856b0241d0525f9da8010736682475714afb6da0d60b35c2e43595f"
+        }
+      ],
+      "transformation": "Parse JSON; remove local identity/process/session/private-access fields; convert project absolute paths to project-relative references; serialize UTF-8. No model output or labels accessed.",
+      "byte_identical_to_source": false,
+      "source_path_relative_to_study": "evaluation/protocol-memory-guard-v2.json",
+      "source_sha256": "ba2499114856b0241d0525f9da8010736682475714afb6da0d60b35c2e43595f"
+    },
+    "protocol-lock-v2.json": {
+      "export_sha256": "54e646a5b78fee5cb8a57742dec9ab76c700e5a5781a06c249aca89c1f6813e4",
+      "export_bytes": 1803,
+      "source_bindings": [
+        {
+          "source_path_relative": "output/research/2026-10-24/tracker-lora-pilot/evaluation/protocol-lock-memory-guard-v2.json",
+          "source_sha256": "8fb6a8e23e0256f3c78760d17314e4597aa46426c527ec3a0f776d1873999e4b"
+        }
+      ],
+      "transformation": "Parse JSON; remove local identity/process/session/private-access fields; convert project absolute paths to project-relative references; serialize UTF-8. No model output or labels accessed.",
+      "byte_identical_to_source": false,
+      "source_path_relative_to_study": "evaluation/protocol-lock-memory-guard-v2.json",
+      "source_sha256": "8fb6a8e23e0256f3c78760d17314e4597aa46426c527ec3a0f776d1873999e4b"
+    },
+    "collection-completion-public.json": {
+      "export_sha256": "6b5ff55fbd923cf877fd46c0931d12f241747fff2d67ca133f73f8b9cb26b59a",
+      "export_bytes": 6403,
+      "source_bindings": [
+        {
+          "source_path_relative": "output/research/2026-10-24/tracker-lora-pilot/evaluation/collection-01-terminal-receipt.json",
+          "source_sha256": "5c462a8878afb687323620c0072e6df5f7785ce1c69bd65d8f3cf54b85a0d73a"
+        }
+      ],
+      "transformation": "Sanitized terminal integrity metadata; preserve counts, hashes, timestamps, attempt accounting and cross-process exception; no raw outputs.",
+      "byte_identical_to_source": false,
+      "source_path_relative_to_study": "evaluation/collection-01-terminal-receipt.json",
+      "source_sha256": "5c462a8878afb687323620c0072e6df5f7785ce1c69bd65d8f3cf54b85a0d73a"
+    },
+    "interruption-and-resume-public.json": {
+      "export_sha256": "4a420a281bca4825e51a82766ac6ec6b50a37dc6e540b25fadf873bf73ae9d2f",
+      "export_bytes": 4863,
+      "source_bindings": [
+        {
+          "source_path_relative": "output/research/2026-10-24/tracker-lora-pilot/evaluation/collection-01-recovery-01/interruption-and-resume.json",
+          "source_sha256": "acd4f822b25d424aa984b592d3332c48add3abf326bf0674addae7d5c71487b5"
+        }
+      ],
+      "transformation": "Sanitized recovery metadata; omit current-call field projection and all process/session identifiers, preserve prefix hashes, time bounds, unchanged bindings and row36 exception.",
+      "byte_identical_to_source": false,
+      "source_path_relative_to_study": "evaluation/collection-01-recovery-01/interruption-and-resume.json",
+      "source_sha256": "acd4f822b25d424aa984b592d3332c48add3abf326bf0674addae7d5c71487b5"
+    },
+    "collection-events-original.jsonl": {
+      "export_sha256": "2a4f0463ece7dcd45b07345c20648e2a051d2fd151d50804c1409e82a5d66058",
+      "export_bytes": 15515,
+      "source_bindings": [
+        {
+          "source_path_relative": "output/research/2026-10-24/tracker-lora-pilot/evaluation/collection-01.log",
+          "source_sha256": "f61287def9bfee756f79a8e79918e6be95ba5ff4202fac97b203c46dac8c0fbc"
+        }
+      ],
+      "transformation": "Explicit event-field allowlist only; retain collection_start/call_recorded timing and assignment/status metadata; omit process ID, warnings and local installation paths.",
+      "byte_identical_to_source": false,
+      "source_path_relative_to_study": "evaluation/collection-01.log",
+      "source_sha256": "f61287def9bfee756f79a8e79918e6be95ba5ff4202fac97b203c46dac8c0fbc"
+    },
+    "collection-events-resume.jsonl": {
+      "export_sha256": "995de1a79edd4450a1ab7676c89667fef73fb5921ea229614ec6c5f208929389",
+      "export_bytes": 27071,
+      "source_bindings": [
+        {
+          "source_path_relative": "output/research/2026-10-24/tracker-lora-pilot/evaluation/collection-01-resume-01.log",
+          "source_sha256": "4b51c530cd2cc2e9e2366bcab867ee08e1cc25b301fa924b4cfcf93881a1debc"
+        }
+      ],
+      "transformation": "Explicit event-field allowlist only; retain collection_start/call_recorded timing and assignment/status metadata; omit process ID, warnings and local installation paths.",
+      "byte_identical_to_source": false,
+      "source_path_relative_to_study": "evaluation/collection-01-resume-01.log",
+      "source_sha256": "4b51c530cd2cc2e9e2366bcab867ee08e1cc25b301fa924b4cfcf93881a1debc"
+    },
+    "attempt-accounting-public.json": {
+      "export_sha256": "6d5d96c0967de162e4e7c576d18a02dbc3ece9d91eb6a58a0340891119b7520f",
+      "export_bytes": 2123,
+      "source_bindings": [
+        {
+          "source_path_relative": "output/research/2026-10-24/tracker-lora-pilot/evaluation/collection-01-terminal-receipt.json",
+          "source_sha256": "5c462a8878afb687323620c0072e6df5f7785ce1c69bd65d8f3cf54b85a0d73a"
+        },
+        {
+          "source_path_relative": "output/research/2026-10-24/tracker-lora-pilot/evaluation/collection-01-recovery-01/interruption-and-resume.json",
+          "source_sha256": "acd4f822b25d424aa984b592d3332c48add3abf326bf0674addae7d5c71487b5"
+        },
+        {
+          "source_path_relative": "output/research/2026-10-24/tracker-lora-pilot/audit/heldout-final-publication-plan.json",
+          "source_sha256": "fd40a5bb97170330adcef48f68fbb911d745e4690e409d870b01397762823bde"
+        }
+      ],
+      "transformation": "Derive aggregate execution counts and known token totals from terminal receipt; preserve unknown interrupted output-token cost and elapsed bounds; no semantic scoring.",
+      "byte_identical_to_source": false
+    }
+  },
+  "generated_metadata": {
+    "sources.json": {
+      "export_sha256": "753605288c030de3d86c7e8ca73b6cd20c45497acc202a66a54a1174bba6f639",
+      "export_bytes": 13647
+    }
+  },
+  "manifest_interface_revision": {
+    "name": "flat-manifest-v2",
+    "reason": "Builder interface adaptation only. All 11 evidence export files are byte-identical to the first metadata package. This is not a new collection or experiment.",
+    "upstream_summary_sha256": "8d4b36fe77d4e1ed74c15dce3917639ef93da5a0e6d062b2a78bab9fb82d74c5"
+  }
+}
