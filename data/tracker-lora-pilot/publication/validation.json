@@ -1,0 +1,147 @@
+{
+  "id": "tracker-lora-pilot-validation",
+  "date": "2026-10-24",
+  "type": "grouped_data_and_training_engineering_validation",
+  "status": "passed_completed_checks_training_running",
+  "snapshot_at_utc": "2026-10-24T11:19:43.276326+00:00",
+  "snapshot_at_halifax": "2026-10-24T08:19:43.276326-03:00",
+  "tested_manifest_sha256": "94280f80ff17e990f189f1fc18b3ca4d8b579422770e81a5acd5ea12c920b873",
+  "checks": [
+    {
+      "check": "Independent model review of ordinary decisions",
+      "result": "passed",
+      "count": 650,
+      "evidence": "review/admission.json"
+    },
+    {
+      "check": "Independent model review of replacement error cases",
+      "result": "passed",
+      "count": 65,
+      "evidence": "review/admission.json"
+    },
+    {
+      "check": "Exact input/target replay and unchanged-record preservation",
+      "result": "passed",
+      "count": 650,
+      "evidence": "audit/split-leakage-audit.json"
+    },
+    {
+      "check": "Split, prefix, metadata and evidence leakage checks",
+      "result": "passed_with_generalization_limits",
+      "evidence": "audit/split-leakage-audit.json"
+    },
+    {
+      "check": "Actual tokenizer lengths and completion-only masks",
+      "result": "passed_no_truncation",
+      "count": 650,
+      "evidence": "publication/snapshot/training/corpus-lengths-650-01/result.json"
+    },
+    {
+      "check": "Completion-tail loss against full masked causal loss",
+      "result": "passed",
+      "evidence": "publication/snapshot/training/loss-mask-check-autocast.json"
+    },
+    {
+      "check": "Unapproved training manifest rejection",
+      "result": "passed",
+      "evidence": "publication/snapshot/training/gate-negative-check.json"
+    },
+    {
+      "check": "14B 384-token synthetic training, save/reload",
+      "result": "passed_after_dtype_fix",
+      "evidence": "publication/snapshot/training/smoke-384-02/result.json"
+    },
+    {
+      "check": "14B 2048-token / 160-completion synthetic training with activation offload",
+      "result": "passed",
+      "evidence": "publication/snapshot/training/smoke-2048-offload-01/result.json"
+    },
+    {
+      "check": "Formal training on reviewed 500 updates",
+      "result": "running_not_completed",
+      "evidence": "publication/snapshot/training/formal-pilot-01/result.json"
+    },
+    {
+      "check": "Held-out adapter comparison and semantic scoring",
+      "result": "not_started",
+      "evidence": "evaluation/protocol-lock.json"
+    }
+  ],
+  "failed_or_stopped_attempts": [
+    {
+      "attempt": "seed-length-check",
+      "outcome": "Tokenizer return-type mismatch, corrected before subsequent length checks.",
+      "evidence": "publication/snapshot/training/seed-length-check/result.json"
+    },
+    {
+      "attempt": "smoke-384-01",
+      "outcome": "fp32 norm / bf16 head mismatch before optimizer step, fixed with shared explicit bf16 autocast.",
+      "evidence": "publication/snapshot/training/smoke-384-01/result.json"
+    },
+    {
+      "attempt": "smoke-2048-01",
+      "outcome": "Controlled runtime-budget stop with no optimizer step observed; not a natural OOM. The original running result is retained; the separate interruption receipt records termination. Offload retry tested separately.",
+      "evidence": "publication/snapshot/training/smoke-2048-01/interruption.json"
+    }
+  ],
+  "remaining": [
+    "Formal epoch, adapter save/reload and held-out scoring are unfinished at this snapshot.",
+    "Own-state rollout, final-answer benefit, long-history and real-user generalization remain untested.",
+    "All authored labels and reviews are model-produced, not human adjudication."
+  ],
+  "publication_checks": {
+    "local_http_downloads": [
+      {
+        "path": "data/tracker-lora-pilot/evidence.zip",
+        "status": 200
+      },
+      {
+        "path": "data/tracker-lora-pilot/annotation/ANNOTATION_GUIDE.md",
+        "status": 200
+      },
+      {
+        "path": "data/tracker-lora-pilot/annotation/adjudication.json",
+        "status": 200
+      },
+      {
+        "path": "data/tracker-lora-pilot/data/compiled/manifest.json",
+        "status": 200
+      },
+      {
+        "path": "data/tracker-lora-pilot/review/admission.json",
+        "status": 200
+      },
+      {
+        "path": "data/tracker-lora-pilot/publication/milestone.json",
+        "status": 200
+      },
+      {
+        "path": "data/tracker-lora-pilot-validation.json",
+        "status": 200
+      },
+      {
+        "path": "data/tracker-lora-pilot/export-index.json",
+        "status": 200
+      }
+    ],
+    "training_jsonl_export_bytes": "All three split SFT files exactly match original frozen training bytes, including line endings.",
+    "preview": {
+      "viewport_width": 319,
+      "document_scroll_width": 304,
+      "page_overflow": false,
+      "new_section_and_disclosure": "visually verified through browser",
+      "viewport_override": "reset"
+    },
+    "failed_attempts": [
+      {
+        "attempt": "first site-builder validation",
+        "result": "SFT export hash mismatch caused by text newline normalization; fixed by preserving original SFT bytes. No incorrect package was published."
+      },
+      {
+        "attempt": "browser disclosure role locator",
+        "result": "AX button label did not map to Playwright button role; observed HTML summary locator worked."
+      }
+    ],
+    "verification_stage": "Local preview before the validation record was embedded; final published asset hashes are recorded in the external publication receipt."
+  }
+}

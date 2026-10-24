@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-24",
+  "kind": "primary-source context; not evidence for this pilot's effectiveness",
+  "sources": [
+    {
+      "title": "MultiWOZ 2.4: A Multi-Domain Task-Oriented Dialogue Dataset with Essential Annotation Corrections to Improve State Tracking Evaluation",
+      "url": "https://aclanthology.org/2022.sigdial-1.34/",
+      "year": 2022,
+      "relevant_finding": "The paper corrected validation and test state annotations and showed that annotation quality materially changes measured tracking performance.",
+      "application_here": "Prioritize reviewed evidence-grounded labels and a clean evaluation set. This is our experimental-design inference, not a claim that MultiWOZ proves this role-LoRA mechanism.",
+      "dataset_used_in_this_pilot": false
+    },
+    {
+      "title": "Pinned Qwen2.5-14B-Instruct base",
+      "url": "https://huggingface.co/Qwen/Qwen2.5-14B-Instruct/tree/cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8",
+      "application_here": "Exact official base checkpoint downloaded and hash-verified; both evaluation arms must share its representation."
+    }
+  ]
+}

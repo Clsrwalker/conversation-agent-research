@@ -1,0 +1,736 @@
+{
+  "schema_version": 1,
+  "id": "tracker-owner-ambiguity-v2-model-adjudication",
+  "date": "2026-10-24",
+  "timezone": "America/Halifax",
+  "created_at_utc": "2026-10-24T10:35:59.694278+00:00",
+  "status": "two_examples_model_convention_adjudicated_and_replayed",
+  "author": "tracker_annotation_v2 model agent",
+  "human_review_performed": false,
+  "independent_v2_review_status": "pending",
+  "original_files_modified": false,
+  "runtime_modified": false,
+  "examples": [
+    {
+      "original_example_id": "owner-ambiguity-zh",
+      "original_family_id": "owner-ambiguity",
+      "original_line_number": 9,
+      "original_line_sha256_excluding_newline": "21636ab09f730c542aeec008c8f7545a87b55b5a0c3bffc881ce446c64ae5f28",
+      "original_example_canonical_sha256": "6650e454f27cbffbf06e167dbe2c005a80210c5a55506d2c7242119bffbee3f8",
+      "original_input_canonical_sha256": "db447d11a8e50926496210c4b38198ba963f8a7872f2dd13536a85b350ce32d8",
+      "original_target": {
+        "operations": [
+          {
+            "intent_id": "caption-candidate",
+            "op": "add",
+            "owner": "团队（待确认）",
+            "source_seqs": [
+              4
+            ],
+            "status": "uncertain",
+            "text": "可能需要团队的字幕支持；需求是否确定及归属待澄清"
+          }
+        ]
+      },
+      "prior_review": {
+        "example_id": "owner-ambiguity-zh",
+        "family_id": "owner-ambiguity",
+        "status": "ambiguous",
+        "reason": "Uncertain status preserves the expressed possibility without assigning an individual. The team (unconfirmed) owner convention is reasonable but not uniquely entailed; alternative unresolved-owner representations need adjudication before training approval."
+      },
+      "decision": "revise_owner_representation_preserve_uncertain_candidate",
+      "decision_kind": "model_annotation_convention_adjudication_not_human_truth",
+      "rules": [
+        "OWNER-1",
+        "OWNER-3",
+        "UNCERTAIN-1",
+        "EVIDENCE-1",
+        "EVIDENCE-2"
+      ],
+      "evidence": [
+        {
+          "seq": 4,
+          "quote": "我们可能还要字幕，不过是谁需要、是不是必须，我现在不确定。",
+          "supports": "Concrete candidate caption need; explicit unresolved adoption and owner."
+        }
+      ],
+      "rationale": "The original uncertainty status was appropriate. A team label was one possible representation, not an entailed owner. Freeze a reserved non-entity sentinel instead; do not resolve uncertainty by guessing or discarding the candidate.",
+      "canonical_revised_example": {
+        "example_id": "owner-ambiguity-zh-v2",
+        "input": {
+          "conversation": [
+            {
+              "role": "user",
+              "seq": 1,
+              "speaker": "林",
+              "text": "帮我选一个免费的笔记工具。"
+            },
+            {
+              "role": "user",
+              "seq": 4,
+              "speaker": "林",
+              "text": "我们可能还要字幕，不过是谁需要、是不是必须，我现在不确定。"
+            }
+          ],
+          "intention_state": {
+            "intents": [
+              {
+                "created_version": 1,
+                "history": [
+                  {
+                    "op": "add",
+                    "patch_id": "setup-0",
+                    "source_seqs": [
+                      1
+                    ],
+                    "state": {
+                      "owner": "林",
+                      "status": "active",
+                      "text": "必须免费"
+                    },
+                    "version": 1
+                  }
+                ],
+                "intent_id": "cost",
+                "owner": "林",
+                "source_seqs": [
+                  1
+                ],
+                "status": "active",
+                "text": "必须免费",
+                "updated_version": 1
+              },
+              {
+                "created_version": 1,
+                "history": [
+                  {
+                    "op": "add",
+                    "patch_id": "setup-0",
+                    "source_seqs": [
+                      1
+                    ],
+                    "state": {
+                      "owner": "林",
+                      "status": "active",
+                      "text": "选择一个笔记工具"
+                    },
+                    "version": 1
+                  }
+                ],
+                "intent_id": "task",
+                "owner": "林",
+                "source_seqs": [
+                  1
+                ],
+                "status": "active",
+                "text": "选择一个笔记工具",
+                "updated_version": 1
+              }
+            ],
+            "observed_event_seq": 4,
+            "processed_event_seq": 1,
+            "receipts": [],
+            "version": 1
+          },
+          "tool_receipts": []
+        },
+        "metadata": {
+          "annotation_note": "V2 convention adjudication: retain the explicitly expressed candidate without guessing owner or adoption. This is model policy adjudication, not human truth.",
+          "atomic_requirement_annotations": [
+            {
+              "intent_id": "caption-candidate",
+              "owner": "__unresolved__",
+              "text": "可能需要字幕支持；是否需要及需求归属均待澄清",
+              "status": "uncertain"
+            },
+            {
+              "intent_id": "cost",
+              "owner": "林",
+              "text": "必须免费",
+              "status": "active"
+            },
+            {
+              "intent_id": "task",
+              "owner": "林",
+              "text": "选择一个笔记工具",
+              "status": "active"
+            }
+          ],
+          "authorship": "agent-authored fictional scenarios",
+          "candidate_runtime_error_input": false,
+          "current_runtime_supplies_previous_error": false,
+          "expected_post_state": {
+            "version": 2,
+            "processed_event_seq": 4,
+            "observed_event_seq": 4,
+            "intents": [
+              {
+                "created_version": 2,
+                "history": [
+                  {
+                    "op": "add",
+                    "patch_id": "decision-0",
+                    "source_seqs": [
+                      4
+                    ],
+                    "state": {
+                      "owner": "__unresolved__",
+                      "status": "uncertain",
+                      "text": "可能需要字幕支持；是否需要及需求归属均待澄清"
+                    },
+                    "version": 2
+                  }
+                ],
+                "intent_id": "caption-candidate",
+                "owner": "__unresolved__",
+                "source_seqs": [
+                  4
+                ],
+                "status": "uncertain",
+                "text": "可能需要字幕支持；是否需要及需求归属均待澄清",
+                "updated_version": 2
+              },
+              {
+                "created_version": 1,
+                "history": [
+                  {
+                    "op": "add",
+                    "patch_id": "setup-0",
+                    "source_seqs": [
+                      1
+                    ],
+                    "state": {
+                      "owner": "林",
+                      "status": "active",
+                      "text": "必须免费"
+                    },
+                    "version": 1
+                  }
+                ],
+                "intent_id": "cost",
+                "owner": "林",
+                "source_seqs": [
+                  1
+                ],
+                "status": "active",
+                "text": "必须免费",
+                "updated_version": 1
+              },
+              {
+                "created_version": 1,
+                "history": [
+                  {
+                    "op": "add",
+                    "patch_id": "setup-0",
+                    "source_seqs": [
+                      1
+                    ],
+                    "state": {
+                      "owner": "林",
+                      "status": "active",
+                      "text": "选择一个笔记工具"
+                    },
+                    "version": 1
+                  }
+                ],
+                "intent_id": "task",
+                "owner": "林",
+                "source_seqs": [
+                  1
+                ],
+                "status": "active",
+                "text": "选择一个笔记工具",
+                "updated_version": 1
+              }
+            ],
+            "receipts": []
+          },
+          "family_id": "owner-ambiguity",
+          "language": "zh",
+          "preserve_unchanged_ids": [
+            "task",
+            "cost"
+          ],
+          "role": "intention_tracker",
+          "semantic_review_status": "model_convention_adjudicated; independent_v2_review_pending; human_review_not_performed",
+          "setup_patches": [
+            {
+              "expected_version": 0,
+              "operations": [
+                {
+                  "intent_id": "task",
+                  "op": "add",
+                  "owner": "林",
+                  "source_seqs": [
+                    1
+                  ],
+                  "status": "active",
+                  "text": "选择一个笔记工具"
+                },
+                {
+                  "intent_id": "cost",
+                  "op": "add",
+                  "owner": "林",
+                  "source_seqs": [
+                    1
+                  ],
+                  "status": "active",
+                  "text": "必须免费"
+                }
+              ],
+              "patch_id": "setup-0",
+              "through_seq": 1
+            }
+          ],
+          "sibling_group_policy": "Keep every family_id together in any future split; these examples are already exposed development material.",
+          "split": "illustrative_development_only",
+          "target_commit_identity": {
+            "expected_version": 1,
+            "patch_id": "decision-0",
+            "through_seq": 4
+          },
+          "annotation_version": "tracker-annotation-v2",
+          "uncertainty_dimensions": [
+            "adoption",
+            "owner"
+          ],
+          "provenance": {
+            "kind": "agent-authored fictional scenario",
+            "original_example_id": "owner-ambiguity-zh",
+            "original_line_number": 9,
+            "derived_from_exposed_development_material": true,
+            "human_review_performed": false
+          }
+        },
+        "schema_version": 1,
+        "target": {
+          "operations": [
+            {
+              "intent_id": "caption-candidate",
+              "op": "add",
+              "owner": "__unresolved__",
+              "source_seqs": [
+                4
+              ],
+              "status": "uncertain",
+              "text": "可能需要字幕支持；是否需要及需求归属均待澄清"
+            }
+          ]
+        }
+      },
+      "accepted_semantic_variation": "Meaning-equivalent concise text retaining caption support, unresolved adoption and unresolved owner is acceptable under this convention; stable ID, uncertain status and unresolved-owner sentinel are fixed for this replacement.",
+      "rejected_alternatives": [
+        {
+          "target": "operations=[]",
+          "reason": "Loses an explicitly expressed concrete candidate under the frozen candidate-tracking convention."
+        },
+        {
+          "target": "active caption requirement",
+          "reason": "Adoption was explicitly unresolved."
+        },
+        {
+          "target": "owner set to reporting speaker or an asserted team",
+          "reason": "The speaker explicitly did not identify the owner."
+        }
+      ],
+      "scope_limitations": [
+        "This settles the representation policy; it does not discover who needs captions or whether captions will be required.",
+        "The current single status field conflates adoption and ownership uncertainty; metadata distinguishes both.",
+        "This bilingual sibling pair remains exposed development material, not two independent evaluation scenarios."
+      ],
+      "replay_validation": {
+        "status": "passed",
+        "full_input_pre_state_matched": true,
+        "target_committed_by_actual_IntentStore": true,
+        "preserved_record_ids": [
+          "task",
+          "cost"
+        ],
+        "preserved_record_count": 2,
+        "revised_input_unchanged_from_original": true
+      }
+    },
+    {
+      "original_example_id": "owner-ambiguity-en",
+      "original_family_id": "owner-ambiguity",
+      "original_line_number": 21,
+      "original_line_sha256_excluding_newline": "c01db84f526fd07a11fe0db3e61580785ca1b6779cc984ab8c5caed6cb51941d",
+      "original_example_canonical_sha256": "6538e90baf551f9e0a978c9a2734b2e359370401c4e01eb1d3a20761c0ac639a",
+      "original_input_canonical_sha256": "c6f7fb6c47be905241af8c55808e54de884e3ff0089ff880b59b4c0ca112e03c",
+      "original_target": {
+        "operations": [
+          {
+            "intent_id": "caption-candidate",
+            "op": "add",
+            "owner": "team (unconfirmed)",
+            "source_seqs": [
+              4
+            ],
+            "status": "uncertain",
+            "text": "Possible team caption support; whether it is required and who owns it need clarification"
+          }
+        ]
+      },
+      "prior_review": {
+        "example_id": "owner-ambiguity-en",
+        "family_id": "owner-ambiguity",
+        "status": "ambiguous",
+        "reason": "Uncertain status preserves the expressed possibility without assigning an individual. The team (unconfirmed) owner convention is reasonable but not uniquely entailed; alternative unresolved-owner representations need adjudication before training approval."
+      },
+      "decision": "revise_owner_representation_preserve_uncertain_candidate",
+      "decision_kind": "model_annotation_convention_adjudication_not_human_truth",
+      "rules": [
+        "OWNER-1",
+        "OWNER-3",
+        "UNCERTAIN-1",
+        "EVIDENCE-1",
+        "EVIDENCE-2"
+      ],
+      "evidence": [
+        {
+          "seq": 4,
+          "quote": "We might also need captions, but I am not sure who needs them or whether they are required.",
+          "supports": "Concrete candidate caption need; explicit unresolved adoption and owner."
+        }
+      ],
+      "rationale": "The original uncertainty status was appropriate. A team label was one possible representation, not an entailed owner. Freeze a reserved non-entity sentinel instead; do not resolve uncertainty by guessing or discarding the candidate.",
+      "canonical_revised_example": {
+        "example_id": "owner-ambiguity-en-v2",
+        "input": {
+          "conversation": [
+            {
+              "role": "user",
+              "seq": 1,
+              "speaker": "Mira",
+              "text": "Help me choose a free note-taking tool."
+            },
+            {
+              "role": "user",
+              "seq": 4,
+              "speaker": "Mira",
+              "text": "We might also need captions, but I am not sure who needs them or whether they are required."
+            }
+          ],
+          "intention_state": {
+            "intents": [
+              {
+                "created_version": 1,
+                "history": [
+                  {
+                    "op": "add",
+                    "patch_id": "setup-0",
+                    "source_seqs": [
+                      1
+                    ],
+                    "state": {
+                      "owner": "Mira",
+                      "status": "active",
+                      "text": "Must be free"
+                    },
+                    "version": 1
+                  }
+                ],
+                "intent_id": "cost",
+                "owner": "Mira",
+                "source_seqs": [
+                  1
+                ],
+                "status": "active",
+                "text": "Must be free",
+                "updated_version": 1
+              },
+              {
+                "created_version": 1,
+                "history": [
+                  {
+                    "op": "add",
+                    "patch_id": "setup-0",
+                    "source_seqs": [
+                      1
+                    ],
+                    "state": {
+                      "owner": "Mira",
+                      "status": "active",
+                      "text": "Choose a note-taking tool"
+                    },
+                    "version": 1
+                  }
+                ],
+                "intent_id": "task",
+                "owner": "Mira",
+                "source_seqs": [
+                  1
+                ],
+                "status": "active",
+                "text": "Choose a note-taking tool",
+                "updated_version": 1
+              }
+            ],
+            "observed_event_seq": 4,
+            "processed_event_seq": 1,
+            "receipts": [],
+            "version": 1
+          },
+          "tool_receipts": []
+        },
+        "metadata": {
+          "annotation_note": "V2 convention adjudication: retain the explicitly expressed candidate without guessing owner or adoption. This is model policy adjudication, not human truth.",
+          "atomic_requirement_annotations": [
+            {
+              "intent_id": "caption-candidate",
+              "owner": "__unresolved__",
+              "text": "Possible need for caption support; adoption and requirement ownership remain unresolved",
+              "status": "uncertain"
+            },
+            {
+              "intent_id": "cost",
+              "owner": "Mira",
+              "text": "Must be free",
+              "status": "active"
+            },
+            {
+              "intent_id": "task",
+              "owner": "Mira",
+              "text": "Choose a note-taking tool",
+              "status": "active"
+            }
+          ],
+          "authorship": "agent-authored fictional scenarios",
+          "candidate_runtime_error_input": false,
+          "current_runtime_supplies_previous_error": false,
+          "expected_post_state": {
+            "version": 2,
+            "processed_event_seq": 4,
+            "observed_event_seq": 4,
+            "intents": [
+              {
+                "created_version": 2,
+                "history": [
+                  {
+                    "op": "add",
+                    "patch_id": "decision-0",
+                    "source_seqs": [
+                      4
+                    ],
+                    "state": {
+                      "owner": "__unresolved__",
+                      "status": "uncertain",
+                      "text": "Possible need for caption support; adoption and requirement ownership remain unresolved"
+                    },
+                    "version": 2
+                  }
+                ],
+                "intent_id": "caption-candidate",
+                "owner": "__unresolved__",
+                "source_seqs": [
+                  4
+                ],
+                "status": "uncertain",
+                "text": "Possible need for caption support; adoption and requirement ownership remain unresolved",
+                "updated_version": 2
+              },
+              {
+                "created_version": 1,
+                "history": [
+                  {
+                    "op": "add",
+                    "patch_id": "setup-0",
+                    "source_seqs": [
+                      1
+                    ],
+                    "state": {
+                      "owner": "Mira",
+                      "status": "active",
+                      "text": "Must be free"
+                    },
+                    "version": 1
+                  }
+                ],
+                "intent_id": "cost",
+                "owner": "Mira",
+                "source_seqs": [
+                  1
+                ],
+                "status": "active",
+                "text": "Must be free",
+                "updated_version": 1
+              },
+              {
+                "created_version": 1,
+                "history": [
+                  {
+                    "op": "add",
+                    "patch_id": "setup-0",
+                    "source_seqs": [
+                      1
+                    ],
+                    "state": {
+                      "owner": "Mira",
+                      "status": "active",
+                      "text": "Choose a note-taking tool"
+                    },
+                    "version": 1
+                  }
+                ],
+                "intent_id": "task",
+                "owner": "Mira",
+                "source_seqs": [
+                  1
+                ],
+                "status": "active",
+                "text": "Choose a note-taking tool",
+                "updated_version": 1
+              }
+            ],
+            "receipts": []
+          },
+          "family_id": "owner-ambiguity",
+          "language": "en",
+          "preserve_unchanged_ids": [
+            "task",
+            "cost"
+          ],
+          "role": "intention_tracker",
+          "semantic_review_status": "model_convention_adjudicated; independent_v2_review_pending; human_review_not_performed",
+          "setup_patches": [
+            {
+              "expected_version": 0,
+              "operations": [
+                {
+                  "intent_id": "task",
+                  "op": "add",
+                  "owner": "Mira",
+                  "source_seqs": [
+                    1
+                  ],
+                  "status": "active",
+                  "text": "Choose a note-taking tool"
+                },
+                {
+                  "intent_id": "cost",
+                  "op": "add",
+                  "owner": "Mira",
+                  "source_seqs": [
+                    1
+                  ],
+                  "status": "active",
+                  "text": "Must be free"
+                }
+              ],
+              "patch_id": "setup-0",
+              "through_seq": 1
+            }
+          ],
+          "sibling_group_policy": "Keep every family_id together in any future split; these examples are already exposed development material.",
+          "split": "illustrative_development_only",
+          "target_commit_identity": {
+            "expected_version": 1,
+            "patch_id": "decision-0",
+            "through_seq": 4
+          },
+          "annotation_version": "tracker-annotation-v2",
+          "uncertainty_dimensions": [
+            "adoption",
+            "owner"
+          ],
+          "provenance": {
+            "kind": "agent-authored fictional scenario",
+            "original_example_id": "owner-ambiguity-en",
+            "original_line_number": 21,
+            "derived_from_exposed_development_material": true,
+            "human_review_performed": false
+          }
+        },
+        "schema_version": 1,
+        "target": {
+          "operations": [
+            {
+              "intent_id": "caption-candidate",
+              "op": "add",
+              "owner": "__unresolved__",
+              "source_seqs": [
+                4
+              ],
+              "status": "uncertain",
+              "text": "Possible need for caption support; adoption and requirement ownership remain unresolved"
+            }
+          ]
+        }
+      },
+      "accepted_semantic_variation": "Meaning-equivalent concise text retaining caption support, unresolved adoption and unresolved owner is acceptable under this convention; stable ID, uncertain status and unresolved-owner sentinel are fixed for this replacement.",
+      "rejected_alternatives": [
+        {
+          "target": "operations=[]",
+          "reason": "Loses an explicitly expressed concrete candidate under the frozen candidate-tracking convention."
+        },
+        {
+          "target": "active caption requirement",
+          "reason": "Adoption was explicitly unresolved."
+        },
+        {
+          "target": "owner set to reporting speaker or an asserted team",
+          "reason": "The speaker explicitly did not identify the owner."
+        }
+      ],
+      "scope_limitations": [
+        "This settles the representation policy; it does not discover who needs captions or whether captions will be required.",
+        "The current single status field conflates adoption and ownership uncertainty; metadata distinguishes both.",
+        "This bilingual sibling pair remains exposed development material, not two independent evaluation scenarios."
+      ],
+      "replay_validation": {
+        "status": "passed",
+        "full_input_pre_state_matched": true,
+        "target_committed_by_actual_IntentStore": true,
+        "preserved_record_ids": [
+          "task",
+          "cost"
+        ],
+        "preserved_record_count": 2,
+        "revised_input_unchanged_from_original": true
+      }
+    }
+  ],
+  "summary": {
+    "adjudicated_examples": 2,
+    "distinct_source_families": 1,
+    "languages": [
+      "zh",
+      "en"
+    ],
+    "input_records_changed": 0,
+    "target_owner_revisions": 2,
+    "uncertain_status_preserved": 2,
+    "runtime_replays_passed": 2,
+    "untouched_records_preserved": 4,
+    "training_runs": 0,
+    "experimental_model_inference_calls": 0
+  },
+  "rules_contract": {
+    "unresolved_owner_sentinel": "__unresolved__",
+    "unresolved_owner_requires_status": "uncertain",
+    "schema_change_required": false,
+    "common_prompt_addition_required": true,
+    "no_change_is_not_uncertainty": true,
+    "new_information_question_is_a_request": true,
+    "unsupported_single_patch": "reopen with text/owner revision of same ID"
+  },
+  "source_sha256_before": {
+    "output/research/2026-10-24/tracker-lora-plan/data/examples.jsonl": "95822748277ad447f8c027ee3e1866d73dc934a3df036c44fa5bf25c778e39b9",
+    "output/research/2026-10-24/tracker-lora-plan/REVIEW.json": "8c599c7e446cf75a2b796b66f43b513c4a4f809df4399c52f26b9110ae54184c",
+    "experiments/deep_conversation/intention_state.py": "e028a604a93520801a0f752755d80b305afb1eebd8792ea0aeaaa3cd5c722f73",
+    "experiments/deep_conversation/intent_roles.py": "befc382472aabc55efbda043aae5d377e12cce92a56804c73e25994305674d68"
+  },
+  "source_sha256_after": {
+    "output/research/2026-10-24/tracker-lora-plan/data/examples.jsonl": "95822748277ad447f8c027ee3e1866d73dc934a3df036c44fa5bf25c778e39b9",
+    "output/research/2026-10-24/tracker-lora-plan/REVIEW.json": "8c599c7e446cf75a2b796b66f43b513c4a4f809df4399c52f26b9110ae54184c",
+    "experiments/deep_conversation/intention_state.py": "e028a604a93520801a0f752755d80b305afb1eebd8792ea0aeaaa3cd5c722f73",
+    "experiments/deep_conversation/intent_roles.py": "befc382472aabc55efbda043aae5d377e12cce92a56804c73e25994305674d68"
+  },
+  "annotation_guide_sha256": "9e78e2374ab667d8f5745ab839f101ea5767e92720709dc1529f5657cf2eba36",
+  "system_prompt_sha256": "8d2b2176faea9f2c71ca8cbdbc3484eaf35d27a3d1d22e904134e6e9d9000b0b",
+  "limitations": [
+    "Model-authored convention and model adjudication are not human labels or unique facts about ownership.",
+    "The two revised rows cannot establish semantic accuracy or LoRA benefit.",
+    "No training, model inference, downloads or runtime modifications were performed in this annotation task."
+  ]
+}

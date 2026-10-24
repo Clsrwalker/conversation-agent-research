@@ -45,8 +45,8 @@
     },
     {
       "path": "data.js",
-      "sha256": "39415e081ca75f9341464193c9707e5ca86d4f222781d21533a2cb0c49f7e25a",
-      "bytes": 198647
+      "sha256": "a33c968002ddcdd7b86dba102b79037462faf11e48e9adf883e4916dfa2c0a8f",
+      "bytes": 198872
     },
     {
       "path": "data/analyze_harness_latency.py",
@@ -615,8 +615,8 @@
     },
     {
       "path": "data/research-record.json",
-      "sha256": "e5b4f5c35651187cf369d3299cbbacc6f335b1a5ddcec1dcff74b059649ffd2e",
-      "bytes": 292246
+      "sha256": "30b0e6752c296110e6aa06a52ebc211d404ae456ee4592bce652eb60151be500",
+      "bytes": 292518
     },
     {
       "path": "data/results.csv",
@@ -834,6 +834,76 @@
       "bytes": 3110
     },
     {
+      "path": "data/tracker-lora-pilot-validation.json",
+      "sha256": "ddc468290a5f3353fea00847db113e26632dff77ae2b23ba2db3a97fb8e635f8",
+      "bytes": 5520
+    },
+    {
+      "path": "data/tracker-lora-pilot/annotation/ANNOTATION_GUIDE.md",
+      "sha256": "64514fc7b8294882750f71a77fc517ee3ee73f2f871e3f3cd315d328eb315593",
+      "bytes": 18576
+    },
+    {
+      "path": "data/tracker-lora-pilot/annotation/adjudication.json",
+      "sha256": "4959eb3909509c967a3dd90ea8c786d3c91f3e803f7b67499efbb7ea14dd9726",
+      "bytes": 27441
+    },
+    {
+      "path": "data/tracker-lora-pilot/audit/split-leakage-audit.json",
+      "sha256": "48ba4600040f8a36cb7abc864f8eedfc42a12c96c81f903927d973f73db6a87f",
+      "bytes": 260490
+    },
+    {
+      "path": "data/tracker-lora-pilot/data/compiled/manifest.json",
+      "sha256": "e6978870d98a77853291bbab9823eb78e713c956b6391064ce88d6ebce44981f",
+      "bytes": 29970
+    },
+    {
+      "path": "data/tracker-lora-pilot/evaluation/protocol-lock.json",
+      "sha256": "58d6c4ee858b9c2ab152fb925a303c5fe88bad229767c5406a802301233de22f",
+      "bytes": 1844
+    },
+    {
+      "path": "data/tracker-lora-pilot/evaluation/protocol.json",
+      "sha256": "e9eaf85c64f9eb8e593c0d70981750fa5123480ce6705dd17636df2ea331a65f",
+      "bytes": 12241
+    },
+    {
+      "path": "data/tracker-lora-pilot/evidence.zip",
+      "sha256": "7e4018e684cd4a92fe12b333a931170105ba7d61649048ddecd512e58aed5c80",
+      "bytes": 1259706
+    },
+    {
+      "path": "data/tracker-lora-pilot/export-index.json",
+      "sha256": "799a84be9c84acb4110b40717ff029e777d57d60ad2fa544905340e7f78c96bd",
+      "bytes": 33021
+    },
+    {
+      "path": "data/tracker-lora-pilot/publication/content-review.json",
+      "sha256": "3b97f6daab4b33f18eaeeda07c1529cc1bcff76594dbe937ead5f7567787dd0d",
+      "bytes": 8902
+    },
+    {
+      "path": "data/tracker-lora-pilot/publication/milestone.json",
+      "sha256": "b509a38b53631773f098aaf7ce61069d3b0d527ff3c25d2de997462dce30fbdd",
+      "bytes": 24572
+    },
+    {
+      "path": "data/tracker-lora-pilot/publication/sources.json",
+      "sha256": "6bff4e04c6e102d2e2e2626d7bfc85f842d0f8a122b38c999992f863846dd012",
+      "bytes": 1107
+    },
+    {
+      "path": "data/tracker-lora-pilot/publication/validation.json",
+      "sha256": "ddc468290a5f3353fea00847db113e26632dff77ae2b23ba2db3a97fb8e635f8",
+      "bytes": 5520
+    },
+    {
+      "path": "data/tracker-lora-pilot/review/admission.json",
+      "sha256": "4501629eacd16608501e8809b458fb9cc27bd41d1c64b1fdb6646e44b4105e7b",
+      "bytes": 85398
+    },
+    {
       "path": "data/tracker-lora-plan/PROTOCOL.md",
       "sha256": "14c24a74552093f1e019e50bc739c20d8529a109bbf9d14294c2c314dea5400a",
       "bytes": 15934
@@ -990,8 +1060,8 @@
     },
     {
       "path": "intent-role-separation.html",
-      "sha256": "2a017d9ff722b756c296f3ecd3e61da681cdec9a825ac28f787f996e28974843",
-      "bytes": 18921
+      "sha256": "953fcd52cbac4307c5e176557ba88e540d1157b074fd5780bded5b22694f0bc6",
+      "bytes": 25312
     },
     {
       "path": "intention-literature.css",

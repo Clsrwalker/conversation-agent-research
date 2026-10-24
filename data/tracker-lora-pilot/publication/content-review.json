@@ -1,0 +1,171 @@
+{
+  "id": "tracker-lora-pilot-publication-content-review",
+  "date": "2026-10-24",
+  "timezone": "America/Halifax",
+  "reviewed_at_utc": "2026-10-24T11:24:42.760484+00:00",
+  "status": "passed_content_and_download_review",
+  "reviewer": "tracker_corpus_a",
+  "independent_of_website_builder_author": true,
+  "human_review": false,
+  "authorship_disclosure": "Reviewer authored train-a and dev/test corpus portions and their faults. This is independent review of root-authored publication content and package consistency, not an additional independent corpus-quality gold review.",
+  "scope": "Local built intent-role-separation.html#tracker-lora-pilot, frozen milestone and grouped validation, referenced evidence and downloadable ZIP. Read-only review; no model inference or training run; report is the only file written.",
+  "snapshot": {
+    "utc": "2026-10-24T11:19:43.276326+00:00",
+    "halifax": "2026-10-24T08:19:43.276326-03:00",
+    "formal_training_status": "running",
+    "formal_runs_started": 1,
+    "formal_runs_completed": 0,
+    "heldout_model_calls_declared": 0,
+    "quality_results": null,
+    "last_frozen_log_optimizer_update": 5,
+    "last_frozen_log_microsteps": 80
+  },
+  "bindings": {
+    "page_sha256": "953fcd52cbac4307c5e176557ba88e540d1157b074fd5780bded5b22694f0bc6",
+    "pilot_section_sha256": "851cf8e8513078aa697a2067f210a808714a79e8dd8ee95180608520e27bb8d4",
+    "builder_sha256": "e38742965a55f59c72f130be630dfae4a81eae0472b805104801aad50931e222",
+    "milestone_sha256": "de6115441100fde781a5e85025b1e9afbcc8cd2196e2d8b085acf6225cea5bbb",
+    "validation_sha256": "15ba8c7dccce2b08b043d0c90939a956f6818846be46cbf489e25d7682764f32",
+    "manifest_sha256": "94280f80ff17e990f189f1fc18b3ca4d8b579422770e81a5acd5ea12c920b873",
+    "admission_sha256": "6d9fbe1b959a2de45d1dd36896affc2bc1f515aca8a318e58619e967b58826fc",
+    "evidence_zip_sha256": "ada3f5968658c668c3823f2eb6626753c1f808ede35e74148d31eea13f71fc23",
+    "export_index_sha256": "fd6955aaed2937002f863d6da1e9b6253e9d7cebe033e39dc596082dc8ae79d3",
+    "historical_site_commit": "dae514e494652f09a58271268b97b1a668c721c8"
+  },
+  "compiled_counts": {
+    "train": {
+      "updates": 500,
+      "families": 100,
+      "languages": {
+        "zh": 250,
+        "en": 250
+      },
+      "replacement_error_cases": 50,
+      "true_no_change": 51
+    },
+    "dev": {
+      "updates": 50,
+      "families": 10,
+      "languages": {
+        "zh": 25,
+        "en": 25
+      },
+      "replacement_error_cases": 5,
+      "true_no_change": 4
+    },
+    "test": {
+      "updates": 100,
+      "families": 20,
+      "languages": {
+        "zh": 50,
+        "en": 50
+      },
+      "replacement_error_cases": 10,
+      "true_no_change": 9
+    }
+  },
+  "test_family_event_counts": {
+    "6": 12,
+    "5": 8
+  },
+  "download_sft_exactness": {
+    "train": {
+      "sha256": "d180d14231697dcdfc5054e532b5d7757ba084989a3f534a9af233a9d7dd0c58",
+      "source_bytes": 3166133,
+      "download_bytes": 3166133,
+      "byte_identical": true
+    },
+    "dev": {
+      "sha256": "baf8b7262b385542d2ba26ebe75b0216dd7aced1c748586d0372a19cb329011e",
+      "source_bytes": 296449,
+      "download_bytes": 296449,
+      "byte_identical": true
+    },
+    "test": {
+      "sha256": "2700e85958d48bc2e56319ede689081fa8e59bbf342c4b08517428cf91f9288c",
+      "source_bytes": 601444,
+      "download_bytes": 601444,
+      "byte_identical": true
+    }
+  },
+  "historical_bundles": {
+    "intent-role-separation": {
+      "committed_before_build_sha256": "865cf0e08c7052d2d327bbbe1d7740c007047ea4542917eaa4796ca5f77452a5",
+      "current_sha256": "865cf0e08c7052d2d327bbbe1d7740c007047ea4542917eaa4796ca5f77452a5",
+      "byte_identical": true
+    },
+    "intent-role-diagnostics": {
+      "committed_before_build_sha256": "32e6d9566b1f989195dfc023a36e312f281ac61e97c277a8d769784914def613",
+      "current_sha256": "32e6d9566b1f989195dfc023a36e312f281ac61e97c277a8d769784914def613",
+      "byte_identical": true
+    },
+    "tracker-lora-plan": {
+      "committed_before_build_sha256": "061027b393a7ff07ca4255aa4f740fd4eda308e1ec7b70dc13e90e7161a64aac",
+      "current_sha256": "061027b393a7ff07ca4255aa4f740fd4eda308e1ec7b70dc13e90e7161a64aac",
+      "byte_identical": true
+    }
+  },
+  "checks": [
+    {
+      "name": "Page quantities against compiled records",
+      "verdict": "pass",
+      "details": "Parsed all 650 compiled records, counted unique families, language, fault annotations and empty targets; all displayed split quantities agree. 65 faults replace source decisions, not 65 extra exported rows."
+    },
+    {
+      "name": "Publication and validation snapshot timing",
+      "verdict": "pass",
+      "details": "Both snapshots are 2026-10-24 08:19:43 Halifax (11:19:43 UTC). Frozen formal result is running; log shows 5 optimizer updates and 80 microsteps before snapshot. Page says running at this snapshot and no final save/reload or held-out result; it does not claim current live status or completion."
+    },
+    {
+      "name": "Engineering receipts and limitations",
+      "verdict": "pass",
+      "details": "650 no-truncation and zero prompt-supervision receipts match SFT hashes; offload smoke has two optimizer steps and exact tested save/reload logits. Failed dtype and controlled runtime stop remain disclosed. These are identified as engineering checks, not tracking benefit."
+    },
+    {
+      "name": "Prospective comparison",
+      "verdict": "pass",
+      "details": "Locked protocol specifies one epoch, same pinned NF4 Qwen2.5-14B-Instruct model, adapter on/off, 100 inputs per arm and 200 assigned calls. Page describes this as future comparison; rollout and final-answer benefit remain untested."
+    },
+    {
+      "name": "No unmeasured quality claims",
+      "verdict": "pass",
+      "details": "Read entire new section and historical transition. It identifies model-authored/model-reviewed fictional labels, no human gold, no measured omission reduction, synthetic blind spots, domain overlap, short test histories and incomplete fault coverage."
+    },
+    {
+      "name": "Historical wording and immutable evidence",
+      "verdict": "pass",
+      "details": "Explicit notice before old present-tense assertions identifies pending ownership, readiness and collection as an earlier snapshot. All three earlier ZIPs are byte-identical to committed pre-build versions via binary git show."
+    },
+    {
+      "name": "Download completeness and integrity",
+      "verdict": "pass",
+      "details": "139 unique pinned source records plus milestone and validation produce 141 unique ZIP entries. All 139 source hashes and all 141 source/export index entries match. All validation evidence and 8 new-section links resolve. Three SFT downloads preserve the actual original bytes and manifest hashes."
+    },
+    {
+      "name": "Export path and sensitive-file checks",
+      "verdict": "pass",
+      "details": "Every ZIP entry is a contained relative path with approved text suffix and no traversal, selected sensitive filenames, model-weight filenames, drive-root paths or common API/private-key token signatures. Actual package whitelist inspected; text-only evidence includes hashes of model weights, not weight files."
+    }
+  ],
+  "blockers": [],
+  "review_attempts": [
+    {
+      "attempt": 1,
+      "outcome": "No report accepted: root added publication_checks to validation while review was running, temporarily making source and built index differ. No corpus or research-result mismatch was found."
+    },
+    {
+      "attempt": 2,
+      "outcome": "After rebuild, repeated complete source/export/ZIP checks; all exact bindings agree."
+    }
+  ],
+  "limitations": [
+    "Local content/package review only; does not verify the deployed site, browser rendering, or later mutable training status. Browser and HTTP checks in publication_checks are root receipts, not independent visual tests by this reviewer.",
+    "Exact snapshot time is provided in linked milestone/validation JSON; visible section shows date and explicitly calls state a snapshot.",
+    "Token/key pattern checks are finite checks, not proof arbitrary secrets cannot exist. Package consists of authored research text/code/JSON evidence; no model weights or known credential files were included.",
+    "Non-SFT export copies sanitize machine-local paths and normalize line endings, so export hashes can differ from source hashes; export-index records both. SFT files are byte-identical.",
+    "Independent model review and executable checks do not establish human semantic gold, tracker omission reduction, long-history performance or user benefit.",
+    "No live model telemetry was queried. Zero held-out calls is the frozen milestone declaration corroborated by prospective lock and parent status; this review does not assert a future live call count."
+  ],
+  "new_model_inference_calls": 0,
+  "data_or_website_mutations": 0
+}

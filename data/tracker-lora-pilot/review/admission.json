@@ -1,0 +1,1919 @@
+{
+  "status": "approved_for_pilot",
+  "created_at_utc": "2026-10-24T11:06:35.926795+00:00",
+  "date": "2026-10-24",
+  "timezone": "America/Halifax",
+  "kind": "bounded synthetic pilot release, independently model-reviewed labels",
+  "human_validated": false,
+  "families": {
+    "train-a-001": {
+      "family_sha256": "58e4050f66b970573925a9ede70029f609a317ccd986999e43d8eb435b08d3b7",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "independent_of_author": true,
+      "review_path": "review/train-a-rereview.json",
+      "review_sha256": "96a3ae09d6ba3819be683845ae7e5cf17853011b7382a75f68166c49e4d767a6"
+    },
+    "train-a-002": {
+      "family_sha256": "3c4752c269869d54599a208c42860e2143398d6fa76d10e3b75457418357f27b",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "independent_of_author": true,
+      "review_path": "review/train-a-rereview.json",
+      "review_sha256": "96a3ae09d6ba3819be683845ae7e5cf17853011b7382a75f68166c49e4d767a6"
+    },
+    "train-a-003": {
+      "family_sha256": "c0e28bb6ef3a00841d37c8d4f4263bf6b5e4508ba4ee56f5dff88d51b01b3bc3",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "independent_of_author": true,
+      "review_path": "review/train-a-rereview.json",
+      "review_sha256": "96a3ae09d6ba3819be683845ae7e5cf17853011b7382a75f68166c49e4d767a6"
+    },
+    "train-a-004": {
+      "family_sha256": "ee1bc43c0e881c546616b76150ed1a10307ae73a8e5e08a6fe4f7bf460f1838b",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "independent_of_author": true,
+      "review_path": "review/train-a-rereview.json",
+      "review_sha256": "96a3ae09d6ba3819be683845ae7e5cf17853011b7382a75f68166c49e4d767a6"
+    },
+    "train-a-005": {
+      "family_sha256": "45d98347a3d0910861dd0f5980474f29afcc3df31bf67117ad0be9b2795faec8",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "independent_of_author": true,
+      "review_path": "review/train-a-rereview.json",
+      "review_sha256": "96a3ae09d6ba3819be683845ae7e5cf17853011b7382a75f68166c49e4d767a6"
+    },
+    "train-a-006": {
+      "family_sha256": "c7e84c5d7e7724978c8fe43f2745d465b0e139430fbdb78065a6fe55ac3c75fe",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "independent_of_author": true,
+      "review_path": "review/train-a-rereview.json",
+      "review_sha256": "96a3ae09d6ba3819be683845ae7e5cf17853011b7382a75f68166c49e4d767a6"
+    },
+    "train-a-007": {
+      "family_sha256": "60729e61522d80002fd662e276350d9eba902ae3aa9d636d908e15d0f738c968",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "independent_of_author": true,
+      "review_path": "review/train-a-rereview.json",
+      "review_sha256": "96a3ae09d6ba3819be683845ae7e5cf17853011b7382a75f68166c49e4d767a6"
+    },
+    "train-a-008": {
+      "family_sha256": "e3ba66ab3e3efd2fcc3ad5451808fb969c86d4d94b1833ab1380ae1fd67832e7",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "independent_of_author": true,
+      "review_path": "review/train-a-rereview.json",
+      "review_sha256": "96a3ae09d6ba3819be683845ae7e5cf17853011b7382a75f68166c49e4d767a6"
+    },
+    "train-a-009": {
+      "family_sha256": "26461c641e0057aaaabfced4243d789dcff5ba394cdb39f4315ddd5779cb0a13",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "independent_of_author": true,
+      "review_path": "review/train-a-rereview.json",
+      "review_sha256": "96a3ae09d6ba3819be683845ae7e5cf17853011b7382a75f68166c49e4d767a6"
+    },
+    "train-a-010": {
+      "family_sha256": "6fc77111f1523d962fa634f91689ce8867f68c5c9dfd53a64923e45a756d2427",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "independent_of_author": true,
+      "review_path": "review/train-a-rereview.json",
+      "review_sha256": "96a3ae09d6ba3819be683845ae7e5cf17853011b7382a75f68166c49e4d767a6"
+    },
+    "train-a-011": {
+      "family_sha256": "93751522968f097bdf31f371a2f93bb4706a6bc1330aa8857f4fcfc42eb94ffc",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "independent_of_author": true,
+      "review_path": "review/train-a-rereview.json",
+      "review_sha256": "96a3ae09d6ba3819be683845ae7e5cf17853011b7382a75f68166c49e4d767a6"
+    },
+    "train-a-012": {
+      "family_sha256": "556d166532ff13a45cb1b59480d10c92df95c661f9a875c7387aa55b9b59ac4a",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "independent_of_author": true,
+      "review_path": "review/train-a-rereview.json",
+      "review_sha256": "96a3ae09d6ba3819be683845ae7e5cf17853011b7382a75f68166c49e4d767a6"
+    },
+    "train-a-013": {
+      "family_sha256": "0ca46758fc4d4b4b350f881a107e280c42c66bdc0b8a48f621ed4c510bb9c29f",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "independent_of_author": true,
+      "review_path": "review/train-a-rereview.json",
+      "review_sha256": "96a3ae09d6ba3819be683845ae7e5cf17853011b7382a75f68166c49e4d767a6"
+    },
+    "train-a-014": {
+      "family_sha256": "8c56b45c60ea96b441823c4b11aef3a9c4adf10b78292d36e16e13e05a1b428d",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "independent_of_author": true,
+      "review_path": "review/train-a-rereview.json",
+      "review_sha256": "96a3ae09d6ba3819be683845ae7e5cf17853011b7382a75f68166c49e4d767a6"
+    },
+    "train-a-015": {
+      "family_sha256": "4fd191b1e61f495e3df5512792aecee3f51b59e89192f288146e33774a34b28f",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "independent_of_author": true,
+      "review_path": "review/train-a-rereview.json",
+      "review_sha256": "96a3ae09d6ba3819be683845ae7e5cf17853011b7382a75f68166c49e4d767a6"
+    },
+    "train-a-016": {
+      "family_sha256": "a95e003005b4c34fbbdd27e5145b23999e952de07b2993ea079f01ef567370ac",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "independent_of_author": true,
+      "review_path": "review/train-a-rereview.json",
+      "review_sha256": "96a3ae09d6ba3819be683845ae7e5cf17853011b7382a75f68166c49e4d767a6"
+    },
+    "train-a-017": {
+      "family_sha256": "6b881d63f61d741bbe722885023e0a36270f4665b24ac8739e3955aa03d5bc02",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "independent_of_author": true,
+      "review_path": "review/train-a-rereview.json",
+      "review_sha256": "96a3ae09d6ba3819be683845ae7e5cf17853011b7382a75f68166c49e4d767a6"
+    },
+    "train-a-018": {
+      "family_sha256": "fbe56bce0c73cd164357d96bc688873e99fd0913db8892d8c311b1be68d760a5",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "independent_of_author": true,
+      "review_path": "review/train-a-rereview.json",
+      "review_sha256": "96a3ae09d6ba3819be683845ae7e5cf17853011b7382a75f68166c49e4d767a6"
+    },
+    "train-a-019": {
+      "family_sha256": "794d4b26040edf6eb46ea472331a5392b24196f5718c1fbfaf7e15945ca9c44f",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "independent_of_author": true,
+      "review_path": "review/train-a-rereview.json",
+      "review_sha256": "96a3ae09d6ba3819be683845ae7e5cf17853011b7382a75f68166c49e4d767a6"
+    },
+    "train-a-020": {
+      "family_sha256": "df2146ffa796593c23442865a5a713a351f90f456628e633f4a8bed8736ac81f",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "independent_of_author": true,
+      "review_path": "review/train-a-rereview.json",
+      "review_sha256": "96a3ae09d6ba3819be683845ae7e5cf17853011b7382a75f68166c49e4d767a6"
+    },
+    "train-a-021": {
+      "family_sha256": "ee25ae69d8c93568349e16846adbe204ba6d92411437eefedc36f9d11ae1e0c9",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "independent_of_author": true,
+      "review_path": "review/train-a-rereview.json",
+      "review_sha256": "96a3ae09d6ba3819be683845ae7e5cf17853011b7382a75f68166c49e4d767a6"
+    },
+    "train-a-022": {
+      "family_sha256": "2944f4d110b1b668b03c05b6bc71994e75ae1ca24f67d445fcdeb5239059a569",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "independent_of_author": true,
+      "review_path": "review/train-a-rereview.json",
+      "review_sha256": "96a3ae09d6ba3819be683845ae7e5cf17853011b7382a75f68166c49e4d767a6"
+    },
+    "train-a-023": {
+      "family_sha256": "556090604eda2556ec30b25464681eba2f61a405faede7a06171a1e303825280",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "independent_of_author": true,
+      "review_path": "review/train-a-rereview.json",
+      "review_sha256": "96a3ae09d6ba3819be683845ae7e5cf17853011b7382a75f68166c49e4d767a6"
+    },
+    "train-a-024": {
+      "family_sha256": "baa1cb555942a128d1f9b6afee1f7ef49896b1a33e531ac7b8ce731005ede3a6",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "independent_of_author": true,
+      "review_path": "review/train-a-rereview.json",
+      "review_sha256": "96a3ae09d6ba3819be683845ae7e5cf17853011b7382a75f68166c49e4d767a6"
+    },
+    "train-a-025": {
+      "family_sha256": "06979cb132d38a1e4e8025178c1409e8b132ce058bbeff8bd1ada39963a678a8",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "independent_of_author": true,
+      "review_path": "review/train-a-rereview.json",
+      "review_sha256": "96a3ae09d6ba3819be683845ae7e5cf17853011b7382a75f68166c49e4d767a6"
+    },
+    "train-b-001": {
+      "family_sha256": "32ca7d81975ef3c56edf848a2dea592ec534756315963bd7fec40fa657713295",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "independent_of_author": true,
+      "review_path": "review/train-b-review.json",
+      "review_sha256": "abde9094df809f2f3494cffd00e0ede4b4e74a2b99382a77cd3be7c6fe609b92"
+    },
+    "train-b-002": {
+      "family_sha256": "3e04645baf927c9d2cc95f15ee592c5859223209f29bea2ee18e100b93154488",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "independent_of_author": true,
+      "review_path": "review/train-b-review.json",
+      "review_sha256": "abde9094df809f2f3494cffd00e0ede4b4e74a2b99382a77cd3be7c6fe609b92"
+    },
+    "train-b-003": {
+      "family_sha256": "1dde1371be1addddcee17e714863c2f529622c38d3af8161b982cd5d2f62fa08",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "independent_of_author": true,
+      "review_path": "review/train-b-review.json",
+      "review_sha256": "abde9094df809f2f3494cffd00e0ede4b4e74a2b99382a77cd3be7c6fe609b92"
+    },
+    "train-b-004": {
+      "family_sha256": "5be96326fbde1729139c2b9c1baedde77b093a1c54c4e6a28f299774503a363b",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "independent_of_author": true,
+      "review_path": "review/train-b-review.json",
+      "review_sha256": "abde9094df809f2f3494cffd00e0ede4b4e74a2b99382a77cd3be7c6fe609b92"
+    },
+    "train-b-005": {
+      "family_sha256": "6cdfe00b32a5a3a2c07b2b74944da3f98c1a0fc2c042df207557de627fac71e4",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "independent_of_author": true,
+      "review_path": "review/train-b-review.json",
+      "review_sha256": "abde9094df809f2f3494cffd00e0ede4b4e74a2b99382a77cd3be7c6fe609b92"
+    },
+    "train-b-006": {
+      "family_sha256": "a9525fe29802ad1c974f43e476f88ee80e6bfdcdad65741498df65234be8578d",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "independent_of_author": true,
+      "review_path": "review/train-b-review.json",
+      "review_sha256": "abde9094df809f2f3494cffd00e0ede4b4e74a2b99382a77cd3be7c6fe609b92"
+    },
+    "train-b-007": {
+      "family_sha256": "2c9cf846293b4fe7b11193fb639eb198649d91a94b515aeedce4b4b79b01a20f",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "independent_of_author": true,
+      "review_path": "review/train-b-review.json",
+      "review_sha256": "abde9094df809f2f3494cffd00e0ede4b4e74a2b99382a77cd3be7c6fe609b92"
+    },
+    "train-b-008": {
+      "family_sha256": "664eaa96ac2e8afbbcd9dc2648413e39475dc1e031a7455c02f00efc570538dc",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "independent_of_author": true,
+      "review_path": "review/train-b-review.json",
+      "review_sha256": "abde9094df809f2f3494cffd00e0ede4b4e74a2b99382a77cd3be7c6fe609b92"
+    },
+    "train-b-009": {
+      "family_sha256": "916af7a7b0503b8625a556ebb8b8348f1cae220e6bb83ddd0f314af530e4ac16",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "independent_of_author": true,
+      "review_path": "review/train-b-review.json",
+      "review_sha256": "abde9094df809f2f3494cffd00e0ede4b4e74a2b99382a77cd3be7c6fe609b92"
+    },
+    "train-b-010": {
+      "family_sha256": "dd314864bd4e66cac13bf49fce6832d13bedbbb24b163a50720c84d4d6845cdd",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "independent_of_author": true,
+      "review_path": "review/train-b-review.json",
+      "review_sha256": "abde9094df809f2f3494cffd00e0ede4b4e74a2b99382a77cd3be7c6fe609b92"
+    },
+    "train-b-011": {
+      "family_sha256": "6d646fffcaddf143e6da13a0fdac7b66615fc914ec4dec15e40560bfa12f4ff4",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "independent_of_author": true,
+      "review_path": "review/train-b-review.json",
+      "review_sha256": "abde9094df809f2f3494cffd00e0ede4b4e74a2b99382a77cd3be7c6fe609b92"
+    },
+    "train-b-012": {
+      "family_sha256": "79d6624bf54a5f36058c94551ae42a7f23375cc04397bc4b1456d08e16156dc1",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "independent_of_author": true,
+      "review_path": "review/train-b-review.json",
+      "review_sha256": "abde9094df809f2f3494cffd00e0ede4b4e74a2b99382a77cd3be7c6fe609b92"
+    },
+    "train-b-013": {
+      "family_sha256": "2e58c887b1a0c440708e328d933160b1cb69acc18b7bac34aec2ab8f7fb0665b",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "independent_of_author": true,
+      "review_path": "review/train-b-review.json",
+      "review_sha256": "abde9094df809f2f3494cffd00e0ede4b4e74a2b99382a77cd3be7c6fe609b92"
+    },
+    "train-b-014": {
+      "family_sha256": "55510e6e7203f26c95a983bf01d588de62fd8506039d75353900f8c4817a0b8b",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "independent_of_author": true,
+      "review_path": "review/train-b-review.json",
+      "review_sha256": "abde9094df809f2f3494cffd00e0ede4b4e74a2b99382a77cd3be7c6fe609b92"
+    },
+    "train-b-015": {
+      "family_sha256": "d31a3c17f7e794f7cfb373d972632ee7f8169ebb7a25d42f556fcd62ba1bbf30",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "independent_of_author": true,
+      "review_path": "review/train-b-review.json",
+      "review_sha256": "abde9094df809f2f3494cffd00e0ede4b4e74a2b99382a77cd3be7c6fe609b92"
+    },
+    "train-b-016": {
+      "family_sha256": "987f216213f4cbcc36aca9250791a7c93a0560a6d135460af4d6c6d045551a19",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "independent_of_author": true,
+      "review_path": "review/train-b-review.json",
+      "review_sha256": "abde9094df809f2f3494cffd00e0ede4b4e74a2b99382a77cd3be7c6fe609b92"
+    },
+    "train-b-017": {
+      "family_sha256": "07505356608847cd353034d21c6c5f04bbc7b04ff87e394a4f320dfa5a160b19",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "independent_of_author": true,
+      "review_path": "review/train-b-review.json",
+      "review_sha256": "abde9094df809f2f3494cffd00e0ede4b4e74a2b99382a77cd3be7c6fe609b92"
+    },
+    "train-b-018": {
+      "family_sha256": "3ab0fab8a2d96a2a9d2d1ea130e276c607e48bb46ce7da488acc242593340cfd",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "independent_of_author": true,
+      "review_path": "review/train-b-review.json",
+      "review_sha256": "abde9094df809f2f3494cffd00e0ede4b4e74a2b99382a77cd3be7c6fe609b92"
+    },
+    "train-b-019": {
+      "family_sha256": "dd1620c9f2fa02f7137e96811e645dc3bf41099f33b4d1a89452a666fbe4ecb4",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "independent_of_author": true,
+      "review_path": "review/train-b-review.json",
+      "review_sha256": "abde9094df809f2f3494cffd00e0ede4b4e74a2b99382a77cd3be7c6fe609b92"
+    },
+    "train-b-020": {
+      "family_sha256": "243dd506adb4569452477cf27a8f543cb20f963fc67944d5c848e7b7addade29",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "independent_of_author": true,
+      "review_path": "review/train-b-review.json",
+      "review_sha256": "abde9094df809f2f3494cffd00e0ede4b4e74a2b99382a77cd3be7c6fe609b92"
+    },
+    "train-b-021": {
+      "family_sha256": "98b95b859c380b14db1c7ebdee4b6508f75e5a4d3688b81edad6abe4a7dd59b5",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "independent_of_author": true,
+      "review_path": "review/train-b-review.json",
+      "review_sha256": "abde9094df809f2f3494cffd00e0ede4b4e74a2b99382a77cd3be7c6fe609b92"
+    },
+    "train-b-022": {
+      "family_sha256": "4b73eb911c4249594d73c31e7146d48ca969a8b02e3956ff1e116b46f2f3387d",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "independent_of_author": true,
+      "review_path": "review/train-b-review.json",
+      "review_sha256": "abde9094df809f2f3494cffd00e0ede4b4e74a2b99382a77cd3be7c6fe609b92"
+    },
+    "train-b-023": {
+      "family_sha256": "a99ecc5dc3877bf7fccc6960ca23927acd53302e520140cc62f673f6add4f49c",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "independent_of_author": true,
+      "review_path": "review/train-b-review.json",
+      "review_sha256": "abde9094df809f2f3494cffd00e0ede4b4e74a2b99382a77cd3be7c6fe609b92"
+    },
+    "train-b-024": {
+      "family_sha256": "f40778173587218646c3a6ea8dcd5525420fec4f58f87aac3a81c587ba2c5cc8",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "independent_of_author": true,
+      "review_path": "review/train-b-review.json",
+      "review_sha256": "abde9094df809f2f3494cffd00e0ede4b4e74a2b99382a77cd3be7c6fe609b92"
+    },
+    "train-b-025": {
+      "family_sha256": "78dfa0f0bded35049dd41cf0c5b2bd2f9109c6e02f5dc39b2f683306c4ae0926",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "independent_of_author": true,
+      "review_path": "review/train-b-review.json",
+      "review_sha256": "abde9094df809f2f3494cffd00e0ede4b4e74a2b99382a77cd3be7c6fe609b92"
+    },
+    "train-c-001": {
+      "family_sha256": "f57b8559d2fee9cc62d06ef34c3bf2deb3e14c6798166fbbcce6afbe7f146884",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root",
+      "reviewer": "/root/tracker_corpus_a",
+      "independent_of_author": true,
+      "review_path": "review/train-c-rereview.json",
+      "review_sha256": "4cc04ab4b29085992fbc9918eb19e32969d99c1b32cdc4a751e15e4e634cafcc"
+    },
+    "train-c-002": {
+      "family_sha256": "a5f25d0f8d6f53cddfb117668343304c2ea372809e0a9771e034b92f39098b21",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root",
+      "reviewer": "/root/tracker_corpus_a",
+      "independent_of_author": true,
+      "review_path": "review/train-c-rereview.json",
+      "review_sha256": "4cc04ab4b29085992fbc9918eb19e32969d99c1b32cdc4a751e15e4e634cafcc"
+    },
+    "train-c-003": {
+      "family_sha256": "ac6800654ce5dbdead75e20c83f6f91cb731812862108e732fc649d0fc65e4b1",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root",
+      "reviewer": "/root/tracker_corpus_a",
+      "independent_of_author": true,
+      "review_path": "review/train-c-rereview.json",
+      "review_sha256": "4cc04ab4b29085992fbc9918eb19e32969d99c1b32cdc4a751e15e4e634cafcc"
+    },
+    "train-c-004": {
+      "family_sha256": "a811b22c58bdca06371d793a87cd34608cea8cc7b98e2d9f0fa836a9d2464db6",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root",
+      "reviewer": "/root/tracker_corpus_a",
+      "independent_of_author": true,
+      "review_path": "review/train-c-rereview.json",
+      "review_sha256": "4cc04ab4b29085992fbc9918eb19e32969d99c1b32cdc4a751e15e4e634cafcc"
+    },
+    "train-c-005": {
+      "family_sha256": "d15f3b8d4ec777cfc800ac57a7dc12782a65f11a3d2030096a137eee2d6675ea",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root",
+      "reviewer": "/root/tracker_corpus_a",
+      "independent_of_author": true,
+      "review_path": "review/train-c-rereview.json",
+      "review_sha256": "4cc04ab4b29085992fbc9918eb19e32969d99c1b32cdc4a751e15e4e634cafcc"
+    },
+    "train-c-006": {
+      "family_sha256": "a1b75bd49cdf829edb4a6cf269652ac7f75f13589572d1f321c6b6312c917ead",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root",
+      "reviewer": "/root/tracker_corpus_a",
+      "independent_of_author": true,
+      "review_path": "review/train-c-rereview.json",
+      "review_sha256": "4cc04ab4b29085992fbc9918eb19e32969d99c1b32cdc4a751e15e4e634cafcc"
+    },
+    "train-c-007": {
+      "family_sha256": "4696239feea4c032ae49902bc77572d66812cd3df34b6a13ea67444bb42dfb90",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root",
+      "reviewer": "/root/tracker_corpus_a",
+      "independent_of_author": true,
+      "review_path": "review/train-c-rereview.json",
+      "review_sha256": "4cc04ab4b29085992fbc9918eb19e32969d99c1b32cdc4a751e15e4e634cafcc"
+    },
+    "train-c-008": {
+      "family_sha256": "98a3fc9d8d557c1627f826309e40258033d7dd9d8dfc8247794efa132831394c",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root",
+      "reviewer": "/root/tracker_corpus_a",
+      "independent_of_author": true,
+      "review_path": "review/train-c-rereview.json",
+      "review_sha256": "4cc04ab4b29085992fbc9918eb19e32969d99c1b32cdc4a751e15e4e634cafcc"
+    },
+    "train-c-009": {
+      "family_sha256": "a49eb62f47891a3562d21bb7ef270faedf671d773ca7964efd77890d1b9f2299",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root",
+      "reviewer": "/root/tracker_corpus_a",
+      "independent_of_author": true,
+      "review_path": "review/train-c-rereview.json",
+      "review_sha256": "4cc04ab4b29085992fbc9918eb19e32969d99c1b32cdc4a751e15e4e634cafcc"
+    },
+    "train-c-010": {
+      "family_sha256": "380f8fc4da603859133b1ef95228c7384d715cdb061efd730327dd74f6225344",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root",
+      "reviewer": "/root/tracker_corpus_a",
+      "independent_of_author": true,
+      "review_path": "review/train-c-rereview.json",
+      "review_sha256": "4cc04ab4b29085992fbc9918eb19e32969d99c1b32cdc4a751e15e4e634cafcc"
+    },
+    "train-c-011": {
+      "family_sha256": "500b0354fb821a5a9212423d7893ed91fe1c271ab389061138bf962a83edc423",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root",
+      "reviewer": "/root/tracker_corpus_a",
+      "independent_of_author": true,
+      "review_path": "review/train-c-rereview.json",
+      "review_sha256": "4cc04ab4b29085992fbc9918eb19e32969d99c1b32cdc4a751e15e4e634cafcc"
+    },
+    "train-c-012": {
+      "family_sha256": "ffac316280b945c13a105aeb1b21d2db9322451b65caa8fdda225f8bf6ab06f7",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root",
+      "reviewer": "/root/tracker_corpus_a",
+      "independent_of_author": true,
+      "review_path": "review/train-c-rereview.json",
+      "review_sha256": "4cc04ab4b29085992fbc9918eb19e32969d99c1b32cdc4a751e15e4e634cafcc"
+    },
+    "train-c-013": {
+      "family_sha256": "acbfeb19606a3a2857badf640f455ac65c3a54aa64abb417d34448d0463965e6",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root",
+      "reviewer": "/root/tracker_corpus_a",
+      "independent_of_author": true,
+      "review_path": "review/train-c-rereview.json",
+      "review_sha256": "4cc04ab4b29085992fbc9918eb19e32969d99c1b32cdc4a751e15e4e634cafcc"
+    },
+    "train-c-014": {
+      "family_sha256": "d2e9d6feda744d60d926b8860bf4c010e51ab89c6643f747dc9a3251cb5c3fd9",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root",
+      "reviewer": "/root/tracker_corpus_a",
+      "independent_of_author": true,
+      "review_path": "review/train-c-rereview.json",
+      "review_sha256": "4cc04ab4b29085992fbc9918eb19e32969d99c1b32cdc4a751e15e4e634cafcc"
+    },
+    "train-c-015": {
+      "family_sha256": "d3106b35194e87de87db3148573228a045e97d89654838aac0fcebc92b84199d",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root",
+      "reviewer": "/root/tracker_corpus_a",
+      "independent_of_author": true,
+      "review_path": "review/train-c-rereview.json",
+      "review_sha256": "4cc04ab4b29085992fbc9918eb19e32969d99c1b32cdc4a751e15e4e634cafcc"
+    },
+    "train-c-016": {
+      "family_sha256": "413107c605ec6f8267498d0c8e9080335be76d5146c55343af83f45dd5ab86a4",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root",
+      "reviewer": "/root/tracker_corpus_a",
+      "independent_of_author": true,
+      "review_path": "review/train-c-rereview.json",
+      "review_sha256": "4cc04ab4b29085992fbc9918eb19e32969d99c1b32cdc4a751e15e4e634cafcc"
+    },
+    "train-c-017": {
+      "family_sha256": "943f776924a914082d35b9f9e6773f2ca23fd76e56fe19e4db50b10d044e6544",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root",
+      "reviewer": "/root/tracker_corpus_a",
+      "independent_of_author": true,
+      "review_path": "review/train-c-rereview.json",
+      "review_sha256": "4cc04ab4b29085992fbc9918eb19e32969d99c1b32cdc4a751e15e4e634cafcc"
+    },
+    "train-c-018": {
+      "family_sha256": "4eda99857149c24d62b30490b0c1d48ba041b75a1dc7a10ef81dbd20196a7d2b",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root",
+      "reviewer": "/root/tracker_corpus_a",
+      "independent_of_author": true,
+      "review_path": "review/train-c-rereview.json",
+      "review_sha256": "4cc04ab4b29085992fbc9918eb19e32969d99c1b32cdc4a751e15e4e634cafcc"
+    },
+    "train-c-019": {
+      "family_sha256": "69cd7c9e1e1b80ca820c4d404285e8eb80eabf5df59e612008c1b59c78a5d679",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root",
+      "reviewer": "/root/tracker_corpus_a",
+      "independent_of_author": true,
+      "review_path": "review/train-c-rereview.json",
+      "review_sha256": "4cc04ab4b29085992fbc9918eb19e32969d99c1b32cdc4a751e15e4e634cafcc"
+    },
+    "train-c-020": {
+      "family_sha256": "e913783cda64d619d0c1855a02d9807322df6dc74ef06040e8196c5a8ca985fb",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root",
+      "reviewer": "/root/tracker_corpus_a",
+      "independent_of_author": true,
+      "review_path": "review/train-c-rereview.json",
+      "review_sha256": "4cc04ab4b29085992fbc9918eb19e32969d99c1b32cdc4a751e15e4e634cafcc"
+    },
+    "train-c-021": {
+      "family_sha256": "3c222db791b9b1fb40a9f4811ccfc89408a45a6a7ee92847ac8324915e5fbbe5",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root",
+      "reviewer": "/root/tracker_corpus_a",
+      "independent_of_author": true,
+      "review_path": "review/train-c-rereview.json",
+      "review_sha256": "4cc04ab4b29085992fbc9918eb19e32969d99c1b32cdc4a751e15e4e634cafcc"
+    },
+    "train-c-022": {
+      "family_sha256": "ceb052f15fd166f74dbda2f6f3fc83e661d8256752f1c56abb91a341b44320ed",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root",
+      "reviewer": "/root/tracker_corpus_a",
+      "independent_of_author": true,
+      "review_path": "review/train-c-rereview.json",
+      "review_sha256": "4cc04ab4b29085992fbc9918eb19e32969d99c1b32cdc4a751e15e4e634cafcc"
+    },
+    "train-c-023": {
+      "family_sha256": "3875a825165d73ac5dbb2970127f414b8c5809dac396a9d4d8fd4dddbbea6f7b",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root",
+      "reviewer": "/root/tracker_corpus_a",
+      "independent_of_author": true,
+      "review_path": "review/train-c-rereview.json",
+      "review_sha256": "4cc04ab4b29085992fbc9918eb19e32969d99c1b32cdc4a751e15e4e634cafcc"
+    },
+    "train-c-024": {
+      "family_sha256": "477315e95f75172d50beaeb160b13674150a842b1f130adbc8f1d2a54a6336f2",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root",
+      "reviewer": "/root/tracker_corpus_a",
+      "independent_of_author": true,
+      "review_path": "review/train-c-rereview.json",
+      "review_sha256": "4cc04ab4b29085992fbc9918eb19e32969d99c1b32cdc4a751e15e4e634cafcc"
+    },
+    "train-c-025": {
+      "family_sha256": "c7825ac680db8bbc9806f6db4ba71e7e3d28e32a52139a6987139a543022b515",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root",
+      "reviewer": "/root/tracker_corpus_a",
+      "independent_of_author": true,
+      "review_path": "review/train-c-rereview.json",
+      "review_sha256": "4cc04ab4b29085992fbc9918eb19e32969d99c1b32cdc4a751e15e4e634cafcc"
+    },
+    "train-d-001": {
+      "family_sha256": "69c8a38118a29c19b91ae6e8bc23bbcb4ebd5a4239e17232b88fde82057fc53c",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "independent_of_author": true,
+      "review_path": "review/train-d-review.json",
+      "review_sha256": "b49c9b407f9ef47f06eb755309c8af635cd0c1bbd0f6a4109159fe4e00a04c67"
+    },
+    "train-d-002": {
+      "family_sha256": "817b657250d6d6dc57680c584ce829b300e6e23ec4e5c23cd7cebe4e12da3429",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "independent_of_author": true,
+      "review_path": "review/train-d-review.json",
+      "review_sha256": "b49c9b407f9ef47f06eb755309c8af635cd0c1bbd0f6a4109159fe4e00a04c67"
+    },
+    "train-d-003": {
+      "family_sha256": "5d438a9a05bf3698e19155b6054cdb9dd8903818e17dcad8cf928f36372ded8f",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "independent_of_author": true,
+      "review_path": "review/train-d-review.json",
+      "review_sha256": "b49c9b407f9ef47f06eb755309c8af635cd0c1bbd0f6a4109159fe4e00a04c67"
+    },
+    "train-d-004": {
+      "family_sha256": "59f89cf70efb4525a9ccb778030cd4d50ea36e0eb177880ca79e4fcd7e603d07",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "independent_of_author": true,
+      "review_path": "review/train-d-review.json",
+      "review_sha256": "b49c9b407f9ef47f06eb755309c8af635cd0c1bbd0f6a4109159fe4e00a04c67"
+    },
+    "train-d-005": {
+      "family_sha256": "cac9d43ba928f3eb940c7f77bf1383c6999b6c2eedd4d21b92e584c26a695713",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "independent_of_author": true,
+      "review_path": "review/train-d-review.json",
+      "review_sha256": "b49c9b407f9ef47f06eb755309c8af635cd0c1bbd0f6a4109159fe4e00a04c67"
+    },
+    "train-d-006": {
+      "family_sha256": "0fade65dd192097aae530afe1972c0b86f9ebe5db6ac81f3c45b18f251fc19ba",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "independent_of_author": true,
+      "review_path": "review/train-d-review.json",
+      "review_sha256": "b49c9b407f9ef47f06eb755309c8af635cd0c1bbd0f6a4109159fe4e00a04c67"
+    },
+    "train-d-007": {
+      "family_sha256": "41088a07015494d9cde30814bf7bdb0820bce9f3e8c5497fa2678ce39445fb97",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "independent_of_author": true,
+      "review_path": "review/train-d-review.json",
+      "review_sha256": "b49c9b407f9ef47f06eb755309c8af635cd0c1bbd0f6a4109159fe4e00a04c67"
+    },
+    "train-d-008": {
+      "family_sha256": "88b8a6e743e95418942a9919ea43f9ef8ebc0e8114952f99fbee5c12c9620b07",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "independent_of_author": true,
+      "review_path": "review/train-d-review.json",
+      "review_sha256": "b49c9b407f9ef47f06eb755309c8af635cd0c1bbd0f6a4109159fe4e00a04c67"
+    },
+    "train-d-009": {
+      "family_sha256": "b1081b23ee0262d1b5f22667e3c831b68696896a3000990f2c1012976ee2cca5",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "independent_of_author": true,
+      "review_path": "review/train-d-review.json",
+      "review_sha256": "b49c9b407f9ef47f06eb755309c8af635cd0c1bbd0f6a4109159fe4e00a04c67"
+    },
+    "train-d-010": {
+      "family_sha256": "8dd54359584cccec39d7696829fdffc87ec474b72f2adf3de8ca4e733132d02a",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "independent_of_author": true,
+      "review_path": "review/train-d-review.json",
+      "review_sha256": "b49c9b407f9ef47f06eb755309c8af635cd0c1bbd0f6a4109159fe4e00a04c67"
+    },
+    "train-d-011": {
+      "family_sha256": "692c1e0127374b3f88a786cd29b43268041016d57ed123017eedb1c725bbd3ae",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "independent_of_author": true,
+      "review_path": "review/train-d-review.json",
+      "review_sha256": "b49c9b407f9ef47f06eb755309c8af635cd0c1bbd0f6a4109159fe4e00a04c67"
+    },
+    "train-d-012": {
+      "family_sha256": "1e7e0ef1b62de4ee54faac8e2b74bc4dc3d461b1486537b1112dc6fc7f14024e",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "independent_of_author": true,
+      "review_path": "review/train-d-review.json",
+      "review_sha256": "b49c9b407f9ef47f06eb755309c8af635cd0c1bbd0f6a4109159fe4e00a04c67"
+    },
+    "train-d-013": {
+      "family_sha256": "da6491d90dc93ecc49e89dd0b1bbbbed8032d0effa42672d0e1c407f7098ad70",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "independent_of_author": true,
+      "review_path": "review/train-d-review.json",
+      "review_sha256": "b49c9b407f9ef47f06eb755309c8af635cd0c1bbd0f6a4109159fe4e00a04c67"
+    },
+    "train-d-014": {
+      "family_sha256": "63c67b7d12bdad782ca52e6be2f8c882ba49bd509245bc19b4a25cf309c961ba",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "independent_of_author": true,
+      "review_path": "review/train-d-review.json",
+      "review_sha256": "b49c9b407f9ef47f06eb755309c8af635cd0c1bbd0f6a4109159fe4e00a04c67"
+    },
+    "train-d-015": {
+      "family_sha256": "ab2a894998f60b4b81e7f57128fc5cfc5afa78b3a963061436551319d0fb048d",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "independent_of_author": true,
+      "review_path": "review/train-d-review.json",
+      "review_sha256": "b49c9b407f9ef47f06eb755309c8af635cd0c1bbd0f6a4109159fe4e00a04c67"
+    },
+    "train-d-016": {
+      "family_sha256": "6884e6d0bb4efc01ca9622f6ac2826a2d6fee393b8b99812acbb9acfb2b6854a",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "independent_of_author": true,
+      "review_path": "review/train-d-review.json",
+      "review_sha256": "b49c9b407f9ef47f06eb755309c8af635cd0c1bbd0f6a4109159fe4e00a04c67"
+    },
+    "train-d-017": {
+      "family_sha256": "23f415c04f65476f8949d7059d3dcb3f86b6f1e207c0354110167b3f48df11cf",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "independent_of_author": true,
+      "review_path": "review/train-d-review.json",
+      "review_sha256": "b49c9b407f9ef47f06eb755309c8af635cd0c1bbd0f6a4109159fe4e00a04c67"
+    },
+    "train-d-018": {
+      "family_sha256": "39dc57e027e859ef7af950193e1fdbaa67bc48d8666cf1f278a9b1e91bb1523b",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "independent_of_author": true,
+      "review_path": "review/train-d-review.json",
+      "review_sha256": "b49c9b407f9ef47f06eb755309c8af635cd0c1bbd0f6a4109159fe4e00a04c67"
+    },
+    "train-d-019": {
+      "family_sha256": "dbb120d50966469903d957c6c2990cd8402001a8e03bb03187020ec0b06769fe",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "independent_of_author": true,
+      "review_path": "review/train-d-review.json",
+      "review_sha256": "b49c9b407f9ef47f06eb755309c8af635cd0c1bbd0f6a4109159fe4e00a04c67"
+    },
+    "train-d-020": {
+      "family_sha256": "f218cd69f44b24778d0d1c4e3686a71dccd111303c6336c1f67607cd149c141f",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "independent_of_author": true,
+      "review_path": "review/train-d-review.json",
+      "review_sha256": "b49c9b407f9ef47f06eb755309c8af635cd0c1bbd0f6a4109159fe4e00a04c67"
+    },
+    "train-d-021": {
+      "family_sha256": "179398a21768e64bfb851db5e6ffe8b52ce7bcb00a44d5313a30c9d74e21b007",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "independent_of_author": true,
+      "review_path": "review/train-d-review.json",
+      "review_sha256": "b49c9b407f9ef47f06eb755309c8af635cd0c1bbd0f6a4109159fe4e00a04c67"
+    },
+    "train-d-022": {
+      "family_sha256": "09c651305b09ddefc7966cfc2d18b91a6b6badafc0089b1ca36886a5b78ad61a",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "independent_of_author": true,
+      "review_path": "review/train-d-review.json",
+      "review_sha256": "b49c9b407f9ef47f06eb755309c8af635cd0c1bbd0f6a4109159fe4e00a04c67"
+    },
+    "train-d-023": {
+      "family_sha256": "8435cb115c0439f78f206a611a6a12573be880c77a2f3d4b44d2f425c788d43f",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "independent_of_author": true,
+      "review_path": "review/train-d-review.json",
+      "review_sha256": "b49c9b407f9ef47f06eb755309c8af635cd0c1bbd0f6a4109159fe4e00a04c67"
+    },
+    "train-d-024": {
+      "family_sha256": "12af30ddf975277568d6afc989ef43916e33b1874738d127e2e44f5fc9764659",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "independent_of_author": true,
+      "review_path": "review/train-d-review.json",
+      "review_sha256": "b49c9b407f9ef47f06eb755309c8af635cd0c1bbd0f6a4109159fe4e00a04c67"
+    },
+    "train-d-025": {
+      "family_sha256": "dc39d0fb40f7eef71762f7b87756c4d27522d5c8d856cfa4ded634836e775cc1",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "independent_of_author": true,
+      "review_path": "review/train-d-review.json",
+      "review_sha256": "b49c9b407f9ef47f06eb755309c8af635cd0c1bbd0f6a4109159fe4e00a04c67"
+    },
+    "dev-001": {
+      "family_sha256": "2ae813d1285d1913e366e8fba14ae3612f18e7e4f457e657c3f04dda458539f4",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "independent_of_author": true,
+      "review_path": "review/dev-rereview.json",
+      "review_sha256": "85dabdf39b3db1966f1b5ce7ba37696d104eaeb69d4afe52012c7dd3799aff00"
+    },
+    "dev-002": {
+      "family_sha256": "5134ba451e5999bc6186b91cd392cc0329d160fecda126f639151d4bd1efde19",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "independent_of_author": true,
+      "review_path": "review/dev-rereview.json",
+      "review_sha256": "85dabdf39b3db1966f1b5ce7ba37696d104eaeb69d4afe52012c7dd3799aff00"
+    },
+    "dev-003": {
+      "family_sha256": "420946b4ff127f0bea67e6163037d31f82040505dfb09b48f1bbe9d28d690948",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "independent_of_author": true,
+      "review_path": "review/dev-rereview.json",
+      "review_sha256": "85dabdf39b3db1966f1b5ce7ba37696d104eaeb69d4afe52012c7dd3799aff00"
+    },
+    "dev-004": {
+      "family_sha256": "4211e4e92ccb0ea878b6b55caca90cb7560324d47aa012608ddfa604da31f765",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "independent_of_author": true,
+      "review_path": "review/dev-rereview.json",
+      "review_sha256": "85dabdf39b3db1966f1b5ce7ba37696d104eaeb69d4afe52012c7dd3799aff00"
+    },
+    "dev-005": {
+      "family_sha256": "b7aa4b0d0239bfc2528d72557ffef6954de525fd53f7c1d4b271b09345801cd2",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "independent_of_author": true,
+      "review_path": "review/dev-rereview.json",
+      "review_sha256": "85dabdf39b3db1966f1b5ce7ba37696d104eaeb69d4afe52012c7dd3799aff00"
+    },
+    "dev-006": {
+      "family_sha256": "3b84fe6585a82d2e14a0d8599e4cb6cafa91ec1ff9863ba56283b3bf45a203f3",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "independent_of_author": true,
+      "review_path": "review/dev-rereview.json",
+      "review_sha256": "85dabdf39b3db1966f1b5ce7ba37696d104eaeb69d4afe52012c7dd3799aff00"
+    },
+    "dev-007": {
+      "family_sha256": "4857a388d46c5d3193c59846909a84c5b96fc004a32057a73784ac790ab0e3e3",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "independent_of_author": true,
+      "review_path": "review/dev-rereview.json",
+      "review_sha256": "85dabdf39b3db1966f1b5ce7ba37696d104eaeb69d4afe52012c7dd3799aff00"
+    },
+    "dev-008": {
+      "family_sha256": "decb6c39c5247ce79b1d8eac317ba115afe3dc115ec24a8c4ba819588b4d122b",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "independent_of_author": true,
+      "review_path": "review/dev-rereview.json",
+      "review_sha256": "85dabdf39b3db1966f1b5ce7ba37696d104eaeb69d4afe52012c7dd3799aff00"
+    },
+    "dev-009": {
+      "family_sha256": "25b9f68a933e5fd432b3a7d5f55485b1d8f1f99b3af166ed536a3e94388ad746",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "independent_of_author": true,
+      "review_path": "review/dev-rereview.json",
+      "review_sha256": "85dabdf39b3db1966f1b5ce7ba37696d104eaeb69d4afe52012c7dd3799aff00"
+    },
+    "dev-010": {
+      "family_sha256": "41b8dae446a31446d4f75918df128530a1ae1375bcd6f56bc356b19ff91cd002",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "independent_of_author": true,
+      "review_path": "review/dev-rereview.json",
+      "review_sha256": "85dabdf39b3db1966f1b5ce7ba37696d104eaeb69d4afe52012c7dd3799aff00"
+    },
+    "test-001": {
+      "family_sha256": "d3377ed2bf870dc417d4baf976b22beac79765d2e6ad7d43fa79d8599c3e8c3b",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "independent_of_author": true,
+      "review_path": "review/test-rereview.json",
+      "review_sha256": "a9c329fca8f4ea751f9635131851c0e43710d8350314b7d62cd60e928aa0021a"
+    },
+    "test-002": {
+      "family_sha256": "d30c6e9d26f3f0f5de33262a145fa965d2466541d9669389c2584761f9f48be1",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "independent_of_author": true,
+      "review_path": "review/test-rereview.json",
+      "review_sha256": "a9c329fca8f4ea751f9635131851c0e43710d8350314b7d62cd60e928aa0021a"
+    },
+    "test-003": {
+      "family_sha256": "a5903269b819b91cb5cf6926bfd941ee6a99befb6e71ec1ac1f45b40c0a8c0ea",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "independent_of_author": true,
+      "review_path": "review/test-rereview.json",
+      "review_sha256": "a9c329fca8f4ea751f9635131851c0e43710d8350314b7d62cd60e928aa0021a"
+    },
+    "test-004": {
+      "family_sha256": "fbb4f7ffa8013334ed46489282e933b12327498a9dddf6b32e07216e19aba59b",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "independent_of_author": true,
+      "review_path": "review/test-rereview.json",
+      "review_sha256": "a9c329fca8f4ea751f9635131851c0e43710d8350314b7d62cd60e928aa0021a"
+    },
+    "test-005": {
+      "family_sha256": "d3dd2d3aead04b3a8cf77d654f48bdf33eefbae2288652deae48c3cefa37500a",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "independent_of_author": true,
+      "review_path": "review/test-rereview.json",
+      "review_sha256": "a9c329fca8f4ea751f9635131851c0e43710d8350314b7d62cd60e928aa0021a"
+    },
+    "test-006": {
+      "family_sha256": "7b340174d1c77c9cb0693554f64c95ce7c3927cd9143db12f8fd51f4d2bf72e0",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "independent_of_author": true,
+      "review_path": "review/test-rereview.json",
+      "review_sha256": "a9c329fca8f4ea751f9635131851c0e43710d8350314b7d62cd60e928aa0021a"
+    },
+    "test-007": {
+      "family_sha256": "188a97bed03e21346113e92b85f018435ac6126788a25dcaca5550f15e519420",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "independent_of_author": true,
+      "review_path": "review/test-rereview.json",
+      "review_sha256": "a9c329fca8f4ea751f9635131851c0e43710d8350314b7d62cd60e928aa0021a"
+    },
+    "test-008": {
+      "family_sha256": "25cb98892a9b8e359f82f0871e1d9a2aa9a309a1dbde59a23cd21015b10fbe98",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "independent_of_author": true,
+      "review_path": "review/test-rereview.json",
+      "review_sha256": "a9c329fca8f4ea751f9635131851c0e43710d8350314b7d62cd60e928aa0021a"
+    },
+    "test-009": {
+      "family_sha256": "31b12ceefef79437d681975ddab7b81517ff84a78e2824ffc404f4512bffb23e",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "independent_of_author": true,
+      "review_path": "review/test-rereview.json",
+      "review_sha256": "a9c329fca8f4ea751f9635131851c0e43710d8350314b7d62cd60e928aa0021a"
+    },
+    "test-010": {
+      "family_sha256": "e657d4f6e2c85bbe6e63ec77c63a7b0ad462fe2638d1a1f6ae7ffe2a43eb2e97",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "independent_of_author": true,
+      "review_path": "review/test-rereview.json",
+      "review_sha256": "a9c329fca8f4ea751f9635131851c0e43710d8350314b7d62cd60e928aa0021a"
+    },
+    "test-011": {
+      "family_sha256": "77fe26c75060138eb371165b7e21850fab53ade0d8b4dd5c46331eb5b2e34d8c",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "independent_of_author": true,
+      "review_path": "review/test-rereview.json",
+      "review_sha256": "a9c329fca8f4ea751f9635131851c0e43710d8350314b7d62cd60e928aa0021a"
+    },
+    "test-012": {
+      "family_sha256": "58ca6b0b6c28cdbc6c177305e7e0d582f8a9d395064474c5006d71017c7126f0",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "independent_of_author": true,
+      "review_path": "review/test-rereview.json",
+      "review_sha256": "a9c329fca8f4ea751f9635131851c0e43710d8350314b7d62cd60e928aa0021a"
+    },
+    "test-013": {
+      "family_sha256": "5f09490c3d530aef36fb08e0f7056bc60603e7c2d2420ddebc48e59466c9cad2",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "independent_of_author": true,
+      "review_path": "review/test-rereview.json",
+      "review_sha256": "a9c329fca8f4ea751f9635131851c0e43710d8350314b7d62cd60e928aa0021a"
+    },
+    "test-014": {
+      "family_sha256": "64341a2dadad35f8b72566972ecf1dd6e3fb2f79ef61e384cd50939e63950920",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "independent_of_author": true,
+      "review_path": "review/test-rereview.json",
+      "review_sha256": "a9c329fca8f4ea751f9635131851c0e43710d8350314b7d62cd60e928aa0021a"
+    },
+    "test-015": {
+      "family_sha256": "0bf8ae01293aed75cb5c593fdc87fc7d5f7853179d5a7c74eedee98cc9260a75",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "independent_of_author": true,
+      "review_path": "review/test-rereview.json",
+      "review_sha256": "a9c329fca8f4ea751f9635131851c0e43710d8350314b7d62cd60e928aa0021a"
+    },
+    "test-016": {
+      "family_sha256": "b365f7a58686e2311b5a7232ea5c05c7155862e4017430df489b8add9c5d9514",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "independent_of_author": true,
+      "review_path": "review/test-rereview.json",
+      "review_sha256": "a9c329fca8f4ea751f9635131851c0e43710d8350314b7d62cd60e928aa0021a"
+    },
+    "test-017": {
+      "family_sha256": "87b1187fb6c328b04968383b37e59bcc53a3192db892e6b724988dd2314188fc",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "independent_of_author": true,
+      "review_path": "review/test-rereview.json",
+      "review_sha256": "a9c329fca8f4ea751f9635131851c0e43710d8350314b7d62cd60e928aa0021a"
+    },
+    "test-018": {
+      "family_sha256": "0918c927c9905e6bcb310b69ecbfe14ce6994bc66960d32300111e6591b5b5ec",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "independent_of_author": true,
+      "review_path": "review/test-rereview.json",
+      "review_sha256": "a9c329fca8f4ea751f9635131851c0e43710d8350314b7d62cd60e928aa0021a"
+    },
+    "test-019": {
+      "family_sha256": "36175f0d3a25d4e0f4f618ac55e2beffd63750ff79d5092c661f8aaab69bbd79",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "independent_of_author": true,
+      "review_path": "review/test-rereview.json",
+      "review_sha256": "a9c329fca8f4ea751f9635131851c0e43710d8350314b7d62cd60e928aa0021a"
+    },
+    "test-020": {
+      "family_sha256": "c0e0082ab248905aafb07a45f7287cf52adaa7cb92b4bc2ded159fa5259fa21a",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "independent_of_author": true,
+      "review_path": "review/test-rereview.json",
+      "review_sha256": "a9c329fca8f4ea751f9635131851c0e43710d8350314b7d62cd60e928aa0021a"
+    }
+  },
+  "fault_examples": {
+    "train-a-001-2": {
+      "fault_sha256": "36b361316233bba94a27d58a680d7f8805f330989a8631570c0a7c4b6910dd74",
+      "verdict": "accept",
+      "independent_of_author": true,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "review_path": "review/train-a-fault-review.json",
+      "review_sha256": "91d19cd5a8f4ae0d4a3627d8b26eb183b32a4cd2e94f4dcde6d70d59ee041587"
+    },
+    "train-a-002-3": {
+      "fault_sha256": "63c25d84df2672c5d0bfd9b2654ffc9f9ff28049107f0e93d38914135a87d95e",
+      "verdict": "accept",
+      "independent_of_author": true,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "review_path": "review/train-a-fault-review.json",
+      "review_sha256": "91d19cd5a8f4ae0d4a3627d8b26eb183b32a4cd2e94f4dcde6d70d59ee041587"
+    },
+    "train-a-003-4": {
+      "fault_sha256": "bd076435f5c6572434eb4417f85a04ca2c2b4399ce4ded7c92044219e8913081",
+      "verdict": "accept",
+      "independent_of_author": true,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "review_path": "review/train-a-fault-review.json",
+      "review_sha256": "91d19cd5a8f4ae0d4a3627d8b26eb183b32a4cd2e94f4dcde6d70d59ee041587"
+    },
+    "train-a-006-5": {
+      "fault_sha256": "14d103554e288b95f3b0a256db6d03bec98ae6e1c3745a6e61a3ec7c5bb9677a",
+      "verdict": "accept",
+      "independent_of_author": true,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "review_path": "review/train-a-fault-review.json",
+      "review_sha256": "91d19cd5a8f4ae0d4a3627d8b26eb183b32a4cd2e94f4dcde6d70d59ee041587"
+    },
+    "train-a-007-2": {
+      "fault_sha256": "2ae0e4ebe847e413d2a65b9e1c410c6c31746391ce6dd484da12600b58c33157",
+      "verdict": "accept",
+      "independent_of_author": true,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "review_path": "review/train-a-fault-review.json",
+      "review_sha256": "91d19cd5a8f4ae0d4a3627d8b26eb183b32a4cd2e94f4dcde6d70d59ee041587"
+    },
+    "train-a-011-3": {
+      "fault_sha256": "c5f28f1c2474463befc7c3899c232718ac37ee4d2e799cf1dac06ec8d4fef5a2",
+      "verdict": "accept",
+      "independent_of_author": true,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "review_path": "review/train-a-fault-review.json",
+      "review_sha256": "91d19cd5a8f4ae0d4a3627d8b26eb183b32a4cd2e94f4dcde6d70d59ee041587"
+    },
+    "train-a-014-4": {
+      "fault_sha256": "8559dedcb720194926857bdaa3e9ec2ac0e4a52bdbc154b38d8df67578bdee9f",
+      "verdict": "accept",
+      "independent_of_author": true,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "review_path": "review/train-a-fault-review.json",
+      "review_sha256": "91d19cd5a8f4ae0d4a3627d8b26eb183b32a4cd2e94f4dcde6d70d59ee041587"
+    },
+    "train-a-015-2": {
+      "fault_sha256": "406c0a3edd9d4e0f5684a1babc2ec450e4db4e3d6832cd3e0dd0deeeb1dab924",
+      "verdict": "accept",
+      "independent_of_author": true,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "review_path": "review/train-a-fault-review.json",
+      "review_sha256": "91d19cd5a8f4ae0d4a3627d8b26eb183b32a4cd2e94f4dcde6d70d59ee041587"
+    },
+    "train-a-017-5": {
+      "fault_sha256": "b139a7568d6b9db1eb04d18482af7dbe1b21ca2196f7bb4324bb6d9922769435",
+      "verdict": "accept",
+      "independent_of_author": true,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "review_path": "review/train-a-fault-review.json",
+      "review_sha256": "91d19cd5a8f4ae0d4a3627d8b26eb183b32a4cd2e94f4dcde6d70d59ee041587"
+    },
+    "train-a-019-3": {
+      "fault_sha256": "d19d10ee54f6d7f7cd730e5948c27ca6be8c2403527c85904def8f700928a222",
+      "verdict": "accept",
+      "independent_of_author": true,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "review_path": "review/train-a-fault-review.json",
+      "review_sha256": "91d19cd5a8f4ae0d4a3627d8b26eb183b32a4cd2e94f4dcde6d70d59ee041587"
+    },
+    "train-a-023-4": {
+      "fault_sha256": "5ad381b035e9a070f5a2996441e3ec62b54c0369c84c756951ab02674a7f33d5",
+      "verdict": "accept",
+      "independent_of_author": true,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "review_path": "review/train-a-fault-review.json",
+      "review_sha256": "91d19cd5a8f4ae0d4a3627d8b26eb183b32a4cd2e94f4dcde6d70d59ee041587"
+    },
+    "train-a-024-5": {
+      "fault_sha256": "0f125fadf5902ed3eb8b5f842ba4a86419183dc9d2f34baa28c6d838f629d53a",
+      "verdict": "accept",
+      "independent_of_author": true,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "review_path": "review/train-a-fault-review.json",
+      "review_sha256": "91d19cd5a8f4ae0d4a3627d8b26eb183b32a4cd2e94f4dcde6d70d59ee041587"
+    },
+    "train-b-001-2": {
+      "fault_sha256": "8d2652c9c1b20fa5048e45e155b0485b45c8325f9c1c66637f328c62ea8ff941",
+      "verdict": "accept",
+      "independent_of_author": true,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "review_path": "review/train-b-fault-review.json",
+      "review_sha256": "4c6d9e1314b26ae7cb429d8d3bade9d511f801fc67f197bfaa3846696c5b12b0"
+    },
+    "train-b-003-3": {
+      "fault_sha256": "90153f8e72476eb6ad07bfc0f84b15fa40e4b48541eb7e2b2229dff3e2a4eaf5",
+      "verdict": "accept",
+      "independent_of_author": true,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "review_path": "review/train-b-fault-review.json",
+      "review_sha256": "4c6d9e1314b26ae7cb429d8d3bade9d511f801fc67f197bfaa3846696c5b12b0"
+    },
+    "train-b-005-4": {
+      "fault_sha256": "bfc2500d0f0b58fb76038db8613bd6c35cc26d21d008617271ca2d5b4ffff6fd",
+      "verdict": "accept",
+      "independent_of_author": true,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "review_path": "review/train-b-fault-review.json",
+      "review_sha256": "4c6d9e1314b26ae7cb429d8d3bade9d511f801fc67f197bfaa3846696c5b12b0"
+    },
+    "train-b-007-5": {
+      "fault_sha256": "edaad22af80c887875419c66ccc0365fc0aa5b2360f23aa643dfa249d7f4472f",
+      "verdict": "accept",
+      "independent_of_author": true,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "review_path": "review/train-b-fault-review.json",
+      "review_sha256": "4c6d9e1314b26ae7cb429d8d3bade9d511f801fc67f197bfaa3846696c5b12b0"
+    },
+    "train-b-009-2": {
+      "fault_sha256": "b4113b37315ab9b903459368f8a2b9509a61a7eff6846956b3ef7edc74b0de53",
+      "verdict": "accept",
+      "independent_of_author": true,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "review_path": "review/train-b-fault-review.json",
+      "review_sha256": "4c6d9e1314b26ae7cb429d8d3bade9d511f801fc67f197bfaa3846696c5b12b0"
+    },
+    "train-b-011-3": {
+      "fault_sha256": "8250020a3738f35932fdb342a084e0fb0139b939f36bb3a7b8e2793d4133d843",
+      "verdict": "accept",
+      "independent_of_author": true,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "review_path": "review/train-b-fault-review.json",
+      "review_sha256": "4c6d9e1314b26ae7cb429d8d3bade9d511f801fc67f197bfaa3846696c5b12b0"
+    },
+    "train-b-013-2": {
+      "fault_sha256": "dc03f9363f50820eaa25b7ed09fe9f87f7a90caebb0c49cdf6e770b92a7dd606",
+      "verdict": "accept",
+      "independent_of_author": true,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "review_path": "review/train-b-fault-review.json",
+      "review_sha256": "4c6d9e1314b26ae7cb429d8d3bade9d511f801fc67f197bfaa3846696c5b12b0"
+    },
+    "train-b-015-3": {
+      "fault_sha256": "bc75ddf7ae59d9ef543548111597f7d0fbb70b8c544760fb7fa1ef6352b6e46e",
+      "verdict": "accept",
+      "independent_of_author": true,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "review_path": "review/train-b-fault-review.json",
+      "review_sha256": "4c6d9e1314b26ae7cb429d8d3bade9d511f801fc67f197bfaa3846696c5b12b0"
+    },
+    "train-b-017-4": {
+      "fault_sha256": "edd3836450b934c6be091cb7293318d5c572cfd71a3627dc0b35595258951f05",
+      "verdict": "accept",
+      "independent_of_author": true,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "review_path": "review/train-b-fault-review.json",
+      "review_sha256": "4c6d9e1314b26ae7cb429d8d3bade9d511f801fc67f197bfaa3846696c5b12b0"
+    },
+    "train-b-019-5": {
+      "fault_sha256": "c0f593dc376a48127d2fb6e28e3c95623aeaaf067dafff832b8e1de0eb79bb33",
+      "verdict": "accept",
+      "independent_of_author": true,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "review_path": "review/train-b-fault-review.json",
+      "review_sha256": "4c6d9e1314b26ae7cb429d8d3bade9d511f801fc67f197bfaa3846696c5b12b0"
+    },
+    "train-b-021-2": {
+      "fault_sha256": "91d24356d92f225f53c635de40aabcc2bb564ea2c8cb61d0378cd3388b5a079d",
+      "verdict": "accept",
+      "independent_of_author": true,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "review_path": "review/train-b-fault-review.json",
+      "review_sha256": "4c6d9e1314b26ae7cb429d8d3bade9d511f801fc67f197bfaa3846696c5b12b0"
+    },
+    "train-b-023-4": {
+      "fault_sha256": "cbdd8e64ed4e9e1ae11494e56991f4cda4473e9ad6a1c97ba6707be18276430b",
+      "verdict": "accept",
+      "independent_of_author": true,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "review_path": "review/train-b-fault-review.json",
+      "review_sha256": "4c6d9e1314b26ae7cb429d8d3bade9d511f801fc67f197bfaa3846696c5b12b0"
+    },
+    "train-c-001-4": {
+      "fault_sha256": "2d91e19f245babc718e5d426a8a643419c8d79384db201179d3548bbe356751c",
+      "verdict": "accept",
+      "independent_of_author": true,
+      "author": "/root",
+      "reviewer": "/root/tracker_corpus_a",
+      "review_path": "review/train-c-faults-rereview.json",
+      "review_sha256": "8cfbc2f867fab667cb9ff8e873715c3787f2f19134afe36937c623bc7351ed1c"
+    },
+    "train-c-003-5": {
+      "fault_sha256": "11c60f2b60dac82ed70e4d8f635069fc3f12f1e5a5a3044fa350c4b20b9eff1f",
+      "verdict": "accept",
+      "independent_of_author": true,
+      "author": "/root",
+      "reviewer": "/root/tracker_corpus_a",
+      "review_path": "review/train-c-faults-rereview.json",
+      "review_sha256": "8cfbc2f867fab667cb9ff8e873715c3787f2f19134afe36937c623bc7351ed1c"
+    },
+    "train-c-004-5": {
+      "fault_sha256": "d2d05f2e3062e9d0783519a082624427ee6b5b566a5c4e703264e068760dd1db",
+      "verdict": "accept",
+      "independent_of_author": true,
+      "author": "/root",
+      "reviewer": "/root/tracker_corpus_a",
+      "review_path": "review/train-c-faults-rereview.json",
+      "review_sha256": "8cfbc2f867fab667cb9ff8e873715c3787f2f19134afe36937c623bc7351ed1c"
+    },
+    "train-c-005-3": {
+      "fault_sha256": "ce1463a97352c1d8a838cb6d424603b3a937567e4fb6903dc658fc2bc579c18b",
+      "verdict": "accept",
+      "independent_of_author": true,
+      "author": "/root",
+      "reviewer": "/root/tracker_corpus_a",
+      "review_path": "review/train-c-faults-rereview.json",
+      "review_sha256": "8cfbc2f867fab667cb9ff8e873715c3787f2f19134afe36937c623bc7351ed1c"
+    },
+    "train-c-007-3": {
+      "fault_sha256": "a455d27ccc23fb8b909794cbb299389feeb457dd242b7683faddc8447f0b81d3",
+      "verdict": "accept",
+      "independent_of_author": true,
+      "author": "/root",
+      "reviewer": "/root/tracker_corpus_a",
+      "review_path": "review/train-c-faults-rereview.json",
+      "review_sha256": "8cfbc2f867fab667cb9ff8e873715c3787f2f19134afe36937c623bc7351ed1c"
+    },
+    "train-c-012-3": {
+      "fault_sha256": "8e0047288da14ec965d1df137d90bbd6fb93401cbfdd6ea4d686bdfbb33e1aee",
+      "verdict": "accept",
+      "independent_of_author": true,
+      "author": "/root",
+      "reviewer": "/root/tracker_corpus_a",
+      "review_path": "review/train-c-faults-rereview.json",
+      "review_sha256": "8cfbc2f867fab667cb9ff8e873715c3787f2f19134afe36937c623bc7351ed1c"
+    },
+    "train-c-014-5": {
+      "fault_sha256": "dc05231d217537749df86dda02b3a541f4c7e9ab26a233e20c471fe9b694b332",
+      "verdict": "accept",
+      "independent_of_author": true,
+      "author": "/root",
+      "reviewer": "/root/tracker_corpus_a",
+      "review_path": "review/train-c-faults-rereview.json",
+      "review_sha256": "8cfbc2f867fab667cb9ff8e873715c3787f2f19134afe36937c623bc7351ed1c"
+    },
+    "train-c-016-2": {
+      "fault_sha256": "a5f58457b688bfedcecc9cb775860f9d0284405601d4a3bea1240d50ac0724cf",
+      "verdict": "accept",
+      "independent_of_author": true,
+      "author": "/root",
+      "reviewer": "/root/tracker_corpus_a",
+      "review_path": "review/train-c-faults-rereview.json",
+      "review_sha256": "8cfbc2f867fab667cb9ff8e873715c3787f2f19134afe36937c623bc7351ed1c"
+    },
+    "train-c-017-2": {
+      "fault_sha256": "9835bff001eebe96dfe6bf350dd1b5598b27315f5e74ef054ededd8b2ed2fbf4",
+      "verdict": "accept",
+      "independent_of_author": true,
+      "author": "/root",
+      "reviewer": "/root/tracker_corpus_a",
+      "review_path": "review/train-c-faults-rereview.json",
+      "review_sha256": "8cfbc2f867fab667cb9ff8e873715c3787f2f19134afe36937c623bc7351ed1c"
+    },
+    "train-c-018-5": {
+      "fault_sha256": "03bbfa8c300236047699eb2cc401d442754ed33feb4c3c03ef4d8adb10959725",
+      "verdict": "accept",
+      "independent_of_author": true,
+      "author": "/root",
+      "reviewer": "/root/tracker_corpus_a",
+      "review_path": "review/train-c-faults-rereview.json",
+      "review_sha256": "8cfbc2f867fab667cb9ff8e873715c3787f2f19134afe36937c623bc7351ed1c"
+    },
+    "train-c-019-4": {
+      "fault_sha256": "6a5bfde6743fba3b820f71ba158c917a3df478b5dde4cf2075651c994e92fe77",
+      "verdict": "accept",
+      "independent_of_author": true,
+      "author": "/root",
+      "reviewer": "/root/tracker_corpus_a",
+      "review_path": "review/train-c-faults-rereview.json",
+      "review_sha256": "8cfbc2f867fab667cb9ff8e873715c3787f2f19134afe36937c623bc7351ed1c"
+    },
+    "train-c-021-4": {
+      "fault_sha256": "ac820cfe0dde88906d1fb649f1e8b19fea53df285172d00e056f05b7ac5db3ce",
+      "verdict": "accept",
+      "independent_of_author": true,
+      "author": "/root",
+      "reviewer": "/root/tracker_corpus_a",
+      "review_path": "review/train-c-faults-rereview.json",
+      "review_sha256": "8cfbc2f867fab667cb9ff8e873715c3787f2f19134afe36937c623bc7351ed1c"
+    },
+    "train-c-024-4": {
+      "fault_sha256": "b5c56d656a46a1708eef3dd8d4a8fc785be8a0839d6d132bc06fa2c6159ad4a4",
+      "verdict": "accept",
+      "independent_of_author": true,
+      "author": "/root",
+      "reviewer": "/root/tracker_corpus_a",
+      "review_path": "review/train-c-faults-rereview.json",
+      "review_sha256": "8cfbc2f867fab667cb9ff8e873715c3787f2f19134afe36937c623bc7351ed1c"
+    },
+    "train-d-002-3": {
+      "fault_sha256": "ec8e6079bdd74950c3f16959fac6b338f1269e26d561b9c9e81c51280452adcb",
+      "verdict": "accept",
+      "independent_of_author": true,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "review_path": "review/train-d-fault-review.json",
+      "review_sha256": "da69da1b48c6d53e7d19de5a2278659db4b3f1207ec566911b62f2e08b1f616e"
+    },
+    "train-d-004-4": {
+      "fault_sha256": "1237a8e175313684310c553fe0c11185515ff7362b78033dd47df98ef1eaaecb",
+      "verdict": "accept",
+      "independent_of_author": true,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "review_path": "review/train-d-fault-review.json",
+      "review_sha256": "da69da1b48c6d53e7d19de5a2278659db4b3f1207ec566911b62f2e08b1f616e"
+    },
+    "train-d-006-2": {
+      "fault_sha256": "75602336b51cec0b877b497fc9dbbb8ff31fe19fd32e71716d2c1ea7519b77c4",
+      "verdict": "accept",
+      "independent_of_author": true,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "review_path": "review/train-d-fault-review.json",
+      "review_sha256": "da69da1b48c6d53e7d19de5a2278659db4b3f1207ec566911b62f2e08b1f616e"
+    },
+    "train-d-008-5": {
+      "fault_sha256": "5a704b8a3493aefcc8e6dc4e565ba59bcce444108fbe81addf16ceb7104309b2",
+      "verdict": "accept",
+      "independent_of_author": true,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "review_path": "review/train-d-fault-review.json",
+      "review_sha256": "da69da1b48c6d53e7d19de5a2278659db4b3f1207ec566911b62f2e08b1f616e"
+    },
+    "train-d-010-2": {
+      "fault_sha256": "243ef9c75ee9e4428ffef4d743aa731cca59428a6bed96b994656bd6adcb46c1",
+      "verdict": "accept",
+      "independent_of_author": true,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "review_path": "review/train-d-fault-review.json",
+      "review_sha256": "da69da1b48c6d53e7d19de5a2278659db4b3f1207ec566911b62f2e08b1f616e"
+    },
+    "train-d-012-4": {
+      "fault_sha256": "cee5a89a7bc6424472d6eba702020875edc6cf48c40e48a470b1c04c83767172",
+      "verdict": "accept",
+      "independent_of_author": true,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "review_path": "review/train-d-fault-review.json",
+      "review_sha256": "da69da1b48c6d53e7d19de5a2278659db4b3f1207ec566911b62f2e08b1f616e"
+    },
+    "train-d-013-3": {
+      "fault_sha256": "a2424b76ac3a97e84eb37f9bb40e0d3083ccd9c7c8d1556174d631e0eea81b1a",
+      "verdict": "accept",
+      "independent_of_author": true,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "review_path": "review/train-d-fault-review.json",
+      "review_sha256": "da69da1b48c6d53e7d19de5a2278659db4b3f1207ec566911b62f2e08b1f616e"
+    },
+    "train-d-015-2": {
+      "fault_sha256": "76e167fe6092a69857768bcca14931e3806df741a66d6af7172d112c381baad7",
+      "verdict": "accept",
+      "independent_of_author": true,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "review_path": "review/train-d-fault-review.json",
+      "review_sha256": "da69da1b48c6d53e7d19de5a2278659db4b3f1207ec566911b62f2e08b1f616e"
+    },
+    "train-d-017-5": {
+      "fault_sha256": "4a6aa09db877f46c05313f76607eceab757f537af255f4fce6952d95f838a826",
+      "verdict": "accept",
+      "independent_of_author": true,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "review_path": "review/train-d-fault-review.json",
+      "review_sha256": "da69da1b48c6d53e7d19de5a2278659db4b3f1207ec566911b62f2e08b1f616e"
+    },
+    "train-d-019-4": {
+      "fault_sha256": "697d7299507793059401accf1c1b57deaf101a8d42377d5410c0ad4ffba2475d",
+      "verdict": "accept",
+      "independent_of_author": true,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "review_path": "review/train-d-fault-review.json",
+      "review_sha256": "da69da1b48c6d53e7d19de5a2278659db4b3f1207ec566911b62f2e08b1f616e"
+    },
+    "train-d-021-2": {
+      "fault_sha256": "2ed9c6e9c752ebef76b6bc430d3229d5a1aa40a46d60451b1d1636b369ca0a6e",
+      "verdict": "accept",
+      "independent_of_author": true,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "review_path": "review/train-d-fault-review.json",
+      "review_sha256": "da69da1b48c6d53e7d19de5a2278659db4b3f1207ec566911b62f2e08b1f616e"
+    },
+    "train-d-023-3": {
+      "fault_sha256": "21565e512e31a81dbe2afa4dea654afb39f5b5188dd07f453ead6c7bfbfb38d5",
+      "verdict": "accept",
+      "independent_of_author": true,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "review_path": "review/train-d-fault-review.json",
+      "review_sha256": "da69da1b48c6d53e7d19de5a2278659db4b3f1207ec566911b62f2e08b1f616e"
+    },
+    "train-d-025-5": {
+      "fault_sha256": "b341d497a2318389dcd8991a147940764f0d009c8944e31f6f31dd83296b2384",
+      "verdict": "accept",
+      "independent_of_author": true,
+      "author": "/root/tracker_annotation_v2",
+      "reviewer": "/root",
+      "review_path": "review/train-d-fault-review.json",
+      "review_sha256": "da69da1b48c6d53e7d19de5a2278659db4b3f1207ec566911b62f2e08b1f616e"
+    },
+    "dev-002-2": {
+      "fault_sha256": "48c6a8a0fcf55778fc7b551c7818454a88789bdfb3d6987d6b42cdba71a6d921",
+      "verdict": "accept",
+      "independent_of_author": true,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "review_path": "review/dev-fault-review.json",
+      "review_sha256": "abfcedfc3c8fd122a209bbf88e55df55a0e3baacb97519dea26fb30804209947"
+    },
+    "dev-004-4": {
+      "fault_sha256": "3d4497dc2cd716ae13d289ce58d41922b7519620ee2c331d1fa61430576422ec",
+      "verdict": "accept",
+      "independent_of_author": true,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "review_path": "review/dev-fault-review.json",
+      "review_sha256": "abfcedfc3c8fd122a209bbf88e55df55a0e3baacb97519dea26fb30804209947"
+    },
+    "dev-005-3": {
+      "fault_sha256": "245c233171ea1fd84858382fff8a5c0c80cf7fc3404e08945464d946f8891d67",
+      "verdict": "accept",
+      "independent_of_author": true,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "review_path": "review/dev-fault-review.json",
+      "review_sha256": "abfcedfc3c8fd122a209bbf88e55df55a0e3baacb97519dea26fb30804209947"
+    },
+    "dev-006-5": {
+      "fault_sha256": "ed4580a295362c6fc694f18e30cc40c8c65a5fd03a75893a21cef48b8216d66e",
+      "verdict": "accept",
+      "independent_of_author": true,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "review_path": "review/dev-fault-review.json",
+      "review_sha256": "abfcedfc3c8fd122a209bbf88e55df55a0e3baacb97519dea26fb30804209947"
+    },
+    "dev-009-3": {
+      "fault_sha256": "4f0d540f5609800c9098c7bd3fde0796b882962eb281f5325eab42b31a8978ec",
+      "verdict": "accept",
+      "independent_of_author": true,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "review_path": "review/dev-fault-review.json",
+      "review_sha256": "abfcedfc3c8fd122a209bbf88e55df55a0e3baacb97519dea26fb30804209947"
+    },
+    "test-001-3": {
+      "fault_sha256": "4eb0b601c67c753795d3a4e2f4f63b894a0d0535234715f523df94be80696290",
+      "verdict": "accept",
+      "independent_of_author": true,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "review_path": "review/test-fault-review.json",
+      "review_sha256": "ca48a429d4532eed494e224fb1ac0f1e7cca0130ff3cee3442ec1c7310f10162"
+    },
+    "test-002-2": {
+      "fault_sha256": "a416975be8f78d231e58b29a559e5fed345848f6485bf6245d683d6b1ac76f0a",
+      "verdict": "accept",
+      "independent_of_author": true,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "review_path": "review/test-fault-review.json",
+      "review_sha256": "ca48a429d4532eed494e224fb1ac0f1e7cca0130ff3cee3442ec1c7310f10162"
+    },
+    "test-003-4": {
+      "fault_sha256": "bec36fe34804d06161bab66930f5d29872ace9b1855dddef72b3ae0590a09587",
+      "verdict": "accept",
+      "independent_of_author": true,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "review_path": "review/test-fault-review.json",
+      "review_sha256": "ca48a429d4532eed494e224fb1ac0f1e7cca0130ff3cee3442ec1c7310f10162"
+    },
+    "test-005-5": {
+      "fault_sha256": "5734a366c776f13a5a5f04884da427eaddcc935c762e52e20379e9d4084b66ae",
+      "verdict": "accept",
+      "independent_of_author": true,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "review_path": "review/test-fault-review.json",
+      "review_sha256": "ca48a429d4532eed494e224fb1ac0f1e7cca0130ff3cee3442ec1c7310f10162"
+    },
+    "test-007-4": {
+      "fault_sha256": "dc76125569fc12cbe82201c1405253ed8b378bdbd119d8aa401215fee5ac92fc",
+      "verdict": "accept",
+      "independent_of_author": true,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "review_path": "review/test-fault-review.json",
+      "review_sha256": "ca48a429d4532eed494e224fb1ac0f1e7cca0130ff3cee3442ec1c7310f10162"
+    },
+    "test-011-2": {
+      "fault_sha256": "095225eecd6c8200cdaf5c7802141dab241b190707293d2695a7c12bde287042",
+      "verdict": "accept",
+      "independent_of_author": true,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "review_path": "review/test-fault-review.json",
+      "review_sha256": "ca48a429d4532eed494e224fb1ac0f1e7cca0130ff3cee3442ec1c7310f10162"
+    },
+    "test-014-3": {
+      "fault_sha256": "5047a7e878c771ee3b4b4bde66e395c539c5758b90014bc2bc2f398bfff327d5",
+      "verdict": "accept",
+      "independent_of_author": true,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "review_path": "review/test-fault-review.json",
+      "review_sha256": "ca48a429d4532eed494e224fb1ac0f1e7cca0130ff3cee3442ec1c7310f10162"
+    },
+    "test-016-4": {
+      "fault_sha256": "9f9af0c084d2329e8f5fc1954367f007250a585a731e3fcd431dbf5beab6fa27",
+      "verdict": "accept",
+      "independent_of_author": true,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "review_path": "review/test-fault-review.json",
+      "review_sha256": "ca48a429d4532eed494e224fb1ac0f1e7cca0130ff3cee3442ec1c7310f10162"
+    },
+    "test-018-5": {
+      "fault_sha256": "7e9cc94f3d72b0819eb8938db5066901623f3bc55a4589461ff140cc90b005ae",
+      "verdict": "accept",
+      "independent_of_author": true,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "review_path": "review/test-fault-review.json",
+      "review_sha256": "ca48a429d4532eed494e224fb1ac0f1e7cca0130ff3cee3442ec1c7310f10162"
+    },
+    "test-020-3": {
+      "fault_sha256": "92b939f3d57d3fbc45a89e0320c26f740dd01d6cdd6750894cc9cc0b59133cb6",
+      "verdict": "accept",
+      "independent_of_author": true,
+      "author": "/root/tracker_corpus_a",
+      "reviewer": "/root/tracker_annotation_v2",
+      "review_path": "review/test-fault-review.json",
+      "review_sha256": "ca48a429d4532eed494e224fb1ac0f1e7cca0130ff3cee3442ec1c7310f10162"
+    }
+  },
+  "review_files": {
+    "review/train-a-rereview.json": "96a3ae09d6ba3819be683845ae7e5cf17853011b7382a75f68166c49e4d767a6",
+    "review/train-b-review.json": "abde9094df809f2f3494cffd00e0ede4b4e74a2b99382a77cd3be7c6fe609b92",
+    "review/train-c-rereview.json": "4cc04ab4b29085992fbc9918eb19e32969d99c1b32cdc4a751e15e4e634cafcc",
+    "review/train-d-review.json": "b49c9b407f9ef47f06eb755309c8af635cd0c1bbd0f6a4109159fe4e00a04c67",
+    "review/dev-rereview.json": "85dabdf39b3db1966f1b5ce7ba37696d104eaeb69d4afe52012c7dd3799aff00",
+    "review/test-rereview.json": "a9c329fca8f4ea751f9635131851c0e43710d8350314b7d62cd60e928aa0021a",
+    "review/train-a-fault-review.json": "91d19cd5a8f4ae0d4a3627d8b26eb183b32a4cd2e94f4dcde6d70d59ee041587",
+    "review/train-b-fault-review.json": "4c6d9e1314b26ae7cb429d8d3bade9d511f801fc67f197bfaa3846696c5b12b0",
+    "review/train-c-faults-rereview.json": "8cfbc2f867fab667cb9ff8e873715c3787f2f19134afe36937c623bc7351ed1c",
+    "review/train-d-fault-review.json": "da69da1b48c6d53e7d19de5a2278659db4b3f1207ec566911b62f2e08b1f616e",
+    "review/dev-fault-review.json": "abfcedfc3c8fd122a209bbf88e55df55a0e3baacb97519dea26fb30804209947",
+    "review/test-fault-review.json": "ca48a429d4532eed494e224fb1ac0f1e7cca0130ff3cee3442ec1c7310f10162"
+  },
+  "training_sft_sha256": "d180d14231697dcdfc5054e532b5d7757ba084989a3f534a9af233a9d7dd0c58",
+  "limitations": [
+    "500 updates belong to 100 fictional scenario families, not 500 independent conversations.",
+    "Separate model review is not human gold or real-user distribution validation.",
+    "Injected prior-state errors are text corruption only, not missing-record/owner/status failures.",
+    "Short held-out conversations and shared task domains limit long-history and out-of-domain conclusions.",
+    "This admission demonstrates label review and executable examples, not reduced model omissions."
+  ]
+}
