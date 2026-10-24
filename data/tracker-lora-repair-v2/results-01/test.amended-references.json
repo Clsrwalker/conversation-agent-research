@@ -1,0 +1,5027 @@
+{
+  "schema": "tracker-amended-test-references-v1",
+  "ledger_sha256": "25e417ab9bf048150a39a074e6583dc97fd19471210fc9eaaba2524ee34b89da",
+  "original_test_records_sha256": "8190b19a0b25718e7e5baf2ac5fd25383df4fcd422696a8564d99a6cb3766ce3",
+  "rows": [
+    {
+      "example_id": "fresh-test-001-1",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "澄",
+          "status": "active",
+          "text": "制作触觉路线图图例"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "澄",
+          "status": "active",
+          "text": "凸线表示可通行边界；虚线仅为装饰，不表示可通过"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-001-2",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "澄",
+          "status": "active",
+          "text": "制作触觉路线图图例"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "澄",
+          "status": "active",
+          "text": "凸线表示可通行边界；虚线仅为装饰，不表示可通过"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "澄",
+          "status": "active",
+          "text": "凸线边缘间距为6到9毫米"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-001-3",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "澄",
+          "status": "active",
+          "text": "制作触觉路线图图例"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "澄",
+          "status": "active",
+          "text": "凸线表示可通行边界；虚线仅为装饰，不表示可通过"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "澄",
+          "status": "active",
+          "text": "凸线边缘间距为6到9毫米"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "澄",
+          "status": "active",
+          "text": "图例标题放左上角"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-001-4",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "澄",
+          "status": "active",
+          "text": "制作触觉路线图图例"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "澄",
+          "status": "active",
+          "text": "凸线表示可通行边界；虚线仅为装饰，不表示可通过"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "澄",
+          "status": "active",
+          "text": "凸线边缘间距为6到9毫米"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "澄",
+          "status": "active",
+          "text": "图例标题放左上角"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-001-5",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "澄",
+          "status": "active",
+          "text": "制作触觉路线图图例"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "澄",
+          "status": "active",
+          "text": "凸线表示可通行边界；虚线仅为装饰，不表示可通过"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "澄",
+          "status": "active",
+          "text": "凸线边缘间距为6到9毫米"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "澄",
+          "status": "active",
+          "text": "图例标题放右上角"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-002-1",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "棠",
+          "status": "active",
+          "text": "安排陶器模拟窑位"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "棠",
+          "status": "active",
+          "text": "棠的带把杯仅放底层且不能叠放"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-002-2",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "棠",
+          "status": "active",
+          "text": "安排陶器模拟窑位"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "棠",
+          "status": "active",
+          "text": "棠的带把杯仅放底层且不能叠放"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "弥",
+          "status": "active",
+          "text": "弥的盘子纳入窑位表，盘间至少隔一厘米"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-002-3",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "棠",
+          "status": "active",
+          "text": "安排陶器模拟窑位"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "棠",
+          "status": "active",
+          "text": "棠的带把杯仅放底层且不能叠放"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "弥",
+          "status": "active",
+          "text": "弥的盘子纳入窑位表，盘间至少隔一厘米"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "棠",
+          "status": "uncertain",
+          "text": "可能另做窑位俯视图，尚未决定"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-002-4",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "棠",
+          "status": "active",
+          "text": "安排陶器模拟窑位"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "棠",
+          "status": "active",
+          "text": "棠的带把杯仅放底层且不能叠放"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "弥",
+          "status": "active",
+          "text": "弥的盘子纳入窑位表，盘间至少隔一厘米"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "棠",
+          "status": "uncertain",
+          "text": "可能另做窑位俯视图，尚未决定"
+        },
+        {
+          "intent_id": "i5",
+          "owner": "棠",
+          "status": "active",
+          "text": "窑位表按层从下往上编号"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-002-5",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "棠",
+          "status": "active",
+          "text": "安排陶器模拟窑位"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "棠",
+          "status": "active",
+          "text": "棠的带把杯仅放底层且不能叠放"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "弥",
+          "status": "active",
+          "text": "弥的盘子纳入窑位表，盘间至少隔一厘米"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "棠",
+          "status": "uncertain",
+          "text": "可能另做窑位俯视图，尚未决定"
+        },
+        {
+          "intent_id": "i5",
+          "owner": "棠",
+          "status": "active",
+          "text": "窑位表按层从下往上编号，从10开始"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-003-1",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "汀",
+          "status": "active",
+          "text": "制作借展标本回执"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "汀",
+          "status": "active",
+          "text": "归还时核对封签编号，不能仅核对盒号"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-003-2",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "汀",
+          "status": "active",
+          "text": "制作借展标本回执"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "汀",
+          "status": "active",
+          "text": "归还时核对封签编号，不能仅核对盒号"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "洛",
+          "status": "active",
+          "text": "洛的图像授权栏保持空白，等待洛另行填写"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-003-3",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "汀",
+          "status": "active",
+          "text": "制作借展标本回执"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "汀",
+          "status": "active",
+          "text": "归还时核对封签编号，不能仅核对盒号"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "洛",
+          "status": "active",
+          "text": "洛的图像授权栏保持空白，等待洛另行填写"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "汀",
+          "status": "active",
+          "text": "回执两联：借方一联，留存一联"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-003-4",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "汀",
+          "status": "active",
+          "text": "制作借展标本回执"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "汀",
+          "status": "active",
+          "text": "归还时核对封签编号，不能仅核对盒号"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "洛",
+          "status": "active",
+          "text": "洛的图像授权栏保持空白，等待洛另行填写"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "汀",
+          "status": "active",
+          "text": "回执两联：借方一联，留存一联"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-003-5",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "汀",
+          "status": "active",
+          "text": "制作借展标本回执"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "汀",
+          "status": "active",
+          "text": "归还时核对封签编号，不能仅核对盒号"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "洛",
+          "status": "active",
+          "text": "洛的图像授权栏保持空白，等待洛另行填写"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "汀",
+          "status": "active",
+          "text": "回执两联：借方一联不变，留存一联用浅灰底"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-004-1",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "芮",
+          "status": "active",
+          "text": "制作字幕字体授权核对表"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "芮",
+          "status": "active",
+          "text": "候选栏仅纳入明确允许视频嵌入的字体"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-004-2",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "芮",
+          "status": "active",
+          "text": "制作字幕字体授权核对表"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "芮",
+          "status": "active",
+          "text": "候选栏仅纳入明确允许视频嵌入的字体"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "芮",
+          "status": "active",
+          "text": "保留许可证原文摘录，不能仅标“可用”"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-004-3",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "芮",
+          "status": "active",
+          "text": "制作字幕字体授权核对表"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "芮",
+          "status": "active",
+          "text": "候选栏仅纳入明确允许视频嵌入的字体"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "芮",
+          "status": "active",
+          "text": "保留许可证原文摘录，不能仅标“可用”"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "芮",
+          "status": "active",
+          "text": "结果先按字体名称、同名再按版本排序"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-004-4",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "芮",
+          "status": "active",
+          "text": "制作字幕字体授权核对表"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "芮",
+          "status": "active",
+          "text": "候选栏仅纳入明确允许视频嵌入的字体"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "芮",
+          "status": "active",
+          "text": "保留许可证原文摘录，不能仅标“可用”"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "芮",
+          "status": "active",
+          "text": "结果先按字体名称、同名再按版本排序"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-004-5",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "芮",
+          "status": "active",
+          "text": "制作字幕字体授权核对表"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "芮",
+          "status": "active",
+          "text": "候选栏仅纳入明确允许视频嵌入的字体"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "芮",
+          "status": "active",
+          "text": "保留许可证原文摘录，不能仅标“可用”"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "芮",
+          "status": "active",
+          "text": "结果按字体名称升序，同名字体按版本降序"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-005-1",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "闻",
+          "status": "active",
+          "text": "制作合成器音色快照切换表"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "闻",
+          "status": "active",
+          "text": "锁定旋钮不参与两个音色快照间的插值"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-005-2",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "闻",
+          "status": "active",
+          "text": "制作合成器音色快照切换表"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "闻",
+          "status": "active",
+          "text": "锁定旋钮不参与两个音色快照间的插值"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "闻",
+          "status": "active",
+          "text": "快照滑动时间为2至5秒，含两个端点"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-005-3",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "闻",
+          "status": "active",
+          "text": "制作合成器音色快照切换表"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "闻",
+          "status": "active",
+          "text": "锁定旋钮不参与两个音色快照间的插值"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "闻",
+          "status": "active",
+          "text": "快照滑动时间为2至5秒，含两个端点"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "闻",
+          "status": "active",
+          "text": "当前快照名称放在切换表顶部"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-005-4",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "闻",
+          "status": "active",
+          "text": "制作合成器音色快照切换表"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "闻",
+          "status": "active",
+          "text": "锁定旋钮不参与两个音色快照间的插值"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "闻",
+          "status": "active",
+          "text": "快照滑动时间为2至5秒，含两个端点"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "闻",
+          "status": "active",
+          "text": "当前快照名称放在切换表顶部"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-005-5",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "闻",
+          "status": "active",
+          "text": "制作合成器音色快照切换表"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "闻",
+          "status": "active",
+          "text": "锁定旋钮不参与两个音色快照间的插值"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "闻",
+          "status": "active",
+          "text": "快照滑动时间为2至5秒，含两个端点"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "闻",
+          "status": "active",
+          "text": "当前快照名称放在切换表左下角，名称内容保持不变"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-006-1",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "真",
+          "status": "active",
+          "text": "绘制真的线束测试示意图"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "真",
+          "status": "active",
+          "text": "若两线颜色相同，在线尾同时标字母和端口号"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-006-2",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "真",
+          "status": "active",
+          "text": "绘制真的线束测试示意图"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "真",
+          "status": "active",
+          "text": "若两线颜色相同，在线尾同时标字母和端口号"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "沐",
+          "status": "active",
+          "text": "沐的检测点画成空心圆"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-006-3",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "真",
+          "status": "active",
+          "text": "绘制真的线束测试示意图"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "真",
+          "status": "active",
+          "text": "若两线颜色相同，在线尾同时标字母和端口号"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "沐",
+          "status": "active",
+          "text": "沐的检测点画成空心圆"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "真",
+          "status": "uncertain",
+          "text": "是否加透明护膜尚未决定"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-006-4",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "真",
+          "status": "active",
+          "text": "绘制真的线束测试示意图"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "真",
+          "status": "active",
+          "text": "若两线颜色相同，在线尾同时标字母和端口号"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "沐",
+          "status": "active",
+          "text": "沐的检测点画成空心圆"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "真",
+          "status": "uncertain",
+          "text": "是否加透明护膜尚未决定"
+        },
+        {
+          "intent_id": "i5",
+          "owner": "真",
+          "status": "active",
+          "text": "在线束测试示意图上标朝向箭头"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-006-5",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "真",
+          "status": "active",
+          "text": "绘制真的线束测试示意图"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "真",
+          "status": "active",
+          "text": "若两线颜色相同，在线尾同时标字母和端口号"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "沐",
+          "status": "active",
+          "text": "沐的检测点画成空心圆"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "真",
+          "status": "uncertain",
+          "text": "是否加透明护膜尚未决定"
+        },
+        {
+          "intent_id": "i5",
+          "owner": "真",
+          "status": "active",
+          "text": "在线束测试示意图上用双线样式标原朝向箭头"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-007-1",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "遥",
+          "status": "active",
+          "text": "整理路线标注误差清单"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "遥",
+          "status": "active",
+          "text": "只移动文字标注，不移动原始坐标点"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-007-2",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "遥",
+          "status": "active",
+          "text": "整理路线标注误差清单"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "遥",
+          "status": "active",
+          "text": "只移动文字标注，不移动原始坐标点"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "嵩",
+          "status": "active",
+          "text": "嵩的复核意见单列，不与遥的意见合并"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-007-3",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "遥",
+          "status": "active",
+          "text": "整理路线标注误差清单"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "遥",
+          "status": "active",
+          "text": "只移动文字标注，不移动原始坐标点"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "嵩",
+          "status": "active",
+          "text": "嵩的复核意见单列，不与遥的意见合并"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "遥",
+          "status": "active",
+          "text": "误差距离以米记录并保留一位小数，包括小于一米的距离"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-007-4",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "遥",
+          "status": "active",
+          "text": "整理路线标注误差清单"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "遥",
+          "status": "active",
+          "text": "只移动文字标注，不移动原始坐标点"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "嵩",
+          "status": "active",
+          "text": "嵩的复核意见单列，不与遥的意见合并"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "遥",
+          "status": "active",
+          "text": "误差距离以米记录并保留一位小数，包括小于一米的距离"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-007-5",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "遥",
+          "status": "active",
+          "text": "整理路线标注误差清单"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "遥",
+          "status": "active",
+          "text": "只移动文字标注，不移动原始坐标点"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "嵩",
+          "status": "active",
+          "text": "嵩的复核意见单列，不与遥的意见合并"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "遥",
+          "status": "active",
+          "text": "误差距离以米记录并保留两位小数，包括小于一米的距离"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-008-1",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "枝",
+          "status": "active",
+          "text": "制作水印位置打样联系表"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "枝",
+          "status": "active",
+          "text": "仅预览图覆盖水印，原文件不加水印"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-008-2",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "枝",
+          "status": "active",
+          "text": "制作水印位置打样联系表"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "枝",
+          "status": "active",
+          "text": "仅预览图覆盖水印，原文件不加水印"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "枝",
+          "status": "active",
+          "text": "打样图加四分格辅助线"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-008-3",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "枝",
+          "status": "active",
+          "text": "制作水印位置打样联系表"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "枝",
+          "status": "active",
+          "text": "仅预览图覆盖水印，原文件不加水印"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "枝",
+          "status": "withdrawn",
+          "text": "打样图加四分格辅助线"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-008-4",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "枝",
+          "status": "active",
+          "text": "制作水印位置打样联系表"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "枝",
+          "status": "active",
+          "text": "仅预览图覆盖水印，原文件不加水印"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "枝",
+          "status": "withdrawn",
+          "text": "打样图加四分格辅助线"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-008-5",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "枝",
+          "status": "active",
+          "text": "制作水印位置打样联系表"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "枝",
+          "status": "active",
+          "text": "仅预览图覆盖水印，原文件不加水印"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "枝",
+          "status": "withdrawn",
+          "text": "打样图加四分格辅助线"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "枝",
+          "status": "active",
+          "text": "联系表使用横版排布"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-009-1",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "岳宁",
+          "status": "active",
+          "text": "制作木榫试拼检查单"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "岳宁",
+          "status": "active",
+          "text": "本轮只干拼，不涂胶"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-009-2",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "岳宁",
+          "status": "active",
+          "text": "制作木榫试拼检查单"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "岳宁",
+          "status": "active",
+          "text": "本轮只干拼，不涂胶"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "岳宁",
+          "status": "active",
+          "text": "缝隙记录最宽处宽度，不取平均"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-009-3",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "岳宁",
+          "status": "active",
+          "text": "制作木榫试拼检查单"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "岳宁",
+          "status": "active",
+          "text": "本轮只干拼，不涂胶"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "岳宁",
+          "status": "active",
+          "text": "缝隙记录最宽处宽度，不取平均"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "岳宁",
+          "status": "active",
+          "text": "榫头与对应榫眼编号配对显示"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-009-4",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "岳宁",
+          "status": "active",
+          "text": "制作木榫试拼检查单"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "岳宁",
+          "status": "active",
+          "text": "本轮只干拼，不涂胶"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "岳宁",
+          "status": "active",
+          "text": "缝隙记录最宽处宽度，不取平均"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "岳宁",
+          "status": "active",
+          "text": "榫头与对应榫眼编号配对显示"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-009-5",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "岳宁",
+          "status": "active",
+          "text": "制作木榫试拼检查单"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "岳宁",
+          "status": "active",
+          "text": "本轮只干拼，不涂胶"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "岳宁",
+          "status": "active",
+          "text": "缝隙记录最宽处宽度，不取平均"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "岳宁",
+          "status": "active",
+          "text": "榫头与对应榫眼编号配对显示在每页下方"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-010-1",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "砚",
+          "status": "active",
+          "text": "整理砚的读屏发音词典"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "砚",
+          "status": "active",
+          "text": "代码中连字符逐个读出，正文中连字符不读"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-010-2",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "砚",
+          "status": "active",
+          "text": "整理砚的读屏发音词典"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "砚",
+          "status": "active",
+          "text": "代码中连字符逐个读出，正文中连字符不读"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "榆",
+          "status": "active",
+          "text": "榆的人名词条保留原拼写，不自动转成拼音"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-010-3",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "砚",
+          "status": "active",
+          "text": "整理砚的读屏发音词典"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "砚",
+          "status": "active",
+          "text": "代码中连字符逐个读出，正文中连字符不读"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "榆",
+          "status": "active",
+          "text": "榆的人名词条保留原拼写，不自动转成拼音"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "砚",
+          "status": "uncertain",
+          "text": "可能为例外词增加原因栏，尚未决定"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-010-4",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "砚",
+          "status": "active",
+          "text": "整理砚的读屏发音词典"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "砚",
+          "status": "active",
+          "text": "代码中连字符逐个读出，正文中连字符不读"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "榆",
+          "status": "active",
+          "text": "榆的人名词条保留原拼写，不自动转成拼音"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "砚",
+          "status": "uncertain",
+          "text": "可能为例外词增加原因栏，尚未决定"
+        },
+        {
+          "intent_id": "i5",
+          "owner": "砚",
+          "status": "active",
+          "text": "主表按词长升序排列"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-010-5",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "砚",
+          "status": "active",
+          "text": "整理砚的读屏发音词典"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "砚",
+          "status": "active",
+          "text": "代码中连字符逐个读出，正文中连字符不读"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "榆",
+          "status": "active",
+          "text": "榆的人名词条保留原拼写，不自动转成拼音"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "砚",
+          "status": "uncertain",
+          "text": "可能为例外词增加原因栏，尚未决定"
+        },
+        {
+          "intent_id": "i5",
+          "owner": "砚",
+          "status": "active",
+          "text": "主表先按词长升序，同长度再按原拼写排序"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-011-1",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "蓝",
+          "status": "active",
+          "text": "制作纸张水拓批次账"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "蓝",
+          "status": "active",
+          "text": "湿纸平放晾干，不悬挂"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-011-2",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "蓝",
+          "status": "active",
+          "text": "制作纸张水拓批次账"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "蓝",
+          "status": "active",
+          "text": "湿纸平放晾干，不悬挂，图案面朝上"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "稚",
+          "status": "active",
+          "text": "稚的作品照片仅记录编号，不放缩略图"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-011-3",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "蓝",
+          "status": "active",
+          "text": "制作纸张水拓批次账"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "蓝",
+          "status": "active",
+          "text": "湿纸平放晾干，不悬挂，图案面朝上"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "稚",
+          "status": "active",
+          "text": "稚的作品照片仅记录编号，不放缩略图"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "蓝",
+          "status": "active",
+          "text": "每批单列所用颜料名称"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-011-4",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "蓝",
+          "status": "active",
+          "text": "制作纸张水拓批次账"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "蓝",
+          "status": "active",
+          "text": "湿纸平放晾干，不悬挂，图案面朝上"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "稚",
+          "status": "active",
+          "text": "稚的作品照片仅记录编号，不放缩略图"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "蓝",
+          "status": "active",
+          "text": "每批单列所用颜料名称"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-011-5",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "蓝",
+          "status": "active",
+          "text": "制作纸张水拓批次账"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "蓝",
+          "status": "active",
+          "text": "湿纸平放晾干，不悬挂，图案面朝上"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "稚",
+          "status": "active",
+          "text": "稚的作品照片仅记录编号，不放缩略图"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "蓝",
+          "status": "active",
+          "text": "每批单列颜料名称，按使用先后排列"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-012-1",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "朔",
+          "status": "active",
+          "text": "制作钟表擒纵机构演示动画"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "朔",
+          "status": "active",
+          "text": "转动方向遵循图纸，不为视觉效果反转"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-012-2",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "朔",
+          "status": "active",
+          "text": "制作钟表擒纵机构演示动画"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "朔",
+          "status": "active",
+          "text": "转动方向在正常播放及慢放时均遵循图纸；慢放仅改显示速度，不反转"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-012-3",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "朔",
+          "status": "active",
+          "text": "制作钟表擒纵机构演示动画"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "朔",
+          "status": "active",
+          "text": "转动方向在正常播放及慢放时均遵循图纸；慢放仅改显示速度，不反转"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "朔",
+          "status": "active",
+          "text": "标出逃逸轮齿号，从缺口旁那一齿开始"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-012-4",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "朔",
+          "status": "active",
+          "text": "制作钟表擒纵机构演示动画"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "朔",
+          "status": "active",
+          "text": "转动方向在正常播放及慢放时均遵循图纸；慢放仅改显示速度，不反转"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "朔",
+          "status": "active",
+          "text": "标出逃逸轮齿号，从缺口旁那一齿开始"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-012-5",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "朔",
+          "status": "active",
+          "text": "制作钟表擒纵机构演示动画"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "朔",
+          "status": "active",
+          "text": "转动方向在正常播放及慢放时均遵循图纸；慢放仅改显示速度，不反转"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "朔",
+          "status": "active",
+          "text": "以较大字号标逃逸轮齿号，从缺口旁那一齿开始"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-013-1",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "越",
+          "status": "active",
+          "text": "制作手风琴调音比较图"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "越",
+          "status": "active",
+          "text": "拉风箱与推风箱的测量分列，不混合"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-013-2",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "越",
+          "status": "active",
+          "text": "制作手风琴调音比较图"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "越",
+          "status": "active",
+          "text": "拉风箱与推风箱的测量分列，不混合"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "越",
+          "status": "active",
+          "text": "所有测量偏差统一相对440赫兹基准计算"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-013-3",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "越",
+          "status": "active",
+          "text": "制作手风琴调音比较图"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "越",
+          "status": "active",
+          "text": "拉风箱与推风箱的测量分列，不混合"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "越",
+          "status": "active",
+          "text": "所有测量偏差统一相对440赫兹基准计算"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "越",
+          "status": "active",
+          "text": "比较图中低音排在左边"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-013-4",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "越",
+          "status": "active",
+          "text": "制作手风琴调音比较图"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "越",
+          "status": "active",
+          "text": "拉风箱与推风箱的测量分列，不混合"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "越",
+          "status": "active",
+          "text": "所有测量偏差统一相对440赫兹基准计算"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "越",
+          "status": "active",
+          "text": "比较图中低音排在左边"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-013-5",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "越",
+          "status": "active",
+          "text": "制作手风琴调音比较图"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "越",
+          "status": "active",
+          "text": "拉风箱与推风箱的测量分列，不混合"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "越",
+          "status": "active",
+          "text": "所有测量偏差统一相对440赫兹基准计算"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "越",
+          "status": "active",
+          "text": "比较图中低音排在右边"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-014-1",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "灿",
+          "status": "active",
+          "text": "制作临时展台供电模拟流程"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "灿",
+          "status": "active",
+          "text": "负载超出模拟上限时标为待重排，不直接删除展项"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-014-2",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "灿",
+          "status": "active",
+          "text": "制作临时展台供电模拟流程"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "灿",
+          "status": "active",
+          "text": "负载超出模拟上限时标为待重排，不直接删除展项"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "尧",
+          "status": "active",
+          "text": "尧负责的展项标签用大写字母编号"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-014-3",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "灿",
+          "status": "active",
+          "text": "制作临时展台供电模拟流程"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "灿",
+          "status": "active",
+          "text": "负载超出模拟上限时标为待重排，不直接删除展项"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "尧",
+          "status": "active",
+          "text": "尧负责的展项标签用大写字母编号"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "灿",
+          "status": "uncertain",
+          "text": "可能增加自动重排，暂未决定"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-014-4",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "灿",
+          "status": "active",
+          "text": "制作临时展台供电模拟流程"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "灿",
+          "status": "active",
+          "text": "负载超出模拟上限时标为待重排，不直接删除展项"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "尧",
+          "status": "active",
+          "text": "尧负责的展项标签用大写字母编号"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "灿",
+          "status": "uncertain",
+          "text": "可能增加自动重排，暂未决定"
+        },
+        {
+          "intent_id": "i5",
+          "owner": "灿",
+          "status": "active",
+          "text": "流程图增加模拟重置入口"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-014-5",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "灿",
+          "status": "active",
+          "text": "制作临时展台供电模拟流程"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "灿",
+          "status": "active",
+          "text": "负载超出模拟上限时标为待重排，不直接删除展项"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "尧",
+          "status": "active",
+          "text": "尧负责的展项标签用大写字母编号"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "灿",
+          "status": "uncertain",
+          "text": "可能增加自动重排，暂未决定"
+        },
+        {
+          "intent_id": "i5",
+          "owner": "灿",
+          "status": "active",
+          "text": "流程图的模拟重置入口放在外框右边"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-015-1",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "颂",
+          "status": "active",
+          "text": "制作盲文包装打样检查表"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "颂",
+          "status": "active",
+          "text": "连续两个盲文空方保留为两个，不合并"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-015-2",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "颂",
+          "status": "active",
+          "text": "制作盲文包装打样检查表"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "颂",
+          "status": "active",
+          "text": "连续两个盲文空方保留为两个，不合并"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "靖",
+          "status": "active",
+          "text": "靖这一版的明眼文字只放背面"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-015-3",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "颂",
+          "status": "active",
+          "text": "制作盲文包装打样检查表"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "颂",
+          "status": "active",
+          "text": "连续两个盲文空方保留为两个，不合并"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "靖",
+          "status": "active",
+          "text": "靖这一版的明眼文字只放背面"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "颂",
+          "status": "active",
+          "text": "打样状态仅使用已核、待核两种"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-015-4",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "颂",
+          "status": "active",
+          "text": "制作盲文包装打样检查表"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "颂",
+          "status": "active",
+          "text": "连续两个盲文空方保留为两个，不合并"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "靖",
+          "status": "active",
+          "text": "靖这一版的明眼文字只放背面"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "颂",
+          "status": "active",
+          "text": "打样状态仅使用已核、待核两种"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-015-5",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "颂",
+          "status": "active",
+          "text": "制作盲文包装打样检查表"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "颂",
+          "status": "active",
+          "text": "连续两个盲文空方保留为两个，不合并"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "靖",
+          "status": "active",
+          "text": "靖这一版的明眼文字只放背面"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "颂",
+          "status": "active",
+          "text": "打样状态仅使用待核、已核两种，待核排在前"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-016-1",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "承",
+          "status": "active",
+          "text": "制作套色印章对位打样"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "承",
+          "status": "active",
+          "text": "第二色相对第一色对位，不以纸边为对位基准"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-016-2",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "承",
+          "status": "active",
+          "text": "制作套色印章对位打样"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "承",
+          "status": "active",
+          "text": "第二色相对第一色对位，不以纸边为对位基准"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "承",
+          "status": "active",
+          "text": "打样加十字校准线层"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-016-3",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "承",
+          "status": "active",
+          "text": "制作套色印章对位打样"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "承",
+          "status": "active",
+          "text": "第二色相对第一色对位，不以纸边为对位基准"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "承",
+          "status": "withdrawn",
+          "text": "打样加十字校准线层"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-016-4",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "承",
+          "status": "active",
+          "text": "制作套色印章对位打样"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "承",
+          "status": "active",
+          "text": "第二色相对第一色对位，不以纸边为对位基准"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "承",
+          "status": "withdrawn",
+          "text": "打样加十字校准线层"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-016-5",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "承",
+          "status": "active",
+          "text": "制作套色印章对位打样"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "承",
+          "status": "active",
+          "text": "第二色相对第一色对位，不以纸边为对位基准"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "承",
+          "status": "withdrawn",
+          "text": "打样加十字校准线层"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "承",
+          "status": "active",
+          "text": "第一色用淡蓝，第二色用橙"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-017-1",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "萤",
+          "status": "active",
+          "text": "为替换密码题排版"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "萤",
+          "status": "active",
+          "text": "同一密文字母始终用同一符号，不随机换形"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-017-2",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "萤",
+          "status": "active",
+          "text": "为替换密码题排版"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "萤",
+          "status": "active",
+          "text": "同一密文字母始终用同一符号，不随机换形"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "萤",
+          "status": "active",
+          "text": "词间留两个符号宽的空白，行尾也保留"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-017-3",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "萤",
+          "status": "active",
+          "text": "为替换密码题排版"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "萤",
+          "status": "active",
+          "text": "同一密文字母始终用同一符号，不随机换形"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "萤",
+          "status": "active",
+          "text": "词间留两个符号宽的空白，行尾也保留"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "萤",
+          "status": "active",
+          "text": "题号放页面外侧"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-017-4",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "萤",
+          "status": "active",
+          "text": "为替换密码题排版"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "萤",
+          "status": "active",
+          "text": "同一密文字母始终用同一符号，不随机换形"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "萤",
+          "status": "active",
+          "text": "词间留两个符号宽的空白，行尾也保留"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "萤",
+          "status": "active",
+          "text": "题号放页面外侧"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-017-5",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "萤",
+          "status": "active",
+          "text": "为替换密码题排版"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "萤",
+          "status": "active",
+          "text": "同一密文字母始终用同一符号，不随机换形"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "萤",
+          "status": "active",
+          "text": "词间留两个符号宽的空白，行尾也保留"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "萤",
+          "status": "active",
+          "text": "题号放页面内侧，字形保持不变"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-018-1",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "策",
+          "status": "active",
+          "text": "整理印玺印蜕展示说明"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "策",
+          "status": "active",
+          "text": "印文有缺损时按原样显示，不补成完整字"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-018-2",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "策",
+          "status": "active",
+          "text": "整理印玺印蜕展示说明"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "策",
+          "status": "active",
+          "text": "印文有缺损时按原样显示，不补成完整字"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "霁",
+          "status": "active",
+          "text": "霁查看的版本附原尺寸比例尺"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-018-3",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "策",
+          "status": "active",
+          "text": "整理印玺印蜕展示说明"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "策",
+          "status": "active",
+          "text": "印文有缺损时按原样显示，不补成完整字"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "霁",
+          "status": "active",
+          "text": "霁查看的版本附原尺寸比例尺"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "霁",
+          "status": "uncertain",
+          "text": "可能增加放大镜窗口，尚未决定"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-018-4",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "策",
+          "status": "active",
+          "text": "整理印玺印蜕展示说明"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "策",
+          "status": "active",
+          "text": "印文有缺损时按原样显示，不补成完整字"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "霁",
+          "status": "active",
+          "text": "霁查看的版本附原尺寸比例尺"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "霁",
+          "status": "uncertain",
+          "text": "可能增加放大镜窗口，尚未决定"
+        },
+        {
+          "intent_id": "i5",
+          "owner": "策",
+          "status": "active",
+          "text": "编号放在印蜕下方居中"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-018-5",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "策",
+          "status": "active",
+          "text": "整理印玺印蜕展示说明"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "策",
+          "status": "active",
+          "text": "印文有缺损时按原样显示，不补成完整字"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "霁",
+          "status": "active",
+          "text": "霁查看的版本附原尺寸比例尺"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "霁",
+          "status": "uncertain",
+          "text": "可能增加放大镜窗口，尚未决定"
+        },
+        {
+          "intent_id": "i5",
+          "owner": "策",
+          "status": "active",
+          "text": "编号放在印蜕下方右对齐"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-019-1",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "予",
+          "status": "active",
+          "text": "制作声音频谱图颜色说明"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "予",
+          "status": "active",
+          "text": "低于阈值的点保持透明，不涂为最低色阶"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-019-2",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "予",
+          "status": "active",
+          "text": "制作声音频谱图颜色说明"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "予",
+          "status": "active",
+          "text": "低于阈值的点保持透明，不涂为最低色阶"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "浔",
+          "status": "active",
+          "text": "浔的图横轴用毫秒，不用采样点序号"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-019-3",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "予",
+          "status": "active",
+          "text": "制作声音频谱图颜色说明"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "予",
+          "status": "active",
+          "text": "低于阈值的点保持透明，不涂为最低色阶"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "浔",
+          "status": "active",
+          "text": "浔的图横轴用毫秒，不用采样点序号"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "予",
+          "status": "active",
+          "text": "图例每个色阶旁标出上下界"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-019-4",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "予",
+          "status": "active",
+          "text": "制作声音频谱图颜色说明"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "予",
+          "status": "active",
+          "text": "低于阈值的点保持透明，不涂为最低色阶"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "浔",
+          "status": "active",
+          "text": "浔的图横轴用毫秒，不用采样点序号"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "予",
+          "status": "active",
+          "text": "图例每个色阶旁标出上下界"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-019-5",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "予",
+          "status": "active",
+          "text": "制作声音频谱图颜色说明"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "予",
+          "status": "active",
+          "text": "低于阈值的点保持透明，不涂为最低色阶"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "浔",
+          "status": "active",
+          "text": "浔的图横轴用毫秒，不用采样点序号"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "予",
+          "status": "active",
+          "text": "图例每个色阶下方标出原上下界数值"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-020-1",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "洵",
+          "status": "active",
+          "text": "编写纸机关折叠步骤"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "洵",
+          "status": "active",
+          "text": "先折长边，再折短边，不交换顺序"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-020-2",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "洵",
+          "status": "active",
+          "text": "编写纸机关折叠步骤"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "洵",
+          "status": "active",
+          "text": "先折长边再折短边，不交换顺序；短边仅折到定位线，不折到底"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-020-3",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "洵",
+          "status": "active",
+          "text": "编写纸机关折叠步骤"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "洵",
+          "status": "active",
+          "text": "先折长边再折短边，不交换顺序；短边仅折到定位线，不折到底"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "洵",
+          "status": "active",
+          "text": "用三幅图说明步骤，每幅配一条短说明"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-020-4",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "洵",
+          "status": "active",
+          "text": "编写纸机关折叠步骤"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "洵",
+          "status": "active",
+          "text": "先折长边再折短边，不交换顺序；短边仅折到定位线，不折到底"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "洵",
+          "status": "active",
+          "text": "用三幅图说明步骤，每幅配一条短说明"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-020-5",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "洵",
+          "status": "active",
+          "text": "编写纸机关折叠步骤"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "洵",
+          "status": "active",
+          "text": "先折长边再折短边，不交换顺序；短边仅折到定位线，不折到底"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "洵",
+          "status": "active",
+          "text": "三幅步骤图竖排，每幅仍配一条短说明"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-021-1",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Bea",
+          "status": "active",
+          "text": "Make a bookbinding signature collation checklist"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Bea",
+          "status": "active",
+          "text": "Count intentional blank leaves; do not classify a blank as a missing leaf"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-021-2",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Bea",
+          "status": "active",
+          "text": "Make a bookbinding signature collation checklist"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Bea",
+          "status": "active",
+          "text": "Count intentional blank leaves; do not classify a blank as a missing leaf"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Bea",
+          "status": "active",
+          "text": "Flag a section only if it has fewer than eight leaves; eight is acceptable"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-021-3",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Bea",
+          "status": "active",
+          "text": "Make a bookbinding signature collation checklist"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Bea",
+          "status": "active",
+          "text": "Count intentional blank leaves; do not classify a blank as a missing leaf"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Bea",
+          "status": "active",
+          "text": "Flag a section only if it has fewer than eight leaves; eight is acceptable"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "Bea",
+          "status": "active",
+          "text": "Place the binder’s section mark beside each leaf count"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-021-4",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Bea",
+          "status": "active",
+          "text": "Make a bookbinding signature collation checklist"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Bea",
+          "status": "active",
+          "text": "Count intentional blank leaves; do not classify a blank as a missing leaf"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Bea",
+          "status": "active",
+          "text": "Flag a section only if it has fewer than eight leaves; eight is acceptable"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "Bea",
+          "status": "active",
+          "text": "Place the binder’s section mark beside each leaf count"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-021-5",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Bea",
+          "status": "active",
+          "text": "Make a bookbinding signature collation checklist"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Bea",
+          "status": "active",
+          "text": "Count intentional blank leaves; do not classify a blank as a missing leaf"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Bea",
+          "status": "active",
+          "text": "Flag a section only if it has fewer than eight leaves; eight is acceptable"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "Bea",
+          "status": "active",
+          "text": "Place the binder’s section marks above the leaf counts"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-022-1",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Luz",
+          "status": "active",
+          "text": "Prepare a praxinoscope frame strip"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Luz",
+          "status": "active",
+          "text": "Retain repeated frames in their positions rather than collapsing them"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-022-2",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Luz",
+          "status": "active",
+          "text": "Prepare a praxinoscope frame strip"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Luz",
+          "status": "active",
+          "text": "Retain repeated frames in their positions rather than collapsing them"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Oren",
+          "status": "active",
+          "text": "Oren’s border is plain black with no pattern"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-022-3",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Luz",
+          "status": "active",
+          "text": "Prepare a praxinoscope frame strip"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Luz",
+          "status": "active",
+          "text": "Retain repeated frames in their positions rather than collapsing them"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Oren",
+          "status": "active",
+          "text": "Oren’s border is plain black with no pattern"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "Luz",
+          "status": "active",
+          "text": "Mark only the first frame with a triangle"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-022-4",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Luz",
+          "status": "active",
+          "text": "Prepare a praxinoscope frame strip"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Luz",
+          "status": "active",
+          "text": "Retain repeated frames in their positions rather than collapsing them"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Oren",
+          "status": "active",
+          "text": "Oren’s border is plain black with no pattern"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "Luz",
+          "status": "active",
+          "text": "Mark only the first frame with a triangle"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-022-5",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Luz",
+          "status": "active",
+          "text": "Prepare a praxinoscope frame strip"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Luz",
+          "status": "active",
+          "text": "Retain repeated frames in their positions rather than collapsing them"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Oren",
+          "status": "active",
+          "text": "Oren’s border is plain black with no pattern"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "Luz",
+          "status": "active",
+          "text": "Mark only the first frame with a square"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-023-1",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Tess",
+          "status": "active",
+          "text": "Build a microfilm splice index"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Tess",
+          "status": "active",
+          "text": "Keep physical reel order even when photographed page numbers run backward"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-023-2",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Tess",
+          "status": "active",
+          "text": "Build a microfilm splice index"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Tess",
+          "status": "active",
+          "text": "Keep physical reel order even when photographed page numbers run backward"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Ivo",
+          "status": "active",
+          "text": "In Ivo’s access notes, mark uncertain dates with a question mark and do not invent a year"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-023-3",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Tess",
+          "status": "active",
+          "text": "Build a microfilm splice index"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Tess",
+          "status": "active",
+          "text": "Keep physical reel order even when photographed page numbers run backward"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Ivo",
+          "status": "active",
+          "text": "In Ivo’s access notes, mark uncertain dates with a question mark and do not invent a year"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "Tess",
+          "status": "active",
+          "text": "Give each splice an offset measured from the reel start"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-023-4",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Tess",
+          "status": "active",
+          "text": "Build a microfilm splice index"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Tess",
+          "status": "active",
+          "text": "Keep physical reel order even when photographed page numbers run backward"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Ivo",
+          "status": "active",
+          "text": "In Ivo’s access notes, mark uncertain dates with a question mark and do not invent a year"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "Tess",
+          "status": "active",
+          "text": "Give each splice an offset measured from the reel start"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-023-5",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Tess",
+          "status": "active",
+          "text": "Build a microfilm splice index"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Tess",
+          "status": "active",
+          "text": "Keep physical reel order even when photographed page numbers run backward"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Ivo",
+          "status": "active",
+          "text": "In Ivo’s access notes, mark uncertain dates with a question mark and do not invent a year"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "Tess",
+          "status": "active",
+          "text": "Give each splice an offset in centimetres measured from the reel start"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-024-1",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Noor",
+          "status": "active",
+          "text": "Trace seams for a stained-glass mockup"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Noor",
+          "status": "active",
+          "text": "Represent each shared edge by one seam line, not one line per pane"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-024-2",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Noor",
+          "status": "active",
+          "text": "Trace seams for a stained-glass mockup"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Noor",
+          "status": "active",
+          "text": "Represent each shared edge by one seam line, not one line per pane"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Noor",
+          "status": "active",
+          "text": "Add a transparent color-fill overlay"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-024-3",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Noor",
+          "status": "active",
+          "text": "Trace seams for a stained-glass mockup"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Noor",
+          "status": "active",
+          "text": "Represent each shared edge by one seam line, not one line per pane"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Noor",
+          "status": "withdrawn",
+          "text": "Add a transparent color-fill overlay"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-024-4",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Noor",
+          "status": "active",
+          "text": "Trace seams for a stained-glass mockup"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Noor",
+          "status": "active",
+          "text": "Represent each shared edge by one seam line, not one line per pane"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Noor",
+          "status": "withdrawn",
+          "text": "Add a transparent color-fill overlay"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-024-5",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Noor",
+          "status": "active",
+          "text": "Trace seams for a stained-glass mockup"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Noor",
+          "status": "active",
+          "text": "Represent each shared edge by one seam line, not one line per pane"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Noor",
+          "status": "withdrawn",
+          "text": "Add a transparent color-fill overlay"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "Noor",
+          "status": "active",
+          "text": "Place a scale bar below the seam trace"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-025-1",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Pia",
+          "status": "active",
+          "text": "Make semaphore practice cards"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Pia",
+          "status": "active",
+          "text": "Use left and right from the signaler’s perspective, not the viewer’s"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-025-2",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Pia",
+          "status": "active",
+          "text": "Make semaphore practice cards"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Pia",
+          "status": "active",
+          "text": "Use left and right from the signaler’s perspective, not the viewer’s"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Pia",
+          "status": "active",
+          "text": "Allow a two-second pause between letters only, not between the two flags of one letter"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-025-3",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Pia",
+          "status": "active",
+          "text": "Make semaphore practice cards"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Pia",
+          "status": "active",
+          "text": "Use left and right from the signaler’s perspective, not the viewer’s"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Pia",
+          "status": "active",
+          "text": "Allow a two-second pause between letters only, not between the two flags of one letter"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "Pia",
+          "status": "active",
+          "text": "Put each letter name under its semaphore figure"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-025-4",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Pia",
+          "status": "active",
+          "text": "Make semaphore practice cards"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Pia",
+          "status": "active",
+          "text": "Use left and right from the signaler’s perspective, not the viewer’s"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Pia",
+          "status": "active",
+          "text": "Allow a two-second pause between letters only, not between the two flags of one letter"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "Pia",
+          "status": "active",
+          "text": "Put each letter name under its semaphore figure"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-025-5",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Pia",
+          "status": "active",
+          "text": "Make semaphore practice cards"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Pia",
+          "status": "active",
+          "text": "Use left and right from the signaler’s perspective, not the viewer’s"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Pia",
+          "status": "active",
+          "text": "Allow a two-second pause between letters only, not between the two flags of one letter"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "Pia",
+          "status": "active",
+          "text": "Put each letter name above its semaphore figure"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-026-1",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Dara",
+          "status": "active",
+          "text": "Plan a sandtable contour reconstruction"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Dara",
+          "status": "active",
+          "text": "Retain closed depressions marked by inward ticks in source contours; do not fill them as hills"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-026-2",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Dara",
+          "status": "active",
+          "text": "Plan a sandtable contour reconstruction"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Dara",
+          "status": "active",
+          "text": "Retain closed depressions marked by inward ticks in source contours; do not fill them as hills"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Ash",
+          "status": "active",
+          "text": "Keep the horizontal scale of Ash’s reference cross-sections unchanged"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-026-3",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Dara",
+          "status": "active",
+          "text": "Plan a sandtable contour reconstruction"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Dara",
+          "status": "active",
+          "text": "Retain closed depressions marked by inward ticks in source contours; do not fill them as hills"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Ash",
+          "status": "active",
+          "text": "Keep the horizontal scale of Ash’s reference cross-sections unchanged"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "Dara",
+          "status": "uncertain",
+          "text": "Possibly export elevation colors; adoption undecided"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-026-4",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Dara",
+          "status": "active",
+          "text": "Plan a sandtable contour reconstruction"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Dara",
+          "status": "active",
+          "text": "Retain closed depressions marked by inward ticks in source contours; do not fill them as hills"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Ash",
+          "status": "active",
+          "text": "Keep the horizontal scale of Ash’s reference cross-sections unchanged"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "Dara",
+          "status": "uncertain",
+          "text": "Possibly export elevation colors; adoption undecided"
+        },
+        {
+          "intent_id": "i5",
+          "owner": "Dara",
+          "status": "active",
+          "text": "Label base corners A through D clockwise from the marked corner"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-026-5",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Dara",
+          "status": "active",
+          "text": "Plan a sandtable contour reconstruction"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Dara",
+          "status": "active",
+          "text": "Retain closed depressions marked by inward ticks in source contours; do not fill them as hills"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Ash",
+          "status": "active",
+          "text": "Keep the horizontal scale of Ash’s reference cross-sections unchanged"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "Dara",
+          "status": "uncertain",
+          "text": "Possibly export elevation colors; adoption undecided"
+        },
+        {
+          "intent_id": "i5",
+          "owner": "Dara",
+          "status": "active",
+          "text": "Label base corners a through d clockwise from the marked corner"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-027-1",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Kit",
+          "status": "active",
+          "text": "Create sleeve markings for kite spars"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Kit",
+          "status": "active",
+          "text": "Matched spars retain the same pair code; equal length across pairs does not merge pair codes"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-027-2",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Kit",
+          "status": "active",
+          "text": "Create sleeve markings for kite spars"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Kit",
+          "status": "active",
+          "text": "Matched spars retain the same pair code; equal length across pairs does not merge pair codes"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Alma",
+          "status": "active",
+          "text": "Alma’s spare sleeves have SPARE marked on both ends"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-027-3",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Kit",
+          "status": "active",
+          "text": "Create sleeve markings for kite spars"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Kit",
+          "status": "active",
+          "text": "Matched spars retain the same pair code; equal length across pairs does not merge pair codes"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Alma",
+          "status": "active",
+          "text": "Alma’s spare sleeves have SPARE marked on both ends"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "Kit",
+          "status": "active",
+          "text": "Print diameter beside the pair code with the mm unit"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-027-4",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Kit",
+          "status": "active",
+          "text": "Create sleeve markings for kite spars"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Kit",
+          "status": "active",
+          "text": "Matched spars retain the same pair code; equal length across pairs does not merge pair codes"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Alma",
+          "status": "active",
+          "text": "Alma’s spare sleeves have SPARE marked on both ends"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "Kit",
+          "status": "active",
+          "text": "Print diameter beside the pair code with the mm unit"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-027-5",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Kit",
+          "status": "active",
+          "text": "Create sleeve markings for kite spars"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Kit",
+          "status": "active",
+          "text": "Matched spars retain the same pair code; equal length across pairs does not merge pair codes"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Alma",
+          "status": "active",
+          "text": "Alma’s spare sleeves have SPARE marked on both ends"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "Kit",
+          "status": "active",
+          "text": "Print diameter below the pair code with the mm unit"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-028-1",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Rae",
+          "status": "active",
+          "text": "Make a lenticular phase proof"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Rae",
+          "status": "active",
+          "text": "Read phases left to right without reversing the motion"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-028-2",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Rae",
+          "status": "active",
+          "text": "Make a lenticular phase proof"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Rae",
+          "status": "active",
+          "text": "Read phases left to right from the printed front without reversing motion; label the back-view preview mirrored rather than changing sequence"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-028-3",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Rae",
+          "status": "active",
+          "text": "Make a lenticular phase proof"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Rae",
+          "status": "active",
+          "text": "Read phases left to right from the printed front without reversing motion; label the back-view preview mirrored rather than changing sequence"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Rae",
+          "status": "active",
+          "text": "Add registration ticks outside the image only"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-028-4",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Rae",
+          "status": "active",
+          "text": "Make a lenticular phase proof"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Rae",
+          "status": "active",
+          "text": "Read phases left to right from the printed front without reversing motion; label the back-view preview mirrored rather than changing sequence"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Rae",
+          "status": "active",
+          "text": "Add registration ticks outside the image only"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-028-5",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Rae",
+          "status": "active",
+          "text": "Make a lenticular phase proof"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Rae",
+          "status": "active",
+          "text": "Read phases left to right from the printed front without reversing motion; label the back-view preview mirrored rather than changing sequence"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Rae",
+          "status": "active",
+          "text": "Add short registration ticks outside the image only"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-029-1",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Milo",
+          "status": "active",
+          "text": "Draw a flow overlay for a waterwheel model"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Milo",
+          "status": "active",
+          "text": "Show return channels returning to the reservoir rather than exiting the model"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-029-2",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Milo",
+          "status": "active",
+          "text": "Draw a flow overlay for a waterwheel model"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Milo",
+          "status": "active",
+          "text": "Show return channels returning to the reservoir rather than exiting the model"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Milo",
+          "status": "active",
+          "text": "Use dashed arrows for zero simulated flow and solid arrows for any positive flow"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-029-3",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Milo",
+          "status": "active",
+          "text": "Draw a flow overlay for a waterwheel model"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Milo",
+          "status": "active",
+          "text": "Show return channels returning to the reservoir rather than exiting the model"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Milo",
+          "status": "active",
+          "text": "Use dashed arrows for zero simulated flow and solid arrows for any positive flow"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "Milo",
+          "status": "active",
+          "text": "Put the reservoir name inside its outline"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-029-4",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Milo",
+          "status": "active",
+          "text": "Draw a flow overlay for a waterwheel model"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Milo",
+          "status": "active",
+          "text": "Show return channels returning to the reservoir rather than exiting the model"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Milo",
+          "status": "active",
+          "text": "Use dashed arrows for zero simulated flow and solid arrows for any positive flow"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "Milo",
+          "status": "active",
+          "text": "Put the reservoir name inside its outline"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-029-5",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Milo",
+          "status": "active",
+          "text": "Draw a flow overlay for a waterwheel model"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Milo",
+          "status": "active",
+          "text": "Show return channels returning to the reservoir rather than exiting the model"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Milo",
+          "status": "active",
+          "text": "Use dashed arrows for zero simulated flow and solid arrows for any positive flow"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "Milo",
+          "status": "active",
+          "text": "Put the reservoir name just below its outline"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-030-1",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Eli",
+          "status": "active",
+          "text": "Script a mechanical counter rollover demo"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Eli",
+          "status": "active",
+          "text": "When a digit rolls from 9 to 0, advance the next wheel exactly once"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-030-2",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Eli",
+          "status": "active",
+          "text": "Script a mechanical counter rollover demo"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Eli",
+          "status": "active",
+          "text": "When a digit rolls from 9 to 0, advance the next wheel exactly once"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Uma",
+          "status": "active",
+          "text": "Write wheel numbers as words in Uma’s accompanying text"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-030-3",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Eli",
+          "status": "active",
+          "text": "Script a mechanical counter rollover demo"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Eli",
+          "status": "active",
+          "text": "When a digit rolls from 9 to 0, advance the next wheel exactly once"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Uma",
+          "status": "active",
+          "text": "Write wheel numbers as words in Uma’s accompanying text"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "Eli",
+          "status": "active",
+          "text": "Pause after each rollover, not before it"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-030-4",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Eli",
+          "status": "active",
+          "text": "Script a mechanical counter rollover demo"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Eli",
+          "status": "active",
+          "text": "When a digit rolls from 9 to 0, advance the next wheel exactly once"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Uma",
+          "status": "active",
+          "text": "Write wheel numbers as words in Uma’s accompanying text"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "Eli",
+          "status": "active",
+          "text": "Pause after each rollover, not before it"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-030-5",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Eli",
+          "status": "active",
+          "text": "Script a mechanical counter rollover demo"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Eli",
+          "status": "active",
+          "text": "When a digit rolls from 9 to 0, advance the next wheel exactly once"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Uma",
+          "status": "active",
+          "text": "Write wheel numbers as words in Uma’s accompanying text"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "Eli",
+          "status": "active",
+          "text": "Pause for half a second after each rollover, not before it"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-031-1",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Faye",
+          "status": "active",
+          "text": "Label nesting-doll storage cavities"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Faye",
+          "status": "active",
+          "text": "Each cavity label names its inserted piece, not the larger surrounding piece"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-031-2",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Faye",
+          "status": "active",
+          "text": "Label nesting-doll storage cavities"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Faye",
+          "status": "active",
+          "text": "Each cavity label names its inserted piece, not the larger surrounding piece"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Sage",
+          "status": "active",
+          "text": "For Sage’s painted pieces, attach nothing to the paint; put any labels on the storage tray"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-031-3",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Faye",
+          "status": "active",
+          "text": "Label nesting-doll storage cavities"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Faye",
+          "status": "active",
+          "text": "Each cavity label names its inserted piece, not the larger surrounding piece"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Sage",
+          "status": "active",
+          "text": "For Sage’s painted pieces, attach nothing to the paint; put any labels on the storage tray"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "Faye",
+          "status": "active",
+          "text": "Include a front-facing arrow in each cavity pointing toward the tray handle"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-031-4",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Faye",
+          "status": "active",
+          "text": "Label nesting-doll storage cavities"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Faye",
+          "status": "active",
+          "text": "Each cavity label names its inserted piece, not the larger surrounding piece"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Sage",
+          "status": "active",
+          "text": "For Sage’s painted pieces, attach nothing to the paint; put any labels on the storage tray"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "Faye",
+          "status": "active",
+          "text": "Include a front-facing arrow in each cavity pointing toward the tray handle"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-031-5",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Faye",
+          "status": "active",
+          "text": "Label nesting-doll storage cavities"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Faye",
+          "status": "active",
+          "text": "Each cavity label names its inserted piece, not the larger surrounding piece"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Sage",
+          "status": "active",
+          "text": "For Sage’s painted pieces, attach nothing to the paint; put any labels on the storage tray"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "Faye",
+          "status": "active",
+          "text": "Include an outline front-facing arrow in each cavity pointing toward the tray handle"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-032-1",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Ari",
+          "status": "active",
+          "text": "Make a storyboard for a star-trail stacking demonstration"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Ari",
+          "status": "active",
+          "text": "Align frames on the fixed foreground rather than individual stars"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-032-2",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Ari",
+          "status": "active",
+          "text": "Make a storyboard for a star-trail stacking demonstration"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Ari",
+          "status": "active",
+          "text": "Align frames on the fixed foreground rather than individual stars"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Ari",
+          "status": "active",
+          "text": "Include a compass orientation overlay"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-032-3",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Ari",
+          "status": "active",
+          "text": "Make a storyboard for a star-trail stacking demonstration"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Ari",
+          "status": "active",
+          "text": "Align frames on the fixed foreground rather than individual stars"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Ari",
+          "status": "withdrawn",
+          "text": "Include a compass orientation overlay"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-032-4",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Ari",
+          "status": "active",
+          "text": "Make a storyboard for a star-trail stacking demonstration"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Ari",
+          "status": "active",
+          "text": "Align frames on the fixed foreground rather than individual stars"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Ari",
+          "status": "withdrawn",
+          "text": "Include a compass orientation overlay"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-032-5",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Ari",
+          "status": "active",
+          "text": "Make a storyboard for a star-trail stacking demonstration"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Ari",
+          "status": "active",
+          "text": "Align frames on the fixed foreground rather than individual stars"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Ari",
+          "status": "withdrawn",
+          "text": "Include a compass orientation overlay"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "Ari",
+          "status": "active",
+          "text": "Give each storyboard panel a thin border"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-033-1",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Kira",
+          "status": "active",
+          "text": "Make an alignment checklist for a perforated music roll replica"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Kira",
+          "status": "active",
+          "text": "Keep unpunched runs as rests rather than removing them as waste"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-033-2",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Kira",
+          "status": "active",
+          "text": "Make an alignment checklist for a perforated music roll replica"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Kira",
+          "status": "active",
+          "text": "Keep unpunched runs as rests rather than removing them as waste"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Kira",
+          "status": "active",
+          "text": "Allow lateral offset up to and including 0.4 mm; greater offset fails"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-033-3",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Kira",
+          "status": "active",
+          "text": "Make an alignment checklist for a perforated music roll replica"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Kira",
+          "status": "active",
+          "text": "Keep unpunched runs as rests rather than removing them as waste"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Kira",
+          "status": "active",
+          "text": "Allow lateral offset up to and including 0.4 mm; greater offset fails"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "Kira",
+          "status": "active",
+          "text": "Put a feed-direction arrow beside the roll leader"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-033-4",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Kira",
+          "status": "active",
+          "text": "Make an alignment checklist for a perforated music roll replica"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Kira",
+          "status": "active",
+          "text": "Keep unpunched runs as rests rather than removing them as waste"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Kira",
+          "status": "active",
+          "text": "Allow lateral offset up to and including 0.4 mm; greater offset fails"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "Kira",
+          "status": "active",
+          "text": "Put a feed-direction arrow beside the roll leader"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-033-5",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Kira",
+          "status": "active",
+          "text": "Make an alignment checklist for a perforated music roll replica"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Kira",
+          "status": "active",
+          "text": "Keep unpunched runs as rests rather than removing them as waste"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Kira",
+          "status": "active",
+          "text": "Allow lateral offset up to and including 0.4 mm; greater offset fails"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "Kira",
+          "status": "active",
+          "text": "Put the same feed-direction arrow on the roll leader"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-034-1",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Wren",
+          "status": "active",
+          "text": "Plan animation layers for a snow-globe illustration"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Wren",
+          "status": "active",
+          "text": "Snow may pass behind the nameplate but must never cover its letters"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-034-2",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Wren",
+          "status": "active",
+          "text": "Plan animation layers for a snow-globe illustration"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Wren",
+          "status": "active",
+          "text": "Snow may pass behind the nameplate but must never cover its letters"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Dev",
+          "status": "active",
+          "text": "Dev’s glass reflection layer stays semi-transparent rather than opaque"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-034-3",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Wren",
+          "status": "active",
+          "text": "Plan animation layers for a snow-globe illustration"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Wren",
+          "status": "active",
+          "text": "Snow may pass behind the nameplate but must never cover its letters"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Dev",
+          "status": "active",
+          "text": "Dev’s glass reflection layer stays semi-transparent rather than opaque"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "Wren",
+          "status": "uncertain",
+          "text": "Possibly add a separate sparkle layer; undecided"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-034-4",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Wren",
+          "status": "active",
+          "text": "Plan animation layers for a snow-globe illustration"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Wren",
+          "status": "active",
+          "text": "Snow may pass behind the nameplate but must never cover its letters"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Dev",
+          "status": "active",
+          "text": "Dev’s glass reflection layer stays semi-transparent rather than opaque"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "Wren",
+          "status": "uncertain",
+          "text": "Possibly add a separate sparkle layer; undecided"
+        },
+        {
+          "intent_id": "i5",
+          "owner": "Wren",
+          "status": "active",
+          "text": "Place the nameplate centered along the lower rim"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-034-5",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Wren",
+          "status": "active",
+          "text": "Plan animation layers for a snow-globe illustration"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Wren",
+          "status": "active",
+          "text": "Snow may pass behind the nameplate but must never cover its letters"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Dev",
+          "status": "active",
+          "text": "Dev’s glass reflection layer stays semi-transparent rather than opaque"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "Wren",
+          "status": "uncertain",
+          "text": "Possibly add a separate sparkle layer; undecided"
+        },
+        {
+          "intent_id": "i5",
+          "owner": "Wren",
+          "status": "active",
+          "text": "Place the nameplate slightly left of center along the lower rim at the same height"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-035-1",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Jules",
+          "status": "active",
+          "text": "Index coin rubbings"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Jules",
+          "status": "active",
+          "text": "Align obverse and reverse by the physical flip axis even when an inscription is upside down"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-035-2",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Jules",
+          "status": "active",
+          "text": "Index coin rubbings"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Jules",
+          "status": "active",
+          "text": "Align obverse and reverse by the physical flip axis even when an inscription is upside down"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Leif",
+          "status": "active",
+          "text": "Leif’s identification notes go in the margin, never over the rubbing"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-035-3",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Jules",
+          "status": "active",
+          "text": "Index coin rubbings"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Jules",
+          "status": "active",
+          "text": "Align obverse and reverse by the physical flip axis even when an inscription is upside down"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Leif",
+          "status": "active",
+          "text": "Leif’s identification notes go in the margin, never over the rubbing"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "Jules",
+          "status": "active",
+          "text": "Give obverse and reverse of each coin the same pair number"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-035-4",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Jules",
+          "status": "active",
+          "text": "Index coin rubbings"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Jules",
+          "status": "active",
+          "text": "Align obverse and reverse by the physical flip axis even when an inscription is upside down"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Leif",
+          "status": "active",
+          "text": "Leif’s identification notes go in the margin, never over the rubbing"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "Jules",
+          "status": "active",
+          "text": "Give obverse and reverse of each coin the same pair number"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-035-5",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Jules",
+          "status": "active",
+          "text": "Index coin rubbings"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Jules",
+          "status": "active",
+          "text": "Align obverse and reverse by the physical flip axis even when an inscription is upside down"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Leif",
+          "status": "active",
+          "text": "Leif’s identification notes go in the margin, never over the rubbing"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "Jules",
+          "status": "active",
+          "text": "Give obverse and reverse of each coin the same pair number prefixed with C"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-036-1",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Zoe",
+          "status": "active",
+          "text": "Make a flip-dot matrix refresh demonstration"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Zoe",
+          "status": "active",
+          "text": "Scan rows top to bottom and each row left to right"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-036-2",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Zoe",
+          "status": "active",
+          "text": "Make a flip-dot matrix refresh demonstration"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Zoe",
+          "status": "active",
+          "text": "Scan rows top to bottom and each row left to right, skipping dots already at target color"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-036-3",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Zoe",
+          "status": "active",
+          "text": "Make a flip-dot matrix refresh demonstration"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Zoe",
+          "status": "active",
+          "text": "Scan rows top to bottom and each row left to right, skipping dots already at target color"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Zoe",
+          "status": "active",
+          "text": "Show a count of actual flips only, excluding skipped dots"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-036-4",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Zoe",
+          "status": "active",
+          "text": "Make a flip-dot matrix refresh demonstration"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Zoe",
+          "status": "active",
+          "text": "Scan rows top to bottom and each row left to right, skipping dots already at target color"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Zoe",
+          "status": "active",
+          "text": "Show a count of actual flips only, excluding skipped dots"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-036-5",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Zoe",
+          "status": "active",
+          "text": "Make a flip-dot matrix refresh demonstration"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Zoe",
+          "status": "active",
+          "text": "Scan rows top to bottom and each row left to right, skipping dots already at target color"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Zoe",
+          "status": "active",
+          "text": "Show a counter outside the matrix border for actual flips only, excluding skipped dots"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-037-1",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Nell",
+          "status": "active",
+          "text": "Draw a shadow-puppet hinge chart"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Nell",
+          "status": "active",
+          "text": "Show hidden hinges with dashed outlines on the builder’s chart rather than omitting them"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-037-2",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Nell",
+          "status": "active",
+          "text": "Draw a shadow-puppet hinge chart"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Nell",
+          "status": "active",
+          "text": "Show hidden hinges with dashed outlines on the builder’s chart rather than omitting them"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Nell",
+          "status": "active",
+          "text": "Measure hinge clearance at full arm raise, not in the resting pose"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-037-3",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Nell",
+          "status": "active",
+          "text": "Draw a shadow-puppet hinge chart"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Nell",
+          "status": "active",
+          "text": "Show hidden hinges with dashed outlines on the builder’s chart rather than omitting them"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Nell",
+          "status": "active",
+          "text": "Measure hinge clearance at full arm raise, not in the resting pose"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "Nell",
+          "status": "active",
+          "text": "Place hinge names beside their outlines"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-037-4",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Nell",
+          "status": "active",
+          "text": "Draw a shadow-puppet hinge chart"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Nell",
+          "status": "active",
+          "text": "Show hidden hinges with dashed outlines on the builder’s chart rather than omitting them"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Nell",
+          "status": "active",
+          "text": "Measure hinge clearance at full arm raise, not in the resting pose"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "Nell",
+          "status": "active",
+          "text": "Place hinge names beside their outlines"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-037-5",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Nell",
+          "status": "active",
+          "text": "Draw a shadow-puppet hinge chart"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Nell",
+          "status": "active",
+          "text": "Show hidden hinges with dashed outlines on the builder’s chart rather than omitting them"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Nell",
+          "status": "active",
+          "text": "Measure hinge clearance at full arm raise, not in the resting pose"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "Nell",
+          "status": "active",
+          "text": "Place hinge names in a side column with connecting lines to their outlines"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-038-1",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Theo",
+          "status": "active",
+          "text": "Storyboard a mechanical iris aperture"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Theo",
+          "status": "active",
+          "text": "During closure all iris blades move together; no blade completes ahead of the others"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-038-2",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Theo",
+          "status": "active",
+          "text": "Storyboard a mechanical iris aperture"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Theo",
+          "status": "active",
+          "text": "During closure all iris blades move together; no blade completes ahead of the others"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Cleo",
+          "status": "active",
+          "text": "Cleo’s dimension captions use the diameter symbol rather than the radius symbol"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-038-3",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Theo",
+          "status": "active",
+          "text": "Storyboard a mechanical iris aperture"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Theo",
+          "status": "active",
+          "text": "During closure all iris blades move together; no blade completes ahead of the others"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Cleo",
+          "status": "active",
+          "text": "Cleo’s dimension captions use the diameter symbol rather than the radius symbol"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "Theo",
+          "status": "uncertain",
+          "text": "Possibly include a cutaway inset; adoption undecided"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-038-4",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Theo",
+          "status": "active",
+          "text": "Storyboard a mechanical iris aperture"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Theo",
+          "status": "active",
+          "text": "During closure all iris blades move together; no blade completes ahead of the others"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Cleo",
+          "status": "active",
+          "text": "Cleo’s dimension captions use the diameter symbol rather than the radius symbol"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "Theo",
+          "status": "uncertain",
+          "text": "Possibly include a cutaway inset; adoption undecided"
+        },
+        {
+          "intent_id": "i5",
+          "owner": "Theo",
+          "status": "active",
+          "text": "Use three panels ordered open, midway, closed"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-038-5",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Theo",
+          "status": "active",
+          "text": "Storyboard a mechanical iris aperture"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Theo",
+          "status": "active",
+          "text": "During closure all iris blades move together; no blade completes ahead of the others"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Cleo",
+          "status": "active",
+          "text": "Cleo’s dimension captions use the diameter symbol rather than the radius symbol"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "Theo",
+          "status": "uncertain",
+          "text": "Possibly include a cutaway inset; adoption undecided"
+        },
+        {
+          "intent_id": "i5",
+          "owner": "Theo",
+          "status": "active",
+          "text": "Use three panels ordered open, midway, closed, with the midway panel larger"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-039-1",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Mae",
+          "status": "active",
+          "text": "Lay out a numeral stencil for a clock face"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Mae",
+          "status": "active",
+          "text": "Keep numeral baselines horizontal to the page rather than tangent to the clock circle"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-039-2",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Mae",
+          "status": "active",
+          "text": "Lay out a numeral stencil for a clock face"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Mae",
+          "status": "active",
+          "text": "Keep numeral baselines horizontal to the page rather than tangent to the clock circle"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Rory",
+          "status": "active",
+          "text": "Rory’s alignment marks appear only on the removable carrier, not cut through the stencil"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-039-3",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Mae",
+          "status": "active",
+          "text": "Lay out a numeral stencil for a clock face"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Mae",
+          "status": "active",
+          "text": "Keep numeral baselines horizontal to the page rather than tangent to the clock circle"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Rory",
+          "status": "active",
+          "text": "Rory’s alignment marks appear only on the removable carrier, not cut through the stencil"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "Mae",
+          "status": "active",
+          "text": "Print a small centre dot without cutting a hole"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-039-4",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Mae",
+          "status": "active",
+          "text": "Lay out a numeral stencil for a clock face"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Mae",
+          "status": "active",
+          "text": "Keep numeral baselines horizontal to the page rather than tangent to the clock circle"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Rory",
+          "status": "active",
+          "text": "Rory’s alignment marks appear only on the removable carrier, not cut through the stencil"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "Mae",
+          "status": "active",
+          "text": "Print a small centre dot without cutting a hole"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-039-5",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Mae",
+          "status": "active",
+          "text": "Lay out a numeral stencil for a clock face"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Mae",
+          "status": "active",
+          "text": "Keep numeral baselines horizontal to the page rather than tangent to the clock circle"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Rory",
+          "status": "active",
+          "text": "Rory’s alignment marks appear only on the removable carrier, not cut through the stencil"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "Mae",
+          "status": "active",
+          "text": "Print a small gray centre dot without cutting a hole"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-040-1",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Finn",
+          "status": "active",
+          "text": "Draw a marionette string routing plan"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Finn",
+          "status": "active",
+          "text": "At crossings without knots, show strings continuing separately rather than connected"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-040-2",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Finn",
+          "status": "active",
+          "text": "Draw a marionette string routing plan"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Finn",
+          "status": "active",
+          "text": "At crossings without knots, show strings continuing separately rather than connected"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Finn",
+          "status": "active",
+          "text": "Add a color overlay for string tension levels"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-040-3",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Finn",
+          "status": "active",
+          "text": "Draw a marionette string routing plan"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Finn",
+          "status": "active",
+          "text": "At crossings without knots, show strings continuing separately rather than connected"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Finn",
+          "status": "withdrawn",
+          "text": "Add a color overlay for string tension levels"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-040-4",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Finn",
+          "status": "active",
+          "text": "Draw a marionette string routing plan"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Finn",
+          "status": "active",
+          "text": "At crossings without knots, show strings continuing separately rather than connected"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Finn",
+          "status": "withdrawn",
+          "text": "Add a color overlay for string tension levels"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-test-040-5",
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Finn",
+          "status": "active",
+          "text": "Draw a marionette string routing plan"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Finn",
+          "status": "active",
+          "text": "At crossings without knots, show strings continuing separately rather than connected"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Finn",
+          "status": "withdrawn",
+          "text": "Add a color overlay for string tension levels"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "Finn",
+          "status": "active",
+          "text": "Place the control bar above the puppet in the drawing"
+        }
+      ]
+    }
+  ]
+}

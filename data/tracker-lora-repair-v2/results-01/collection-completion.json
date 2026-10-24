@@ -1,0 +1,9 @@
+{
+  "status": "collection_completed",
+  "assigned_calls": 600,
+  "records": 600,
+  "actual_attempts": 600,
+  "outputs_sha256": "8112bf62b4b3c33371f557610b7e5223e3e57a818a418975c525e0ca77d1a013",
+  "attempt_events_sha256": "41c3f4335d3da5d6eadf2bbe8f25e18235cf8a0875fce4f73eb1b37a9c841e09",
+  "quality_scored": false
+}

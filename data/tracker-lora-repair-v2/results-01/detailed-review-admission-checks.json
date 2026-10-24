@@ -1,0 +1,126 @@
+{
+  "kind": "CPU detailed review provenance mutation checks; not model evaluation",
+  "status": "passed",
+  "created_at_utc": "2026-10-24T19:12:18.890597+00:00",
+  "checks": [
+    {
+      "name": "explicit_independent_replacement_preserves_other_reviewed_entries",
+      "passed": true,
+      "observed": "accepted"
+    },
+    {
+      "name": "self_contained_admission_without_detailed_files_rejected",
+      "passed": true,
+      "observed": "rejected",
+      "reason": "Detailed review file manifest missing"
+    },
+    {
+      "name": "changed_detailed_file_bytes_rejected",
+      "passed": true,
+      "observed": "rejected",
+      "reason": "Detailed review file hash mismatch: review/base.json"
+    },
+    {
+      "name": "missing_detailed_file_rejected",
+      "passed": true,
+      "observed": "rejected",
+      "reason": "[Errno 2] No such file or directory: '[local path omitted]'"
+    },
+    {
+      "name": "summary_with_fabricated_entry_hash_rejected",
+      "passed": true,
+      "observed": "rejected",
+      "reason": "Admission does not bind actual detailed entry: family-a/detailed_review_entry_sha256"
+    },
+    {
+      "name": "summary_bound_to_wrong_reviewer_rejected",
+      "passed": true,
+      "observed": "rejected",
+      "reason": "Admission does not bind actual detailed entry: family-b/reviewer"
+    },
+    {
+      "name": "stale_non_replaced_source_rejected",
+      "passed": true,
+      "observed": "rejected",
+      "reason": "Detailed review stale, unaccepted, or not independent: family-a"
+    },
+    {
+      "name": "unaccepted_supplement_entry_rejected",
+      "passed": true,
+      "observed": "rejected",
+      "reason": "Detailed review stale, unaccepted, or not independent: family-b"
+    },
+    {
+      "name": "missing_one_decision_review_rejected",
+      "passed": true,
+      "observed": "rejected",
+      "reason": "Detailed five-decision coverage incomplete: family-b"
+    },
+    {
+      "name": "missing_fault_review_rejected",
+      "passed": true,
+      "observed": "rejected",
+      "reason": "Missing or duplicate exact override entry"
+    },
+    {
+      "name": "override_omitting_family_fault_rejected",
+      "passed": true,
+      "observed": "rejected",
+      "reason": "Override must cover every fault belonging to replaced families"
+    },
+    {
+      "name": "unresolved_issue_outside_override_rejected",
+      "passed": true,
+      "observed": "rejected",
+      "reason": "Unresolved issue lacks exact independent replacement review"
+    },
+    {
+      "name": "supplement_cannot_approve_own_replacement_rejected",
+      "passed": true,
+      "observed": "rejected",
+      "reason": "Replacement author cannot approve own scenario"
+    },
+    {
+      "name": "supplement_with_undeclared_extra_family_rejected",
+      "passed": true,
+      "observed": "rejected",
+      "reason": "Supplement contains undeclared review entries"
+    },
+    {
+      "name": "admission_omitting_exact_override_mapping_rejected",
+      "passed": true,
+      "observed": "rejected",
+      "reason": "Admission override mapping differs from detailed evidence"
+    },
+    {
+      "name": "admission_omitting_original_review_manifest_rejected",
+      "passed": true,
+      "observed": "rejected",
+      "reason": "Override must name a base report; chains/cycles are forbidden"
+    },
+    {
+      "name": "false_human_gold_claim_rejected",
+      "passed": true,
+      "observed": "rejected",
+      "reason": "Admission must state model-review limits and no unresolved issues"
+    },
+    {
+      "name": "detailed_review_policy_mismatch_rejected",
+      "passed": true,
+      "observed": "rejected",
+      "reason": "Detailed review policy changed: review/supplement.json"
+    }
+  ],
+  "passed": 18,
+  "failed": 0,
+  "gpu_or_model_calls": 0,
+  "files": {
+    "check_review_admission.py": "0848c2abc37cc17fa3608ef724e6addf5dbe47278d2d3085ea2a8e539aa9c4f0",
+    "gates.py": "c7626f2955e830d5dfefcda3dd1435c08475cfc27ac91fd4c62730158db38990",
+    "build_admission.py": "159ca711d6c92d28754e0ce32db35cce71cb703bb747cd62e7c6ea75e829d471"
+  },
+  "limits": [
+    "Synthetic provenance fixtures establish rejection behavior, not semantic label correctness.",
+    "Final real-data admission and freeze checks remain separate."
+  ]
+}

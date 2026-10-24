@@ -1,0 +1,71 @@
+{
+  "kind": "physical_attempt_accounting_without_candidate_or_assignment_identities",
+  "assigned_calls": 600,
+  "actual_attempts": 600,
+  "terminal_status_counts": {
+    "completed": 600
+  },
+  "physical_attempt_status_counts": {
+    "completed": 600
+  },
+  "all_terminal_assignments": {
+    "terminal_assignments": 600,
+    "completed": 600,
+    "failed": 0,
+    "completed_elapsed_seconds": 2693.723144899239,
+    "failed_elapsed_seconds": 0,
+    "completed_input_tokens": 673107,
+    "completed_output_tokens": 29690,
+    "failed_input_tokens": 0,
+    "completed_hit_token_cap": 0
+  },
+  "by_arm": {
+    "adapter_disabled": {
+      "terminal_assignments": 200,
+      "completed": 200,
+      "failed": 0,
+      "completed_elapsed_seconds": 700.9097040999914,
+      "failed_elapsed_seconds": 0,
+      "completed_input_tokens": 224369,
+      "completed_output_tokens": 11091,
+      "failed_input_tokens": 0,
+      "completed_hit_token_cap": 0
+    },
+    "tracker_lora_v1": {
+      "terminal_assignments": 200,
+      "completed": 200,
+      "failed": 0,
+      "completed_elapsed_seconds": 894.8284805996227,
+      "failed_elapsed_seconds": 0,
+      "completed_input_tokens": 224369,
+      "completed_output_tokens": 9264,
+      "failed_input_tokens": 0,
+      "completed_hit_token_cap": 0
+    },
+    "tracker_lora_v2": {
+      "terminal_assignments": 200,
+      "completed": 200,
+      "failed": 0,
+      "completed_elapsed_seconds": 1097.9849601996248,
+      "failed_elapsed_seconds": 0,
+      "completed_input_tokens": 224369,
+      "completed_output_tokens": 9335,
+      "failed_input_tokens": 0,
+      "completed_hit_token_cap": 0
+    }
+  },
+  "failure_groups": [],
+  "interrupted_without_durable_result": 0,
+  "interruption_known_elapsed_seconds": 0,
+  "interruption_unknown_duration_count": 0,
+  "recovered_attempt_end_records": 0,
+  "generation_session_count": 1,
+  "rows_with_arms_across_sessions": 0,
+  "unresolved_physical_attempts": 0,
+  "limits": [
+    "Failed durable calls remain in all 600 assigned quality denominators; interruptions without a durable output are counted separately.",
+    "Generation costs exclude model loading, tokenization, training and review. Unknown interrupted-call duration is not treated as zero.",
+    "Same in-memory base is guaranteed within a collector session; the session and cross-session row counts disclose reloads.",
+    "Raw output text, tracebacks, private IDs, per-attempt order and timestamps are withheld; source journal hashes commit to the full local originals."
+  ]
+}

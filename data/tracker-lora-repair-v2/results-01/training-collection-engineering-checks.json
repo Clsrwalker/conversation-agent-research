@@ -1,0 +1,134 @@
+{
+  "kind": "engineering_acceptance_checks_not_model_evaluation",
+  "status": "passed",
+  "created_at_utc": "2026-10-24T18:54:34.258233+00:00",
+  "real_model_calls": 0,
+  "gpu_training_or_inference": false,
+  "checks": [
+    {
+      "name": "old_loader_precision_loss_tokenization_and_optimizer_loop_AST_unchanged",
+      "passed": true
+    },
+    {
+      "name": "six_permutations_balance_every_complete_six_rows",
+      "passed": true
+    },
+    {
+      "name": "600_assignments_unique",
+      "passed": true
+    },
+    {
+      "name": "200_rows_order_counts_34_34_33_33_33_33",
+      "passed": true
+    },
+    {
+      "name": "annotations_excluded_from_messages",
+      "passed": true
+    },
+    {
+      "name": "unexpected_input_fields_rejected",
+      "passed": true
+    },
+    {
+      "name": "adapter_identity_and_enablement_adapter_disabled",
+      "passed": true
+    },
+    {
+      "name": "adapter_identity_and_enablement_tracker_lora_v1",
+      "passed": true
+    },
+    {
+      "name": "adapter_identity_and_enablement_tracker_lora_v2",
+      "passed": true
+    },
+    {
+      "name": "wrong_active_adapter_rejected",
+      "passed": true
+    },
+    {
+      "name": "enabled_baseline_rejected",
+      "passed": true
+    },
+    {
+      "name": "durable_prefix_accepted",
+      "passed": true
+    },
+    {
+      "name": "failed_call_without_adapter_state_remains_resumable_and_in_denominator",
+      "passed": true
+    },
+    {
+      "name": "interrupted_start_without_output_identified",
+      "passed": true
+    },
+    {
+      "name": "durable_output_without_end_accepted_for_end_recovery",
+      "passed": true
+    },
+    {
+      "name": "accounted_interrupted_attempt_then_retry_accepted",
+      "passed": true
+    },
+    {
+      "name": "duplicate_durable_assignment_rejected",
+      "passed": true
+    },
+    {
+      "name": "unfinished_attempt_overlap_rejected",
+      "passed": true
+    },
+    {
+      "name": "out_of_order_assignment_rejected",
+      "passed": true
+    },
+    {
+      "name": "changed_saved_input_rejected",
+      "passed": true
+    },
+    {
+      "name": "ended_attempt_without_durable_output_rejected",
+      "passed": true
+    },
+    {
+      "name": "interrupted_attempt_with_existing_output_rejected",
+      "passed": true
+    },
+    {
+      "name": "changed_end_checksum_rejected",
+      "passed": true
+    },
+    {
+      "name": "durable_UTF8_roundtrip",
+      "passed": true
+    },
+    {
+      "name": "truncated_journal_rejected",
+      "passed": true
+    },
+    {
+      "name": "live_process_lock_blocks_competing_collector",
+      "passed": true
+    },
+    {
+      "name": "released_process_lock_can_resume",
+      "passed": true
+    }
+  ],
+  "passed": 27,
+  "failed": 0,
+  "files": {
+    "build_dataset.py": "37ca179c11e0921b5a4d12f3c7a12b01fb7531b1a0f210b48dab129f5280e4ef",
+    "check_engineering.py": "dbd2561311aab0fbb30f2806a74506aed078281d9d76f621308d05df0332f712",
+    "check_repair_logic.py": "4b9e984fcacb37c34fdf8d4e5c670fb7303758f5fd604590741a47dda5141ada",
+    "collect_three_arm.py": "6914ae922056b288a55f4fdaf197816ea4ab649b35e9cf80de0665521d6044d8",
+    "evaluate_three_arm.py": "d6bd8a2aa3691780ad2f449b2c29448958ec5c52b396b901936ac4c7187230f5",
+    "gates.py": "a43ccbff94cdb0135d22c84e624d4d8df82f68e303d2d96bce0ecf0513c33c30",
+    "train_tracker.py": "2d329f11c1320c0f2e12c39d6e74600997757d53a0661406b8e6a657222ffd24"
+  },
+  "old_trainer_sha256": "b60fd53f91c62d854ef0cf71a15b29fac850fad1aaddd5d07e335831a94ed1a8",
+  "limits": [
+    "No model or GPU execution; actual PEFT adapter activation remains a required collection runtime assertion.",
+    "The final data admission must be run after the new compiler, reviews and manifest are frozen.",
+    "Passing plumbing checks does not establish intention-tracking quality."
+  ]
+}

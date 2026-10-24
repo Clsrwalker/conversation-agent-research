@@ -45,8 +45,8 @@
     },
     {
       "path": "data.js",
-      "sha256": "53c7221b1d95eb682203958319cf02b6e7810c6448476f7681444d2885c74521",
-      "bytes": 199807
+      "sha256": "3dc6c576bd170e657f09476670c15cfa513ad4345f75aece33cdabc13c5239dc",
+      "bytes": 200502
     },
     {
       "path": "data/analyze_harness_latency.py",
@@ -615,8 +615,8 @@
     },
     {
       "path": "data/research-record.json",
-      "sha256": "11eb129f4be9f6560491bff39658485827ceade282935cb0e25e90b1c28e2d26",
-      "bytes": 293643
+      "sha256": "5a665e86d797bc1c17e83f6e869fb60d8816355f480d3d5b10ed5c9f9d5000d4",
+      "bytes": 294467
     },
     {
       "path": "data/results.csv",
@@ -1339,6 +1339,276 @@
       "bytes": 3110
     },
     {
+      "path": "data/tracker-lora-repair-release-validation.json",
+      "sha256": "d4fbeded1c9ae465070fa2dae1f50a954956885eeb43cec2fc10d8213b8c3454",
+      "bytes": 3953
+    },
+    {
+      "path": "data/tracker-lora-repair-release/local-browser-download-checks-01.json",
+      "sha256": "e8898354aca7532836515165e584a84f4fb4c81ea91b2f3a410c5bdc37f8b41e",
+      "bytes": 2486
+    },
+    {
+      "path": "data/tracker-lora-repair-release/static-index-fix-checks-01.json",
+      "sha256": "7967cee37c3d9aa40d76bcd38505c393a3343bf6b2691ae07024bbe0430673d4",
+      "bytes": 1245
+    },
+    {
+      "path": "data/tracker-lora-repair-release/static-release-checks-01.json",
+      "sha256": "ccdc52f3a68b00526b6541f97a23baaa09c6c20f46032d267530997d9b5bf4c6",
+      "bytes": 9431
+    },
+    {
+      "path": "data/tracker-lora-repair-v2/results-01/annotation-policy-v3.json",
+      "sha256": "7e36104bbbaf2e7cc89d95490682b004a1415bfa54c4c7a131328595021dc457",
+      "bytes": 3770
+    },
+    {
+      "path": "data/tracker-lora-repair-v2/results-01/attempt-accounting-public.json",
+      "sha256": "7b515676ab511957d270ac70d5a07af595f80a699e6c628314f452fe40559a86",
+      "bytes": 2528
+    },
+    {
+      "path": "data/tracker-lora-repair-v2/results-01/citation-revisions.json",
+      "sha256": "974738a5cf73c89a09b3773708a01e883d9792652610051862b339ac77a4c394",
+      "bytes": 69844
+    },
+    {
+      "path": "data/tracker-lora-repair-v2/results-01/collection-completion.json",
+      "sha256": "f7566e2d0f59ea8ff5f043ebe278c882bf5cae8d8140d5edc2d3f5bdac32c2ac",
+      "bytes": 325
+    },
+    {
+      "path": "data/tracker-lora-repair-v2/results-01/collection-config.json",
+      "sha256": "fd8dff2fc8f1cb13ea81955f9844d488ba3940c2c59463adcd55ad96c12e63fc",
+      "bytes": 2824
+    },
+    {
+      "path": "data/tracker-lora-repair-v2/results-01/compiler-position-independent-review.json",
+      "sha256": "7e78a47481705bfd6e5f19da603fb7587e98c3bf7f45bfd7288546380bbd403c",
+      "bytes": 147598
+    },
+    {
+      "path": "data/tracker-lora-repair-v2/results-01/cross-split-similarity-review-01.json",
+      "sha256": "ab8693a5666ef7e23df3f69ac18b9debbc91e09136a459648ebc722e224998ca",
+      "bytes": 365169
+    },
+    {
+      "path": "data/tracker-lora-repair-v2/results-01/cross-split-similarity-review-02.json",
+      "sha256": "11aeef3a6f5c6ca9b5c8c7b06320920c199468c8b5545be3c9abe392ea7d7f00",
+      "bytes": 718944
+    },
+    {
+      "path": "data/tracker-lora-repair-v2/results-01/data-admission.json",
+      "sha256": "d2cb7337c4b3f5298f253a7da950b21cf40b8583df1542f10148a0b064e2d37f",
+      "bytes": 233668
+    },
+    {
+      "path": "data/tracker-lora-repair-v2/results-01/dataset-card.json",
+      "sha256": "f08d63e71787079555ab6cc2c85530e33cca17b5f7726fb94156df3ae60cf181",
+      "bytes": 21415
+    },
+    {
+      "path": "data/tracker-lora-repair-v2/results-01/dataset-manifest.json",
+      "sha256": "35e3dfc55bf74ca37b88e6e3aa70738a9d61ec87769f19a8a601c3d9dded16bc",
+      "bytes": 36904
+    },
+    {
+      "path": "data/tracker-lora-repair-v2/results-01/detailed-review-admission-checks.json",
+      "sha256": "b8ca6f99dd3ba1dcf882fbe87b95eef8f26a65a0b3bbd5ef9481eb0b892ea58c",
+      "bytes": 4257
+    },
+    {
+      "path": "data/tracker-lora-repair-v2/results-01/engineering-validation.json",
+      "sha256": "1eca8881a12fad9978ac8a0c0ac475c0336df91ee8d5dcbfc4e15413cfb16ea2",
+      "bytes": 60765
+    },
+    {
+      "path": "data/tracker-lora-repair-v2/results-01/evaluator-independent-review.json",
+      "sha256": "31945fc8db7b1ede7e1a73fcdcc15f9f31940e7f95d98e71197d9fe155dabe4f",
+      "bytes": 2624
+    },
+    {
+      "path": "data/tracker-lora-repair-v2/results-01/evidence.zip",
+      "sha256": "6cb402fa6c67caa26a814bb13a01681f98d2bfbedec2a801f2b20b6d8eee95e4",
+      "bytes": 924796
+    },
+    {
+      "path": "data/tracker-lora-repair-v2/results-01/fault-position-revision.json",
+      "sha256": "dee45921c76a5fcaa42f27c58fdd042ae98630878ce82392e80ba76ddeafc52f",
+      "bytes": 107718
+    },
+    {
+      "path": "data/tracker-lora-repair-v2/results-01/final-data-gate-independent-review.json",
+      "sha256": "b5fb68bfca45c1085dcf7d2b6dc6825357cd21e20403d8d03812d5c363e19b47",
+      "bytes": 101972
+    },
+    {
+      "path": "data/tracker-lora-repair-v2/results-01/fresh-eval-independent-review.json",
+      "sha256": "85c9d7402a3ab54328fc6c3d09540e0921455a92e027c00c64562327ac9c249e",
+      "bytes": 1088087
+    },
+    {
+      "path": "data/tracker-lora-repair-v2/results-01/fresh-train-independent-review.json",
+      "sha256": "d0cde2bfeb63babb1c697ea11086e89c74a6702925534ef846b9b7e0affe7bdd",
+      "bytes": 1122644
+    },
+    {
+      "path": "data/tracker-lora-repair-v2/results-01/fresh-train-revisions.json",
+      "sha256": "c777e377ff130916bc3ec09cb86419a73b89e75c8d6a7cd509676e7e857a5da7",
+      "bytes": 16980
+    },
+    {
+      "path": "data/tracker-lora-repair-v2/results-01/interpretation.json",
+      "sha256": "a21acf32050e51cf1b40c9864616a2666e94617e5f7f9b585b8edd2b9591fd02",
+      "bytes": 7943
+    },
+    {
+      "path": "data/tracker-lora-repair-v2/results-01/leakage-replacements.json",
+      "sha256": "5b49f8d673799ae2d177388bdd719d7c728a0b3e355a76d9ad1d09d3573a7e6f",
+      "bytes": 2105
+    },
+    {
+      "path": "data/tracker-lora-repair-v2/results-01/preparation-public.json",
+      "sha256": "920649011cbb2fabfe4fe47e9dedb5b109a2d648f3490bfa614df9890a40e926",
+      "bytes": 1835
+    },
+    {
+      "path": "data/tracker-lora-repair-v2/results-01/prior-evidence-preservation.json",
+      "sha256": "2dc0a2411a29a26ca3516aeb367a162f6d493dace5aaa385ccabf829cc082f12",
+      "bytes": 1772
+    },
+    {
+      "path": "data/tracker-lora-repair-v2/results-01/prior-repair-diagnosis-public.json",
+      "sha256": "108c7cd0f318c67282136e14c8e374bdb6b0575311fbce179e1b595faae934c3",
+      "bytes": 76936
+    },
+    {
+      "path": "data/tracker-lora-repair-v2/results-01/protocol-independent-review.json",
+      "sha256": "459ca4c30081c8d57313c66f7c7f88edd635acfa72fcb538eb80725968d33cc9",
+      "bytes": 20204
+    },
+    {
+      "path": "data/tracker-lora-repair-v2/results-01/protocol-lock.json",
+      "sha256": "c399c0f3cbf220db50b305c8d79dee2ab0eb124080ce381df4a8ba6c5efad8cd",
+      "bytes": 4852
+    },
+    {
+      "path": "data/tracker-lora-repair-v2/results-01/protocol.json",
+      "sha256": "1fff46568a31e35eaa75f053ee417b83a79d1fb601b90e234dd209ac35e37600",
+      "bytes": 9525
+    },
+    {
+      "path": "data/tracker-lora-repair-v2/results-01/reference-amendment-approval.json",
+      "sha256": "9d7addfbc5202971cb9be771b8a9cab81ae115f106893381edf04cf33d997c7d",
+      "bytes": 395
+    },
+    {
+      "path": "data/tracker-lora-repair-v2/results-01/reference-amendment-disclosure.json",
+      "sha256": "de733dbccee7e12a446247da10e481b32632abeea6e7f8d7bbf9c352d5f6a640",
+      "bytes": 3659
+    },
+    {
+      "path": "data/tracker-lora-repair-v2/results-01/reference-amendment-ledger-public.json",
+      "sha256": "1d9ca5ce706c69d3586d1c2b361df6965e1438f90cd06bc05a09873d85cb1bff",
+      "bytes": 2640
+    },
+    {
+      "path": "data/tracker-lora-repair-v2/results-01/reference-amendment-provenance-public.json",
+      "sha256": "ca2db5102127034e0e2188ff41e096358d7addfb0550dd092757aa3df5290540",
+      "bytes": 1304
+    },
+    {
+      "path": "data/tracker-lora-repair-v2/results-01/repair-logic-checks.json",
+      "sha256": "82b4420cb7f3a3e6a64193920a7a39c1617d20f516ccbca942ef59e60371fc36",
+      "bytes": 1479
+    },
+    {
+      "path": "data/tracker-lora-repair-v2/results-01/replacement-independent-review.json",
+      "sha256": "47421996bad089d18c72f045dedc9e80d40225f4eb973f1b4be2beb7a1d97d72",
+      "bytes": 46393
+    },
+    {
+      "path": "data/tracker-lora-repair-v2/results-01/results-independent-review.json",
+      "sha256": "978410798d3668382ef0e82adbeb2b06d05cf26a2f5cb9422feb0fd2dcea94a0",
+      "bytes": 54311
+    },
+    {
+      "path": "data/tracker-lora-repair-v2/results-01/results.json",
+      "sha256": "8264f0be72d1ed555dcf25f644b8c81c00be991765a498e7ff24448a7e7f23f9",
+      "bytes": 221615
+    },
+    {
+      "path": "data/tracker-lora-repair-v2/results-01/retained-old-independent-review.json",
+      "sha256": "7baa004db437a4c03834aa42e50402f8da816a2a447aac25e8ee4474d066ad22",
+      "bytes": 406596
+    },
+    {
+      "path": "data/tracker-lora-repair-v2/results-01/retained-selection.json",
+      "sha256": "5cf84c5ad9f7621b33922f1f0d63f7dfb3fa85c074470337bd90dbf6b333a7ad",
+      "bytes": 5742
+    },
+    {
+      "path": "data/tracker-lora-repair-v2/results-01/review-lock-public.json",
+      "sha256": "2c9a9f251219911851f6604a54391bae2b04eaa549f9fb8be76a42306adcd1b8",
+      "bytes": 2838
+    },
+    {
+      "path": "data/tracker-lora-repair-v2/results-01/review-workflow-cpu-checks.json",
+      "sha256": "cd188226bc81327c9abdd10d69303cb73a20d98808c01c62feec5466487b7719",
+      "bytes": 3659
+    },
+    {
+      "path": "data/tracker-lora-repair-v2/results-01/review-workflow-source-review.json",
+      "sha256": "d81d8833f4cd52f1bdd27f8d6a5149125bedfbde836d4221d63567790adeac17",
+      "bytes": 3344
+    },
+    {
+      "path": "data/tracker-lora-repair-v2/results-01/reviewed-length-inspection.json",
+      "sha256": "bc405641d69a9db562026342a3ac470351c685cd9c1eee96af63f2814e0ae679",
+      "bytes": 1692
+    },
+    {
+      "path": "data/tracker-lora-repair-v2/results-01/reviewed-test-lengths.json",
+      "sha256": "9bfe888286baeb6a1da59eaa5a4dc467705eac62be7108be96edd9185c7b9ffd",
+      "bytes": 15440
+    },
+    {
+      "path": "data/tracker-lora-repair-v2/results-01/sources.json",
+      "sha256": "1a4f5c2691a0814a3c5d6e76e7f47cf0651d925e1c28ed8b59966582a5aed286",
+      "bytes": 35211
+    },
+    {
+      "path": "data/tracker-lora-repair-v2/results-01/summary.json",
+      "sha256": "aaa1f2a565f5b0ec1545c603ca077df13a2e287d1c7a3ad0b8f067092b8ff605",
+      "bytes": 49457
+    },
+    {
+      "path": "data/tracker-lora-repair-v2/results-01/test.amended-references.json",
+      "sha256": "d3b482e26b06188c17943b06e945fb72ae9e255e42d768693a462e2e684d2447",
+      "bytes": 139231
+    },
+    {
+      "path": "data/tracker-lora-repair-v2/results-01/training-collection-engineering-checks.json",
+      "sha256": "ebe7228a33e7f1fbc147d0e580ac657709f5e8b5ce9d6f39c7a529df1800bb74",
+      "bytes": 3927
+    },
+    {
+      "path": "data/tracker-lora-repair-v2/results-01/training-independent-review.json",
+      "sha256": "e9f61ba36d3eb2043fd0fdb52dba105ec948846c9a3e150ca64f3617ee9fb2d4",
+      "bytes": 10789
+    },
+    {
+      "path": "data/tracker-lora-repair-v2/results-01/training-result.json",
+      "sha256": "fa5223913b0ed50fd86580aa309867a80a57090738050000bdeb51f3b15282f2",
+      "bytes": 18872
+    },
+    {
+      "path": "data/tracker-lora-repair-validation.json",
+      "sha256": "1eca8881a12fad9978ac8a0c0ac475c0336df91ee8d5dcbfc4e15413cfb16ea2",
+      "bytes": 60765
+    },
+    {
       "path": "data/web-knowledge-diagnostics.json",
       "sha256": "2e46aca18e2de2949fc07cbfecd731163290fd2efc06cf99476a5f7ff487dc90",
       "bytes": 317356
@@ -1420,13 +1690,13 @@
     },
     {
       "path": "index.html",
-      "sha256": "b01a2fa725752b665fae9d3ffcd1561028abc24821292e82f6b71791353a7376",
-      "bytes": 71887
+      "sha256": "dfa001d48afca78d8e5a54697a90a57e832907b6cefcfc72e6c01781a2d8a1b2",
+      "bytes": 72876
     },
     {
       "path": "intent-role-separation.html",
-      "sha256": "1af8897f2d0c10d0b657df8cb3bb28ba0cf9fba066ead651664888e9f0a6989d",
-      "bytes": 40153
+      "sha256": "e8fc34253ddbb296c6210cd38cdf6609e2816f647dec59d4b2c5a498120b248a",
+      "bytes": 54562
     },
     {
       "path": "intention-literature.css",

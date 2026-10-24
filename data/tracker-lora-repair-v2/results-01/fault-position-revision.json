@@ -1,0 +1,3375 @@
+{
+  "kind": "prospective_authoring_position_revision_not_quality_experiment",
+  "seed": 20261024,
+  "policy": "Prospective position balance; no new semantic labels or model calls.\n\nRelocate only when the full correct target record/history is identical, all\nrepair evidence already arrived, the current operation leaves it untouched,\nand the actual faulty-state reconstruction succeeds. Review actual rows next.\n",
+  "source_records_unchanged": true,
+  "new_model_calls": 0,
+  "fresh_fault_counts_by_decision_ordinal": {
+    "train": {
+      "2": 17,
+      "3": 30,
+      "4": 37,
+      "5": 36
+    },
+    "dev": {
+      "2": 4,
+      "3": 4,
+      "4": 4,
+      "5": 8
+    },
+    "test": {
+      "2": 11,
+      "3": 24,
+      "4": 25,
+      "5": 20
+    }
+  },
+  "changed_placements": 131,
+  "changes": [
+    {
+      "family_id": "fresh-train-001",
+      "split": "train",
+      "fault_kind": "missing",
+      "old_example_id": "fresh-train-001-3",
+      "new_example_id": "fresh-train-001-3",
+      "eligible_example_ids": [
+        "fresh-train-001-2",
+        "fresh-train-001-3",
+        "fresh-train-001-4",
+        "fresh-train-001-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-001",
+      "split": "train",
+      "fault_kind": "text",
+      "old_example_id": "fresh-train-001-5",
+      "new_example_id": "fresh-train-001-5",
+      "eligible_example_ids": [
+        "fresh-train-001-4",
+        "fresh-train-001-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-002",
+      "split": "train",
+      "fault_kind": "missing",
+      "old_example_id": "fresh-train-002-3",
+      "new_example_id": "fresh-train-002-4",
+      "eligible_example_ids": [
+        "fresh-train-002-2",
+        "fresh-train-002-3",
+        "fresh-train-002-4",
+        "fresh-train-002-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-002",
+      "split": "train",
+      "fault_kind": "text",
+      "old_example_id": "fresh-train-002-5",
+      "new_example_id": "fresh-train-002-3",
+      "eligible_example_ids": [
+        "fresh-train-002-2",
+        "fresh-train-002-3",
+        "fresh-train-002-4",
+        "fresh-train-002-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-003",
+      "split": "train",
+      "fault_kind": "missing",
+      "old_example_id": "fresh-train-003-3",
+      "new_example_id": "fresh-train-003-2",
+      "eligible_example_ids": [
+        "fresh-train-003-2",
+        "fresh-train-003-3",
+        "fresh-train-003-4",
+        "fresh-train-003-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-003",
+      "split": "train",
+      "fault_kind": "text",
+      "old_example_id": "fresh-train-003-5",
+      "new_example_id": "fresh-train-003-4",
+      "eligible_example_ids": [
+        "fresh-train-003-4",
+        "fresh-train-003-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-004",
+      "split": "train",
+      "fault_kind": "missing",
+      "old_example_id": "fresh-train-004-3",
+      "new_example_id": "fresh-train-004-3",
+      "eligible_example_ids": [
+        "fresh-train-004-2",
+        "fresh-train-004-3",
+        "fresh-train-004-4",
+        "fresh-train-004-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-004",
+      "split": "train",
+      "fault_kind": "text",
+      "old_example_id": "fresh-train-004-5",
+      "new_example_id": "fresh-train-004-4",
+      "eligible_example_ids": [
+        "fresh-train-004-4",
+        "fresh-train-004-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-005",
+      "split": "train",
+      "fault_kind": "missing",
+      "old_example_id": "fresh-train-005-3",
+      "new_example_id": "fresh-train-005-5",
+      "eligible_example_ids": [
+        "fresh-train-005-2",
+        "fresh-train-005-3",
+        "fresh-train-005-4",
+        "fresh-train-005-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-005",
+      "split": "train",
+      "fault_kind": "text",
+      "old_example_id": "fresh-train-005-5",
+      "new_example_id": "fresh-train-005-4",
+      "eligible_example_ids": [
+        "fresh-train-005-4",
+        "fresh-train-005-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-006",
+      "split": "train",
+      "fault_kind": "missing",
+      "old_example_id": "fresh-train-006-3",
+      "new_example_id": "fresh-train-006-3",
+      "eligible_example_ids": [
+        "fresh-train-006-2",
+        "fresh-train-006-3",
+        "fresh-train-006-4",
+        "fresh-train-006-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-006",
+      "split": "train",
+      "fault_kind": "text",
+      "old_example_id": "fresh-train-006-5",
+      "new_example_id": "fresh-train-006-5",
+      "eligible_example_ids": [
+        "fresh-train-006-2",
+        "fresh-train-006-3",
+        "fresh-train-006-4",
+        "fresh-train-006-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-007",
+      "split": "train",
+      "fault_kind": "missing",
+      "old_example_id": "fresh-train-007-3",
+      "new_example_id": "fresh-train-007-5",
+      "eligible_example_ids": [
+        "fresh-train-007-2",
+        "fresh-train-007-3",
+        "fresh-train-007-4",
+        "fresh-train-007-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-007",
+      "split": "train",
+      "fault_kind": "text",
+      "old_example_id": "fresh-train-007-5",
+      "new_example_id": "fresh-train-007-4",
+      "eligible_example_ids": [
+        "fresh-train-007-4",
+        "fresh-train-007-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-008",
+      "split": "train",
+      "fault_kind": "missing",
+      "old_example_id": "fresh-train-008-3",
+      "new_example_id": "fresh-train-008-3",
+      "eligible_example_ids": [
+        "fresh-train-008-2",
+        "fresh-train-008-3",
+        "fresh-train-008-4",
+        "fresh-train-008-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-008",
+      "split": "train",
+      "fault_kind": "text",
+      "old_example_id": "fresh-train-008-5",
+      "new_example_id": "fresh-train-008-5",
+      "eligible_example_ids": [
+        "fresh-train-008-4",
+        "fresh-train-008-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-009",
+      "split": "train",
+      "fault_kind": "missing",
+      "old_example_id": "fresh-train-009-3",
+      "new_example_id": "fresh-train-009-4",
+      "eligible_example_ids": [
+        "fresh-train-009-2",
+        "fresh-train-009-3",
+        "fresh-train-009-4",
+        "fresh-train-009-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-009",
+      "split": "train",
+      "fault_kind": "text",
+      "old_example_id": "fresh-train-009-5",
+      "new_example_id": "fresh-train-009-2",
+      "eligible_example_ids": [
+        "fresh-train-009-2",
+        "fresh-train-009-3",
+        "fresh-train-009-4",
+        "fresh-train-009-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-010",
+      "split": "train",
+      "fault_kind": "missing",
+      "old_example_id": "fresh-train-010-3",
+      "new_example_id": "fresh-train-010-3",
+      "eligible_example_ids": [
+        "fresh-train-010-2",
+        "fresh-train-010-3",
+        "fresh-train-010-4",
+        "fresh-train-010-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-010",
+      "split": "train",
+      "fault_kind": "text",
+      "old_example_id": "fresh-train-010-5",
+      "new_example_id": "fresh-train-010-5",
+      "eligible_example_ids": [
+        "fresh-train-010-4",
+        "fresh-train-010-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-011",
+      "split": "train",
+      "fault_kind": "missing",
+      "old_example_id": "fresh-train-011-3",
+      "new_example_id": "fresh-train-011-3",
+      "eligible_example_ids": [
+        "fresh-train-011-2",
+        "fresh-train-011-3",
+        "fresh-train-011-4",
+        "fresh-train-011-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-011",
+      "split": "train",
+      "fault_kind": "text",
+      "old_example_id": "fresh-train-011-5",
+      "new_example_id": "fresh-train-011-5",
+      "eligible_example_ids": [
+        "fresh-train-011-4",
+        "fresh-train-011-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-012",
+      "split": "train",
+      "fault_kind": "missing",
+      "old_example_id": "fresh-train-012-3",
+      "new_example_id": "fresh-train-012-5",
+      "eligible_example_ids": [
+        "fresh-train-012-2",
+        "fresh-train-012-3",
+        "fresh-train-012-4",
+        "fresh-train-012-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-012",
+      "split": "train",
+      "fault_kind": "text",
+      "old_example_id": "fresh-train-012-5",
+      "new_example_id": "fresh-train-012-2",
+      "eligible_example_ids": [
+        "fresh-train-012-2",
+        "fresh-train-012-3",
+        "fresh-train-012-4",
+        "fresh-train-012-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-013",
+      "split": "train",
+      "fault_kind": "missing",
+      "old_example_id": "fresh-train-013-3",
+      "new_example_id": "fresh-train-013-5",
+      "eligible_example_ids": [
+        "fresh-train-013-2",
+        "fresh-train-013-3",
+        "fresh-train-013-4",
+        "fresh-train-013-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-013",
+      "split": "train",
+      "fault_kind": "text",
+      "old_example_id": "fresh-train-013-5",
+      "new_example_id": "fresh-train-013-4",
+      "eligible_example_ids": [
+        "fresh-train-013-4",
+        "fresh-train-013-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-014",
+      "split": "train",
+      "fault_kind": "missing",
+      "old_example_id": "fresh-train-014-3",
+      "new_example_id": "fresh-train-014-2",
+      "eligible_example_ids": [
+        "fresh-train-014-2",
+        "fresh-train-014-3",
+        "fresh-train-014-4",
+        "fresh-train-014-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-014",
+      "split": "train",
+      "fault_kind": "text",
+      "old_example_id": "fresh-train-014-5",
+      "new_example_id": "fresh-train-014-4",
+      "eligible_example_ids": [
+        "fresh-train-014-4",
+        "fresh-train-014-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-015",
+      "split": "train",
+      "fault_kind": "missing",
+      "old_example_id": "fresh-train-015-3",
+      "new_example_id": "fresh-train-015-3",
+      "eligible_example_ids": [
+        "fresh-train-015-2",
+        "fresh-train-015-3",
+        "fresh-train-015-4",
+        "fresh-train-015-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-015",
+      "split": "train",
+      "fault_kind": "text",
+      "old_example_id": "fresh-train-015-5",
+      "new_example_id": "fresh-train-015-4",
+      "eligible_example_ids": [
+        "fresh-train-015-4",
+        "fresh-train-015-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-016",
+      "split": "train",
+      "fault_kind": "owner",
+      "old_example_id": "fresh-train-016-3",
+      "new_example_id": "fresh-train-016-3",
+      "eligible_example_ids": [
+        "fresh-train-016-2",
+        "fresh-train-016-3",
+        "fresh-train-016-4",
+        "fresh-train-016-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-016",
+      "split": "train",
+      "fault_kind": "text",
+      "old_example_id": "fresh-train-016-5",
+      "new_example_id": "fresh-train-016-4",
+      "eligible_example_ids": [
+        "fresh-train-016-4",
+        "fresh-train-016-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-017",
+      "split": "train",
+      "fault_kind": "owner",
+      "old_example_id": "fresh-train-017-3",
+      "new_example_id": "fresh-train-017-5",
+      "eligible_example_ids": [
+        "fresh-train-017-2",
+        "fresh-train-017-3",
+        "fresh-train-017-4",
+        "fresh-train-017-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-017",
+      "split": "train",
+      "fault_kind": "text",
+      "old_example_id": "fresh-train-017-5",
+      "new_example_id": "fresh-train-017-3",
+      "eligible_example_ids": [
+        "fresh-train-017-2",
+        "fresh-train-017-3",
+        "fresh-train-017-4",
+        "fresh-train-017-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-018",
+      "split": "train",
+      "fault_kind": "owner",
+      "old_example_id": "fresh-train-018-3",
+      "new_example_id": "fresh-train-018-2",
+      "eligible_example_ids": [
+        "fresh-train-018-2",
+        "fresh-train-018-3",
+        "fresh-train-018-4",
+        "fresh-train-018-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-018",
+      "split": "train",
+      "fault_kind": "text",
+      "old_example_id": "fresh-train-018-5",
+      "new_example_id": "fresh-train-018-5",
+      "eligible_example_ids": [
+        "fresh-train-018-4",
+        "fresh-train-018-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-019",
+      "split": "train",
+      "fault_kind": "owner",
+      "old_example_id": "fresh-train-019-3",
+      "new_example_id": "fresh-train-019-4",
+      "eligible_example_ids": [
+        "fresh-train-019-2",
+        "fresh-train-019-3",
+        "fresh-train-019-4",
+        "fresh-train-019-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-019",
+      "split": "train",
+      "fault_kind": "text",
+      "old_example_id": "fresh-train-019-5",
+      "new_example_id": "fresh-train-019-5",
+      "eligible_example_ids": [
+        "fresh-train-019-4",
+        "fresh-train-019-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-020",
+      "split": "train",
+      "fault_kind": "owner",
+      "old_example_id": "fresh-train-020-3",
+      "new_example_id": "fresh-train-020-3",
+      "eligible_example_ids": [
+        "fresh-train-020-2",
+        "fresh-train-020-3",
+        "fresh-train-020-4",
+        "fresh-train-020-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-020",
+      "split": "train",
+      "fault_kind": "text",
+      "old_example_id": "fresh-train-020-5",
+      "new_example_id": "fresh-train-020-5",
+      "eligible_example_ids": [
+        "fresh-train-020-4",
+        "fresh-train-020-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-021",
+      "split": "train",
+      "fault_kind": "owner",
+      "old_example_id": "fresh-train-021-3",
+      "new_example_id": "fresh-train-021-4",
+      "eligible_example_ids": [
+        "fresh-train-021-2",
+        "fresh-train-021-3",
+        "fresh-train-021-4",
+        "fresh-train-021-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-021",
+      "split": "train",
+      "fault_kind": "text",
+      "old_example_id": "fresh-train-021-5",
+      "new_example_id": "fresh-train-021-5",
+      "eligible_example_ids": [
+        "fresh-train-021-4",
+        "fresh-train-021-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-022",
+      "split": "train",
+      "fault_kind": "owner",
+      "old_example_id": "fresh-train-022-3",
+      "new_example_id": "fresh-train-022-5",
+      "eligible_example_ids": [
+        "fresh-train-022-2",
+        "fresh-train-022-3",
+        "fresh-train-022-4",
+        "fresh-train-022-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-022",
+      "split": "train",
+      "fault_kind": "text",
+      "old_example_id": "fresh-train-022-5",
+      "new_example_id": "fresh-train-022-4",
+      "eligible_example_ids": [
+        "fresh-train-022-4",
+        "fresh-train-022-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-023",
+      "split": "train",
+      "fault_kind": "owner",
+      "old_example_id": "fresh-train-023-3",
+      "new_example_id": "fresh-train-023-2",
+      "eligible_example_ids": [
+        "fresh-train-023-2",
+        "fresh-train-023-3",
+        "fresh-train-023-4",
+        "fresh-train-023-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-023",
+      "split": "train",
+      "fault_kind": "text",
+      "old_example_id": "fresh-train-023-5",
+      "new_example_id": "fresh-train-023-4",
+      "eligible_example_ids": [
+        "fresh-train-023-4",
+        "fresh-train-023-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-024",
+      "split": "train",
+      "fault_kind": "owner",
+      "old_example_id": "fresh-train-024-3",
+      "new_example_id": "fresh-train-024-3",
+      "eligible_example_ids": [
+        "fresh-train-024-2",
+        "fresh-train-024-3",
+        "fresh-train-024-4",
+        "fresh-train-024-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-024",
+      "split": "train",
+      "fault_kind": "text",
+      "old_example_id": "fresh-train-024-5",
+      "new_example_id": "fresh-train-024-4",
+      "eligible_example_ids": [
+        "fresh-train-024-4",
+        "fresh-train-024-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-025",
+      "split": "train",
+      "fault_kind": "owner",
+      "old_example_id": "fresh-train-025-3",
+      "new_example_id": "fresh-train-025-5",
+      "eligible_example_ids": [
+        "fresh-train-025-2",
+        "fresh-train-025-3",
+        "fresh-train-025-4",
+        "fresh-train-025-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-025",
+      "split": "train",
+      "fault_kind": "text",
+      "old_example_id": "fresh-train-025-5",
+      "new_example_id": "fresh-train-025-4",
+      "eligible_example_ids": [
+        "fresh-train-025-4",
+        "fresh-train-025-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-026",
+      "split": "train",
+      "fault_kind": "owner",
+      "old_example_id": "fresh-train-026-3",
+      "new_example_id": "fresh-train-026-2",
+      "eligible_example_ids": [
+        "fresh-train-026-2",
+        "fresh-train-026-3",
+        "fresh-train-026-4",
+        "fresh-train-026-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-026",
+      "split": "train",
+      "fault_kind": "text",
+      "old_example_id": "fresh-train-026-5",
+      "new_example_id": "fresh-train-026-5",
+      "eligible_example_ids": [
+        "fresh-train-026-4",
+        "fresh-train-026-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-027",
+      "split": "train",
+      "fault_kind": "owner",
+      "old_example_id": "fresh-train-027-3",
+      "new_example_id": "fresh-train-027-4",
+      "eligible_example_ids": [
+        "fresh-train-027-2",
+        "fresh-train-027-3",
+        "fresh-train-027-4",
+        "fresh-train-027-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-027",
+      "split": "train",
+      "fault_kind": "text",
+      "old_example_id": "fresh-train-027-5",
+      "new_example_id": "fresh-train-027-5",
+      "eligible_example_ids": [
+        "fresh-train-027-4",
+        "fresh-train-027-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-028",
+      "split": "train",
+      "fault_kind": "owner",
+      "old_example_id": "fresh-train-028-3",
+      "new_example_id": "fresh-train-028-4",
+      "eligible_example_ids": [
+        "fresh-train-028-2",
+        "fresh-train-028-3",
+        "fresh-train-028-4",
+        "fresh-train-028-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-028",
+      "split": "train",
+      "fault_kind": "text",
+      "old_example_id": "fresh-train-028-5",
+      "new_example_id": "fresh-train-028-5",
+      "eligible_example_ids": [
+        "fresh-train-028-4",
+        "fresh-train-028-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-029",
+      "split": "train",
+      "fault_kind": "owner",
+      "old_example_id": "fresh-train-029-3",
+      "new_example_id": "fresh-train-029-3",
+      "eligible_example_ids": [
+        "fresh-train-029-2",
+        "fresh-train-029-3",
+        "fresh-train-029-4",
+        "fresh-train-029-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-029",
+      "split": "train",
+      "fault_kind": "text",
+      "old_example_id": "fresh-train-029-5",
+      "new_example_id": "fresh-train-029-4",
+      "eligible_example_ids": [
+        "fresh-train-029-4",
+        "fresh-train-029-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-030",
+      "split": "train",
+      "fault_kind": "owner",
+      "old_example_id": "fresh-train-030-3",
+      "new_example_id": "fresh-train-030-2",
+      "eligible_example_ids": [
+        "fresh-train-030-2",
+        "fresh-train-030-3",
+        "fresh-train-030-4",
+        "fresh-train-030-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-030",
+      "split": "train",
+      "fault_kind": "text",
+      "old_example_id": "fresh-train-030-5",
+      "new_example_id": "fresh-train-030-4",
+      "eligible_example_ids": [
+        "fresh-train-030-4",
+        "fresh-train-030-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-031",
+      "split": "train",
+      "fault_kind": "missing",
+      "old_example_id": "fresh-train-031-3",
+      "new_example_id": "fresh-train-031-2",
+      "eligible_example_ids": [
+        "fresh-train-031-2",
+        "fresh-train-031-3",
+        "fresh-train-031-4",
+        "fresh-train-031-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-031",
+      "split": "train",
+      "fault_kind": "status",
+      "old_example_id": "fresh-train-031-5",
+      "new_example_id": "fresh-train-031-3",
+      "eligible_example_ids": [
+        "fresh-train-031-3",
+        "fresh-train-031-4",
+        "fresh-train-031-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-032",
+      "split": "train",
+      "fault_kind": "missing",
+      "old_example_id": "fresh-train-032-3",
+      "new_example_id": "fresh-train-032-4",
+      "eligible_example_ids": [
+        "fresh-train-032-2",
+        "fresh-train-032-3",
+        "fresh-train-032-4",
+        "fresh-train-032-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-032",
+      "split": "train",
+      "fault_kind": "status",
+      "old_example_id": "fresh-train-032-5",
+      "new_example_id": "fresh-train-032-5",
+      "eligible_example_ids": [
+        "fresh-train-032-3",
+        "fresh-train-032-4",
+        "fresh-train-032-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-033",
+      "split": "train",
+      "fault_kind": "missing",
+      "old_example_id": "fresh-train-033-3",
+      "new_example_id": "fresh-train-033-5",
+      "eligible_example_ids": [
+        "fresh-train-033-2",
+        "fresh-train-033-3",
+        "fresh-train-033-4",
+        "fresh-train-033-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-033",
+      "split": "train",
+      "fault_kind": "status",
+      "old_example_id": "fresh-train-033-5",
+      "new_example_id": "fresh-train-033-4",
+      "eligible_example_ids": [
+        "fresh-train-033-3",
+        "fresh-train-033-4",
+        "fresh-train-033-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-034",
+      "split": "train",
+      "fault_kind": "missing",
+      "old_example_id": "fresh-train-034-3",
+      "new_example_id": "fresh-train-034-2",
+      "eligible_example_ids": [
+        "fresh-train-034-2",
+        "fresh-train-034-3",
+        "fresh-train-034-4",
+        "fresh-train-034-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-034",
+      "split": "train",
+      "fault_kind": "status",
+      "old_example_id": "fresh-train-034-5",
+      "new_example_id": "fresh-train-034-4",
+      "eligible_example_ids": [
+        "fresh-train-034-3",
+        "fresh-train-034-4",
+        "fresh-train-034-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-035",
+      "split": "train",
+      "fault_kind": "missing",
+      "old_example_id": "fresh-train-035-3",
+      "new_example_id": "fresh-train-035-3",
+      "eligible_example_ids": [
+        "fresh-train-035-2",
+        "fresh-train-035-3",
+        "fresh-train-035-4",
+        "fresh-train-035-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-035",
+      "split": "train",
+      "fault_kind": "status",
+      "old_example_id": "fresh-train-035-5",
+      "new_example_id": "fresh-train-035-4",
+      "eligible_example_ids": [
+        "fresh-train-035-3",
+        "fresh-train-035-4",
+        "fresh-train-035-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-036",
+      "split": "train",
+      "fault_kind": "missing",
+      "old_example_id": "fresh-train-036-3",
+      "new_example_id": "fresh-train-036-5",
+      "eligible_example_ids": [
+        "fresh-train-036-2",
+        "fresh-train-036-3",
+        "fresh-train-036-4",
+        "fresh-train-036-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-036",
+      "split": "train",
+      "fault_kind": "status",
+      "old_example_id": "fresh-train-036-5",
+      "new_example_id": "fresh-train-036-4",
+      "eligible_example_ids": [
+        "fresh-train-036-3",
+        "fresh-train-036-4",
+        "fresh-train-036-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-037",
+      "split": "train",
+      "fault_kind": "missing",
+      "old_example_id": "fresh-train-037-3",
+      "new_example_id": "fresh-train-037-2",
+      "eligible_example_ids": [
+        "fresh-train-037-2",
+        "fresh-train-037-3",
+        "fresh-train-037-4",
+        "fresh-train-037-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-037",
+      "split": "train",
+      "fault_kind": "status",
+      "old_example_id": "fresh-train-037-5",
+      "new_example_id": "fresh-train-037-4",
+      "eligible_example_ids": [
+        "fresh-train-037-3",
+        "fresh-train-037-4",
+        "fresh-train-037-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-038",
+      "split": "train",
+      "fault_kind": "missing",
+      "old_example_id": "fresh-train-038-3",
+      "new_example_id": "fresh-train-038-2",
+      "eligible_example_ids": [
+        "fresh-train-038-2",
+        "fresh-train-038-3",
+        "fresh-train-038-4",
+        "fresh-train-038-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-038",
+      "split": "train",
+      "fault_kind": "status",
+      "old_example_id": "fresh-train-038-5",
+      "new_example_id": "fresh-train-038-4",
+      "eligible_example_ids": [
+        "fresh-train-038-3",
+        "fresh-train-038-4",
+        "fresh-train-038-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-039",
+      "split": "train",
+      "fault_kind": "missing",
+      "old_example_id": "fresh-train-039-3",
+      "new_example_id": "fresh-train-039-2",
+      "eligible_example_ids": [
+        "fresh-train-039-2",
+        "fresh-train-039-3",
+        "fresh-train-039-4",
+        "fresh-train-039-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-039",
+      "split": "train",
+      "fault_kind": "status",
+      "old_example_id": "fresh-train-039-5",
+      "new_example_id": "fresh-train-039-3",
+      "eligible_example_ids": [
+        "fresh-train-039-3",
+        "fresh-train-039-4",
+        "fresh-train-039-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-040",
+      "split": "train",
+      "fault_kind": "missing",
+      "old_example_id": "fresh-train-040-3",
+      "new_example_id": "fresh-train-040-2",
+      "eligible_example_ids": [
+        "fresh-train-040-2",
+        "fresh-train-040-3",
+        "fresh-train-040-4",
+        "fresh-train-040-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-040",
+      "split": "train",
+      "fault_kind": "status",
+      "old_example_id": "fresh-train-040-5",
+      "new_example_id": "fresh-train-040-5",
+      "eligible_example_ids": [
+        "fresh-train-040-3",
+        "fresh-train-040-4",
+        "fresh-train-040-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-041",
+      "split": "train",
+      "fault_kind": "missing",
+      "old_example_id": "fresh-train-041-3",
+      "new_example_id": "fresh-train-041-3",
+      "eligible_example_ids": [
+        "fresh-train-041-2",
+        "fresh-train-041-3",
+        "fresh-train-041-4",
+        "fresh-train-041-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-041",
+      "split": "train",
+      "fault_kind": "status",
+      "old_example_id": "fresh-train-041-5",
+      "new_example_id": "fresh-train-041-4",
+      "eligible_example_ids": [
+        "fresh-train-041-3",
+        "fresh-train-041-4",
+        "fresh-train-041-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-042",
+      "split": "train",
+      "fault_kind": "missing",
+      "old_example_id": "fresh-train-042-3",
+      "new_example_id": "fresh-train-042-2",
+      "eligible_example_ids": [
+        "fresh-train-042-2",
+        "fresh-train-042-3",
+        "fresh-train-042-4",
+        "fresh-train-042-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-042",
+      "split": "train",
+      "fault_kind": "status",
+      "old_example_id": "fresh-train-042-5",
+      "new_example_id": "fresh-train-042-3",
+      "eligible_example_ids": [
+        "fresh-train-042-3",
+        "fresh-train-042-4",
+        "fresh-train-042-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-043",
+      "split": "train",
+      "fault_kind": "missing",
+      "old_example_id": "fresh-train-043-3",
+      "new_example_id": "fresh-train-043-3",
+      "eligible_example_ids": [
+        "fresh-train-043-2",
+        "fresh-train-043-3",
+        "fresh-train-043-4",
+        "fresh-train-043-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-043",
+      "split": "train",
+      "fault_kind": "status",
+      "old_example_id": "fresh-train-043-5",
+      "new_example_id": "fresh-train-043-4",
+      "eligible_example_ids": [
+        "fresh-train-043-3",
+        "fresh-train-043-4",
+        "fresh-train-043-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-044",
+      "split": "train",
+      "fault_kind": "missing",
+      "old_example_id": "fresh-train-044-3",
+      "new_example_id": "fresh-train-044-4",
+      "eligible_example_ids": [
+        "fresh-train-044-2",
+        "fresh-train-044-3",
+        "fresh-train-044-4",
+        "fresh-train-044-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-044",
+      "split": "train",
+      "fault_kind": "status",
+      "old_example_id": "fresh-train-044-5",
+      "new_example_id": "fresh-train-044-3",
+      "eligible_example_ids": [
+        "fresh-train-044-3",
+        "fresh-train-044-4",
+        "fresh-train-044-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-045",
+      "split": "train",
+      "fault_kind": "missing",
+      "old_example_id": "fresh-train-045-3",
+      "new_example_id": "fresh-train-045-5",
+      "eligible_example_ids": [
+        "fresh-train-045-2",
+        "fresh-train-045-3",
+        "fresh-train-045-4",
+        "fresh-train-045-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-045",
+      "split": "train",
+      "fault_kind": "wrong_withdrawn",
+      "old_example_id": "fresh-train-045-5",
+      "new_example_id": "fresh-train-045-4",
+      "eligible_example_ids": [
+        "fresh-train-045-4",
+        "fresh-train-045-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-046",
+      "split": "train",
+      "fault_kind": "owner",
+      "old_example_id": "fresh-train-046-3",
+      "new_example_id": "fresh-train-046-2",
+      "eligible_example_ids": [
+        "fresh-train-046-2",
+        "fresh-train-046-3",
+        "fresh-train-046-4",
+        "fresh-train-046-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-046",
+      "split": "train",
+      "fault_kind": "wrong_withdrawn",
+      "old_example_id": "fresh-train-046-5",
+      "new_example_id": "fresh-train-046-5",
+      "eligible_example_ids": [
+        "fresh-train-046-4",
+        "fresh-train-046-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-047",
+      "split": "train",
+      "fault_kind": "owner",
+      "old_example_id": "fresh-train-047-3",
+      "new_example_id": "fresh-train-047-3",
+      "eligible_example_ids": [
+        "fresh-train-047-2",
+        "fresh-train-047-3",
+        "fresh-train-047-4",
+        "fresh-train-047-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-047",
+      "split": "train",
+      "fault_kind": "wrong_withdrawn",
+      "old_example_id": "fresh-train-047-5",
+      "new_example_id": "fresh-train-047-5",
+      "eligible_example_ids": [
+        "fresh-train-047-4",
+        "fresh-train-047-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-048",
+      "split": "train",
+      "fault_kind": "owner",
+      "old_example_id": "fresh-train-048-3",
+      "new_example_id": "fresh-train-048-3",
+      "eligible_example_ids": [
+        "fresh-train-048-2",
+        "fresh-train-048-3",
+        "fresh-train-048-4",
+        "fresh-train-048-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-048",
+      "split": "train",
+      "fault_kind": "wrong_withdrawn",
+      "old_example_id": "fresh-train-048-5",
+      "new_example_id": "fresh-train-048-4",
+      "eligible_example_ids": [
+        "fresh-train-048-4",
+        "fresh-train-048-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-049",
+      "split": "train",
+      "fault_kind": "owner",
+      "old_example_id": "fresh-train-049-3",
+      "new_example_id": "fresh-train-049-3",
+      "eligible_example_ids": [
+        "fresh-train-049-2",
+        "fresh-train-049-3",
+        "fresh-train-049-4",
+        "fresh-train-049-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-049",
+      "split": "train",
+      "fault_kind": "wrong_withdrawn",
+      "old_example_id": "fresh-train-049-5",
+      "new_example_id": "fresh-train-049-5",
+      "eligible_example_ids": [
+        "fresh-train-049-4",
+        "fresh-train-049-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-050",
+      "split": "train",
+      "fault_kind": "owner",
+      "old_example_id": "fresh-train-050-3",
+      "new_example_id": "fresh-train-050-5",
+      "eligible_example_ids": [
+        "fresh-train-050-2",
+        "fresh-train-050-3",
+        "fresh-train-050-4",
+        "fresh-train-050-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-050",
+      "split": "train",
+      "fault_kind": "wrong_withdrawn",
+      "old_example_id": "fresh-train-050-5",
+      "new_example_id": "fresh-train-050-4",
+      "eligible_example_ids": [
+        "fresh-train-050-4",
+        "fresh-train-050-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-051",
+      "split": "train",
+      "fault_kind": "owner",
+      "old_example_id": "fresh-train-051-3",
+      "new_example_id": "fresh-train-051-3",
+      "eligible_example_ids": [
+        "fresh-train-051-2",
+        "fresh-train-051-3",
+        "fresh-train-051-4",
+        "fresh-train-051-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-051",
+      "split": "train",
+      "fault_kind": "wrong_withdrawn",
+      "old_example_id": "fresh-train-051-5",
+      "new_example_id": "fresh-train-051-4",
+      "eligible_example_ids": [
+        "fresh-train-051-4",
+        "fresh-train-051-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-052",
+      "split": "train",
+      "fault_kind": "owner",
+      "old_example_id": "fresh-train-052-3",
+      "new_example_id": "fresh-train-052-3",
+      "eligible_example_ids": [
+        "fresh-train-052-2",
+        "fresh-train-052-3",
+        "fresh-train-052-4",
+        "fresh-train-052-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-052",
+      "split": "train",
+      "fault_kind": "wrong_withdrawn",
+      "old_example_id": "fresh-train-052-5",
+      "new_example_id": "fresh-train-052-4",
+      "eligible_example_ids": [
+        "fresh-train-052-4",
+        "fresh-train-052-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-053",
+      "split": "train",
+      "fault_kind": "owner",
+      "old_example_id": "fresh-train-053-3",
+      "new_example_id": "fresh-train-053-2",
+      "eligible_example_ids": [
+        "fresh-train-053-2",
+        "fresh-train-053-3",
+        "fresh-train-053-4",
+        "fresh-train-053-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-053",
+      "split": "train",
+      "fault_kind": "stale_active",
+      "old_example_id": "fresh-train-053-5",
+      "new_example_id": "fresh-train-053-5",
+      "eligible_example_ids": [
+        "fresh-train-053-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-054",
+      "split": "train",
+      "fault_kind": "owner",
+      "old_example_id": "fresh-train-054-3",
+      "new_example_id": "fresh-train-054-3",
+      "eligible_example_ids": [
+        "fresh-train-054-2",
+        "fresh-train-054-3",
+        "fresh-train-054-4",
+        "fresh-train-054-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-054",
+      "split": "train",
+      "fault_kind": "stale_active",
+      "old_example_id": "fresh-train-054-5",
+      "new_example_id": "fresh-train-054-5",
+      "eligible_example_ids": [
+        "fresh-train-054-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-055",
+      "split": "train",
+      "fault_kind": "owner",
+      "old_example_id": "fresh-train-055-3",
+      "new_example_id": "fresh-train-055-4",
+      "eligible_example_ids": [
+        "fresh-train-055-2",
+        "fresh-train-055-3",
+        "fresh-train-055-4",
+        "fresh-train-055-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-055",
+      "split": "train",
+      "fault_kind": "stale_active",
+      "old_example_id": "fresh-train-055-5",
+      "new_example_id": "fresh-train-055-5",
+      "eligible_example_ids": [
+        "fresh-train-055-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-056",
+      "split": "train",
+      "fault_kind": "owner",
+      "old_example_id": "fresh-train-056-3",
+      "new_example_id": "fresh-train-056-3",
+      "eligible_example_ids": [
+        "fresh-train-056-2",
+        "fresh-train-056-3",
+        "fresh-train-056-4",
+        "fresh-train-056-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-056",
+      "split": "train",
+      "fault_kind": "stale_active",
+      "old_example_id": "fresh-train-056-5",
+      "new_example_id": "fresh-train-056-5",
+      "eligible_example_ids": [
+        "fresh-train-056-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-057",
+      "split": "train",
+      "fault_kind": "owner",
+      "old_example_id": "fresh-train-057-3",
+      "new_example_id": "fresh-train-057-3",
+      "eligible_example_ids": [
+        "fresh-train-057-2",
+        "fresh-train-057-3",
+        "fresh-train-057-4",
+        "fresh-train-057-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-057",
+      "split": "train",
+      "fault_kind": "stale_active",
+      "old_example_id": "fresh-train-057-5",
+      "new_example_id": "fresh-train-057-5",
+      "eligible_example_ids": [
+        "fresh-train-057-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-058",
+      "split": "train",
+      "fault_kind": "owner",
+      "old_example_id": "fresh-train-058-3",
+      "new_example_id": "fresh-train-058-4",
+      "eligible_example_ids": [
+        "fresh-train-058-2",
+        "fresh-train-058-3",
+        "fresh-train-058-4",
+        "fresh-train-058-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-058",
+      "split": "train",
+      "fault_kind": "stale_active",
+      "old_example_id": "fresh-train-058-5",
+      "new_example_id": "fresh-train-058-5",
+      "eligible_example_ids": [
+        "fresh-train-058-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-059",
+      "split": "train",
+      "fault_kind": "owner",
+      "old_example_id": "fresh-train-059-3",
+      "new_example_id": "fresh-train-059-3",
+      "eligible_example_ids": [
+        "fresh-train-059-2",
+        "fresh-train-059-3",
+        "fresh-train-059-4",
+        "fresh-train-059-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-059",
+      "split": "train",
+      "fault_kind": "stale_active",
+      "old_example_id": "fresh-train-059-5",
+      "new_example_id": "fresh-train-059-5",
+      "eligible_example_ids": [
+        "fresh-train-059-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-060",
+      "split": "train",
+      "fault_kind": "owner",
+      "old_example_id": "fresh-train-060-3",
+      "new_example_id": "fresh-train-060-3",
+      "eligible_example_ids": [
+        "fresh-train-060-2",
+        "fresh-train-060-3",
+        "fresh-train-060-4",
+        "fresh-train-060-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-train-060",
+      "split": "train",
+      "fault_kind": "stale_active",
+      "old_example_id": "fresh-train-060-5",
+      "new_example_id": "fresh-train-060-5",
+      "eligible_example_ids": [
+        "fresh-train-060-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-dev-001",
+      "split": "dev",
+      "fault_kind": "missing",
+      "old_example_id": "fresh-dev-001-3",
+      "new_example_id": "fresh-dev-001-4",
+      "eligible_example_ids": [
+        "fresh-dev-001-2",
+        "fresh-dev-001-3",
+        "fresh-dev-001-4",
+        "fresh-dev-001-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-dev-001",
+      "split": "dev",
+      "fault_kind": "text",
+      "old_example_id": "fresh-dev-001-5",
+      "new_example_id": "fresh-dev-001-5",
+      "eligible_example_ids": [
+        "fresh-dev-001-3",
+        "fresh-dev-001-4",
+        "fresh-dev-001-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-dev-002",
+      "split": "dev",
+      "fault_kind": "owner",
+      "old_example_id": "fresh-dev-002-3",
+      "new_example_id": "fresh-dev-002-3",
+      "eligible_example_ids": [
+        "fresh-dev-002-2",
+        "fresh-dev-002-3",
+        "fresh-dev-002-4",
+        "fresh-dev-002-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-dev-002",
+      "split": "dev",
+      "fault_kind": "status",
+      "old_example_id": "fresh-dev-002-5",
+      "new_example_id": "fresh-dev-002-5",
+      "eligible_example_ids": [
+        "fresh-dev-002-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-dev-003",
+      "split": "dev",
+      "fault_kind": "missing",
+      "old_example_id": "fresh-dev-003-3",
+      "new_example_id": "fresh-dev-003-2",
+      "eligible_example_ids": [
+        "fresh-dev-003-2",
+        "fresh-dev-003-3",
+        "fresh-dev-003-4",
+        "fresh-dev-003-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-dev-003",
+      "split": "dev",
+      "fault_kind": "owner",
+      "old_example_id": "fresh-dev-003-5",
+      "new_example_id": "fresh-dev-003-5",
+      "eligible_example_ids": [
+        "fresh-dev-003-3",
+        "fresh-dev-003-4",
+        "fresh-dev-003-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-dev-004",
+      "split": "dev",
+      "fault_kind": "text",
+      "old_example_id": "fresh-dev-004-3",
+      "new_example_id": "fresh-dev-004-4",
+      "eligible_example_ids": [
+        "fresh-dev-004-2",
+        "fresh-dev-004-3",
+        "fresh-dev-004-4",
+        "fresh-dev-004-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-dev-004",
+      "split": "dev",
+      "fault_kind": "wrong_withdrawn",
+      "old_example_id": "fresh-dev-004-5",
+      "new_example_id": "fresh-dev-004-5",
+      "eligible_example_ids": [
+        "fresh-dev-004-3",
+        "fresh-dev-004-4",
+        "fresh-dev-004-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-dev-005",
+      "split": "dev",
+      "fault_kind": "missing",
+      "old_example_id": "fresh-dev-005-3",
+      "new_example_id": "fresh-dev-005-3",
+      "eligible_example_ids": [
+        "fresh-dev-005-2",
+        "fresh-dev-005-3",
+        "fresh-dev-005-4",
+        "fresh-dev-005-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-dev-005",
+      "split": "dev",
+      "fault_kind": "text",
+      "old_example_id": "fresh-dev-005-5",
+      "new_example_id": "fresh-dev-005-4",
+      "eligible_example_ids": [
+        "fresh-dev-005-3",
+        "fresh-dev-005-4",
+        "fresh-dev-005-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-dev-006",
+      "split": "dev",
+      "fault_kind": "owner",
+      "old_example_id": "fresh-dev-006-3",
+      "new_example_id": "fresh-dev-006-3",
+      "eligible_example_ids": [
+        "fresh-dev-006-2",
+        "fresh-dev-006-3",
+        "fresh-dev-006-4",
+        "fresh-dev-006-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-dev-006",
+      "split": "dev",
+      "fault_kind": "status",
+      "old_example_id": "fresh-dev-006-5",
+      "new_example_id": "fresh-dev-006-5",
+      "eligible_example_ids": [
+        "fresh-dev-006-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-dev-007",
+      "split": "dev",
+      "fault_kind": "missing",
+      "old_example_id": "fresh-dev-007-3",
+      "new_example_id": "fresh-dev-007-2",
+      "eligible_example_ids": [
+        "fresh-dev-007-2",
+        "fresh-dev-007-3",
+        "fresh-dev-007-4",
+        "fresh-dev-007-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-dev-007",
+      "split": "dev",
+      "fault_kind": "owner",
+      "old_example_id": "fresh-dev-007-5",
+      "new_example_id": "fresh-dev-007-4",
+      "eligible_example_ids": [
+        "fresh-dev-007-3",
+        "fresh-dev-007-4",
+        "fresh-dev-007-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-dev-008",
+      "split": "dev",
+      "fault_kind": "text",
+      "old_example_id": "fresh-dev-008-3",
+      "new_example_id": "fresh-dev-008-2",
+      "eligible_example_ids": [
+        "fresh-dev-008-2",
+        "fresh-dev-008-3",
+        "fresh-dev-008-4",
+        "fresh-dev-008-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-dev-008",
+      "split": "dev",
+      "fault_kind": "stale_active",
+      "old_example_id": "fresh-dev-008-5",
+      "new_example_id": "fresh-dev-008-5",
+      "eligible_example_ids": [
+        "fresh-dev-008-4",
+        "fresh-dev-008-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-dev-009",
+      "split": "dev",
+      "fault_kind": "missing",
+      "old_example_id": "fresh-dev-009-3",
+      "new_example_id": "fresh-dev-009-2",
+      "eligible_example_ids": [
+        "fresh-dev-009-2",
+        "fresh-dev-009-3",
+        "fresh-dev-009-4",
+        "fresh-dev-009-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-dev-009",
+      "split": "dev",
+      "fault_kind": "text",
+      "old_example_id": "fresh-dev-009-5",
+      "new_example_id": "fresh-dev-009-5",
+      "eligible_example_ids": [
+        "fresh-dev-009-3",
+        "fresh-dev-009-4",
+        "fresh-dev-009-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-dev-010",
+      "split": "dev",
+      "fault_kind": "owner",
+      "old_example_id": "fresh-dev-010-3",
+      "new_example_id": "fresh-dev-010-3",
+      "eligible_example_ids": [
+        "fresh-dev-010-2",
+        "fresh-dev-010-3",
+        "fresh-dev-010-4",
+        "fresh-dev-010-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-dev-010",
+      "split": "dev",
+      "fault_kind": "status",
+      "old_example_id": "fresh-dev-010-5",
+      "new_example_id": "fresh-dev-010-5",
+      "eligible_example_ids": [
+        "fresh-dev-010-3",
+        "fresh-dev-010-4",
+        "fresh-dev-010-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-001",
+      "split": "test",
+      "fault_kind": "missing",
+      "old_example_id": "fresh-test-001-3",
+      "new_example_id": "fresh-test-001-3",
+      "eligible_example_ids": [
+        "fresh-test-001-2",
+        "fresh-test-001-3",
+        "fresh-test-001-4",
+        "fresh-test-001-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-001",
+      "split": "test",
+      "fault_kind": "text",
+      "old_example_id": "fresh-test-001-5",
+      "new_example_id": "fresh-test-001-4",
+      "eligible_example_ids": [
+        "fresh-test-001-3",
+        "fresh-test-001-4",
+        "fresh-test-001-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-002",
+      "split": "test",
+      "fault_kind": "owner",
+      "old_example_id": "fresh-test-002-3",
+      "new_example_id": "fresh-test-002-2",
+      "eligible_example_ids": [
+        "fresh-test-002-2",
+        "fresh-test-002-3",
+        "fresh-test-002-4",
+        "fresh-test-002-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-002",
+      "split": "test",
+      "fault_kind": "status",
+      "old_example_id": "fresh-test-002-5",
+      "new_example_id": "fresh-test-002-4",
+      "eligible_example_ids": [
+        "fresh-test-002-4",
+        "fresh-test-002-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-003",
+      "split": "test",
+      "fault_kind": "missing",
+      "old_example_id": "fresh-test-003-3",
+      "new_example_id": "fresh-test-003-2",
+      "eligible_example_ids": [
+        "fresh-test-003-2",
+        "fresh-test-003-3",
+        "fresh-test-003-4",
+        "fresh-test-003-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-003",
+      "split": "test",
+      "fault_kind": "owner",
+      "old_example_id": "fresh-test-003-5",
+      "new_example_id": "fresh-test-003-4",
+      "eligible_example_ids": [
+        "fresh-test-003-3",
+        "fresh-test-003-4",
+        "fresh-test-003-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-004",
+      "split": "test",
+      "fault_kind": "text",
+      "old_example_id": "fresh-test-004-3",
+      "new_example_id": "fresh-test-004-5",
+      "eligible_example_ids": [
+        "fresh-test-004-2",
+        "fresh-test-004-3",
+        "fresh-test-004-4",
+        "fresh-test-004-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-004",
+      "split": "test",
+      "fault_kind": "wrong_withdrawn",
+      "old_example_id": "fresh-test-004-5",
+      "new_example_id": "fresh-test-004-4",
+      "eligible_example_ids": [
+        "fresh-test-004-3",
+        "fresh-test-004-4",
+        "fresh-test-004-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-005",
+      "split": "test",
+      "fault_kind": "missing",
+      "old_example_id": "fresh-test-005-3",
+      "new_example_id": "fresh-test-005-2",
+      "eligible_example_ids": [
+        "fresh-test-005-2",
+        "fresh-test-005-3",
+        "fresh-test-005-4",
+        "fresh-test-005-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-005",
+      "split": "test",
+      "fault_kind": "text",
+      "old_example_id": "fresh-test-005-5",
+      "new_example_id": "fresh-test-005-3",
+      "eligible_example_ids": [
+        "fresh-test-005-3",
+        "fresh-test-005-4",
+        "fresh-test-005-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-006",
+      "split": "test",
+      "fault_kind": "owner",
+      "old_example_id": "fresh-test-006-3",
+      "new_example_id": "fresh-test-006-4",
+      "eligible_example_ids": [
+        "fresh-test-006-3",
+        "fresh-test-006-4",
+        "fresh-test-006-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-006",
+      "split": "test",
+      "fault_kind": "status",
+      "old_example_id": "fresh-test-006-5",
+      "new_example_id": "fresh-test-006-5",
+      "eligible_example_ids": [
+        "fresh-test-006-2",
+        "fresh-test-006-3",
+        "fresh-test-006-4",
+        "fresh-test-006-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-007",
+      "split": "test",
+      "fault_kind": "missing",
+      "old_example_id": "fresh-test-007-3",
+      "new_example_id": "fresh-test-007-2",
+      "eligible_example_ids": [
+        "fresh-test-007-2",
+        "fresh-test-007-3",
+        "fresh-test-007-4",
+        "fresh-test-007-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-007",
+      "split": "test",
+      "fault_kind": "owner",
+      "old_example_id": "fresh-test-007-5",
+      "new_example_id": "fresh-test-007-5",
+      "eligible_example_ids": [
+        "fresh-test-007-3",
+        "fresh-test-007-4",
+        "fresh-test-007-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-008",
+      "split": "test",
+      "fault_kind": "text",
+      "old_example_id": "fresh-test-008-3",
+      "new_example_id": "fresh-test-008-3",
+      "eligible_example_ids": [
+        "fresh-test-008-2",
+        "fresh-test-008-3",
+        "fresh-test-008-4",
+        "fresh-test-008-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-008",
+      "split": "test",
+      "fault_kind": "stale_active",
+      "old_example_id": "fresh-test-008-5",
+      "new_example_id": "fresh-test-008-4",
+      "eligible_example_ids": [
+        "fresh-test-008-4",
+        "fresh-test-008-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-009",
+      "split": "test",
+      "fault_kind": "missing",
+      "old_example_id": "fresh-test-009-3",
+      "new_example_id": "fresh-test-009-4",
+      "eligible_example_ids": [
+        "fresh-test-009-2",
+        "fresh-test-009-3",
+        "fresh-test-009-4",
+        "fresh-test-009-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-009",
+      "split": "test",
+      "fault_kind": "text",
+      "old_example_id": "fresh-test-009-5",
+      "new_example_id": "fresh-test-009-5",
+      "eligible_example_ids": [
+        "fresh-test-009-3",
+        "fresh-test-009-4",
+        "fresh-test-009-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-010",
+      "split": "test",
+      "fault_kind": "owner",
+      "old_example_id": "fresh-test-010-3",
+      "new_example_id": "fresh-test-010-3",
+      "eligible_example_ids": [
+        "fresh-test-010-3",
+        "fresh-test-010-4",
+        "fresh-test-010-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-010",
+      "split": "test",
+      "fault_kind": "status",
+      "old_example_id": "fresh-test-010-5",
+      "new_example_id": "fresh-test-010-5",
+      "eligible_example_ids": [
+        "fresh-test-010-4",
+        "fresh-test-010-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-011",
+      "split": "test",
+      "fault_kind": "missing",
+      "old_example_id": "fresh-test-011-3",
+      "new_example_id": "fresh-test-011-4",
+      "eligible_example_ids": [
+        "fresh-test-011-3",
+        "fresh-test-011-4",
+        "fresh-test-011-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-011",
+      "split": "test",
+      "fault_kind": "owner",
+      "old_example_id": "fresh-test-011-5",
+      "new_example_id": "fresh-test-011-3",
+      "eligible_example_ids": [
+        "fresh-test-011-3",
+        "fresh-test-011-4",
+        "fresh-test-011-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-012",
+      "split": "test",
+      "fault_kind": "text",
+      "old_example_id": "fresh-test-012-3",
+      "new_example_id": "fresh-test-012-3",
+      "eligible_example_ids": [
+        "fresh-test-012-3",
+        "fresh-test-012-4",
+        "fresh-test-012-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-012",
+      "split": "test",
+      "fault_kind": "wrong_withdrawn",
+      "old_example_id": "fresh-test-012-5",
+      "new_example_id": "fresh-test-012-4",
+      "eligible_example_ids": [
+        "fresh-test-012-3",
+        "fresh-test-012-4",
+        "fresh-test-012-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-013",
+      "split": "test",
+      "fault_kind": "missing",
+      "old_example_id": "fresh-test-013-4",
+      "new_example_id": "fresh-test-013-5",
+      "eligible_example_ids": [
+        "fresh-test-013-3",
+        "fresh-test-013-4",
+        "fresh-test-013-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-013",
+      "split": "test",
+      "fault_kind": "text",
+      "old_example_id": "fresh-test-013-5",
+      "new_example_id": "fresh-test-013-2",
+      "eligible_example_ids": [
+        "fresh-test-013-2",
+        "fresh-test-013-3",
+        "fresh-test-013-4",
+        "fresh-test-013-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-014",
+      "split": "test",
+      "fault_kind": "owner",
+      "old_example_id": "fresh-test-014-3",
+      "new_example_id": "fresh-test-014-4",
+      "eligible_example_ids": [
+        "fresh-test-014-3",
+        "fresh-test-014-4",
+        "fresh-test-014-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-014",
+      "split": "test",
+      "fault_kind": "status",
+      "old_example_id": "fresh-test-014-5",
+      "new_example_id": "fresh-test-014-3",
+      "eligible_example_ids": [
+        "fresh-test-014-2",
+        "fresh-test-014-3",
+        "fresh-test-014-4",
+        "fresh-test-014-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-015",
+      "split": "test",
+      "fault_kind": "missing",
+      "old_example_id": "fresh-test-015-3",
+      "new_example_id": "fresh-test-015-3",
+      "eligible_example_ids": [
+        "fresh-test-015-2",
+        "fresh-test-015-3",
+        "fresh-test-015-4",
+        "fresh-test-015-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-015",
+      "split": "test",
+      "fault_kind": "owner",
+      "old_example_id": "fresh-test-015-5",
+      "new_example_id": "fresh-test-015-4",
+      "eligible_example_ids": [
+        "fresh-test-015-3",
+        "fresh-test-015-4",
+        "fresh-test-015-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-016",
+      "split": "test",
+      "fault_kind": "text",
+      "old_example_id": "fresh-test-016-3",
+      "new_example_id": "fresh-test-016-3",
+      "eligible_example_ids": [
+        "fresh-test-016-2",
+        "fresh-test-016-3",
+        "fresh-test-016-4",
+        "fresh-test-016-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-016",
+      "split": "test",
+      "fault_kind": "stale_active",
+      "old_example_id": "fresh-test-016-5",
+      "new_example_id": "fresh-test-016-5",
+      "eligible_example_ids": [
+        "fresh-test-016-4",
+        "fresh-test-016-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-017",
+      "split": "test",
+      "fault_kind": "missing",
+      "old_example_id": "fresh-test-017-3",
+      "new_example_id": "fresh-test-017-4",
+      "eligible_example_ids": [
+        "fresh-test-017-2",
+        "fresh-test-017-3",
+        "fresh-test-017-4",
+        "fresh-test-017-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-017",
+      "split": "test",
+      "fault_kind": "text",
+      "old_example_id": "fresh-test-017-5",
+      "new_example_id": "fresh-test-017-3",
+      "eligible_example_ids": [
+        "fresh-test-017-3",
+        "fresh-test-017-4",
+        "fresh-test-017-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-018",
+      "split": "test",
+      "fault_kind": "owner",
+      "old_example_id": "fresh-test-018-3",
+      "new_example_id": "fresh-test-018-4",
+      "eligible_example_ids": [
+        "fresh-test-018-3",
+        "fresh-test-018-4",
+        "fresh-test-018-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-018",
+      "split": "test",
+      "fault_kind": "status",
+      "old_example_id": "fresh-test-018-5",
+      "new_example_id": "fresh-test-018-5",
+      "eligible_example_ids": [
+        "fresh-test-018-4",
+        "fresh-test-018-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-019",
+      "split": "test",
+      "fault_kind": "missing",
+      "old_example_id": "fresh-test-019-3",
+      "new_example_id": "fresh-test-019-4",
+      "eligible_example_ids": [
+        "fresh-test-019-2",
+        "fresh-test-019-3",
+        "fresh-test-019-4",
+        "fresh-test-019-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-019",
+      "split": "test",
+      "fault_kind": "owner",
+      "old_example_id": "fresh-test-019-5",
+      "new_example_id": "fresh-test-019-5",
+      "eligible_example_ids": [
+        "fresh-test-019-3",
+        "fresh-test-019-4",
+        "fresh-test-019-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-020",
+      "split": "test",
+      "fault_kind": "text",
+      "old_example_id": "fresh-test-020-3",
+      "new_example_id": "fresh-test-020-4",
+      "eligible_example_ids": [
+        "fresh-test-020-3",
+        "fresh-test-020-4",
+        "fresh-test-020-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-020",
+      "split": "test",
+      "fault_kind": "wrong_withdrawn",
+      "old_example_id": "fresh-test-020-5",
+      "new_example_id": "fresh-test-020-3",
+      "eligible_example_ids": [
+        "fresh-test-020-3",
+        "fresh-test-020-4",
+        "fresh-test-020-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-021",
+      "split": "test",
+      "fault_kind": "missing",
+      "old_example_id": "fresh-test-021-3",
+      "new_example_id": "fresh-test-021-3",
+      "eligible_example_ids": [
+        "fresh-test-021-2",
+        "fresh-test-021-3",
+        "fresh-test-021-4",
+        "fresh-test-021-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-021",
+      "split": "test",
+      "fault_kind": "text",
+      "old_example_id": "fresh-test-021-5",
+      "new_example_id": "fresh-test-021-4",
+      "eligible_example_ids": [
+        "fresh-test-021-3",
+        "fresh-test-021-4",
+        "fresh-test-021-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-022",
+      "split": "test",
+      "fault_kind": "owner",
+      "old_example_id": "fresh-test-022-3",
+      "new_example_id": "fresh-test-022-3",
+      "eligible_example_ids": [
+        "fresh-test-022-3",
+        "fresh-test-022-4",
+        "fresh-test-022-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-022",
+      "split": "test",
+      "fault_kind": "status",
+      "old_example_id": "fresh-test-022-5",
+      "new_example_id": "fresh-test-022-4",
+      "eligible_example_ids": [
+        "fresh-test-022-2",
+        "fresh-test-022-3",
+        "fresh-test-022-4",
+        "fresh-test-022-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-023",
+      "split": "test",
+      "fault_kind": "missing",
+      "old_example_id": "fresh-test-023-3",
+      "new_example_id": "fresh-test-023-3",
+      "eligible_example_ids": [
+        "fresh-test-023-2",
+        "fresh-test-023-3",
+        "fresh-test-023-4",
+        "fresh-test-023-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-023",
+      "split": "test",
+      "fault_kind": "owner",
+      "old_example_id": "fresh-test-023-5",
+      "new_example_id": "fresh-test-023-4",
+      "eligible_example_ids": [
+        "fresh-test-023-3",
+        "fresh-test-023-4",
+        "fresh-test-023-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-024",
+      "split": "test",
+      "fault_kind": "text",
+      "old_example_id": "fresh-test-024-3",
+      "new_example_id": "fresh-test-024-3",
+      "eligible_example_ids": [
+        "fresh-test-024-2",
+        "fresh-test-024-3",
+        "fresh-test-024-4",
+        "fresh-test-024-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-024",
+      "split": "test",
+      "fault_kind": "stale_active",
+      "old_example_id": "fresh-test-024-5",
+      "new_example_id": "fresh-test-024-5",
+      "eligible_example_ids": [
+        "fresh-test-024-4",
+        "fresh-test-024-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-025",
+      "split": "test",
+      "fault_kind": "missing",
+      "old_example_id": "fresh-test-025-3",
+      "new_example_id": "fresh-test-025-5",
+      "eligible_example_ids": [
+        "fresh-test-025-2",
+        "fresh-test-025-3",
+        "fresh-test-025-4",
+        "fresh-test-025-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-025",
+      "split": "test",
+      "fault_kind": "text",
+      "old_example_id": "fresh-test-025-5",
+      "new_example_id": "fresh-test-025-3",
+      "eligible_example_ids": [
+        "fresh-test-025-3",
+        "fresh-test-025-4",
+        "fresh-test-025-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-026",
+      "split": "test",
+      "fault_kind": "owner",
+      "old_example_id": "fresh-test-026-3",
+      "new_example_id": "fresh-test-026-3",
+      "eligible_example_ids": [
+        "fresh-test-026-3",
+        "fresh-test-026-4",
+        "fresh-test-026-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-026",
+      "split": "test",
+      "fault_kind": "status",
+      "old_example_id": "fresh-test-026-5",
+      "new_example_id": "fresh-test-026-4",
+      "eligible_example_ids": [
+        "fresh-test-026-4",
+        "fresh-test-026-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-027",
+      "split": "test",
+      "fault_kind": "missing",
+      "old_example_id": "fresh-test-027-3",
+      "new_example_id": "fresh-test-027-2",
+      "eligible_example_ids": [
+        "fresh-test-027-2",
+        "fresh-test-027-3",
+        "fresh-test-027-4",
+        "fresh-test-027-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-027",
+      "split": "test",
+      "fault_kind": "owner",
+      "old_example_id": "fresh-test-027-5",
+      "new_example_id": "fresh-test-027-4",
+      "eligible_example_ids": [
+        "fresh-test-027-3",
+        "fresh-test-027-4",
+        "fresh-test-027-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-028",
+      "split": "test",
+      "fault_kind": "text",
+      "old_example_id": "fresh-test-028-3",
+      "new_example_id": "fresh-test-028-4",
+      "eligible_example_ids": [
+        "fresh-test-028-3",
+        "fresh-test-028-4",
+        "fresh-test-028-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-028",
+      "split": "test",
+      "fault_kind": "wrong_withdrawn",
+      "old_example_id": "fresh-test-028-5",
+      "new_example_id": "fresh-test-028-3",
+      "eligible_example_ids": [
+        "fresh-test-028-3",
+        "fresh-test-028-4",
+        "fresh-test-028-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-029",
+      "split": "test",
+      "fault_kind": "missing",
+      "old_example_id": "fresh-test-029-3",
+      "new_example_id": "fresh-test-029-4",
+      "eligible_example_ids": [
+        "fresh-test-029-2",
+        "fresh-test-029-3",
+        "fresh-test-029-4",
+        "fresh-test-029-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-029",
+      "split": "test",
+      "fault_kind": "text",
+      "old_example_id": "fresh-test-029-5",
+      "new_example_id": "fresh-test-029-5",
+      "eligible_example_ids": [
+        "fresh-test-029-3",
+        "fresh-test-029-4",
+        "fresh-test-029-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-030",
+      "split": "test",
+      "fault_kind": "owner",
+      "old_example_id": "fresh-test-030-3",
+      "new_example_id": "fresh-test-030-5",
+      "eligible_example_ids": [
+        "fresh-test-030-3",
+        "fresh-test-030-4",
+        "fresh-test-030-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-030",
+      "split": "test",
+      "fault_kind": "status",
+      "old_example_id": "fresh-test-030-5",
+      "new_example_id": "fresh-test-030-3",
+      "eligible_example_ids": [
+        "fresh-test-030-2",
+        "fresh-test-030-3",
+        "fresh-test-030-4",
+        "fresh-test-030-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-031",
+      "split": "test",
+      "fault_kind": "missing",
+      "old_example_id": "fresh-test-031-3",
+      "new_example_id": "fresh-test-031-2",
+      "eligible_example_ids": [
+        "fresh-test-031-2",
+        "fresh-test-031-3",
+        "fresh-test-031-4",
+        "fresh-test-031-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-031",
+      "split": "test",
+      "fault_kind": "owner",
+      "old_example_id": "fresh-test-031-5",
+      "new_example_id": "fresh-test-031-5",
+      "eligible_example_ids": [
+        "fresh-test-031-3",
+        "fresh-test-031-4",
+        "fresh-test-031-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-032",
+      "split": "test",
+      "fault_kind": "text",
+      "old_example_id": "fresh-test-032-3",
+      "new_example_id": "fresh-test-032-2",
+      "eligible_example_ids": [
+        "fresh-test-032-2",
+        "fresh-test-032-3",
+        "fresh-test-032-4",
+        "fresh-test-032-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-032",
+      "split": "test",
+      "fault_kind": "stale_active",
+      "old_example_id": "fresh-test-032-5",
+      "new_example_id": "fresh-test-032-5",
+      "eligible_example_ids": [
+        "fresh-test-032-4",
+        "fresh-test-032-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-033",
+      "split": "test",
+      "fault_kind": "missing",
+      "old_example_id": "fresh-test-033-3",
+      "new_example_id": "fresh-test-033-2",
+      "eligible_example_ids": [
+        "fresh-test-033-2",
+        "fresh-test-033-3",
+        "fresh-test-033-4",
+        "fresh-test-033-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-033",
+      "split": "test",
+      "fault_kind": "text",
+      "old_example_id": "fresh-test-033-5",
+      "new_example_id": "fresh-test-033-3",
+      "eligible_example_ids": [
+        "fresh-test-033-3",
+        "fresh-test-033-4",
+        "fresh-test-033-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-034",
+      "split": "test",
+      "fault_kind": "owner",
+      "old_example_id": "fresh-test-034-3",
+      "new_example_id": "fresh-test-034-4",
+      "eligible_example_ids": [
+        "fresh-test-034-3",
+        "fresh-test-034-4",
+        "fresh-test-034-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-034",
+      "split": "test",
+      "fault_kind": "status",
+      "old_example_id": "fresh-test-034-5",
+      "new_example_id": "fresh-test-034-5",
+      "eligible_example_ids": [
+        "fresh-test-034-4",
+        "fresh-test-034-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-035",
+      "split": "test",
+      "fault_kind": "missing",
+      "old_example_id": "fresh-test-035-3",
+      "new_example_id": "fresh-test-035-2",
+      "eligible_example_ids": [
+        "fresh-test-035-2",
+        "fresh-test-035-3",
+        "fresh-test-035-4",
+        "fresh-test-035-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-035",
+      "split": "test",
+      "fault_kind": "owner",
+      "old_example_id": "fresh-test-035-5",
+      "new_example_id": "fresh-test-035-3",
+      "eligible_example_ids": [
+        "fresh-test-035-3",
+        "fresh-test-035-4",
+        "fresh-test-035-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-036",
+      "split": "test",
+      "fault_kind": "text",
+      "old_example_id": "fresh-test-036-3",
+      "new_example_id": "fresh-test-036-3",
+      "eligible_example_ids": [
+        "fresh-test-036-3",
+        "fresh-test-036-4",
+        "fresh-test-036-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-036",
+      "split": "test",
+      "fault_kind": "wrong_withdrawn",
+      "old_example_id": "fresh-test-036-5",
+      "new_example_id": "fresh-test-036-5",
+      "eligible_example_ids": [
+        "fresh-test-036-3",
+        "fresh-test-036-4",
+        "fresh-test-036-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-037",
+      "split": "test",
+      "fault_kind": "missing",
+      "old_example_id": "fresh-test-037-3",
+      "new_example_id": "fresh-test-037-2",
+      "eligible_example_ids": [
+        "fresh-test-037-2",
+        "fresh-test-037-3",
+        "fresh-test-037-4",
+        "fresh-test-037-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-037",
+      "split": "test",
+      "fault_kind": "text",
+      "old_example_id": "fresh-test-037-5",
+      "new_example_id": "fresh-test-037-4",
+      "eligible_example_ids": [
+        "fresh-test-037-3",
+        "fresh-test-037-4",
+        "fresh-test-037-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-038",
+      "split": "test",
+      "fault_kind": "owner",
+      "old_example_id": "fresh-test-038-3",
+      "new_example_id": "fresh-test-038-3",
+      "eligible_example_ids": [
+        "fresh-test-038-3",
+        "fresh-test-038-4",
+        "fresh-test-038-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-038",
+      "split": "test",
+      "fault_kind": "status",
+      "old_example_id": "fresh-test-038-5",
+      "new_example_id": "fresh-test-038-5",
+      "eligible_example_ids": [
+        "fresh-test-038-2",
+        "fresh-test-038-3",
+        "fresh-test-038-4",
+        "fresh-test-038-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-039",
+      "split": "test",
+      "fault_kind": "missing",
+      "old_example_id": "fresh-test-039-3",
+      "new_example_id": "fresh-test-039-5",
+      "eligible_example_ids": [
+        "fresh-test-039-2",
+        "fresh-test-039-3",
+        "fresh-test-039-4",
+        "fresh-test-039-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-039",
+      "split": "test",
+      "fault_kind": "owner",
+      "old_example_id": "fresh-test-039-5",
+      "new_example_id": "fresh-test-039-3",
+      "eligible_example_ids": [
+        "fresh-test-039-3",
+        "fresh-test-039-4",
+        "fresh-test-039-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-040",
+      "split": "test",
+      "fault_kind": "text",
+      "old_example_id": "fresh-test-040-3",
+      "new_example_id": "fresh-test-040-4",
+      "eligible_example_ids": [
+        "fresh-test-040-2",
+        "fresh-test-040-3",
+        "fresh-test-040-4",
+        "fresh-test-040-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    },
+    {
+      "family_id": "fresh-test-040",
+      "split": "test",
+      "fault_kind": "stale_active",
+      "old_example_id": "fresh-test-040-5",
+      "new_example_id": "fresh-test-040-5",
+      "eligible_example_ids": [
+        "fresh-test-040-4",
+        "fresh-test-040-5"
+      ],
+      "full_correct_target_record_and_history_unchanged": true,
+      "all_repair_sources_previously_arrived": true,
+      "replay_passed": true
+    }
+  ],
+  "compiler_sha256": "a6c93f404b3587664a171d20e686fa5eb822ce70cb6887d09b1b712776661d74",
+  "script_sha256": "0766ca79f63716331551ce8becccde10d4b09b5f620d3c35612512c67b74ce4b",
+  "limit": "Eligible positions depend on causal availability; this does not create natural conversation sampling or eliminate all position/fault-type correlations."
+}

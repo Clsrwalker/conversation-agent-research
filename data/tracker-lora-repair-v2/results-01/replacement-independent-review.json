@@ -1,0 +1,1117 @@
+{
+  "status": "approved_for_pilot",
+  "review_kind": "Independent root model semantic review of replacements; not human gold",
+  "reviewer": "root",
+  "independent_of_train_author": true,
+  "human_review": false,
+  "completed_at_utc": "2026-10-24T19:10:40.678093+00:00",
+  "source_sha256": "c4e8d3e79f4045b632b8e15d1bd88aa2507959587b9d7234e2195c06531eb527",
+  "faults_sha256": "166b717e6c099cd88ff10edd62aaf0d5d94f445444ae49114a4d24515775524d",
+  "policy_sha256": "7e36104bbbaf2e7cc89d95490682b004a1415bfa54c4c7a131328595021dc457",
+  "review_overrides": [
+    {
+      "review_file": "review/fresh-train-independent-review.json",
+      "review_sha256": "d0cde2bfeb63babb1c697ea11086e89c74a6702925534ef846b9b7e0affe7bdd",
+      "family_ids": [
+        "fresh-train-042",
+        "fresh-train-044"
+      ],
+      "fault_example_ids": [
+        "fresh-train-042-2",
+        "fresh-train-042-3",
+        "fresh-train-044-3",
+        "fresh-train-044-4"
+      ],
+      "reason": "Replace two training scenarios with specific-rule overlap with fresh held-out scenarios before any new training or generation; independently review replacements in full."
+    }
+  ],
+  "families": {
+    "fresh-train-042": {
+      "family_sha256": "83ce12da1f1f1b53df34cfaf6a4943e310571bff257f98227533c3eb49c2dec8",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "independent_of_author": true,
+      "human_review": false,
+      "decision_findings": [
+        {
+          "example_id": "fresh-train-042-1",
+          "verdict": "accept",
+          "finding": "Vera explicitly specifies a fictional format. The task, present-null clearing versus absent-key inheritance, and base-before-profile order are three independently supported requirements; no general JSON behavior is assumed.",
+          "operation_evidence": [
+            {
+              "intent_id": "i1",
+              "operation": "add",
+              "quotes": [
+                {
+                  "role": "user",
+                  "seq": 0,
+                  "speaker": "Vera",
+                  "text": "Draft an audit sheet for my fictional configuration overlay format. In this format a key present with null explicitly clears its inherited value; null is not an absent key that may inherit. Apply the profile overlay after the base configuration."
+                }
+              ]
+            },
+            {
+              "intent_id": "i2",
+              "operation": "add",
+              "quotes": [
+                {
+                  "role": "user",
+                  "seq": 0,
+                  "speaker": "Vera",
+                  "text": "Draft an audit sheet for my fictional configuration overlay format. In this format a key present with null explicitly clears its inherited value; null is not an absent key that may inherit. Apply the profile overlay after the base configuration."
+                }
+              ]
+            },
+            {
+              "intent_id": "i3",
+              "operation": "add",
+              "quotes": [
+                {
+                  "role": "user",
+                  "seq": 0,
+                  "speaker": "Vera",
+                  "text": "Draft an audit sheet for my fictional configuration overlay format. In this format a key present with null explicitly clears its inherited value; null is not an absent key that may inherit. Apply the profile overlay after the base configuration."
+                }
+              ]
+            }
+          ],
+          "preserved_ids_checked": [],
+          "before_semantic_state": [],
+          "after_semantic_state": [
+            {
+              "intent_id": "i1",
+              "owner": "Vera",
+              "text": "Draft an audit sheet for Vera’s fictional configuration overlay format",
+              "status": "active"
+            },
+            {
+              "intent_id": "i2",
+              "owner": "Vera",
+              "text": "In this specified format, a present null value explicitly clears inheritance; it is not an absent key eligible to inherit",
+              "status": "active"
+            },
+            {
+              "intent_id": "i3",
+              "owner": "Vera",
+              "text": "Apply the profile overlay after the base configuration",
+              "status": "active"
+            }
+          ],
+          "reviewed_dimensions": [
+            "meaning",
+            "owner",
+            "status",
+            "condition_scope_and_negation",
+            "complete_evidence",
+            "preservation",
+            "fictional_rule_vs_actual_action"
+          ]
+        },
+        {
+          "example_id": "fresh-train-042-2",
+          "verdict": "accept",
+          "finding": "Otis explicitly requires case-only spellings to remain distinct for Otis's exports. This is an adopted conditional rule, hence active, and belongs to Otis rather than Vera. Event 1 supports the entire new text.",
+          "operation_evidence": [
+            {
+              "intent_id": "i4",
+              "operation": "add",
+              "quotes": [
+                {
+                  "role": "user",
+                  "seq": 1,
+                  "speaker": "Otis",
+                  "text": "For my exported keys, if two spellings differ only by letter case, retain both as distinct keys instead of normalizing their case."
+                }
+              ]
+            }
+          ],
+          "preserved_ids_checked": [
+            "i1",
+            "i2",
+            "i3"
+          ],
+          "before_semantic_state": [
+            {
+              "intent_id": "i1",
+              "owner": "Vera",
+              "text": "Draft an audit sheet for Vera’s fictional configuration overlay format",
+              "status": "active"
+            },
+            {
+              "intent_id": "i2",
+              "owner": "Vera",
+              "text": "In this specified format, a present null value explicitly clears inheritance; it is not an absent key eligible to inherit",
+              "status": "active"
+            },
+            {
+              "intent_id": "i3",
+              "owner": "Vera",
+              "text": "Apply the profile overlay after the base configuration",
+              "status": "active"
+            }
+          ],
+          "after_semantic_state": [
+            {
+              "intent_id": "i1",
+              "owner": "Vera",
+              "text": "Draft an audit sheet for Vera’s fictional configuration overlay format",
+              "status": "active"
+            },
+            {
+              "intent_id": "i2",
+              "owner": "Vera",
+              "text": "In this specified format, a present null value explicitly clears inheritance; it is not an absent key eligible to inherit",
+              "status": "active"
+            },
+            {
+              "intent_id": "i3",
+              "owner": "Vera",
+              "text": "Apply the profile overlay after the base configuration",
+              "status": "active"
+            },
+            {
+              "intent_id": "i4",
+              "owner": "Otis",
+              "text": "For Otis’s exported keys, spellings differing only by letter case remain distinct rather than being case-normalized",
+              "status": "active"
+            }
+          ],
+          "reviewed_dimensions": [
+            "meaning",
+            "owner",
+            "status",
+            "condition_scope_and_negation",
+            "complete_evidence",
+            "preservation",
+            "fictional_rule_vs_actual_action"
+          ]
+        },
+        {
+          "example_id": "fresh-train-042-3",
+          "verdict": "accept",
+          "finding": "Vera inserts session after profile and retains base-before-profile. Events 0 and 2 jointly support the complete three-layer order. The assistant adds no new requirement or authority; the null and case rules survive.",
+          "operation_evidence": [
+            {
+              "intent_id": "i3",
+              "operation": "update",
+              "quotes": [
+                {
+                  "role": "user",
+                  "seq": 0,
+                  "speaker": "Vera",
+                  "text": "Draft an audit sheet for my fictional configuration overlay format. In this format a key present with null explicitly clears its inherited value; null is not an absent key that may inherit. Apply the profile overlay after the base configuration."
+                },
+                {
+                  "role": "user",
+                  "seq": 2,
+                  "speaker": "Vera",
+                  "text": "Insert a session overlay after the profile overlay, keeping the base-before-profile order."
+                }
+              ]
+            }
+          ],
+          "preserved_ids_checked": [
+            "i1",
+            "i2",
+            "i4"
+          ],
+          "before_semantic_state": [
+            {
+              "intent_id": "i1",
+              "owner": "Vera",
+              "text": "Draft an audit sheet for Vera’s fictional configuration overlay format",
+              "status": "active"
+            },
+            {
+              "intent_id": "i2",
+              "owner": "Vera",
+              "text": "In this specified format, a present null value explicitly clears inheritance; it is not an absent key eligible to inherit",
+              "status": "active"
+            },
+            {
+              "intent_id": "i3",
+              "owner": "Vera",
+              "text": "Apply the profile overlay after the base configuration",
+              "status": "active"
+            },
+            {
+              "intent_id": "i4",
+              "owner": "Otis",
+              "text": "For Otis’s exported keys, spellings differing only by letter case remain distinct rather than being case-normalized",
+              "status": "active"
+            }
+          ],
+          "after_semantic_state": [
+            {
+              "intent_id": "i1",
+              "owner": "Vera",
+              "text": "Draft an audit sheet for Vera’s fictional configuration overlay format",
+              "status": "active"
+            },
+            {
+              "intent_id": "i2",
+              "owner": "Vera",
+              "text": "In this specified format, a present null value explicitly clears inheritance; it is not an absent key eligible to inherit",
+              "status": "active"
+            },
+            {
+              "intent_id": "i3",
+              "owner": "Vera",
+              "text": "Apply base configuration first, then profile overlay, then session overlay",
+              "status": "active"
+            },
+            {
+              "intent_id": "i4",
+              "owner": "Otis",
+              "text": "For Otis’s exported keys, spellings differing only by letter case remain distinct rather than being case-normalized",
+              "status": "active"
+            }
+          ],
+          "reviewed_dimensions": [
+            "meaning",
+            "owner",
+            "status",
+            "condition_scope_and_negation",
+            "complete_evidence",
+            "preservation",
+            "fictional_rule_vs_actual_action"
+          ]
+        },
+        {
+          "example_id": "fresh-train-042-4",
+          "verdict": "accept",
+          "finding": "The replacement text preserves base/profile/session order and limits last-layer precedence to explicitly present keys, including null. Events 0, 2 and 4 support order, scope and null; absent keys are not promoted to overrides.",
+          "operation_evidence": [
+            {
+              "intent_id": "i3",
+              "operation": "update",
+              "quotes": [
+                {
+                  "role": "user",
+                  "seq": 0,
+                  "speaker": "Vera",
+                  "text": "Draft an audit sheet for my fictional configuration overlay format. In this format a key present with null explicitly clears its inherited value; null is not an absent key that may inherit. Apply the profile overlay after the base configuration."
+                },
+                {
+                  "role": "user",
+                  "seq": 2,
+                  "speaker": "Vera",
+                  "text": "Insert a session overlay after the profile overlay, keeping the base-before-profile order."
+                },
+                {
+                  "role": "user",
+                  "seq": 4,
+                  "speaker": "Vera",
+                  "text": "For a key explicitly present in more than one layer, the last layer in that sequence wins, including when its value is null."
+                }
+              ]
+            }
+          ],
+          "preserved_ids_checked": [
+            "i1",
+            "i2",
+            "i4"
+          ],
+          "before_semantic_state": [
+            {
+              "intent_id": "i1",
+              "owner": "Vera",
+              "text": "Draft an audit sheet for Vera’s fictional configuration overlay format",
+              "status": "active"
+            },
+            {
+              "intent_id": "i2",
+              "owner": "Vera",
+              "text": "In this specified format, a present null value explicitly clears inheritance; it is not an absent key eligible to inherit",
+              "status": "active"
+            },
+            {
+              "intent_id": "i3",
+              "owner": "Vera",
+              "text": "Apply base configuration first, then profile overlay, then session overlay",
+              "status": "active"
+            },
+            {
+              "intent_id": "i4",
+              "owner": "Otis",
+              "text": "For Otis’s exported keys, spellings differing only by letter case remain distinct rather than being case-normalized",
+              "status": "active"
+            }
+          ],
+          "after_semantic_state": [
+            {
+              "intent_id": "i1",
+              "owner": "Vera",
+              "text": "Draft an audit sheet for Vera’s fictional configuration overlay format",
+              "status": "active"
+            },
+            {
+              "intent_id": "i2",
+              "owner": "Vera",
+              "text": "In this specified format, a present null value explicitly clears inheritance; it is not an absent key eligible to inherit",
+              "status": "active"
+            },
+            {
+              "intent_id": "i3",
+              "owner": "Vera",
+              "text": "Apply base, profile, then session layers; for keys explicitly present in multiple layers, the last layer wins, including a present null",
+              "status": "active"
+            },
+            {
+              "intent_id": "i4",
+              "owner": "Otis",
+              "text": "For Otis’s exported keys, spellings differing only by letter case remain distinct rather than being case-normalized",
+              "status": "active"
+            }
+          ],
+          "reviewed_dimensions": [
+            "meaning",
+            "owner",
+            "status",
+            "condition_scope_and_negation",
+            "complete_evidence",
+            "preservation",
+            "fictional_rule_vs_actual_action"
+          ]
+        },
+        {
+          "example_id": "fresh-train-042-5",
+          "verdict": "accept",
+          "finding": "Vera now asks for an explanation of absent versus present-null in the stipulated format, with an explicit prohibition on filling missing values. Events 0 and 5 support both the requested explanation and boundary; every earlier requirement remains.",
+          "operation_evidence": [
+            {
+              "intent_id": "i5",
+              "operation": "add",
+              "quotes": [
+                {
+                  "role": "user",
+                  "seq": 0,
+                  "speaker": "Vera",
+                  "text": "Draft an audit sheet for my fictional configuration overlay format. In this format a key present with null explicitly clears its inherited value; null is not an absent key that may inherit. Apply the profile overlay after the base configuration."
+                },
+                {
+                  "role": "user",
+                  "seq": 5,
+                  "speaker": "Vera",
+                  "text": "Explain an absent key versus a present null in this format, without filling in any missing configuration values."
+                }
+              ]
+            }
+          ],
+          "preserved_ids_checked": [
+            "i1",
+            "i2",
+            "i3",
+            "i4"
+          ],
+          "before_semantic_state": [
+            {
+              "intent_id": "i1",
+              "owner": "Vera",
+              "text": "Draft an audit sheet for Vera’s fictional configuration overlay format",
+              "status": "active"
+            },
+            {
+              "intent_id": "i2",
+              "owner": "Vera",
+              "text": "In this specified format, a present null value explicitly clears inheritance; it is not an absent key eligible to inherit",
+              "status": "active"
+            },
+            {
+              "intent_id": "i3",
+              "owner": "Vera",
+              "text": "Apply base, profile, then session layers; for keys explicitly present in multiple layers, the last layer wins, including a present null",
+              "status": "active"
+            },
+            {
+              "intent_id": "i4",
+              "owner": "Otis",
+              "text": "For Otis’s exported keys, spellings differing only by letter case remain distinct rather than being case-normalized",
+              "status": "active"
+            }
+          ],
+          "after_semantic_state": [
+            {
+              "intent_id": "i1",
+              "owner": "Vera",
+              "text": "Draft an audit sheet for Vera’s fictional configuration overlay format",
+              "status": "active"
+            },
+            {
+              "intent_id": "i2",
+              "owner": "Vera",
+              "text": "In this specified format, a present null value explicitly clears inheritance; it is not an absent key eligible to inherit",
+              "status": "active"
+            },
+            {
+              "intent_id": "i3",
+              "owner": "Vera",
+              "text": "Apply base, profile, then session layers; for keys explicitly present in multiple layers, the last layer wins, including a present null",
+              "status": "active"
+            },
+            {
+              "intent_id": "i4",
+              "owner": "Otis",
+              "text": "For Otis’s exported keys, spellings differing only by letter case remain distinct rather than being case-normalized",
+              "status": "active"
+            },
+            {
+              "intent_id": "i5",
+              "owner": "Vera",
+              "text": "Explain absent keys versus present null in Vera’s specified format without filling missing configuration values",
+              "status": "active"
+            }
+          ],
+          "reviewed_dimensions": [
+            "meaning",
+            "owner",
+            "status",
+            "condition_scope_and_negation",
+            "complete_evidence",
+            "preservation",
+            "fictional_rule_vs_actual_action"
+          ]
+        }
+      ]
+    },
+    "fresh-train-044": {
+      "family_sha256": "984fe1ce7dbfa8d83890196aa5866aeead3f103f9504296d65199f0b35005ea7",
+      "verdict": "accept",
+      "decisions_reviewed": 5,
+      "independent_of_author": true,
+      "human_review": false,
+      "decision_findings": [
+        {
+          "example_id": "fresh-train-044-1",
+          "verdict": "accept",
+          "finding": "Nora requests a fictional waitlist ledger, preserves unanswered offers as unanswered rather than declined, and distinguishes offered-slot start from recipient reply time. All three independently revisable requirements are explicit at event 0.",
+          "operation_evidence": [
+            {
+              "intent_id": "i1",
+              "operation": "add",
+              "quotes": [
+                {
+                  "role": "user",
+                  "seq": 0,
+                  "speaker": "Nora",
+                  "text": "Build a consent ledger for a fictional ticket waitlist. Silence after an offered slot stays unanswered, not declined. Record the offered slot’s start time separately from the recipient’s reply time."
+                }
+              ]
+            },
+            {
+              "intent_id": "i2",
+              "operation": "add",
+              "quotes": [
+                {
+                  "role": "user",
+                  "seq": 0,
+                  "speaker": "Nora",
+                  "text": "Build a consent ledger for a fictional ticket waitlist. Silence after an offered slot stays unanswered, not declined. Record the offered slot’s start time separately from the recipient’s reply time."
+                }
+              ]
+            },
+            {
+              "intent_id": "i3",
+              "operation": "add",
+              "quotes": [
+                {
+                  "role": "user",
+                  "seq": 0,
+                  "speaker": "Nora",
+                  "text": "Build a consent ledger for a fictional ticket waitlist. Silence after an offered slot stays unanswered, not declined. Record the offered slot’s start time separately from the recipient’s reply time."
+                }
+              ]
+            }
+          ],
+          "preserved_ids_checked": [],
+          "before_semantic_state": [],
+          "after_semantic_state": [
+            {
+              "intent_id": "i1",
+              "owner": "Nora",
+              "text": "Build a consent ledger for a fictional ticket waitlist",
+              "status": "active"
+            },
+            {
+              "intent_id": "i2",
+              "owner": "Nora",
+              "text": "Silence after a slot offer remains unanswered rather than being marked declined",
+              "status": "active"
+            },
+            {
+              "intent_id": "i3",
+              "owner": "Nora",
+              "text": "Record offered-slot start time separately from the recipient’s reply time",
+              "status": "active"
+            }
+          ],
+          "reviewed_dimensions": [
+            "meaning",
+            "owner",
+            "status",
+            "condition_scope_and_negation",
+            "complete_evidence",
+            "preservation",
+            "fictional_rule_vs_actual_action"
+          ]
+        },
+        {
+          "example_id": "fresh-train-044-2",
+          "verdict": "accept",
+          "finding": "Gus states that declining one offered slot preserves waitlist membership unless Gus explicitly opts out. The accepted if/unless rule is active and owned by Gus; its exception must remain in the text.",
+          "operation_evidence": [
+            {
+              "intent_id": "i4",
+              "operation": "add",
+              "quotes": [
+                {
+                  "role": "user",
+                  "seq": 1,
+                  "speaker": "Gus",
+                  "text": "For my requests, if I decline one offered slot, keep me on the waitlist unless I explicitly ask to leave the list."
+                }
+              ]
+            }
+          ],
+          "preserved_ids_checked": [
+            "i1",
+            "i2",
+            "i3"
+          ],
+          "before_semantic_state": [
+            {
+              "intent_id": "i1",
+              "owner": "Nora",
+              "text": "Build a consent ledger for a fictional ticket waitlist",
+              "status": "active"
+            },
+            {
+              "intent_id": "i2",
+              "owner": "Nora",
+              "text": "Silence after a slot offer remains unanswered rather than being marked declined",
+              "status": "active"
+            },
+            {
+              "intent_id": "i3",
+              "owner": "Nora",
+              "text": "Record offered-slot start time separately from the recipient’s reply time",
+              "status": "active"
+            }
+          ],
+          "after_semantic_state": [
+            {
+              "intent_id": "i1",
+              "owner": "Nora",
+              "text": "Build a consent ledger for a fictional ticket waitlist",
+              "status": "active"
+            },
+            {
+              "intent_id": "i2",
+              "owner": "Nora",
+              "text": "Silence after a slot offer remains unanswered rather than being marked declined",
+              "status": "active"
+            },
+            {
+              "intent_id": "i3",
+              "owner": "Nora",
+              "text": "Record offered-slot start time separately from the recipient’s reply time",
+              "status": "active"
+            },
+            {
+              "intent_id": "i4",
+              "owner": "Gus",
+              "text": "For Gus’s requests, declining an offered slot does not end waitlist membership unless Gus explicitly asks to leave",
+              "status": "active"
+            }
+          ],
+          "reviewed_dimensions": [
+            "meaning",
+            "owner",
+            "status",
+            "condition_scope_and_negation",
+            "complete_evidence",
+            "preservation",
+            "fictional_rule_vs_actual_action"
+          ]
+        },
+        {
+          "example_id": "fresh-train-044-3",
+          "verdict": "accept",
+          "finding": "Nora requires explicit recipient acceptance of the particular offer before slot confirmation. This is a new rule, not an actual acceptance or a change to offered/reply timestamps. Event 2 supplies the whole rule; assistant acknowledgement adds nothing.",
+          "operation_evidence": [
+            {
+              "intent_id": "i5",
+              "operation": "add",
+              "quotes": [
+                {
+                  "role": "user",
+                  "seq": 2,
+                  "speaker": "Nora",
+                  "text": "Mark a slot confirmed only after its recipient explicitly accepts that particular offer."
+                }
+              ]
+            }
+          ],
+          "preserved_ids_checked": [
+            "i1",
+            "i2",
+            "i3",
+            "i4"
+          ],
+          "before_semantic_state": [
+            {
+              "intent_id": "i1",
+              "owner": "Nora",
+              "text": "Build a consent ledger for a fictional ticket waitlist",
+              "status": "active"
+            },
+            {
+              "intent_id": "i2",
+              "owner": "Nora",
+              "text": "Silence after a slot offer remains unanswered rather than being marked declined",
+              "status": "active"
+            },
+            {
+              "intent_id": "i3",
+              "owner": "Nora",
+              "text": "Record offered-slot start time separately from the recipient’s reply time",
+              "status": "active"
+            },
+            {
+              "intent_id": "i4",
+              "owner": "Gus",
+              "text": "For Gus’s requests, declining an offered slot does not end waitlist membership unless Gus explicitly asks to leave",
+              "status": "active"
+            }
+          ],
+          "after_semantic_state": [
+            {
+              "intent_id": "i1",
+              "owner": "Nora",
+              "text": "Build a consent ledger for a fictional ticket waitlist",
+              "status": "active"
+            },
+            {
+              "intent_id": "i2",
+              "owner": "Nora",
+              "text": "Silence after a slot offer remains unanswered rather than being marked declined",
+              "status": "active"
+            },
+            {
+              "intent_id": "i3",
+              "owner": "Nora",
+              "text": "Record offered-slot start time separately from the recipient’s reply time",
+              "status": "active"
+            },
+            {
+              "intent_id": "i4",
+              "owner": "Gus",
+              "text": "For Gus’s requests, declining an offered slot does not end waitlist membership unless Gus explicitly asks to leave",
+              "status": "active"
+            },
+            {
+              "intent_id": "i5",
+              "owner": "Nora",
+              "text": "Confirm a slot only after its recipient explicitly accepts that particular offer",
+              "status": "active"
+            }
+          ],
+          "reviewed_dimensions": [
+            "meaning",
+            "owner",
+            "status",
+            "condition_scope_and_negation",
+            "complete_evidence",
+            "preservation",
+            "fictional_rule_vs_actual_action"
+          ]
+        },
+        {
+          "example_id": "fresh-train-044-4",
+          "verdict": "accept",
+          "finding": "Nora adds the consequence of explicitly withdrawn acceptance: mark that slot unconfirmed and retain its previous acceptance in history. Events 2 and 4 preserve offer-specific explicit acceptance plus the new exception. Gus's waitlist membership rule is unchanged.",
+          "operation_evidence": [
+            {
+              "intent_id": "i5",
+              "operation": "update",
+              "quotes": [
+                {
+                  "role": "user",
+                  "seq": 2,
+                  "speaker": "Nora",
+                  "text": "Mark a slot confirmed only after its recipient explicitly accepts that particular offer."
+                },
+                {
+                  "role": "user",
+                  "seq": 4,
+                  "speaker": "Nora",
+                  "text": "If that acceptance is explicitly withdrawn, mark the slot unconfirmed again, but retain the previous acceptance in history. An offer still needs its own explicit acceptance to be confirmed."
+                }
+              ]
+            }
+          ],
+          "preserved_ids_checked": [
+            "i1",
+            "i2",
+            "i3",
+            "i4"
+          ],
+          "before_semantic_state": [
+            {
+              "intent_id": "i1",
+              "owner": "Nora",
+              "text": "Build a consent ledger for a fictional ticket waitlist",
+              "status": "active"
+            },
+            {
+              "intent_id": "i2",
+              "owner": "Nora",
+              "text": "Silence after a slot offer remains unanswered rather than being marked declined",
+              "status": "active"
+            },
+            {
+              "intent_id": "i3",
+              "owner": "Nora",
+              "text": "Record offered-slot start time separately from the recipient’s reply time",
+              "status": "active"
+            },
+            {
+              "intent_id": "i4",
+              "owner": "Gus",
+              "text": "For Gus’s requests, declining an offered slot does not end waitlist membership unless Gus explicitly asks to leave",
+              "status": "active"
+            },
+            {
+              "intent_id": "i5",
+              "owner": "Nora",
+              "text": "Confirm a slot only after its recipient explicitly accepts that particular offer",
+              "status": "active"
+            }
+          ],
+          "after_semantic_state": [
+            {
+              "intent_id": "i1",
+              "owner": "Nora",
+              "text": "Build a consent ledger for a fictional ticket waitlist",
+              "status": "active"
+            },
+            {
+              "intent_id": "i2",
+              "owner": "Nora",
+              "text": "Silence after a slot offer remains unanswered rather than being marked declined",
+              "status": "active"
+            },
+            {
+              "intent_id": "i3",
+              "owner": "Nora",
+              "text": "Record offered-slot start time separately from the recipient’s reply time",
+              "status": "active"
+            },
+            {
+              "intent_id": "i4",
+              "owner": "Gus",
+              "text": "For Gus’s requests, declining an offered slot does not end waitlist membership unless Gus explicitly asks to leave",
+              "status": "active"
+            },
+            {
+              "intent_id": "i5",
+              "owner": "Nora",
+              "text": "Confirm a slot only after explicit acceptance of that offer; if that acceptance is explicitly withdrawn, mark the slot unconfirmed while retaining the earlier acceptance in history",
+              "status": "active"
+            }
+          ],
+          "reviewed_dimensions": [
+            "meaning",
+            "owner",
+            "status",
+            "condition_scope_and_negation",
+            "complete_evidence",
+            "preservation",
+            "fictional_rule_vs_actual_action"
+          ]
+        },
+        {
+          "example_id": "fresh-train-044-5",
+          "verdict": "accept",
+          "finding": "Understood/keep the rules is only acknowledgement of the specification. It is not acceptance of a ticket offer, withdrawal of a rule, or a request to create another intent; the correct operation list is empty.",
+          "operation_evidence": [
+            {
+              "no_change_quotes": [
+                {
+                  "role": "user",
+                  "seq": 5,
+                  "speaker": "Nora",
+                  "text": "Understood. Keep these rules as written."
+                }
+              ]
+            }
+          ],
+          "preserved_ids_checked": [
+            "i1",
+            "i2",
+            "i3",
+            "i4",
+            "i5"
+          ],
+          "before_semantic_state": [
+            {
+              "intent_id": "i1",
+              "owner": "Nora",
+              "text": "Build a consent ledger for a fictional ticket waitlist",
+              "status": "active"
+            },
+            {
+              "intent_id": "i2",
+              "owner": "Nora",
+              "text": "Silence after a slot offer remains unanswered rather than being marked declined",
+              "status": "active"
+            },
+            {
+              "intent_id": "i3",
+              "owner": "Nora",
+              "text": "Record offered-slot start time separately from the recipient’s reply time",
+              "status": "active"
+            },
+            {
+              "intent_id": "i4",
+              "owner": "Gus",
+              "text": "For Gus’s requests, declining an offered slot does not end waitlist membership unless Gus explicitly asks to leave",
+              "status": "active"
+            },
+            {
+              "intent_id": "i5",
+              "owner": "Nora",
+              "text": "Confirm a slot only after explicit acceptance of that offer; if that acceptance is explicitly withdrawn, mark the slot unconfirmed while retaining the earlier acceptance in history",
+              "status": "active"
+            }
+          ],
+          "after_semantic_state": [
+            {
+              "intent_id": "i1",
+              "owner": "Nora",
+              "text": "Build a consent ledger for a fictional ticket waitlist",
+              "status": "active"
+            },
+            {
+              "intent_id": "i2",
+              "owner": "Nora",
+              "text": "Silence after a slot offer remains unanswered rather than being marked declined",
+              "status": "active"
+            },
+            {
+              "intent_id": "i3",
+              "owner": "Nora",
+              "text": "Record offered-slot start time separately from the recipient’s reply time",
+              "status": "active"
+            },
+            {
+              "intent_id": "i4",
+              "owner": "Gus",
+              "text": "For Gus’s requests, declining an offered slot does not end waitlist membership unless Gus explicitly asks to leave",
+              "status": "active"
+            },
+            {
+              "intent_id": "i5",
+              "owner": "Nora",
+              "text": "Confirm a slot only after explicit acceptance of that offer; if that acceptance is explicitly withdrawn, mark the slot unconfirmed while retaining the earlier acceptance in history",
+              "status": "active"
+            }
+          ],
+          "reviewed_dimensions": [
+            "meaning",
+            "owner",
+            "status",
+            "condition_scope_and_negation",
+            "complete_evidence",
+            "preservation",
+            "fictional_rule_vs_actual_action"
+          ]
+        }
+      ]
+    }
+  },
+  "fault_examples": {
+    "fresh-train-042-2": {
+      "fault_sha256": "de3a6b69a65c9971089d0c166b90d1cee0f6789607521b990731bf5ff4d81776",
+      "verdict": "accept",
+      "independent_of_author": true,
+      "human_review": false,
+      "fault_kind": "missing",
+      "intent_id": "i2",
+      "repair_criterion": "Restore Vera's entire null-versus-absent inheritance distinction, with Vera as owner and active status; Otis's new case rule must also be added.",
+      "correct_semantic_record": {
+        "intent_id": "i2",
+        "owner": "Vera",
+        "text": "In this specified format, a present null value explicitly clears inheritance; it is not an absent key eligible to inherit",
+        "status": "active"
+      },
+      "faulty_semantic_record": null,
+      "evidence_quotes": [
+        {
+          "role": "user",
+          "seq": 0,
+          "speaker": "Vera",
+          "text": "Draft an audit sheet for my fictional configuration overlay format. In this format a key present with null explicitly clears its inherited value; null is not an absent key that may inherit. Apply the profile overlay after the base configuration."
+        }
+      ],
+      "repair_operation": {
+        "op": "add",
+        "intent_id": "i2",
+        "source_seqs": [
+          0
+        ],
+        "text": "In this specified format, a present null value explicitly clears inheritance; it is not an absent key eligible to inherit",
+        "owner": "Vera",
+        "status": "active"
+      },
+      "current_ordinary_decision_finding": "Otis explicitly requires case-only spellings to remain distinct for Otis's exports. This is an adopted conditional rule, hence active, and belongs to Otis rather than Vera. Event 1 supports the entire new text.",
+      "all_other_records_preserved": true,
+      "raw_sources_arrived_before_fault_decision": true,
+      "actual_runtime_restored_full_canonical_semantic_state": true
+    },
+    "fresh-train-042-3": {
+      "fault_sha256": "401dbc28da7f65ca3b4ad34e7c4876a5161ddb64b49365d53fd2021077a61a56",
+      "verdict": "accept",
+      "independent_of_author": true,
+      "human_review": false,
+      "fault_kind": "status",
+      "intent_id": "i4",
+      "repair_criterion": "The earlier explicitly adopted conditional rule is active, not uncertain. Restore status only; retain its owner, full exception/condition and every other requirement.",
+      "correct_semantic_record": {
+        "intent_id": "i4",
+        "owner": "Otis",
+        "text": "For Otis’s exported keys, spellings differing only by letter case remain distinct rather than being case-normalized",
+        "status": "active"
+      },
+      "faulty_semantic_record": {
+        "intent_id": "i4",
+        "owner": "Otis",
+        "text": "For Otis’s exported keys, spellings differing only by letter case remain distinct rather than being case-normalized",
+        "status": "uncertain"
+      },
+      "evidence_quotes": [
+        {
+          "role": "user",
+          "seq": 0,
+          "speaker": "Vera",
+          "text": "Draft an audit sheet for my fictional configuration overlay format. In this format a key present with null explicitly clears its inherited value; null is not an absent key that may inherit. Apply the profile overlay after the base configuration."
+        },
+        {
+          "role": "user",
+          "seq": 1,
+          "speaker": "Otis",
+          "text": "For my exported keys, if two spellings differ only by letter case, retain both as distinct keys instead of normalizing their case."
+        }
+      ],
+      "repair_operation": {
+        "op": "update",
+        "intent_id": "i4",
+        "status": "active",
+        "source_seqs": [
+          0,
+          1
+        ]
+      },
+      "current_ordinary_decision_finding": "Vera inserts session after profile and retains base-before-profile. Events 0 and 2 jointly support the complete three-layer order. The assistant adds no new requirement or authority; the null and case rules survive.",
+      "all_other_records_preserved": true,
+      "raw_sources_arrived_before_fault_decision": true,
+      "actual_runtime_restored_full_canonical_semantic_state": true
+    },
+    "fresh-train-044-3": {
+      "fault_sha256": "fe82a73a84c5d5f3ee04992c624e9254065d0e95f62c99436e70f30904bdb65b",
+      "verdict": "accept",
+      "independent_of_author": true,
+      "human_review": false,
+      "fault_kind": "status",
+      "intent_id": "i4",
+      "repair_criterion": "The earlier explicitly adopted conditional rule is active, not uncertain. Restore status only; retain its owner, full exception/condition and every other requirement.",
+      "correct_semantic_record": {
+        "intent_id": "i4",
+        "owner": "Gus",
+        "text": "For Gus’s requests, declining an offered slot does not end waitlist membership unless Gus explicitly asks to leave",
+        "status": "active"
+      },
+      "faulty_semantic_record": {
+        "intent_id": "i4",
+        "owner": "Gus",
+        "text": "For Gus’s requests, declining an offered slot does not end waitlist membership unless Gus explicitly asks to leave",
+        "status": "uncertain"
+      },
+      "evidence_quotes": [
+        {
+          "role": "user",
+          "seq": 0,
+          "speaker": "Nora",
+          "text": "Build a consent ledger for a fictional ticket waitlist. Silence after an offered slot stays unanswered, not declined. Record the offered slot’s start time separately from the recipient’s reply time."
+        },
+        {
+          "role": "user",
+          "seq": 1,
+          "speaker": "Gus",
+          "text": "For my requests, if I decline one offered slot, keep me on the waitlist unless I explicitly ask to leave the list."
+        }
+      ],
+      "repair_operation": {
+        "op": "update",
+        "intent_id": "i4",
+        "status": "active",
+        "source_seqs": [
+          0,
+          1
+        ]
+      },
+      "current_ordinary_decision_finding": "Nora requires explicit recipient acceptance of the particular offer before slot confirmation. This is a new rule, not an actual acceptance or a change to offered/reply timestamps. Event 2 supplies the whole rule; assistant acknowledgement adds nothing.",
+      "all_other_records_preserved": true,
+      "raw_sources_arrived_before_fault_decision": true,
+      "actual_runtime_restored_full_canonical_semantic_state": true
+    },
+    "fresh-train-044-4": {
+      "fault_sha256": "173217aa6e64a7f4387706c5fdffb0db7cc73e0b34c7265d5045748ee0b002b6",
+      "verdict": "accept",
+      "independent_of_author": true,
+      "human_review": false,
+      "fault_kind": "missing",
+      "intent_id": "i2",
+      "repair_criterion": "Restore Nora's unanswered-versus-declined rule in full while updating the separate offer-confirmation lifecycle; silence must not become rejection.",
+      "correct_semantic_record": {
+        "intent_id": "i2",
+        "owner": "Nora",
+        "text": "Silence after a slot offer remains unanswered rather than being marked declined",
+        "status": "active"
+      },
+      "faulty_semantic_record": null,
+      "evidence_quotes": [
+        {
+          "role": "user",
+          "seq": 0,
+          "speaker": "Nora",
+          "text": "Build a consent ledger for a fictional ticket waitlist. Silence after an offered slot stays unanswered, not declined. Record the offered slot’s start time separately from the recipient’s reply time."
+        }
+      ],
+      "repair_operation": {
+        "op": "add",
+        "intent_id": "i2",
+        "source_seqs": [
+          0
+        ],
+        "text": "Silence after a slot offer remains unanswered rather than being marked declined",
+        "owner": "Nora",
+        "status": "active"
+      },
+      "current_ordinary_decision_finding": "Nora adds the consequence of explicitly withdrawn acceptance: mark that slot unconfirmed and retain its previous acceptance in history. Events 2 and 4 preserve offer-specific explicit acceptance plus the new exception. Gus's waitlist membership rule is unchanged.",
+      "all_other_records_preserved": true,
+      "raw_sources_arrived_before_fault_decision": true,
+      "actual_runtime_restored_full_canonical_semantic_state": true
+    }
+  },
+  "unresolved": [],
+  "limits": [
+    "Root is not the replacement author but participates in experiment design.",
+    "This is model semantic review, not human validation; runtime replay only checks mechanics.",
+    "Cross-split similarity is audited separately; this review does not prove absence of leakage."
+  ],
+  "review_evidence_revision": {
+    "reason": "Add the explicit no-change raw quote to the existing unchanged root judgment; semantic decision is unchanged.",
+    "prior_report_sha256": "8ad404c97dd87dde775c20ad692edc6508acd6a688e38910146834f2dec8e21c"
+  }
+}

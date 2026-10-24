@@ -1,0 +1,528 @@
+{
+  "original_source_sha256": "5c820330334b6e72923e1a3ee1bf99a6a93a22cd9c0927c985bbb2054f80ec37",
+  "original_fault_sha256": "166b717e6c099cd88ff10edd62aaf0d5d94f445444ae49114a4d24515775524d",
+  "revised_source_sha256": "04c4bafaadbd6c71e27a0e867935bebb098d59107ccf7b64ea55b328b978b687",
+  "faults_unchanged": true,
+  "revisions": [
+    {
+      "family_id": "fresh-train-009",
+      "decision": 3,
+      "reason": "UNCERTAIN-1: user explicitly calls Thursday a backup; preserve a concrete uncertain alternative alongside the still-active Tuesday requirement.",
+      "before": {
+        "critical_checks": [
+          "Do not mistake an unaccepted suggestion for an adopted change.",
+          "Original rule i2 remains independently valid."
+        ],
+        "evidence_note": "Apply only the evidenced local change; older supported rules remain obligations.",
+        "operations": [],
+        "preserve_ids": [
+          "i1",
+          "i2",
+          "i3",
+          "i4"
+        ],
+        "through_seq": 3
+      },
+      "after": {
+        "critical_checks": [
+          "Track the concrete backup as uncertain without changing active Tuesday start."
+        ],
+        "evidence_note": "The user explicitly retains Thursday as a backup rather than merely mentioning an assistant proposal; Tuesday remains the active start.",
+        "operations": [
+          {
+            "op": "add",
+            "intent_id": "i5",
+            "owner": "听澜",
+            "text": "将首次剧本朗读排练改为周四是备选，尚未采用，当前仍从周二开始",
+            "status": "uncertain",
+            "source_seqs": [
+              0,
+              2,
+              3
+            ]
+          }
+        ],
+        "preserve_ids": [
+          "i1",
+          "i2",
+          "i3",
+          "i4"
+        ],
+        "through_seq": 3
+      }
+    },
+    {
+      "family_id": "fresh-train-009",
+      "decision": 5,
+      "reason": "Use the next new stable ID for the later explanation request after the backup candidate occupied i5.",
+      "before": {
+        "critical_checks": [
+          "Do not drop the no-action condition.",
+          "Repairing an earlier error must not overwrite unaffected records."
+        ],
+        "evidence_note": "A new unanswered information request is recorded including its action boundary; acknowledgement alone changes nothing.",
+        "operations": [
+          {
+            "intent_id": "i5",
+            "op": "add",
+            "owner": "听澜",
+            "source_seqs": [
+              0,
+              5
+            ],
+            "status": "active",
+            "text": "说明剧本页码与台词编号分开的原因，不给剧本补编号"
+          }
+        ],
+        "preserve_ids": [
+          "i1",
+          "i2",
+          "i3",
+          "i4"
+        ],
+        "through_seq": 5
+      },
+      "after": {
+        "critical_checks": [
+          "Do not drop the no-action condition.",
+          "Repairing an earlier error must not overwrite unaffected records."
+        ],
+        "evidence_note": "A new unanswered information request is recorded including its action boundary; acknowledgement alone changes nothing.",
+        "operations": [
+          {
+            "intent_id": "i6",
+            "op": "add",
+            "owner": "听澜",
+            "source_seqs": [
+              0,
+              5
+            ],
+            "status": "active",
+            "text": "说明剧本页码与台词编号分开的原因，不给剧本补编号"
+          }
+        ],
+        "preserve_ids": [
+          "i1",
+          "i2",
+          "i3",
+          "i4"
+        ],
+        "through_seq": 5
+      }
+    },
+    {
+      "family_id": "fresh-train-021",
+      "decision": 3,
+      "reason": "An already explicit diameter requirement is only reaffirmed as not radius; equivalent restatement is true no-change.",
+      "before": {
+        "critical_checks": [
+          "Do not mistake an unaccepted suggestion for an adopted change.",
+          "Original rule i2 remains independently valid."
+        ],
+        "evidence_note": "Apply only the evidenced local change; older supported rules remain obligations.",
+        "operations": [
+          {
+            "intent_id": "i3",
+            "op": "update",
+            "source_seqs": [
+              0,
+              2,
+              3
+            ],
+            "text": "盆栽新盆直径而非半径比旧盆大两厘米"
+          }
+        ],
+        "preserve_ids": [
+          "i1",
+          "i2",
+          "i4"
+        ],
+        "through_seq": 3
+      },
+      "after": {
+        "critical_checks": [
+          "Do not emit an update for equivalent diameter clarification."
+        ],
+        "evidence_note": "The speaker rejects five centimetres and reaffirms the already explicit two-centimetre diameter increase.",
+        "operations": [],
+        "preserve_ids": [
+          "i1",
+          "i2",
+          "i4"
+        ],
+        "through_seq": 3
+      }
+    },
+    {
+      "family_id": "fresh-train-031",
+      "decision": 4,
+      "reason": "Which stoppage produced the measurement is not the total count of stoppages/measurements.",
+      "before": {
+        "critical_checks": [
+          "No repeated withdrawal; no replacement of stable IDs."
+        ],
+        "evidence_note": "Apply the stated subtask change or cancellation with its antecedent; keep other requirements.",
+        "operations": [
+          {
+            "intent_id": "i3",
+            "op": "update",
+            "source_seqs": [
+              0,
+              2,
+              3,
+              4
+            ],
+            "text": "每织五行记录一次张力并注明对应停机测量次数"
+          }
+        ],
+        "preserve_ids": [
+          "i1",
+          "i2",
+          "i4"
+        ],
+        "through_seq": 4
+      },
+      "after": {
+        "critical_checks": [
+          "No repeated withdrawal; no replacement of stable IDs."
+        ],
+        "evidence_note": "Apply the stated subtask change or cancellation with its antecedent; keep other requirements.",
+        "operations": [
+          {
+            "intent_id": "i3",
+            "op": "update",
+            "source_seqs": [
+              0,
+              2,
+              3,
+              4
+            ],
+            "text": "每织五行记录一次张力并注明对应哪次停机测量"
+          }
+        ],
+        "preserve_ids": [
+          "i1",
+          "i2",
+          "i4"
+        ],
+        "through_seq": 4
+      }
+    },
+    {
+      "family_id": "fresh-train-032",
+      "decision": 2,
+      "reason": "The transcript supplies no gender; use explicit name attribution instead of an inferred gendered pronoun.",
+      "before": {
+        "critical_checks": [
+          "Do not transfer this need to the other participant.",
+          "A settled condition remains active; undecided adoption is uncertain."
+        ],
+        "evidence_note": "The follow-up adds its stated need with its own owner and adoption state.",
+        "operations": [
+          {
+            "intent_id": "i4",
+            "op": "add",
+            "owner": "Tess",
+            "source_seqs": [
+              0,
+              1
+            ],
+            "status": "uncertain",
+            "text": "Tess may want a nib-width field in her ink-log entries; adoption remains undecided"
+          }
+        ],
+        "preserve_ids": [
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "through_seq": 1
+      },
+      "after": {
+        "critical_checks": [
+          "Do not transfer this need to the other participant.",
+          "A settled condition remains active; undecided adoption is uncertain."
+        ],
+        "evidence_note": "The follow-up adds its stated need with its own owner and adoption state.",
+        "operations": [
+          {
+            "intent_id": "i4",
+            "op": "add",
+            "owner": "Tess",
+            "source_seqs": [
+              0,
+              1
+            ],
+            "status": "uncertain",
+            "text": "Tess may want a nib-width field in Tess’s ink-log entries; adoption remains undecided"
+          }
+        ],
+        "preserve_ids": [
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "through_seq": 1
+      }
+    },
+    {
+      "family_id": "fresh-train-034",
+      "decision": 2,
+      "reason": "The transcript supplies no gender; use explicit name attribution instead of an inferred gendered pronoun.",
+      "before": {
+        "critical_checks": [
+          "Do not transfer this need to the other participant.",
+          "A settled condition remains active; undecided adoption is uncertain."
+        ],
+        "evidence_note": "The follow-up adds its stated need with its own owner and adoption state.",
+        "operations": [
+          {
+            "intent_id": "i4",
+            "op": "add",
+            "owner": "Eli",
+            "source_seqs": [
+              0,
+              1
+            ],
+            "status": "uncertain",
+            "text": "Eli may need a tactile symbol on his trail marker; adoption is undecided"
+          }
+        ],
+        "preserve_ids": [
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "through_seq": 1
+      },
+      "after": {
+        "critical_checks": [
+          "Do not transfer this need to the other participant.",
+          "A settled condition remains active; undecided adoption is uncertain."
+        ],
+        "evidence_note": "The follow-up adds its stated need with its own owner and adoption state.",
+        "operations": [
+          {
+            "intent_id": "i4",
+            "op": "add",
+            "owner": "Eli",
+            "source_seqs": [
+              0,
+              1
+            ],
+            "status": "uncertain",
+            "text": "Eli may need a tactile symbol on Eli’s trail marker; adoption is undecided"
+          }
+        ],
+        "preserve_ids": [
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "through_seq": 1
+      }
+    },
+    {
+      "family_id": "fresh-train-036",
+      "decision": 2,
+      "reason": "The transcript supplies no gender; use explicit name attribution instead of an inferred gendered pronoun.",
+      "before": {
+        "critical_checks": [
+          "Do not transfer this need to the other participant.",
+          "A settled condition remains active; undecided adoption is uncertain."
+        ],
+        "evidence_note": "The follow-up adds its stated need with its own owner and adoption state.",
+        "operations": [
+          {
+            "intent_id": "i4",
+            "op": "add",
+            "owner": "Noel",
+            "source_seqs": [
+              0,
+              1
+            ],
+            "status": "uncertain",
+            "text": "Noel is considering a quiet-entry note for his planetarium guide section; adoption is undecided"
+          }
+        ],
+        "preserve_ids": [
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "through_seq": 1
+      },
+      "after": {
+        "critical_checks": [
+          "Do not transfer this need to the other participant.",
+          "A settled condition remains active; undecided adoption is uncertain."
+        ],
+        "evidence_note": "The follow-up adds its stated need with its own owner and adoption state.",
+        "operations": [
+          {
+            "intent_id": "i4",
+            "op": "add",
+            "owner": "Noel",
+            "source_seqs": [
+              0,
+              1
+            ],
+            "status": "uncertain",
+            "text": "Noel is considering a quiet-entry note for Noel’s planetarium guide section; adoption is undecided"
+          }
+        ],
+        "preserve_ids": [
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "through_seq": 1
+      }
+    },
+    {
+      "family_id": "fresh-train-039",
+      "decision": 2,
+      "reason": "“写到月份” means month precision, not deletion of a known year; retain that distinction without inventing a specific year.",
+      "before": {
+        "critical_checks": [
+          "Do not transfer this need to the other participant.",
+          "A settled condition remains active; undecided adoption is uncertain."
+        ],
+        "evidence_note": "The follow-up adds its stated need with its own owner and adoption state.",
+        "operations": [
+          {
+            "intent_id": "i4",
+            "op": "add",
+            "owner": "临风",
+            "source_seqs": [
+              0,
+              1
+            ],
+            "status": "active",
+            "text": "临风的压花样本日期不精确时只写月份，不补日期"
+          }
+        ],
+        "preserve_ids": [
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "through_seq": 1
+      },
+      "after": {
+        "critical_checks": [
+          "Do not transfer this need to the other participant.",
+          "A settled condition remains active; undecided adoption is uncertain."
+        ],
+        "evidence_note": "The follow-up adds its stated need with its own owner and adoption state.",
+        "operations": [
+          {
+            "intent_id": "i4",
+            "op": "add",
+            "owner": "临风",
+            "source_seqs": [
+              0,
+              1
+            ],
+            "status": "active",
+            "text": "临风的压花样本日期不精确时只记录到月份，不补具体日"
+          }
+        ],
+        "preserve_ids": [
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "through_seq": 1
+      }
+    },
+    {
+      "family_id": "fresh-train-039",
+      "decision": 3,
+      "reason": "The user now limits full year-month-day notation to known-complete dates; preserve this explicit scope rather than leaving an unrestricted format rule.",
+      "before": {
+        "critical_checks": [
+          "Do not mistake an unaccepted suggestion for an adopted change.",
+          "Original rule i2 remains independently valid."
+        ],
+        "evidence_note": "Apply only the evidenced local change; older supported rules remain obligations.",
+        "operations": [],
+        "preserve_ids": [
+          "i1",
+          "i2",
+          "i3",
+          "i4"
+        ],
+        "through_seq": 3
+      },
+      "after": {
+        "critical_checks": [
+          "Preserve the known-complete scope and do not invent missing day values."
+        ],
+        "evidence_note": "Known-complete dates retain all three components including year; partial dates remain governed by the conditional month-precision requirement.",
+        "operations": [
+          {
+            "op": "update",
+            "intent_id": "i3",
+            "text": "压花标本已知完整日期按年月日书写，不省略年份",
+            "source_seqs": [
+              0,
+              3
+            ]
+          }
+        ],
+        "preserve_ids": [
+          "i1",
+          "i2",
+          "i3",
+          "i4"
+        ],
+        "through_seq": 3
+      }
+    },
+    {
+      "family_id": "fresh-train-050",
+      "decision": 3,
+      "reason": "One record per toy already covers toys in sets; the speaker only reaffirms this, while new set-label cross-references arrive at the next decision.",
+      "before": {
+        "critical_checks": [
+          "Do not mistake an unaccepted suggestion for an adopted change.",
+          "Original rule i2 remains independently valid."
+        ],
+        "evidence_note": "Apply only the evidenced local change; older supported rules remain obligations.",
+        "operations": [
+          {
+            "intent_id": "i3",
+            "op": "update",
+            "source_seqs": [
+              0,
+              2,
+              3
+            ],
+            "text": "Use one repair record per wooden toy even when toys belong to a set"
+          }
+        ],
+        "preserve_ids": [
+          "i1",
+          "i2",
+          "i4"
+        ],
+        "through_seq": 3
+      },
+      "after": {
+        "critical_checks": [
+          "Do not treat equivalent restatement as a new update."
+        ],
+        "evidence_note": "Set membership does not alter the already universal one-record-per-toy requirement.",
+        "operations": [],
+        "preserve_ids": [
+          "i1",
+          "i2",
+          "i4"
+        ],
+        "through_seq": 3
+      }
+    }
+  ],
+  "preservation_metadata_recomputed_after_changes": true
+}

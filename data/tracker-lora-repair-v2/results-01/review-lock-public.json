@@ -1,0 +1,50 @@
+{
+  "status": "all_judgments_frozen_before_unblinding",
+  "created_at_utc": "2026-10-24T21:27:52.778431+00:00",
+  "judgments_sha256": "8ed6058cd94e25ccb35fd6d6b9b0f0511bceba4499404c21e504c1700c536280",
+  "preparation_sha256": "920649011cbb2fabfe4fe47e9dedb5b109a2d648f3490bfa614df9890a40e926",
+  "workflow_sha256": "4345cd1a14554c172e2cac21b47603212ec0140d72eb5818947b40f04f29798d",
+  "dispatch_sha256": "043944e644a566cadbdabb870afbbe3046883f38c916581f56518b8de3ea398b",
+  "adjudication_manifest_sha256": "b4cf94763f28b90a487eeafcc0864ae1fd9552279e46edb8cdc9a475b10aab42",
+  "adjudications_sha256": "2f7af109c1ceeddca0fe5963807c3e28152c1a5eccd444398ccb8889ed9cbf31",
+  "manual_signoff_sha256": "368417d13b7391c6bbedb97e0f44fff5e081df5d810dfcfa46bd24c9b28ae21c",
+  "evidence": {
+    "preparation": {
+      "path": "output/research/2026-10-24/tracker-lora-repair-v2/evaluation/blind-prepared-reference-01/preparation.json",
+      "sha256": "920649011cbb2fabfe4fe47e9dedb5b109a2d648f3490bfa614df9890a40e926"
+    },
+    "dispatch_manifest": {
+      "path": "output/research/2026-10-24/tracker-lora-repair-v2/evaluation/blind-dispatch-reference-01/PRIVATE-dispatch.json",
+      "sha256": "043944e644a566cadbdabb870afbbe3046883f38c916581f56518b8de3ea398b"
+    },
+    "adjudication_manifest": {
+      "path": "output/research/2026-10-24/tracker-lora-repair-v2/evaluation/blind-adjudication-reference-01/adjudication-manifest.json",
+      "sha256": "b4cf94763f28b90a487eeafcc0864ae1fd9552279e46edb8cdc9a475b10aab42"
+    },
+    "resolutions": {
+      "path": "output/research/2026-10-24/tracker-lora-repair-v2/evaluation/blind-sealed-reference-01/adjudications.json",
+      "sha256": "2f7af109c1ceeddca0fe5963807c3e28152c1a5eccd444398ccb8889ed9cbf31"
+    },
+    "manual_signoff": {
+      "path": "output/research/2026-10-24/tracker-lora-repair-v2/evaluation/blind-sealed-reference-01/manual-signoff.json",
+      "sha256": "368417d13b7391c6bbedb97e0f44fff5e081df5d810dfcfa46bd24c9b28ae21c"
+    },
+    "judgments": {
+      "path": "output/research/2026-10-24/tracker-lora-repair-v2/evaluation/blind-sealed-reference-01/final-judgments.json",
+      "sha256": "8ed6058cd94e25ccb35fd6d6b9b0f0511bceba4499404c21e504c1700c536280"
+    }
+  },
+  "assigned_outputs": 600,
+  "unique_packets": 555,
+  "initial_review_coverage": 555,
+  "prospective_second_review_coverage": 289,
+  "required_adjudications": 40,
+  "resolved_adjudications": 40,
+  "unresolved": 0,
+  "reference_defects": 0,
+  "all_assignment_and_candidate_identities_verified_privately": true,
+  "private_arm_mapping_exported_to_reviewers_or_sealed_labels": false,
+  "original_initial_reviews_preserved": true,
+  "equivalent_candidates_share_one_final_judgment": true,
+  "scope": "Manual/model semantic judgments plus structural validation. No human gold or automatic semantic labeling claim."
+}

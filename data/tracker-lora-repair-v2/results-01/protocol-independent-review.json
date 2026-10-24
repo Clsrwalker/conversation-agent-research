@@ -1,0 +1,323 @@
+{
+  "kind": "independent_prospective_research_design_and_endpoint_review",
+  "created_at_utc": "2026-10-24T19:18:07.988154+00:00",
+  "status": "accepted_with_stated_scope",
+  "reviewer": "model-agent:repair_failure_diagnosis",
+  "independent_of_protocol_and_evaluator_author": true,
+  "human_review": false,
+  "independence_limits": [
+    "Reviewer authored most of the fresh training families and independently reviewed fresh evaluation labels. This is not independent of the entire data-development process.",
+    "Reviewer did not author protocol/evaluator or the replacement fresh-train-042/044 families; no v2 model predictions were available or inspected."
+  ],
+  "scope": "Pre-training research design and endpoint code review; no GPU, no model generation, no data/label/code mutation and no claim of runtime integration verification.",
+  "files": {
+    "protocol": {
+      "path": "output/research/2026-10-24/tracker-lora-repair-v2/evaluation/protocol.json",
+      "sha256": "1fff46568a31e35eaa75f053ee417b83a79d1fb601b90e234dd209ac35e37600"
+    },
+    "evaluator": {
+      "path": "experiments/deep_conversation/tracker_lora/repair_v2/evaluate_three_arm.py",
+      "sha256": "80d1fc6eeee56c128454d838701df98b5fbb4ec7ed1ee1cb2c1b61263776279c"
+    },
+    "legacy_semantic_counter": {
+      "path": "experiments/deep_conversation/tracker_lora/evaluate_tracker.py",
+      "sha256": "6e628968b52307f8160bcc673cb5abba8043490c810b22f0bd286fb9a4f33a6f"
+    },
+    "test_records": {
+      "path": "output/research/2026-10-24/tracker-lora-repair-v2/data/compiled/test.records.jsonl",
+      "sha256": "8190b19a0b25718e7e5baf2ac5fd25383df4fcd422696a8564d99a6cb3766ce3"
+    },
+    "cross_split_review_original": {
+      "path": "output/research/2026-10-24/tracker-lora-repair-v2/audit/cross-split-similarity-review-01.json",
+      "sha256": "ab8693a5666ef7e23df3f69ac18b9debbc91e09136a459648ebc722e224998ca"
+    },
+    "cross_split_review_after_replacements": {
+      "path": "output/research/2026-10-24/tracker-lora-repair-v2/audit/cross-split-similarity-review-02.json",
+      "sha256": "11aeef3a6f5c6ca9b5c8c7b06320920c199468c8b5545be3c9abe392ea7d7f00"
+    }
+  },
+  "protocol_status_at_review": "reviewed_prospective",
+  "reviewed_protocol_snapshot": {
+    "protocol_id": "tracker-lora-repair-v2-three-arm-fresh-families",
+    "date": "2026-10-24",
+    "timezone": "America/Halifax",
+    "status": "reviewed_prospective",
+    "question": "Does revised tracker training improve omission and repair on new scenarios relative to the previous adapter, without hiding qualifier/owner/status damage?",
+    "claim_scope": "Bounded synthetic one-step tracker-state experiment. No own-state rollout, deployed chat/work outcome or human-study claim.",
+    "model": {
+      "id": "Qwen/Qwen2.5-14B-Instruct",
+      "revision": "cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8",
+      "representation": "NF4 double-quantization, bfloat16 compute/large frozen embeddings and head, float32 small nonquantized base tensors, SDPA",
+      "arms": [
+        "adapter_disabled",
+        "tracker_lora_v1",
+        "tracker_lora_v2"
+      ],
+      "control": "Same base object within each recorded collection process, two separately named trained adapters, eval mode. Record every restart and actual active/disabled adapter layers."
+    },
+    "training": {
+      "initialization": "Fresh tracker LoRA from the same pinned frozen base, not continued from v1.",
+      "epochs": 1,
+      "training_rows": 500,
+      "optimizer_updates": 32,
+      "rank": 16,
+      "alpha": 32,
+      "dropout": 0.05,
+      "target_modules": "all-linear",
+      "microbatch": 1,
+      "gradient_accumulation": 16,
+      "final_group_size": 4,
+      "learning_rate": 0.0001,
+      "optimizer": "AdamW8bit",
+      "weight_decay": 0,
+      "seed": 20261024,
+      "max_length": 2048,
+      "completion_only": true,
+      "activation_offload": true,
+      "release_unused_cache_per_microstep": true,
+      "log_microstep_phases": true,
+      "checkpoint_selection": "Predetermined final single-epoch checkpoint; no test-based prompt, checkpoint, recipe or label tuning.",
+      "budget_scope": "Same example count, maximum length and optimizer recipe as v1. Actual token count and runtime can differ and must be reported; this is not an exact token/FLOP match.",
+      "attribution_limit": "This comparison tests the combined revised data package: changed scenario mixture, more prior-state faults, semantic label corrections and more complete citations. It does not identify which component caused a difference; one training seed and no component ablation."
+    },
+    "data": {
+      "train": {
+        "updates": 500,
+        "families": 100,
+        "retained_old_updates": 200,
+        "fresh_hard_updates": 300
+      },
+      "dev": {
+        "updates": 50,
+        "families": 10,
+        "all_new": true
+      },
+      "test": {
+        "updates": 200,
+        "families": 40,
+        "all_new": true,
+        "designed_prior_faults": 80,
+        "ordinary": 120
+      },
+      "selection": "Retain 40 old training families by frozen canonical family SHA256 order. Re-review them and explicitly revise incomplete citations in new copies only. New 60 train, 10 dev and 40 test families must be separately authored, family-disjoint, with no translated/paraphrased siblings crossing splits.",
+      "fault_types": [
+        "missing whole intent",
+        "wrong text or qualifier",
+        "wrong owner",
+        "wrong active/uncertain status",
+        "mistaken withdrawal",
+        "stale active cancelled intent"
+      ],
+      "languages": "Fresh train/dev/test each half Chinese and half English; retained subset distribution must be reported rather than assumed.",
+      "interface": [
+        "conversation",
+        "intention_state",
+        "tool_receipts"
+      ],
+      "limitation": "Each input has an independently compiled prior state; model errors do not propagate between decisions. Fresh families share a five-decision authoring skeleton and mostly six to seven events. Family separation does not establish domain, template or mechanism independence. Training includes deliberately reused old-training material and hard-example design informed by exposed v1 failures; old test results are not reused as fresh held-out evidence.",
+      "fault_position_policy": "Fresh faults were prospectively redistributed only across feasible positions with an identical full correct target record/history, already arrived repair evidence and an untouched current target. Positions remain constrained and nonuniform. Preserve the initial revision ledger and all subsequent reviewed replacements."
+    },
+    "decoding": {
+      "max_prompt_tokens": 2048,
+      "max_new_tokens": 512,
+      "seed": 20261024,
+      "do_sample": false,
+      "num_beams": 1,
+      "repetition_penalty": 1,
+      "cache_implementation": "dynamic",
+      "calls_per_arm": 200,
+      "assigned_calls": 600,
+      "order": "Six permutations of three arms, indexed by row_index modulo 6; report remainder imbalance.",
+      "truncation": "None. Resolve overlong examples before data/review freeze. Preserve all semantic evidence and meaningful difficulty.",
+      "failure_policy": "Every assigned result, including failed generation or rejected output, remains scored using its actual retained state. Journal every physical attempt and recovery; no hidden rerun of a durable assignment."
+    },
+    "endpoints": {
+      "primary_comparison": "tracker_lora_v2 versus tracker_lora_v1",
+      "co_primary": [
+        {
+          "name": "active_concept_omission_reduction",
+          "definition": "Per family: all missing active reference units / all active reference units over its five decisions. Mean of paired v1 minus v2 family rates; positive is better."
+        },
+        {
+          "name": "repair_target_full_correctness_gain",
+          "definition": "Per family: fraction of its two intentionally corrupted target units with equivalent meaning, correct owner and correct status after the attempted patch. Includes active, uncertain and withdrawn references. Paired v2 minus v1; positive is better."
+        }
+      ],
+      "required_companions": [
+        "Overall and ordinary-input fully correct active coverage",
+        "Wrong value/qualifier, owner and status",
+        "Other untouched active constraints lost/corrupted",
+        "False addition and false no-change updates",
+        "Uncertain promotion and wrong withdrawals",
+        "Source sufficiency per valid operation and affected decision",
+        "Invalid output and duplicate/identity errors",
+        "Repair success split by fault kind",
+        "Targeted new/revised/repaired/withdrawn reference units versus untouched active requirements. Targeted is not newly-required-only and may include non-active units; report denominators separately.",
+        "Input/output tokens, failures, cap hits and descriptive time"
+      ],
+      "uncertainty": {
+        "unit": "paired scenario family",
+        "families": 40,
+        "resamples": 10000,
+        "seed": 20261024,
+        "intervals": [
+          {
+            "confidence": 0.95,
+            "indices": [
+              249,
+              9749
+            ],
+            "purpose": "descriptive single-endpoint interval"
+          },
+          {
+            "confidence": 0.975,
+            "indices": [
+              124,
+              9874
+            ],
+            "purpose": "Bonferroni-adjusted per-endpoint intervals for the two co-primary contrasts; bootstrap intervals remain approximate"
+          }
+        ]
+      },
+      "interpretation": "Do not claim a reliable joint omission-and-repair benefit unless both 97.5% interval lower bounds exceed zero. Always disclose companion regressions; no formal noninferiority claim. Base-versus-v1/v2 and subgroups are descriptive secondary comparisons on this same new set."
+    },
+    "blind_review": {
+      "deduplication": "Within exactly the same input/reference only, identical canonical proposal, validity and projected candidate state receive one shared packet and judgment; preserve all 600 assignment mappings and costs separately.",
+      "judgment": "Use the existing reference_checks matching-by-meaning schema, not automatic exact text or ID matching. Keep error categories and source sufficiency separate.",
+      "initial_review": "All unique packets receive an independent model review with no arm/model/family/fault label or aggregate result.",
+      "second_review": "A fresh independent review covers every unique packet linked to a fault input, plus a deterministic preselected 20% of remaining unique packets. Resolve all disagreements before unblinding; preserve both initial reports. Report actual overlap and review agreement, not presumed human reliability.",
+      "reference_defects": "Resolve reference defects under blinded adjudication before arm aggregation; apply to every arm, preserve original hashes, and disclose. Do not retrain or tune from test output.",
+      "limits": "Reviewers are models; synthetic authoring and review can share blind spots."
+    },
+    "freeze": {
+      "required_before_training": [
+        "annotation policy",
+        "data sources and citations ledger",
+        "compiled manifest and all three splits",
+        "per-family/per-fault independent review admission",
+        "training recipe/runner/gate/compiler",
+        "shared prompt and runtime",
+        "protocol"
+      ],
+      "required_before_collection": [
+        "all preceding artifacts unchanged",
+        "collector/evaluator",
+        "final v2 adapter hash and passed training/save-reload evidence",
+        "unchanged v1 trained adapter hash"
+      ]
+    },
+    "publication": "Publish the measured comparison, failures, limitations, methods and consistent evidence downloads to the existing research site and mirror. Keep the previous pilot and original judgments accessible."
+  },
+  "blocking_endpoint_or_inference_errors": [],
+  "checks": [
+    {
+      "id": "co_primary_omission",
+      "verdict": "accept",
+      "definition": "Mean across the 40 families of (v1 missing active units - v2 missing active units) / that family's active reference units over five decisions.",
+      "implementation": "legacy.score_packet increments omitted_active_units only when active reference meaning is missing. aggregate sums within family and divides paired count differences by the same active_units denominator.",
+      "limits": "Missing-concept omission alone does not detect wrong qualifiers, owner or lifecycle status. Those errors are separate companion measures and full correctness is stricter."
+    },
+    {
+      "id": "co_primary_repair",
+      "verdict": "accept",
+      "definition": "Mean across families of (v2 fully correct corrupted targets - v1 fully correct corrupted targets) / two targets.",
+      "implementation": "Fault mapping selects repair_reference_id; correctness requires equivalent meaning and Boolean true for owner/status. The check is not restricted to active references.",
+      "limits": "This is full correctness of the intentionally corrupted target after the attempted patch, not proof that the entire state or all other requirements are correct. Source correctness is separately reported."
+    },
+    {
+      "id": "paired_family_bootstrap",
+      "verdict": "accept",
+      "implementation": "interval resamples the 40 paired family differences with replacement 10,000 times using seed 20261024; it does not bootstrap 200 correlated decisions as independent.",
+      "intervals": {
+        "descriptive_95": [
+          249,
+          9749
+        ],
+        "co_primary_97_5": [
+          124,
+          9874
+        ]
+      },
+      "interpretation": "Sorted zero-based percentile indices match the prospectively chosen convention. Two 97.5% two-sided per-endpoint intervals provide an approximate conservative Bonferroni simultaneous-coverage rule for the two primary contrasts. A joint positive claim requires both lower bounds > 0.",
+      "limits": "Percentile coverage is approximate at 40 curated families. It captures resampling variation conditional on these labels/adapters, not label uncertainty, training-seed variability, or a representative real-world population. Shared templates may reduce the effective diversity."
+    },
+    {
+      "id": "three_arm_multiplicity",
+      "verdict": "accept",
+      "implementation": "Only v1-to-v2 is marked primary. Base-to-v2 and base-to-v1 are secondary descriptive comparisons, even though the code also emits intervals for them.",
+      "limits": "Do not search the three contrasts or language/fault subgroups for a positive interval and call it the primary result. The two-endpoint adjustment does not cover the secondary comparisons."
+    },
+    {
+      "id": "coverage_companions",
+      "verdict": "accept_with_name_precision",
+      "implementation": "Overall and ordinary-input full active correctness, qualifier/owner/status errors, untouched-active corruption, additions, no-change updates, uncertain promotion, withdrawals, source errors, validity and identity are available through legacy counters plus strata. Repair is split by fault kind.",
+      "naming_issue": "targeted_reference_full_correctness selects all canonical target operation IDs: new, revised, withdrawn/reopened and repaired references. It is not a newly-added-only metric. unchanged_active_units is an untouched-active subset, not every requirement that appeared before.",
+      "required_reporting_action": "Name this companion targeted (new/revised/repaired) versus untouched active requirements; do not relabel targeted as newly required. A true newly-required-versus-retained result would require separately declared lineage-aware classification.",
+      "protocol_name_correction_pending": false
+    },
+    {
+      "id": "all_assignments_and_costs",
+      "verdict": "accept",
+      "implementation": "Preparation requires all 600 assignments; failed/rejected outputs are projected through actual retained state and remain in quality denominators. Costs explicitly summarize completed generations and separately count excluded failures.",
+      "limits": "Completed-call elapsed time is descriptive and must not be presented as total operational cost when failures/retries occur. The physical-attempt journal is needed for recovery overhead. Six arm-order permutations over 200 rows leave a remainder imbalance."
+    },
+    {
+      "id": "budget_and_causal_attribution",
+      "verdict": "accept",
+      "basis": "Same 500 example count, base, max length and optimizer recipe do not imply equal training tokens or FLOPs. Protocol explicitly requires actual token/time reporting.",
+      "limits": "v2 changes a combined data package: scenarios, fault density, corrected semantics and citations. With one seed and no component ablation it cannot identify which change caused an observed difference or establish average benefit over training randomness."
+    },
+    {
+      "id": "exposed_material_and_family_separation",
+      "verdict": "accept_with_disclosure",
+      "basis": "The protocol and linked audit distinguish old-training retention and old-failure-informed curriculum from new held-out evaluation. Two identified train/evaluation semantic collisions were replaced before training.",
+      "limits": "Old exposed-test semantics informed some new training rules; old test cannot be reused as independent evidence of new generalization. Lexical/model review cannot prove absolute absence of leakage. Fresh family IDs do not establish domain/template/mechanism separation."
+    },
+    {
+      "id": "one_step_and_shared_skeleton",
+      "verdict": "accept_with_scope",
+      "basis": "All five decisions are separate inputs with independently compiled prior state. There is no propagation of a model's preceding prediction. Families share five-decision and mostly six-to-seven-event construction.",
+      "limits": "Results can support a bounded tracker-state update/repair claim on this synthetic set. They cannot establish better long-horizon tracking, deployed conversation/task success, human experience, robust role routing or multiple occupational LoRA experts."
+    },
+    {
+      "id": "blind_review_and_label_uncertainty",
+      "verdict": "accept_with_scope",
+      "basis": "Exact same input/reference and canonical candidate share one judgment. All unique packets receive initial model review; all fault-linked packets plus preselected 20% of the remaining unique packets receive another review before unblinding.",
+      "limits": "Model reviews are not human gold; author/reviewer shared bias remains. Reference corrections must remain blinded, apply to all arms and preserve originals. Agreement and actual reviewed overlap must be reported."
+    }
+  ],
+  "observed_test_denominators": {
+    "rows": 200,
+    "families": 40,
+    "decisions_per_family_histogram": {
+      "5": 40
+    },
+    "active_units_per_family_range": [
+      12,
+      17
+    ],
+    "repair_targets_per_family_histogram": {
+      "2": 40
+    },
+    "language_rows": {
+      "zh": 100,
+      "en": 100
+    },
+    "fault_kinds": {
+      "missing": 20,
+      "text": 20,
+      "owner": 20,
+      "status": 10,
+      "wrong_withdrawn": 5,
+      "stale_active": 5
+    },
+    "repair_reference_statuses": {
+      "active": 70,
+      "uncertain": 5,
+      "withdrawn": 5
+    }
+  },
+  "engineering_boundary": "Read aggregate's sealed-review verification entrypoint and freeze bindings. This audit does not replace the separately recorded engineering tests for collector, reviewer workflow, training gate or artifact replay.",
+  "decision": "No blocking error found in co-primary endpoint implementation or prospective comparison design within the stated synthetic one-step scope. Resolve/report the targeted-versus-newly-required name precisely; retain all listed limitations regardless of outcome.",
+  "future_rebinding": "A protocol status/review-metadata-only change may be rebound by root with the reviewed snapshot retained. Any endpoint, contrast, decision rule or data change needs explicit re-review; evaluator changes are not silently covered by this SHA-bound audit."
+}

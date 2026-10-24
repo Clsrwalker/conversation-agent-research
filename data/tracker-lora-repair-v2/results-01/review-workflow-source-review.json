@@ -1,0 +1,54 @@
+{
+  "kind": "independent source review and CPU integration validation, not model quality",
+  "date": "2026-10-24",
+  "timezone": "America/Halifax",
+  "completed_at_utc": "2026-10-24T19:16:57.663033+00:00",
+  "reviewer": "repair_fresh_eval_author",
+  "status": "passed_with_documented_limits",
+  "scope": [
+    "evaluate_three_arm prepare identity/deduplication and prospective second-review selection",
+    "evaluate_three_arm aggregate pre-unblind review gate",
+    "review_workflow dispatch, original review preservation, adjudication, seal and read-only verification"
+  ],
+  "findings": [
+    {
+      "id": "WF-1",
+      "original_issue": "Aggregate originally accepted a lock with only status and preparation/judgment hashes, without proving primary/secondary/adjudication coverage.",
+      "resolution": "Root added lazy verify_sealed_review invocation before arm aggregation and froze workflow.py. The read-only verifier reconstructs all final labels from preserved initial reviews and required adjudications.",
+      "status": "resolved"
+    },
+    {
+      "id": "WF-2",
+      "issue": "A file-based workflow cannot prove cognitive independence or prevent a reviewer with whole-workspace access from reading PRIVATE artifacts.",
+      "mitigation": "Disjoint neutral reviewer IDs and fresh contexts, own-folder-only dispatch, explicit attestations, no exported assignment joins, and same-input candidate separation within each stage.",
+      "status": "documented_limit"
+    },
+    {
+      "id": "WF-3",
+      "issue": "Structured disagreements can be compared mechanically; contradictory rationale prose cannot be semantically adjudicated by a plumbing helper.",
+      "mitigation": "Every structured label difference/flag/reference-defect flag is adjudicated, both original prose rationales are retained, and reviewers must flag uncertain or contradictory explanations.",
+      "status": "documented_limit"
+    },
+    {
+      "id": "WF-4",
+      "issue": "Reference defects must not be silently relabeled after seeing outputs.",
+      "mitigation": "Nonzero unresolved or reference-defect count blocks sealing and scoring; amendments require new versioned evidence.",
+      "status": "enforced"
+    }
+  ],
+  "current_bindings": {
+    "evaluate_three_arm.py": "80d1fc6eeee56c128454d838701df98b5fbb4ec7ed1ee1cb2c1b61263776279c",
+    "review_workflow.py": "4345cd1a14554c172e2cac21b47603212ec0140d72eb5818947b40f04f29798d",
+    "check_review_workflow.py": "d5d7296cd04a9ae6587f634772a5f6e226a398663037c7a9f8af7ce621ddff60",
+    "REVIEW_WORKFLOW.md": "b561611f4d6c127307f0b9cffc5bfa708f36bb3e91509840d612fbcfab5a365e"
+  },
+  "validation_receipts": {
+    "review-workflow-cpu-checks-01.json": "a7444165b698d6630a811f2e3cb959a7442bdc6df4ac2989e99f2ff79b55847d",
+    "review-workflow-cpu-checks-02-integration.json": "cd188226bc81327c9abdd10d69303cb73a20d98808c01c62feec5466487b7719"
+  },
+  "integration_checks_passed": 28,
+  "real_model_outputs_read": false,
+  "model_calls": 0,
+  "note": "The final generic limits sentence in the CPU receipt predates the root integration wording: WF-1 is now fixed, and the evaluator actually invokes the full verifier as proven by the integration fixture. Historical receipts are preserved unchanged.",
+  "workflow_stable_for_protocol_freeze": true
+}

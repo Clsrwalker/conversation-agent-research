@@ -1,0 +1,625 @@
+{
+  "kind": "reviewed_training_data_requirements_not_quality_result",
+  "status": "reviewed_dataset_before_training",
+  "date": "2026-10-24",
+  "timezone": "America/Halifax",
+  "update_counts": {
+    "dev": 50,
+    "test": 200,
+    "train": 500
+  },
+  "family_counts": {
+    "dev": 10,
+    "test": 40,
+    "train": 100
+  },
+  "languages_by_split": {
+    "train": {
+      "zh": 250,
+      "en": 250
+    },
+    "dev": {
+      "zh": 25,
+      "en": 25
+    },
+    "test": {
+      "zh": 100,
+      "en": 100
+    }
+  },
+  "training_composition": {
+    "old_train": 200,
+    "new_hard": 300
+  },
+  "fault_kinds_by_split": {
+    "train": {
+      "missing": 30,
+      "text": 30,
+      "owner": 30,
+      "status": 14,
+      "wrong_withdrawn": 8,
+      "stale_active": 8,
+      "legacy_text": 20
+    },
+    "dev": {
+      "missing": 5,
+      "text": 5,
+      "owner": 5,
+      "status": 3,
+      "wrong_withdrawn": 1,
+      "stale_active": 1
+    },
+    "test": {
+      "missing": 20,
+      "text": 20,
+      "owner": 20,
+      "status": 10,
+      "wrong_withdrawn": 5,
+      "stale_active": 5
+    }
+  },
+  "empty_updates_by_split": {
+    "train": 45,
+    "dev": 6,
+    "test": 13
+  },
+  "quality_contract": [
+    "Annotate each state transition from arrived raw dialogue: add, update, withdraw, reopen or no change. Keep the full expected after-state for review, while training the tracker to emit only the supported patch.",
+    "Preserve scope, conditions, exclusions, quantities, units, ownership and adoption status. A local change must retain unrelated requirements; a conditional requirement can already be active.",
+    "Provide evidence for the entire written operation, including antecedents, preserved qualifiers repeated in replacement text and explicit acceptance of an assistant proposal. A valid source index alone does not establish support.",
+    "Include unchanged and ambiguous turns, rejected suggestions and composite changes. Do not force every turn into an update or silently promote a tentative possibility into an adopted requirement.",
+    "Inject missing intentions, wrong values, wrong owners, wrong certainty, mistaken withdrawals and stale active cancellations. Repair against original evidence, preserve correct fields, and assess the complete resulting state.",
+    "Separate related scenario families across splits; inspect paraphrases and shared specific conditions as well as exact duplicates. Keep source revisions, disagreements, author/reviewer identities and file hashes."
+  ],
+  "review_and_leakage_note": "Every family and fault has a separate model semantic review, with an additional root review for two replaced training scenarios. Retained targets received 108 citation-only corrections. Independent fresh reviews fixed 10 training labels and 40 development/test items before freezing. Cross-split inspection identified two concrete train/test overlaps; those training scenarios were replaced and reviewed again. Short authoring templates and reuse of older exposed rules remain. This is synthetic, model-reviewed data, not human gold.",
+  "examples_from_actual_reviewed_training": [
+    {
+      "example_id": "fresh-train-042-2",
+      "input": {
+        "conversation": [
+          {
+            "role": "user",
+            "seq": 0,
+            "speaker": "Vera",
+            "text": "Draft an audit sheet for my fictional configuration overlay format. In this format a key present with null explicitly clears its inherited value; null is not an absent key that may inherit. Apply the profile overlay after the base configuration."
+          },
+          {
+            "role": "user",
+            "seq": 1,
+            "speaker": "Otis",
+            "text": "For my exported keys, if two spellings differ only by letter case, retain both as distinct keys instead of normalizing their case."
+          }
+        ],
+        "intention_state": {
+          "intents": [
+            {
+              "created_version": 1,
+              "history": [
+                {
+                  "op": "add",
+                  "patch_id": "decision-0",
+                  "source_seqs": [
+                    0
+                  ],
+                  "state": {
+                    "owner": "Vera",
+                    "status": "active",
+                    "text": "Draft an audit sheet for Vera’s fictional configuration overlay format"
+                  },
+                  "version": 1
+                }
+              ],
+              "intent_id": "i1",
+              "owner": "Vera",
+              "source_seqs": [
+                0
+              ],
+              "status": "active",
+              "text": "Draft an audit sheet for Vera’s fictional configuration overlay format",
+              "updated_version": 1
+            },
+            {
+              "created_version": 1,
+              "history": [
+                {
+                  "op": "add",
+                  "patch_id": "decision-0",
+                  "source_seqs": [
+                    0
+                  ],
+                  "state": {
+                    "owner": "Vera",
+                    "status": "active",
+                    "text": "Apply the profile overlay after the base configuration"
+                  },
+                  "version": 1
+                }
+              ],
+              "intent_id": "i3",
+              "owner": "Vera",
+              "source_seqs": [
+                0
+              ],
+              "status": "active",
+              "text": "Apply the profile overlay after the base configuration",
+              "updated_version": 1
+            }
+          ],
+          "observed_event_seq": 1,
+          "processed_event_seq": 0,
+          "receipts": [],
+          "version": 1
+        },
+        "tool_receipts": []
+      },
+      "target": {
+        "operations": [
+          {
+            "intent_id": "i4",
+            "op": "add",
+            "owner": "Otis",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "For Otis’s exported keys, spellings differing only by letter case remain distinct rather than being case-normalized"
+          },
+          {
+            "intent_id": "i2",
+            "op": "add",
+            "owner": "Vera",
+            "source_seqs": [
+              0
+            ],
+            "status": "active",
+            "text": "In this specified format, a present null value explicitly clears inheritance; it is not an absent key eligible to inherit"
+          }
+        ]
+      },
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Vera",
+          "status": "active",
+          "text": "Draft an audit sheet for Vera’s fictional configuration overlay format"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Vera",
+          "status": "active",
+          "text": "In this specified format, a present null value explicitly clears inheritance; it is not an absent key eligible to inherit"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Vera",
+          "status": "active",
+          "text": "Apply the profile overlay after the base configuration"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "Otis",
+          "status": "active",
+          "text": "For Otis’s exported keys, spellings differing only by letter case remain distinct rather than being case-normalized"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-train-044-3",
+      "input": {
+        "conversation": [
+          {
+            "role": "user",
+            "seq": 0,
+            "speaker": "Nora",
+            "text": "Build a consent ledger for a fictional ticket waitlist. Silence after an offered slot stays unanswered, not declined. Record the offered slot’s start time separately from the recipient’s reply time."
+          },
+          {
+            "role": "user",
+            "seq": 1,
+            "speaker": "Gus",
+            "text": "For my requests, if I decline one offered slot, keep me on the waitlist unless I explicitly ask to leave the list."
+          },
+          {
+            "role": "user",
+            "seq": 2,
+            "speaker": "Nora",
+            "text": "Mark a slot confirmed only after its recipient explicitly accepts that particular offer."
+          },
+          {
+            "role": "assistant",
+            "seq": 3,
+            "speaker": "Assistant",
+            "text": "An offer by itself will not count as acceptance."
+          }
+        ],
+        "intention_state": {
+          "intents": [
+            {
+              "created_version": 1,
+              "history": [
+                {
+                  "op": "add",
+                  "patch_id": "decision-0",
+                  "source_seqs": [
+                    0
+                  ],
+                  "state": {
+                    "owner": "Nora",
+                    "status": "active",
+                    "text": "Build a consent ledger for a fictional ticket waitlist"
+                  },
+                  "version": 1
+                }
+              ],
+              "intent_id": "i1",
+              "owner": "Nora",
+              "source_seqs": [
+                0
+              ],
+              "status": "active",
+              "text": "Build a consent ledger for a fictional ticket waitlist",
+              "updated_version": 1
+            },
+            {
+              "created_version": 1,
+              "history": [
+                {
+                  "op": "add",
+                  "patch_id": "decision-0",
+                  "source_seqs": [
+                    0
+                  ],
+                  "state": {
+                    "owner": "Nora",
+                    "status": "active",
+                    "text": "Silence after a slot offer remains unanswered rather than being marked declined"
+                  },
+                  "version": 1
+                }
+              ],
+              "intent_id": "i2",
+              "owner": "Nora",
+              "source_seqs": [
+                0
+              ],
+              "status": "active",
+              "text": "Silence after a slot offer remains unanswered rather than being marked declined",
+              "updated_version": 1
+            },
+            {
+              "created_version": 1,
+              "history": [
+                {
+                  "op": "add",
+                  "patch_id": "decision-0",
+                  "source_seqs": [
+                    0
+                  ],
+                  "state": {
+                    "owner": "Nora",
+                    "status": "active",
+                    "text": "Record offered-slot start time separately from the recipient’s reply time"
+                  },
+                  "version": 1
+                }
+              ],
+              "intent_id": "i3",
+              "owner": "Nora",
+              "source_seqs": [
+                0
+              ],
+              "status": "active",
+              "text": "Record offered-slot start time separately from the recipient’s reply time",
+              "updated_version": 1
+            },
+            {
+              "created_version": 2,
+              "history": [
+                {
+                  "op": "add",
+                  "patch_id": "decision-1",
+                  "source_seqs": [
+                    1
+                  ],
+                  "state": {
+                    "owner": "Gus",
+                    "status": "uncertain",
+                    "text": "For Gus’s requests, declining an offered slot does not end waitlist membership unless Gus explicitly asks to leave"
+                  },
+                  "version": 2
+                }
+              ],
+              "intent_id": "i4",
+              "owner": "Gus",
+              "source_seqs": [
+                1
+              ],
+              "status": "uncertain",
+              "text": "For Gus’s requests, declining an offered slot does not end waitlist membership unless Gus explicitly asks to leave",
+              "updated_version": 2
+            }
+          ],
+          "observed_event_seq": 3,
+          "processed_event_seq": 1,
+          "receipts": [],
+          "version": 2
+        },
+        "tool_receipts": []
+      },
+      "target": {
+        "operations": [
+          {
+            "intent_id": "i5",
+            "op": "add",
+            "owner": "Nora",
+            "source_seqs": [
+              2
+            ],
+            "status": "active",
+            "text": "Confirm a slot only after its recipient explicitly accepts that particular offer"
+          },
+          {
+            "intent_id": "i4",
+            "op": "update",
+            "source_seqs": [
+              0,
+              1
+            ],
+            "status": "active"
+          }
+        ]
+      },
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Nora",
+          "status": "active",
+          "text": "Build a consent ledger for a fictional ticket waitlist"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Nora",
+          "status": "active",
+          "text": "Silence after a slot offer remains unanswered rather than being marked declined"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Nora",
+          "status": "active",
+          "text": "Record offered-slot start time separately from the recipient’s reply time"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "Gus",
+          "status": "active",
+          "text": "For Gus’s requests, declining an offered slot does not end waitlist membership unless Gus explicitly asks to leave"
+        },
+        {
+          "intent_id": "i5",
+          "owner": "Nora",
+          "status": "active",
+          "text": "Confirm a slot only after its recipient explicitly accepts that particular offer"
+        }
+      ]
+    },
+    {
+      "example_id": "fresh-train-009-3",
+      "input": {
+        "conversation": [
+          {
+            "role": "user",
+            "seq": 0,
+            "speaker": "听澜",
+            "text": "做一份剧本朗读分工表，同一个演员的两个角色分别列出，不要合并成一个角色；排练从周二开始。"
+          },
+          {
+            "role": "user",
+            "seq": 1,
+            "speaker": "南乔",
+            "text": "我自己的旁白段落要标页码，但不要把页码当作台词编号。"
+          },
+          {
+            "role": "assistant",
+            "seq": 2,
+            "speaker": "助手",
+            "text": "可把首次排练挪到周四。"
+          },
+          {
+            "role": "user",
+            "seq": 3,
+            "speaker": "听澜",
+            "text": "周四只是备选，暂不改周二开始的安排。"
+          }
+        ],
+        "intention_state": {
+          "intents": [
+            {
+              "created_version": 1,
+              "history": [
+                {
+                  "op": "add",
+                  "patch_id": "decision-0",
+                  "source_seqs": [
+                    0
+                  ],
+                  "state": {
+                    "owner": "听澜",
+                    "status": "active",
+                    "text": "制作剧本朗读分工表"
+                  },
+                  "version": 1
+                }
+              ],
+              "intent_id": "i1",
+              "owner": "听澜",
+              "source_seqs": [
+                0
+              ],
+              "status": "active",
+              "text": "制作剧本朗读分工表",
+              "updated_version": 1
+            },
+            {
+              "created_version": 1,
+              "history": [
+                {
+                  "op": "add",
+                  "patch_id": "decision-0",
+                  "source_seqs": [
+                    0
+                  ],
+                  "state": {
+                    "owner": "听澜",
+                    "status": "active",
+                    "text": "同演员的两个朗读角色分别列出，不合并角色"
+                  },
+                  "version": 1
+                }
+              ],
+              "intent_id": "i2",
+              "owner": "听澜",
+              "source_seqs": [
+                0
+              ],
+              "status": "active",
+              "text": "同演员的两个朗读角色分别列出，不合并角色",
+              "updated_version": 1
+            },
+            {
+              "created_version": 1,
+              "history": [
+                {
+                  "op": "add",
+                  "patch_id": "decision-0",
+                  "source_seqs": [
+                    0
+                  ],
+                  "state": {
+                    "owner": "听澜",
+                    "status": "active",
+                    "text": "剧本朗读排练从周二开始"
+                  },
+                  "version": 1
+                }
+              ],
+              "intent_id": "i3",
+              "owner": "听澜",
+              "source_seqs": [
+                0
+              ],
+              "status": "active",
+              "text": "剧本朗读排练从周二开始",
+              "updated_version": 1
+            },
+            {
+              "created_version": 2,
+              "history": [
+                {
+                  "op": "add",
+                  "patch_id": "decision-1",
+                  "source_seqs": [
+                    0,
+                    1
+                  ],
+                  "state": {
+                    "owner": "南乔",
+                    "status": "active",
+                    "text": "南乔的旁白段落标页码，页码不作为台词编号"
+                  },
+                  "version": 2
+                }
+              ],
+              "intent_id": "i4",
+              "owner": "南乔",
+              "source_seqs": [
+                0,
+                1
+              ],
+              "status": "active",
+              "text": "南乔的旁白段落标页码，页码不作为台词编号",
+              "updated_version": 2
+            }
+          ],
+          "observed_event_seq": 3,
+          "processed_event_seq": 1,
+          "receipts": [],
+          "version": 2
+        },
+        "tool_receipts": []
+      },
+      "target": {
+        "operations": [
+          {
+            "intent_id": "i5",
+            "op": "add",
+            "owner": "听澜",
+            "source_seqs": [
+              0,
+              2,
+              3
+            ],
+            "status": "uncertain",
+            "text": "将首次剧本朗读排练改为周四是备选，尚未采用，当前仍从周二开始"
+          }
+        ]
+      },
+      "expected_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "听澜",
+          "status": "active",
+          "text": "制作剧本朗读分工表"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "听澜",
+          "status": "active",
+          "text": "同演员的两个朗读角色分别列出，不合并角色"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "听澜",
+          "status": "active",
+          "text": "剧本朗读排练从周二开始"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "南乔",
+          "status": "active",
+          "text": "南乔的旁白段落标页码，页码不作为台词编号"
+        },
+        {
+          "intent_id": "i5",
+          "owner": "听澜",
+          "status": "uncertain",
+          "text": "将首次剧本朗读排练改为周四是备选，尚未采用，当前仍从周二开始"
+        }
+      ]
+    }
+  ],
+  "input_contract": {
+    "model_visible": [
+      "conversation",
+      "intention_state",
+      "tool_receipts"
+    ],
+    "supervised_output": "JSON state patch",
+    "audit_only": [
+      "expected full state",
+      "fault kind and target",
+      "review findings",
+      "source quotes and reasons",
+      "future dialogue"
+    ]
+  },
+  "source_bindings": {
+    "manifest_sha256": "35e3dfc55bf74ca37b88e6e3aa70738a9d61ec87769f19a8a601c3d9dded16bc",
+    "admission_sha256": "d2cb7337c4b3f5298f253a7da950b21cf40b8583df1542f10148a0b064e2d37f"
+  },
+  "limits": [
+    "500 updates are a bounded pilot budget, not an established sufficient training-data size.",
+    "Mostly six to seven events, five decisions per family; no long natural dialogue or own-state rollout validation.",
+    "A real-data extension should sample consented representative interactions and obtain human adjudication of ambiguity; no such human data is claimed here.",
+    "The current runtime records active, uncertain and withdrawn intentions; tool receipts do not automatically prove task completion."
+  ]
+}

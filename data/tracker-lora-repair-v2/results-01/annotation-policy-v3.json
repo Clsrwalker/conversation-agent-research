@@ -1,0 +1,32 @@
+{
+  "schema_version": 3,
+  "date": "2026-10-24",
+  "timezone": "America/Halifax",
+  "status": "prospective_annotation_and_review_policy",
+  "inherits": "../tracker-lora-pilot/annotation/ANNOTATION_GUIDE.md",
+  "system_prompt_policy": "Keep the exact previous system prompt and runtime. This is a clarification of sufficient-evidence review, not a hidden new model interface.",
+  "source_support_rules": [
+    "Judge state meaning against all arrived original dialogue. Judge the submitted operation's citations separately. These error categories can overlap.",
+    "Sources must jointly support every changed or newly written semantic field, including the complete meaning of replacement text: scope, quantity, unit, polarity, strength, conditional clause and any adopted proposal. Necessary antecedents and user acceptance must be cited.",
+    "An update that omits owner/status preserves those fields and need not cite them anew solely because they are retained. Any owner/status change needs direct support. If replacement text repeats a condition, that condition is part of the submitted text and needs support in the cited set.",
+    "Do not use an advisory prior-state assertion as evidence that a requirement was authorized. Raw earlier statements can establish still-current scope and conditions.",
+    "A candidate with an omitted qualifier is wrong_value even if its broad concept is present. Independently flag its source set if that set cannot support the scope/strength/meaning it actually asserts. Do not automatically turn every wrong_value into a source error.",
+    "Minimal means no needless citations, but a sufficient superset is not a quality error solely for being nonminimal. Never reward a short but incomplete acceptance/reference chain.",
+    "Equivalent input, canonical proposal, runtime validity and semantic after-state receive one shared blinded judgment, irrespective of arm or JSON whitespace. Different references or before-state are never deduplicated."
+  ],
+  "repair_rules": [
+    "Missing whole intent: add the complete still-valid requirement, including conditions, owner and status, using supplied original evidence.",
+    "Wrong text/owner/status: correct only the faulty field while preserving the other fields and all unrelated records.",
+    "Wrongly withdrawn: reopen the existing ID with the supported status; do not duplicate it. Combined reopen-and-rewrite remains unsupported.",
+    "Stale active after an explicit cancellation: withdraw, preserving its history. A tool failure or assistant assertion cannot cancel a user request.",
+    "Removing an erroneous positive instruction does not restore a valid negative constraint. Check the full post-state for that surviving obligation.",
+    "No fault-kind label, repair target, source notes, future turn or reference after-state enters any model prompt."
+  ],
+  "review_requirements": [
+    "Every fresh family and fault, plus every retained family and fault, receives an independent semantic review with per-family/per-fault findings and current canonical hashes.",
+    "Keep original/revised source labels and reasons. Retained 200 targets may change citations only; semantic defects require an explicit design amendment, never a silent fix or excluded failing example.",
+    "Model-authored and model-reviewed labels remain synthetic and are not human gold.",
+    "Audit duplicates and scenario similarity across new train/dev/test and old exposed corpora before freeze; ID/hash separation alone is insufficient."
+  ],
+  "known_old_scoring_issue": "The previous published judgments remain frozen. The new diagnosis documents one identical-output source-label inconsistency and source-supervision mismatches; new scoring must apply one prospective rule consistently."
+}

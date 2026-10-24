@@ -1,0 +1,2059 @@
+{
+  "kind": "posthoc_frozen_pilot_prior_repair_diagnosis",
+  "status": "complete_read_only_diagnostic_not_new_experiment_or_relabeling",
+  "created_at_utc": "2026-10-24T18:43:19.684749+00:00",
+  "date_local": "2026-10-24",
+  "timezone": "America/Halifax",
+  "scope": "All 10 old test decisions with text-corrupted prior state, both arms, using frozen final judgments and actual runtime post-state. Read selected old training examples only for source-label consistency. No new v2 test data accessed.",
+  "source_root": "output/research/2026-10-24/tracker-lora-pilot",
+  "source_sha256_before": {
+    "analysis/one-step-results.json": "4f225f88a465db6ec0168a5fbdc646ff86f86c53a99b94272a19069d14e6b8ef",
+    "evaluation/blind-review-01/PRIVATE-mapping.json": "e18b36893b6c04eb25f164b7fa9e11969a7a45814f295e0ef928d3e0f603547d",
+    "evaluation/blind-review-01/PRIVATE-runtime-results.json": "6e0922ab2963aa70cf4077e0dbae851b2e5816c5a0ee7bf144937126fce3ee68",
+    "evaluation/adjudication-01/final-judgments.json": "1ae2536359747771bdb77e72a189cc7baa8aec0bb533fe0b4866ef77f2c71807",
+    "evaluation/adjudication-01/final-signoff.json": "09576f99c0b79742c3148715d496cc0b5f79b94c5e3d938eced510d5b801dc99",
+    "evaluation/collection-01/outputs.jsonl": "bf02aa173084fc470c7a071fdd55298a226236acd2b7429757b1c64bd59721b3",
+    "data/compiled/test.records.jsonl": "c885d355efc667a73670008012e240d35b0d1e0a58c79dbd2c951a35efd24ff9",
+    "data/compiled/train.records.jsonl": "ad05c8b065915d02024bb21a90a6935bc06f4af6860bffcd9e3f5c977cdc96f0",
+    "annotation/ANNOTATION_GUIDE.md": "64514fc7b8294882750f71a77fc517ee3ee73f2f871e3f3cd315d328eb315593",
+    "annotation/system_prompt.txt": "7587583ff3fb2f46f64a32ca598a9f2bd980d8b0c3ff24915d80f5e31cda5abd"
+  },
+  "summary": {
+    "fault_decisions_per_arm": 10,
+    "frozen_subgroup_counts": {
+      "adapter_disabled": {
+        "decisions": 10,
+        "active_units": 36,
+        "uncertain_units": 0,
+        "invalid_output": 2,
+        "true_no_change_decisions": 0,
+        "omitted_active_units": 3,
+        "wrong_value_active_units": 6,
+        "wrong_owner_active_units": 0,
+        "wrong_status_active_units": 0,
+        "fully_correct_active_units": 27,
+        "wrongly_withdrawn_active_units": 0,
+        "unchanged_active_units": 17,
+        "lost_or_corrupted_unchanged_units": 0,
+        "withdrawn_reactivated_units": 0,
+        "unsupported_active_additions": 0,
+        "unsupported_uncertain_additions": 0,
+        "false_addition_decisions": 0,
+        "duplicate_candidate_units": 1,
+        "identity_error_decisions": 1,
+        "source_error_operations": 9,
+        "source_error_decisions": 6,
+        "valid_patch_operations": 15,
+        "no_change_false_update_decisions": 0
+      },
+      "tracker_lora_enabled": {
+        "decisions": 10,
+        "active_units": 36,
+        "uncertain_units": 0,
+        "invalid_output": 1,
+        "true_no_change_decisions": 0,
+        "omitted_active_units": 2,
+        "wrong_value_active_units": 8,
+        "wrong_owner_active_units": 0,
+        "wrong_status_active_units": 2,
+        "fully_correct_active_units": 26,
+        "wrongly_withdrawn_active_units": 2,
+        "unchanged_active_units": 17,
+        "lost_or_corrupted_unchanged_units": 0,
+        "unsupported_active_additions": 0,
+        "unsupported_uncertain_additions": 0,
+        "false_addition_decisions": 0,
+        "duplicate_candidate_units": 0,
+        "identity_error_decisions": 0,
+        "source_error_operations": 4,
+        "source_error_decisions": 4,
+        "valid_patch_operations": 13,
+        "no_change_false_update_decisions": 0,
+        "withdrawn_reactivated_units": 1
+      }
+    },
+    "posthoc_injected_unit_correct_after_commit": {
+      "denominator_per_arm": 10,
+      "adapter_disabled": 6,
+      "tracker_lora_enabled": 3,
+      "definition": "The single prior_fault_annotation intent_id has equivalent meaning, correct owner and correct status in frozen final judgment after actual commit/retention. Not preregistered primary outcome."
+    },
+    "genuine_repair_regression_cases": [
+      "test-001-3",
+      "test-007-4",
+      "test-011-2"
+    ],
+    "targeted_repairs_improved_from_base_to_lora": [],
+    "net_wrong_value_explanation": "Three injected-unit regressions add +3 wrong_value; LoRA fixes the old shortcut scope in test-003-4 whereas rejected base patch retains it (-1). Net 6 to 8. Fully correct active 27/36 to 26/36 also includes gains on shortcut scope and separate mapping document, so it understates targeted repair loss.",
+    "causal_claim_limit": "One small synthetic held-out sample shows behavior, not the cause of forgetting or a proven training intervention. Sparse repair frequency, attention to latest delta and short-output bias are hypotheses, not established causes."
+  },
+  "annotation_and_scoring_issues": [
+    {
+      "id": "source-label-asymmetry-018",
+      "kind": "frozen_label_inconsistency_detected_not_corrected",
+      "case": "test-018-5",
+      "evidence": "Both arms output exactly the same parsed patch, with i5 text Explain whether saving a tab group also saves a page’s contents and source_seqs [5]. Base has source_error_operation_indices [0]; LoRA has []. Both correctly receive wrong_value for dropping the do-not-save-yet qualifier.",
+      "interpretation": "Identical source and semantic candidate must receive identical source judgment under an arm-invariant rubric. Whether omission itself additionally counts as source error needs a prospective rule; do not silently fix one old arm after unblinding.",
+      "impact": "Old fault-subgroup source counts include this disagreement (9/15 vs 4/13 operations). It does not change the three demonstrated repair regressions or the frozen wrong_value counts.",
+      "action": "Preserve frozen result. Disclose diagnosis separately and define completeness versus citation support independently before v2 reviews."
+    },
+    {
+      "id": "full-scope-source-target-tension",
+      "kind": "annotation_evaluation_consistency_risk_not_reference_semantics_error",
+      "examples": [
+        {
+          "example_id": "test-001-3",
+          "target_operation_index": 0,
+          "source_seqs": [
+            2
+          ],
+          "issue": "Reference target contains 每字 and 一个 but seq2 states the exemplar change only; the final model-output rubric requires seq0 for this quantity/scope."
+        },
+        {
+          "example_id": "test-014-3",
+          "target_operation_index": 0,
+          "source_seqs": [
+            1
+          ],
+          "issue": "Reference target includes in the contact log, yet seq1 only says Add a field for the operating band. Identical LoRA target text/source is flagged for missing seq0 contact-log antecedent."
+        },
+        {
+          "example_id": "train-a-007-2",
+          "target_operation_index": 0,
+          "source_seqs": [
+            1
+          ],
+          "issue": "Training target says 口述史逐字稿每隔一分钟添加时间戳, but cited seq1 only says 每隔一分钟加一个时间戳; task scope appears in seq0."
+        }
+      ],
+      "interpretation": "The full-scope source rule is stronger than some canonical source labels. This is not evidence that wrong numeric/polarity repairs were mis-scored; it is a reason to make the training citation rule and evaluation rule agree.",
+      "action": "For new data, require evidence fields covering task scope, value/condition, owner and adoption; review label text against exactly cited events plus necessary cited antecedents. No old labels modified."
+    }
+  ],
+  "training_coverage": {
+    "rows": 500,
+    "text_fault_rows": 50,
+    "fault_type_labels": {
+      "polarity": 5,
+      "numeric_value": 3,
+      "cross_task_value": 1,
+      "audience_scope": 1,
+      "boundary_strength": 1,
+      "scope": 2,
+      "digit_transposition": 1,
+      "digit_omission": 1,
+      "level_value_substitution": 1,
+      "polarity_reversal": 3,
+      "identity_field_reversal": 1,
+      "environment_scope_substitution": 1,
+      "quotation_policy_reversal": 1,
+      "negation_drop": 3,
+      "condition_omission": 1,
+      "fictional_scope_substitution": 1,
+      "negation_and_authorization_reversal": 1,
+      "size_value": 1,
+      "stale_value": 4,
+      "negation_scope": 1,
+      "temporal_relation": 1,
+      "stale_unit": 1,
+      "negation": 1,
+      "cross_owner_value": 1,
+      "value_retention": 1,
+      "precision_strength": 1,
+      "digit_insertion": 1,
+      "unit_substitution": 1,
+      "evidence_type_substitution": 1,
+      "entity_relation_substitution": 1,
+      "negation_and_scope_loss": 1,
+      "numeric_value_substitution": 1,
+      "shot_scope_substitution": 1,
+      "action_scope_reversal": 1,
+      "action_polarity_reversal": 1,
+      "choice_polarity_reversal": 1
+    },
+    "note": "Different labels still describe only corrupted text of an existing record; do not equate label count with coverage of missing whole units, owners or status."
+  },
+  "recommendations": [
+    {
+      "priority": 1,
+      "capability": "repair-versus-retain",
+      "basis": [
+        "test-001-3",
+        "test-007-4",
+        "test-002-2",
+        "test-018-5"
+      ],
+      "data_design": "Use fresh families with clean, wrong-value and wholly missing versions of the same supported state. New message changes another field or says keep this unchanged. Correct corrupted values from raw history, preserve correct versions, add truly absent requirements. Keep all siblings within one split.",
+      "review_gate": "Review every active unit before and after, not merely the latest delta. Assert correct prior receives no repair and erroneous prior receives minimal supported repair."
+    },
+    {
+      "priority": 1,
+      "capability": "repair-versus-withdraw",
+      "basis": [
+        "test-003-4",
+        "test-011-2"
+      ],
+      "data_design": "Pair an existing reversed prohibition requiring same-ID update with a separate unsupported invented requirement requiring withdrawal. Include explicit user cancellation and reinstatement contrasts, without impossible reopen-plus-rewrite in one patch.",
+      "review_gate": "Require the final active prohibition to be present; absence of a bad positive record alone is insufficient."
+    },
+    {
+      "priority": 1,
+      "capability": "condition-and-action-boundary",
+      "basis": [
+        "test-003-4",
+        "test-005-5",
+        "test-018-5"
+      ],
+      "data_design": "Combine an information request with no-action-yet, conditional exceptions, numerical/unit and scope qualifiers, alongside another repair. Store a coupled qualifier with the request or in an explicitly linked independent constraint according to one frozen atomicity policy.",
+      "review_gate": "Quote every modifier; check both concept omission and wrong value/condition. Do not count a generic plan title as an explicit no-execution boundary."
+    },
+    {
+      "priority": 1,
+      "capability": "evidence-closure",
+      "basis": [
+        "test-001-3",
+        "test-007-4",
+        "test-014-3",
+        "test-020-3"
+      ],
+      "data_design": "Include multi-event antecedent + amendment + adoption/owner evidence. Add contrast candidates with correct final text but wrong or incomplete citations. Include direct standalone evidence that needs only one event, so overcitation is not the learned default.",
+      "review_gate": "Evaluate candidate completeness and citation entailment separately using one frozen rule; audit identical candidates for arm-invariant treatment."
+    },
+    {
+      "priority": 2,
+      "capability": "whole-state-lifecycle",
+      "basis": [
+        "test-005-5",
+        "test-016-4"
+      ],
+      "data_design": "Mix repair with independent cancellation and already-withdrawn records; explicitly cover do-not-touch withdrawn state and runtime one-operation-per-ID.",
+      "review_gate": "Actual IntentStore replay plus semantic checks on active, uncertain and withdrawn units. Rejected patches retain old state and remain in denominators."
+    },
+    {
+      "priority": 2,
+      "capability": "coverage-beyond-text-corruption",
+      "basis": [
+        "old training set contains 50 text-only prior_fault_annotation cases"
+      ],
+      "data_design": "Add whole omitted goals/constraints, owner/status mistakes, erroneous withdrawal, assistant-proposal contamination and insufficient-evidence negatives in fresh domains. Original and paraphrase/translation variants stay in one split.",
+      "review_gate": "No hidden corruption marker in input; evidence sufficient for repair, or explicit uncertainty. Exclude unsupported runtime transitions into a separate documented diagnostic pool."
+    }
+  ],
+  "cases": [
+    {
+      "example_id": "test-001-3",
+      "family_id": "test-001",
+      "language": "zh",
+      "domain": "calligraphy practice sheets",
+      "fault_annotation": {
+        "error_type": "numeric_value",
+        "example_id": "test-001-3",
+        "intent_id": "i3",
+        "rationale": "The recorded practice-cell count is off by one; the prior user requested three cells.",
+        "repair_source_seqs": [
+          1
+        ],
+        "repair_text": "每字范字旁留三个临写空格",
+        "wrong_text": "每字范字旁留两个临写空格"
+      },
+      "arrived_conversation": [
+        {
+          "role": "user",
+          "seq": 0,
+          "speaker": "墨",
+          "text": "给我做楷书练习页，每个字先给一个可描红的范字。"
+        },
+        {
+          "role": "user",
+          "seq": 1,
+          "speaker": "墨",
+          "text": "范字旁留三个空格让我临写。"
+        },
+        {
+          "role": "user",
+          "seq": 2,
+          "speaker": "墨",
+          "text": "描红去掉，换成只看不能描的范字；临写空格不动。"
+        }
+      ],
+      "prior_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "墨",
+          "text": "制作楷书练习页",
+          "status": "active"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "墨",
+          "text": "每字提供一个可描红范字",
+          "status": "active"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "墨",
+          "text": "每字范字旁留两个临写空格",
+          "status": "active"
+        }
+      ],
+      "reference_target_patch": {
+        "operations": [
+          {
+            "intent_id": "i2",
+            "op": "update",
+            "source_seqs": [
+              2
+            ],
+            "text": "每字提供一个仅供观看、不可描红的范字"
+          },
+          {
+            "intent_id": "i3",
+            "op": "update",
+            "source_seqs": [
+              1
+            ],
+            "text": "每字范字旁留三个临写空格"
+          }
+        ]
+      },
+      "reference_post_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "墨",
+          "status": "active",
+          "text": "制作楷书练习页"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "墨",
+          "status": "active",
+          "text": "每字提供一个仅供观看、不可描红的范字"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "墨",
+          "status": "active",
+          "text": "每字范字旁留三个临写空格"
+        }
+      ],
+      "diagnosis": {
+        "classification": "genuine_repair_regression",
+        "mechanism_observation": "LoRA handles the latest exemplar-type edit but leaves the earlier corrupted two-space count. Base repairs it to three. Latest user explicitly says the copying spaces do not change; preservation means preserving raw user meaning, not preserving a corrupt pre-state value.",
+        "priority": "Unrelated current edit plus erroneous retained numeric condition; require original evidence repair and current edit in one patch."
+      },
+      "arm_failure_counts": {
+        "adapter_disabled": {
+          "counts": {
+            "decisions": 1,
+            "active_units": 3,
+            "uncertain_units": 0,
+            "invalid_output": 0,
+            "true_no_change_decisions": 0,
+            "omitted_active_units": 0,
+            "wrong_value_active_units": 0,
+            "wrong_owner_active_units": 0,
+            "wrong_status_active_units": 0,
+            "fully_correct_active_units": 3,
+            "wrongly_withdrawn_active_units": 0,
+            "unchanged_active_units": 1,
+            "lost_or_corrupted_unchanged_units": 0,
+            "unsupported_active_additions": 0,
+            "unsupported_uncertain_additions": 0,
+            "false_addition_decisions": 0,
+            "duplicate_candidate_units": 0,
+            "identity_error_decisions": false,
+            "source_error_operations": 1,
+            "source_error_decisions": 1,
+            "valid_patch_operations": 2,
+            "no_change_false_update_decisions": false
+          },
+          "committed": true,
+          "validity": "valid_patch",
+          "runtime_error": null,
+          "injected_unit_correct_after_commit": true
+        },
+        "tracker_lora_enabled": {
+          "counts": {
+            "decisions": 1,
+            "active_units": 3,
+            "uncertain_units": 0,
+            "invalid_output": 0,
+            "true_no_change_decisions": 0,
+            "omitted_active_units": 0,
+            "wrong_value_active_units": 1,
+            "wrong_owner_active_units": 0,
+            "wrong_status_active_units": 0,
+            "fully_correct_active_units": 2,
+            "wrongly_withdrawn_active_units": 0,
+            "unchanged_active_units": 1,
+            "lost_or_corrupted_unchanged_units": 0,
+            "unsupported_active_additions": 0,
+            "unsupported_uncertain_additions": 0,
+            "false_addition_decisions": 0,
+            "duplicate_candidate_units": 0,
+            "identity_error_decisions": false,
+            "source_error_operations": 1,
+            "source_error_decisions": 1,
+            "valid_patch_operations": 1,
+            "no_change_false_update_decisions": false
+          },
+          "committed": true,
+          "validity": "valid_patch",
+          "runtime_error": null,
+          "injected_unit_correct_after_commit": false
+        }
+      }
+    },
+    {
+      "example_id": "test-002-2",
+      "family_id": "test-002",
+      "language": "zh",
+      "domain": "tea brewing journal",
+      "fault_annotation": {
+        "error_type": "unit",
+        "example_id": "test-002-2",
+        "intent_id": "i2",
+        "rationale": "Minutes in place of seconds is a plausible unit-normalization error; the opening explicitly says seconds.",
+        "repair_source_seqs": [
+          0
+        ],
+        "repair_text": "记录每泡浸泡时长，单位秒",
+        "wrong_text": "记录每泡浸泡时长，单位分钟"
+      },
+      "arrived_conversation": [
+        {
+          "role": "user",
+          "seq": 0,
+          "speaker": "乔木",
+          "text": "帮我做乌龙茶冲泡记录，我要记录每泡的浸泡秒数。"
+        },
+        {
+          "role": "user",
+          "seq": 1,
+          "speaker": "阿棠",
+          "text": "我还想有一栏写自己的香气感受，别把我的感受写成客观测量。"
+        }
+      ],
+      "prior_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "乔木",
+          "text": "制作乌龙茶冲泡记录",
+          "status": "active"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "乔木",
+          "text": "记录每泡浸泡时长，单位分钟",
+          "status": "active"
+        }
+      ],
+      "reference_target_patch": {
+        "operations": [
+          {
+            "intent_id": "i3",
+            "op": "add",
+            "owner": "阿棠",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "记录阿棠个人香气感受，并标明是主观描述而非客观测量"
+          },
+          {
+            "intent_id": "i2",
+            "op": "update",
+            "source_seqs": [
+              0
+            ],
+            "text": "记录每泡浸泡时长，单位秒"
+          }
+        ]
+      },
+      "reference_post_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "乔木",
+          "status": "active",
+          "text": "制作乌龙茶冲泡记录"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "乔木",
+          "status": "active",
+          "text": "记录每泡浸泡时长，单位秒"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "阿棠",
+          "status": "active",
+          "text": "记录阿棠个人香气感受，并标明是主观描述而非客观测量"
+        }
+      ],
+      "diagnosis": {
+        "classification": "shared_unrepaired_prior",
+        "mechanism_observation": "Both arms add the second speaker aroma requirement but keep minutes rather than the first speaker requested seconds.",
+        "priority": "Unit repair plus new need from a different owner; maintain both owners and subjective/objective distinction."
+      },
+      "arm_failure_counts": {
+        "adapter_disabled": {
+          "counts": {
+            "decisions": 1,
+            "active_units": 3,
+            "uncertain_units": 0,
+            "invalid_output": 0,
+            "true_no_change_decisions": 0,
+            "omitted_active_units": 0,
+            "wrong_value_active_units": 1,
+            "wrong_owner_active_units": 0,
+            "wrong_status_active_units": 0,
+            "fully_correct_active_units": 2,
+            "wrongly_withdrawn_active_units": 0,
+            "unchanged_active_units": 1,
+            "lost_or_corrupted_unchanged_units": 0,
+            "unsupported_active_additions": 0,
+            "unsupported_uncertain_additions": 0,
+            "false_addition_decisions": 0,
+            "duplicate_candidate_units": 0,
+            "identity_error_decisions": false,
+            "source_error_operations": 0,
+            "source_error_decisions": 0,
+            "valid_patch_operations": 1,
+            "no_change_false_update_decisions": false
+          },
+          "committed": true,
+          "validity": "valid_patch",
+          "runtime_error": null,
+          "injected_unit_correct_after_commit": false
+        },
+        "tracker_lora_enabled": {
+          "counts": {
+            "decisions": 1,
+            "active_units": 3,
+            "uncertain_units": 0,
+            "invalid_output": 0,
+            "true_no_change_decisions": 0,
+            "omitted_active_units": 0,
+            "wrong_value_active_units": 1,
+            "wrong_owner_active_units": 0,
+            "wrong_status_active_units": 0,
+            "fully_correct_active_units": 2,
+            "wrongly_withdrawn_active_units": 0,
+            "unchanged_active_units": 1,
+            "lost_or_corrupted_unchanged_units": 0,
+            "unsupported_active_additions": 0,
+            "unsupported_uncertain_additions": 0,
+            "false_addition_decisions": 0,
+            "duplicate_candidate_units": 0,
+            "identity_error_decisions": false,
+            "source_error_operations": 0,
+            "source_error_decisions": 0,
+            "valid_patch_operations": 1,
+            "no_change_false_update_decisions": false
+          },
+          "committed": true,
+          "validity": "valid_patch",
+          "runtime_error": null,
+          "injected_unit_correct_after_commit": false
+        }
+      }
+    },
+    {
+      "example_id": "test-003-4",
+      "family_id": "test-003",
+      "language": "zh",
+      "domain": "desktop file archiving",
+      "fault_annotation": {
+        "error_type": "proposal_contamination",
+        "example_id": "test-003-4",
+        "intent_id": "i2",
+        "rationale": "An unaccepted renaming suggestion may overwrite the original no-renaming requirement; the user opening retains original names.",
+        "repair_source_seqs": [
+          0
+        ],
+        "repair_text": "保持所有原文件名不变",
+        "wrong_text": "所有原文件名统一加日期前缀"
+      },
+      "arrived_conversation": [
+        {
+          "role": "user",
+          "seq": 0,
+          "speaker": "柯",
+          "text": "给我写桌面文件归档方案，原文件名都别改。"
+        },
+        {
+          "role": "user",
+          "seq": 1,
+          "speaker": "柯",
+          "text": "如果是快捷方式就留在桌面；其他文件移进归档目录。"
+        },
+        {
+          "role": "assistant",
+          "seq": 2,
+          "speaker": "助手",
+          "text": "文件名统一加日期会更整齐。"
+        },
+        {
+          "role": "user",
+          "seq": 3,
+          "speaker": "柯",
+          "text": "不要加日期，按原名字来。"
+        },
+        {
+          "role": "user",
+          "seq": 4,
+          "speaker": "柯",
+          "text": "快捷方式也不例外了，所有文件都进归档目录；只做方案，不真的移动。"
+        }
+      ],
+      "prior_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "柯",
+          "text": "编写桌面文件归档方案",
+          "status": "active"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "柯",
+          "text": "所有原文件名统一加日期前缀",
+          "status": "active"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "柯",
+          "text": "快捷方式留在桌面，其余文件移入归档目录",
+          "status": "active"
+        }
+      ],
+      "reference_target_patch": {
+        "operations": [
+          {
+            "intent_id": "i3",
+            "op": "update",
+            "source_seqs": [
+              4
+            ],
+            "text": "所有桌面文件均纳入归档目录，包括快捷方式"
+          },
+          {
+            "intent_id": "i4",
+            "op": "add",
+            "owner": "柯",
+            "source_seqs": [
+              4
+            ],
+            "status": "active",
+            "text": "只提供归档方案，不实际移动文件"
+          },
+          {
+            "intent_id": "i2",
+            "op": "update",
+            "source_seqs": [
+              0
+            ],
+            "text": "保持所有原文件名不变"
+          }
+        ]
+      },
+      "reference_post_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "柯",
+          "status": "active",
+          "text": "编写桌面文件归档方案"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "柯",
+          "status": "active",
+          "text": "保持所有原文件名不变"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "柯",
+          "status": "active",
+          "text": "所有桌面文件均纳入归档目录，包括快捷方式"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "柯",
+          "status": "active",
+          "text": "只提供归档方案，不实际移动文件"
+        }
+      ],
+      "diagnosis": {
+        "classification": "mixed_validity_gain_with_residual_repair_failure",
+        "mechanism_observation": "Base patch touches i2 three times and is rejected, so the old shortcut exception and filename error remain. LoRA fixes shortcut scope, but withdraws the wrong date-prefix record rather than restoring the active unchanged-name requirement, and misses planning-only/no-real-moves.",
+        "priority": "Distinguish correcting a polarity reversal with update from withdrawing a genuinely unsupported independent requirement; preserve planning-only action boundary and one operation per ID."
+      },
+      "arm_failure_counts": {
+        "adapter_disabled": {
+          "counts": {
+            "decisions": 1,
+            "active_units": 4,
+            "uncertain_units": 0,
+            "invalid_output": 1,
+            "true_no_change_decisions": 0,
+            "omitted_active_units": 1,
+            "wrong_value_active_units": 2,
+            "wrong_owner_active_units": 0,
+            "wrong_status_active_units": 0,
+            "fully_correct_active_units": 1,
+            "wrongly_withdrawn_active_units": 0,
+            "unchanged_active_units": 1,
+            "lost_or_corrupted_unchanged_units": 0,
+            "unsupported_active_additions": 0,
+            "unsupported_uncertain_additions": 0,
+            "false_addition_decisions": 0,
+            "duplicate_candidate_units": 0,
+            "identity_error_decisions": false,
+            "source_error_operations": 0,
+            "source_error_decisions": 0,
+            "valid_patch_operations": 0,
+            "no_change_false_update_decisions": false
+          },
+          "committed": false,
+          "validity": "invalid_patch",
+          "runtime_error": {
+            "type": "IntentValidationError",
+            "message": "A patch may touch each intention only once."
+          },
+          "injected_unit_correct_after_commit": false
+        },
+        "tracker_lora_enabled": {
+          "counts": {
+            "decisions": 1,
+            "active_units": 4,
+            "uncertain_units": 0,
+            "invalid_output": 0,
+            "true_no_change_decisions": 0,
+            "omitted_active_units": 1,
+            "wrong_value_active_units": 1,
+            "wrong_owner_active_units": 0,
+            "wrong_status_active_units": 1,
+            "fully_correct_active_units": 2,
+            "wrongly_withdrawn_active_units": 1,
+            "unchanged_active_units": 1,
+            "lost_or_corrupted_unchanged_units": 0,
+            "unsupported_active_additions": 0,
+            "unsupported_uncertain_additions": 0,
+            "false_addition_decisions": 0,
+            "duplicate_candidate_units": 0,
+            "identity_error_decisions": false,
+            "source_error_operations": 0,
+            "source_error_decisions": 0,
+            "valid_patch_operations": 2,
+            "no_change_false_update_decisions": false
+          },
+          "committed": true,
+          "validity": "valid_patch",
+          "runtime_error": null,
+          "injected_unit_correct_after_commit": false
+        }
+      }
+    },
+    {
+      "example_id": "test-005-5",
+      "family_id": "test-005",
+      "language": "zh",
+      "domain": "recipe quantity scaling",
+      "fault_annotation": {
+        "error_type": "polarity",
+        "example_id": "test-005-5",
+        "intent_id": "i2",
+        "rationale": "The state drops a retained instruction while other recipe work changes; source text explicitly preserves consistency guidance.",
+        "repair_source_seqs": [
+          0
+        ],
+        "repair_text": "保留南瓜汤浓稠度说明",
+        "wrong_text": "省略南瓜汤浓稠度说明"
+      },
+      "arrived_conversation": [
+        {
+          "role": "user",
+          "seq": 0,
+          "speaker": "乐",
+          "text": "把四人份南瓜汤配方换算成两人份，浓稠度说明保留。"
+        },
+        {
+          "role": "user",
+          "seq": 1,
+          "speaker": "乐",
+          "text": "另外把配套面包蘸酱也换成两人份，蘸酱不要蒜。"
+        },
+        {
+          "role": "user",
+          "seq": 2,
+          "speaker": "乐",
+          "text": "汤改成三人份，蘸酱仍是两人份。"
+        },
+        {
+          "role": "user",
+          "seq": 3,
+          "speaker": "乐",
+          "text": "蘸酱整个不做了，只要汤的换算。"
+        },
+        {
+          "role": "user",
+          "seq": 4,
+          "speaker": "乐",
+          "text": "再解释一下哪些调味量不适合机械按比例减，先不改我的汤配方。"
+        }
+      ],
+      "prior_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "乐",
+          "text": "将四人份南瓜汤配方换算为三人份",
+          "status": "active"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "乐",
+          "text": "省略南瓜汤浓稠度说明",
+          "status": "active"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "乐",
+          "text": "将配套面包蘸酱换算为两人份",
+          "status": "withdrawn"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "乐",
+          "text": "面包蘸酱不加蒜",
+          "status": "withdrawn"
+        }
+      ],
+      "reference_target_patch": {
+        "operations": [
+          {
+            "intent_id": "i5",
+            "op": "add",
+            "owner": "乐",
+            "source_seqs": [
+              4
+            ],
+            "status": "active",
+            "text": "解释不宜机械按比例缩减的调味量，暂不更改汤配方"
+          },
+          {
+            "intent_id": "i2",
+            "op": "update",
+            "source_seqs": [
+              0
+            ],
+            "text": "保留南瓜汤浓稠度说明"
+          }
+        ]
+      },
+      "reference_post_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "乐",
+          "status": "active",
+          "text": "将四人份南瓜汤配方换算为三人份"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "乐",
+          "status": "active",
+          "text": "保留南瓜汤浓稠度说明"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "乐",
+          "status": "withdrawn",
+          "text": "将配套面包蘸酱换算为两人份"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "乐",
+          "status": "withdrawn",
+          "text": "面包蘸酱不加蒜"
+        },
+        {
+          "intent_id": "i5",
+          "owner": "乐",
+          "status": "active",
+          "text": "解释不宜机械按比例缩减的调味量，暂不更改汤配方"
+        }
+      ],
+      "diagnosis": {
+        "classification": "shared_runtime_failure",
+        "mechanism_observation": "Both patches withdraw already-withdrawn i3/i4 and are rejected. Both leave the inherited omit-thickness instruction, and actual retained state lacks the new explanation. Proposed text also omits the coupled do-not-change-recipe boundary, but no extra committed-state wrong_value is added because neither patch committed.",
+        "priority": "Do not re-withdraw inactive subtask records. Repair an unrelated retained constraint and add an information request plus its execution boundary."
+      },
+      "arm_failure_counts": {
+        "adapter_disabled": {
+          "counts": {
+            "decisions": 1,
+            "active_units": 3,
+            "uncertain_units": 0,
+            "invalid_output": 1,
+            "true_no_change_decisions": 0,
+            "omitted_active_units": 1,
+            "wrong_value_active_units": 1,
+            "wrong_owner_active_units": 0,
+            "wrong_status_active_units": 0,
+            "fully_correct_active_units": 1,
+            "wrongly_withdrawn_active_units": 0,
+            "unchanged_active_units": 1,
+            "lost_or_corrupted_unchanged_units": 0,
+            "withdrawn_reactivated_units": 0,
+            "unsupported_active_additions": 0,
+            "unsupported_uncertain_additions": 0,
+            "false_addition_decisions": 0,
+            "duplicate_candidate_units": 0,
+            "identity_error_decisions": false,
+            "source_error_operations": 0,
+            "source_error_decisions": 0,
+            "valid_patch_operations": 0,
+            "no_change_false_update_decisions": false
+          },
+          "committed": false,
+          "validity": "invalid_patch",
+          "runtime_error": {
+            "type": "IntentValidationError",
+            "message": "A withdrawn intention needs an explicit reopen operation."
+          },
+          "injected_unit_correct_after_commit": false
+        },
+        "tracker_lora_enabled": {
+          "counts": {
+            "decisions": 1,
+            "active_units": 3,
+            "uncertain_units": 0,
+            "invalid_output": 1,
+            "true_no_change_decisions": 0,
+            "omitted_active_units": 1,
+            "wrong_value_active_units": 1,
+            "wrong_owner_active_units": 0,
+            "wrong_status_active_units": 0,
+            "fully_correct_active_units": 1,
+            "wrongly_withdrawn_active_units": 0,
+            "unchanged_active_units": 1,
+            "lost_or_corrupted_unchanged_units": 0,
+            "withdrawn_reactivated_units": 0,
+            "unsupported_active_additions": 0,
+            "unsupported_uncertain_additions": 0,
+            "false_addition_decisions": 0,
+            "duplicate_candidate_units": 0,
+            "identity_error_decisions": false,
+            "source_error_operations": 0,
+            "source_error_decisions": 0,
+            "valid_patch_operations": 0,
+            "no_change_false_update_decisions": false
+          },
+          "committed": false,
+          "validity": "invalid_patch",
+          "runtime_error": {
+            "type": "IntentValidationError",
+            "message": "A withdrawn intention needs an explicit reopen operation."
+          },
+          "injected_unit_correct_after_commit": false
+        }
+      }
+    },
+    {
+      "example_id": "test-007-4",
+      "family_id": "test-007",
+      "language": "zh",
+      "domain": "vinyl collection catalog",
+      "fault_annotation": {
+        "error_type": "unsupported_default",
+        "example_id": "test-007-4",
+        "intent_id": "i4",
+        "rationale": "A filled-in condition default conflicts with the prior policy to mark uninspected condition unknown.",
+        "repair_source_seqs": [
+          1
+        ],
+        "repair_text": "只记录实际检查过的品相，未检查的标未知",
+        "wrong_text": "未经检查的唱片品相默认记为良好"
+      },
+      "arrived_conversation": [
+        {
+          "role": "user",
+          "seq": 0,
+          "speaker": "闻溪",
+          "text": "给我的唱片做目录，同一专辑不同版次分别记，先按艺人排序。"
+        },
+        {
+          "role": "user",
+          "seq": 1,
+          "speaker": "闻溪",
+          "text": "品相只记录我实际检查过的，没检查的写未知。"
+        },
+        {
+          "role": "user",
+          "seq": 2,
+          "speaker": "闻溪",
+          "text": "朋友说“同专辑留一条就够了”，我只是转述，并没有采用。"
+        },
+        {
+          "role": "user",
+          "seq": 3,
+          "speaker": "闻溪",
+          "text": "目录改按发行年份排序，不改版次分开的原则。"
+        }
+      ],
+      "prior_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "闻溪",
+          "text": "制作唱片收藏目录",
+          "status": "active"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "闻溪",
+          "text": "同专辑的不同版次分别记录",
+          "status": "active"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "闻溪",
+          "text": "唱片目录按艺人排序",
+          "status": "active"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "闻溪",
+          "text": "未经检查的唱片品相默认记为良好",
+          "status": "active"
+        }
+      ],
+      "reference_target_patch": {
+        "operations": [
+          {
+            "intent_id": "i3",
+            "op": "update",
+            "source_seqs": [
+              3
+            ],
+            "text": "唱片目录按发行年份排序"
+          },
+          {
+            "intent_id": "i4",
+            "op": "update",
+            "source_seqs": [
+              1
+            ],
+            "text": "只记录实际检查过的品相，未检查的标未知"
+          }
+        ]
+      },
+      "reference_post_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "闻溪",
+          "status": "active",
+          "text": "制作唱片收藏目录"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "闻溪",
+          "status": "active",
+          "text": "同专辑的不同版次分别记录"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "闻溪",
+          "status": "active",
+          "text": "唱片目录按发行年份排序"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "闻溪",
+          "status": "active",
+          "text": "只记录实际检查过的品相，未检查的标未知"
+        }
+      ],
+      "diagnosis": {
+        "classification": "genuine_repair_regression",
+        "mechanism_observation": "LoRA changes sorting only and retains the unsupported good-condition default. Base repairs uninspected condition to unknown. Rejection of a quoted proposal must not distract from older supported unknown-value policy.",
+        "priority": "Unknown versus default value; current sort change plus earlier raw-evidence correction."
+      },
+      "arm_failure_counts": {
+        "adapter_disabled": {
+          "counts": {
+            "decisions": 1,
+            "active_units": 4,
+            "uncertain_units": 0,
+            "invalid_output": 0,
+            "true_no_change_decisions": 0,
+            "omitted_active_units": 0,
+            "wrong_value_active_units": 0,
+            "wrong_owner_active_units": 0,
+            "wrong_status_active_units": 0,
+            "fully_correct_active_units": 4,
+            "wrongly_withdrawn_active_units": 0,
+            "unchanged_active_units": 2,
+            "lost_or_corrupted_unchanged_units": 0,
+            "unsupported_active_additions": 0,
+            "unsupported_uncertain_additions": 0,
+            "false_addition_decisions": 0,
+            "duplicate_candidate_units": 0,
+            "identity_error_decisions": false,
+            "source_error_operations": 2,
+            "source_error_decisions": 1,
+            "valid_patch_operations": 2,
+            "no_change_false_update_decisions": false
+          },
+          "committed": true,
+          "validity": "valid_patch",
+          "runtime_error": null,
+          "injected_unit_correct_after_commit": true
+        },
+        "tracker_lora_enabled": {
+          "counts": {
+            "decisions": 1,
+            "active_units": 4,
+            "uncertain_units": 0,
+            "invalid_output": 0,
+            "true_no_change_decisions": 0,
+            "omitted_active_units": 0,
+            "wrong_value_active_units": 1,
+            "wrong_owner_active_units": 0,
+            "wrong_status_active_units": 0,
+            "fully_correct_active_units": 3,
+            "wrongly_withdrawn_active_units": 0,
+            "unchanged_active_units": 2,
+            "lost_or_corrupted_unchanged_units": 0,
+            "unsupported_active_additions": 0,
+            "unsupported_uncertain_additions": 0,
+            "false_addition_decisions": 0,
+            "duplicate_candidate_units": 0,
+            "identity_error_decisions": false,
+            "source_error_operations": 1,
+            "source_error_decisions": 1,
+            "valid_patch_operations": 1,
+            "no_change_false_update_decisions": false
+          },
+          "committed": true,
+          "validity": "valid_patch",
+          "runtime_error": null,
+          "injected_unit_correct_after_commit": false
+        }
+      }
+    },
+    {
+      "example_id": "test-011-2",
+      "family_id": "test-011",
+      "language": "en",
+      "domain": "spare key labeling",
+      "fault_annotation": {
+        "error_type": "polarity",
+        "example_id": "test-011-2",
+        "intent_id": "i2",
+        "rationale": "A lost negation reverses the label privacy restriction; earlier user evidence directly forbids addresses.",
+        "repair_source_seqs": [
+          0
+        ],
+        "repair_text": "Never put street addresses on spare-key labels",
+        "wrong_text": "Print street addresses on spare-key labels"
+      },
+      "arrived_conversation": [
+        {
+          "role": "user",
+          "seq": 0,
+          "speaker": "Mae",
+          "text": "Design labels for my spare keys. Use arbitrary codes, never street addresses."
+        },
+        {
+          "role": "user",
+          "seq": 1,
+          "speaker": "Mae",
+          "text": "Use letters for the codes and keep the code-to-door list in a separate document."
+        }
+      ],
+      "prior_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Mae",
+          "text": "Design spare-key labels using arbitrary codes",
+          "status": "active"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Mae",
+          "text": "Print street addresses on spare-key labels",
+          "status": "active"
+        }
+      ],
+      "reference_target_patch": {
+        "operations": [
+          {
+            "intent_id": "i3",
+            "op": "add",
+            "owner": "Mae",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "Use letter codes on spare-key labels"
+          },
+          {
+            "intent_id": "i4",
+            "op": "add",
+            "owner": "Mae",
+            "source_seqs": [
+              1
+            ],
+            "status": "active",
+            "text": "Keep the code-to-door mapping in a separate document"
+          },
+          {
+            "intent_id": "i2",
+            "op": "update",
+            "source_seqs": [
+              0
+            ],
+            "text": "Never put street addresses on spare-key labels"
+          }
+        ]
+      },
+      "reference_post_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Mae",
+          "status": "active",
+          "text": "Design spare-key labels using arbitrary codes"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Mae",
+          "status": "active",
+          "text": "Never put street addresses on spare-key labels"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Mae",
+          "status": "active",
+          "text": "Use letter codes on spare-key labels"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "Mae",
+          "status": "active",
+          "text": "Keep the code-to-door mapping in a separate document"
+        }
+      ],
+      "diagnosis": {
+        "classification": "genuine_repair_regression_with_other_coverage_gain",
+        "mechanism_observation": "Base repairs the no-address prohibition but misses a separate mapping document. LoRA adds that document but merely withdraws the mistaken print-address record, leaving no active prohibition. The old reference concept still exists as wrong text/withdrawn status, so the frozen scorer correctly calls it wrong_value plus wrong_status rather than missing.",
+        "priority": "Repair reversals under existing ID with correct active text. Pair with genuine unsupported records that should be withdrawn, so training does not teach always-update."
+      },
+      "arm_failure_counts": {
+        "adapter_disabled": {
+          "counts": {
+            "decisions": 1,
+            "active_units": 4,
+            "uncertain_units": 0,
+            "invalid_output": 0,
+            "true_no_change_decisions": 0,
+            "omitted_active_units": 1,
+            "wrong_value_active_units": 0,
+            "wrong_owner_active_units": 0,
+            "wrong_status_active_units": 0,
+            "fully_correct_active_units": 3,
+            "wrongly_withdrawn_active_units": 0,
+            "unchanged_active_units": 1,
+            "lost_or_corrupted_unchanged_units": 0,
+            "unsupported_active_additions": 0,
+            "unsupported_uncertain_additions": 0,
+            "false_addition_decisions": 0,
+            "duplicate_candidate_units": 0,
+            "identity_error_decisions": false,
+            "source_error_operations": 2,
+            "source_error_decisions": 1,
+            "valid_patch_operations": 2,
+            "no_change_false_update_decisions": false
+          },
+          "committed": true,
+          "validity": "valid_patch",
+          "runtime_error": null,
+          "injected_unit_correct_after_commit": true
+        },
+        "tracker_lora_enabled": {
+          "counts": {
+            "decisions": 1,
+            "active_units": 4,
+            "uncertain_units": 0,
+            "invalid_output": 0,
+            "true_no_change_decisions": 0,
+            "omitted_active_units": 0,
+            "wrong_value_active_units": 1,
+            "wrong_owner_active_units": 0,
+            "wrong_status_active_units": 1,
+            "fully_correct_active_units": 3,
+            "wrongly_withdrawn_active_units": 1,
+            "unchanged_active_units": 1,
+            "lost_or_corrupted_unchanged_units": 0,
+            "unsupported_active_additions": 0,
+            "unsupported_uncertain_additions": 0,
+            "false_addition_decisions": 0,
+            "duplicate_candidate_units": 0,
+            "identity_error_decisions": false,
+            "source_error_operations": 1,
+            "source_error_decisions": 1,
+            "valid_patch_operations": 3,
+            "no_change_false_update_decisions": false
+          },
+          "committed": true,
+          "validity": "valid_patch",
+          "runtime_error": null,
+          "injected_unit_correct_after_commit": false
+        }
+      }
+    },
+    {
+      "example_id": "test-014-3",
+      "family_id": "test-014",
+      "language": "en",
+      "domain": "amateur radio contact log",
+      "fault_annotation": {
+        "error_type": "field_substitution",
+        "example_id": "test-014-3",
+        "intent_id": "i4",
+        "rationale": "Related radio fields can be confused, but the arrived instruction requested operating band, not a replacement power field.",
+        "repair_source_seqs": [
+          1
+        ],
+        "repair_text": "Include an operating-band field in the contact log",
+        "wrong_text": "Include a transmitter-power field instead of operating band in the contact log"
+      },
+      "arrived_conversation": [
+        {
+          "role": "user",
+          "seq": 0,
+          "speaker": "Kit",
+          "text": "Make an amateur-radio contact log template with times shown in UTC. Keep received signal reports exactly as stated."
+        },
+        {
+          "role": "user",
+          "seq": 1,
+          "speaker": "Kit",
+          "text": "Add a field for the operating band."
+        },
+        {
+          "role": "user",
+          "seq": 2,
+          "speaker": "Kit",
+          "text": "A sample log says \"round every report up\"; I am quoting it as a bad example, not adopting it."
+        }
+      ],
+      "prior_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Kit",
+          "text": "Create an amateur-radio contact log template",
+          "status": "active"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Kit",
+          "text": "Show contact times in UTC",
+          "status": "active"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Kit",
+          "text": "Preserve received signal reports exactly as stated",
+          "status": "active"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "Kit",
+          "text": "Include a transmitter-power field instead of operating band in the contact log",
+          "status": "active"
+        }
+      ],
+      "reference_target_patch": {
+        "operations": [
+          {
+            "intent_id": "i4",
+            "op": "update",
+            "source_seqs": [
+              1
+            ],
+            "text": "Include an operating-band field in the contact log"
+          }
+        ]
+      },
+      "reference_post_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Kit",
+          "status": "active",
+          "text": "Create an amateur-radio contact log template"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Kit",
+          "status": "active",
+          "text": "Show contact times in UTC"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Kit",
+          "status": "active",
+          "text": "Preserve received signal reports exactly as stated"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "Kit",
+          "status": "active",
+          "text": "Include an operating-band field in the contact log"
+        }
+      ],
+      "diagnosis": {
+        "classification": "shared_successful_repair_with_source_shortcoming",
+        "mechanism_observation": "Both repair transmitter power to operating band. Base adds a redundant uncertain anti-rounding requirement; LoRA avoids it. Both omit the contact-log antecedent from the cited sources under the final full-scope source rubric.",
+        "priority": "Evidence closure includes task antecedent as well as latest field edit; no new need from explicitly rejected quotation."
+      },
+      "arm_failure_counts": {
+        "adapter_disabled": {
+          "counts": {
+            "decisions": 1,
+            "active_units": 4,
+            "uncertain_units": 0,
+            "invalid_output": 0,
+            "true_no_change_decisions": 0,
+            "omitted_active_units": 0,
+            "wrong_value_active_units": 0,
+            "wrong_owner_active_units": 0,
+            "wrong_status_active_units": 0,
+            "fully_correct_active_units": 4,
+            "wrongly_withdrawn_active_units": 0,
+            "unchanged_active_units": 3,
+            "lost_or_corrupted_unchanged_units": 0,
+            "unsupported_active_additions": 0,
+            "unsupported_uncertain_additions": 0,
+            "false_addition_decisions": 0,
+            "duplicate_candidate_units": 1,
+            "identity_error_decisions": true,
+            "source_error_operations": 2,
+            "source_error_decisions": 1,
+            "valid_patch_operations": 2,
+            "no_change_false_update_decisions": false
+          },
+          "committed": true,
+          "validity": "valid_patch",
+          "runtime_error": null,
+          "injected_unit_correct_after_commit": true
+        },
+        "tracker_lora_enabled": {
+          "counts": {
+            "decisions": 1,
+            "active_units": 4,
+            "uncertain_units": 0,
+            "invalid_output": 0,
+            "true_no_change_decisions": 0,
+            "omitted_active_units": 0,
+            "wrong_value_active_units": 0,
+            "wrong_owner_active_units": 0,
+            "wrong_status_active_units": 0,
+            "fully_correct_active_units": 4,
+            "wrongly_withdrawn_active_units": 0,
+            "unchanged_active_units": 3,
+            "lost_or_corrupted_unchanged_units": 0,
+            "unsupported_active_additions": 0,
+            "unsupported_uncertain_additions": 0,
+            "false_addition_decisions": 0,
+            "duplicate_candidate_units": 0,
+            "identity_error_decisions": false,
+            "source_error_operations": 1,
+            "source_error_decisions": 1,
+            "valid_patch_operations": 1,
+            "no_change_false_update_decisions": false
+          },
+          "committed": true,
+          "validity": "valid_patch",
+          "runtime_error": null,
+          "injected_unit_correct_after_commit": true
+        }
+      }
+    },
+    {
+      "example_id": "test-016-4",
+      "family_id": "test-016",
+      "language": "en",
+      "domain": "appliance quick-reference card",
+      "fault_annotation": {
+        "error_type": "polarity",
+        "example_id": "test-016-4",
+        "intent_id": "i2",
+        "rationale": "The stored safety wording is inverted; the supplied user request explicitly retains unplug-before-cleaning.",
+        "repair_source_seqs": [
+          0
+        ],
+        "repair_text": "Retain the manual’s unplug-before-cleaning instruction in the card",
+        "wrong_text": "Tell the user to leave the sewing machine plugged in while cleaning"
+      },
+      "arrived_conversation": [
+        {
+          "role": "user",
+          "seq": 0,
+          "speaker": "June",
+          "text": "Draft a quick-reference card for my sewing machine from the supplied manual. Keep the manual’s instruction to unplug before cleaning."
+        },
+        {
+          "role": "user",
+          "seq": 1,
+          "speaker": "June",
+          "text": "Add a separate troubleshooting panel for uneven stitches."
+        },
+        {
+          "role": "user",
+          "seq": 2,
+          "speaker": "June",
+          "text": "In the card, call the control the stitch-length dial, not the tension dial; I mixed those names up."
+        },
+        {
+          "role": "user",
+          "seq": 3,
+          "speaker": "June",
+          "text": "Drop the uneven-stitch troubleshooting panel entirely; the reference card still matters."
+        }
+      ],
+      "prior_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "June",
+          "text": "Draft a sewing-machine quick-reference card from the supplied manual",
+          "status": "active"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "June",
+          "text": "Tell the user to leave the sewing machine plugged in while cleaning",
+          "status": "active"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "June",
+          "text": "Add a separate troubleshooting panel for uneven stitches",
+          "status": "active"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "June",
+          "text": "Refer to the specified control as the stitch-length dial, not the tension dial",
+          "status": "active"
+        }
+      ],
+      "reference_target_patch": {
+        "operations": [
+          {
+            "intent_id": "i3",
+            "op": "withdraw",
+            "source_seqs": [
+              3
+            ]
+          },
+          {
+            "intent_id": "i2",
+            "op": "update",
+            "source_seqs": [
+              0
+            ],
+            "text": "Retain the manual’s unplug-before-cleaning instruction in the card"
+          }
+        ]
+      },
+      "reference_post_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "June",
+          "status": "active",
+          "text": "Draft a sewing-machine quick-reference card from the supplied manual"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "June",
+          "status": "active",
+          "text": "Retain the manual’s unplug-before-cleaning instruction in the card"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "June",
+          "status": "withdrawn",
+          "text": "Add a separate troubleshooting panel for uneven stitches"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "June",
+          "status": "active",
+          "text": "Refer to the specified control as the stitch-length dial, not the tension dial"
+        }
+      ],
+      "diagnosis": {
+        "classification": "shared_successful_repair_with_lora_cancellation_omission",
+        "mechanism_observation": "Both repair unplug-before-cleaning. LoRA fails to withdraw the cancelled troubleshooting panel. The active reference coverage metric remains 3/3 because the cancelled unit is no longer active; the withdrawn-reactivated count exposes this failure.",
+        "priority": "Evaluate the whole expected state, including withdrawn units, while repairing an active unit. Prevent focus on repair from dropping concurrent cancellation."
+      },
+      "arm_failure_counts": {
+        "adapter_disabled": {
+          "counts": {
+            "decisions": 1,
+            "active_units": 3,
+            "uncertain_units": 0,
+            "invalid_output": 0,
+            "true_no_change_decisions": 0,
+            "omitted_active_units": 0,
+            "wrong_value_active_units": 0,
+            "wrong_owner_active_units": 0,
+            "wrong_status_active_units": 0,
+            "fully_correct_active_units": 3,
+            "wrongly_withdrawn_active_units": 0,
+            "unchanged_active_units": 2,
+            "lost_or_corrupted_unchanged_units": 0,
+            "withdrawn_reactivated_units": 0,
+            "unsupported_active_additions": 0,
+            "unsupported_uncertain_additions": 0,
+            "false_addition_decisions": 0,
+            "duplicate_candidate_units": 0,
+            "identity_error_decisions": false,
+            "source_error_operations": 0,
+            "source_error_decisions": 0,
+            "valid_patch_operations": 3,
+            "no_change_false_update_decisions": false
+          },
+          "committed": true,
+          "validity": "valid_patch",
+          "runtime_error": null,
+          "injected_unit_correct_after_commit": true
+        },
+        "tracker_lora_enabled": {
+          "counts": {
+            "decisions": 1,
+            "active_units": 3,
+            "uncertain_units": 0,
+            "invalid_output": 0,
+            "true_no_change_decisions": 0,
+            "omitted_active_units": 0,
+            "wrong_value_active_units": 0,
+            "wrong_owner_active_units": 0,
+            "wrong_status_active_units": 0,
+            "fully_correct_active_units": 3,
+            "wrongly_withdrawn_active_units": 0,
+            "unchanged_active_units": 2,
+            "lost_or_corrupted_unchanged_units": 0,
+            "withdrawn_reactivated_units": 1,
+            "unsupported_active_additions": 0,
+            "unsupported_uncertain_additions": 0,
+            "false_addition_decisions": 0,
+            "duplicate_candidate_units": 0,
+            "identity_error_decisions": false,
+            "source_error_operations": 0,
+            "source_error_decisions": 0,
+            "valid_patch_operations": 1,
+            "no_change_false_update_decisions": false
+          },
+          "committed": true,
+          "validity": "valid_patch",
+          "runtime_error": null,
+          "injected_unit_correct_after_commit": true
+        }
+      }
+    },
+    {
+      "example_id": "test-018-5",
+      "family_id": "test-018",
+      "language": "en",
+      "domain": "browser session organization",
+      "fault_annotation": {
+        "error_type": "scope",
+        "example_id": "test-018-5",
+        "intent_id": "i2",
+        "rationale": "A broad grouping rule may accidentally absorb pinned tabs; the original independent exclusion is already visible.",
+        "repair_source_seqs": [
+          0
+        ],
+        "repair_text": "Keep pinned tabs outside tab groups",
+        "wrong_text": "Put pinned tabs into their project groups"
+      },
+      "arrived_conversation": [
+        {
+          "role": "user",
+          "seq": 0,
+          "speaker": "Will",
+          "text": "Plan how to organize my browser tabs. Keep pinned tabs outside the groups."
+        },
+        {
+          "role": "user",
+          "seq": 1,
+          "speaker": "Will",
+          "text": "Group the others by project, and if a tab has no project put it in Unsorted."
+        },
+        {
+          "role": "assistant",
+          "seq": 2,
+          "speaker": "Assistant",
+          "text": "I can close all tabs in Unsorted at the end of the day."
+        },
+        {
+          "role": "user",
+          "seq": 3,
+          "speaker": "Will",
+          "text": "No automatic closing. The group is for review, not disposal."
+        },
+        {
+          "role": "user",
+          "seq": 4,
+          "speaker": "Will",
+          "text": "Rename Unsorted to To review. The grouping rule stays project-based."
+        },
+        {
+          "role": "user",
+          "seq": 5,
+          "speaker": "Will",
+          "text": "Explain whether saving a tab group also saves a page’s contents; do not save anything yet."
+        }
+      ],
+      "prior_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Will",
+          "text": "Plan browser-tab organization",
+          "status": "active"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Will",
+          "text": "Put pinned tabs into their project groups",
+          "status": "active"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Will",
+          "text": "Group unpinned tabs by project; put projectless tabs in To review",
+          "status": "active"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "Will",
+          "text": "Do not close browser tabs automatically",
+          "status": "active"
+        }
+      ],
+      "reference_target_patch": {
+        "operations": [
+          {
+            "intent_id": "i5",
+            "op": "add",
+            "owner": "Will",
+            "source_seqs": [
+              5
+            ],
+            "status": "active",
+            "text": "Explain whether saving a tab group saves page contents, without saving anything yet"
+          },
+          {
+            "intent_id": "i2",
+            "op": "update",
+            "source_seqs": [
+              0
+            ],
+            "text": "Keep pinned tabs outside tab groups"
+          }
+        ]
+      },
+      "reference_post_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Will",
+          "status": "active",
+          "text": "Plan browser-tab organization"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Will",
+          "status": "active",
+          "text": "Keep pinned tabs outside tab groups"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Will",
+          "status": "active",
+          "text": "Group unpinned tabs by project; put projectless tabs in To review"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "Will",
+          "status": "active",
+          "text": "Do not close browser tabs automatically"
+        },
+        {
+          "intent_id": "i5",
+          "owner": "Will",
+          "status": "active",
+          "text": "Explain whether saving a tab group saves page contents, without saving anything yet"
+        }
+      ],
+      "diagnosis": {
+        "classification": "shared_unrepaired_prior_and_qualifier_loss_with_source_label_discrepancy",
+        "mechanism_observation": "Both leave pinned tabs incorrectly in groups and add the explanatory question without do-not-save-yet. Their patch objects are semantically and structurally identical after key-order normalization, yet source error is flagged only for base.",
+        "priority": "Preserve prohibition coupled to an information request; repair older scope exclusion; freeze distinct semantic-completeness and citation-entailment rules before new evaluation."
+      },
+      "arm_failure_counts": {
+        "adapter_disabled": {
+          "counts": {
+            "decisions": 1,
+            "active_units": 5,
+            "uncertain_units": 0,
+            "invalid_output": 0,
+            "true_no_change_decisions": 0,
+            "omitted_active_units": 0,
+            "wrong_value_active_units": 2,
+            "wrong_owner_active_units": 0,
+            "wrong_status_active_units": 0,
+            "fully_correct_active_units": 3,
+            "wrongly_withdrawn_active_units": 0,
+            "unchanged_active_units": 3,
+            "lost_or_corrupted_unchanged_units": 0,
+            "unsupported_active_additions": 0,
+            "unsupported_uncertain_additions": 0,
+            "false_addition_decisions": 0,
+            "duplicate_candidate_units": 0,
+            "identity_error_decisions": false,
+            "source_error_operations": 1,
+            "source_error_decisions": 1,
+            "valid_patch_operations": 1,
+            "no_change_false_update_decisions": false
+          },
+          "committed": true,
+          "validity": "valid_patch",
+          "runtime_error": null,
+          "injected_unit_correct_after_commit": false
+        },
+        "tracker_lora_enabled": {
+          "counts": {
+            "decisions": 1,
+            "active_units": 5,
+            "uncertain_units": 0,
+            "invalid_output": 0,
+            "true_no_change_decisions": 0,
+            "omitted_active_units": 0,
+            "wrong_value_active_units": 2,
+            "wrong_owner_active_units": 0,
+            "wrong_status_active_units": 0,
+            "fully_correct_active_units": 3,
+            "wrongly_withdrawn_active_units": 0,
+            "unchanged_active_units": 3,
+            "lost_or_corrupted_unchanged_units": 0,
+            "unsupported_active_additions": 0,
+            "unsupported_uncertain_additions": 0,
+            "false_addition_decisions": 0,
+            "duplicate_candidate_units": 0,
+            "identity_error_decisions": false,
+            "source_error_operations": 0,
+            "source_error_decisions": 0,
+            "valid_patch_operations": 1,
+            "no_change_false_update_decisions": false
+          },
+          "committed": true,
+          "validity": "valid_patch",
+          "runtime_error": null,
+          "injected_unit_correct_after_commit": false
+        }
+      }
+    },
+    {
+      "example_id": "test-020-3",
+      "family_id": "test-020",
+      "language": "en",
+      "domain": "local weather observation diary",
+      "fault_annotation": {
+        "error_type": "polarity",
+        "example_id": "test-020-3",
+        "intent_id": "i2",
+        "rationale": "Carry-forward imputation is a plausible default that directly contradicts the explicit missing-reading policy.",
+        "repair_source_seqs": [
+          0
+        ],
+        "repair_text": "Mark missed readings as missing instead of copying the previous value",
+        "wrong_text": "Fill missed weather readings by copying the previous value"
+      },
+      "arrived_conversation": [
+        {
+          "role": "user",
+          "seq": 0,
+          "speaker": "Drew",
+          "text": "Create a local weather diary. When I miss a reading, record missing rather than copying the previous value."
+        },
+        {
+          "role": "user",
+          "seq": 1,
+          "speaker": "Drew",
+          "text": "Plan one observation at noon each day. Include a separate cloud-sketch space."
+        },
+        {
+          "role": "user",
+          "seq": 2,
+          "speaker": "Drew",
+          "text": "The cloud sketch can go for now; keep the numerical observations."
+        }
+      ],
+      "prior_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Drew",
+          "text": "Create a local weather observation diary",
+          "status": "active"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Drew",
+          "text": "Fill missed weather readings by copying the previous value",
+          "status": "active"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Drew",
+          "text": "Schedule one weather observation at noon daily",
+          "status": "active"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "Drew",
+          "text": "Include a separate cloud-sketch space",
+          "status": "active"
+        }
+      ],
+      "reference_target_patch": {
+        "operations": [
+          {
+            "intent_id": "i4",
+            "op": "withdraw",
+            "source_seqs": [
+              2
+            ]
+          },
+          {
+            "intent_id": "i2",
+            "op": "update",
+            "source_seqs": [
+              0
+            ],
+            "text": "Mark missed readings as missing instead of copying the previous value"
+          }
+        ]
+      },
+      "reference_post_semantic_state": [
+        {
+          "intent_id": "i1",
+          "owner": "Drew",
+          "status": "active",
+          "text": "Create a local weather observation diary"
+        },
+        {
+          "intent_id": "i2",
+          "owner": "Drew",
+          "status": "active",
+          "text": "Mark missed readings as missing instead of copying the previous value"
+        },
+        {
+          "intent_id": "i3",
+          "owner": "Drew",
+          "status": "active",
+          "text": "Schedule one weather observation at noon daily"
+        },
+        {
+          "intent_id": "i4",
+          "owner": "Drew",
+          "status": "withdrawn",
+          "text": "Include a separate cloud-sketch space"
+        }
+      ],
+      "diagnosis": {
+        "classification": "shared_successful_repair_with_lora_evidence_gain",
+        "mechanism_observation": "Both repair missing-reading policy and cancel cloud sketch; base cites unrelated seqs 1/2 for missing-reading repair, while LoRA correctly cites seq0.",
+        "priority": "Include correct repair with incorrect citation as a hard contrast; do not reward state text alone."
+      },
+      "arm_failure_counts": {
+        "adapter_disabled": {
+          "counts": {
+            "decisions": 1,
+            "active_units": 3,
+            "uncertain_units": 0,
+            "invalid_output": 0,
+            "true_no_change_decisions": 0,
+            "omitted_active_units": 0,
+            "wrong_value_active_units": 0,
+            "wrong_owner_active_units": 0,
+            "wrong_status_active_units": 0,
+            "fully_correct_active_units": 3,
+            "wrongly_withdrawn_active_units": 0,
+            "unchanged_active_units": 2,
+            "lost_or_corrupted_unchanged_units": 0,
+            "withdrawn_reactivated_units": 0,
+            "unsupported_active_additions": 0,
+            "unsupported_uncertain_additions": 0,
+            "false_addition_decisions": 0,
+            "duplicate_candidate_units": 0,
+            "identity_error_decisions": false,
+            "source_error_operations": 1,
+            "source_error_decisions": 1,
+            "valid_patch_operations": 2,
+            "no_change_false_update_decisions": false
+          },
+          "committed": true,
+          "validity": "valid_patch",
+          "runtime_error": null,
+          "injected_unit_correct_after_commit": true
+        },
+        "tracker_lora_enabled": {
+          "counts": {
+            "decisions": 1,
+            "active_units": 3,
+            "uncertain_units": 0,
+            "invalid_output": 0,
+            "true_no_change_decisions": 0,
+            "omitted_active_units": 0,
+            "wrong_value_active_units": 0,
+            "wrong_owner_active_units": 0,
+            "wrong_status_active_units": 0,
+            "fully_correct_active_units": 3,
+            "wrongly_withdrawn_active_units": 0,
+            "unchanged_active_units": 2,
+            "lost_or_corrupted_unchanged_units": 0,
+            "withdrawn_reactivated_units": 0,
+            "unsupported_active_additions": 0,
+            "unsupported_uncertain_additions": 0,
+            "false_addition_decisions": 0,
+            "duplicate_candidate_units": 0,
+            "identity_error_decisions": false,
+            "source_error_operations": 0,
+            "source_error_decisions": 0,
+            "valid_patch_operations": 2,
+            "no_change_false_update_decisions": false
+          },
+          "committed": true,
+          "validity": "valid_patch",
+          "runtime_error": null,
+          "injected_unit_correct_after_commit": true
+        }
+      }
+    }
+  ],
+  "old_artifacts_modified": false,
+  "new_test_data_accessed": false,
+  "privacy": "Internal diagnostic contains old blind-ID/arm mapping and raw synthetic cases. Do not export as a blinded review packet or public bundle without explicit redaction.",
+  "source_sha256_after": {
+    "analysis/one-step-results.json": "4f225f88a465db6ec0168a5fbdc646ff86f86c53a99b94272a19069d14e6b8ef",
+    "evaluation/blind-review-01/PRIVATE-mapping.json": "e18b36893b6c04eb25f164b7fa9e11969a7a45814f295e0ef928d3e0f603547d",
+    "evaluation/blind-review-01/PRIVATE-runtime-results.json": "6e0922ab2963aa70cf4077e0dbae851b2e5816c5a0ee7bf144937126fce3ee68",
+    "evaluation/adjudication-01/final-judgments.json": "1ae2536359747771bdb77e72a189cc7baa8aec0bb533fe0b4866ef77f2c71807",
+    "evaluation/adjudication-01/final-signoff.json": "09576f99c0b79742c3148715d496cc0b5f79b94c5e3d938eced510d5b801dc99",
+    "evaluation/collection-01/outputs.jsonl": "bf02aa173084fc470c7a071fdd55298a226236acd2b7429757b1c64bd59721b3",
+    "data/compiled/test.records.jsonl": "c885d355efc667a73670008012e240d35b0d1e0a58c79dbd2c951a35efd24ff9",
+    "data/compiled/train.records.jsonl": "ad05c8b065915d02024bb21a90a6935bc06f4af6860bffcd9e3f5c977cdc96f0",
+    "annotation/ANNOTATION_GUIDE.md": "64514fc7b8294882750f71a77fc517ee3ee73f2f871e3f3cd315d328eb315593",
+    "annotation/system_prompt.txt": "7587583ff3fb2f46f64a32ca598a9f2bd980d8b0c3ff24915d80f5e31cda5abd"
+  },
+  "public_projection": "Earlier failure diagnoses, source dialogue, references and error counts are preserved. Private blind joins, raw candidate state/patch and individual judgments are omitted."
+}

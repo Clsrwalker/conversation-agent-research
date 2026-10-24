@@ -1,0 +1,10 @@
+{
+  "schema": "tracker-reference-amendment-approval-v1",
+  "status": "approved",
+  "ledger_sha256": "25e417ab9bf048150a39a074e6583dc97fd19471210fc9eaaba2524ee34b89da",
+  "reviewer_id": "reference-approver-01",
+  "completed_at_utc": "2026-10-24T21:14:01.441081+00:00",
+  "private_metadata_not_consulted": true,
+  "all_changes_checked_against_raw": true,
+  "semantic_corrections_approved": true
+}

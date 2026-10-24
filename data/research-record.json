@@ -5893,6 +5893,13 @@
       "type": "engineering_validation",
       "record": "tracker-lora-heldout-validation.json",
       "status": "passed_with_documented_collection_deviation"
+    },
+    {
+      "id": "tracker-lora-repair-v2-engineering",
+      "date": "2026-10-24",
+      "type": "engineering_validation",
+      "record": "tracker-lora-repair-validation.json",
+      "status": "completed_through_scoring_pending_independent_results_audit"
     }
   ],
   "literature_reviews": [
@@ -6015,6 +6022,18 @@
       "adjudicated_packets": 200,
       "evidence": "tracker-lora-pilot/heldout-results-01/evidence.zip",
       "scoring": "Independent blinded model review with separate adjudication; not human gold."
+    },
+    {
+      "id": "tracker-lora-repair-v2",
+      "date": "2026-10-24",
+      "type": "research_experiment",
+      "status": "completed_scored",
+      "record": "tracker-lora-repair-v2/results-01/summary.json",
+      "page": "intent-role-separation.html#tracker-lora-repair-v2",
+      "assigned_model_calls": 600,
+      "scenario_families": 40,
+      "evidence": "tracker-lora-repair-v2/results-01/evidence.zip",
+      "scoring": "Deduplicated blind model review, prospective second review and resolved adjudication; not human gold."
     }
   ],
   "october_studies": {

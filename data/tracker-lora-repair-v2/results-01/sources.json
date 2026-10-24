@@ -1,0 +1,629 @@
+{
+  "schema_version": 1,
+  "kind": "v2_aggregate_and_reviewed_dataset_with_reference_text_amendment_public_evidence",
+  "source_and_export_files": {
+    "results.json": {
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-repair-v2/analysis/three-arm-results.json",
+      "source_sha256": "d20ffe481dd98fe1bcd558ba500df61014980ee1d6c81c8299dda6c860a41d2b",
+      "export_sha256": "8264f0be72d1ed555dcf25f644b8c81c00be991765a498e7ff24448a7e7f23f9",
+      "export_bytes": 221615,
+      "byte_identical_to_source": false,
+      "sanitizations": [],
+      "source_path_relative_to_study": "analysis/three-arm-results.json",
+      "transform": "Exact aggregate field allowlist. Entire private per_assignment join is omitted; every metric, stratum, family count and result limitation is preserved without relabeling."
+    },
+    "dataset-card.json": {
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-repair-v2/analysis/dataset-card.json",
+      "source_sha256": "f08d63e71787079555ab6cc2c85530e33cca17b5f7726fb94156df3ae60cf181",
+      "export_sha256": "f08d63e71787079555ab6cc2c85530e33cca17b5f7726fb94156df3ae60cf181",
+      "export_bytes": 21415,
+      "byte_identical_to_source": true,
+      "sanitizations": [],
+      "source_path_relative_to_study": "analysis/dataset-card.json"
+    },
+    "engineering-validation.json": {
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-repair-v2/analysis/engineering-validation.json",
+      "source_sha256": "1eca8881a12fad9978ac8a0c0ac475c0336df91ee8d5dcbfc4e15413cfb16ea2",
+      "export_sha256": "1eca8881a12fad9978ac8a0c0ac475c0336df91ee8d5dcbfc4e15413cfb16ea2",
+      "export_bytes": 60765,
+      "byte_identical_to_source": true,
+      "sanitizations": [],
+      "source_path_relative_to_study": "analysis/engineering-validation.json"
+    },
+    "results-independent-review.json": {
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-repair-v2/audit/results-amended-independent-review-01.json",
+      "source_sha256": "978410798d3668382ef0e82adbeb2b06d05cf26a2f5cb9422feb0fd2dcea94a0",
+      "export_sha256": "978410798d3668382ef0e82adbeb2b06d05cf26a2f5cb9422feb0fd2dcea94a0",
+      "export_bytes": 54311,
+      "byte_identical_to_source": true,
+      "sanitizations": [],
+      "source_path_relative_to_study": "audit/results-amended-independent-review-01.json"
+    },
+    "training-independent-review.json": {
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-repair-v2/audit/training-independent-review.json",
+      "source_sha256": "751995bad4b84cf20b671719fb017df62811b982a1ab33512b13895e90fff666",
+      "export_sha256": "e9f61ba36d3eb2043fd0fdb52dba105ec948846c9a3e150ca64f3617ee9fb2d4",
+      "export_bytes": 10789,
+      "byte_identical_to_source": false,
+      "sanitizations": [
+        {
+          "path": "$.exit_evidence.pid",
+          "action": "omitted private identifier, candidate payload or local runtime detail"
+        }
+      ],
+      "source_path_relative_to_study": "audit/training-independent-review.json"
+    },
+    "training-result.json": {
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-repair-v2/training/formal-01/result.json",
+      "source_sha256": "d8b9c1e0931c2d271f14d38e90e88e554c9b97a89494575181adfdf0aca88507",
+      "export_sha256": "fa5223913b0ed50fd86580aa309867a80a57090738050000bdeb51f3b15282f2",
+      "export_bytes": 18872,
+      "byte_identical_to_source": false,
+      "sanitizations": [
+        {
+          "path": "$.pid",
+          "action": "omitted private identifier, candidate payload or local runtime detail"
+        }
+      ],
+      "source_path_relative_to_study": "training/formal-01/result.json"
+    },
+    "collection-config.json": {
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-repair-v2/evaluation/collection-01/collection-config.json",
+      "source_sha256": "fd8dff2fc8f1cb13ea81955f9844d488ba3940c2c59463adcd55ad96c12e63fc",
+      "export_sha256": "fd8dff2fc8f1cb13ea81955f9844d488ba3940c2c59463adcd55ad96c12e63fc",
+      "export_bytes": 2824,
+      "byte_identical_to_source": true,
+      "sanitizations": [],
+      "source_path_relative_to_study": "evaluation/collection-01/collection-config.json"
+    },
+    "collection-completion.json": {
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-repair-v2/evaluation/collection-01/collection-result.json",
+      "source_sha256": "f7566e2d0f59ea8ff5f043ebe278c882bf5cae8d8140d5edc2d3f5bdac32c2ac",
+      "export_sha256": "f7566e2d0f59ea8ff5f043ebe278c882bf5cae8d8140d5edc2d3f5bdac32c2ac",
+      "export_bytes": 325,
+      "byte_identical_to_source": true,
+      "sanitizations": [],
+      "source_path_relative_to_study": "evaluation/collection-01/collection-result.json"
+    },
+    "preparation-public.json": {
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-repair-v2/evaluation/blind-prepared-reference-01/preparation.json",
+      "source_sha256": "920649011cbb2fabfe4fe47e9dedb5b109a2d648f3490bfa614df9890a40e926",
+      "export_sha256": "920649011cbb2fabfe4fe47e9dedb5b109a2d648f3490bfa614df9890a40e926",
+      "export_bytes": 1835,
+      "byte_identical_to_source": true,
+      "sanitizations": [],
+      "source_path_relative_to_study": "evaluation/blind-prepared-reference-01/preparation.json"
+    },
+    "reviewed-test-lengths.json": {
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-repair-v2/training/length-inspection-reviewed-01/test.lengths.json",
+      "source_sha256": "9bfe888286baeb6a1da59eaa5a4dc467705eac62be7108be96edd9185c7b9ffd",
+      "export_sha256": "9bfe888286baeb6a1da59eaa5a4dc467705eac62be7108be96edd9185c7b9ffd",
+      "export_bytes": 15440,
+      "byte_identical_to_source": true,
+      "sanitizations": [],
+      "source_path_relative_to_study": "training/length-inspection-reviewed-01/test.lengths.json"
+    },
+    "review-lock-public.json": {
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-repair-v2/evaluation/blind-sealed-reference-01/review-lock.json",
+      "source_sha256": "1caf4aabd332e9820705f9984ef9869e9e95d823d5823393a138dcd7ddce080b",
+      "export_sha256": "2c9a9f251219911851f6604a54391bae2b04eaa549f9fb8be76a42306adcd1b8",
+      "export_bytes": 2838,
+      "byte_identical_to_source": false,
+      "sanitizations": [
+        {
+          "path": "$.evidence.preparation.path",
+          "action": "normalized project path value"
+        },
+        {
+          "path": "$.evidence.dispatch_manifest.path",
+          "action": "normalized project path value"
+        },
+        {
+          "path": "$.evidence.adjudication_manifest.path",
+          "action": "normalized project path value"
+        },
+        {
+          "path": "$.evidence.resolutions.path",
+          "action": "normalized project path value"
+        },
+        {
+          "path": "$.evidence.manual_signoff.path",
+          "action": "normalized project path value"
+        },
+        {
+          "path": "$.evidence.judgments.path",
+          "action": "normalized project path value"
+        }
+      ],
+      "source_path_relative_to_study": "evaluation/blind-sealed-reference-01/review-lock.json"
+    },
+    "interpretation.json": {
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-repair-v2/analysis/interpretation.json",
+      "source_sha256": "6efa2612f5a0335a50a8e09d6ef2ee69d72c5354b9dc1dbe82c3e3ed7e691af8",
+      "export_sha256": "a21acf32050e51cf1b40c9864616a2666e94617e5f7f9b585b8edd2b9591fd02",
+      "export_bytes": 7943,
+      "byte_identical_to_source": false,
+      "sanitizations": [],
+      "source_path_relative_to_study": "analysis/interpretation.json",
+      "transform": "Exact reviewed website prose; no generated findings or inferred positive conclusion."
+    },
+    "attempt-accounting-public.json": {
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-repair-v2/evaluation/collection-01/attempt-events.jsonl",
+      "source_sha256": "41c3f4335d3da5d6eadf2bbe8f25e18235cf8a0875fce4f73eb1b37a9c841e09",
+      "export_sha256": "7b515676ab511957d270ac70d5a07af595f80a699e6c628314f452fe40559a86",
+      "export_bytes": 2528,
+      "byte_identical_to_source": false,
+      "sanitizations": [],
+      "source_path_relative_to_study": "evaluation/collection-01/attempt-events.jsonl",
+      "transform": "Structural replay of all physical attempt records; aggregate metadata omits identity joins and order. Includes failures and unknown interruption duration.",
+      "additional_source_bindings": {
+        "output/research/2026-10-24/tracker-lora-repair-v2/evaluation/collection-01/outputs.jsonl": "8112bf62b4b3c33371f557610b7e5223e3e57a818a418975c525e0ca77d1a013",
+        "output/research/2026-10-24/tracker-lora-repair-v2/evaluation/collection-01/collection-config.json": "fd8dff2fc8f1cb13ea81955f9844d488ba3940c2c59463adcd55ad96c12e63fc",
+        "output/research/2026-10-24/tracker-lora-repair-v2/evaluation/collection-01/collection-result.json": "f7566e2d0f59ea8ff5f043ebe278c882bf5cae8d8140d5edc2d3f5bdac32c2ac"
+      }
+    },
+    "protocol.json": {
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-repair-v2/evaluation/protocol.json",
+      "source_sha256": "1fff46568a31e35eaa75f053ee417b83a79d1fb601b90e234dd209ac35e37600",
+      "export_sha256": "1fff46568a31e35eaa75f053ee417b83a79d1fb601b90e234dd209ac35e37600",
+      "export_bytes": 9525,
+      "byte_identical_to_source": true,
+      "sanitizations": [],
+      "source_path_relative_to_study": "evaluation/protocol.json"
+    },
+    "protocol-lock.json": {
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-repair-v2/evaluation/protocol-lock.json",
+      "source_sha256": "a80ef0ca2c6fed06452596b3a39a187158973917a285a7cb8fbd0985a5ae9f21",
+      "export_sha256": "c399c0f3cbf220db50b305c8d79dee2ab0eb124080ce381df4a8ba6c5efad8cd",
+      "export_bytes": 4852,
+      "byte_identical_to_source": false,
+      "sanitizations": [
+        {
+          "path": "$.files.protocol.path",
+          "action": "normalized project path value"
+        },
+        {
+          "path": "$.files.manifest.path",
+          "action": "normalized project path value"
+        },
+        {
+          "path": "$.files.test_records.path",
+          "action": "normalized project path value"
+        },
+        {
+          "path": "$.files.system_prompt.path",
+          "action": "normalized project path value"
+        },
+        {
+          "path": "$.files.annotation_policy.path",
+          "action": "normalized project path value"
+        },
+        {
+          "path": "$.files.admission.path",
+          "action": "normalized project path value"
+        },
+        {
+          "path": "$.files.collector.path",
+          "action": "normalized project path value"
+        },
+        {
+          "path": "$.files.model_loader_and_trainer.path",
+          "action": "normalized project path value"
+        },
+        {
+          "path": "$.files.gate.path",
+          "action": "normalized project path value"
+        },
+        {
+          "path": "$.files.compiler.path",
+          "action": "normalized project path value"
+        },
+        {
+          "path": "$.files.evaluator.path",
+          "action": "normalized project path value"
+        },
+        {
+          "path": "$.files.legacy_evaluator.path",
+          "action": "normalized project path value"
+        },
+        {
+          "path": "$.files.legacy_compiler.path",
+          "action": "normalized project path value"
+        },
+        {
+          "path": "$.files.runtime.path",
+          "action": "normalized project path value"
+        },
+        {
+          "path": "$.files.review_workflow.path",
+          "action": "normalized project path value"
+        },
+        {
+          "path": "$.files.final_length_inspection.path",
+          "action": "normalized project path value"
+        },
+        {
+          "path": "$.files.cross_split_review.path",
+          "action": "normalized project path value"
+        },
+        {
+          "path": "$.files.cross_split_original_review.path",
+          "action": "normalized project path value"
+        }
+      ],
+      "source_path_relative_to_study": "evaluation/protocol-lock.json"
+    },
+    "annotation-policy-v3.json": {
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-repair-v2/annotation/policy-v3.json",
+      "source_sha256": "7e36104bbbaf2e7cc89d95490682b004a1415bfa54c4c7a131328595021dc457",
+      "export_sha256": "7e36104bbbaf2e7cc89d95490682b004a1415bfa54c4c7a131328595021dc457",
+      "export_bytes": 3770,
+      "byte_identical_to_source": true,
+      "sanitizations": [],
+      "source_path_relative_to_study": "annotation/policy-v3.json"
+    },
+    "system-prompt.txt": {
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-repair-v2/annotation/system_prompt.txt",
+      "source_sha256": "7587583ff3fb2f46f64a32ca598a9f2bd980d8b0c3ff24915d80f5e31cda5abd",
+      "export_sha256": "7587583ff3fb2f46f64a32ca598a9f2bd980d8b0c3ff24915d80f5e31cda5abd",
+      "export_bytes": 3868,
+      "byte_identical_to_source": true,
+      "sanitizations": [],
+      "source_path_relative_to_study": "annotation/system_prompt.txt"
+    },
+    "dataset-manifest.json": {
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-repair-v2/data/compiled/manifest.json",
+      "source_sha256": "35e3dfc55bf74ca37b88e6e3aa70738a9d61ec87769f19a8a601c3d9dded16bc",
+      "export_sha256": "35e3dfc55bf74ca37b88e6e3aa70738a9d61ec87769f19a8a601c3d9dded16bc",
+      "export_bytes": 36904,
+      "byte_identical_to_source": true,
+      "sanitizations": [],
+      "source_path_relative_to_study": "data/compiled/manifest.json"
+    },
+    "data-admission.json": {
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-repair-v2/review/admission.json",
+      "source_sha256": "d2cb7337c4b3f5298f253a7da950b21cf40b8583df1542f10148a0b064e2d37f",
+      "export_sha256": "d2cb7337c4b3f5298f253a7da950b21cf40b8583df1542f10148a0b064e2d37f",
+      "export_bytes": 233668,
+      "byte_identical_to_source": true,
+      "sanitizations": [],
+      "source_path_relative_to_study": "review/admission.json"
+    },
+    "retained-selection.json": {
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-repair-v2/data/retained-selection.json",
+      "source_sha256": "5cf84c5ad9f7621b33922f1f0d63f7dfb3fa85c074470337bd90dbf6b333a7ad",
+      "export_sha256": "5cf84c5ad9f7621b33922f1f0d63f7dfb3fa85c074470337bd90dbf6b333a7ad",
+      "export_bytes": 5742,
+      "byte_identical_to_source": true,
+      "sanitizations": [],
+      "source_path_relative_to_study": "data/retained-selection.json"
+    },
+    "citation-revisions.json": {
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-repair-v2/data/citation-revisions.json",
+      "source_sha256": "974738a5cf73c89a09b3773708a01e883d9792652610051862b339ac77a4c394",
+      "export_sha256": "974738a5cf73c89a09b3773708a01e883d9792652610051862b339ac77a4c394",
+      "export_bytes": 69844,
+      "byte_identical_to_source": true,
+      "sanitizations": [],
+      "source_path_relative_to_study": "data/citation-revisions.json"
+    },
+    "fault-position-revision.json": {
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-repair-v2/data/fault-position-revision.json",
+      "source_sha256": "dee45921c76a5fcaa42f27c58fdd042ae98630878ce82392e80ba76ddeafc52f",
+      "export_sha256": "dee45921c76a5fcaa42f27c58fdd042ae98630878ce82392e80ba76ddeafc52f",
+      "export_bytes": 107718,
+      "byte_identical_to_source": true,
+      "sanitizations": [],
+      "source_path_relative_to_study": "data/fault-position-revision.json"
+    },
+    "leakage-replacements.json": {
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-repair-v2/data/leakage-replacements.json",
+      "source_sha256": "5b49f8d673799ae2d177388bdd719d7c728a0b3e355a76d9ad1d09d3573a7e6f",
+      "export_sha256": "5b49f8d673799ae2d177388bdd719d7c728a0b3e355a76d9ad1d09d3573a7e6f",
+      "export_bytes": 2105,
+      "byte_identical_to_source": true,
+      "sanitizations": [],
+      "source_path_relative_to_study": "data/leakage-replacements.json"
+    },
+    "fresh-train-revisions.json": {
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-repair-v2/review/fresh-train-revisions.json",
+      "source_sha256": "c777e377ff130916bc3ec09cb86419a73b89e75c8d6a7cd509676e7e857a5da7",
+      "export_sha256": "c777e377ff130916bc3ec09cb86419a73b89e75c8d6a7cd509676e7e857a5da7",
+      "export_bytes": 16980,
+      "byte_identical_to_source": true,
+      "sanitizations": [],
+      "source_path_relative_to_study": "review/fresh-train-revisions.json"
+    },
+    "cross-split-similarity-review-01.json": {
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-repair-v2/audit/cross-split-similarity-review-01.json",
+      "source_sha256": "ab8693a5666ef7e23df3f69ac18b9debbc91e09136a459648ebc722e224998ca",
+      "export_sha256": "ab8693a5666ef7e23df3f69ac18b9debbc91e09136a459648ebc722e224998ca",
+      "export_bytes": 365169,
+      "byte_identical_to_source": true,
+      "sanitizations": [],
+      "source_path_relative_to_study": "audit/cross-split-similarity-review-01.json"
+    },
+    "cross-split-similarity-review-02.json": {
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-repair-v2/audit/cross-split-similarity-review-02.json",
+      "source_sha256": "11aeef3a6f5c6ca9b5c8c7b06320920c199468c8b5545be3c9abe392ea7d7f00",
+      "export_sha256": "11aeef3a6f5c6ca9b5c8c7b06320920c199468c8b5545be3c9abe392ea7d7f00",
+      "export_bytes": 718944,
+      "byte_identical_to_source": true,
+      "sanitizations": [],
+      "source_path_relative_to_study": "audit/cross-split-similarity-review-02.json"
+    },
+    "protocol-independent-review.json": {
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-repair-v2/audit/protocol-independent-review.json",
+      "source_sha256": "a06e2a0746ec9d861086606c7c2215b8dca9605bc6f217b6658faf28bd992f62",
+      "export_sha256": "459ca4c30081c8d57313c66f7c7f88edd635acfa72fcb538eb80725968d33cc9",
+      "export_bytes": 20204,
+      "byte_identical_to_source": false,
+      "sanitizations": [
+        {
+          "path": "$.reviewer",
+          "action": "represented agent task identity without filesystem-like prefix"
+        }
+      ],
+      "source_path_relative_to_study": "audit/protocol-independent-review.json"
+    },
+    "final-data-gate-independent-review.json": {
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-repair-v2/audit/final-data-gate-independent-review-01.json",
+      "source_sha256": "b5fb68bfca45c1085dcf7d2b6dc6825357cd21e20403d8d03812d5c363e19b47",
+      "export_sha256": "b5fb68bfca45c1085dcf7d2b6dc6825357cd21e20403d8d03812d5c363e19b47",
+      "export_bytes": 101972,
+      "byte_identical_to_source": true,
+      "sanitizations": [],
+      "source_path_relative_to_study": "audit/final-data-gate-independent-review-01.json"
+    },
+    "detailed-review-admission-checks.json": {
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-repair-v2/audit/detailed-review-admission-checks-01.json",
+      "source_sha256": "39a6b5c55b62b5febe761ee092bac512dbbef51345dcb7e4079e4b9dd7f4200d",
+      "export_sha256": "b8ca6f99dd3ba1dcf882fbe87b95eef8f26a65a0b3bbd5ef9481eb0b892ea58c",
+      "export_bytes": 4257,
+      "byte_identical_to_source": false,
+      "sanitizations": [
+        {
+          "path": "$.checks[].reason",
+          "action": "redacted quoted local path inside message; exception text retained"
+        }
+      ],
+      "source_path_relative_to_study": "audit/detailed-review-admission-checks-01.json"
+    },
+    "evaluator-independent-review.json": {
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-repair-v2/audit/evaluator-independent-review-01.json",
+      "source_sha256": "31945fc8db7b1ede7e1a73fcdcc15f9f31940e7f95d98e71197d9fe155dabe4f",
+      "export_sha256": "31945fc8db7b1ede7e1a73fcdcc15f9f31940e7f95d98e71197d9fe155dabe4f",
+      "export_bytes": 2624,
+      "byte_identical_to_source": true,
+      "sanitizations": [],
+      "source_path_relative_to_study": "audit/evaluator-independent-review-01.json"
+    },
+    "compiler-position-independent-review.json": {
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-repair-v2/audit/compiler-position-independent-review-01.json",
+      "source_sha256": "7e78a47481705bfd6e5f19da603fb7587e98c3bf7f45bfd7288546380bbd403c",
+      "export_sha256": "7e78a47481705bfd6e5f19da603fb7587e98c3bf7f45bfd7288546380bbd403c",
+      "export_bytes": 147598,
+      "byte_identical_to_source": true,
+      "sanitizations": [],
+      "source_path_relative_to_study": "audit/compiler-position-independent-review-01.json"
+    },
+    "repair-logic-checks.json": {
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-repair-v2/audit/repair-logic-checks-02.json",
+      "source_sha256": "82b4420cb7f3a3e6a64193920a7a39c1617d20f516ccbca942ef59e60371fc36",
+      "export_sha256": "82b4420cb7f3a3e6a64193920a7a39c1617d20f516ccbca942ef59e60371fc36",
+      "export_bytes": 1479,
+      "byte_identical_to_source": true,
+      "sanitizations": [],
+      "source_path_relative_to_study": "audit/repair-logic-checks-02.json"
+    },
+    "training-collection-engineering-checks.json": {
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-repair-v2/audit/training-collection-engineering-checks-03.json",
+      "source_sha256": "ebe7228a33e7f1fbc147d0e580ac657709f5e8b5ce9d6f39c7a529df1800bb74",
+      "export_sha256": "ebe7228a33e7f1fbc147d0e580ac657709f5e8b5ce9d6f39c7a529df1800bb74",
+      "export_bytes": 3927,
+      "byte_identical_to_source": true,
+      "sanitizations": [],
+      "source_path_relative_to_study": "audit/training-collection-engineering-checks-03.json"
+    },
+    "review-workflow-cpu-checks.json": {
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-repair-v2/audit/review-workflow-cpu-checks-02-integration.json",
+      "source_sha256": "cd188226bc81327c9abdd10d69303cb73a20d98808c01c62feec5466487b7719",
+      "export_sha256": "cd188226bc81327c9abdd10d69303cb73a20d98808c01c62feec5466487b7719",
+      "export_bytes": 3659,
+      "byte_identical_to_source": true,
+      "sanitizations": [],
+      "source_path_relative_to_study": "audit/review-workflow-cpu-checks-02-integration.json"
+    },
+    "review-workflow-source-review.json": {
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-repair-v2/audit/blind-review-workflow-source-review.json",
+      "source_sha256": "d81d8833f4cd52f1bdd27f8d6a5149125bedfbde836d4221d63567790adeac17",
+      "export_sha256": "d81d8833f4cd52f1bdd27f8d6a5149125bedfbde836d4221d63567790adeac17",
+      "export_bytes": 3344,
+      "byte_identical_to_source": true,
+      "sanitizations": [],
+      "source_path_relative_to_study": "audit/blind-review-workflow-source-review.json"
+    },
+    "reviewed-length-inspection.json": {
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-repair-v2/training/length-inspection-reviewed-01/result.json",
+      "source_sha256": "bc405641d69a9db562026342a3ac470351c685cd9c1eee96af63f2814e0ae679",
+      "export_sha256": "bc405641d69a9db562026342a3ac470351c685cd9c1eee96af63f2814e0ae679",
+      "export_bytes": 1692,
+      "byte_identical_to_source": true,
+      "sanitizations": [],
+      "source_path_relative_to_study": "training/length-inspection-reviewed-01/result.json"
+    },
+    "prior-evidence-preservation.json": {
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-repair-v2/publication/prior-bundles.json",
+      "source_sha256": "2dc0a2411a29a26ca3516aeb367a162f6d493dace5aaa385ccabf829cc082f12",
+      "export_sha256": "2dc0a2411a29a26ca3516aeb367a162f6d493dace5aaa385ccabf829cc082f12",
+      "export_bytes": 1772,
+      "byte_identical_to_source": true,
+      "sanitizations": [],
+      "source_path_relative_to_study": "publication/prior-bundles.json"
+    },
+    "retained-old-independent-review.json": {
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-repair-v2/review/retained-old-independent-review.json",
+      "source_sha256": "7baa004db437a4c03834aa42e50402f8da816a2a447aac25e8ee4474d066ad22",
+      "export_sha256": "7baa004db437a4c03834aa42e50402f8da816a2a447aac25e8ee4474d066ad22",
+      "export_bytes": 406596,
+      "byte_identical_to_source": true,
+      "sanitizations": [],
+      "source_path_relative_to_study": "review/retained-old-independent-review.json"
+    },
+    "fresh-train-independent-review.json": {
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-repair-v2/review/fresh-train-independent-review.json",
+      "source_sha256": "d0cde2bfeb63babb1c697ea11086e89c74a6702925534ef846b9b7e0affe7bdd",
+      "export_sha256": "d0cde2bfeb63babb1c697ea11086e89c74a6702925534ef846b9b7e0affe7bdd",
+      "export_bytes": 1122644,
+      "byte_identical_to_source": true,
+      "sanitizations": [],
+      "source_path_relative_to_study": "review/fresh-train-independent-review.json"
+    },
+    "fresh-eval-independent-review.json": {
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-repair-v2/review/fresh-eval-independent-review.json",
+      "source_sha256": "85c9d7402a3ab54328fc6c3d09540e0921455a92e027c00c64562327ac9c249e",
+      "export_sha256": "85c9d7402a3ab54328fc6c3d09540e0921455a92e027c00c64562327ac9c249e",
+      "export_bytes": 1088087,
+      "byte_identical_to_source": true,
+      "sanitizations": [],
+      "source_path_relative_to_study": "review/fresh-eval-independent-review.json"
+    },
+    "replacement-independent-review.json": {
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-repair-v2/review/replacement-independent-review.json",
+      "source_sha256": "47421996bad089d18c72f045dedc9e80d40225f4eb973f1b4be2beb7a1d97d72",
+      "export_sha256": "47421996bad089d18c72f045dedc9e80d40225f4eb973f1b4be2beb7a1d97d72",
+      "export_bytes": 46393,
+      "byte_identical_to_source": true,
+      "sanitizations": [],
+      "source_path_relative_to_study": "review/replacement-independent-review.json"
+    },
+    "train.records.jsonl": {
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-repair-v2/data/compiled/train.records.jsonl",
+      "source_sha256": "12c9f6a672fb30846eb62e6ea4ef7456906a167f784f3524ddff212d82f117ea",
+      "export_sha256": "12c9f6a672fb30846eb62e6ea4ef7456906a167f784f3524ddff212d82f117ea",
+      "export_bytes": 2447949,
+      "byte_identical_to_source": true,
+      "sanitizations": [],
+      "source_path_relative_to_study": "data/compiled/train.records.jsonl"
+    },
+    "train.sft.jsonl": {
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-repair-v2/data/compiled/train.sft.jsonl",
+      "source_sha256": "78bdadd3b9684600cd761d24b313acf8e34f58d06783fd9508ea6438ed86050c",
+      "export_sha256": "78bdadd3b9684600cd761d24b313acf8e34f58d06783fd9508ea6438ed86050c",
+      "export_bytes": 3188264,
+      "byte_identical_to_source": true,
+      "sanitizations": [],
+      "source_path_relative_to_study": "data/compiled/train.sft.jsonl"
+    },
+    "dev.records.jsonl": {
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-repair-v2/data/compiled/dev.records.jsonl",
+      "source_sha256": "9cad6d4df10aa51ec79c59e1b68149ad390a1f88fa62748cd2fc4421dd961351",
+      "export_sha256": "9cad6d4df10aa51ec79c59e1b68149ad390a1f88fa62748cd2fc4421dd961351",
+      "export_bytes": 189703,
+      "byte_identical_to_source": true,
+      "sanitizations": [],
+      "source_path_relative_to_study": "data/compiled/dev.records.jsonl"
+    },
+    "dev.sft.jsonl": {
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-repair-v2/data/compiled/dev.sft.jsonl",
+      "source_sha256": "617a50fe4afaa2ac13c3af829e3a77b55d29a73bd6a292e9079de8107f448cf0",
+      "export_sha256": "617a50fe4afaa2ac13c3af829e3a77b55d29a73bd6a292e9079de8107f448cf0",
+      "export_bytes": 292187,
+      "byte_identical_to_source": true,
+      "sanitizations": [],
+      "source_path_relative_to_study": "data/compiled/dev.sft.jsonl"
+    },
+    "test.records.jsonl": {
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-repair-v2/data/compiled/test.records.jsonl",
+      "source_sha256": "8190b19a0b25718e7e5baf2ac5fd25383df4fcd422696a8564d99a6cb3766ce3",
+      "export_sha256": "8190b19a0b25718e7e5baf2ac5fd25383df4fcd422696a8564d99a6cb3766ce3",
+      "export_bytes": 791165,
+      "byte_identical_to_source": true,
+      "sanitizations": [],
+      "source_path_relative_to_study": "data/compiled/test.records.jsonl"
+    },
+    "test.sft.jsonl": {
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-repair-v2/data/compiled/test.sft.jsonl",
+      "source_sha256": "5bbac834472b29aaa8f8b3ce5093ec32b9f6dce03c6fe0ab72ada6da20d7ec41",
+      "export_sha256": "5bbac834472b29aaa8f8b3ce5093ec32b9f6dce03c6fe0ab72ada6da20d7ec41",
+      "export_bytes": 1183922,
+      "byte_identical_to_source": true,
+      "sanitizations": [],
+      "source_path_relative_to_study": "data/compiled/test.sft.jsonl"
+    },
+    "prior-repair-diagnosis-public.json": {
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-repair-v2/diagnosis/prior-repair-diagnosis.json",
+      "source_sha256": "2c2fbd11089b010f0d9c44565fd4f14c976bb9fe7241bba1692aacdc7f83426e",
+      "export_sha256": "108c7cd0f318c67282136e14c8e374bdb6b0575311fbce179e1b595faae934c3",
+      "export_bytes": 76936,
+      "byte_identical_to_source": false,
+      "sanitizations": [],
+      "source_path_relative_to_study": "diagnosis/prior-repair-diagnosis.json",
+      "transform": "Earlier pilot diagnostic evidence only, not new experiment results; private blind/arm joins and individual candidate judgments omitted."
+    },
+    "reference-amendment-ledger-public.json": {
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-repair-v2/evaluation/reference-amendment-01/ledger.json",
+      "source_sha256": "25e417ab9bf048150a39a074e6583dc97fd19471210fc9eaaba2524ee34b89da",
+      "export_sha256": "1d9ca5ce706c69d3586d1c2b361df6965e1438f90cd06bc05a09873d85cb1bff",
+      "export_bytes": 2640,
+      "byte_identical_to_source": false,
+      "sanitizations": [],
+      "source_path_relative_to_study": "evaluation/reference-amendment-01/ledger.json",
+      "transform": "Exact approved corrections keyed by public compiled example identity; blind seeds and private joins omitted.",
+      "additional_source_bindings": {
+        "output/research/2026-10-24/tracker-lora-repair-v2/data/compiled/test.records.jsonl": "8190b19a0b25718e7e5baf2ac5fd25383df4fcd422696a8564d99a6cb3766ce3",
+        "output/research/2026-10-24/tracker-lora-repair-v2/evaluation/reference-amendment-01/approval.json": "9d7addfbc5202971cb9be771b8a9cab81ae115f106893381edf04cf33d997c7d",
+        "output/research/2026-10-24/tracker-lora-repair-v2/evaluation/blind-prepared-reference-01/reference-amendment-v1-manifest.json": "c385038240e0a4690943d033b8d85d219a6e8d66f899e0e2f60a47b8addb989f"
+      }
+    },
+    "test.amended-references.json": {
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-repair-v2/data/compiled/test.records.jsonl",
+      "source_sha256": "8190b19a0b25718e7e5baf2ac5fd25383df4fcd422696a8564d99a6cb3766ce3",
+      "export_sha256": "d3b482e26b06188c17943b06e945fb72ae9e255e42d768693a462e2e684d2447",
+      "export_bytes": 139231,
+      "byte_identical_to_source": false,
+      "sanitizations": [],
+      "source_path_relative_to_study": "data/compiled/test.records.jsonl",
+      "transform": "All 200 expected reference states after the exact approved text overlay. Original split files remain byte-identical.",
+      "additional_source_bindings": {
+        "output/research/2026-10-24/tracker-lora-repair-v2/evaluation/reference-amendment-01/ledger.json": "25e417ab9bf048150a39a074e6583dc97fd19471210fc9eaaba2524ee34b89da",
+        "output/research/2026-10-24/tracker-lora-repair-v2/evaluation/reference-amendment-01/approval.json": "9d7addfbc5202971cb9be771b8a9cab81ae115f106893381edf04cf33d997c7d",
+        "output/research/2026-10-24/tracker-lora-repair-v2/evaluation/blind-prepared-reference-01/reference-amendment-v1-manifest.json": "c385038240e0a4690943d033b8d85d219a6e8d66f899e0e2f60a47b8addb989f"
+      }
+    },
+    "reference-amendment-provenance-public.json": {
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-repair-v2/evaluation/blind-prepared-reference-01/reference-amendment-v1-manifest.json",
+      "source_sha256": "c385038240e0a4690943d033b8d85d219a6e8d66f899e0e2f60a47b8addb989f",
+      "export_sha256": "ca2db5102127034e0e2188ff41e096358d7addfb0550dd092757aa3df5290540",
+      "export_bytes": 1304,
+      "byte_identical_to_source": false,
+      "sanitizations": [],
+      "source_path_relative_to_study": "evaluation/blind-prepared-reference-01/reference-amendment-v1-manifest.json",
+      "transform": "Aggregate amendment provenance only; original and amended blind identifiers and private packet hashes omitted."
+    },
+    "reference-amendment-approval.json": {
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-repair-v2/evaluation/reference-amendment-01/approval.json",
+      "source_sha256": "9d7addfbc5202971cb9be771b8a9cab81ae115f106893381edf04cf33d997c7d",
+      "export_sha256": "9d7addfbc5202971cb9be771b8a9cab81ae115f106893381edf04cf33d997c7d",
+      "export_bytes": 395,
+      "byte_identical_to_source": true,
+      "sanitizations": [],
+      "source_path_relative_to_study": "evaluation/reference-amendment-01/approval.json"
+    },
+    "reference-amendment-disclosure.json": {
+      "source_path_relative_to_project": "output/research/2026-10-24/tracker-lora-repair-v2/analysis/reference-amendment-disclosure.json",
+      "source_sha256": "dd05a89839c43bfc0ae9239c2ffd093417c61929bda54d6f8a911e02ad61a7c0",
+      "export_sha256": "de733dbccee7e12a446247da10e481b32632abeea6e7f8d7bbf9c352d5f6a640",
+      "export_bytes": 3659,
+      "byte_identical_to_source": false,
+      "sanitizations": [
+        {
+          "path": "$.original_findings.path",
+          "action": "normalized project path value"
+        }
+      ],
+      "source_path_relative_to_study": "analysis/reference-amendment-disclosure.json",
+      "transform": "Exact independently reviewed disclosure of original findings, accepted corrections, other findings and limitations."
+    }
+  }
+}

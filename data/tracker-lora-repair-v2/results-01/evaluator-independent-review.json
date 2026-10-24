@@ -1,0 +1,57 @@
+{
+  "kind": "independent_engineering_and_protocol_review_not_quality_evaluation",
+  "status": "reviewed_with_required_binding_followups",
+  "created_at_utc": "2026-10-24T18:56:10.589915+00:00",
+  "reviewer": "repair_training_engineering",
+  "independent_of_evaluator_author": true,
+  "evaluator_sha256": "d6bd8a2aa3691780ad2f449b2c29448958ec5c52b396b901936ac4c7187230f5",
+  "protocol_sha256": "9e66ce188988c8bb0ac18bb2b6264066149a7f9baaf3f7dede7a23cc97cc2853",
+  "model_calls": 0,
+  "checks": [
+    {
+      "name": "raw_JSON_whitespace_excluded_when_canonical_proposal_and_state_match",
+      "passed": true
+    },
+    {
+      "name": "different_canonical_citations_never_deduplicated",
+      "passed": true
+    },
+    {
+      "name": "different_reference_never_deduplicated",
+      "passed": true
+    },
+    {
+      "name": "different_before_state_never_deduplicated",
+      "passed": true
+    },
+    {
+      "name": "same_candidate_on_different_row_never_deduplicated",
+      "passed": true
+    },
+    {
+      "name": "different_validity_never_deduplicated",
+      "passed": true
+    },
+    {
+      "name": "constant_paired_gain_bootstrap_keeps_point_and_both_intervals",
+      "passed": true
+    }
+  ],
+  "manual_findings": [
+    "Each identical same-input canonical candidate maps to one blind judgment while all 600 assignments and per-call costs remain separate.",
+    "Each fault contributes exactly one designated repair target, including uncertain and withdrawn references; other units remain in companion denominators.",
+    "Omission improvement is baseline minus treatment; repair improvement is treatment minus baseline.",
+    "97.5 percent interval indices 124 and 9874 correspond to predeclared two-endpoint Bonferroni tail allocations; bootstrap coverage remains approximate.",
+    "Failed or invalid outputs retain actual pre-state and remain scored; no string comparison assigns semantic quality."
+  ],
+  "requested_followups": [
+    "Bind imported legacy build_dataset.py materializer in frozen protocol and manifest dependencies.",
+    "Verify per-call model/revision in prepare as well as config/artifacts.",
+    "Verify 80 test fault rows, exactly two per family and 100/100 test languages against protocol; verify fresh train/dev language design too.",
+    "Optional defense in depth: verify aggregate assignment_id set and five decisions per family/arm."
+  ],
+  "limitations": [
+    "Review covered source and CPU fixtures, not model execution or completed study data.",
+    "Data gate and final lock were not available at review time."
+  ]
+}

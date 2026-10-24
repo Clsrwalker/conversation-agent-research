@@ -1,0 +1,130 @@
+{
+  "kind": "CPU-only blind-review workflow fixtures, not model quality or real semantic scoring",
+  "status": "passed",
+  "created_at_utc": "2026-10-24T19:15:10.795192+00:00",
+  "checks": [
+    {
+      "name": "all_600_assignments_and_202_unique_candidates",
+      "passed": true
+    },
+    {
+      "name": "all_fault_unique_plus_exact_twenty_percent_ordinary_selected",
+      "passed": true
+    },
+    {
+      "name": "changed_prospective_second_selection_rejected_even_if_rehashed",
+      "passed": true
+    },
+    {
+      "name": "duplicate_assignment_identity_rejected",
+      "passed": true
+    },
+    {
+      "name": "dispatch_covers_all_initial_and_prospective_second",
+      "passed": true
+    },
+    {
+      "name": "no_private_arm_names_in_first-a",
+      "passed": true
+    },
+    {
+      "name": "no_private_arm_names_in_first-b",
+      "passed": true
+    },
+    {
+      "name": "no_private_arm_names_in_first-c",
+      "passed": true
+    },
+    {
+      "name": "no_private_arm_names_in_second-a",
+      "passed": true
+    },
+    {
+      "name": "no_private_arm_names_in_second-b",
+      "passed": true
+    },
+    {
+      "name": "no_private_arm_names_in_second-c",
+      "passed": true
+    },
+    {
+      "name": "same_input_variant_separation_validated",
+      "passed": true
+    },
+    {
+      "name": "one_missing_secondary_judgment_rejected",
+      "passed": true
+    },
+    {
+      "name": "duplicate_initial_judgment_rejected",
+      "passed": true
+    },
+    {
+      "name": "both_structured_disagreement_and_flag_routed",
+      "passed": true
+    },
+    {
+      "name": "both_initial_review_stages_preserved_byte_exact",
+      "passed": true
+    },
+    {
+      "name": "nonzero_unresolved_blocks_seal",
+      "passed": true
+    },
+    {
+      "name": "reference_defect_blocks_seal",
+      "passed": true
+    },
+    {
+      "name": "initial_reviewer_cannot_be_final_adjudicator",
+      "passed": true
+    },
+    {
+      "name": "missing_disagreement_resolution_blocks_seal",
+      "passed": true
+    },
+    {
+      "name": "mutated_original_review_blocks_seal",
+      "passed": true
+    },
+    {
+      "name": "final_candidate_identity_error_blocks_seal",
+      "passed": true
+    },
+    {
+      "name": "complete_blind_lock_emitted_after_manual_signoff",
+      "passed": true
+    },
+    {
+      "name": "read_only_verifier_replays_full_coverage_and_manual_resolutions",
+      "passed": true
+    },
+    {
+      "name": "all_final_labels_adjudicated_exactly_once",
+      "passed": true
+    },
+    {
+      "name": "identical_three_arm_assignments_share_one_final_label",
+      "passed": true
+    },
+    {
+      "name": "frozen_evaluator_accepts_helper_lock_and_supplied_fixture_labels",
+      "passed": true
+    },
+    {
+      "name": "rehashing_final_labels_cannot_bypass_preserved_review_consistency",
+      "passed": true
+    }
+  ],
+  "checks_passed": 28,
+  "workflow_sha256": "4345cd1a14554c172e2cac21b47603212ec0140d72eb5818947b40f04f29798d",
+  "evaluator_sha256": "80d1fc6eeee56c128454d838701df98b5fbb4ec7ed1ee1cb2c1b61263776279c",
+  "fixture_script_sha256": "d5d7296cd04a9ae6587f634772a5f6e226a398663037c7a9f8af7ce621ddff60",
+  "real_outputs_read": false,
+  "model_calls": 0,
+  "limits": [
+    "Fixture labels are explicitly authored test inputs; the production workflow never generates semantic labels.",
+    "No test can prove reviewer independence from filesystem permissions alone.",
+    "The evaluator accepts a syntactically valid lock; root must use and preserve the helper seal evidence."
+  ]
+}

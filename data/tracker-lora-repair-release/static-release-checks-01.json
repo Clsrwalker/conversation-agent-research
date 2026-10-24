@@ -1,0 +1,135 @@
+{
+  "kind": "tracker_lora_repair_static_release_qa",
+  "type": "engineering_validation",
+  "status": "passed_static_checks_release_record_and_browser_publication_separate",
+  "date": "2026-10-24",
+  "timezone": "America/Halifax",
+  "checked_at_utc": "2026-10-24T21:38:51.203337+00:00",
+  "new_model_calls": 0,
+  "checks": [
+    {
+      "check": "Frozen summary/payload hashes, public JSON bytes, exact ZIP membership/content, sources manifest and bounded privacy scan",
+      "status": "passed",
+      "payloads": 55
+    },
+    {
+      "check": "All 48 displayed table cells and both differences with 95%/97.5% intervals match frozen results; audited prose and explicit limitations retained verbatim",
+      "status": "passed"
+    },
+    {
+      "check": "V2 local links and reference-correction links resolve; all nine earlier ZIPs retain their recorded hashes and page links",
+      "status": "passed",
+      "separately_pending_release_record": [
+        "data/tracker-lora-repair-release-validation.json"
+      ]
+    },
+    {
+      "check": "Overview, study index and combined research record retain the actual v2 entry",
+      "status": "passed"
+    }
+  ],
+  "artifact_sha256": {
+    "intent-role-separation.html": "e8fc34253ddbb296c6210cd38cdf6609e2816f647dec59d4b2c5a498120b248a",
+    "evidence.zip": "6cb402fa6c67caa26a814bb13a01681f98d2bfbedec2a801f2b20b6d8eee95e4",
+    "checker_source": "8ccbf6d29f31031a39aa31a1f0705b683ccfa58caf1a8257a419f030810a595b",
+    "annotation-policy-v3.json": "7e36104bbbaf2e7cc89d95490682b004a1415bfa54c4c7a131328595021dc457",
+    "attempt-accounting-public.json": "7b515676ab511957d270ac70d5a07af595f80a699e6c628314f452fe40559a86",
+    "citation-revisions.json": "974738a5cf73c89a09b3773708a01e883d9792652610051862b339ac77a4c394",
+    "collection-completion.json": "f7566e2d0f59ea8ff5f043ebe278c882bf5cae8d8140d5edc2d3f5bdac32c2ac",
+    "collection-config.json": "fd8dff2fc8f1cb13ea81955f9844d488ba3940c2c59463adcd55ad96c12e63fc",
+    "compiler-position-independent-review.json": "7e78a47481705bfd6e5f19da603fb7587e98c3bf7f45bfd7288546380bbd403c",
+    "cross-split-similarity-review-01.json": "ab8693a5666ef7e23df3f69ac18b9debbc91e09136a459648ebc722e224998ca",
+    "cross-split-similarity-review-02.json": "11aeef3a6f5c6ca9b5c8c7b06320920c199468c8b5545be3c9abe392ea7d7f00",
+    "data-admission.json": "d2cb7337c4b3f5298f253a7da950b21cf40b8583df1542f10148a0b064e2d37f",
+    "dataset-card.json": "f08d63e71787079555ab6cc2c85530e33cca17b5f7726fb94156df3ae60cf181",
+    "dataset-manifest.json": "35e3dfc55bf74ca37b88e6e3aa70738a9d61ec87769f19a8a601c3d9dded16bc",
+    "detailed-review-admission-checks.json": "b8ca6f99dd3ba1dcf882fbe87b95eef8f26a65a0b3bbd5ef9481eb0b892ea58c",
+    "dev.records.jsonl": "9cad6d4df10aa51ec79c59e1b68149ad390a1f88fa62748cd2fc4421dd961351",
+    "dev.sft.jsonl": "617a50fe4afaa2ac13c3af829e3a77b55d29a73bd6a292e9079de8107f448cf0",
+    "engineering-validation.json": "1eca8881a12fad9978ac8a0c0ac475c0336df91ee8d5dcbfc4e15413cfb16ea2",
+    "evaluator-independent-review.json": "31945fc8db7b1ede7e1a73fcdcc15f9f31940e7f95d98e71197d9fe155dabe4f",
+    "fault-position-revision.json": "dee45921c76a5fcaa42f27c58fdd042ae98630878ce82392e80ba76ddeafc52f",
+    "final-data-gate-independent-review.json": "b5fb68bfca45c1085dcf7d2b6dc6825357cd21e20403d8d03812d5c363e19b47",
+    "fresh-eval-independent-review.json": "85c9d7402a3ab54328fc6c3d09540e0921455a92e027c00c64562327ac9c249e",
+    "fresh-train-independent-review.json": "d0cde2bfeb63babb1c697ea11086e89c74a6702925534ef846b9b7e0affe7bdd",
+    "fresh-train-revisions.json": "c777e377ff130916bc3ec09cb86419a73b89e75c8d6a7cd509676e7e857a5da7",
+    "interpretation.json": "a21acf32050e51cf1b40c9864616a2666e94617e5f7f9b585b8edd2b9591fd02",
+    "leakage-replacements.json": "5b49f8d673799ae2d177388bdd719d7c728a0b3e355a76d9ad1d09d3573a7e6f",
+    "preparation-public.json": "920649011cbb2fabfe4fe47e9dedb5b109a2d648f3490bfa614df9890a40e926",
+    "prior-evidence-preservation.json": "2dc0a2411a29a26ca3516aeb367a162f6d493dace5aaa385ccabf829cc082f12",
+    "prior-repair-diagnosis-public.json": "108c7cd0f318c67282136e14c8e374bdb6b0575311fbce179e1b595faae934c3",
+    "protocol-independent-review.json": "459ca4c30081c8d57313c66f7c7f88edd635acfa72fcb538eb80725968d33cc9",
+    "protocol-lock.json": "c399c0f3cbf220db50b305c8d79dee2ab0eb124080ce381df4a8ba6c5efad8cd",
+    "protocol.json": "1fff46568a31e35eaa75f053ee417b83a79d1fb601b90e234dd209ac35e37600",
+    "reference-amendment-approval.json": "9d7addfbc5202971cb9be771b8a9cab81ae115f106893381edf04cf33d997c7d",
+    "reference-amendment-disclosure.json": "de733dbccee7e12a446247da10e481b32632abeea6e7f8d7bbf9c352d5f6a640",
+    "reference-amendment-ledger-public.json": "1d9ca5ce706c69d3586d1c2b361df6965e1438f90cd06bc05a09873d85cb1bff",
+    "reference-amendment-provenance-public.json": "ca2db5102127034e0e2188ff41e096358d7addfb0550dd092757aa3df5290540",
+    "repair-logic-checks.json": "82b4420cb7f3a3e6a64193920a7a39c1617d20f516ccbca942ef59e60371fc36",
+    "replacement-independent-review.json": "47421996bad089d18c72f045dedc9e80d40225f4eb973f1b4be2beb7a1d97d72",
+    "results-independent-review.json": "978410798d3668382ef0e82adbeb2b06d05cf26a2f5cb9422feb0fd2dcea94a0",
+    "results.json": "8264f0be72d1ed555dcf25f644b8c81c00be991765a498e7ff24448a7e7f23f9",
+    "retained-old-independent-review.json": "7baa004db437a4c03834aa42e50402f8da816a2a447aac25e8ee4474d066ad22",
+    "retained-selection.json": "5cf84c5ad9f7621b33922f1f0d63f7dfb3fa85c074470337bd90dbf6b333a7ad",
+    "review-lock-public.json": "2c9a9f251219911851f6604a54391bae2b04eaa549f9fb8be76a42306adcd1b8",
+    "review-workflow-cpu-checks.json": "cd188226bc81327c9abdd10d69303cb73a20d98808c01c62feec5466487b7719",
+    "review-workflow-source-review.json": "d81d8833f4cd52f1bdd27f8d6a5149125bedfbde836d4221d63567790adeac17",
+    "reviewed-length-inspection.json": "bc405641d69a9db562026342a3ac470351c685cd9c1eee96af63f2814e0ae679",
+    "reviewed-test-lengths.json": "9bfe888286baeb6a1da59eaa5a4dc467705eac62be7108be96edd9185c7b9ffd",
+    "sources.json": "1a4f5c2691a0814a3c5d6e76e7f47cf0651d925e1c28ed8b59966582a5aed286",
+    "summary.json": "aaa1f2a565f5b0ec1545c603ca077df13a2e287d1c7a3ad0b8f067092b8ff605",
+    "system-prompt.txt": "7587583ff3fb2f46f64a32ca598a9f2bd980d8b0c3ff24915d80f5e31cda5abd",
+    "test.amended-references.json": "d3b482e26b06188c17943b06e945fb72ae9e255e42d768693a462e2e684d2447",
+    "test.records.jsonl": "8190b19a0b25718e7e5baf2ac5fd25383df4fcd422696a8564d99a6cb3766ce3",
+    "test.sft.jsonl": "5bbac834472b29aaa8f8b3ce5093ec32b9f6dce03c6fe0ab72ada6da20d7ec41",
+    "train.records.jsonl": "12c9f6a672fb30846eb62e6ea4ef7456906a167f784f3524ddff212d82f117ea",
+    "train.sft.jsonl": "78bdadd3b9684600cd761d24b313acf8e34f58d06783fd9508ea6438ed86050c",
+    "training-collection-engineering-checks.json": "ebe7228a33e7f1fbc147d0e580ac657709f5e8b5ce9d6f39c7a529df1800bb74",
+    "training-independent-review.json": "e9f61ba36d3eb2043fd0fdb52dba105ec948846c9a3e150ca64f3617ee9fb2d4",
+    "training-result.json": "fa5223913b0ed50fd86580aa309867a80a57090738050000bdeb51f3b15282f2"
+  },
+  "preserved_prior_bundles": [
+    {
+      "path_relative_to_site": "dist/data/intent-role-separation/evidence.zip",
+      "sha256": "865cf0e08c7052d2d327bbbe1d7740c007047ea4542917eaa4796ca5f77452a5"
+    },
+    {
+      "path_relative_to_site": "dist/data/intent-role-diagnostics/evidence.zip",
+      "sha256": "32e6d9566b1f989195dfc023a36e312f281ac61e97c277a8d769784914def613"
+    },
+    {
+      "path_relative_to_site": "dist/data/tracker-lora-plan/evidence.zip",
+      "sha256": "061027b393a7ff07ca4255aa4f740fd4eda308e1ec7b70dc13e90e7161a64aac"
+    },
+    {
+      "path_relative_to_site": "dist/data/tracker-lora-pilot/evidence.zip",
+      "sha256": "7e4018e684cd4a92fe12b333a931170105ba7d61649048ddecd512e58aed5c80"
+    },
+    {
+      "path_relative_to_site": "dist/data/tracker-lora-pilot/followup-01/evidence.zip",
+      "sha256": "0d25311a746e3461b7bb3d22ab1d0ba1609213bf2c4c89f055904f4399c50bff"
+    },
+    {
+      "path_relative_to_site": "dist/data/tracker-lora-pilot/memory-revision-01/evidence.zip",
+      "sha256": "b63049ba6ea557c798e715cbaeb250a826add84a804d272469387c554ea292a4"
+    },
+    {
+      "path_relative_to_site": "dist/data/tracker-lora-pilot/formal-training-02/evidence.zip",
+      "sha256": "e4f9601655aa624fbd7e37837cf6774829874a4003a18840a268046c2d88f0d5"
+    },
+    {
+      "path_relative_to_site": "dist/data/tracker-lora-pilot/heldout-results-01/evidence.zip",
+      "sha256": "90edfd00b0a02f940d17440f23a431ff1007da81df316a2907f2e0e84be10110"
+    },
+    {
+      "path_relative_to_site": "dist/data/tracker-lora-pilot/heldout-collection-01/evidence.zip",
+      "sha256": "96f035dde9ca638f3846543ba8ee0b29fe75d6ffa9774b13a63c459fb57fd37c"
+    }
+  ],
+  "limits": [
+    "Static release consistency and bounded privacy checks only; no independent semantic re-review, rescoring or model calls.",
+    "Narrative is compared verbatim with the frozen independently audited summary, not judged by keyword matching.",
+    "Browser rendering, downloaded response bytes and deployment are checked separately by the release owner.",
+    "The separate release-validation record is permitted to be absent at this stage and must exist before publication."
+  ]
+}

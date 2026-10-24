@@ -1,0 +1,28 @@
+{
+  "kind": "tracker_lora_repair_release_index_fix_static_qa",
+  "type": "engineering_validation",
+  "status": "passed",
+  "date": "2026-10-24",
+  "timezone": "America/Halifax",
+  "checked_at_utc": "2026-10-24T21:39:17.448881+00:00",
+  "checks": [
+    {
+      "check": "Exact known validation kind derives one stable engineering index ID while public validation bytes remain identical to frozen payload",
+      "status": "passed"
+    },
+    {
+      "check": "Combined research JSON and JavaScript contain identical data",
+      "status": "passed"
+    }
+  ],
+  "artifact_sha256": {
+    "build_data.py": "d5ee33f01251313b4949a1313d183f74befab7ce155820c86d388ce9631de7d4",
+    "engineering-validation.json": "1eca8881a12fad9978ac8a0c0ac475c0336df91ee8d5dcbfc4e15413cfb16ea2",
+    "tracker-lora-repair-validation.json": "1eca8881a12fad9978ac8a0c0ac475c0336df91ee8d5dcbfc4e15413cfb16ea2",
+    "research-record.json": "5a665e86d797bc1c17e83f6e869fb60d8816355f480d3d5b10ed5c9f9d5000d4",
+    "data.js": "3dc6c576bd170e657f09476670c15cfa513ad4345f75aece33cdabc13c5239dc"
+  },
+  "limits": [
+    "Bounded index compatibility check; no research payload changes, semantic review, model calls, browser checks or deployment."
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "id": "tracker-lora-repair-release-validation",
+  "type": "engineering_validation",
+  "status": "passed_local_release_checks_publication_recorded_separately",
+  "date": "2026-10-24",
+  "timezone": "America/Halifax",
+  "checked_at_utc": "2026-10-24T21:40:15.700859+00:00",
+  "scope": "Completed audited-result export, website build, static consistency, default narrow-viewport browser inspection and actual download checks. Deployment is a later separate receipt.",
+  "checks": [
+    {
+      "name": "Final audit and evidence export",
+      "status": "passed",
+      "detail": "Fresh independent final review passed with 67 reviewed interpretation sentences and 251 source bindings. The actual amended exporter passed all gates and created 55 frozen files."
+    },
+    {
+      "name": "Website build and index compatibility",
+      "status": "passed_after_fix",
+      "detail": "The initial data-index build failed with KeyError id because the new engineering record uses kind. The website index now maps only this known kind to a stable entry ID; retry succeeded without changing frozen research payloads."
+    },
+    {
+      "name": "Displayed and downloadable results",
+      "status": "passed",
+      "detail": "All 55 payloads and exact ZIP members match frozen evidence, 48 displayed metric cells and both paired differences with 95%/97.5% intervals match. All 9 prior ZIPs preserve their hashes and links."
+    },
+    {
+      "name": "Browser and local HTTP",
+      "status": "passed",
+      "detail": "The new heading and inconclusive lead render in the default 319 px viewport. Document/client width 304 px, table containers 237 px with 680 px scroll width and overflow auto. Eight HTTP assets and a browser-downloaded evidence ZIP matched local bytes."
+    },
+    {
+      "name": "Supporting release receipts",
+      "status": "passed",
+      "detail": "All 3 evidence records below were served with HTTP 200 and exact local bytes before this record was written."
+    }
+  ],
+  "evidence": [
+    {
+      "record": "tracker-lora-repair-release/static-release-checks-01.json",
+      "sha256": "ccdc52f3a68b00526b6541f97a23baaa09c6c20f46032d267530997d9b5bf4c6"
+    },
+    {
+      "record": "tracker-lora-repair-release/static-index-fix-checks-01.json",
+      "sha256": "7967cee37c3d9aa40d76bcd38505c393a3343bf6b2691ae07024bbe0430673d4"
+    },
+    {
+      "record": "tracker-lora-repair-release/local-browser-download-checks-01.json",
+      "sha256": "e8898354aca7532836515165e584a84f4fb4c81ea91b2f3a410c5bdc37f8b41e"
+    }
+  ],
+  "artifact_sha256": {
+    "dist/intent-role-separation.html": "e8fc34253ddbb296c6210cd38cdf6609e2816f647dec59d4b2c5a498120b248a",
+    "dist/data/tracker-lora-repair-v2/results-01/evidence.zip": "6cb402fa6c67caa26a814bb13a01681f98d2bfbedec2a801f2b20b6d8eee95e4",
+    "dist/index.html": "dfa001d48afca78d8e5a54697a90a57e832907b6cefcfc72e6c01781a2d8a1b2",
+    "dist/data/research-record.json": "5a665e86d797bc1c17e83f6e869fb60d8816355f480d3d5b10ed5c9f9d5000d4",
+    "dist/data.js": "3dc6c576bd170e657f09476670c15cfa513ad4345f75aece33cdabc13c5239dc",
+    "build_data.py": "d5ee33f01251313b4949a1313d183f74befab7ce155820c86d388ce9631de7d4",
+    "build_tracker_lora_repair.py": "5cbb4c79ff81950de8628ddd4690c138831efbcc5abf8d1b79cb248419e0d413"
+  },
+  "preserved_prior_bundle_count": 9,
+  "new_model_calls": 0,
+  "limitations": [
+    "Engineering release checks do not establish a tracking-quality benefit. The primary experimental comparison remains inconclusive and companion regressions are retained.",
+    "Browser rendering was inspected at the default narrow viewport; no additional desktop breakpoint or human usability study is claimed.",
+    "This record freezes checks before publication and intentionally excludes its own hash. Actual native deployment and mirror/live-byte verification are retained in a separate local release receipt."
+  ]
+}

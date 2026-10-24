@@ -1,0 +1,2863 @@
+{
+  "status": "independently_reviewed_citation_only_revisions",
+  "revisions": [
+    {
+      "example_id": "train-a-025-2",
+      "operation_index": 0,
+      "old_source_seqs": [
+        1
+      ],
+      "new_source_seqs": [
+        0,
+        1
+      ],
+      "reason": "The uncertain offline version refers to the volunteer website scope in 0."
+    },
+    {
+      "example_id": "train-a-025-3",
+      "operation_index": 0,
+      "old_source_seqs": [
+        3
+      ],
+      "new_source_seqs": [
+        0,
+        1,
+        3
+      ],
+      "reason": "The unsigned note in 1 is the antecedent claimed by Miles in 3; volunteer scope comes from 0."
+    },
+    {
+      "example_id": "train-a-025-3",
+      "operation_index": 1,
+      "old_source_seqs": [
+        4
+      ],
+      "new_source_seqs": [
+        0,
+        4
+      ],
+      "reason": "The public website is the volunteer hub identified in 0."
+    },
+    {
+      "example_id": "train-a-025-4",
+      "operation_index": 0,
+      "old_source_seqs": [
+        2,
+        5
+      ],
+      "new_source_seqs": [
+        0,
+        2,
+        5
+      ],
+      "reason": "Volunteer shift scope is from 0, the offline PDF proposal from 2, and adoption from 5."
+    },
+    {
+      "example_id": "train-a-025-4",
+      "operation_index": 1,
+      "old_source_seqs": [
+        5
+      ],
+      "new_source_seqs": [
+        0,
+        5
+      ],
+      "reason": "Personal numbers are volunteers’ numbers under the original scope, now explicitly excluded from the PDF."
+    },
+    {
+      "example_id": "train-a-025-5",
+      "operation_index": 0,
+      "old_source_seqs": [
+        7
+      ],
+      "new_source_seqs": [
+        0,
+        5,
+        7
+      ],
+      "reason": "Website scope is fixed in 0 and the offline PDF in 5; 7 requests joint-update explanation."
+    },
+    {
+      "example_id": "train-b-017-3",
+      "operation_index": 0,
+      "old_source_seqs": [
+        3
+      ],
+      "new_source_seqs": [
+        0,
+        3
+      ],
+      "reason": "Pronunciation attempts refer to the pronunciation practice in 0; 3 establishes undecided recording."
+    },
+    {
+      "example_id": "train-d-022-3",
+      "operation_index": 0,
+      "old_source_seqs": [
+        4
+      ],
+      "new_source_seqs": [
+        0,
+        4
+      ],
+      "reason": "0 identifies announcement ordering; 4 reverses destination/time."
+    },
+    {
+      "example_id": "train-d-022-4",
+      "operation_index": 0,
+      "old_source_seqs": [
+        5,
+        7
+      ],
+      "new_source_seqs": [
+        1,
+        5,
+        7
+      ],
+      "reason": "1 identifies Ivo’s accessibility template; 5 and 7 establish the settled lift-only-if-available rule."
+    },
+    {
+      "example_id": "train-a-013-2",
+      "operation_index": 0,
+      "old_source_seqs": [
+        1
+      ],
+      "new_source_seqs": [
+        0,
+        1
+      ],
+      "reason": "The Wednesday rehearsal scope is in 0 and the unsigned ten-minute candidate in 1."
+    },
+    {
+      "example_id": "train-a-013-3",
+      "operation_index": 0,
+      "old_source_seqs": [
+        4
+      ],
+      "new_source_seqs": [
+        0,
+        4
+      ],
+      "reason": "4 confirms Jiang’s ten-minute warmup; Wednesday scope remains from 0."
+    },
+    {
+      "example_id": "train-d-006-3",
+      "operation_index": 0,
+      "old_source_seqs": [
+        3
+      ],
+      "new_source_seqs": [
+        0,
+        3
+      ],
+      "reason": "0 supplies the weather-broadcast referent; 3 reverses the two reporting topics."
+    },
+    {
+      "example_id": "train-d-006-4",
+      "operation_index": 0,
+      "old_source_seqs": [
+        5
+      ],
+      "new_source_seqs": [
+        0,
+        5
+      ],
+      "reason": "The fictional-broadcast scope is retained from 0 while 5 changes duration to two minutes."
+    },
+    {
+      "example_id": "train-d-024-2",
+      "operation_index": 0,
+      "old_source_seqs": [
+        1
+      ],
+      "new_source_seqs": [
+        0,
+        1
+      ],
+      "reason": "0 establishes bib numbers; 1 identifies Uma’s junior category and J prefix."
+    },
+    {
+      "example_id": "train-d-024-4",
+      "operation_index": 0,
+      "old_source_seqs": [
+        3
+      ],
+      "new_source_seqs": [
+        0,
+        3
+      ],
+      "reason": "3 changes only the junior prefix; bib-number scope is from 0."
+    },
+    {
+      "example_id": "train-d-021-2",
+      "operation_index": 0,
+      "old_source_seqs": [
+        1
+      ],
+      "new_source_seqs": [
+        0,
+        1
+      ],
+      "reason": "The invoice-to-Billing trigger comes from 0; 1 supplies the TEST-subject exception."
+    },
+    {
+      "example_id": "train-d-021-3",
+      "operation_index": 0,
+      "old_source_seqs": [
+        2
+      ],
+      "new_source_seqs": [
+        0,
+        1,
+        2
+      ],
+      "reason": "Renaming to Accounts in 2 preserves the invoice trigger in 0 and TEST exception in 1."
+    },
+    {
+      "example_id": "train-d-021-5",
+      "operation_index": 0,
+      "old_source_seqs": [
+        4
+      ],
+      "new_source_seqs": [
+        0,
+        3,
+        4
+      ],
+      "reason": "Both rules means invoice labeling from 0 and shipment labeling from 3; 4 requests display explanation without choosing priority."
+    },
+    {
+      "example_id": "train-b-003-3",
+      "operation_index": 0,
+      "old_source_seqs": [
+        3
+      ],
+      "new_source_seqs": [
+        0,
+        3
+      ],
+      "reason": "This issue of the club newsletter is identified in 0; 3 moves publication to Friday."
+    },
+    {
+      "example_id": "train-b-003-5",
+      "operation_index": 0,
+      "old_source_seqs": [
+        6
+      ],
+      "new_source_seqs": [
+        0,
+        6
+      ],
+      "reason": "The restored same block in 6 is the sponsor acknowledgement introduced in 0."
+    },
+    {
+      "example_id": "train-d-012-4",
+      "operation_index": 0,
+      "old_source_seqs": [
+        6
+      ],
+      "new_source_seqs": [
+        0,
+        6
+      ],
+      "reason": "The puzzle-answer referent comes from 0; 6 changes its digit count to four."
+    },
+    {
+      "example_id": "train-b-020-3",
+      "operation_index": 0,
+      "old_source_seqs": [
+        3
+      ],
+      "new_source_seqs": [
+        0,
+        3
+      ],
+      "reason": "The video-speaker labeling scope is in 0; 3 supplies the replacement pair."
+    },
+    {
+      "example_id": "train-b-020-4",
+      "operation_index": 0,
+      "old_source_seqs": [
+        5
+      ],
+      "new_source_seqs": [
+        0,
+        5
+      ],
+      "reason": "5 requests important non-speech descriptions; 0 establishes that these belong in captions."
+    },
+    {
+      "example_id": "train-a-009-2",
+      "operation_index": 0,
+      "old_source_seqs": [
+        2
+      ],
+      "new_source_seqs": [
+        0,
+        2
+      ],
+      "reason": "0 identifies Mo Dian’s adoption poster; 2 adds advance appointment wording."
+    },
+    {
+      "example_id": "train-a-009-2",
+      "operation_index": 1,
+      "old_source_seqs": [
+        1,
+        2
+      ],
+      "new_source_seqs": [
+        0,
+        1,
+        2
+      ],
+      "reason": "The poster scope, proposed slogan, and explicit refusal need 0, 1, and 2."
+    },
+    {
+      "example_id": "train-a-009-3",
+      "operation_index": 0,
+      "old_source_seqs": [
+        3
+      ],
+      "new_source_seqs": [
+        0,
+        3
+      ],
+      "reason": "0 identifies the adoption-poster contact; 3 replaces it with the front-desk phone and excludes email."
+    },
+    {
+      "example_id": "train-a-009-4",
+      "operation_index": 1,
+      "old_source_seqs": [
+        5
+      ],
+      "new_source_seqs": [
+        0,
+        5
+      ],
+      "reason": "The excluded destination is Mo Dian’s adoption poster from 0; 5 scopes the checklist as internal."
+    },
+    {
+      "example_id": "train-a-009-4",
+      "operation_index": 2,
+      "old_source_seqs": [
+        6
+      ],
+      "new_source_seqs": [
+        0,
+        6
+      ],
+      "reason": "6 names Mo Dian and yesterday’s profile photo; 0 supplies the adoption-poster scope."
+    },
+    {
+      "example_id": "train-a-022-3",
+      "operation_index": 2,
+      "old_source_seqs": [
+        2
+      ],
+      "new_source_seqs": [
+        0,
+        2
+      ],
+      "reason": "The city itinerary is identified in 0; 2 keeps its second day open."
+    },
+    {
+      "example_id": "train-b-007-2",
+      "operation_index": 0,
+      "old_source_seqs": [
+        1
+      ],
+      "new_source_seqs": [
+        0,
+        1
+      ],
+      "reason": "0 establishes refund applications; 1 sends opened goods for specialist inspection."
+    },
+    {
+      "example_id": "train-b-007-5",
+      "operation_index": 0,
+      "old_source_seqs": [
+        5
+      ],
+      "new_source_seqs": [
+        0,
+        5
+      ],
+      "reason": "The window is measured after purchase in 0; 5 changes only 30 days to 14 days."
+    },
+    {
+      "example_id": "train-b-001-3",
+      "operation_index": 0,
+      "old_source_seqs": [
+        3
+      ],
+      "new_source_seqs": [
+        0,
+        3
+      ],
+      "reason": "The replication-report context is in 0; 3 changes the primary metric to macro F1."
+    },
+    {
+      "example_id": "train-b-001-5",
+      "operation_index": 0,
+      "old_source_seqs": [
+        8
+      ],
+      "new_source_seqs": [
+        0,
+        8
+      ],
+      "reason": "8 adds acquisition-method explanation to the replication report identified in 0."
+    },
+    {
+      "example_id": "train-c-010-2",
+      "operation_index": 0,
+      "old_source_seqs": [
+        1
+      ],
+      "new_source_seqs": [
+        0,
+        1
+      ],
+      "reason": "The email is an inquiry-only repair quote in 0; 1 asks for separate labor/material amounts."
+    },
+    {
+      "example_id": "train-c-010-3",
+      "operation_index": 0,
+      "old_source_seqs": [
+        3
+      ],
+      "new_source_seqs": [
+        0,
+        2,
+        3
+      ],
+      "reason": "0 identifies the inquiry email, 2 proposes a budget attachment, and 3 declines writing it."
+    },
+    {
+      "example_id": "train-c-010-4",
+      "operation_index": 0,
+      "old_source_seqs": [
+        4
+      ],
+      "new_source_seqs": [
+        0,
+        4
+      ],
+      "reason": "The drafted quote-email task remains from 0; 4 replaces chair repair with desk-drawer repair."
+    },
+    {
+      "example_id": "train-c-023-5",
+      "operation_index": 0,
+      "old_source_seqs": [
+        5
+      ],
+      "new_source_seqs": [
+        0,
+        5
+      ],
+      "reason": "0 establishes dinner leftovers; 5 moves the leftovers day to Wednesday."
+    },
+    {
+      "example_id": "train-d-018-2",
+      "operation_index": 0,
+      "old_source_seqs": [
+        1
+      ],
+      "new_source_seqs": [
+        0,
+        1
+      ],
+      "reason": "0 identifies the robot maze; 1 introduces stop-on-red."
+    },
+    {
+      "example_id": "train-d-018-2",
+      "operation_index": 1,
+      "old_source_seqs": [
+        1
+      ],
+      "new_source_seqs": [
+        0,
+        1
+      ],
+      "reason": "0 identifies the robot maze; 1 introduces stop after ten seconds stuck."
+    },
+    {
+      "example_id": "train-d-018-3",
+      "operation_index": 0,
+      "old_source_seqs": [
+        2
+      ],
+      "new_source_seqs": [
+        0,
+        1,
+        2
+      ],
+      "reason": "The stop action is from 1, green replacement from 2, and maze scope from 0."
+    },
+    {
+      "example_id": "train-d-018-4",
+      "operation_index": 0,
+      "old_source_seqs": [
+        3
+      ],
+      "new_source_seqs": [
+        0,
+        3
+      ],
+      "reason": "The no-camera exclusion is only in 0; 3 adds a compass while retaining the distance sensor."
+    },
+    {
+      "example_id": "train-d-018-4",
+      "operation_index": 1,
+      "old_source_seqs": [
+        3
+      ],
+      "new_source_seqs": [
+        0,
+        3
+      ],
+      "reason": "The route belongs to the virtual robot in 0; 3 requests the brief compass-drift explanation."
+    },
+    {
+      "example_id": "train-d-018-5",
+      "operation_index": 0,
+      "old_source_seqs": [
+        4
+      ],
+      "new_source_seqs": [
+        0,
+        3,
+        4
+      ],
+      "reason": "4 refers to the drift explanation from 3 and prohibits further changes to the challenge from 0."
+    },
+    {
+      "example_id": "train-b-018-2",
+      "operation_index": 0,
+      "old_source_seqs": [
+        1
+      ],
+      "new_source_seqs": [
+        0,
+        1
+      ],
+      "reason": "0 establishes exhibition context; 1 states Sana’s age-twelve reading level."
+    },
+    {
+      "example_id": "train-b-018-4",
+      "operation_index": 0,
+      "old_source_seqs": [
+        4
+      ],
+      "new_source_seqs": [
+        0,
+        4
+      ],
+      "reason": "The printing-exhibition route is established in 0; 4 changes its starting object."
+    },
+    {
+      "example_id": "train-b-018-4",
+      "operation_index": 1,
+      "old_source_seqs": [
+        4
+      ],
+      "new_source_seqs": [
+        0,
+        4
+      ],
+      "reason": "4 adds a replica-type handling stop to the exhibition route identified in 0."
+    },
+    {
+      "example_id": "train-c-021-3",
+      "operation_index": 0,
+      "old_source_seqs": [
+        2
+      ],
+      "new_source_seqs": [
+        0,
+        2
+      ],
+      "reason": "Same food in 2 means wet food in 0; citing 2 alone cannot support wet-food retention."
+    },
+    {
+      "example_id": "train-a-002-2",
+      "operation_index": 0,
+      "old_source_seqs": [
+        1
+      ],
+      "new_source_seqs": [
+        0,
+        1
+      ],
+      "reason": "1 proposes uncertain text support for the old-pier audio guide identified in 0."
+    },
+    {
+      "example_id": "train-a-002-3",
+      "operation_index": 0,
+      "old_source_seqs": [
+        2,
+        3
+      ],
+      "new_source_seqs": [
+        0,
+        2,
+        3
+      ],
+      "reason": "0 supplies old-pier audio-guide scope, 2 the synchronized-caption proposal, and 3 its mandatory adoption."
+    },
+    {
+      "example_id": "train-a-002-4",
+      "operation_index": 0,
+      "old_source_seqs": [
+        6
+      ],
+      "new_source_seqs": [
+        0,
+        6
+      ],
+      "reason": "6 separates subtitle and guide-body deliveries; old-pier scope is from 0."
+    },
+    {
+      "example_id": "train-b-002-2",
+      "operation_index": 0,
+      "old_source_seqs": [
+        1
+      ],
+      "new_source_seqs": [
+        0,
+        1
+      ],
+      "reason": "1 makes the playground tentative for the science exhibition defined in 0."
+    },
+    {
+      "example_id": "train-b-002-3",
+      "operation_index": 1,
+      "old_source_seqs": [
+        3
+      ],
+      "new_source_seqs": [
+        0,
+        3
+      ],
+      "reason": "3 adopts the school library for the exhibition defined in 0."
+    },
+    {
+      "example_id": "train-b-002-4",
+      "operation_index": 0,
+      "old_source_seqs": [
+        4
+      ],
+      "new_source_seqs": [
+        0,
+        4
+      ],
+      "reason": "4 asks for the two experiments compared within ten minutes; 0 supplies science-exhibition scope."
+    },
+    {
+      "example_id": "train-d-007-2",
+      "operation_index": 0,
+      "old_source_seqs": [
+        1
+      ],
+      "new_source_seqs": [
+        0,
+        1
+      ],
+      "reason": "0 identifies the menu; 1 proposes undecided adjacent English."
+    },
+    {
+      "example_id": "train-d-007-3",
+      "operation_index": 0,
+      "old_source_seqs": [
+        2
+      ],
+      "new_source_seqs": [
+        0,
+        2
+      ],
+      "reason": "English retention for other names is from 0; 2 adds only the Spark translation exception."
+    },
+    {
+      "example_id": "train-d-007-4",
+      "operation_index": 1,
+      "old_source_seqs": [
+        3
+      ],
+      "new_source_seqs": [
+        0,
+        2,
+        3
+      ],
+      "reason": "3 says use the previous character-name rule; 0 and 2 supply its English retention and Spark exception."
+    },
+    {
+      "example_id": "train-d-007-5",
+      "operation_index": 0,
+      "old_source_seqs": [
+        4
+      ],
+      "new_source_seqs": [
+        0,
+        4
+      ],
+      "reason": "0 establishes Chinese localization; 4 requests Resume choices without selecting one."
+    },
+    {
+      "example_id": "train-c-016-4",
+      "operation_index": 0,
+      "old_source_seqs": [
+        3
+      ],
+      "new_source_seqs": [
+        1,
+        3
+      ],
+      "reason": "1 establishes an audio-note field; 3 adopts it only as optional."
+    },
+    {
+      "example_id": "train-a-005-2",
+      "operation_index": 0,
+      "old_source_seqs": [
+        1
+      ],
+      "new_source_seqs": [
+        0,
+        1
+      ],
+      "reason": "0 identifies the volunteer recruitment poster; 1 gives its title."
+    },
+    {
+      "example_id": "train-a-005-2",
+      "operation_index": 1,
+      "old_source_seqs": [
+        1
+      ],
+      "new_source_seqs": [
+        0,
+        1
+      ],
+      "reason": "0 identifies the volunteer poster; 1 prohibits its signup QR code."
+    },
+    {
+      "example_id": "train-a-005-5",
+      "operation_index": 3,
+      "old_source_seqs": [
+        6
+      ],
+      "new_source_seqs": [
+        0,
+        6
+      ],
+      "reason": "0 establishes the community-garden map; 6 adds its accessible entrance."
+    },
+    {
+      "example_id": "train-c-007-2",
+      "operation_index": 0,
+      "old_source_seqs": [
+        1
+      ],
+      "new_source_seqs": [
+        0,
+        1
+      ],
+      "reason": "0 identifies the museum visit; 1 introduces an unidentified step-free-route candidate."
+    },
+    {
+      "example_id": "train-c-007-3",
+      "operation_index": 0,
+      "old_source_seqs": [
+        2
+      ],
+      "new_source_seqs": [
+        1,
+        2
+      ],
+      "reason": "2 says it is my need, referring to the step-free route in 1, and explains stroller access."
+    },
+    {
+      "example_id": "train-c-007-5",
+      "operation_index": 0,
+      "old_source_seqs": [
+        4
+      ],
+      "new_source_seqs": [
+        0,
+        4
+      ],
+      "reason": "4 requests entrances with lifts; 0 supplies museum scope."
+    },
+    {
+      "example_id": "train-c-024-5",
+      "operation_index": 0,
+      "old_source_seqs": [
+        4
+      ],
+      "new_source_seqs": [
+        1,
+        4
+      ],
+      "reason": "Contact-email purpose is from 1; 4 changes optional to required."
+    },
+    {
+      "example_id": "train-b-022-3",
+      "operation_index": 0,
+      "old_source_seqs": [
+        3
+      ],
+      "new_source_seqs": [
+        0,
+        3
+      ],
+      "reason": "0 identifies serializer tests; 3 adds nested-list round trips."
+    },
+    {
+      "example_id": "train-b-022-4",
+      "operation_index": 0,
+      "old_source_seqs": [
+        5
+      ],
+      "new_source_seqs": [
+        0,
+        5
+      ],
+      "reason": "0 supplies serializer scope; 5 broadens nested structures to lists and dictionaries."
+    },
+    {
+      "example_id": "train-b-022-4",
+      "operation_index": 1,
+      "old_source_seqs": [
+        5
+      ],
+      "new_source_seqs": [
+        0,
+        5
+      ],
+      "reason": "5 adds a separate empty-file case within serializer tests defined in 0."
+    },
+    {
+      "example_id": "train-b-022-5",
+      "operation_index": 0,
+      "old_source_seqs": [
+        6
+      ],
+      "new_source_seqs": [
+        0,
+        6
+      ],
+      "reason": "These tests refers to serializer tests from 0; 6 asks for the object/string comparison rationale."
+    },
+    {
+      "example_id": "train-c-018-2",
+      "operation_index": 0,
+      "old_source_seqs": [
+        2
+      ],
+      "new_source_seqs": [
+        0,
+        2
+      ],
+      "reason": "Mine and six in 2 refer to Asha’s survey question count introduced in 0."
+    },
+    {
+      "example_id": "train-c-018-5",
+      "operation_index": 2,
+      "old_source_seqs": [
+        2
+      ],
+      "new_source_seqs": [
+        0,
+        2
+      ],
+      "reason": "Asha’s survey question count is introduced in 0; mine to six in 2 supplies the current count."
+    },
+    {
+      "example_id": "train-a-015-3",
+      "operation_index": 0,
+      "old_source_seqs": [
+        4
+      ],
+      "new_source_seqs": [
+        0,
+        4
+      ],
+      "reason": "0 identifies task-list export; 4 requests format tradeoffs before any change."
+    },
+    {
+      "example_id": "train-a-015-4",
+      "operation_index": 0,
+      "old_source_seqs": [
+        6
+      ],
+      "new_source_seqs": [
+        0,
+        6
+      ],
+      "reason": "The task-list export is established in 0; 6 adopts NDJSON."
+    },
+    {
+      "example_id": "train-a-015-5",
+      "operation_index": 0,
+      "old_source_seqs": [
+        7
+      ],
+      "new_source_seqs": [
+        0,
+        7
+      ],
+      "reason": "7 adds dry-run destination reporting to the export tool identified in 0."
+    },
+    {
+      "example_id": "train-c-011-2",
+      "operation_index": 0,
+      "old_source_seqs": [
+        1
+      ],
+      "new_source_seqs": [
+        0,
+        1
+      ],
+      "reason": "0 identifies reading-club minutes; 1 proposes an undecided English version."
+    },
+    {
+      "example_id": "train-c-011-3",
+      "operation_index": 0,
+      "old_source_seqs": [
+        3
+      ],
+      "new_source_seqs": [
+        0,
+        2,
+        3
+      ],
+      "reason": "0 identifies minutes, 2 proposes participants’ occupations, and 3 rejects including them."
+    },
+    {
+      "example_id": "train-c-011-4",
+      "operation_index": 0,
+      "old_source_seqs": [
+        4
+      ],
+      "new_source_seqs": [
+        0,
+        4
+      ],
+      "reason": "4 adopts English for the reading-club minutes identified in 0."
+    },
+    {
+      "example_id": "train-c-011-4",
+      "operation_index": 1,
+      "old_source_seqs": [
+        4
+      ],
+      "new_source_seqs": [
+        0,
+        4
+      ],
+      "reason": "4 caps the adopted English minutes at one page; 0 supplies document scope."
+    },
+    {
+      "example_id": "train-b-014-3",
+      "operation_index": 0,
+      "old_source_seqs": [
+        3
+      ],
+      "new_source_seqs": [
+        0,
+        3
+      ],
+      "reason": "0 supplies the short closing-performance requirement; 3 replaces its live format with audio drama."
+    },
+    {
+      "example_id": "train-b-014-3",
+      "operation_index": 1,
+      "old_source_seqs": [
+        3
+      ],
+      "new_source_seqs": [
+        0,
+        3
+      ],
+      "reason": "3 adds sound-effects training to the school workshop defined in 0."
+    },
+    {
+      "example_id": "train-a-023-2",
+      "operation_index": 0,
+      "old_source_seqs": [
+        1
+      ],
+      "new_source_seqs": [
+        0,
+        1
+      ],
+      "reason": "0 identifies bicycle-count rows; 1 leaves deduplication pending until repeated readings are understood."
+    },
+    {
+      "example_id": "train-a-023-3",
+      "operation_index": 0,
+      "old_source_seqs": [
+        2,
+        3
+      ],
+      "new_source_seqs": [
+        1,
+        2,
+        3
+      ],
+      "reason": "1 leaves deduplication undecided, 2 supplies the three matching fields, and 3 asks for an explanation before decision."
+    },
+    {
+      "example_id": "train-a-023-3",
+      "operation_index": 1,
+      "old_source_seqs": [
+        4
+      ],
+      "new_source_seqs": [
+        0,
+        4
+      ],
+      "reason": "0 supplies bicycle-count scope; 4 requires missing counts stay empty rather than zero."
+    },
+    {
+      "example_id": "train-a-023-4",
+      "operation_index": 0,
+      "old_source_seqs": [
+        5
+      ],
+      "new_source_seqs": [
+        0,
+        5
+      ],
+      "reason": "0 establishes a separate cleaned copy; 5 authorizes deduplication by all three exact fields."
+    },
+    {
+      "example_id": "train-a-023-4",
+      "operation_index": 1,
+      "old_source_seqs": [
+        4
+      ],
+      "new_source_seqs": [
+        0,
+        4
+      ],
+      "reason": "Bicycle-count dataset scope is established in 0; empty-not-zero value is in 4."
+    },
+    {
+      "example_id": "train-a-012-2",
+      "operation_index": 0,
+      "old_source_seqs": [
+        1
+      ],
+      "new_source_seqs": [
+        0,
+        1
+      ],
+      "reason": "0 identifies the library onboarding material; 1 requires borrowing coverage."
+    },
+    {
+      "example_id": "train-a-012-2",
+      "operation_index": 1,
+      "old_source_seqs": [
+        1
+      ],
+      "new_source_seqs": [
+        0,
+        1
+      ],
+      "reason": "0 identifies the library onboarding material; 1 requires renewal coverage."
+    },
+    {
+      "example_id": "train-a-012-2",
+      "operation_index": 2,
+      "old_source_seqs": [
+        1
+      ],
+      "new_source_seqs": [
+        0,
+        1
+      ],
+      "reason": "0 identifies the library onboarding material; 1 requires reservation coverage."
+    },
+    {
+      "example_id": "train-a-012-3",
+      "operation_index": 0,
+      "old_source_seqs": [
+        2,
+        3
+      ],
+      "new_source_seqs": [
+        0,
+        2,
+        3
+      ],
+      "reason": "0 supplies onboarding scope, 2 proposes catalog scanning, and 3 adopts the proposal."
+    },
+    {
+      "example_id": "train-a-012-4",
+      "operation_index": 0,
+      "old_source_seqs": [
+        5
+      ],
+      "new_source_seqs": [
+        0,
+        5
+      ],
+      "reason": "0 establishes library onboarding; 5 replaces print with web."
+    },
+    {
+      "example_id": "train-a-012-4",
+      "operation_index": 1,
+      "old_source_seqs": [
+        6
+      ],
+      "new_source_seqs": [
+        0,
+        6
+      ],
+      "reason": "6 adds duty-librarian contact information to the onboarding web page from 0."
+    },
+    {
+      "example_id": "train-a-012-4",
+      "operation_index": 2,
+      "old_source_seqs": [
+        7,
+        8
+      ],
+      "new_source_seqs": [
+        0,
+        5,
+        7,
+        8
+      ],
+      "reason": "0 supplies onboarding, 5 makes it web, 7 proposes clickable replacement, and 8 accepts catalog link with no QR."
+    },
+    {
+      "example_id": "train-a-012-5",
+      "operation_index": 0,
+      "old_source_seqs": [
+        9
+      ],
+      "new_source_seqs": [
+        0,
+        5,
+        9
+      ],
+      "reason": "This web page in 9 is the onboarding material from 0 converted to web in 5."
+    },
+    {
+      "example_id": "train-a-001-3",
+      "operation_index": 0,
+      "old_source_seqs": [
+        3
+      ],
+      "new_source_seqs": [
+        0,
+        3
+      ],
+      "reason": "This-week scope is stated in 0; 3 moves the repair event from Saturday to Sunday."
+    },
+    {
+      "example_id": "train-a-001-4",
+      "operation_index": 0,
+      "old_source_seqs": [
+        6
+      ],
+      "new_source_seqs": [
+        0,
+        6
+      ],
+      "reason": "0 identifies community repair; 6 adds a quiet waiting area."
+    },
+    {
+      "example_id": "train-a-001-4",
+      "operation_index": 1,
+      "old_source_seqs": [
+        7
+      ],
+      "new_source_seqs": [
+        0,
+        7
+      ],
+      "reason": "0 identifies community repair; 7 excludes participant names from its description."
+    },
+    {
+      "example_id": "train-d-004-2",
+      "operation_index": 0,
+      "old_source_seqs": [
+        1
+      ],
+      "new_source_seqs": [
+        0,
+        1
+      ],
+      "reason": "The undecided weathering texture in 1 belongs to the mailbox model in 0."
+    },
+    {
+      "example_id": "train-d-004-3",
+      "operation_index": 0,
+      "old_source_seqs": [
+        2
+      ],
+      "new_source_seqs": [
+        0,
+        2
+      ],
+      "reason": "0 identifies the mailbox model; 2 changes height to eighty centimetres."
+    },
+    {
+      "example_id": "train-d-004-4",
+      "operation_index": 1,
+      "old_source_seqs": [
+        3
+      ],
+      "new_source_seqs": [
+        0,
+        3
+      ],
+      "reason": "3 adopts plain color for the mailbox model from 0."
+    },
+    {
+      "example_id": "train-d-004-4",
+      "operation_index": 2,
+      "old_source_seqs": [
+        3
+      ],
+      "new_source_seqs": [
+        0,
+        3
+      ],
+      "reason": "3 excludes text markings on the mailbox model from 0."
+    },
+    {
+      "example_id": "train-d-004-4",
+      "operation_index": 3,
+      "old_source_seqs": [
+        2
+      ],
+      "new_source_seqs": [
+        0,
+        2
+      ],
+      "reason": "0 identifies mailbox-model height; 2 supplies eighty centimetres."
+    },
+    {
+      "example_id": "train-b-004-3",
+      "operation_index": 0,
+      "old_source_seqs": [
+        2
+      ],
+      "new_source_seqs": [
+        0,
+        2
+      ],
+      "reason": "0 identifies the paper; 2 specifies body-page line numbers excluding bibliography."
+    },
+    {
+      "example_id": "train-b-004-4",
+      "operation_index": 0,
+      "old_source_seqs": [
+        3
+      ],
+      "new_source_seqs": [
+        0,
+        3
+      ],
+      "reason": "0 identifies the paper; 3 changes bibliography format to numbered order."
+    },
+    {
+      "example_id": "train-d-003-4",
+      "operation_index": 0,
+      "old_source_seqs": [
+        3
+      ],
+      "new_source_seqs": [
+        1,
+        3
+      ],
+      "reason": "1 establishes merging repeated questions; 3 changes only pinning/timing to end-of-stream summaries."
+    },
+    {
+      "example_id": "train-a-007-2",
+      "operation_index": 0,
+      "old_source_seqs": [
+        1
+      ],
+      "new_source_seqs": [
+        0,
+        1
+      ],
+      "reason": "0 identifies the oral-history transcript; 1 sets one-minute timestamp intervals."
+    },
+    {
+      "example_id": "train-a-007-3",
+      "operation_index": 0,
+      "old_source_seqs": [
+        3
+      ],
+      "new_source_seqs": [
+        0,
+        3
+      ],
+      "reason": "0 identifies the transcript; 3 preserves oral repetition and prohibits prose rewriting."
+    },
+    {
+      "example_id": "train-a-007-4",
+      "operation_index": 0,
+      "old_source_seqs": [
+        5
+      ],
+      "new_source_seqs": [
+        4,
+        5
+      ],
+      "reason": "This interruption in 5 means the stop-and-restart utterance described in 4."
+    },
+    {
+      "example_id": "train-a-007-5",
+      "operation_index": 0,
+      "old_source_seqs": [
+        8
+      ],
+      "new_source_seqs": [
+        0,
+        8
+      ],
+      "reason": "0 preserves all original place names; 8 changes only village names to aliases while retaining cities and other levels."
+    }
+  ],
+  "source_revision_notes": [
+    {
+      "family_id": "train-a-025",
+      "decision_number": 2,
+      "operation_index": 0,
+      "intent_id": "i4",
+      "old_source_seqs": [
+        1
+      ],
+      "new_source_seqs": [
+        0,
+        1
+      ],
+      "reason": "The uncertain offline version refers to the volunteer website scope in 0."
+    },
+    {
+      "family_id": "train-a-025",
+      "decision_number": 3,
+      "operation_index": 0,
+      "intent_id": "i4",
+      "old_source_seqs": [
+        3
+      ],
+      "new_source_seqs": [
+        0,
+        1,
+        3
+      ],
+      "reason": "The unsigned note in 1 is the antecedent claimed by Miles in 3; volunteer scope comes from 0."
+    },
+    {
+      "family_id": "train-a-025",
+      "decision_number": 3,
+      "operation_index": 1,
+      "intent_id": "i5",
+      "old_source_seqs": [
+        4
+      ],
+      "new_source_seqs": [
+        0,
+        4
+      ],
+      "reason": "The public website is the volunteer hub identified in 0."
+    },
+    {
+      "family_id": "train-a-025",
+      "decision_number": 4,
+      "operation_index": 0,
+      "intent_id": "i4",
+      "old_source_seqs": [
+        2,
+        5
+      ],
+      "new_source_seqs": [
+        0,
+        2,
+        5
+      ],
+      "reason": "Volunteer shift scope is from 0, the offline PDF proposal from 2, and adoption from 5."
+    },
+    {
+      "family_id": "train-a-025",
+      "decision_number": 4,
+      "operation_index": 1,
+      "intent_id": "i6",
+      "old_source_seqs": [
+        5
+      ],
+      "new_source_seqs": [
+        0,
+        5
+      ],
+      "reason": "Personal numbers are volunteers’ numbers under the original scope, now explicitly excluded from the PDF."
+    },
+    {
+      "family_id": "train-a-025",
+      "decision_number": 5,
+      "operation_index": 0,
+      "intent_id": "i7",
+      "old_source_seqs": [
+        7
+      ],
+      "new_source_seqs": [
+        0,
+        5,
+        7
+      ],
+      "reason": "Website scope is fixed in 0 and the offline PDF in 5; 7 requests joint-update explanation."
+    },
+    {
+      "family_id": "train-b-017",
+      "decision_number": 3,
+      "operation_index": 0,
+      "intent_id": "i4",
+      "old_source_seqs": [
+        3
+      ],
+      "new_source_seqs": [
+        0,
+        3
+      ],
+      "reason": "Pronunciation attempts refer to the pronunciation practice in 0; 3 establishes undecided recording."
+    },
+    {
+      "family_id": "train-d-022",
+      "decision_number": 3,
+      "operation_index": 0,
+      "intent_id": "i2",
+      "old_source_seqs": [
+        4
+      ],
+      "new_source_seqs": [
+        0,
+        4
+      ],
+      "reason": "0 identifies announcement ordering; 4 reverses destination/time."
+    },
+    {
+      "family_id": "train-d-022",
+      "decision_number": 4,
+      "operation_index": 0,
+      "intent_id": "i5",
+      "old_source_seqs": [
+        5,
+        7
+      ],
+      "new_source_seqs": [
+        1,
+        5,
+        7
+      ],
+      "reason": "1 identifies Ivo’s accessibility template; 5 and 7 establish the settled lift-only-if-available rule."
+    },
+    {
+      "family_id": "train-a-013",
+      "decision_number": 2,
+      "operation_index": 0,
+      "intent_id": "i3",
+      "old_source_seqs": [
+        1
+      ],
+      "new_source_seqs": [
+        0,
+        1
+      ],
+      "reason": "The Wednesday rehearsal scope is in 0 and the unsigned ten-minute candidate in 1."
+    },
+    {
+      "family_id": "train-a-013",
+      "decision_number": 3,
+      "operation_index": 0,
+      "intent_id": "i3",
+      "old_source_seqs": [
+        4
+      ],
+      "new_source_seqs": [
+        0,
+        4
+      ],
+      "reason": "4 confirms Jiang’s ten-minute warmup; Wednesday scope remains from 0."
+    },
+    {
+      "family_id": "train-d-006",
+      "decision_number": 3,
+      "operation_index": 0,
+      "intent_id": "i3",
+      "old_source_seqs": [
+        3
+      ],
+      "new_source_seqs": [
+        0,
+        3
+      ],
+      "reason": "0 supplies the weather-broadcast referent; 3 reverses the two reporting topics."
+    },
+    {
+      "family_id": "train-d-006",
+      "decision_number": 4,
+      "operation_index": 0,
+      "intent_id": "i2",
+      "old_source_seqs": [
+        5
+      ],
+      "new_source_seqs": [
+        0,
+        5
+      ],
+      "reason": "The fictional-broadcast scope is retained from 0 while 5 changes duration to two minutes."
+    },
+    {
+      "family_id": "train-d-024",
+      "decision_number": 2,
+      "operation_index": 0,
+      "intent_id": "i4",
+      "old_source_seqs": [
+        1
+      ],
+      "new_source_seqs": [
+        0,
+        1
+      ],
+      "reason": "0 establishes bib numbers; 1 identifies Uma’s junior category and J prefix."
+    },
+    {
+      "family_id": "train-d-024",
+      "decision_number": 4,
+      "operation_index": 0,
+      "intent_id": "i4",
+      "old_source_seqs": [
+        3
+      ],
+      "new_source_seqs": [
+        0,
+        3
+      ],
+      "reason": "3 changes only the junior prefix; bib-number scope is from 0."
+    },
+    {
+      "family_id": "train-d-021",
+      "decision_number": 2,
+      "operation_index": 0,
+      "intent_id": "i2",
+      "old_source_seqs": [
+        1
+      ],
+      "new_source_seqs": [
+        0,
+        1
+      ],
+      "reason": "The invoice-to-Billing trigger comes from 0; 1 supplies the TEST-subject exception."
+    },
+    {
+      "family_id": "train-d-021",
+      "decision_number": 3,
+      "operation_index": 0,
+      "intent_id": "i2",
+      "old_source_seqs": [
+        2
+      ],
+      "new_source_seqs": [
+        0,
+        1,
+        2
+      ],
+      "reason": "Renaming to Accounts in 2 preserves the invoice trigger in 0 and TEST exception in 1."
+    },
+    {
+      "family_id": "train-d-021",
+      "decision_number": 5,
+      "operation_index": 0,
+      "intent_id": "i6",
+      "old_source_seqs": [
+        4
+      ],
+      "new_source_seqs": [
+        0,
+        3,
+        4
+      ],
+      "reason": "Both rules means invoice labeling from 0 and shipment labeling from 3; 4 requests display explanation without choosing priority."
+    },
+    {
+      "family_id": "train-b-003",
+      "decision_number": 3,
+      "operation_index": 0,
+      "intent_id": "i2",
+      "old_source_seqs": [
+        3
+      ],
+      "new_source_seqs": [
+        0,
+        3
+      ],
+      "reason": "This issue of the club newsletter is identified in 0; 3 moves publication to Friday."
+    },
+    {
+      "family_id": "train-b-003",
+      "decision_number": 5,
+      "operation_index": 0,
+      "intent_id": "i4",
+      "old_source_seqs": [
+        6
+      ],
+      "new_source_seqs": [
+        0,
+        6
+      ],
+      "reason": "The restored same block in 6 is the sponsor acknowledgement introduced in 0."
+    },
+    {
+      "family_id": "train-d-012",
+      "decision_number": 4,
+      "operation_index": 0,
+      "intent_id": "i3",
+      "old_source_seqs": [
+        6
+      ],
+      "new_source_seqs": [
+        0,
+        6
+      ],
+      "reason": "The puzzle-answer referent comes from 0; 6 changes its digit count to four."
+    },
+    {
+      "family_id": "train-b-020",
+      "decision_number": 3,
+      "operation_index": 0,
+      "intent_id": "i2",
+      "old_source_seqs": [
+        3
+      ],
+      "new_source_seqs": [
+        0,
+        3
+      ],
+      "reason": "The video-speaker labeling scope is in 0; 3 supplies the replacement pair."
+    },
+    {
+      "family_id": "train-b-020",
+      "decision_number": 4,
+      "operation_index": 0,
+      "intent_id": "i4",
+      "old_source_seqs": [
+        5
+      ],
+      "new_source_seqs": [
+        0,
+        5
+      ],
+      "reason": "5 requests important non-speech descriptions; 0 establishes that these belong in captions."
+    },
+    {
+      "family_id": "train-a-009",
+      "decision_number": 2,
+      "operation_index": 0,
+      "intent_id": "i4",
+      "old_source_seqs": [
+        2
+      ],
+      "new_source_seqs": [
+        0,
+        2
+      ],
+      "reason": "0 identifies Mo Dian’s adoption poster; 2 adds advance appointment wording."
+    },
+    {
+      "family_id": "train-a-009",
+      "decision_number": 2,
+      "operation_index": 1,
+      "intent_id": "i5",
+      "old_source_seqs": [
+        1,
+        2
+      ],
+      "new_source_seqs": [
+        0,
+        1,
+        2
+      ],
+      "reason": "The poster scope, proposed slogan, and explicit refusal need 0, 1, and 2."
+    },
+    {
+      "family_id": "train-a-009",
+      "decision_number": 3,
+      "operation_index": 0,
+      "intent_id": "i3",
+      "old_source_seqs": [
+        3
+      ],
+      "new_source_seqs": [
+        0,
+        3
+      ],
+      "reason": "0 identifies the adoption-poster contact; 3 replaces it with the front-desk phone and excludes email."
+    },
+    {
+      "family_id": "train-a-009",
+      "decision_number": 4,
+      "operation_index": 1,
+      "intent_id": "i7",
+      "old_source_seqs": [
+        5
+      ],
+      "new_source_seqs": [
+        0,
+        5
+      ],
+      "reason": "The excluded destination is Mo Dian’s adoption poster from 0; 5 scopes the checklist as internal."
+    },
+    {
+      "family_id": "train-a-009",
+      "decision_number": 4,
+      "operation_index": 2,
+      "intent_id": "i2",
+      "old_source_seqs": [
+        6
+      ],
+      "new_source_seqs": [
+        0,
+        6
+      ],
+      "reason": "6 names Mo Dian and yesterday’s profile photo; 0 supplies the adoption-poster scope."
+    },
+    {
+      "family_id": "train-a-022",
+      "decision_number": 3,
+      "operation_index": 2,
+      "intent_id": "i6",
+      "old_source_seqs": [
+        2
+      ],
+      "new_source_seqs": [
+        0,
+        2
+      ],
+      "reason": "The city itinerary is identified in 0; 2 keeps its second day open."
+    },
+    {
+      "family_id": "train-b-007",
+      "decision_number": 2,
+      "operation_index": 0,
+      "intent_id": "i4",
+      "old_source_seqs": [
+        1
+      ],
+      "new_source_seqs": [
+        0,
+        1
+      ],
+      "reason": "0 establishes refund applications; 1 sends opened goods for specialist inspection."
+    },
+    {
+      "family_id": "train-b-007",
+      "decision_number": 5,
+      "operation_index": 0,
+      "intent_id": "i2",
+      "old_source_seqs": [
+        5
+      ],
+      "new_source_seqs": [
+        0,
+        5
+      ],
+      "reason": "The window is measured after purchase in 0; 5 changes only 30 days to 14 days."
+    },
+    {
+      "family_id": "train-b-001",
+      "decision_number": 3,
+      "operation_index": 0,
+      "intent_id": "i3",
+      "old_source_seqs": [
+        3
+      ],
+      "new_source_seqs": [
+        0,
+        3
+      ],
+      "reason": "The replication-report context is in 0; 3 changes the primary metric to macro F1."
+    },
+    {
+      "family_id": "train-b-001",
+      "decision_number": 5,
+      "operation_index": 0,
+      "intent_id": "i5",
+      "old_source_seqs": [
+        8
+      ],
+      "new_source_seqs": [
+        0,
+        8
+      ],
+      "reason": "8 adds acquisition-method explanation to the replication report identified in 0."
+    },
+    {
+      "family_id": "train-c-010",
+      "decision_number": 2,
+      "operation_index": 0,
+      "intent_id": "i3",
+      "old_source_seqs": [
+        1
+      ],
+      "new_source_seqs": [
+        0,
+        1
+      ],
+      "reason": "The email is an inquiry-only repair quote in 0; 1 asks for separate labor/material amounts."
+    },
+    {
+      "family_id": "train-c-010",
+      "decision_number": 3,
+      "operation_index": 0,
+      "intent_id": "i4",
+      "old_source_seqs": [
+        3
+      ],
+      "new_source_seqs": [
+        0,
+        2,
+        3
+      ],
+      "reason": "0 identifies the inquiry email, 2 proposes a budget attachment, and 3 declines writing it."
+    },
+    {
+      "family_id": "train-c-010",
+      "decision_number": 4,
+      "operation_index": 0,
+      "intent_id": "i1",
+      "old_source_seqs": [
+        4
+      ],
+      "new_source_seqs": [
+        0,
+        4
+      ],
+      "reason": "The drafted quote-email task remains from 0; 4 replaces chair repair with desk-drawer repair."
+    },
+    {
+      "family_id": "train-c-023",
+      "decision_number": 5,
+      "operation_index": 0,
+      "intent_id": "i2",
+      "old_source_seqs": [
+        5
+      ],
+      "new_source_seqs": [
+        0,
+        5
+      ],
+      "reason": "0 establishes dinner leftovers; 5 moves the leftovers day to Wednesday."
+    },
+    {
+      "family_id": "train-d-018",
+      "decision_number": 2,
+      "operation_index": 0,
+      "intent_id": "i3",
+      "old_source_seqs": [
+        1
+      ],
+      "new_source_seqs": [
+        0,
+        1
+      ],
+      "reason": "0 identifies the robot maze; 1 introduces stop-on-red."
+    },
+    {
+      "family_id": "train-d-018",
+      "decision_number": 2,
+      "operation_index": 1,
+      "intent_id": "i4",
+      "old_source_seqs": [
+        1
+      ],
+      "new_source_seqs": [
+        0,
+        1
+      ],
+      "reason": "0 identifies the robot maze; 1 introduces stop after ten seconds stuck."
+    },
+    {
+      "family_id": "train-d-018",
+      "decision_number": 3,
+      "operation_index": 0,
+      "intent_id": "i3",
+      "old_source_seqs": [
+        2
+      ],
+      "new_source_seqs": [
+        0,
+        1,
+        2
+      ],
+      "reason": "The stop action is from 1, green replacement from 2, and maze scope from 0."
+    },
+    {
+      "family_id": "train-d-018",
+      "decision_number": 4,
+      "operation_index": 0,
+      "intent_id": "i2",
+      "old_source_seqs": [
+        3
+      ],
+      "new_source_seqs": [
+        0,
+        3
+      ],
+      "reason": "The no-camera exclusion is only in 0; 3 adds a compass while retaining the distance sensor."
+    },
+    {
+      "family_id": "train-d-018",
+      "decision_number": 4,
+      "operation_index": 1,
+      "intent_id": "i5",
+      "old_source_seqs": [
+        3
+      ],
+      "new_source_seqs": [
+        0,
+        3
+      ],
+      "reason": "The route belongs to the virtual robot in 0; 3 requests the brief compass-drift explanation."
+    },
+    {
+      "family_id": "train-d-018",
+      "decision_number": 5,
+      "operation_index": 0,
+      "intent_id": "i6",
+      "old_source_seqs": [
+        4
+      ],
+      "new_source_seqs": [
+        0,
+        3,
+        4
+      ],
+      "reason": "4 refers to the drift explanation from 3 and prohibits further changes to the challenge from 0."
+    },
+    {
+      "family_id": "train-b-018",
+      "decision_number": 2,
+      "operation_index": 0,
+      "intent_id": "i4",
+      "old_source_seqs": [
+        1
+      ],
+      "new_source_seqs": [
+        0,
+        1
+      ],
+      "reason": "0 establishes exhibition context; 1 states Sana’s age-twelve reading level."
+    },
+    {
+      "family_id": "train-b-018",
+      "decision_number": 4,
+      "operation_index": 0,
+      "intent_id": "i2",
+      "old_source_seqs": [
+        4
+      ],
+      "new_source_seqs": [
+        0,
+        4
+      ],
+      "reason": "The printing-exhibition route is established in 0; 4 changes its starting object."
+    },
+    {
+      "family_id": "train-b-018",
+      "decision_number": 4,
+      "operation_index": 1,
+      "intent_id": "i5",
+      "old_source_seqs": [
+        4
+      ],
+      "new_source_seqs": [
+        0,
+        4
+      ],
+      "reason": "4 adds a replica-type handling stop to the exhibition route identified in 0."
+    },
+    {
+      "family_id": "train-c-021",
+      "decision_number": 3,
+      "operation_index": 0,
+      "intent_id": "i2",
+      "old_source_seqs": [
+        2
+      ],
+      "new_source_seqs": [
+        0,
+        2
+      ],
+      "reason": "Same food in 2 means wet food in 0; citing 2 alone cannot support wet-food retention."
+    },
+    {
+      "family_id": "train-a-002",
+      "decision_number": 2,
+      "operation_index": 0,
+      "intent_id": "i3",
+      "old_source_seqs": [
+        1
+      ],
+      "new_source_seqs": [
+        0,
+        1
+      ],
+      "reason": "1 proposes uncertain text support for the old-pier audio guide identified in 0."
+    },
+    {
+      "family_id": "train-a-002",
+      "decision_number": 3,
+      "operation_index": 0,
+      "intent_id": "i3",
+      "old_source_seqs": [
+        2,
+        3
+      ],
+      "new_source_seqs": [
+        0,
+        2,
+        3
+      ],
+      "reason": "0 supplies old-pier audio-guide scope, 2 the synchronized-caption proposal, and 3 its mandatory adoption."
+    },
+    {
+      "family_id": "train-a-002",
+      "decision_number": 4,
+      "operation_index": 0,
+      "intent_id": "i4",
+      "old_source_seqs": [
+        6
+      ],
+      "new_source_seqs": [
+        0,
+        6
+      ],
+      "reason": "6 separates subtitle and guide-body deliveries; old-pier scope is from 0."
+    },
+    {
+      "family_id": "train-b-002",
+      "decision_number": 2,
+      "operation_index": 0,
+      "intent_id": "i3",
+      "old_source_seqs": [
+        1
+      ],
+      "new_source_seqs": [
+        0,
+        1
+      ],
+      "reason": "1 makes the playground tentative for the science exhibition defined in 0."
+    },
+    {
+      "family_id": "train-b-002",
+      "decision_number": 3,
+      "operation_index": 1,
+      "intent_id": "i4",
+      "old_source_seqs": [
+        3
+      ],
+      "new_source_seqs": [
+        0,
+        3
+      ],
+      "reason": "3 adopts the school library for the exhibition defined in 0."
+    },
+    {
+      "family_id": "train-b-002",
+      "decision_number": 4,
+      "operation_index": 0,
+      "intent_id": "i5",
+      "old_source_seqs": [
+        4
+      ],
+      "new_source_seqs": [
+        0,
+        4
+      ],
+      "reason": "4 asks for the two experiments compared within ten minutes; 0 supplies science-exhibition scope."
+    },
+    {
+      "family_id": "train-d-007",
+      "decision_number": 2,
+      "operation_index": 0,
+      "intent_id": "i4",
+      "old_source_seqs": [
+        1
+      ],
+      "new_source_seqs": [
+        0,
+        1
+      ],
+      "reason": "0 identifies the menu; 1 proposes undecided adjacent English."
+    },
+    {
+      "family_id": "train-d-007",
+      "decision_number": 3,
+      "operation_index": 0,
+      "intent_id": "i3",
+      "old_source_seqs": [
+        2
+      ],
+      "new_source_seqs": [
+        0,
+        2
+      ],
+      "reason": "English retention for other names is from 0; 2 adds only the Spark translation exception."
+    },
+    {
+      "family_id": "train-d-007",
+      "decision_number": 4,
+      "operation_index": 1,
+      "intent_id": "i5",
+      "old_source_seqs": [
+        3
+      ],
+      "new_source_seqs": [
+        0,
+        2,
+        3
+      ],
+      "reason": "3 says use the previous character-name rule; 0 and 2 supply its English retention and Spark exception."
+    },
+    {
+      "family_id": "train-d-007",
+      "decision_number": 5,
+      "operation_index": 0,
+      "intent_id": "i6",
+      "old_source_seqs": [
+        4
+      ],
+      "new_source_seqs": [
+        0,
+        4
+      ],
+      "reason": "0 establishes Chinese localization; 4 requests Resume choices without selecting one."
+    },
+    {
+      "family_id": "train-c-016",
+      "decision_number": 4,
+      "operation_index": 0,
+      "intent_id": "i5",
+      "old_source_seqs": [
+        3
+      ],
+      "new_source_seqs": [
+        1,
+        3
+      ],
+      "reason": "1 establishes an audio-note field; 3 adopts it only as optional."
+    },
+    {
+      "family_id": "train-a-005",
+      "decision_number": 2,
+      "operation_index": 0,
+      "intent_id": "i4",
+      "old_source_seqs": [
+        1
+      ],
+      "new_source_seqs": [
+        0,
+        1
+      ],
+      "reason": "0 identifies the volunteer recruitment poster; 1 gives its title."
+    },
+    {
+      "family_id": "train-a-005",
+      "decision_number": 2,
+      "operation_index": 1,
+      "intent_id": "i5",
+      "old_source_seqs": [
+        1
+      ],
+      "new_source_seqs": [
+        0,
+        1
+      ],
+      "reason": "0 identifies the volunteer poster; 1 prohibits its signup QR code."
+    },
+    {
+      "family_id": "train-a-005",
+      "decision_number": 5,
+      "operation_index": 3,
+      "intent_id": "i7",
+      "old_source_seqs": [
+        6
+      ],
+      "new_source_seqs": [
+        0,
+        6
+      ],
+      "reason": "0 establishes the community-garden map; 6 adds its accessible entrance."
+    },
+    {
+      "family_id": "train-c-007",
+      "decision_number": 2,
+      "operation_index": 0,
+      "intent_id": "i3",
+      "old_source_seqs": [
+        1
+      ],
+      "new_source_seqs": [
+        0,
+        1
+      ],
+      "reason": "0 identifies the museum visit; 1 introduces an unidentified step-free-route candidate."
+    },
+    {
+      "family_id": "train-c-007",
+      "decision_number": 3,
+      "operation_index": 0,
+      "intent_id": "i3",
+      "old_source_seqs": [
+        2
+      ],
+      "new_source_seqs": [
+        1,
+        2
+      ],
+      "reason": "2 says it is my need, referring to the step-free route in 1, and explains stroller access."
+    },
+    {
+      "family_id": "train-c-007",
+      "decision_number": 5,
+      "operation_index": 0,
+      "intent_id": "i4",
+      "old_source_seqs": [
+        4
+      ],
+      "new_source_seqs": [
+        0,
+        4
+      ],
+      "reason": "4 requests entrances with lifts; 0 supplies museum scope."
+    },
+    {
+      "family_id": "train-c-024",
+      "decision_number": 5,
+      "operation_index": 0,
+      "intent_id": "i5",
+      "old_source_seqs": [
+        4
+      ],
+      "new_source_seqs": [
+        1,
+        4
+      ],
+      "reason": "Contact-email purpose is from 1; 4 changes optional to required."
+    },
+    {
+      "family_id": "train-b-022",
+      "decision_number": 3,
+      "operation_index": 0,
+      "intent_id": "i4",
+      "old_source_seqs": [
+        3
+      ],
+      "new_source_seqs": [
+        0,
+        3
+      ],
+      "reason": "0 identifies serializer tests; 3 adds nested-list round trips."
+    },
+    {
+      "family_id": "train-b-022",
+      "decision_number": 4,
+      "operation_index": 0,
+      "intent_id": "i4",
+      "old_source_seqs": [
+        5
+      ],
+      "new_source_seqs": [
+        0,
+        5
+      ],
+      "reason": "0 supplies serializer scope; 5 broadens nested structures to lists and dictionaries."
+    },
+    {
+      "family_id": "train-b-022",
+      "decision_number": 4,
+      "operation_index": 1,
+      "intent_id": "i5",
+      "old_source_seqs": [
+        5
+      ],
+      "new_source_seqs": [
+        0,
+        5
+      ],
+      "reason": "5 adds a separate empty-file case within serializer tests defined in 0."
+    },
+    {
+      "family_id": "train-b-022",
+      "decision_number": 5,
+      "operation_index": 0,
+      "intent_id": "i6",
+      "old_source_seqs": [
+        6
+      ],
+      "new_source_seqs": [
+        0,
+        6
+      ],
+      "reason": "These tests refers to serializer tests from 0; 6 asks for the object/string comparison rationale."
+    },
+    {
+      "family_id": "train-c-018",
+      "decision_number": 2,
+      "operation_index": 0,
+      "intent_id": "i2",
+      "old_source_seqs": [
+        2
+      ],
+      "new_source_seqs": [
+        0,
+        2
+      ],
+      "reason": "Mine and six in 2 refer to Asha’s survey question count introduced in 0."
+    },
+    {
+      "family_id": "train-a-015",
+      "decision_number": 3,
+      "operation_index": 0,
+      "intent_id": "i5",
+      "old_source_seqs": [
+        4
+      ],
+      "new_source_seqs": [
+        0,
+        4
+      ],
+      "reason": "0 identifies task-list export; 4 requests format tradeoffs before any change."
+    },
+    {
+      "family_id": "train-a-015",
+      "decision_number": 4,
+      "operation_index": 0,
+      "intent_id": "i2",
+      "old_source_seqs": [
+        6
+      ],
+      "new_source_seqs": [
+        0,
+        6
+      ],
+      "reason": "The task-list export is established in 0; 6 adopts NDJSON."
+    },
+    {
+      "family_id": "train-a-015",
+      "decision_number": 5,
+      "operation_index": 0,
+      "intent_id": "i6",
+      "old_source_seqs": [
+        7
+      ],
+      "new_source_seqs": [
+        0,
+        7
+      ],
+      "reason": "7 adds dry-run destination reporting to the export tool identified in 0."
+    },
+    {
+      "family_id": "train-c-011",
+      "decision_number": 2,
+      "operation_index": 0,
+      "intent_id": "i3",
+      "old_source_seqs": [
+        1
+      ],
+      "new_source_seqs": [
+        0,
+        1
+      ],
+      "reason": "0 identifies reading-club minutes; 1 proposes an undecided English version."
+    },
+    {
+      "family_id": "train-c-011",
+      "decision_number": 3,
+      "operation_index": 0,
+      "intent_id": "i4",
+      "old_source_seqs": [
+        3
+      ],
+      "new_source_seqs": [
+        0,
+        2,
+        3
+      ],
+      "reason": "0 identifies minutes, 2 proposes participants’ occupations, and 3 rejects including them."
+    },
+    {
+      "family_id": "train-c-011",
+      "decision_number": 4,
+      "operation_index": 0,
+      "intent_id": "i3",
+      "old_source_seqs": [
+        4
+      ],
+      "new_source_seqs": [
+        0,
+        4
+      ],
+      "reason": "4 adopts English for the reading-club minutes identified in 0."
+    },
+    {
+      "family_id": "train-c-011",
+      "decision_number": 4,
+      "operation_index": 1,
+      "intent_id": "i5",
+      "old_source_seqs": [
+        4
+      ],
+      "new_source_seqs": [
+        0,
+        4
+      ],
+      "reason": "4 caps the adopted English minutes at one page; 0 supplies document scope."
+    },
+    {
+      "family_id": "train-b-014",
+      "decision_number": 3,
+      "operation_index": 0,
+      "intent_id": "i3",
+      "old_source_seqs": [
+        3
+      ],
+      "new_source_seqs": [
+        0,
+        3
+      ],
+      "reason": "0 supplies the short closing-performance requirement; 3 replaces its live format with audio drama."
+    },
+    {
+      "family_id": "train-b-014",
+      "decision_number": 3,
+      "operation_index": 1,
+      "intent_id": "i4",
+      "old_source_seqs": [
+        3
+      ],
+      "new_source_seqs": [
+        0,
+        3
+      ],
+      "reason": "3 adds sound-effects training to the school workshop defined in 0."
+    },
+    {
+      "family_id": "train-a-023",
+      "decision_number": 2,
+      "operation_index": 0,
+      "intent_id": "i4",
+      "old_source_seqs": [
+        1
+      ],
+      "new_source_seqs": [
+        0,
+        1
+      ],
+      "reason": "0 identifies bicycle-count rows; 1 leaves deduplication pending until repeated readings are understood."
+    },
+    {
+      "family_id": "train-a-023",
+      "decision_number": 3,
+      "operation_index": 0,
+      "intent_id": "i5",
+      "old_source_seqs": [
+        2,
+        3
+      ],
+      "new_source_seqs": [
+        1,
+        2,
+        3
+      ],
+      "reason": "1 leaves deduplication undecided, 2 supplies the three matching fields, and 3 asks for an explanation before decision."
+    },
+    {
+      "family_id": "train-a-023",
+      "decision_number": 3,
+      "operation_index": 1,
+      "intent_id": "i6",
+      "old_source_seqs": [
+        4
+      ],
+      "new_source_seqs": [
+        0,
+        4
+      ],
+      "reason": "0 supplies bicycle-count scope; 4 requires missing counts stay empty rather than zero."
+    },
+    {
+      "family_id": "train-a-023",
+      "decision_number": 4,
+      "operation_index": 0,
+      "intent_id": "i4",
+      "old_source_seqs": [
+        5
+      ],
+      "new_source_seqs": [
+        0,
+        5
+      ],
+      "reason": "0 establishes a separate cleaned copy; 5 authorizes deduplication by all three exact fields."
+    },
+    {
+      "family_id": "train-a-012",
+      "decision_number": 2,
+      "operation_index": 0,
+      "intent_id": "i4",
+      "old_source_seqs": [
+        1
+      ],
+      "new_source_seqs": [
+        0,
+        1
+      ],
+      "reason": "0 identifies the library onboarding material; 1 requires borrowing coverage."
+    },
+    {
+      "family_id": "train-a-012",
+      "decision_number": 2,
+      "operation_index": 1,
+      "intent_id": "i5",
+      "old_source_seqs": [
+        1
+      ],
+      "new_source_seqs": [
+        0,
+        1
+      ],
+      "reason": "0 identifies the library onboarding material; 1 requires renewal coverage."
+    },
+    {
+      "family_id": "train-a-012",
+      "decision_number": 2,
+      "operation_index": 2,
+      "intent_id": "i6",
+      "old_source_seqs": [
+        1
+      ],
+      "new_source_seqs": [
+        0,
+        1
+      ],
+      "reason": "0 identifies the library onboarding material; 1 requires reservation coverage."
+    },
+    {
+      "family_id": "train-a-012",
+      "decision_number": 3,
+      "operation_index": 0,
+      "intent_id": "i7",
+      "old_source_seqs": [
+        2,
+        3
+      ],
+      "new_source_seqs": [
+        0,
+        2,
+        3
+      ],
+      "reason": "0 supplies onboarding scope, 2 proposes catalog scanning, and 3 adopts the proposal."
+    },
+    {
+      "family_id": "train-a-012",
+      "decision_number": 4,
+      "operation_index": 0,
+      "intent_id": "i2",
+      "old_source_seqs": [
+        5
+      ],
+      "new_source_seqs": [
+        0,
+        5
+      ],
+      "reason": "0 establishes library onboarding; 5 replaces print with web."
+    },
+    {
+      "family_id": "train-a-012",
+      "decision_number": 4,
+      "operation_index": 1,
+      "intent_id": "i8",
+      "old_source_seqs": [
+        6
+      ],
+      "new_source_seqs": [
+        0,
+        6
+      ],
+      "reason": "6 adds duty-librarian contact information to the onboarding web page from 0."
+    },
+    {
+      "family_id": "train-a-012",
+      "decision_number": 4,
+      "operation_index": 2,
+      "intent_id": "i7",
+      "old_source_seqs": [
+        7,
+        8
+      ],
+      "new_source_seqs": [
+        0,
+        5,
+        7,
+        8
+      ],
+      "reason": "0 supplies onboarding, 5 makes it web, 7 proposes clickable replacement, and 8 accepts catalog link with no QR."
+    },
+    {
+      "family_id": "train-a-012",
+      "decision_number": 5,
+      "operation_index": 0,
+      "intent_id": "i9",
+      "old_source_seqs": [
+        9
+      ],
+      "new_source_seqs": [
+        0,
+        5,
+        9
+      ],
+      "reason": "This web page in 9 is the onboarding material from 0 converted to web in 5."
+    },
+    {
+      "family_id": "train-a-001",
+      "decision_number": 3,
+      "operation_index": 0,
+      "intent_id": "i2",
+      "old_source_seqs": [
+        3
+      ],
+      "new_source_seqs": [
+        0,
+        3
+      ],
+      "reason": "This-week scope is stated in 0; 3 moves the repair event from Saturday to Sunday."
+    },
+    {
+      "family_id": "train-a-001",
+      "decision_number": 4,
+      "operation_index": 0,
+      "intent_id": "i5",
+      "old_source_seqs": [
+        6
+      ],
+      "new_source_seqs": [
+        0,
+        6
+      ],
+      "reason": "0 identifies community repair; 6 adds a quiet waiting area."
+    },
+    {
+      "family_id": "train-a-001",
+      "decision_number": 4,
+      "operation_index": 1,
+      "intent_id": "i6",
+      "old_source_seqs": [
+        7
+      ],
+      "new_source_seqs": [
+        0,
+        7
+      ],
+      "reason": "0 identifies community repair; 7 excludes participant names from its description."
+    },
+    {
+      "family_id": "train-d-004",
+      "decision_number": 2,
+      "operation_index": 0,
+      "intent_id": "i4",
+      "old_source_seqs": [
+        1
+      ],
+      "new_source_seqs": [
+        0,
+        1
+      ],
+      "reason": "The undecided weathering texture in 1 belongs to the mailbox model in 0."
+    },
+    {
+      "family_id": "train-d-004",
+      "decision_number": 3,
+      "operation_index": 0,
+      "intent_id": "i2",
+      "old_source_seqs": [
+        2
+      ],
+      "new_source_seqs": [
+        0,
+        2
+      ],
+      "reason": "0 identifies the mailbox model; 2 changes height to eighty centimetres."
+    },
+    {
+      "family_id": "train-d-004",
+      "decision_number": 4,
+      "operation_index": 1,
+      "intent_id": "i5",
+      "old_source_seqs": [
+        3
+      ],
+      "new_source_seqs": [
+        0,
+        3
+      ],
+      "reason": "3 adopts plain color for the mailbox model from 0."
+    },
+    {
+      "family_id": "train-d-004",
+      "decision_number": 4,
+      "operation_index": 2,
+      "intent_id": "i6",
+      "old_source_seqs": [
+        3
+      ],
+      "new_source_seqs": [
+        0,
+        3
+      ],
+      "reason": "3 excludes text markings on the mailbox model from 0."
+    },
+    {
+      "family_id": "train-b-004",
+      "decision_number": 3,
+      "operation_index": 0,
+      "intent_id": "i5",
+      "old_source_seqs": [
+        2
+      ],
+      "new_source_seqs": [
+        0,
+        2
+      ],
+      "reason": "0 identifies the paper; 2 specifies body-page line numbers excluding bibliography."
+    },
+    {
+      "family_id": "train-b-004",
+      "decision_number": 4,
+      "operation_index": 0,
+      "intent_id": "i3",
+      "old_source_seqs": [
+        3
+      ],
+      "new_source_seqs": [
+        0,
+        3
+      ],
+      "reason": "0 identifies the paper; 3 changes bibliography format to numbered order."
+    },
+    {
+      "family_id": "train-d-003",
+      "decision_number": 4,
+      "operation_index": 0,
+      "intent_id": "i4",
+      "old_source_seqs": [
+        3
+      ],
+      "new_source_seqs": [
+        1,
+        3
+      ],
+      "reason": "1 establishes merging repeated questions; 3 changes only pinning/timing to end-of-stream summaries."
+    },
+    {
+      "family_id": "train-a-007",
+      "decision_number": 2,
+      "operation_index": 0,
+      "intent_id": "i4",
+      "old_source_seqs": [
+        1
+      ],
+      "new_source_seqs": [
+        0,
+        1
+      ],
+      "reason": "0 identifies the oral-history transcript; 1 sets one-minute timestamp intervals."
+    },
+    {
+      "family_id": "train-a-007",
+      "decision_number": 3,
+      "operation_index": 0,
+      "intent_id": "i5",
+      "old_source_seqs": [
+        3
+      ],
+      "new_source_seqs": [
+        0,
+        3
+      ],
+      "reason": "0 identifies the transcript; 3 preserves oral repetition and prohibits prose rewriting."
+    },
+    {
+      "family_id": "train-a-007",
+      "decision_number": 4,
+      "operation_index": 0,
+      "intent_id": "i6",
+      "old_source_seqs": [
+        5
+      ],
+      "new_source_seqs": [
+        4,
+        5
+      ],
+      "reason": "This interruption in 5 means the stop-and-restart utterance described in 4."
+    },
+    {
+      "family_id": "train-a-007",
+      "decision_number": 5,
+      "operation_index": 0,
+      "intent_id": "i3",
+      "old_source_seqs": [
+        8
+      ],
+      "new_source_seqs": [
+        0,
+        8
+      ],
+      "reason": "0 preserves all original place names; 8 changes only village names to aliases while retaining cities and other levels."
+    }
+  ],
+  "fault_revision_notes": [
+    {
+      "example_id": "train-a-023-4",
+      "old_source_seqs": [
+        4
+      ],
+      "new_source_seqs": [
+        0,
+        4
+      ],
+      "reason": "Bicycle-count dataset scope is established in 0; empty-not-zero value is in 4."
+    },
+    {
+      "example_id": "train-c-018-5",
+      "old_source_seqs": [
+        2
+      ],
+      "new_source_seqs": [
+        0,
+        2
+      ],
+      "reason": "Asha’s survey question count is introduced in 0; mine to six in 2 supplies the current count."
+    },
+    {
+      "example_id": "train-d-004-4",
+      "old_source_seqs": [
+        2
+      ],
+      "new_source_seqs": [
+        0,
+        2
+      ],
+      "reason": "0 identifies mailbox-model height; 2 supplies eighty centimetres."
+    }
+  ],
+  "original_source_sha256": "cbaacab0cd377d03d106b40a066f312836e5989785a977f0f79bd5942ef5df2b",
+  "revised_source_sha256": "ded3b7ed4d95319d215dca5eccb0e0c02def1fe61a07cedfd521bf50b41489dc",
+  "original_fault_file_sha256": "03c540a69d0a40f419d091b78268f7ac9e53b136c3c34ba785623675ad222e2d",
+  "revised_fault_file_sha256": "6c3736032cebaa5eb7548f89d00ef20d9292af34e761ecabbbab8f5db1085e56",
+  "policy": "Retained conversations and all target op/id/owner/text/status and semantic pre/post states unchanged; only supporting citations revised."
+}

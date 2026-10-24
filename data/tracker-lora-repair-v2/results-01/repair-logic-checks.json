@@ -1,0 +1,47 @@
+{
+  "kind": "engineering_contract_fixtures_not_model_quality",
+  "date": "2026-10-24",
+  "timezone": "America/Halifax",
+  "status": "passed",
+  "checks": [
+    {
+      "check": "missing_history_reconstruction_and_full_repair",
+      "passed": true
+    },
+    {
+      "check": "text_history_reconstruction_and_full_repair",
+      "passed": true
+    },
+    {
+      "check": "owner_history_reconstruction_and_full_repair",
+      "passed": true
+    },
+    {
+      "check": "status_history_reconstruction_and_full_repair",
+      "passed": true
+    },
+    {
+      "check": "wrong_withdrawn_history_reconstruction_and_full_repair",
+      "passed": true
+    },
+    {
+      "check": "stale_active_history_reconstruction_and_full_repair",
+      "passed": true
+    },
+    {
+      "check": "dedup_ignores_whitespace_but_preserves_input_reference_validity_and_proposal",
+      "passed": true
+    },
+    {
+      "check": "paired_interval_constant_effect_and_positive_direction",
+      "passed": true
+    }
+  ],
+  "model_calls": 0,
+  "files": {
+    "build_dataset.py": "e8a8b4603eee63456574cfc034ec4df87980fc19517dedece52954c26de85acc",
+    "evaluate_three_arm.py": "80d1fc6eeee56c128454d838701df98b5fbb4ec7ed1ee1cb2c1b61263776279c",
+    "check_repair_logic.py": "653f285a3f4983ff83ad881bc7182a39a89fc447b2acbff6bc9cd39a7941f7a6"
+  },
+  "limitation": "These authored fixtures validate mechanics, not semantic annotations or model improvements."
+}

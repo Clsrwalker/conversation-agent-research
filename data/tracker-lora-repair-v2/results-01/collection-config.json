@@ -1,0 +1,80 @@
+{
+  "base_id": "Qwen/Qwen2.5-14B-Instruct",
+  "base_revision": "cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8",
+  "data_sha256": "8190b19a0b25718e7e5baf2ac5fd25383df4fcd422696a8564d99a6cb3766ce3",
+  "protocol_lock_sha256": "a80ef0ca2c6fed06452596b3a39a187158973917a285a7cb8fbd0985a5ae9f21",
+  "collector_sha256": "6914ae922056b288a55f4fdaf197816ea4ab649b35e9cf80de0665521d6044d8",
+  "base_loading_implementation_sha256": "2d329f11c1320c0f2e12c39d6e74600997757d53a0661406b8e6a657222ffd24",
+  "gate_sha256": "c7626f2955e830d5dfefcda3dd1435c08475cfc27ac91fd4c62730158db38990",
+  "base_download_receipt_sha256": "1287f3e5b81d0594061c4e41b167237ee60a8f364e9f8b335b00f8f6b54aee17",
+  "base_generation_config_sha256": "ea35dfb6fc5051b01114f9b995820d55dab01ed33ee490f6378b442af82c09f9",
+  "adapters": {
+    "tracker_lora_v1": {
+      "training_result_sha256": "d96c36ac8648d21bf66be53c1ee31094ae2fdb2a9f3bf069dabc94809a1b4da1",
+      "weights_sha256": "70af35505394ebc53d81aa839ad78165166d5ad7fd9be36314a3f0962265a707",
+      "config_sha256": "4b10f017bee9d111bb544e6dd9ee025b5c2353317839fc5e3bc183fb38b3e7e2"
+    },
+    "tracker_lora_v2": {
+      "training_result_sha256": "d8b9c1e0931c2d271f14d38e90e88e554c9b97a89494575181adfdf0aca88507",
+      "weights_sha256": "a2cf443a6e26e3868c7a905190b20c89bdf980f18ce1d3489d49903df351f176",
+      "config_sha256": "7c0928386d80bb4bd47ac6d8831475e5f23769a2717127fee8df4b1d9e69708a"
+    }
+  },
+  "max_prompt_tokens": 2048,
+  "max_new_tokens": 512,
+  "seed": 20261024,
+  "do_sample": false,
+  "num_beams": 1,
+  "repetition_penalty": 1.0,
+  "system_prompt_sha256": "7587583ff3fb2f46f64a32ca598a9f2bd980d8b0c3ff24915d80f5e31cda5abd",
+  "cache_implementation": "dynamic",
+  "kind": "one_step_three_arm_generation_collection_not_semantic_score",
+  "arms": [
+    "adapter_disabled",
+    "tracker_lora_v1",
+    "tracker_lora_v2"
+  ],
+  "arm_order": [
+    [
+      "adapter_disabled",
+      "tracker_lora_v1",
+      "tracker_lora_v2"
+    ],
+    [
+      "adapter_disabled",
+      "tracker_lora_v2",
+      "tracker_lora_v1"
+    ],
+    [
+      "tracker_lora_v1",
+      "adapter_disabled",
+      "tracker_lora_v2"
+    ],
+    [
+      "tracker_lora_v1",
+      "tracker_lora_v2",
+      "adapter_disabled"
+    ],
+    [
+      "tracker_lora_v2",
+      "adapter_disabled",
+      "tracker_lora_v1"
+    ],
+    [
+      "tracker_lora_v2",
+      "tracker_lora_v1",
+      "adapter_disabled"
+    ]
+  ],
+  "order_assignment": "row_index_modulo_6",
+  "base_representation": "same_object_nf4_double_quant_bfloat16_compute_norms_fp32",
+  "assigned_calls": 600,
+  "versions": {
+    "torch": "2.12.0+cu130",
+    "transformers": "5.14.1",
+    "peft": "0.21.2",
+    "bitsandbytes": "0.50.0",
+    "accelerate": "1.14.0",
+    "safetensors": "0.8.0"
+  }
+}

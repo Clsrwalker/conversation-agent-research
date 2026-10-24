@@ -1,0 +1,154 @@
+{
+  "kind": "independent_read_only_terminal_training_evidence_audit",
+  "status": "passed",
+  "date": "2026-10-24",
+  "timezone": "America/Halifax",
+  "reviewer": "repair_training_engineering",
+  "independent_of_training_executor": true,
+  "created_at_utc": "2026-10-24T19:47:51.292379+00:00",
+  "run": "formal-01",
+  "new_model_or_gpu_calls": 0,
+  "artifact_sha256": {
+    "output/research/2026-10-24/tracker-lora-repair-v2/training/formal-01/result.json": "d8b9c1e0931c2d271f14d38e90e88e554c9b97a89494575181adfdf0aca88507",
+    "output/research/2026-10-24/tracker-lora-repair-v2/training/formal-01/run-config.json": "3e73e2f37c91f104d2350330ce9a0c256311726f4f06893f7bba8f05c4ef7a53",
+    "output/research/2026-10-24/tracker-lora-repair-v2/training/formal-01/lengths.json": "79b1575566710fdd629db4d068c502abab4259051e3e6e90508a260d42f42ac7",
+    "output/research/2026-10-24/tracker-lora-repair-v2/training/formal-01/runner_source.py": "2d329f11c1320c0f2e12c39d6e74600997757d53a0661406b8e6a657222ffd24",
+    "output/research/2026-10-24/tracker-lora-repair-v2/training/formal-01/gate_source.py": "c7626f2955e830d5dfefcda3dd1435c08475cfc27ac91fd4c62730158db38990",
+    "output/research/2026-10-24/tracker-lora-repair-v2/training/formal-01.stdout.jsonl": "8309d04d2c7f96b369ec19c807c6ab73a45c955da9da306a9fb533c284ac9990",
+    "output/research/2026-10-24/tracker-lora-repair-v2/training/formal-01.stderr.log": "a686ee4db238816c4c88e47a8d80614568e09d93e36e30d77918785e779fc473",
+    "output/research/2026-10-24/tracker-lora-repair-v2/training/formal-01.launch.json": "026dfdb35fb7890fd3b2fbad04f1489a6ef31932537e958358d63340a07a6baa",
+    "output/research/2026-10-24/tracker-lora-repair-v2/training/formal-01.exit.json": "0d876488059f09dc070f2b321350a2113bcb43c12bed50ff520bd9e01d895275",
+    "output/research/2026-10-24/tracker-lora-repair-v2/evaluation/protocol-lock.json": "a80ef0ca2c6fed06452596b3a39a187158973917a285a7cb8fbd0985a5ae9f21",
+    "output/research/2026-10-24/tracker-lora-repair-v2/audit/review_training_completion.py": "647ca89dd0223f9d83dee2a862dd1add379cfe8aeeee4fac6716e1f7585030ad",
+    "output/research/2026-10-24/tracker-lora-repair-v2/evaluation/protocol.json": "1fff46568a31e35eaa75f053ee417b83a79d1fb601b90e234dd209ac35e37600",
+    "output/research/2026-10-24/tracker-lora-repair-v2/data/compiled/manifest.json": "35e3dfc55bf74ca37b88e6e3aa70738a9d61ec87769f19a8a601c3d9dded16bc",
+    "output/research/2026-10-24/tracker-lora-repair-v2/data/compiled/test.records.jsonl": "8190b19a0b25718e7e5baf2ac5fd25383df4fcd422696a8564d99a6cb3766ce3",
+    "output/research/2026-10-24/tracker-lora-repair-v2/annotation/system_prompt.txt": "7587583ff3fb2f46f64a32ca598a9f2bd980d8b0c3ff24915d80f5e31cda5abd",
+    "output/research/2026-10-24/tracker-lora-repair-v2/annotation/policy-v3.json": "7e36104bbbaf2e7cc89d95490682b004a1415bfa54c4c7a131328595021dc457",
+    "output/research/2026-10-24/tracker-lora-repair-v2/review/admission.json": "d2cb7337c4b3f5298f253a7da950b21cf40b8583df1542f10148a0b064e2d37f",
+    "experiments/deep_conversation/tracker_lora/repair_v2/collect_three_arm.py": "6914ae922056b288a55f4fdaf197816ea4ab649b35e9cf80de0665521d6044d8",
+    "experiments/deep_conversation/tracker_lora/repair_v2/train_tracker.py": "2d329f11c1320c0f2e12c39d6e74600997757d53a0661406b8e6a657222ffd24",
+    "experiments/deep_conversation/tracker_lora/repair_v2/gates.py": "c7626f2955e830d5dfefcda3dd1435c08475cfc27ac91fd4c62730158db38990",
+    "experiments/deep_conversation/tracker_lora/repair_v2/build_dataset.py": "e8a8b4603eee63456574cfc034ec4df87980fc19517dedece52954c26de85acc",
+    "experiments/deep_conversation/tracker_lora/repair_v2/evaluate_three_arm.py": "80d1fc6eeee56c128454d838701df98b5fbb4ec7ed1ee1cb2c1b61263776279c",
+    "experiments/deep_conversation/tracker_lora/evaluate_tracker.py": "6e628968b52307f8160bcc673cb5abba8043490c810b22f0bd286fb9a4f33a6f",
+    "experiments/deep_conversation/tracker_lora/build_dataset.py": "c834fb312454e50257b3a88217aa29ea58a69c342fa7f8f758554adcfc5d3af4",
+    "experiments/deep_conversation/intention_state.py": "e028a604a93520801a0f752755d80b305afb1eebd8792ea0aeaaa3cd5c722f73",
+    "experiments/deep_conversation/tracker_lora/repair_v2/review_workflow.py": "4345cd1a14554c172e2cac21b47603212ec0140d72eb5818947b40f04f29798d",
+    "output/research/2026-10-24/tracker-lora-repair-v2/training/length-inspection-reviewed-01/result.json": "bc405641d69a9db562026342a3ac470351c685cd9c1eee96af63f2814e0ae679",
+    "output/research/2026-10-24/tracker-lora-repair-v2/audit/cross-split-similarity-review-02.json": "11aeef3a6f5c6ca9b5c8c7b06320920c199468c8b5545be3c9abe392ea7d7f00",
+    "output/research/2026-10-24/tracker-lora-repair-v2/audit/cross-split-similarity-review-01.json": "ab8693a5666ef7e23df3f69ac18b9debbc91e09136a459648ebc722e224998ca",
+    "output/research/2026-10-24/tracker-lora-repair-v2/training/length-inspection-reviewed-01/train.lengths.json": "731244932eaeda5886a6de545290287cbd71440f9a8451dcf46f6a300785fbaf",
+    "output/research/2026-10-24/tracker-lora-repair-v2/training/formal-01/adapter/adapter_config.json": "7c0928386d80bb4bd47ac6d8831475e5f23769a2717127fee8df4b1d9e69708a",
+    "output/research/2026-10-24/tracker-lora-repair-v2/training/formal-01/adapter/adapter_model.safetensors": "a2cf443a6e26e3868c7a905190b20c89bdf980f18ce1d3489d49903df351f176",
+    "output/research/2026-10-24/tracker-lora-repair-v2/training/formal-01/adapter/chat_template.jinja": "8aa40ce145adb73cb3a75194dc0224702a95850ec5275cabb728496bbd749fc6",
+    "output/research/2026-10-24/tracker-lora-repair-v2/training/formal-01/adapter/README.md": "30836000add7aff4e3bf213594c690d54c11d655805bb582c0bd7195badbde73",
+    "output/research/2026-10-24/tracker-lora-repair-v2/training/formal-01/adapter/tokenizer.json": "3fd169731d2cbde95e10bf356d66d5997fd885dd8dbb6fb4684da3f23b2585d8",
+    "output/research/2026-10-24/tracker-lora-repair-v2/training/formal-01/adapter/tokenizer_config.json": "b3d4aae9670f7c2de3e3b32675b0118e7e7b517544f5ab32efe04bd74f2238c1",
+    "output/research/2026-10-24/tracker-lora-pilot/training/base-model-manifest.json": "1287f3e5b81d0594061c4e41b167237ee60a8f364e9f8b335b00f8f6b54aee17"
+  },
+  "training_counts": {
+    "microsteps": 500,
+    "optimizer_updates": 32,
+    "unique_rows": 500,
+    "full_groups_of_16": 31,
+    "last_group_size": 4,
+    "last_four_row_indices_zero_based": [
+      38,
+      371,
+      90,
+      301
+    ],
+    "row_order_sha256": "743e292a201466462ce06df8487ffa0132f7d6fcf05ec9ae4f1e6372c22e8131",
+    "phase_events": 3064,
+    "total_json_events": 3099,
+    "maximum_gradient_norm": 2.548704147338867,
+    "loss_range": [
+      0.00047736315173096955,
+      1.6467589139938354
+    ],
+    "training_elapsed_seconds": 1684.8143239999772,
+    "truncated_rows": 0,
+    "supervised_completion_tokens": 31031,
+    "maximum_total_tokens": 1935
+  },
+  "executed_source_checks": {
+    "frozen_v1_runner_sha256": "b60fd53f91c62d854ef0cf71a15b29fac850fad1aaddd5d07e335831a94ed1a8",
+    "core_functions_AST_equal": [
+      "quantized_base",
+      "prepare_frozen_base",
+      "completion_loss",
+      "tokenize_row",
+      "emit_microstep_phase"
+    ],
+    "training_loop_and_optimizer_AST_equal": true,
+    "last_group_divisor_source_verified": 4
+  },
+  "freeze_bindings_checked": 18,
+  "current_data_gate": {
+    "status": "passed",
+    "manifest_sha256": "35e3dfc55bf74ca37b88e6e3aa70738a9d61ec87769f19a8a601c3d9dded16bc",
+    "admission_sha256": "d2cb7337c4b3f5298f253a7da950b21cf40b8583df1542f10148a0b064e2d37f",
+    "training_sft_sha256": "78bdadd3b9684600cd761d24b313acf8e34f58d06783fd9508ea6438ed86050c",
+    "compiler_sha256": "e8a8b4603eee63456574cfc034ec4df87980fc19517dedece52954c26de85acc",
+    "admitted_families": 150,
+    "admitted_training_rows": 500,
+    "independently_reviewed_fault_examples": 240,
+    "retained_old_training_rows": 200,
+    "new_hard_training_rows": 300,
+    "new_dev_rows": 50,
+    "new_test_rows": 200,
+    "reviewed_retained_target_citation_revisions": 108,
+    "citation_revision_ledger_sha256": "974738a5cf73c89a09b3773708a01e883d9792652610051862b339ac77a4c394",
+    "detailed_review_files": 4,
+    "explicit_review_overrides": 1
+  },
+  "saved_adapter": {
+    "tensor_count": 672,
+    "parameter_count": 68812800,
+    "tensor_dtypes": [
+      "F32"
+    ],
+    "base_weight_tensors_present": false,
+    "files": {
+      "adapter_config.json": "7c0928386d80bb4bd47ac6d8831475e5f23769a2717127fee8df4b1d9e69708a",
+      "adapter_model.safetensors": "a2cf443a6e26e3868c7a905190b20c89bdf980f18ce1d3489d49903df351f176",
+      "chat_template.jinja": "8aa40ce145adb73cb3a75194dc0224702a95850ec5275cabb728496bbd749fc6",
+      "README.md": "30836000add7aff4e3bf213594c690d54c11d655805bb582c0bd7195badbde73",
+      "tokenizer.json": "3fd169731d2cbde95e10bf356d66d5997fd885dd8dbb6fb4684da3f23b2585d8",
+      "tokenizer_config.json": "b3d4aae9670f7c2de3e3b32675b0118e7e7b517544f5ab32efe04bd74f2238c1"
+    }
+  },
+  "single_probe_save_reload": {
+    "max_abs_logit_difference": 0.0,
+    "match": true,
+    "enabled_vs_disabled_max_abs_logit_difference": 7.09375,
+    "base_reused_same_object": true,
+    "adapter_files": {
+      "adapter_config.json": "7c0928386d80bb4bd47ac6d8831475e5f23769a2717127fee8df4b1d9e69708a",
+      "adapter_model.safetensors": "a2cf443a6e26e3868c7a905190b20c89bdf980f18ce1d3489d49903df351f176",
+      "chat_template.jinja": "8aa40ce145adb73cb3a75194dc0224702a95850ec5275cabb728496bbd749fc6",
+      "README.md": "30836000add7aff4e3bf213594c690d54c11d655805bb582c0bd7195badbde73",
+      "tokenizer.json": "3fd169731d2cbde95e10bf356d66d5997fd885dd8dbb6fb4684da3f23b2585d8",
+      "tokenizer_config.json": "b3d4aae9670f7c2de3e3b32675b0118e7e7b517544f5ab32efe04bd74f2238c1"
+    }
+  },
+  "exit_evidence": {
+    "receipt_sha256": "0d876488059f09dc070f2b321350a2113bcb43c12bed50ff520bd9e01d895275",
+    "exit_code": 0,
+    "independent_pid_observation": "absent"
+  },
+  "stderr": {
+    "sha256": "a686ee4db238816c4c88e47a8d80614568e09d93e36e30d77918785e779fc473",
+    "bytes": 10581,
+    "traceback_present": false
+  },
+  "quality_results": null,
+  "limitations": [
+    "Training completion, finite loss and reload equality do not establish reduced intention omissions.",
+    "The final partial-group divisor is verified in executed source; phase logs contain no divisor or gradient tensors.",
+    "Save/reload equality and enabled/disabled difference cover one training-input last-position logit probe only.",
+    "Base freezing relies on audited source/assertions and LoRA-only saved matrices. Cached base payloads were size-checked against the previously verified receipt, not rehashed or compared before/after this run.",
+    "The audit reads saved logs/artifacts and neither inspects live GPU tensors nor reruns training or tokenization."
+  ]
+}

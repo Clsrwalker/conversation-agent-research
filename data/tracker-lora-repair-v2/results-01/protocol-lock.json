@@ -1,0 +1,98 @@
+{
+  "status": "frozen_before_training_and_collection",
+  "created_at_utc": "2026-10-24T19:18:29.361375+00:00",
+  "files": {
+    "protocol": {
+      "path": "output/research/2026-10-24/tracker-lora-repair-v2/evaluation/protocol.json",
+      "sha256": "1fff46568a31e35eaa75f053ee417b83a79d1fb601b90e234dd209ac35e37600"
+    },
+    "manifest": {
+      "path": "output/research/2026-10-24/tracker-lora-repair-v2/data/compiled/manifest.json",
+      "sha256": "35e3dfc55bf74ca37b88e6e3aa70738a9d61ec87769f19a8a601c3d9dded16bc"
+    },
+    "test_records": {
+      "path": "output/research/2026-10-24/tracker-lora-repair-v2/data/compiled/test.records.jsonl",
+      "sha256": "8190b19a0b25718e7e5baf2ac5fd25383df4fcd422696a8564d99a6cb3766ce3"
+    },
+    "system_prompt": {
+      "path": "output/research/2026-10-24/tracker-lora-repair-v2/annotation/system_prompt.txt",
+      "sha256": "7587583ff3fb2f46f64a32ca598a9f2bd980d8b0c3ff24915d80f5e31cda5abd"
+    },
+    "annotation_policy": {
+      "path": "output/research/2026-10-24/tracker-lora-repair-v2/annotation/policy-v3.json",
+      "sha256": "7e36104bbbaf2e7cc89d95490682b004a1415bfa54c4c7a131328595021dc457"
+    },
+    "admission": {
+      "path": "output/research/2026-10-24/tracker-lora-repair-v2/review/admission.json",
+      "sha256": "d2cb7337c4b3f5298f253a7da950b21cf40b8583df1542f10148a0b064e2d37f"
+    },
+    "collector": {
+      "path": "experiments/deep_conversation/tracker_lora/repair_v2/collect_three_arm.py",
+      "sha256": "6914ae922056b288a55f4fdaf197816ea4ab649b35e9cf80de0665521d6044d8"
+    },
+    "model_loader_and_trainer": {
+      "path": "experiments/deep_conversation/tracker_lora/repair_v2/train_tracker.py",
+      "sha256": "2d329f11c1320c0f2e12c39d6e74600997757d53a0661406b8e6a657222ffd24"
+    },
+    "gate": {
+      "path": "experiments/deep_conversation/tracker_lora/repair_v2/gates.py",
+      "sha256": "c7626f2955e830d5dfefcda3dd1435c08475cfc27ac91fd4c62730158db38990"
+    },
+    "compiler": {
+      "path": "experiments/deep_conversation/tracker_lora/repair_v2/build_dataset.py",
+      "sha256": "e8a8b4603eee63456574cfc034ec4df87980fc19517dedece52954c26de85acc"
+    },
+    "evaluator": {
+      "path": "experiments/deep_conversation/tracker_lora/repair_v2/evaluate_three_arm.py",
+      "sha256": "80d1fc6eeee56c128454d838701df98b5fbb4ec7ed1ee1cb2c1b61263776279c"
+    },
+    "legacy_evaluator": {
+      "path": "experiments/deep_conversation/tracker_lora/evaluate_tracker.py",
+      "sha256": "6e628968b52307f8160bcc673cb5abba8043490c810b22f0bd286fb9a4f33a6f"
+    },
+    "legacy_compiler": {
+      "path": "experiments/deep_conversation/tracker_lora/build_dataset.py",
+      "sha256": "c834fb312454e50257b3a88217aa29ea58a69c342fa7f8f758554adcfc5d3af4"
+    },
+    "runtime": {
+      "path": "experiments/deep_conversation/intention_state.py",
+      "sha256": "e028a604a93520801a0f752755d80b305afb1eebd8792ea0aeaaa3cd5c722f73"
+    },
+    "review_workflow": {
+      "path": "experiments/deep_conversation/tracker_lora/repair_v2/review_workflow.py",
+      "sha256": "4345cd1a14554c172e2cac21b47603212ec0140d72eb5818947b40f04f29798d"
+    },
+    "final_length_inspection": {
+      "path": "output/research/2026-10-24/tracker-lora-repair-v2/training/length-inspection-reviewed-01/result.json",
+      "sha256": "bc405641d69a9db562026342a3ac470351c685cd9c1eee96af63f2814e0ae679"
+    },
+    "cross_split_review": {
+      "path": "output/research/2026-10-24/tracker-lora-repair-v2/audit/cross-split-similarity-review-02.json",
+      "sha256": "11aeef3a6f5c6ca9b5c8c7b06320920c199468c8b5545be3c9abe392ea7d7f00"
+    },
+    "cross_split_original_review": {
+      "path": "output/research/2026-10-24/tracker-lora-repair-v2/audit/cross-split-similarity-review-01.json",
+      "sha256": "ab8693a5666ef7e23df3f69ac18b9debbc91e09136a459648ebc722e224998ca"
+    }
+  },
+  "data_gate": {
+    "status": "passed",
+    "manifest_sha256": "35e3dfc55bf74ca37b88e6e3aa70738a9d61ec87769f19a8a601c3d9dded16bc",
+    "admission_sha256": "d2cb7337c4b3f5298f253a7da950b21cf40b8583df1542f10148a0b064e2d37f",
+    "training_sft_sha256": "78bdadd3b9684600cd761d24b313acf8e34f58d06783fd9508ea6438ed86050c",
+    "compiler_sha256": "e8a8b4603eee63456574cfc034ec4df87980fc19517dedece52954c26de85acc",
+    "admitted_families": 150,
+    "admitted_training_rows": 500,
+    "independently_reviewed_fault_examples": 240,
+    "retained_old_training_rows": 200,
+    "new_hard_training_rows": 300,
+    "new_dev_rows": 50,
+    "new_test_rows": 200,
+    "reviewed_retained_target_citation_revisions": 108,
+    "citation_revision_ledger_sha256": "974738a5cf73c89a09b3773708a01e883d9792652610051862b339ac77a4c394",
+    "detailed_review_files": 4,
+    "explicit_review_overrides": 1
+  },
+  "assigned_calls": 600,
+  "checkpoint_policy": "Final single-epoch checkpoint; collector binds final adapter hashes before first generation."
+}

@@ -1,0 +1,26 @@
+{
+  "schema": "tracker-reference-amendment-disclosure-v1",
+  "review_status": "reviewed",
+  "timezone": "America/Halifax",
+  "date": "2026-10-24",
+  "original_findings": {
+    "path": "output/research/2026-10-24/tracker-lora-repair-v2/evaluation/blind-adjudication-01/reference-defect-findings.json",
+    "sha256": "04b3d8018353371abe56223f27cf45f7b4c848bdb5114cdf67067efa3269da88"
+  },
+  "original_findings_summary": "The original independent blind adjudicator examined all 42 required disputes or flags, resolved 40 against the supplied references, and withheld final signoff because two references omitted explicit preservation conditions. These are reference defects discovered after collection and before any arm quality aggregation.",
+  "accepted_corrections": "Add unchanged problem-number glyph shape to the existing problem-number placement reference, and unchanged snapshot-name content to the existing snapshot-name placement reference. Both conditions are explicit in the arrived user messages. A separate fresh blinded reviewer approved both exact reference-text replacements after checking the full arrived conversations and all reference entries.",
+  "rejected_or_inconclusive_findings": [
+    "The hidden-hinge naming scope flag was resolved without a reference correction: 'the outlines' refers contextually to the previously stated dashed hidden-hinge outlines, while the reference does not explicitly broaden the scope to every hinge.",
+    "The semaphore-pause strength flag was resolved without a reference correction: the source and reference permit a pause; the candidate imperative was judged a strength error."
+  ],
+  "limitations": [
+    "Only two existing reference text fields are amended. Original training data, model inputs, generated outputs, runtime replay, reference IDs, owners, statuses and counting denominators remain fixed; the overlay must verify this before use.",
+    "Original compiled test splits retain the incomplete references as frozen historical data. The release must also provide the explicit correction ledger and all amended expected reference states so the scored reference version is identifiable.",
+    "These corrections were discovered through model review of collected candidates. Blinding and all-arm application reduce selective interpretation risk but do not make the labels human gold or account for remaining label uncertainty.",
+    "The adjudicator examined the 42 required disputes and flags, not a new exhaustive semantic audit of every test reference. Residual reference or judgment errors may remain.",
+    "No retraining, checkpoint choice or decoding adjustment is based on these corrections.",
+    "The approved rationale includes candidate-specific observations from the original seed finding. The expanded correction notices reuse that prose across variants; it does not mean every candidate omits the condition. Affected reviewers were explicitly instructed to inspect their actual candidate and raw evidence. The public ledger marks this reason scope while preserving the approved private ledger."
+  ],
+  "review_note": "Root checked the raw reference evidence and this factual disclosure. The original incomplete reference and review chain remain preserved. A fresh independent reviewer has approved the two corrections; release additionally requires verified all-arm application, explicit re-review of every affected packet, documented carry-forward of unchanged own reviews, final adjudication/sealing, and an independent numerical and sentence-level audit of the amended results. This disclosure is not a model-quality finding.",
+  "all_original_findings_accounted_for": true
+}

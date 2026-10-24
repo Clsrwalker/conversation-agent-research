@@ -1,0 +1,48 @@
+{
+  "created_at_utc": "2026-10-24T19:09:06.359480+00:00",
+  "reason": "Prospective cross-split audit found concrete mechanism overlap; replace training mechanisms before freeze, without modifying evaluation to favor training.",
+  "author": "repair_fresh_eval_author",
+  "replacement_independent_review": "pending",
+  "original_source_sha256": "04c4bafaadbd6c71e27a0e867935bebb098d59107ccf7b64ea55b328b978b687",
+  "new_source_sha256": "c4e8d3e79f4045b632b8e15d1bd88aa2507959587b9d7234e2195c06531eb527",
+  "fault_file_sha256": "166b717e6c099cd88ff10edd62aaf0d5d94f445444ae49114a4d24515775524d",
+  "fault_file_unchanged": true,
+  "original_review_sha256": "4877ff876c9f38bb79b9dbc7842dbd4f30f1289f5885b28edcb8b58304ab8337",
+  "pending_review_sha256": "d0cde2bfeb63babb1c697ea11086e89c74a6702925534ef846b9b7e0affe7bdd",
+  "history": "review/history/before-leakage-replacement",
+  "replacements": [
+    {
+      "family_id": "fresh-train-042",
+      "old_domain": "ceramic kiln shelf map",
+      "new_domain": "fictional configuration overlay audit",
+      "old_family_sha256": "1c99748c10313b943d3d9ac04ba80a28c2267e4cfc5b8bf80477915f94c3963b",
+      "new_family_sha256": "83ce12da1f1f1b53df34cfaf6a4943e310571bff257f98227533c3eb49c2dec8",
+      "decisions": 5,
+      "language": "en",
+      "fault_examples": [
+        "fresh-train-042-2",
+        "fresh-train-042-3"
+      ]
+    },
+    {
+      "family_id": "fresh-train-044",
+      "old_domain": "handmade book collation notes",
+      "new_domain": "ticket waitlist consent ledger",
+      "old_family_sha256": "e34bab0832fb684c3175683e2fd3d732aa7549895c7a323883ff27277e908e72",
+      "new_family_sha256": "984fe1ce7dbfa8d83890196aa5866aeead3f103f9504296d65199f0b35005ea7",
+      "decisions": 5,
+      "language": "en",
+      "fault_examples": [
+        "fresh-train-044-4",
+        "fresh-train-044-3"
+      ]
+    }
+  ],
+  "author_checks": {
+    "new_canonical_decisions": 10,
+    "new_fault_replays": 4,
+    "runtime_replay": "passed",
+    "semantic_independent_review": false,
+    "new_model_calls": 0
+  }
+}

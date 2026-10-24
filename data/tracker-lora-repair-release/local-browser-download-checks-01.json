@@ -1,0 +1,70 @@
+{
+  "kind": "actual_local_browser_download_and_http_byte_validation",
+  "date": "2026-10-24",
+  "timezone": "America/Halifax",
+  "status": "passed",
+  "http": [
+    {
+      "path": "intent-role-separation.html",
+      "status": 200,
+      "bytes": 54562,
+      "sha256": "e8fc34253ddbb296c6210cd38cdf6609e2816f647dec59d4b2c5a498120b248a"
+    },
+    {
+      "path": "data/tracker-lora-repair-v2/results-01/summary.json",
+      "status": 200,
+      "bytes": 49457,
+      "sha256": "aaa1f2a565f5b0ec1545c603ca077df13a2e287d1c7a3ad0b8f067092b8ff605"
+    },
+    {
+      "path": "data/tracker-lora-repair-v2/results-01/results.json",
+      "status": 200,
+      "bytes": 221615,
+      "sha256": "8264f0be72d1ed555dcf25f644b8c81c00be991765a498e7ff24448a7e7f23f9"
+    },
+    {
+      "path": "data/tracker-lora-repair-v2/results-01/dataset-card.json",
+      "status": 200,
+      "bytes": 21415,
+      "sha256": "f08d63e71787079555ab6cc2c85530e33cca17b5f7726fb94156df3ae60cf181"
+    },
+    {
+      "path": "data/tracker-lora-repair-v2/results-01/reference-amendment-disclosure.json",
+      "status": 200,
+      "bytes": 3659,
+      "sha256": "de733dbccee7e12a446247da10e481b32632abeea6e7f8d7bbf9c352d5f6a640"
+    },
+    {
+      "path": "data/tracker-lora-repair-v2/results-01/reference-amendment-ledger-public.json",
+      "status": 200,
+      "bytes": 2640,
+      "sha256": "1d9ca5ce706c69d3586d1c2b361df6965e1438f90cd06bc05a09873d85cb1bff"
+    },
+    {
+      "path": "data/tracker-lora-repair-v2/results-01/test.amended-references.json",
+      "status": 200,
+      "bytes": 139231,
+      "sha256": "d3b482e26b06188c17943b06e945fb72ae9e255e42d768693a462e2e684d2447"
+    },
+    {
+      "path": "data/tracker-lora-repair-v2/results-01/evidence.zip",
+      "status": 200,
+      "bytes": 924796,
+      "sha256": "6cb402fa6c67caa26a814bb13a01681f98d2bfbedec2a801f2b20b6d8eee95e4"
+    }
+  ],
+  "browser_download_sha256": "6cb402fa6c67caa26a814bb13a01681f98d2bfbedec2a801f2b20b6d8eee95e4",
+  "browser_rendering": {
+    "viewport_width": 319,
+    "document_width": 304,
+    "client_width": 304,
+    "table_container_width": 237,
+    "table_scroll_width": 680,
+    "table_overflow_x": "auto",
+    "heading_and_inconclusive_lead_visible": true
+  },
+  "limits": [
+    "Default narrow viewport only; no desktop breakpoint or user study claimed.",
+    "Local HTTP and browser download checks do not establish production deployment."
+  ]
+}

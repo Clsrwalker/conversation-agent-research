@@ -1,0 +1,42 @@
+{
+  "schema": "tracker-reference-amendment-public-ledger-v1",
+  "version": 1,
+  "signed_by": "root-reference-amendment-author",
+  "signed_at_utc": "2026-10-24T21:11:34.376006+00:00",
+  "adjudicator_id": "adjudicator-01",
+  "original_private_ledger_sha256": "25e417ab9bf048150a39a074e6583dc97fd19471210fc9eaaba2524ee34b89da",
+  "original_test_records_sha256": "8190b19a0b25718e7e5baf2ac5fd25383df4fcd422696a8564d99a6cb3766ce3",
+  "approval_sha256": "9d7addfbc5202971cb9be771b8a9cab81ae115f106893381edf04cf33d997c7d",
+  "original_findings_sha256": "04b3d8018353371abe56223f27cf45f7b4c848bdb5114cdf67067efa3269da88",
+  "changes": [
+    {
+      "example_id": "fresh-test-017-5",
+      "reference_intent_id": "i4",
+      "old_text": "题号放页面内侧",
+      "new_text": "题号放页面内侧，字形保持不变",
+      "reason": "The explicit problem-number glyph-retention condition is absent from the supplied reference and the candidate. The phrase follows the problem-number location change in the same user sentence. The ciphertext-symbol consistency rule in i2 has a different object and does not cover it.",
+      "raw_evidence": [
+        {
+          "seq": 6,
+          "quote": "题号改放内侧，字形不改。"
+        }
+      ],
+      "reason_scope": "This rationale describes the original seed finding. Candidate-specific observations do not describe every model output for this example; the reference correction applies to all variants."
+    },
+    {
+      "example_id": "fresh-test-005-5",
+      "reference_intent_id": "i4",
+      "old_text": "当前快照名称放在切换表左下角",
+      "new_text": "当前快照名称放在切换表左下角，名称内容保持不变",
+      "reason": "The explicit unchanged-name-content condition is absent from the supplied reference and candidate. Current snapshot name identifies what is displayed but does not itself prohibit renaming its content; the raw user separately imposes that preservation constraint.",
+      "raw_evidence": [
+        {
+          "seq": 6,
+          "quote": "快照名移到左下角，名字内容不变。"
+        }
+      ],
+      "reason_scope": "This rationale describes the original seed finding. Candidate-specific observations do not describe every model output for this example; the reference correction applies to all variants."
+    }
+  ],
+  "replay": "Use the byte-identical test.records.jsonl. Match each example_id and reference_intent_id; require old_text exactly, replace only expected_semantic_state text with new_text. Inputs and every other field stay unchanged. The amended reference table contains all 200 examples."
+}
