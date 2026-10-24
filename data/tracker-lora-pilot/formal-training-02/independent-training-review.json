@@ -1,0 +1,316 @@
+{
+  "kind": "independent_read_only_formal_training_terminal_evidence_review",
+  "date": "2026-10-24",
+  "timezone": "America/Halifax",
+  "status": "passed",
+  "reviewer": "tracker_annotation_v2",
+  "independent_of_training_executor": true,
+  "run": "formal-pilot-02",
+  "scope": "Training artifacts only; no evaluation/collection outputs or PRIVATE mappings read; no GPU/model task launched; no frozen artifacts modified.",
+  "anchor_precollection_gate_utc": "2026-10-24T12:20:57.812971+00:00",
+  "artifact_sha256": {
+    "result": "d96c36ac8648d21bf66be53c1ee31094ae2fdb2a9f3bf069dabc94809a1b4da1",
+    "run_config": "da064588bd429876afdc92e573c0ebeac9d0e869fe9aef7f111d1d3c913c199f",
+    "runner_source": "b60fd53f91c62d854ef0cf71a15b29fac850fad1aaddd5d07e335831a94ed1a8",
+    "lengths": "b9b077c450150db8b53b33d8d25787e6ac6a728239cde18ea820b2c4c84d75d9",
+    "log": "51045c59311b1ae2b97ec31ff5c974dd9d24334a1d84d11eb55cb97ac9e8090f",
+    "precollection_gate": "eaf5fc2b1b3a567bc8e8a7cd2655300831a0111ce7689501e38cf712613d3422",
+    "v2_lock": "8fb6a8e23e0256f3c78760d17314e4597aa46426c527ec3a0f776d1873999e4b"
+  },
+  "checks_passed": 55,
+  "checks_total": 55,
+  "issues": [],
+  "checks": [
+    {
+      "check": "result_matches_config_base_model",
+      "passed": true
+    },
+    {
+      "check": "result_matches_config_base_revision",
+      "passed": true
+    },
+    {
+      "check": "result_matches_config_runner_sha256",
+      "passed": true
+    },
+    {
+      "check": "result_matches_config_versions",
+      "passed": true
+    },
+    {
+      "check": "result_matches_config_configuration",
+      "passed": true
+    },
+    {
+      "check": "result_matches_config_quantization",
+      "passed": true
+    },
+    {
+      "check": "result_matches_config_frozen_embeddings_and_head_dtype",
+      "passed": true
+    },
+    {
+      "check": "result_matches_config_forward_autocast",
+      "passed": true
+    },
+    {
+      "check": "result_matches_config_data",
+      "passed": true
+    },
+    {
+      "check": "result_matches_config_mask_check",
+      "passed": true
+    },
+    {
+      "check": "result_matches_config_base_download_receipt_sha256",
+      "passed": true
+    },
+    {
+      "check": "result_matches_config_review_gate",
+      "passed": true
+    },
+    {
+      "check": "formal_result_passed",
+      "passed": true
+    },
+    {
+      "check": "frozen_runner_binding",
+      "passed": true
+    },
+    {
+      "check": "current_runner_equals_executed",
+      "passed": true
+    },
+    {
+      "check": "gate_result_config_lock_log_bindings",
+      "passed": true
+    },
+    {
+      "check": "one_epoch_recipe",
+      "passed": true
+    },
+    {
+      "check": "500_microsteps_32_updates",
+      "passed": true
+    },
+    {
+      "check": "all_losses_finite",
+      "passed": true
+    },
+    {
+      "check": "training_data_hash",
+      "passed": true
+    },
+    {
+      "check": "admission_manifest_hashes",
+      "passed": true
+    },
+    {
+      "check": "500_actual_training_records",
+      "passed": true
+    },
+    {
+      "check": "completed_event_no_failure",
+      "passed": true
+    },
+    {
+      "check": "forward_and_finite_check_begin_500_in_seeded_order",
+      "passed": true
+    },
+    {
+      "check": "forward_and_finite_check_end_500_in_seeded_order",
+      "passed": true
+    },
+    {
+      "check": "backward_and_loss_readback_begin_500_in_seeded_order",
+      "passed": true
+    },
+    {
+      "check": "backward_and_loss_readback_end_500_in_seeded_order",
+      "passed": true
+    },
+    {
+      "check": "release_unused_cache_begin_500_in_seeded_order",
+      "passed": true
+    },
+    {
+      "check": "release_unused_cache_end_500_in_seeded_order",
+      "passed": true
+    },
+    {
+      "check": "32_optimizer_events_exact_boundaries",
+      "passed": true
+    },
+    {
+      "check": "optimizer_losses_match_and_norms_finite",
+      "passed": true
+    },
+    {
+      "check": "optimizer_phase_begin_32",
+      "passed": true
+    },
+    {
+      "check": "optimizer_phase_end_32",
+      "passed": true
+    },
+    {
+      "check": "phase_count_3064",
+      "passed": true
+    },
+    {
+      "check": "phase_wall_times_finite_nonnegative",
+      "passed": true
+    },
+    {
+      "check": "length_rows_unique_500",
+      "passed": true
+    },
+    {
+      "check": "length_sum_and_zero_truncation",
+      "passed": true
+    },
+    {
+      "check": "length_range_and_mean",
+      "passed": true
+    },
+    {
+      "check": "completion_only_mask",
+      "passed": true
+    },
+    {
+      "check": "partial_group_divisor_exact_source",
+      "passed": true
+    },
+    {
+      "check": "31_full_groups_final4",
+      "passed": true
+    },
+    {
+      "check": "pinned_base_lora_config",
+      "passed": true
+    },
+    {
+      "check": "base_freeze_assertion",
+      "passed": true
+    },
+    {
+      "check": "adapter_file_hash_adapter_config.json",
+      "passed": true
+    },
+    {
+      "check": "adapter_file_hash_adapter_model.safetensors",
+      "passed": true
+    },
+    {
+      "check": "adapter_file_hash_chat_template.jinja",
+      "passed": true
+    },
+    {
+      "check": "adapter_file_hash_README.md",
+      "passed": true
+    },
+    {
+      "check": "adapter_file_hash_tokenizer.json",
+      "passed": true
+    },
+    {
+      "check": "adapter_file_hash_tokenizer_config.json",
+      "passed": true
+    },
+    {
+      "check": "saved_LoRA_only_672_tensors_68812800_params",
+      "passed": true
+    },
+    {
+      "check": "formal_weights_not_smoke",
+      "passed": true
+    },
+    {
+      "check": "single_probe_reload0_and_effect5_34375",
+      "passed": true
+    },
+    {
+      "check": "gate_reports_normal_exit0",
+      "passed": true
+    },
+    {
+      "check": "actual_training_PID_absent",
+      "passed": true
+    },
+    {
+      "check": "lock_start_finish_gate_chronology",
+      "passed": true
+    }
+  ],
+  "training_counts": {
+    "microsteps": 500,
+    "optimizer_updates": 32,
+    "unique_rows": 500,
+    "full_groups_of_16": 31,
+    "last_group_size": 4,
+    "last_group_divisor_source_verified": 4,
+    "last_four_row_indices_zero_based": [
+      38,
+      371,
+      90,
+      301
+    ],
+    "epochs": 1,
+    "seed": 20261024,
+    "row_order_sha256": "743e292a201466462ce06df8487ffa0132f7d6fcf05ec9ae4f1e6372c22e8131",
+    "phase_events": 3064,
+    "truncated_rows": 0,
+    "training_elapsed_seconds": 1672.2072864999645,
+    "supervised_completion_tokens": 27728
+  },
+  "representation": {
+    "base": "Qwen/Qwen2.5-14B-Instruct",
+    "revision": "cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8",
+    "quantization": {
+      "load_in_4bit": true,
+      "type": "nf4",
+      "double_quant": true,
+      "compute_dtype": "bfloat16"
+    },
+    "frozen_embedding_and_head_dtype": "bfloat16",
+    "forward_autocast": "cuda_bfloat16",
+    "base_freeze_assertion_logged": true,
+    "saved_LoRA_tensor_count": 672,
+    "saved_LoRA_parameter_count": 68812800,
+    "saved_tensor_dtypes": [
+      "F32"
+    ]
+  },
+  "adapter_files": {
+    "adapter_config.json": "4b10f017bee9d111bb544e6dd9ee025b5c2353317839fc5e3bc183fb38b3e7e2",
+    "adapter_model.safetensors": "70af35505394ebc53d81aa839ad78165166d5ad7fd9be36314a3f0962265a707",
+    "chat_template.jinja": "8aa40ce145adb73cb3a75194dc0224702a95850ec5275cabb728496bbd749fc6",
+    "README.md": "30836000add7aff4e3bf213594c690d54c11d655805bb582c0bd7195badbde73",
+    "tokenizer.json": "3fd169731d2cbde95e10bf356d66d5997fd885dd8dbb6fb4684da3f23b2585d8",
+    "tokenizer_config.json": "b3d4aae9670f7c2de3e3b32675b0118e7e7b517544f5ab32efe04bd74f2238c1"
+  },
+  "single_probe_validation": {
+    "source": "First encoded training row; one last-position vocabulary logit vector in the executed save/reload block.",
+    "reload_max_abs_logit_difference": 0.0,
+    "enabled_disabled_max_abs_logit_difference": 5.34375,
+    "scope_limit": "One deterministic training-input probe, not general numerical equivalence or held-out semantic correctness."
+  },
+  "exit_evidence": {
+    "gate_reports_exit_code": 0,
+    "independent_PID_observation": {
+      "checked_at_utc": "2026-10-24T12:22:17.8008358Z",
+      "present": false,
+      "method": "Independent read-only training-process existence check using PowerShell Get-Process; captured numeric process identity omitted."
+    },
+    "interpretation": "Normal exit and PID absence corroborate lifecycle completion, not correctness on their own. Separate log/order/hash/source checks support the engineering outcome."
+  },
+  "quality_results": null,
+  "limitations": [
+    "Reviewer did not rerun training or tokenization, inspect live GPU tensors or execute held-out inference.",
+    "Base freezing is supported by audited source and logged assertion; saved adapter contains only LoRA A/B tensors. The full base payload was not rehashed or compared before/after this run.",
+    "Partial-group divisor is verified in executed source. Stage logs confirm four final backward completions and one optimizer boundary but do not contain gradient tensors or the divisor value itself.",
+    "Save/reload equality and enabled/disabled difference cover only the single probe used by the runner.",
+    "Completing this run does not establish stability on larger datasets, isolate the earlier slowdown cause or prove causal throughput improvement.",
+    "Training losses and normal exit do not establish reduced intention omissions. No claims are made here about current held-out collection status or quality."
+  ]
+}

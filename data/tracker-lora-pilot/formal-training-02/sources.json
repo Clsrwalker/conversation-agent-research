@@ -1,0 +1,240 @@
+{
+  "schema_version": 1,
+  "snapshot_scope": "Completed training and precollection gate only",
+  "source_and_export_files": {
+    "run-config.json": {
+      "source_path_relative_to_study": "training/formal-pilot-02/run-config.json",
+      "source_sha256": "da064588bd429876afdc92e573c0ebeac9d0e869fe9aef7f111d1d3c913c199f",
+      "export_sha256": "da064588bd429876afdc92e573c0ebeac9d0e869fe9aef7f111d1d3c913c199f",
+      "export_bytes": 2556,
+      "byte_identical_to_source": true,
+      "sanitizations": []
+    },
+    "token-lengths.json": {
+      "source_path_relative_to_study": "training/formal-pilot-02/lengths.json",
+      "source_sha256": "b9b077c450150db8b53b33d8d25787e6ac6a728239cde18ea820b2c4c84d75d9",
+      "export_sha256": "b9b077c450150db8b53b33d8d25787e6ac6a728239cde18ea820b2c4c84d75d9",
+      "export_bytes": 61225,
+      "byte_identical_to_source": true,
+      "sanitizations": []
+    },
+    "trainer-source.py": {
+      "source_path_relative_to_study": "training/formal-pilot-02/runner_source.py",
+      "source_sha256": "b60fd53f91c62d854ef0cf71a15b29fac850fad1aaddd5d07e335831a94ed1a8",
+      "export_sha256": "b60fd53f91c62d854ef0cf71a15b29fac850fad1aaddd5d07e335831a94ed1a8",
+      "export_bytes": 24182,
+      "byte_identical_to_source": true,
+      "sanitizations": []
+    },
+    "protocol-v2.json": {
+      "source_path_relative_to_study": "evaluation/protocol-memory-guard-v2.json",
+      "source_sha256": "ba2499114856b0241d0525f9da8010736682475714afb6da0d60b35c2e43595f",
+      "export_sha256": "ba2499114856b0241d0525f9da8010736682475714afb6da0d60b35c2e43595f",
+      "export_bytes": 14558,
+      "byte_identical_to_source": true,
+      "sanitizations": []
+    },
+    "protocol-lock-v2.json": {
+      "source_path_relative_to_study": "evaluation/protocol-lock-memory-guard-v2.json",
+      "source_sha256": "8fb6a8e23e0256f3c78760d17314e4597aa46426c527ec3a0f776d1873999e4b",
+      "export_sha256": "54e646a5b78fee5cb8a57742dec9ab76c700e5a5781a06c249aca89c1f6813e4",
+      "export_bytes": 1803,
+      "byte_identical_to_source": false,
+      "sanitizations": [
+        {
+          "json_path": "$.files.protocol.path",
+          "action": "converted absolute workspace path to project-relative reference"
+        },
+        {
+          "json_path": "$.files.test_records.path",
+          "action": "converted absolute workspace path to project-relative reference"
+        },
+        {
+          "json_path": "$.files.dataset_manifest.path",
+          "action": "converted absolute workspace path to project-relative reference"
+        },
+        {
+          "json_path": "$.files.system_prompt.path",
+          "action": "converted absolute workspace path to project-relative reference"
+        },
+        {
+          "json_path": "$.files.evaluator.path",
+          "action": "converted absolute workspace path to project-relative reference"
+        },
+        {
+          "json_path": "$.files.runtime.path",
+          "action": "converted absolute workspace path to project-relative reference"
+        },
+        {
+          "json_path": "$.files.model_loader_and_trainer.path",
+          "action": "converted absolute workspace path to project-relative reference"
+        },
+        {
+          "json_path": "$.files.collector.path",
+          "action": "converted absolute workspace path to project-relative reference"
+        }
+      ]
+    },
+    "authorization-and-gate.json": {
+      "source_path_relative_to_study": "training/formal-pilot-02-authorization-and-gate.json",
+      "source_sha256": "d61b0f9cc359097a2209e410cc7d14fca5fa0c4b56e99c619507cdfec97566a9",
+      "export_sha256": "ab2510fb85e1a22b92b9991aa3b4e9d5391342bf824b53c33dcaba8a7cb91f1e",
+      "export_bytes": 4437,
+      "byte_identical_to_source": false,
+      "sanitizations": [
+        {
+          "json_path": "$.locked_files.protocol.path",
+          "action": "converted absolute workspace path to project-relative reference"
+        },
+        {
+          "json_path": "$.locked_files.test_records.path",
+          "action": "converted absolute workspace path to project-relative reference"
+        },
+        {
+          "json_path": "$.locked_files.dataset_manifest.path",
+          "action": "converted absolute workspace path to project-relative reference"
+        },
+        {
+          "json_path": "$.locked_files.system_prompt.path",
+          "action": "converted absolute workspace path to project-relative reference"
+        },
+        {
+          "json_path": "$.locked_files.evaluator.path",
+          "action": "converted absolute workspace path to project-relative reference"
+        },
+        {
+          "json_path": "$.locked_files.runtime.path",
+          "action": "converted absolute workspace path to project-relative reference"
+        },
+        {
+          "json_path": "$.locked_files.model_loader_and_trainer.path",
+          "action": "converted absolute workspace path to project-relative reference"
+        },
+        {
+          "json_path": "$.locked_files.collector.path",
+          "action": "converted absolute workspace path to project-relative reference"
+        },
+        {
+          "json_path": "$.previous_formal_pid_confirmed_absent",
+          "action": "removed process identifier from field name; boolean retained"
+        }
+      ]
+    },
+    "result.json": {
+      "source_path_relative_to_study": "training/formal-pilot-02/result.json",
+      "source_sha256": "d96c36ac8648d21bf66be53c1ee31094ae2fdb2a9f3bf069dabc94809a1b4da1",
+      "export_sha256": "e9aac970b96a484c28af2760a2b1a96b0f5dcf0ad5cfb15494a88f6cb6c44b82",
+      "export_bytes": 18258,
+      "byte_identical_to_source": false,
+      "sanitizations": [
+        {
+          "json_path": "$.pid",
+          "action": "removed runtime process or local command identity"
+        }
+      ]
+    },
+    "precollection-gate.json": {
+      "source_path_relative_to_study": "training/formal-pilot-02-precollection-gate.json",
+      "source_sha256": "eaf5fc2b1b3a567bc8e8a7cd2655300831a0111ce7689501e38cf712613d3422",
+      "export_sha256": "32cc3b3dd58a0892e41b20489dae6d4677895e1a2650245d48a434b566873472",
+      "export_bytes": 7328,
+      "byte_identical_to_source": false,
+      "sanitizations": [
+        {
+          "json_path": "$.locked_files.protocol.path",
+          "action": "converted absolute workspace path to project-relative reference"
+        },
+        {
+          "json_path": "$.locked_files.test_records.path",
+          "action": "converted absolute workspace path to project-relative reference"
+        },
+        {
+          "json_path": "$.locked_files.dataset_manifest.path",
+          "action": "converted absolute workspace path to project-relative reference"
+        },
+        {
+          "json_path": "$.locked_files.system_prompt.path",
+          "action": "converted absolute workspace path to project-relative reference"
+        },
+        {
+          "json_path": "$.locked_files.evaluator.path",
+          "action": "converted absolute workspace path to project-relative reference"
+        },
+        {
+          "json_path": "$.locked_files.runtime.path",
+          "action": "converted absolute workspace path to project-relative reference"
+        },
+        {
+          "json_path": "$.locked_files.model_loader_and_trainer.path",
+          "action": "converted absolute workspace path to project-relative reference"
+        },
+        {
+          "json_path": "$.locked_files.collector.path",
+          "action": "converted absolute workspace path to project-relative reference"
+        },
+        {
+          "json_path": "$.final_training_summary.python_pid",
+          "action": "removed runtime process or local command identity"
+        },
+        {
+          "json_path": "$.authorized_collection.data",
+          "action": "converted absolute workspace path to project-relative reference"
+        },
+        {
+          "json_path": "$.authorized_collection.system_prompt",
+          "action": "converted absolute workspace path to project-relative reference"
+        },
+        {
+          "json_path": "$.authorized_collection.adapter",
+          "action": "converted absolute workspace path to project-relative reference"
+        },
+        {
+          "json_path": "$.authorized_collection.output",
+          "action": "converted absolute workspace path to project-relative reference"
+        }
+      ]
+    },
+    "adapter-config.json": {
+      "source_path_relative_to_study": "training/formal-pilot-02/adapter/adapter_config.json",
+      "source_sha256": "4b10f017bee9d111bb544e6dd9ee025b5c2353317839fc5e3bc183fb38b3e7e2",
+      "export_sha256": "4b10f017bee9d111bb544e6dd9ee025b5c2353317839fc5e3bc183fb38b3e7e2",
+      "export_bytes": 1269,
+      "byte_identical_to_source": true,
+      "sanitizations": []
+    },
+    "independent-training-review.json": {
+      "source_path_relative_to_study": "audit/formal-training-02-independent-review.json",
+      "source_sha256": "59c7fa42414d2a9eace08151e6c3d4a3670357a7b52a913d0440559fc65f49b5",
+      "export_sha256": "b8174384801ef534c28032016af9675acfe0b0efc43219aaf23d040a3cff9bc4",
+      "export_bytes": 9439,
+      "byte_identical_to_source": false,
+      "sanitizations": [
+        {
+          "json_path": "$.exit_evidence.independent_PID_observation.pid",
+          "action": "removed runtime process or local command identity"
+        },
+        {
+          "json_path": "$.exit_evidence.independent_PID_observation.method",
+          "action": "replaced captured numeric process command with generic observation description"
+        }
+      ]
+    },
+    "training-events.jsonl": {
+      "source_path_relative_to_study": "training/formal-pilot-02.log",
+      "source_sha256": "51045c59311b1ae2b97ec31ff5c974dd9d24334a1d84d11eb55cb97ac9e8090f",
+      "export_sha256": "3c146dc27e615b94a068da6ab2870bd36cb4d5e83bae95a9521720e34fe7d611",
+      "export_bytes": 2076149,
+      "byte_identical_to_source": false,
+      "transform": "Parsed complete tokenized/base_loaded/microstep_phase/optimizer_step/completed JSON events only. Non-JSON stdout and warnings are excluded; event fields retained.",
+      "event_count": 3099,
+      "event_counts": {
+        "tokenized": 1,
+        "base_loaded": 1,
+        "microstep_phase": 3064,
+        "optimizer_step": 32,
+        "completed": 1
+      },
+      "sanitizations": []
+    }
+  }
+}

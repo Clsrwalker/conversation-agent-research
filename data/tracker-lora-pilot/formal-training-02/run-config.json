@@ -1,0 +1,68 @@
+{
+  "base_model": "Qwen/Qwen2.5-14B-Instruct",
+  "base_revision": "cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8",
+  "runner_sha256": "b60fd53f91c62d854ef0cf71a15b29fac850fad1aaddd5d07e335831a94ed1a8",
+  "versions": {
+    "torch": "2.12.0+cu130",
+    "transformers": "5.14.1",
+    "peft": "0.21.2",
+    "bitsandbytes": "0.50.0",
+    "accelerate": "1.14.0",
+    "huggingface-hub": "1.24.0",
+    "safetensors": "0.8.0"
+  },
+  "configuration": {
+    "mode": "train",
+    "data": "output/research/2026-10-24/tracker-lora-pilot/data/compiled/train.sft.jsonl",
+    "review_receipt": "output/research/2026-10-24/tracker-lora-pilot/review/admission.json",
+    "manifest": "output/research/2026-10-24/tracker-lora-pilot/data/compiled/manifest.json",
+    "output": "output/research/2026-10-24/tracker-lora-pilot/training/formal-pilot-02",
+    "max_length": 2048,
+    "rank": 16,
+    "learning_rate": 0.0001,
+    "gradient_accumulation": 16,
+    "epochs": 1,
+    "max_steps": 0,
+    "seed": 20261024,
+    "activation_offload": true,
+    "release_unused_cache_per_microstep": true,
+    "log_microstep_phases": true,
+    "smoke_completion_tokens": 6
+  },
+  "quantization": {
+    "load_in_4bit": true,
+    "type": "nf4",
+    "double_quant": true,
+    "compute_dtype": "bfloat16"
+  },
+  "frozen_embeddings_and_head_dtype": "bfloat16",
+  "forward_autocast": "cuda_bfloat16",
+  "data": {
+    "count": 500,
+    "sha256": "d180d14231697dcdfc5054e532b5d7757ba084989a3f534a9af233a9d7dd0c58",
+    "min_tokens": 885,
+    "max_tokens": 1901,
+    "mean_tokens": 1256.758,
+    "over_limit": 0,
+    "tokens_2048_exceeded": 0,
+    "tokens_4096_exceeded": 0,
+    "truncated_rows": 0
+  },
+  "mask_check": {
+    "chat_prefix_exact_for_all_rows": true,
+    "prompt_supervised_tokens": 0,
+    "padding_supervised_tokens": 0,
+    "completion_supervised_tokens": 27728,
+    "implementation": "causal completion tail logits only; target tokens plus template assistant end supervised"
+  },
+  "base_download_receipt_sha256": "1287f3e5b81d0594061c4e41b167237ee60a8f364e9f8b335b00f8f6b54aee17",
+  "review_gate": {
+    "status": "passed",
+    "manifest_sha256": "94280f80ff17e990f189f1fc18b3ca4d8b579422770e81a5acd5ea12c920b873",
+    "admission_sha256": "6d9fbe1b959a2de45d1dd36896affc2bc1f515aca8a318e58619e967b58826fc",
+    "training_sft_sha256": "d180d14231697dcdfc5054e532b5d7757ba084989a3f534a9af233a9d7dd0c58",
+    "admitted_families": 130,
+    "admitted_training_rows": 500,
+    "independently_reviewed_fault_examples": 65
+  }
+}

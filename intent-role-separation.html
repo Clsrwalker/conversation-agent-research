@@ -65,6 +65,10 @@
 <h3>Subsequent check: memory-management revision</h3>
 <p>After the controlled stop of formal-pilot-01, a versioned revision added unused-cache release and phase logs. On the same 2,048-token/160-completion synthetic fixture, two updates matched the old losses and final adapter weights exactly. End-of-smoke reserved memory fell from 14.87 GB to 10.71 GB; peak reserved memory did not fall and the short run was not faster. A fresh 500-row, one-epoch formal-pilot-02 has started under a new frozen protocol and remains unfinished at this snapshot. Sustained performance and stability remain unverified. No held-out test inference has run; tracking-quality results are unavailable.</p>
 <div class="record-actions"><a class="button primary" href="data/tracker-lora-pilot/memory-revision-01/evidence.zip" download>Memory revision records ↓</a><a href="data/tracker-lora-pilot/memory-revision-01/summary.json">Checks, protocol and run snapshot</a></div>
+</div><div id="tracker-lora-training-complete">
+<h3>Completed training; tracking quality still to evaluate</h3>
+<p>Formal-pilot-02 completed one epoch over 500 synthetic training updates from 100 conversation families: 500 microsteps and 32 optimizer updates, including a final group of four. No row was truncated, and the base model remained frozen. On one training-row probe, the saved and reloaded adapter produced identical logits; switching the adapter off changed logits by a maximum of 5.34375. These checks validate this training artifact, not intention-tracking quality or general reload equivalence. This record is anchored to the precollection gate. Held-out evaluation is a separate next stage, and quality remains pending.</p>
+<div class="record-actions"><a class="button primary" href="data/tracker-lora-pilot/formal-training-02/evidence.zip" download>Completed training records ↓</a><a href="data/tracker-lora-pilot/formal-training-02/summary.json">Training checks and evaluation gate</a></div>
 </div></section>
 <!-- tracker-lora-pilot:end -->
 <!-- tracker-lora-plan:start -->

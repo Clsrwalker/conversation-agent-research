@@ -1,0 +1,152 @@
+{
+  "kind": "engineering_gate_not_quality_evaluation",
+  "status": "passed",
+  "utc": "2026-10-24T12:20:57.812971+00:00",
+  "training_run": "formal-pilot-02",
+  "training_process_exit_code": 0,
+  "gate_source_sha256": "ebf974a2bf4189b2fa1966c7ee62473f2bd37bdf0832e3bc5c27b926c023a34e",
+  "checks": {
+    "training_process_normal_exit": true,
+    "protocol_frozen": true,
+    "root_authorization_and_preflight_bound": true,
+    "all_eight_bound_files_present": true,
+    "locked_file_protocol": true,
+    "locked_file_test_records": true,
+    "locked_file_dataset_manifest": true,
+    "locked_file_system_prompt": true,
+    "locked_file_evaluator": true,
+    "locked_file_runtime": true,
+    "locked_file_model_loader_and_trainer": true,
+    "locked_file_collector": true,
+    "assignment_100_rows_200_calls": true,
+    "run_passed": true,
+    "exact_frozen_runner": true,
+    "result_matches_run_config": true,
+    "same_pinned_base": true,
+    "predetermined_recipe": true,
+    "complete_500_rows_32_updates": true,
+    "all_losses_finite": true,
+    "all_32_optimizer_events_complete_and_finite": true,
+    "all_500_rows_once_in_predetermined_order": true,
+    "complete_forward_and_finite_check_begin": true,
+    "complete_forward_and_finite_check_end": true,
+    "complete_backward_and_loss_readback_begin": true,
+    "complete_backward_and_loss_readback_end": true,
+    "complete_release_unused_cache_begin": true,
+    "complete_release_unused_cache_end": true,
+    "no_truncation": true,
+    "base_frozen": true,
+    "prompt_excluded_from_loss": true,
+    "training_data_unchanged": true,
+    "admission_unchanged": true,
+    "manifest_bound_to_run": true,
+    "save_reload_exact_match": true,
+    "adapter_has_observed_effect": true,
+    "adapter_saved_file_adapter_config.json": true,
+    "adapter_saved_file_adapter_model.safetensors": true,
+    "adapter_saved_file_chat_template.jinja": true,
+    "adapter_saved_file_README.md": true,
+    "adapter_saved_file_tokenizer.json": true,
+    "adapter_saved_file_tokenizer_config.json": true,
+    "final_adapter_parameters": true,
+    "final_adapter_base_binding": true,
+    "new_collection_directory": true
+  },
+  "authorization_and_preflight_sha256": "d61b0f9cc359097a2209e410cc7d14fca5fa0c4b56e99c619507cdfec97566a9",
+  "locked_files": {
+    "protocol": {
+      "path": "output/research/2026-10-24/tracker-lora-pilot/evaluation/protocol-memory-guard-v2.json",
+      "expected_sha256": "ba2499114856b0241d0525f9da8010736682475714afb6da0d60b35c2e43595f",
+      "actual_sha256": "ba2499114856b0241d0525f9da8010736682475714afb6da0d60b35c2e43595f"
+    },
+    "test_records": {
+      "path": "output/research/2026-10-24/tracker-lora-pilot/data/compiled/test.records.jsonl",
+      "expected_sha256": "c885d355efc667a73670008012e240d35b0d1e0a58c79dbd2c951a35efd24ff9",
+      "actual_sha256": "c885d355efc667a73670008012e240d35b0d1e0a58c79dbd2c951a35efd24ff9"
+    },
+    "dataset_manifest": {
+      "path": "output/research/2026-10-24/tracker-lora-pilot/data/compiled/manifest.json",
+      "expected_sha256": "94280f80ff17e990f189f1fc18b3ca4d8b579422770e81a5acd5ea12c920b873",
+      "actual_sha256": "94280f80ff17e990f189f1fc18b3ca4d8b579422770e81a5acd5ea12c920b873"
+    },
+    "system_prompt": {
+      "path": "output/research/2026-10-24/tracker-lora-pilot/annotation/system_prompt.txt",
+      "expected_sha256": "7587583ff3fb2f46f64a32ca598a9f2bd980d8b0c3ff24915d80f5e31cda5abd",
+      "actual_sha256": "7587583ff3fb2f46f64a32ca598a9f2bd980d8b0c3ff24915d80f5e31cda5abd"
+    },
+    "evaluator": {
+      "path": "experiments/deep_conversation/tracker_lora/evaluate_tracker.py",
+      "expected_sha256": "6e628968b52307f8160bcc673cb5abba8043490c810b22f0bd286fb9a4f33a6f",
+      "actual_sha256": "6e628968b52307f8160bcc673cb5abba8043490c810b22f0bd286fb9a4f33a6f"
+    },
+    "runtime": {
+      "path": "experiments/deep_conversation/intention_state.py",
+      "expected_sha256": "e028a604a93520801a0f752755d80b305afb1eebd8792ea0aeaaa3cd5c722f73",
+      "actual_sha256": "e028a604a93520801a0f752755d80b305afb1eebd8792ea0aeaaa3cd5c722f73"
+    },
+    "model_loader_and_trainer": {
+      "path": "experiments/deep_conversation/tracker_lora/train_tracker.py",
+      "expected_sha256": "b60fd53f91c62d854ef0cf71a15b29fac850fad1aaddd5d07e335831a94ed1a8",
+      "actual_sha256": "b60fd53f91c62d854ef0cf71a15b29fac850fad1aaddd5d07e335831a94ed1a8"
+    },
+    "collector": {
+      "path": "experiments/deep_conversation/tracker_lora/collect_ab.py",
+      "expected_sha256": "da6c2e025438dcc609a34ef34f1d4dd717fbcb41192a0dcf47b252ebdc830b51",
+      "actual_sha256": "da6c2e025438dcc609a34ef34f1d4dd717fbcb41192a0dcf47b252ebdc830b51"
+    }
+  },
+  "training_log": {
+    "sha256": "51045c59311b1ae2b97ec31ff5c974dd9d24334a1d84d11eb55cb97ac9e8090f",
+    "optimizer_events": 32,
+    "microstep_phase_events": 3064,
+    "full_row_order_verified": true
+  },
+  "adapter_files": {
+    "adapter_config.json": "4b10f017bee9d111bb544e6dd9ee025b5c2353317839fc5e3bc183fb38b3e7e2",
+    "adapter_model.safetensors": "70af35505394ebc53d81aa839ad78165166d5ad7fd9be36314a3f0962265a707",
+    "chat_template.jinja": "8aa40ce145adb73cb3a75194dc0224702a95850ec5275cabb728496bbd749fc6",
+    "README.md": "30836000add7aff4e3bf213594c690d54c11d655805bb582c0bd7195badbde73",
+    "tokenizer.json": "3fd169731d2cbde95e10bf356d66d5997fd885dd8dbb6fb4684da3f23b2585d8",
+    "tokenizer_config.json": "b3d4aae9670f7c2de3e3b32675b0118e7e7b517544f5ab32efe04bd74f2238c1"
+  },
+  "artifact_hashes": {
+    "result": "d96c36ac8648d21bf66be53c1ee31094ae2fdb2a9f3bf069dabc94809a1b4da1",
+    "run_config": "da064588bd429876afdc92e573c0ebeac9d0e869fe9aef7f111d1d3c913c199f",
+    "protocol_lock": "8fb6a8e23e0256f3c78760d17314e4597aa46426c527ec3a0f776d1873999e4b",
+    "training_data": "d180d14231697dcdfc5054e532b5d7757ba084989a3f534a9af233a9d7dd0c58"
+  },
+  "final_training_summary": {
+    "finished_at_utc": "2026-10-24T12:20:50.431645+00:00",
+    "microsteps": 500,
+    "optimizer_steps": 32,
+    "epochs": 1,
+    "training_elapsed_seconds": 1672.2072864999645,
+    "training_rows": 500,
+    "truncated_rows": 0,
+    "maximum_training_tokens": 1901,
+    "base_frozen": true,
+    "trainable_lora_parameters": 68812800,
+    "base_id": "Qwen/Qwen2.5-14B-Instruct",
+    "base_revision": "cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8",
+    "runner_sha256": "b60fd53f91c62d854ef0cf71a15b29fac850fad1aaddd5d07e335831a94ed1a8",
+    "adapter_weights_sha256": "70af35505394ebc53d81aa839ad78165166d5ad7fd9be36314a3f0962265a707",
+    "save_reload_exact_match": true,
+    "save_reload_max_abs_logit_difference": 0.0,
+    "adapter_enabled_disabled_max_abs_logit_difference": 5.34375,
+    "test_collection_started_at_gate": false
+  },
+  "authorized_collection": {
+    "data": "output/research/2026-10-24/tracker-lora-pilot/data/compiled/test.records.jsonl",
+    "system_prompt": "output/research/2026-10-24/tracker-lora-pilot/annotation/system_prompt.txt",
+    "adapter": "output/research/2026-10-24/tracker-lora-pilot/training/formal-pilot-02/adapter",
+    "output": "output/research/2026-10-24/tracker-lora-pilot/evaluation/collection-01",
+    "max_prompt_tokens": 2048,
+    "max_new_tokens": 512,
+    "seed": 20261024,
+    "cache_implementation": "dynamic",
+    "limit": 0,
+    "do_sample": false,
+    "repetition_penalty": 1.0,
+    "num_beams": 1
+  }
+}
