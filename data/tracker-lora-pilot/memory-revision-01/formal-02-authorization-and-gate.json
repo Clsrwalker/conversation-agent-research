@@ -1,0 +1,86 @@
+{
+  "status": "passed",
+  "utc": "2026-10-24T11:52:00.300354+00:00",
+  "kind": "formal_run_preflight_not_quality_result",
+  "run": "formal-pilot-02",
+  "root_authorization": "Root explicitly authorized fresh-base formal-pilot-02 with all 500 rows, one epoch, seed20261024, rank16, lr1e-4, accum16, max2048, activation offload and both memory-management flags; conditional collection only after complete final-run gate.",
+  "lock": "output\\research\\2026-10-24\\tracker-lora-pilot\\evaluation\\protocol-lock-memory-guard-v2.json",
+  "lock_sha256": "8fb6a8e23e0256f3c78760d17314e4597aa46426c527ec3a0f776d1873999e4b",
+  "locked_files": {
+    "protocol": {
+      "path": ".\\output\\research\\2026-10-24\\tracker-lora-pilot\\evaluation\\protocol-memory-guard-v2.json",
+      "expected_sha256": "ba2499114856b0241d0525f9da8010736682475714afb6da0d60b35c2e43595f",
+      "actual_sha256": "ba2499114856b0241d0525f9da8010736682475714afb6da0d60b35c2e43595f"
+    },
+    "test_records": {
+      "path": ".\\output\\research\\2026-10-24\\tracker-lora-pilot\\data\\compiled\\test.records.jsonl",
+      "expected_sha256": "c885d355efc667a73670008012e240d35b0d1e0a58c79dbd2c951a35efd24ff9",
+      "actual_sha256": "c885d355efc667a73670008012e240d35b0d1e0a58c79dbd2c951a35efd24ff9"
+    },
+    "dataset_manifest": {
+      "path": ".\\output\\research\\2026-10-24\\tracker-lora-pilot\\data\\compiled\\manifest.json",
+      "expected_sha256": "94280f80ff17e990f189f1fc18b3ca4d8b579422770e81a5acd5ea12c920b873",
+      "actual_sha256": "94280f80ff17e990f189f1fc18b3ca4d8b579422770e81a5acd5ea12c920b873"
+    },
+    "system_prompt": {
+      "path": ".\\output\\research\\2026-10-24\\tracker-lora-pilot\\annotation\\system_prompt.txt",
+      "expected_sha256": "7587583ff3fb2f46f64a32ca598a9f2bd980d8b0c3ff24915d80f5e31cda5abd",
+      "actual_sha256": "7587583ff3fb2f46f64a32ca598a9f2bd980d8b0c3ff24915d80f5e31cda5abd"
+    },
+    "evaluator": {
+      "path": ".\\experiments\\deep_conversation\\tracker_lora\\evaluate_tracker.py",
+      "expected_sha256": "6e628968b52307f8160bcc673cb5abba8043490c810b22f0bd286fb9a4f33a6f",
+      "actual_sha256": "6e628968b52307f8160bcc673cb5abba8043490c810b22f0bd286fb9a4f33a6f"
+    },
+    "runtime": {
+      "path": ".\\experiments\\deep_conversation\\intention_state.py",
+      "expected_sha256": "e028a604a93520801a0f752755d80b305afb1eebd8792ea0aeaaa3cd5c722f73",
+      "actual_sha256": "e028a604a93520801a0f752755d80b305afb1eebd8792ea0aeaaa3cd5c722f73"
+    },
+    "model_loader_and_trainer": {
+      "path": ".\\experiments\\deep_conversation\\tracker_lora\\train_tracker.py",
+      "expected_sha256": "b60fd53f91c62d854ef0cf71a15b29fac850fad1aaddd5d07e335831a94ed1a8",
+      "actual_sha256": "b60fd53f91c62d854ef0cf71a15b29fac850fad1aaddd5d07e335831a94ed1a8"
+    },
+    "collector": {
+      "path": ".\\experiments\\deep_conversation\\tracker_lora\\collect_ab.py",
+      "expected_sha256": "da6c2e025438dcc609a34ef34f1d4dd717fbcb41192a0dcf47b252ebdc830b51",
+      "actual_sha256": "da6c2e025438dcc609a34ef34f1d4dd717fbcb41192a0dcf47b252ebdc830b51"
+    }
+  },
+  "data_review_gate": {
+    "status": "passed",
+    "manifest_sha256": "94280f80ff17e990f189f1fc18b3ca4d8b579422770e81a5acd5ea12c920b873",
+    "admission_sha256": "6d9fbe1b959a2de45d1dd36896affc2bc1f515aca8a318e58619e967b58826fc",
+    "training_sft_sha256": "d180d14231697dcdfc5054e532b5d7757ba084989a3f534a9af233a9d7dd0c58",
+    "admitted_families": 130,
+    "admitted_training_rows": 500,
+    "independently_reviewed_fault_examples": 65
+  },
+  "independent_revision_review": {
+    "path": "output\\research\\2026-10-24\\tracker-lora-pilot\\review\\memory-management-revision-review.json",
+    "sha256": "4db7c6b0869001d91de1cac947c8f5a31200d4e5a272f752d039a10706e9ede4"
+  },
+  "smoke_result": {
+    "path": "output\\research\\2026-10-24\\tracker-lora-pilot\\training\\smoke-2048-offload-cleanup-01\\result.json",
+    "sha256": "3b3034d7732bde70f74b0a8a418eb95d79ea904e415a33a8e69905fa0dc1226a",
+    "passed": true
+  },
+  "recipe": {
+    "rows": 500,
+    "epochs": 1,
+    "seed": 20261024,
+    "rank": 16,
+    "alpha": 32,
+    "dropout": 0.05,
+    "learning_rate": 0.0001,
+    "gradient_accumulation": 16,
+    "max_length": 2048,
+    "activation_offload": true,
+    "release_unused_cache_per_microstep": true,
+    "log_microstep_phases": true,
+    "initialization": "fresh LoRA on the pinned base; no partial or smoke adapter"
+  },
+  "collector_status": "not_started",
+  "previous_formal_process_confirmed_absent": true
+}

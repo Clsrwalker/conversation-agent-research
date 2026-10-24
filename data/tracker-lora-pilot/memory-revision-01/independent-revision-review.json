@@ -1,0 +1,112 @@
+{
+  "kind": "independent_source_revision_and_synthetic_smoke_review",
+  "date": "2026-10-24",
+  "timezone": "America/Halifax",
+  "reviewer": "tracker_annotation_v2",
+  "independent_of_implementation_author": true,
+  "verdict": "accept_minimal_infrastructure_revision_for_root_gate_decision",
+  "authorization_limit": "This review does not itself authorize a new formal training run or test inference. Root must retain the original protocol/run and bind the amended source through a prospective protocol and lock before authorizing further execution.",
+  "scope": {
+    "amendment": "training/memory-management-amendment-01.json",
+    "old_source": "training/formal-pilot-01/runner_source.py",
+    "old_source_sha256": "7df5f53bb19a944339094f9d77cf1a0fc8ecdcc9c0311d5cb87239a7e02a05d0",
+    "new_source": "experiments/deep_conversation/tracker_lora/train_tracker.py",
+    "new_source_sha256": "b60fd53f91c62d854ef0cf71a15b29fac850fad1aaddd5d07e335831a94ed1a8",
+    "reviewer_source_mutations": 0,
+    "reviewer_gpu_computation_calls": 0,
+    "test_model_outputs_seen": false
+  },
+  "static_review": {
+    "evidence": "review/memory-management-independent-ast-check.json",
+    "method": "Independently parse both complete source files. Compare core functions directly. Remove only the declared optional instrumentation nodes from a copy of the new AST and require the entire normalized module AST to equal the original. No model or torch import is needed for this check.",
+    "whole_module_AST_equal_after_declared_changes_removed": true,
+    "core_functions_AST_unchanged": ["quantized_base", "prepare_frozen_base", "completion_loss", "tokenize_row", "load_rows", "validate_training_gate", "measured_memory"],
+    "normalized_additions": {
+      "logging_helper": 1,
+      "phase_clock_assignments_outside_cleanup_block": 3,
+      "phase_emit_calls_outside_cleanup_block": 6,
+      "exact_optional_cleanup_block": 1,
+      "new_store_true_flag_declarations": 2
+    },
+    "checks": [
+      {
+        "topic": "loss and gradient lifetime",
+        "verdict": "pass",
+        "locations": ["train_tracker.py:299", "train_tracker.py:300", "train_tracker.py:302", "train_tracker.py:305", "train_tracker.py:306"],
+        "reason": "The optional loss deletion and empty_cache occur only after backward and conversion of detached loss to a Python float. They do not modify parameter values, parameter gradients, the accumulated loss divisor or optimizer state. Existing optimizer.zero_grad remains at the same accumulation boundary. Deleting the completed graph root does not delete gradients stored on parameters."
+      },
+      {
+        "topic": "default-disabled behavior",
+        "verdict": "pass",
+        "locations": ["train_tracker.py:130", "train_tracker.py:302", "train_tracker.py:384", "train_tracker.py:385"],
+        "reason": "Both new CLI options use argparse store_true without a true default. With cleanup disabled no loss deletion or empty_cache is introduced. With phase logging disabled the helper returns before querying memory. A few host clock calls remain unconditional; this is minor timing overhead, not an exactly instruction-identical no-op path."
+      },
+      {
+        "topic": "seed, sample order and partial accumulation group",
+        "verdict": "pass",
+        "locations": ["train_tracker.py:288", "train_tracker.py:296", "train_tracker.py:309"],
+        "reason": "The complete normalized module comparison preserves all seed calls, the per-epoch seeded shuffle, accumulation boundary and divisor calculation. For 500 rows with accumulation 16 there are 31 full groups and one final group of 4, totaling 32 optimizer updates; final four losses retain divisor 4. No RNG-consuming call was added to the logging helper."
+      },
+      {
+        "topic": "model representation and training mathematics",
+        "verdict": "pass",
+        "reason": "Loader precision, NF4 settings, frozen embeddings/head and norm policy, completion-only causal shift, checkpointing/offload context, data gate, LoRA configuration, optimizer hyperparameters, gradient clipping and save/reload code are unchanged. The requested single-epoch formal configuration is neither changed nor launched by this review."
+      },
+      {
+        "topic": "phase instrumentation semantics",
+        "verdict": "pass_with_documented_limit",
+        "locations": ["train_tracker.py:130", "train_tracker.py:138", "train_tracker.py:291", "train_tracker.py:298", "train_tracker.py:304", "train_tracker.py:311"],
+        "reason": "Logs distinguish forward/finite check, backward/loss readback, cleanup and clip/optimizer/zero_grad. The helper adds no explicit torch.cuda.synchronize and labels observations host_wall_no_added_cuda_synchronize_not_kernel_profiling. Scalar reads already synchronize at existing boundaries; logging and memory queries still add overhead, so these numbers are not isolated CUDA kernel timings."
+      },
+      {
+        "topic": "scope of cache release",
+        "verdict": "pass_with_documented_limit",
+        "reason": "The added API is torch.cuda.empty_cache, inside the explicitly authorized optional per-microstep block. It releases unused allocator cache after deleting the completed loss reference. It does not deliberately clear live weights, accumulated gradients, optimizer tensors or the host pinned allocator. It may alter allocator behavior and throughput without changing the intended mathematical objective."
+      }
+    ]
+  },
+  "actual_smoke_artifact_verification": {
+    "evidence": "review/memory-management-independent-smoke-check.json",
+    "old_run": "training/smoke-2048-offload-01",
+    "new_run": "training/smoke-2048-offload-cleanup-01",
+    "new_result_sha256": "3b3034d7732bde70f74b0a8a418eb95d79ea904e415a33a8e69905fa0dc1226a",
+    "method": "Read actual completed result and lengths, independently hash both adapters from disk, compare original/new synthetic input bytes and scalar loss arrays, and verify recorded flags, model representation and optimizer configuration. The reviewer did not execute the smoke.",
+    "result_status": "passed",
+    "total_sequence_tokens": 2048,
+    "completion_tokens": 160,
+    "microsteps": 2,
+    "optimizer_steps": 2,
+    "gradient_accumulation": 1,
+    "cleanup_enabled": true,
+    "phase_logging_enabled": true,
+    "same_synthetic_input_bytes": true,
+    "same_loss_values": true,
+    "loss_values": [1.2018117904663086, 0.8705552816390991],
+    "same_final_adapter_weights_bytes_by_sha256": true,
+    "both_adapter_weights_sha256": "5c40fe1f541f935f6b574b7e70f3b8c020a7a46289e0e621b3cb244db6e6ff67",
+    "save_reload_max_abs_logit_difference": 0.0,
+    "enabled_disabled_max_abs_logit_difference": 2.96875,
+    "new_training_elapsed_seconds": 12.750651900016237,
+    "old_training_elapsed_seconds": 12.65360929997405,
+    "interpretation": "These two synthetic updates produce exactly the same saved adapter weights and losses under the two implementations. This is a narrow actual numerical equivalence result, not a general determinism proof or a training-quality result. The new short run is not faster than the old one; their roughly 0.10-second difference is not a controlled performance estimate."
+  },
+  "actual_phase_log_verification": {
+    "evidence": "review/memory-management-independent-phase-check.json",
+    "raw_log": "training/smoke-2048-offload-cleanup-01.log",
+    "raw_log_sha256": "60d7b5263739b4102d4b85645c5d298e3e357b4fe969308760769f4a6150fce1",
+    "method": "Independently parse the original Tee-Object stdout log, select microstep_phase JSON objects and recompute each cleanup's before/after counters. No author summary is used as a substitute for the raw log.",
+    "phase_event_count": 16,
+    "allocator_oom_counter_max": 0,
+    "allocator_retry_counter_max": 0,
+    "released_reserved_bytes": [4154458112, 4169138176],
+    "cleanup_host_wall_seconds": [0.017338300007395446, 0.016747199988458306],
+    "interpretation": "Unused reserved device memory was released at both recorded cleanup boundaries in this smoke. The counters establish this local allocator effect; they do not show the earlier long-run slowdown was caused by that cache."
+  },
+  "remaining_limits": [
+    "The smoke has only two synthetic microsteps with accumulation 1. It does not exercise 500 varied examples, accumulation 16 or the final four-row group at runtime; those mathematical invariants were checked statically.",
+    "Long-run throughput, host pinned-cache growth and WDDM shared-memory behavior remain unmeasured for the revised implementation.",
+    "No source change here selectively exempts frozen weights from CPU offload or changes bitsandbytes synchronization. Those remain untested potential contributors.",
+    "No formal checkpoint, held-out inference or semantic tracking result was produced by this review. The new smoke adapter must not be used as the formal initial adapter.",
+    "Root still needs to review the admission evidence, preserve original protocol and lock, bind the new source prospectively, and explicitly authorize any fresh formal run."
+  ]
+}

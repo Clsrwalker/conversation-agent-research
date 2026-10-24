@@ -1,0 +1,32 @@
+{
+  "status": "passed",
+  "kind": "independent_read_only_phase_log_verification",
+  "log_sha256": "60d7b5263739b4102d4b85645c5d298e3e357b4fe969308760769f4a6150fce1",
+  "phase_events": 16,
+  "timing_labels": [
+    "host_wall_no_added_cuda_synchronize_not_kernel_profiling"
+  ],
+  "cache_release_observations": [
+    {
+      "microstep": 1,
+      "reserved_before": 14736687104,
+      "reserved_after": 10582228992,
+      "released_reserved_bytes": 4154458112,
+      "allocated_before": 10573969920,
+      "allocated_after": 10532026368,
+      "host_wall_seconds": 0.017338300007395446
+    },
+    {
+      "microstep": 2,
+      "reserved_before": 14883487744,
+      "reserved_after": 10714349568,
+      "released_reserved_bytes": 4169138176,
+      "allocated_before": 10714055680,
+      "allocated_after": 10672112128,
+      "host_wall_seconds": 0.016747199988458306
+    }
+  ],
+  "max_allocator_ooms": 0,
+  "max_allocator_retries": 0,
+  "gpu_calls_by_reviewer": 0
+}

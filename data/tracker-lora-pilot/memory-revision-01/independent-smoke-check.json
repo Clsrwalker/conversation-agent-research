@@ -1,0 +1,44 @@
+{
+  "kind": "independent_read_only_smoke_artifact_verification",
+  "status": "passed",
+  "gpu_calls_by_reviewer": 0,
+  "old_status": "passed",
+  "new_status": "passed",
+  "same_synthetic_input_bytes": true,
+  "same_loss_values": true,
+  "old_weights_sha256": "5c40fe1f541f935f6b574b7e70f3b8c020a7a46289e0e621b3cb244db6e6ff67",
+  "new_weights_sha256": "5c40fe1f541f935f6b574b7e70f3b8c020a7a46289e0e621b3cb244db6e6ff67",
+  "new_result_sha256": "3b3034d7732bde70f74b0a8a418eb95d79ea904e415a33a8e69905fa0dc1226a",
+  "new_runner_copy_sha256": "b60fd53f91c62d854ef0cf71a15b29fac850fad1aaddd5d07e335831a94ed1a8",
+  "lengths": [
+    {
+      "row": 0,
+      "total_tokens": 2048,
+      "prompt_tokens": 1888,
+      "supervised_completion_tokens": 160
+    }
+  ],
+  "save_reload": {
+    "max_abs_logit_difference": 0.0,
+    "match": true,
+    "enabled_vs_disabled_max_abs_logit_difference": 2.96875,
+    "base_reused_same_object": true,
+    "adapter_files": {
+      "adapter_config.json": "b4f77ae9fe16b9f3f016e03235e7b950efdbd52b55ebd46392683e8b4fbe323b",
+      "adapter_model.safetensors": "5c40fe1f541f935f6b574b7e70f3b8c020a7a46289e0e621b3cb244db6e6ff67",
+      "chat_template.jinja": "8aa40ce145adb73cb3a75194dc0224702a95850ec5275cabb728496bbd749fc6",
+      "README.md": "30836000add7aff4e3bf213594c690d54c11d655805bb582c0bd7195badbde73",
+      "tokenizer.json": "3fd169731d2cbde95e10bf356d66d5997fd885dd8dbb6fb4684da3f23b2585d8",
+      "tokenizer_config.json": "b3d4aae9670f7c2de3e3b32675b0118e7e7b517544f5ab32efe04bd74f2238c1"
+    }
+  },
+  "training": {
+    "microsteps": 2,
+    "optimizer_steps": 2,
+    "losses": [
+      1.2018117904663086,
+      0.8705552816390991
+    ],
+    "elapsed_seconds": 12.750651900016237
+  }
+}

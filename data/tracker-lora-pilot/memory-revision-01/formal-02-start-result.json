@@ -1,0 +1,49 @@
+{
+  "date": "2026-10-24",
+  "timezone": "America/Halifax",
+  "mode": "train",
+  "kind": "train",
+  "status": "running",
+  "base_model": "Qwen/Qwen2.5-14B-Instruct",
+  "base_revision": "cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8",
+  "runner_sha256": "b60fd53f91c62d854ef0cf71a15b29fac850fad1aaddd5d07e335831a94ed1a8",
+  "python": "3.13.1 (tags/v3.13.1:0671451, Dec  3 2024, 19:06:28) [MSC v.1942 64 bit (AMD64)]",
+  "inherits_system_site_packages": true,
+  "versions": {
+    "torch": "2.12.0+cu130",
+    "transformers": "5.14.1",
+    "peft": "0.21.2",
+    "bitsandbytes": "0.50.0",
+    "accelerate": "1.14.0",
+    "huggingface-hub": "1.24.0",
+    "safetensors": "0.8.0"
+  },
+  "configuration": {
+    "mode": "train",
+    "data": "output/research/2026-10-24/tracker-lora-pilot/data/compiled/train.sft.jsonl",
+    "review_receipt": "output/research/2026-10-24/tracker-lora-pilot/review/admission.json",
+    "manifest": "output/research/2026-10-24/tracker-lora-pilot/data/compiled/manifest.json",
+    "output": "output/research/2026-10-24/tracker-lora-pilot/training/formal-pilot-02",
+    "max_length": 2048,
+    "rank": 16,
+    "learning_rate": 0.0001,
+    "gradient_accumulation": 16,
+    "epochs": 1,
+    "max_steps": 0,
+    "seed": 20261024,
+    "activation_offload": true,
+    "release_unused_cache_per_microstep": true,
+    "log_microstep_phases": true,
+    "smoke_completion_tokens": 6
+  },
+  "gpu": "NVIDIA GeForce RTX 4080 SUPER",
+  "quantization": {
+    "load_in_4bit": true,
+    "type": "nf4",
+    "double_quant": true,
+    "compute_dtype": "bfloat16"
+  },
+  "frozen_embeddings_and_head_dtype": "bfloat16",
+  "forward_autocast": "cuda_bfloat16",
+  "started_at_utc": "2026-10-24T11:52:27.169113+00:00"
+}

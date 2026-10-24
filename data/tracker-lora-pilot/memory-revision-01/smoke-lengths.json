@@ -1,0 +1,8 @@
+[
+  {
+    "row": 0,
+    "total_tokens": 2048,
+    "prompt_tokens": 1888,
+    "supervised_completion_tokens": 160
+  }
+]

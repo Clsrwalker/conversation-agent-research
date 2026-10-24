@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "kind": "source_invariant_check_not_training_quality",
+  "old_sha256": "7df5f53bb19a944339094f9d77cf1a0fc8ecdcc9c0311d5cb87239a7e02a05d0",
+  "new_sha256": "b60fd53f91c62d854ef0cf71a15b29fac850fad1aaddd5d07e335831a94ed1a8",
+  "checks": {
+    "quantized_base_source_unchanged": true,
+    "prepare_frozen_base_source_unchanged": true,
+    "completion_loss_source_unchanged": true,
+    "tokenize_row_source_unchanged": true,
+    "validate_training_gate_source_unchanged": true,
+    "python_compiles": true
+  }
+}

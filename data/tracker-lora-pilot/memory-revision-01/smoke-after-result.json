@@ -1,0 +1,130 @@
+{
+  "date": "2026-10-24",
+  "timezone": "America/Halifax",
+  "mode": "smoke",
+  "kind": "synthetic_plumbing_not_quality",
+  "status": "passed",
+  "base_model": "Qwen/Qwen2.5-14B-Instruct",
+  "base_revision": "cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8",
+  "runner_sha256": "b60fd53f91c62d854ef0cf71a15b29fac850fad1aaddd5d07e335831a94ed1a8",
+  "python": "3.13.1 (tags/v3.13.1:0671451, Dec  3 2024, 19:06:28) [MSC v.1942 64 bit (AMD64)]",
+  "inherits_system_site_packages": true,
+  "versions": {
+    "torch": "2.12.0+cu130",
+    "transformers": "5.14.1",
+    "peft": "0.21.2",
+    "bitsandbytes": "0.50.0",
+    "accelerate": "1.14.0",
+    "huggingface-hub": "1.24.0",
+    "safetensors": "0.8.0"
+  },
+  "configuration": {
+    "mode": "smoke",
+    "data": null,
+    "review_receipt": null,
+    "manifest": null,
+    "output": "output/research/2026-10-24/tracker-lora-pilot/training/smoke-2048-offload-cleanup-01",
+    "max_length": 2048,
+    "rank": 16,
+    "learning_rate": 0.0001,
+    "gradient_accumulation": 1,
+    "epochs": 2,
+    "max_steps": 0,
+    "seed": 20261024,
+    "activation_offload": true,
+    "release_unused_cache_per_microstep": true,
+    "log_microstep_phases": true,
+    "smoke_completion_tokens": 160
+  },
+  "gpu": "NVIDIA GeForce RTX 4080 SUPER",
+  "quantization": {
+    "load_in_4bit": true,
+    "type": "nf4",
+    "double_quant": true,
+    "compute_dtype": "bfloat16"
+  },
+  "frozen_embeddings_and_head_dtype": "bfloat16",
+  "forward_autocast": "cuda_bfloat16",
+  "started_at_utc": "2026-10-24T11:47:33.525495+00:00",
+  "data": {
+    "count": 1,
+    "sha256": null,
+    "min_tokens": 2048,
+    "max_tokens": 2048,
+    "mean_tokens": 2048.0,
+    "over_limit": 0,
+    "tokens_2048_exceeded": 0,
+    "tokens_4096_exceeded": 0,
+    "truncated_rows": 0
+  },
+  "mask_check": {
+    "chat_prefix_exact_for_all_rows": true,
+    "prompt_supervised_tokens": 0,
+    "padding_supervised_tokens": 0,
+    "completion_supervised_tokens": 160,
+    "implementation": "causal completion tail logits only; target tokens plus template assistant end supervised"
+  },
+  "base_download_receipt_sha256": "1287f3e5b81d0594061c4e41b167237ee60a8f364e9f8b335b00f8f6b54aee17",
+  "memory_before_load": {
+    "free_bytes": 15794700288,
+    "total_bytes": 17170956288,
+    "allocated_bytes": 0,
+    "reserved_bytes": 0,
+    "peak_allocated_bytes": 0,
+    "peak_reserved_bytes": 0
+  },
+  "trainable_parameters": 68812800,
+  "frozen_base_parameters_have_grad": false,
+  "optimizer": "bitsandbytes.optim.AdamW8bit",
+  "optimizer_configuration": {
+    "learning_rate": 0.0001,
+    "weight_decay": 0.0,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "schedule": "constant",
+    "gradient_clip_norm": 1.0
+  },
+  "memory_before_training": {
+    "free_bytes": 5327814656,
+    "total_bytes": 17170956288,
+    "allocated_bytes": 10240423936,
+    "reserved_bytes": 10422845440,
+    "peak_allocated_bytes": 10240702464,
+    "peak_reserved_bytes": 10422845440
+  },
+  "training": {
+    "microsteps": 2,
+    "optimizer_steps": 2,
+    "losses": [
+      1.2018117904663086,
+      0.8705552816390991
+    ],
+    "elapsed_seconds": 12.750651900016237
+  },
+  "memory_training_peak": {
+    "free_bytes": 5009047552,
+    "total_bytes": 17170956288,
+    "allocated_bytes": 10396860928,
+    "reserved_bytes": 10714349568,
+    "peak_allocated_bytes": 13676341248,
+    "peak_reserved_bytes": 14883487744
+  },
+  "save_reload": {
+    "max_abs_logit_difference": 0.0,
+    "match": true,
+    "enabled_vs_disabled_max_abs_logit_difference": 2.96875,
+    "base_reused_same_object": true,
+    "adapter_files": {
+      "adapter_config.json": "b4f77ae9fe16b9f3f016e03235e7b950efdbd52b55ebd46392683e8b4fbe323b",
+      "adapter_model.safetensors": "5c40fe1f541f935f6b574b7e70f3b8c020a7a46289e0e621b3cb244db6e6ff67",
+      "chat_template.jinja": "8aa40ce145adb73cb3a75194dc0224702a95850ec5275cabb728496bbd749fc6",
+      "README.md": "30836000add7aff4e3bf213594c690d54c11d655805bb582c0bd7195badbde73",
+      "tokenizer.json": "3fd169731d2cbde95e10bf356d66d5997fd885dd8dbb6fb4684da3f23b2585d8",
+      "tokenizer_config.json": "b3d4aae9670f7c2de3e3b32675b0118e7e7b517544f5ab32efe04bd74f2238c1"
+    }
+  },
+  "finished_at_utc": "2026-10-24T11:48:18.687457+00:00"
+}

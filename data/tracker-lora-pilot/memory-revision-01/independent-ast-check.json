@@ -1,0 +1,29 @@
+{
+  "kind": "independent_cpu_only_AST_invariant_check",
+  "status": "passed",
+  "old_sha256": "7df5f53bb19a944339094f9d77cf1a0fc8ecdcc9c0311d5cb87239a7e02a05d0",
+  "new_sha256": "b60fd53f91c62d854ef0cf71a15b29fac850fad1aaddd5d07e335831a94ed1a8",
+  "core_function_AST_unchanged": {
+    "quantized_base": true,
+    "prepare_frozen_base": true,
+    "completion_loss": true,
+    "tokenize_row": true,
+    "load_rows": true,
+    "validate_training_gate": true,
+    "measured_memory": true
+  },
+  "whole_module_AST_equal_after_removing_exact_declared_instrumentation": true,
+  "removed_node_counts": {
+    "new_logging_function": 1,
+    "phase_clock_assignments": 3,
+    "phase_emit_calls": 6,
+    "cache_release_blocks": 1,
+    "new_flag_declarations": 2
+  },
+  "formal_accumulation_500_rows_16": {
+    "full_groups": 31,
+    "last_group_rows": 4,
+    "optimizer_steps": 32
+  },
+  "GPU_calls": 0
+}

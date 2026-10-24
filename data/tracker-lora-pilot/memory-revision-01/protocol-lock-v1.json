@@ -1,0 +1,43 @@
+{
+  "status": "frozen_before_test_collection",
+  "created_at_utc": "2026-10-24T11:19:01.569227+00:00",
+  "files": {
+    "protocol": {
+      "path": ".\\output\\research\\2026-10-24\\tracker-lora-pilot\\evaluation\\protocol.json",
+      "sha256": "e9eaf85c64f9eb8e593c0d70981750fa5123480ce6705dd17636df2ea331a65f"
+    },
+    "test_records": {
+      "path": ".\\output\\research\\2026-10-24\\tracker-lora-pilot\\data\\compiled\\test.records.jsonl",
+      "sha256": "c885d355efc667a73670008012e240d35b0d1e0a58c79dbd2c951a35efd24ff9"
+    },
+    "dataset_manifest": {
+      "path": ".\\output\\research\\2026-10-24\\tracker-lora-pilot\\data\\compiled\\manifest.json",
+      "sha256": "94280f80ff17e990f189f1fc18b3ca4d8b579422770e81a5acd5ea12c920b873"
+    },
+    "system_prompt": {
+      "path": ".\\output\\research\\2026-10-24\\tracker-lora-pilot\\annotation\\system_prompt.txt",
+      "sha256": "7587583ff3fb2f46f64a32ca598a9f2bd980d8b0c3ff24915d80f5e31cda5abd"
+    },
+    "evaluator": {
+      "path": ".\\experiments\\deep_conversation\\tracker_lora\\evaluate_tracker.py",
+      "sha256": "6e628968b52307f8160bcc673cb5abba8043490c810b22f0bd286fb9a4f33a6f"
+    },
+    "runtime": {
+      "path": ".\\experiments\\deep_conversation\\intention_state.py",
+      "sha256": "e028a604a93520801a0f752755d80b305afb1eebd8792ea0aeaaa3cd5c722f73"
+    },
+    "model_loader_and_trainer": {
+      "path": ".\\experiments\\deep_conversation\\tracker_lora\\train_tracker.py",
+      "sha256": "7df5f53bb19a944339094f9d77cf1a0fc8ecdcc9c0311d5cb87239a7e02a05d0"
+    },
+    "collector": {
+      "path": ".\\experiments\\deep_conversation\\tracker_lora\\collect_ab.py",
+      "sha256": "da6c2e025438dcc609a34ef34f1d4dd717fbcb41192a0dcf47b252ebdc830b51"
+    }
+  },
+  "test_rows": 100,
+  "families": 20,
+  "assigned_calls": 200,
+  "normal_rows": 90,
+  "fault_rows": 10
+}

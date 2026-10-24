@@ -1,0 +1,357 @@
+{
+  "id": "owner-ambiguity-v2-independent-review",
+  "date": "2026-10-24",
+  "timezone": "America/Halifax",
+  "reviewed_at_utc": "2026-10-24T11:37:56.044912+00:00",
+  "status": "accepted_2_of_2",
+  "reviewer": "/root/tracker_corpus_a",
+  "adjudication_author": "tracker_annotation_v2 model agent",
+  "independent_of_annotation_convention_and_adjudication_author": true,
+  "human_review": false,
+  "review_kind": "Independent model semantic review with supporting executable replay, not human gold or experimental tracking-quality evidence.",
+  "authorship_disclosure": "Reviewer did not author this annotation guide, system prompt, owner convention, or the two revised ambiguity examples. Reviewer authored separate train-a/dev/test corpus material in this project; that does not make this a human review.",
+  "scope": "The exact two canonical_revised_example objects inside the frozen annotation/adjudication.json. Entire supplied raw conversation, original and revised targets, pre/post states and all four preserved record instances were read. Only this new review receipt is written.",
+  "reviewed_files_sha256": {
+    "output/research/2026-10-24/tracker-lora-pilot/annotation/adjudication.json": "655ee2b6c64d61601550860245dcf17b23d2d176753decf0ab8536ed73a61c31",
+    "output/research/2026-10-24/tracker-lora-pilot/annotation/ANNOTATION_GUIDE.md": "64514fc7b8294882750f71a77fc517ee3ee73f2f871e3f3cd315d328eb315593",
+    "output/research/2026-10-24/tracker-lora-pilot/annotation/system_prompt.txt": "7587583ff3fb2f46f64a32ca598a9f2bd980d8b0c3ff24915d80f5e31cda5abd",
+    "output/research/2026-10-24/tracker-lora-pilot/data/authoring/revisions/train-b-before-review-01/ANNOTATION_GUIDE.md": "9e78e2374ab667d8f5745ab839f101ea5767e92720709dc1529f5657cf2eba36",
+    "output/research/2026-10-24/tracker-lora-pilot/data/authoring/revisions/train-b-before-review-01/system_prompt.txt": "8d2b2176faea9f2c71ca8cbdbc3484eaf35d27a3d1d22e904134e6e9d9000b0b",
+    "output/research/2026-10-24/tracker-lora-plan/data/examples.jsonl": "95822748277ad447f8c027ee3e1866d73dc934a3df036c44fa5bf25c778e39b9",
+    "output/research/2026-10-24/tracker-lora-plan/REVIEW.json": "8c599c7e446cf75a2b796b66f43b513c4a4f809df4399c52f26b9110ae54184c",
+    "experiments/deep_conversation/intention_state.py": "e028a604a93520801a0f752755d80b305afb1eebd8792ea0aeaaa3cd5c722f73",
+    "experiments/deep_conversation/intent_roles.py": "befc382472aabc55efbda043aae5d377e12cce92a56804c73e25994305674d68"
+  },
+  "canonical_hash_method": "SHA256 of UTF-8 json.dumps(value, sort_keys=True, ensure_ascii=False, separators=(',',':'))",
+  "historical_contract_recovery": {
+    "guide_hash_matches_adjudication": true,
+    "prompt_hash_matches_adjudication": true,
+    "recovered_from": "data/authoring/revisions/train-b-before-review-01",
+    "historical_guide_sha256": "9e78e2374ab667d8f5745ab839f101ea5767e92720709dc1529f5657cf2eba36",
+    "historical_prompt_sha256": "8d2b2176faea9f2c71ca8cbdbc3484eaf35d27a3d1d22e904134e6e9d9000b0b",
+    "current_diff": {
+      "ANNOTATION_GUIDE.md": "--- adjudication-bound-version\n+++ current-version\n@@ -70,6 +70,8 @@\n \n No-change examples include thanks, acknowledgement, rephrasing an existing requirement with no semantic difference, an assistant-only unaccepted proposal, explicitly disclaimed quotations, and irrelevant side discussion with no requested action. They must be checked for hidden secondary requests.\n \n+**NEGATIVE-1 — Rejection versus a new boundary.** Merely declining one unaccepted proposal can be `[]`. A user who also states a continuing prohibition or scope restriction supplies a new requirement when it is not already represented. For example, “I have not chosen your music suggestion” may be no change, whereas “This job is captions only; do not add background music” adds that persistent scope boundary. If the prohibition already exists, reaffirming it is no change. Do not label every negative sentence either as a new constraint or as empty operations without checking its meaning and the current state.\n+\n “What are the drawbacks of mobile apps?” does **not** automatically change a desktop requirement. However, if it is a new unanswered question, it **does** add an information request. “The platform did not change” is not sufficient to label the whole turn `[]`. A user accepting a prior proposal is a change even if the latest utterance is only “yes, do that.”\n \n Use close contrasts to test intent reasoning: accepted versus merely mentioned proposals; own versus another person's budget; a requirement versus an optional preference; a settled conditional requirement versus unresolved adoption; explicit cancellation versus a temporary execution failure. Siblings belong to one split family.\n",
+      "system_prompt.txt": "--- adjudication-bound-version\n+++ current-version\n@@ -12,6 +12,8 @@\n \n Preserve stable IDs and every unaffected requirement, including another participant's requirements. Keep independently revisable constraints separate. Preserve units, values, negation, preference strength, conditions and scope. Do not duplicate, weaken or delete a requirement merely because it is not repeated. Discussion, acknowledgement, repeated requests, unaccepted assistant proposals and explicitly disclaimed quotations can mean no change. A new unanswered user question is an information request even when existing project constraints stay unchanged.\n \n+Merely rejecting one unaccepted proposal can mean no change. An explicit continuing prohibition or scope restriction that is absent from the current state is a new requirement: for example, \"This job is captions only; do not add music.\" Reaffirming an already recorded prohibition adds nothing. Distinguish these cases from the actual wording and current state.\n+\n Assign an owner only from evidence. A reporter is not necessarily the owner. Do not assume a participant may change another participant's requirements. Use the reserved owner string \"__unresolved__\" when the evidence does not identify the owner; this string is a marker, not a person or group. Such records must have status \"uncertain\" and text explaining what ownership or scope remains unresolved. Do not invent a team or assign an ambiguous need to the reporting speaker.\n \n A concrete user-expressed possible need that has not been adopted should be recorded as uncertain, not ignored or made active. Uncertainty is different from no change. Mere topic mentions, quotations and unaccepted assistant suggestions do not by themselves create user needs. Settled conditional requirements remain active with their condition in the text. Later explicit evidence can resolve an uncertain record through update, or reject it through withdraw. If no new change or supported correction exists, return {\"operations\":[]}.\n"
+    },
+    "semantic_effect": "The only textual additions concern rejection of an unaccepted suggestion versus a continuing prohibition. Neither reviewed utterance is such a rejection or prohibition; owner/candidate/preservation rules remain identical."
+  },
+  "examples": [
+    {
+      "example_id": "owner-ambiguity-zh-v2",
+      "original_example_id": "owner-ambiguity-zh",
+      "language": "zh",
+      "verdict": "accepted_under_declared_uncertainty_convention",
+      "original_line_number": 9,
+      "original_line_sha256_excluding_newline": "21636ab09f730c542aeec008c8f7545a87b55b5a0c3bffc881ce446c64ae5f28",
+      "original_example_canonical_sha256": "6650e454f27cbffbf06e167dbe2c005a80210c5a55506d2c7242119bffbee3f8",
+      "revised_example_canonical_sha256": "4403604299cda1080675b63e07c63d86866fdd4dd0d0ecd48fa0216933e4dff2",
+      "revised_target_canonical_sha256": "765cfc70067bcef6f79daff4ecd176f24c088a0219245613886c6d238f598188",
+      "input_canonical_sha256": "db447d11a8e50926496210c4b38198ba963f8a7872f2dd13536a85b350ce32d8",
+      "pre_state_canonical_sha256": "fcc20eb09de61b4cdda8a19201ed485c6070faa3d26d0548e3079c1a16c7c71f",
+      "post_state_canonical_sha256": "3ce8b7e57610ec0251f9b3bedd788b407be839698b8d0b5ffbed58a6bb084b78",
+      "dialogue_read_in_full": [
+        {
+          "role": "user",
+          "seq": 1,
+          "speaker": "林",
+          "text": "帮我选一个免费的笔记工具。"
+        },
+        {
+          "role": "user",
+          "seq": 4,
+          "speaker": "林",
+          "text": "我们可能还要字幕，不过是谁需要、是不是必须，我现在不确定。"
+        }
+      ],
+      "target_reviewed": {
+        "operations": [
+          {
+            "intent_id": "caption-candidate",
+            "op": "add",
+            "owner": "__unresolved__",
+            "source_seqs": [
+              4
+            ],
+            "status": "uncertain",
+            "text": "可能需要字幕支持；是否需要及需求归属均待澄清"
+          }
+        ]
+      },
+      "semantic_findings": {
+        "candidate": "“我们可能还要字幕”由用户直接提出一个具体的可能需求，不是引用或未接受的助手建议。按照 UNCERTAIN-1 应新增候选；空 operations 会丢掉这一候选。",
+        "owner": "“是谁需要……我现在不确定”明确未建立受益者/需求所有者。“我们”没有确定被命名的团队，也不能据此认定发言者林就是需求所有者。__unresolved__ 是不指向实体的标记，目标文本另写需求归属待澄清，符合 OWNER-1/OWNER-3。",
+        "uncertain": "“可能”加上“是不是必须……不确定”不支持已采用的要求。目标保留字幕这个概念，并明确采用与归属均未解决；不把可能性写成 active，也不把待澄清误当成已经授权执行字幕工作。",
+        "scope": "目标不额外指定字幕语言、使用者、实施方式或某个团队。seq 4 本身足够支持这个候选，seq 1 支持既有工具任务及免费条件。用户没有直接要求新的解释或查明归属任务，因此无需捏造额外 active 信息请求。",
+        "old_issue": "旧 owner=团队（待确认）依然向团队实体倾斜；修订去掉这项没有建立的实体归属。仍然不知道实际谁需要字幕，这是被正确保留的不确定性，不是复核未解决的标签缺陷。"
+      },
+      "critical_checks": [
+        {
+          "check": "Concrete candidate represented without assuming adoption",
+          "rules": [
+            "UNCERTAIN-1",
+            "UNCERTAIN-2"
+          ],
+          "verdict": "pass"
+        },
+        {
+          "check": "Unknown owner uses non-entity sentinel and explicit visible uncertainty",
+          "rules": [
+            "OWNER-1",
+            "OWNER-2",
+            "OWNER-3"
+          ],
+          "verdict": "pass"
+        },
+        {
+          "check": "Minimal sufficient arrived evidence, no future or hidden facts",
+          "rules": [
+            "EVIDENCE-1",
+            "EVIDENCE-2",
+            "EVIDENCE-4"
+          ],
+          "verdict": "pass",
+          "source_seqs": [
+            4
+          ]
+        },
+        {
+          "check": "Existing task and free constraint retain full records and histories",
+          "rules": [
+            "Operations and preservation"
+          ],
+          "verdict": "pass",
+          "preserved_count": 2
+        },
+        {
+          "check": "No unsupported active clarification task or caption implementation details",
+          "rules": [
+            "What the tracker represents",
+            "EVIDENCE-2"
+          ],
+          "verdict": "pass"
+        },
+        {
+          "check": "Same disposition under adjudication-bound and current guide/prompt",
+          "rules": [
+            "OWNER-3",
+            "UNCERTAIN-1"
+          ],
+          "verdict": "pass",
+          "NEGATIVE_1_change_affects_this_example": false
+        }
+      ],
+      "preserved_records": [
+        {
+          "intent_id": "cost",
+          "owner": "林",
+          "text": "必须免费",
+          "status": "active",
+          "source_seqs": [
+            1
+          ],
+          "pre_record_canonical_sha256": "77a597f1d4892c1da41fd7580b5053cced45607f71eb09023bc8c9ad188d1aad",
+          "post_record_canonical_sha256": "77a597f1d4892c1da41fd7580b5053cced45607f71eb09023bc8c9ad188d1aad",
+          "full_record_including_history_preserved": true,
+          "supporting_seq": 1,
+          "supporting_quote": "帮我选一个免费的笔记工具。"
+        },
+        {
+          "intent_id": "task",
+          "owner": "林",
+          "text": "选择一个笔记工具",
+          "status": "active",
+          "source_seqs": [
+            1
+          ],
+          "pre_record_canonical_sha256": "af2cac82ce2093f4e40c71772e8b2f20462ac9b477d6200aab35cc4f666b0bfe",
+          "post_record_canonical_sha256": "af2cac82ce2093f4e40c71772e8b2f20462ac9b477d6200aab35cc4f666b0bfe",
+          "full_record_including_history_preserved": true,
+          "supporting_seq": 1,
+          "supporting_quote": "帮我选一个免费的笔记工具。"
+        }
+      ],
+      "runtime_replay": {
+        "store": ":memory:",
+        "full_pre_state_equal": true,
+        "full_post_state_equal": true,
+        "target_committed": true,
+        "original_input_unchanged": true
+      },
+      "corrections_required": []
+    },
+    {
+      "example_id": "owner-ambiguity-en-v2",
+      "original_example_id": "owner-ambiguity-en",
+      "language": "en",
+      "verdict": "accepted_under_declared_uncertainty_convention",
+      "original_line_number": 21,
+      "original_line_sha256_excluding_newline": "c01db84f526fd07a11fe0db3e61580785ca1b6779cc984ab8c5caed6cb51941d",
+      "original_example_canonical_sha256": "6538e90baf551f9e0a978c9a2734b2e359370401c4e01eb1d3a20761c0ac639a",
+      "revised_example_canonical_sha256": "9ebdae5c16f1921e36adf447b9117cb67371fc5cd368d0c843a035910cb7455c",
+      "revised_target_canonical_sha256": "f1176a273d06672c2a8253070977c640f68f0f42f4839119681e547edfe06d49",
+      "input_canonical_sha256": "c6f7fb6c47be905241af8c55808e54de884e3ff0089ff880b59b4c0ca112e03c",
+      "pre_state_canonical_sha256": "f673f3aad9a733b9cbf2f8333df313ecfb28e83beaf2574c749ea6d014424fcd",
+      "post_state_canonical_sha256": "b5d3b65c7cc8da3b8dd4784f8250e225d715256585f4bfd29c2c260ca179e26d",
+      "dialogue_read_in_full": [
+        {
+          "role": "user",
+          "seq": 1,
+          "speaker": "Mira",
+          "text": "Help me choose a free note-taking tool."
+        },
+        {
+          "role": "user",
+          "seq": 4,
+          "speaker": "Mira",
+          "text": "We might also need captions, but I am not sure who needs them or whether they are required."
+        }
+      ],
+      "target_reviewed": {
+        "operations": [
+          {
+            "intent_id": "caption-candidate",
+            "op": "add",
+            "owner": "__unresolved__",
+            "source_seqs": [
+              4
+            ],
+            "status": "uncertain",
+            "text": "Possible need for caption support; adoption and requirement ownership remain unresolved"
+          }
+        ]
+      },
+      "semantic_findings": {
+        "candidate": "“We might also need captions” is an arrived user expression of a concrete possible need. It is neither a quotation nor an unaccepted assistant proposal. UNCERTAIN-1 supports one new candidate; an empty patch would omit that candidate under this declared tracking convention.",
+        "owner": "“I am not sure who needs them” expressly leaves the need owner unestablished. “We” does not identify a named collective, nor does it prove that reporter Mira owns this caption requirement. __unresolved__ is a non-entity marker, and the text makes ownership uncertainty visible.",
+        "uncertain": "“might” and “whether they are required” do not establish settled adoption. The target retains caption support plus both unresolved dimensions. It neither activates a confirmed requirement nor interprets clarification language as execution authority.",
+        "scope": "The revised target does not invent a caption language, beneficiary, implementation or team. Seq 4 independently supports the candidate. Seq 1 supports the existing tool-selection task and free constraint. No explicit request to investigate ownership or explain captions is present, so no extra active information-request record is required.",
+        "old_issue": "The former owner team (unconfirmed) still encoded an unsupported entity. Removing team from owner and text corrects that bias. Actual ownership remains unknown; the review accepts the uncertainty representation, not an answer about the true owner."
+      },
+      "critical_checks": [
+        {
+          "check": "Concrete candidate represented without assuming adoption",
+          "rules": [
+            "UNCERTAIN-1",
+            "UNCERTAIN-2"
+          ],
+          "verdict": "pass"
+        },
+        {
+          "check": "Unknown owner uses non-entity sentinel and explicit visible uncertainty",
+          "rules": [
+            "OWNER-1",
+            "OWNER-2",
+            "OWNER-3"
+          ],
+          "verdict": "pass"
+        },
+        {
+          "check": "Minimal sufficient arrived evidence, no future or hidden facts",
+          "rules": [
+            "EVIDENCE-1",
+            "EVIDENCE-2",
+            "EVIDENCE-4"
+          ],
+          "verdict": "pass",
+          "source_seqs": [
+            4
+          ]
+        },
+        {
+          "check": "Existing task and free constraint retain full records and histories",
+          "rules": [
+            "Operations and preservation"
+          ],
+          "verdict": "pass",
+          "preserved_count": 2
+        },
+        {
+          "check": "No unsupported active clarification task or caption implementation details",
+          "rules": [
+            "What the tracker represents",
+            "EVIDENCE-2"
+          ],
+          "verdict": "pass"
+        },
+        {
+          "check": "Same disposition under adjudication-bound and current guide/prompt",
+          "rules": [
+            "OWNER-3",
+            "UNCERTAIN-1"
+          ],
+          "verdict": "pass",
+          "NEGATIVE_1_change_affects_this_example": false
+        }
+      ],
+      "preserved_records": [
+        {
+          "intent_id": "cost",
+          "owner": "Mira",
+          "text": "Must be free",
+          "status": "active",
+          "source_seqs": [
+            1
+          ],
+          "pre_record_canonical_sha256": "c8581b02c66af77cfb3795924e2419273b1bdd7af76788a6ea6430f82fb46cf0",
+          "post_record_canonical_sha256": "c8581b02c66af77cfb3795924e2419273b1bdd7af76788a6ea6430f82fb46cf0",
+          "full_record_including_history_preserved": true,
+          "supporting_seq": 1,
+          "supporting_quote": "Help me choose a free note-taking tool."
+        },
+        {
+          "intent_id": "task",
+          "owner": "Mira",
+          "text": "Choose a note-taking tool",
+          "status": "active",
+          "source_seqs": [
+            1
+          ],
+          "pre_record_canonical_sha256": "20075b538fe8e86aadacf20192fbd6f6cb3f0c1d8682e00ac4affd4e44b02dff",
+          "post_record_canonical_sha256": "20075b538fe8e86aadacf20192fbd6f6cb3f0c1d8682e00ac4affd4e44b02dff",
+          "full_record_including_history_preserved": true,
+          "supporting_seq": 1,
+          "supporting_quote": "Help me choose a free note-taking tool."
+        }
+      ],
+      "runtime_replay": {
+        "store": ":memory:",
+        "full_pre_state_equal": true,
+        "full_post_state_equal": true,
+        "target_committed": true,
+        "original_input_unchanged": true
+      },
+      "corrections_required": []
+    }
+  ],
+  "summary": {
+    "accepted_examples": 2,
+    "correction_required_examples": 0,
+    "unresolved_label_issues": 0,
+    "distinct_source_families": 1,
+    "languages": [
+      "zh",
+      "en"
+    ],
+    "runtime_replays_passed": 2,
+    "preserved_record_instances": 4,
+    "distinct_preserved_ids_per_example": [
+      "cost",
+      "task"
+    ],
+    "input_records_changed": 0,
+    "training_or_manifest_changes": 0
+  },
+  "pending_flag_disposition": "The original adjudication and embedded metadata retain independent_v2_review_status=pending as frozen historical facts. This separate hash-bound receipt supplies the subsequently completed independent semantic review; it does not rewrite or pretend the review existed at the earlier timestamp.",
+  "remaining_real_world_uncertainty": "Who actually needs captions and whether captions will be adopted remain unresolved in both examples. Acceptance confirms faithful uncertainty representation under the stated convention, not factual resolution of those questions.",
+  "limitations": [
+    "Two translated sibling examples are one exposed development family, not two independent held-out scenarios.",
+    "A single status field combines owner and adoption uncertainty; target text exposes both but the schema does not disentangle them.",
+    "Alternate wording can be semantically equivalent; the accepted sentinel/status are representation rules, not uniquely entailed ontology.",
+    "Model semantic review plus runtime replay does not establish human gold, measured omission reduction, training success, or downstream user benefit.",
+    "No training or held-out model inference was run, and no original adjudication, corpus, manifest, runtime or website was changed."
+  ],
+  "new_experimental_model_inference_calls": 0,
+  "training_runs": 0,
+  "source_mutations": 0,
+  "website_mutations": 0
+}

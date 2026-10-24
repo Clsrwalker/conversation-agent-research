@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "accessed_date": "2026-10-24",
+  "sources": [
+    {
+      "title": "PyTorch 2.12 torch.cuda.memory.empty_cache",
+      "url": "https://docs.pytorch.org/docs/2.12/generated/torch.cuda.memory.empty_cache.html",
+      "relevant_lines": [
+        436,
+        440
+      ],
+      "paraphrase": "The function releases unused allocator cache. The API documentation describes fragmentation relief as possible rather than guaranteed."
+    },
+    {
+      "title": "PyTorch 2.12 CUDA semantics: Memory management",
+      "url": "https://docs.pytorch.org/docs/2.12/notes/cuda.html#memory-management",
+      "relevant_lines": [
+        676,
+        678
+      ],
+      "paraphrase": "Allocated memory tracks tensor storage; reserved memory includes the allocator pool. Cache release does not free memory occupied by live tensors."
+    }
+  ],
+  "interpretation_limit": "Lower reserved memory in this local two-step fixture does not identify the cause of earlier shared-memory pressure or establish sustained throughput, long-training stability, or tracker quality."
+}

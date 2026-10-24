@@ -5879,6 +5879,13 @@
       "type": "grouped_data_and_training_engineering_validation",
       "record": "tracker-lora-pilot-validation.json",
       "status": "passed_completed_checks_training_running"
+    },
+    {
+      "id": "tracker-lora-pilot-followup-validation",
+      "date": "2026-10-24",
+      "type": "engineering_validation",
+      "record": "tracker-lora-pilot-followup-validation.json",
+      "status": "smoke_verified_formal_02_started_not_completed"
     }
   ],
   "literature_reviews": [

@@ -1,0 +1,58 @@
+{
+  "status": "live_run_stopped_for_resource_management_revision",
+  "requested_at_utc": "2026-10-24T11:44:14.7803529Z",
+  "disposition": "controlled_stop_completed",
+  "authorization": "Root explicitly authorized controlled stop after sustained throughput degradation and increasing shared GPU memory usage; no claim that process was dead or out of memory.",
+  "last_resource_sample": {
+    "utc": "2026-10-24T11:44:01.0258962Z",
+    "kind": "read_only_resource_observation_not_causal_diagnosis",
+    "process_creation_date": "2026-10-24T11:14:22.296326Z",
+    "cpu_kernel_100ns": "485937500",
+    "cpu_user_100ns": "13766718750",
+    "working_set_bytes": "10517413888",
+    "private_page_bytes": "29085020160",
+    "read_operations": "17765",
+    "read_transfer_bytes": "212278359",
+    "write_operations": "61",
+    "write_transfer_bytes": "93771",
+    "gpu_counters": [
+      {
+        "counter": "dedicated usage",
+        "bytes": 15065194496.0,
+        "status": 0
+      },
+      {
+        "counter": "shared usage",
+        "bytes": 9896460288.0,
+        "status": 0
+      }
+    ],
+    "log_snapshot_size_bytes": 6123,
+    "log_sha256_at_sample": "e5b9e8ae2e56b5dbe10e125a6fd61bbb387cae937247d0c9c54bcabac65eec50",
+    "frozen_runner_sha256": "7df5f53bb19a944339094f9d77cf1a0fc8ecdcc9c0311d5cb87239a7e02a05d0",
+    "latest_log_line": "{\"event\": \"optimizer_step\", \"utc\": \"2026-10-24T11:34:35.058691+00:00\", \"epoch\": 0, \"update\": 13, \"microsteps\": 208, \"loss\": 0.22626806795597076, \"grad_norm\": 0.5780712962150574, \"elapsed_seconds\": 1169.5854780999944, \"memory\": {\"free_bytes\": 0, \"total_bytes\": 17170956288, \"allocated_bytes\": 10430592000, \"reserved_bytes\": 15862857728, \"peak_allocated_bytes\": 13098081792, \"peak_reserved_bytes\": 15862857728}}"
+  },
+  "last_confirmed_optimizer_update": 13,
+  "last_confirmed_microsteps": 208,
+  "last_confirmed_optimizer_utc": "2026-10-24T08:34:35.058691-03:00",
+  "training_quality_result_available": false,
+  "final_checkpoint_available": false,
+  "test_collection_started": false,
+  "source_modified": false,
+  "protocol_modified": false,
+  "prior_result_preserved": true,
+  "original_result_sha256_before_stop": "b2d9bc3f2de1d52cda248211e07a41817fcc2842031da9deca974e3913eff57c",
+  "stopped_at_utc": "2026-10-24T11:44:54.1718138Z",
+  "termination_method": "Ctrl+C sent to owned execution session; session exited with code 1; verified the training process absent. Stop-Process was not required.",
+  "exit_code": 1,
+  "pid_absent_after_stop": true,
+  "gpu_after_stop": {
+    "device": "NVIDIA GeForce RTX 4080 SUPER",
+    "used_mib": 1295,
+    "free_mib": 14753,
+    "utilization_percent": 18,
+    "note": "nvidia-smi observation after owned process exit; remaining use belongs to other processes."
+  },
+  "original_result_sha256_after_stop": "b2d9bc3f2de1d52cda248211e07a41817fcc2842031da9deca974e3913eff57c",
+  "final_log_sha256": "e5b9e8ae2e56b5dbe10e125a6fd61bbb387cae937247d0c9c54bcabac65eec50"
+}

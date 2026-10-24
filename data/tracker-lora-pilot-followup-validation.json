@@ -1,0 +1,11 @@
+{
+  "id": "tracker-lora-pilot-followup-validation",
+  "type": "engineering_validation",
+  "date": "2026-10-24",
+  "status": "smoke_verified_formal_02_started_not_completed",
+  "quality_results": null,
+  "records": [
+    "tracker-lora-pilot/followup-01/summary.json",
+    "tracker-lora-pilot/memory-revision-01/summary.json"
+  ]
+}

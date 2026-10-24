@@ -1,0 +1,355 @@
+{
+  "kind": "read_only_training_throughput_code_review_not_quality_evaluation",
+  "date": "2026-10-24",
+  "timezone": "America/Halifax",
+  "reviewer": "independent model subagent tracker_annotation_v2",
+  "scope": {
+    "run": "formal-pilot-01",
+    "frozen_source_path": "experiments/deep_conversation/tracker_lora/train_tracker.py",
+    "frozen_source_sha256": "7df5f53bb19a944339094f9d77cf1a0fc8ecdcc9c0311d5cb87239a7e02a05d0",
+    "run_source_copy": "output/research/2026-10-24/tracker-lora-pilot/training/formal-pilot-01/runner_source.py",
+    "run_source_copy_sha256": "7df5f53bb19a944339094f9d77cf1a0fc8ecdcc9c0311d5cb87239a7e02a05d0",
+    "source_modified": false,
+    "training_process_stopped_or_injected": false,
+    "gpu_computation_tasks_started": 0,
+    "inspection": "Read source files, run configuration and token-length records; compute seeded sample-order statistics on CPU; query read-only Windows process, memory and GPU performance counters. Do not read or score model evaluation outputs."
+  },
+  "conclusion": {
+    "status": "throughput_decline_with_progress_not_proven_hang",
+    "summary": "No explicit cross-microstep loss/graph accumulation is visible in the runner. The next accumulation group is not unusually large. Whole-forward pinned-memory offload, frequent CPU/GPU synchronization and high reserved/shared memory are plausible performance mechanisms, but current evidence does not identify the slow phase or establish a leak.",
+    "progress_reported_by_root": [
+      {
+        "utc": "2026-10-24T11:24:43Z",
+        "optimizer_update": 11,
+        "microsteps": 176
+      },
+      {
+        "utc": "2026-10-24T11:31:09Z",
+        "optimizer_update": 12,
+        "microsteps": 192
+      }
+    ],
+    "gap_between_reported_update_timestamps_seconds": 386,
+    "progress_evidence_limit": "These two progress timestamps were supplied by root from the running session, not independently parsed from a durable optimizer-event log by this reviewer. Update 12 completion rules out describing the earlier gap as a stopped process."
+  },
+  "configuration_evidence": {
+    "source": "training/formal-pilot-01/run-config.json",
+    "torch": "2.12.0+cu130",
+    "transformers": "5.14.1",
+    "bitsandbytes": "0.50.0",
+    "gradient_accumulation": 16,
+    "activation_offload": true,
+    "max_length": 2048,
+    "epochs": 1,
+    "seed": 20261024,
+    "train_rows": 500,
+    "observed_sequence_min": 885,
+    "observed_sequence_max": 1901,
+    "observed_sequence_mean": 1256.758,
+    "truncation": false
+  },
+  "source_findings": [
+    {
+      "id": "no_explicit_loss_graph_list",
+      "classification": "direct_code_evidence_against_simple_graph_leak",
+      "locations": [
+        "train_tracker.py:277",
+        "train_tracker.py:281",
+        "train_tracker.py:282",
+        "train_tracker.py:289"
+      ],
+      "evidence": "Each microstep computes one loss and immediately calls backward without retain_graph. The only growing losses list receives float(loss.detach()), not Tensor objects. optimizer.zero_grad(set_to_none=True) follows each update.",
+      "interpretation": "Gradients intentionally accumulate for 16 microsteps, but 16 full forward graphs are not explicitly retained. Stable allocated GPU memory reported by root is consistent with this. The local loss variable retains at most the most recent graph object until reassignment; it is not an unbounded list.",
+      "limit": "Source review cannot rule out a library-level reference cycle, pinned allocator caching or driver memory behavior. No in-process allocation snapshot was collected."
+    },
+    {
+      "id": "bounded_optimizer_state",
+      "classification": "direct_code_evidence",
+      "locations": [
+        "train_tracker.py:254",
+        "train_tracker.py:259",
+        "train_tracker.py:288",
+        "bitsandbytes/optim/optimizer.py:318",
+        "bitsandbytes/optim/optimizer.py:330"
+      ],
+      "evidence": "One model, one parameters list and one AdamW8bit optimizer are constructed outside the training loops. Installed bitsandbytes initializes state only when a parameter state is empty. AdamW8bit defaults to is_paged=False in bitsandbytes/optim/adamw.py:74.",
+      "interpretation": "There is no runner loop that repeatedly constructs optimizers or appends their states. This is not a paged Adam optimizer merely because activation offload is enabled.",
+      "limit": "Allocator caching and fragmentation may still grow independently of persistent optimizer tensor size."
+    },
+    {
+      "id": "whole_forward_pinned_offload",
+      "classification": "confirmed_mechanism_with_unconfirmed_causal_contribution",
+      "locations": [
+        "train_tracker.py:150",
+        "train_tracker.py:151",
+        "train_tracker.py:157",
+        "torch/autograd/graph.py:401",
+        "torch/autograd/graph.py:405",
+        "torch/autograd/graph.py:411",
+        "torch/autograd/graph.py:414"
+      ],
+      "evidence": "The save_on_cpu(pin_memory=True) context encloses the entire model forward and cross-entropy calculation. Installed PyTorch's pack hook creates pinned CPU storage and copies each saved tensor; unpack transfers it back to the original device. Its policy has no check to exempt frozen parameter storage.",
+      "interpretation": "Offload exchanges device-memory use for CPU storage and transfers. It can be expensive even when end-of-update allocated GPU memory is flat.",
+      "limit": "Nested checkpoint hooks control which tensors are actually saved in each region. The number and byte sizes of actual copies were not profiled in this running process."
+    },
+    {
+      "id": "large_frozen_output_head_candidate",
+      "classification": "code_supported_hypothesis_not_measured_copy",
+      "locations": [
+        "train_tracker.py:130",
+        "train_tracker.py:135",
+        "transformers/models/qwen2/modeling_qwen2.py:426",
+        "transformers/models/qwen2/modeling_qwen2.py:475"
+      ],
+      "evidence": "Model configuration has vocab_size=152064 and hidden_size=5120 with untied embeddings. The output head is a frozen bf16 Linear layer, retained in bf16 by prepare_frozen_base. Its weight occupies 1,557,135,360 bytes. A linear backward for the hidden-state gradient needs the head weight even though the weight itself is frozen; this head call is inside the broad offload context.",
+      "interpretation": "Saving a fresh CPU copy and restoring such an already-resident frozen weight would add large transfers without freeing the model's original persistent weight. This is a plausible target for a separately instrumented selective-offload investigation.",
+      "limit": "The running graph's saved tensor shapes/storage aliases were not inspected. Do not state that this exact transfer was measured or is the proven reason for update 12 latency."
+    },
+    {
+      "id": "checkpoint_and_offload_interaction",
+      "classification": "direct_code_evidence_with_runtime_uncertainty",
+      "locations": [
+        "train_tracker.py:140",
+        "transformers/models/qwen2/modeling_qwen2.py:269",
+        "torch/utils/checkpoint.py:826",
+        "torch/utils/checkpoint.py:1137",
+        "torch/utils/checkpoint.py:1647",
+        "torch/utils/checkpoint.py:1649"
+      ],
+      "evidence": "Non-reentrant gradient checkpointing is enabled. Each decoder layer is a GradientCheckpointingLayer. PyTorch creates saved checkpoint inputs then installs a checkpoint hook with weak holders for interior activations and recomputation during backward.",
+      "interpretation": "The intended tradeoff includes recomputation and checkpoint-input storage, not simply copying every intermediate activation. It is inaccurate to assume all 48 layers' full internal graphs remain allocated until an optimizer step.",
+      "limit": "The actual time split between recomputation, host transfer and kernel work is not in existing logs."
+    },
+    {
+      "id": "frequent_synchronization",
+      "classification": "confirmed_mechanism_with_unconfirmed_slow_phase",
+      "locations": [
+        "train_tracker.py:278",
+        "train_tracker.py:282",
+        "train_tracker.py:285",
+        "train_tracker.py:286",
+        "bitsandbytes/optim/optimizer.py:325",
+        "bitsandbytes/optim/optimizer.py:335",
+        "bitsandbytes/utils.py:204",
+        "bitsandbytes/utils.py:206"
+      ],
+      "evidence": "Boolean isfinite(loss) and float(loss.detach()) require scalar results on CPU each microstep. Installed bitsandbytes invokes sync_gpu(p) after each parameter update, and sync_gpu calls torch.cuda.synchronize() on CUDA. Gradient norm checking and reporting also require scalar results.",
+      "interpretation": "CPU/GPU synchronization can expose transfer or driver stalls and adds overhead, especially across hundreds of LoRA tensors. The observed CPU activity is compatible with waiting, launch overhead or actual host work.",
+      "limit": "There are no phase timestamps, so this does not show the delay occurred inside optimizer.step rather than forward or backward. Do not alter optimizer implementation during the frozen run."
+    },
+    {
+      "id": "no_kv_cache_or_prompt_logits_growth",
+      "classification": "direct_code_evidence",
+      "locations": [
+        "train_tracker.py:153",
+        "train_tracker.py:253",
+        "transformers/models/qwen2/modeling_qwen2.py:474"
+      ],
+      "evidence": "Both model configuration and the forward call disable use_cache. Only completion_tokens+1 positions feed the LM head, and the runner checks the resulting logits length.",
+      "interpretation": "The code does not accumulate a conversational KV cache across training examples or compute the full prompt vocabulary-logit matrix for loss."
+    },
+    {
+      "id": "observability_gap",
+      "classification": "direct_code_evidence",
+      "locations": [
+        "train_tracker.py:276",
+        "train_tracker.py:291"
+      ],
+      "evidence": "The runner emits optimizer_step only after all 16 microsteps, clipping, optimizer.step and zero_grad complete. No microstep index, forward/backward duration, host allocator statistics or active stage is emitted during the group.",
+      "interpretation": "A long silent interval cannot distinguish a slow sample, backward recomputation, synchronization, allocator work or optimizer latency. The next completed update confirms progress but does not locate the bottleneck."
+    }
+  ],
+  "seeded_group_lengths": {
+    "source": "training/formal-pilot-01/lengths.json",
+    "method": "CPU-only random.Random(20261024).shuffle(range(500)), then groups of 16 matching runner epoch 0 order; no tokenization or model calls.",
+    "groups": [
+      {
+        "update": 1,
+        "total_tokens": 17214,
+        "max_total_tokens": 1405,
+        "completion_tokens": 1214,
+        "max_completion_tokens": 145
+      },
+      {
+        "update": 2,
+        "total_tokens": 19524,
+        "max_total_tokens": 1431,
+        "completion_tokens": 899,
+        "max_completion_tokens": 108
+      },
+      {
+        "update": 3,
+        "total_tokens": 20087,
+        "max_total_tokens": 1474,
+        "completion_tokens": 928,
+        "max_completion_tokens": 110
+      },
+      {
+        "update": 4,
+        "total_tokens": 18918,
+        "max_total_tokens": 1670,
+        "completion_tokens": 1128,
+        "max_completion_tokens": 148
+      },
+      {
+        "update": 5,
+        "total_tokens": 20745,
+        "max_total_tokens": 1740,
+        "completion_tokens": 1081,
+        "max_completion_tokens": 121
+      },
+      {
+        "update": 6,
+        "total_tokens": 21195,
+        "max_total_tokens": 1709,
+        "completion_tokens": 829,
+        "max_completion_tokens": 108
+      },
+      {
+        "update": 7,
+        "total_tokens": 19930,
+        "max_total_tokens": 1600,
+        "completion_tokens": 892,
+        "max_completion_tokens": 107
+      },
+      {
+        "update": 8,
+        "total_tokens": 18959,
+        "max_total_tokens": 1613,
+        "completion_tokens": 1070,
+        "max_completion_tokens": 147
+      },
+      {
+        "update": 9,
+        "total_tokens": 20206,
+        "max_total_tokens": 1693,
+        "completion_tokens": 905,
+        "max_completion_tokens": 119
+      },
+      {
+        "update": 10,
+        "total_tokens": 21409,
+        "max_total_tokens": 1643,
+        "completion_tokens": 807,
+        "max_completion_tokens": 109
+      },
+      {
+        "update": 11,
+        "total_tokens": 20728,
+        "max_total_tokens": 1772,
+        "completion_tokens": 739,
+        "max_completion_tokens": 144
+      },
+      {
+        "update": 12,
+        "total_tokens": 20587,
+        "max_total_tokens": 1826,
+        "completion_tokens": 893,
+        "max_completion_tokens": 108
+      },
+      {
+        "update": 13,
+        "total_tokens": 19687,
+        "max_total_tokens": 1647,
+        "completion_tokens": 777,
+        "max_completion_tokens": 110
+      }
+    ],
+    "update_12_zero_based_rows": [
+      170,
+      453,
+      217,
+      300,
+      442,
+      499,
+      451,
+      219,
+      137,
+      417,
+      489,
+      238,
+      482,
+      430,
+      109,
+      192
+    ],
+    "interpretation": "Update 12 has fewer total tokens than update 11, a longest sequence only 54 tokens longer, and a smaller maximum completion. Its group token volume is within prior groups. This weakens unusually large input/output length as the explanation for the large latency increase; length alone cannot rule out a shape-specific allocator or backend threshold."
+  },
+  "read_only_os_snapshots": [
+    {
+      "utc": "2026-10-24T11:30:59.3457953Z",
+      "process_cpu_seconds": 689.71875,
+      "process_working_set_bytes": 9823039488,
+      "process_private_bytes": 27987197952,
+      "process_threads": 82,
+      "system_available_mbytes": 7814,
+      "system_committed_bytes": 67928133632,
+      "system_commit_limit_bytes": 79282569216,
+      "system_pages_input_per_second": 6638,
+      "system_page_reads_per_second": 834,
+      "system_pages_output_per_second": 0,
+      "process_percent_processor_time_counter": 199,
+      "process_page_faults_per_second_counter": 0,
+      "process_io_bytes_per_second_counter": 0
+    },
+    {
+      "utc": "2026-10-24T11:31:31.0040537Z",
+      "process_cpu_seconds": 717.078125,
+      "process_working_set_bytes": 9963630592,
+      "process_private_bytes": 27987664896,
+      "system_available_mbytes": 7849,
+      "system_committed_bytes": 67827359744,
+      "system_pages_input_per_second": 0,
+      "system_page_reads_per_second": 0,
+      "system_pages_output_per_second": 0
+    },
+    {
+      "utc": "2026-10-24T11:32:42.7280346Z",
+      "source": "Win32_PerfFormattedData_GPUPerformanceCounters_GPUEngine and GPUProcessMemory, filtered to the training process",
+      "cuda_engine_utilization_percent": 92,
+      "dedicated_gpu_memory_usage_bytes": 15178166272,
+      "shared_gpu_memory_usage_bytes": 8686403584,
+      "gpu_total_committed_bytes": 23864569856
+    }
+  ],
+  "memory_interpretation": [
+    "Root reported end-of-update torch allocated around 10.4 GB and reserved around 14.79 GB with free=0 for early updates. These are distinct quantities: cached reserved bytes are not all live tensors, and driver/free memory includes more than PyTorch live allocations.",
+    "The two process snapshots show private committed bytes nearly flat around 27.99 GB while CPU time continues increasing. This short window does not show monotonic unbounded host growth, but it cannot reconstruct earlier growth.",
+    "System-wide hard page input was present in one sample and absent in the next. That sample cannot be attributed to the training process from these counters.",
+    "Windows reports substantial shared GPU memory at 11:32:42. This warrants inspecting WDDM residency and host transfers, but shared usage can include mapped host/offload resources; it is not by itself proof of active GPU paging or the source of the slowdown.",
+    "Installed torch.cuda.memory.host_memory_stats documents active and cached pinned blocks separately and power-of-two size rounding. Variable-shape offload can grow a host pinned cache even without live-tensor leakage. No such in-process statistics were collected here.",
+    "The earlier 2048-token, 160-completion smoke passed only two microsteps at accumulation 1. Its 12.65-second training phase does not establish sustained throughput over 500 variable examples with accumulation 16."
+  ],
+  "recommendations": [
+    {
+      "priority": 1,
+      "action": "Keep recording this frozen run's actual progress and passive memory/utilization counters. Classify the issue as throughput degradation unless stronger evidence establishes a stall. Preserve raw outputs and source hashes.",
+      "changes_current_run": false
+    },
+    {
+      "priority": 2,
+      "action": "In a separately versioned diagnostic runner, emit microstep position, source row, prompt/completion lengths and forward/backward/optimizer stage boundaries. Record allocated/reserved/peak memory and memory_stats allocator retries, plus host_memory_stats active_bytes, allocated_bytes and host allocation times. Preserve original frozen source.",
+      "reason": "This distinguishes active graph growth, unused device cache, pinned host cache, transfer pressure and optimizer synchronization. CUDA timing synchronization itself perturbs throughput and must be documented."
+    },
+    {
+      "priority": 3,
+      "action": "If reserved device memory continues increasing while allocated memory remains stable, test releasing only unused device cache after an optimizer boundary in the separately declared diagnostic run, compare sustained throughput and memory, and revalidate save/reload. Do not inject cache-clearing calls into the current process.",
+      "reason": "torch.cuda.empty_cache can release unused reserved blocks but does not free live tensors, fix retained graphs, or necessarily clear the pinned host allocator. Repeated clearing can increase allocation and synchronization costs, so it is a measured hypothesis rather than an assumed fix."
+    },
+    {
+      "priority": 4,
+      "action": "If phase timing implicates transfer/offload, instrument saved tensor shapes and storage identities in a small separate diagnostic to verify whether the large frozen output head is copied. Compare selective offload that avoids redundant frozen-weight transfers while retaining an identical mathematical loss and gradient validation.",
+      "reason": "This could reduce overhead, but must not be asserted correct or beneficial without a controlled replay and memory-fit check."
+    },
+    {
+      "priority": 5,
+      "action": "Do not change accumulation, sample order, training epoch, optimizer or hyperparameters in response to held-out evaluation. Any infrastructure continuation or restart needs a new run record with the original attempt preserved."
+    }
+  ],
+  "limitations": [
+    "No Python stack sampling, CUDA profiler, allocator snapshot or in-process phase measurements were taken.",
+    "No model weights or tensors were inspected through a live debugger, and no GPU compute task was launched.",
+    "Source inspection establishes mechanisms and missing observability, not causality for a particular slow update.",
+    "This artifact is an engineering diagnostic. It says nothing about the trained adapter's intention-tracking quality."
+  ]
+}

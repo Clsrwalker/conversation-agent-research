@@ -1,0 +1,31 @@
+{
+  "recorded_at_utc": "2026-10-24T11:33:31.6112796Z",
+  "kind": "engineering_resource_observation",
+  "run": "formal-pilot-01",
+  "training_status": "running",
+  "original_run_unchanged": true,
+  "original_result_json_unchanged": true,
+  "source_sha256": "7df5f53bb19a944339094f9d77cf1a0fc8ecdcc9c0311d5cb87239a7e02a05d0",
+  "resource_samples": "formal-pilot-01-resource-samples.jsonl",
+  "latest_observed_optimizer_update": 12,
+  "latest_observed_microsteps": 192,
+  "latest_observed_update_utc": "2026-10-24T11:31:09.008244+00:00",
+  "observations": [
+    "Update 11 to update 12 took approximately 385 seconds; update 12 completed with finite loss and gradient norm.",
+    "Between 11:32:33 and 11:33:05 UTC, process CPU time increased from 776.34375 to 812.78125 seconds while reported read/write transfer counters were unchanged.",
+    "Dedicated GPU process usage was approximately 15.04 to 15.25 GB; shared GPU process usage approximately 8.82 to 8.62 GB.",
+    "At update 12, PyTorch allocated bytes were 10422891520 and reserved bytes were 15862857728."
+  ],
+  "hypotheses": [
+    "Unused allocator cache plus changing sequence shapes may contribute to pressure; not causally established.",
+    "Shared GPU memory counters may include behavior associated with activation offload and pinned host memory; they do not alone demonstrate paging or its direction.",
+    "save_on_cpu includes operations involving large frozen embedding/head tensors; offload traffic may contribute."
+  ],
+  "limitations": [
+    "CPU activity and GPU memory allocation are observations, not proof of productive gradient progress between emitted optimizer steps.",
+    "No phase-level timing exists in this frozen runner.",
+    "No controlled performance comparison has been run.",
+    "Reported loss is last microstep loss, not an average over an accumulation group."
+  ],
+  "disposition": "Continue the same authorized formal process; no restart, interruption, allocator mutation, source change, or test inference."
+}

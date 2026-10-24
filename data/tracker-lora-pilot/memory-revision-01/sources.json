@@ -1,0 +1,331 @@
+{
+  "schema_version": 1,
+  "status": "frozen",
+  "snapshot_at_utc": "2026-10-24T11:55:08.5900680+00:00",
+  "snapshot_at_halifax": "2026-10-24T08:55:08.5900680-03:00",
+  "files": {
+    "trainer-before.py": {
+      "source_path_relative_to_study": "training/formal-pilot-01/runner_source.py",
+      "source_sha256": "7df5f53bb19a944339094f9d77cf1a0fc8ecdcc9c0311d5cb87239a7e02a05d0",
+      "export_sha256": "7df5f53bb19a944339094f9d77cf1a0fc8ecdcc9c0311d5cb87239a7e02a05d0",
+      "export_bytes": 21933,
+      "byte_identical_to_source": true,
+      "sanitizations": []
+    },
+    "trainer-after.py": {
+      "source_path_relative_to_study": "training/smoke-2048-offload-cleanup-01/runner_source.py",
+      "source_sha256": "b60fd53f91c62d854ef0cf71a15b29fac850fad1aaddd5d07e335831a94ed1a8",
+      "export_sha256": "b60fd53f91c62d854ef0cf71a15b29fac850fad1aaddd5d07e335831a94ed1a8",
+      "export_bytes": 24182,
+      "byte_identical_to_source": true,
+      "sanitizations": []
+    },
+    "smoke-before-result.json": {
+      "source_path_relative_to_study": "training/smoke-2048-offload-01/result.json",
+      "source_sha256": "e2c81a65bd6f015f53834d518e2c9c048f858fbd13eab51744d57a325a83ee26",
+      "export_sha256": "2d65271bed91e08254a7b8d2713ebc87b9995c64772b9ed0ecdffe3f82fafadc",
+      "export_bytes": 4127,
+      "byte_identical_to_source": false,
+      "sanitizations": [
+        {
+          "json_path": "$.pid",
+          "action": "removed local process/session/path/command identifier"
+        }
+      ]
+    },
+    "smoke-after-result.json": {
+      "source_path_relative_to_study": "training/smoke-2048-offload-cleanup-01/result.json",
+      "source_sha256": "3b3034d7732bde70f74b0a8a418eb95d79ea904e415a33a8e69905fa0dc1226a",
+      "export_sha256": "251b6b857ad85be6a99f113bbab2a528f70634b25e5c1bb4be94dc3906282698",
+      "export_bytes": 4227,
+      "byte_identical_to_source": false,
+      "sanitizations": [
+        {
+          "json_path": "$.pid",
+          "action": "removed local process/session/path/command identifier"
+        }
+      ]
+    },
+    "smoke-synthetic-input.json": {
+      "source_path_relative_to_study": "training/smoke-2048-offload-cleanup-01/synthetic-input.json",
+      "source_sha256": "70aec28403ccb2e6b62497f502ad27b8050204148ffeec439f6ec0a6dfa18662",
+      "export_sha256": "70aec28403ccb2e6b62497f502ad27b8050204148ffeec439f6ec0a6dfa18662",
+      "export_bytes": 4470,
+      "byte_identical_to_source": true,
+      "sanitizations": [],
+      "also_matches_source": "training/smoke-2048-offload-01/synthetic-input.json"
+    },
+    "smoke-lengths.json": {
+      "source_path_relative_to_study": "training/smoke-2048-offload-cleanup-01/lengths.json",
+      "source_sha256": "bfe6c54ee86951d8a9bc10c5afb5ce0226168dc50a30b493185561289546cede",
+      "export_sha256": "bfe6c54ee86951d8a9bc10c5afb5ce0226168dc50a30b493185561289546cede",
+      "export_bytes": 125,
+      "byte_identical_to_source": true,
+      "sanitizations": []
+    },
+    "smoke-equivalence-check.json": {
+      "source_path_relative_to_study": "training/memory-management-smoke-check.json",
+      "source_sha256": "e0b069486cf0526504e341218ef73bdb3ecb12f224c2c905fb75ba08a37adf33",
+      "export_sha256": "e0b069486cf0526504e341218ef73bdb3ecb12f224c2c905fb75ba08a37adf33",
+      "export_bytes": 1467,
+      "byte_identical_to_source": true,
+      "sanitizations": []
+    },
+    "source-invariant-check.json": {
+      "source_path_relative_to_study": "training/memory-management-source-check.json",
+      "source_sha256": "99ce19ccfed9e2dee14830f1a1e602f98ea3c7b8495023eaffea4d1a867354a9",
+      "export_sha256": "99ce19ccfed9e2dee14830f1a1e602f98ea3c7b8495023eaffea4d1a867354a9",
+      "export_bytes": 546,
+      "byte_identical_to_source": true,
+      "sanitizations": []
+    },
+    "independent-ast-check.json": {
+      "source_path_relative_to_study": "review/memory-management-independent-ast-check.json",
+      "source_sha256": "4809a37ff11800619812bb9e909208ef3ee0cf5e2813bbe9a3aca450bfbef946",
+      "export_sha256": "4809a37ff11800619812bb9e909208ef3ee0cf5e2813bbe9a3aca450bfbef946",
+      "export_bytes": 922,
+      "byte_identical_to_source": true,
+      "sanitizations": []
+    },
+    "independent-smoke-check.json": {
+      "source_path_relative_to_study": "review/memory-management-independent-smoke-check.json",
+      "source_sha256": "d63c7d6a22e7890f8cbefbb2ac5cb17379687d9503bb2a82aff07d37097d85e2",
+      "export_sha256": "d63c7d6a22e7890f8cbefbb2ac5cb17379687d9503bb2a82aff07d37097d85e2",
+      "export_bytes": 1763,
+      "byte_identical_to_source": true,
+      "sanitizations": []
+    },
+    "independent-phase-check.json": {
+      "source_path_relative_to_study": "review/memory-management-independent-phase-check.json",
+      "source_sha256": "78d79d6bba0813fdc38bdba8522035088e0e6d5442fca81c3423081f1be684c8",
+      "export_sha256": "78d79d6bba0813fdc38bdba8522035088e0e6d5442fca81c3423081f1be684c8",
+      "export_bytes": 995,
+      "byte_identical_to_source": true,
+      "sanitizations": []
+    },
+    "prospective-amendment.json": {
+      "source_path_relative_to_study": "training/memory-management-amendment-01.json",
+      "source_sha256": "5040cf17802598288c6148317eb85fb334f7d703b6ea83ea78b0b5b7cfb5c571",
+      "export_sha256": "5040cf17802598288c6148317eb85fb334f7d703b6ea83ea78b0b5b7cfb5c571",
+      "export_bytes": 2794,
+      "byte_identical_to_source": true,
+      "sanitizations": []
+    },
+    "smoke-phase-events.jsonl": {
+      "source_path_relative_to_study": "training/smoke-2048-offload-cleanup-01.log",
+      "source_sha256": "60d7b5263739b4102d4b85645c5d298e3e357b4fe969308760769f4a6150fce1",
+      "export_sha256": "cc99214791c8dffc940668c49d6f66909a9c815e0002955d83fba46eedb27a71",
+      "export_bytes": 11476,
+      "transform": "Only parsed microstep_phase and optimizer_step JSON events; excludes arbitrary stdout, completed metadata and environment warnings.",
+      "phase_events": 16,
+      "optimizer_events": 2
+    },
+    "independent-revision-review.json": {
+      "source_path_relative_to_study": "review/memory-management-revision-review.json",
+      "source_sha256": "4db7c6b0869001d91de1cac947c8f5a31200d4e5a272f752d039a10706e9ede4",
+      "export_sha256": "4db7c6b0869001d91de1cac947c8f5a31200d4e5a272f752d039a10706e9ede4",
+      "export_bytes": 9088,
+      "byte_identical_to_source": true,
+      "sanitizations": []
+    },
+    "protocol-v1.json": {
+      "source_path_relative_to_study": "evaluation/protocol.json",
+      "source_sha256": "e9eaf85c64f9eb8e593c0d70981750fa5123480ce6705dd17636df2ea331a65f",
+      "export_sha256": "e9eaf85c64f9eb8e593c0d70981750fa5123480ce6705dd17636df2ea331a65f",
+      "export_bytes": 12241,
+      "byte_identical_to_source": true,
+      "sanitizations": []
+    },
+    "protocol-lock-v1.json": {
+      "source_path_relative_to_study": "evaluation/protocol-lock.json",
+      "source_sha256": "b14b3c20bac95aecebabbd4905ff85d7c3d2310a55cb27bd73971233041676da",
+      "export_sha256": "58d6c4ee858b9c2ab152fb925a303c5fe88bad229767c5406a802301233de22f",
+      "export_bytes": 1844,
+      "byte_identical_to_source": false,
+      "sanitizations": [
+        {
+          "json_path": "$.files.protocol.path",
+          "action": "converted local filesystem/process reference to public relative reference"
+        },
+        {
+          "json_path": "$.files.test_records.path",
+          "action": "converted local filesystem/process reference to public relative reference"
+        },
+        {
+          "json_path": "$.files.dataset_manifest.path",
+          "action": "converted local filesystem/process reference to public relative reference"
+        },
+        {
+          "json_path": "$.files.system_prompt.path",
+          "action": "converted local filesystem/process reference to public relative reference"
+        },
+        {
+          "json_path": "$.files.evaluator.path",
+          "action": "converted local filesystem/process reference to public relative reference"
+        },
+        {
+          "json_path": "$.files.runtime.path",
+          "action": "converted local filesystem/process reference to public relative reference"
+        },
+        {
+          "json_path": "$.files.model_loader_and_trainer.path",
+          "action": "converted local filesystem/process reference to public relative reference"
+        },
+        {
+          "json_path": "$.files.collector.path",
+          "action": "converted local filesystem/process reference to public relative reference"
+        }
+      ]
+    },
+    "protocol-v2.json": {
+      "source_path_relative_to_study": "evaluation/protocol-memory-guard-v2.json",
+      "source_sha256": "ba2499114856b0241d0525f9da8010736682475714afb6da0d60b35c2e43595f",
+      "export_sha256": "ba2499114856b0241d0525f9da8010736682475714afb6da0d60b35c2e43595f",
+      "export_bytes": 14558,
+      "byte_identical_to_source": true,
+      "sanitizations": []
+    },
+    "protocol-lock-v2.json": {
+      "source_path_relative_to_study": "evaluation/protocol-lock-memory-guard-v2.json",
+      "source_sha256": "8fb6a8e23e0256f3c78760d17314e4597aa46426c527ec3a0f776d1873999e4b",
+      "export_sha256": "b58dbd662be956e34abc7f48242473e8bbe356be90928eb238447dc58cf6baaf",
+      "export_bytes": 1860,
+      "byte_identical_to_source": false,
+      "sanitizations": [
+        {
+          "json_path": "$.files.protocol.path",
+          "action": "converted local filesystem/process reference to public relative reference"
+        },
+        {
+          "json_path": "$.files.test_records.path",
+          "action": "converted local filesystem/process reference to public relative reference"
+        },
+        {
+          "json_path": "$.files.dataset_manifest.path",
+          "action": "converted local filesystem/process reference to public relative reference"
+        },
+        {
+          "json_path": "$.files.system_prompt.path",
+          "action": "converted local filesystem/process reference to public relative reference"
+        },
+        {
+          "json_path": "$.files.evaluator.path",
+          "action": "converted local filesystem/process reference to public relative reference"
+        },
+        {
+          "json_path": "$.files.runtime.path",
+          "action": "converted local filesystem/process reference to public relative reference"
+        },
+        {
+          "json_path": "$.files.model_loader_and_trainer.path",
+          "action": "converted local filesystem/process reference to public relative reference"
+        },
+        {
+          "json_path": "$.files.collector.path",
+          "action": "converted local filesystem/process reference to public relative reference"
+        }
+      ]
+    },
+    "formal-02-authorization-and-gate.json": {
+      "source_path_relative_to_study": "training/formal-pilot-02-authorization-and-gate.json",
+      "source_sha256": "d61b0f9cc359097a2209e410cc7d14fca5fa0c4b56e99c619507cdfec97566a9",
+      "export_sha256": "94beadcc1c0edb096cbd87ea9673b372ae6feb9282c9317e3135683cc5c540d0",
+      "export_bytes": 4498,
+      "byte_identical_to_source": false,
+      "sanitizations": [
+        {
+          "json_path": "$.locked_files.protocol.path",
+          "action": "converted local filesystem/process reference to public relative reference"
+        },
+        {
+          "json_path": "$.locked_files.test_records.path",
+          "action": "converted local filesystem/process reference to public relative reference"
+        },
+        {
+          "json_path": "$.locked_files.dataset_manifest.path",
+          "action": "converted local filesystem/process reference to public relative reference"
+        },
+        {
+          "json_path": "$.locked_files.system_prompt.path",
+          "action": "converted local filesystem/process reference to public relative reference"
+        },
+        {
+          "json_path": "$.locked_files.evaluator.path",
+          "action": "converted local filesystem/process reference to public relative reference"
+        },
+        {
+          "json_path": "$.locked_files.runtime.path",
+          "action": "converted local filesystem/process reference to public relative reference"
+        },
+        {
+          "json_path": "$.locked_files.model_loader_and_trainer.path",
+          "action": "converted local filesystem/process reference to public relative reference"
+        },
+        {
+          "json_path": "$.locked_files.collector.path",
+          "action": "converted local filesystem/process reference to public relative reference"
+        },
+        {
+          "json_path": "$.previous_formal_pid_32628_confirmed_absent",
+          "action": "removed numeric process identifier embedded in key; boolean retained"
+        }
+      ]
+    },
+    "formal-02-start-result.json": {
+      "source_path_relative_to_study": "training/formal-pilot-02/result.json",
+      "source_sha256": "6c6ff7543a2f739c8ca0c8a809fb21dbaf514665799c56a1b56e4ff958826fd3",
+      "export_sha256": "d363b65f741121ef810b55153186ff3944ca6dc45b858de8fc44e3b735bcfcce",
+      "export_bytes": 1708,
+      "byte_identical_to_source": false,
+      "sanitizations": [
+        {
+          "json_path": "$.pid",
+          "action": "removed local process/session/path/command identifier"
+        }
+      ]
+    },
+    "formal-02-start-events.jsonl": {
+      "source_path_relative_to_study": "training/formal-pilot-02.log",
+      "source_sha256_at_snapshot": "c3a559116c6c8705ea6946b1a879e9bd6c82a4556af18533d2917a6936490b37",
+      "source_bytes_at_snapshot": 185620,
+      "source_is_live_append_only_log": true,
+      "export_sha256": "862003fb5db19bb96c96b2401b4dc36ab09e03066bc9304e1b4334f0d251dd2b",
+      "export_bytes": 174075,
+      "transform": "All complete tokenized/base_loaded/microstep_phase/optimizer_step JSON events present at the read; other stdout is excluded.",
+      "event_count": 261,
+      "sanitizations": []
+    }
+  },
+  "generated_metadata": {
+    "official-sources.json": {
+      "sha256": "fa8d13b5c0e6150990cf7f934ad7257d4beb03c522530bb5d009430bd62155ac",
+      "bytes": 1080
+    }
+  },
+  "followup_01_guard_sha256": {
+    "formal-pilot-01-code-review.json": "57b7491c0c96d1fe12f4a037b3cf84791d747760efd5d1999ce5f08b653dfcb9",
+    "formal-pilot-01-interruption.json": "bb157c9eb14fdfd15cf4bb0f94a200fc7c8f0614a559b338ac465ae3940199e6",
+    "formal-pilot-01-resource-diagnostic.json": "5972d38f181802c42f075862db237a365709727497b3d233aeffe677d46749bc",
+    "optimizer-steps.jsonl": "b81797295a7b25f69b988120c1b6b33baa85d3829dc6123ec4a43162bc7cf4db",
+    "owner-ambiguity-v2-independent-review.json": "a0ddbe6f02ebbdb9c58f076e79643fd971d8f008d69fa78f02714560453956f6",
+    "summary-observation-v1.json": "6ab9ef537ab4420faee278dffe8d1d3c346adf32825f63f29276a3b7dd127192",
+    "summary.json": "82379ee993a9e4ba7ab3cafb1875788edf78c05e50d2b090df2c1ea5bccc7d30"
+  },
+  "immutable_previous_records_sha256": {
+    "output/research/2026-10-24/tracker-lora-pilot/publication/milestone.json": "de6115441100fde781a5e85025b1e9afbcc8cd2196e2d8b085acf6225cea5bbb",
+    "output/research/2026-10-24/tracker-lora-pilot/publication/validation.json": "15ba8c7dccce2b08b043d0c90939a956f6818846be46cbf489e25d7682764f32",
+    "output/research/2026-10-24/tracker-lora-pilot/data/compiled/manifest.json": "94280f80ff17e990f189f1fc18b3ca4d8b579422770e81a5acd5ea12c920b873",
+    "output/research/2026-10-24/tracker-lora-pilot/data/compiled/train.sft.jsonl": "d180d14231697dcdfc5054e532b5d7757ba084989a3f534a9af233a9d7dd0c58",
+    "output/research/2026-10-24/tracker-lora-pilot/data/compiled/dev.sft.jsonl": "baf8b7262b385542d2ba26ebe75b0216dd7aced1c748586d0372a19cb329011e",
+    "output/research/2026-10-24/tracker-lora-pilot/data/compiled/test.sft.jsonl": "2700e85958d48bc2e56319ede689081fa8e59bbf342c4b08517428cf91f9288c",
+    "output/research/2026-10-24/tracker-lora-pilot/evaluation/protocol.json": "e9eaf85c64f9eb8e593c0d70981750fa5123480ce6705dd17636df2ea331a65f",
+    "output/research/2026-10-24/tracker-lora-pilot/evaluation/protocol-lock.json": "b14b3c20bac95aecebabbd4905ff85d7c3d2310a55cb27bd73971233041676da",
+    "sites/conversation-agent-research/dist/data/intent-role-separation/evidence.zip": "865cf0e08c7052d2d327bbbe1d7740c007047ea4542917eaa4796ca5f77452a5",
+    "sites/conversation-agent-research/dist/data/intent-role-diagnostics/evidence.zip": "32e6d9566b1f989195dfc023a36e312f281ac61e97c277a8d769784914def613",
+    "sites/conversation-agent-research/dist/data/tracker-lora-plan/evidence.zip": "061027b393a7ff07ca4255aa4f740fd4eda308e1ec7b70dc13e90e7161a64aac",
+    "sites/conversation-agent-research/dist/data/tracker-lora-pilot/evidence.zip": "7e4018e684cd4a92fe12b333a931170105ba7d61649048ddecd512e58aed5c80"
+  },
+  "public_download_check": "All exports passed contained filename, absolute machine path, machine name, credential-pattern and runtime-handle checks. Code files contain implementation expressions, not captured process handles. No weights or private mappings included.",
+  "quality_results": null,
+  "new_test_model_inference_calls": 0
+}

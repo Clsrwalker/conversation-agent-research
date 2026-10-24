@@ -1,0 +1,40 @@
+{
+  "status": "passed",
+  "kind": "synthetic_plumbing_and_exact_two_step_equivalence_not_quality_or_sustained_throughput",
+  "old_run": "smoke-2048-offload-01",
+  "new_run": "smoke-2048-offload-cleanup-01",
+  "exit_code": 0,
+  "total_tokens": 2048,
+  "completion_tokens": 160,
+  "optimizer_steps": 2,
+  "train_seconds": 12.750651900016237,
+  "same_synthetic_input_bytes": true,
+  "same_training_loss_values": true,
+  "same_final_adapter_weights_sha256": true,
+  "adapter_weights_sha256": "5c40fe1f541f935f6b574b7e70f3b8c020a7a46289e0e621b3cb244db6e6ff67",
+  "save_reload_max_abs_difference": 0.0,
+  "adapter_on_off_max_abs_difference": 2.96875,
+  "phase_event_count": 16,
+  "allocator_ooms_max": 0,
+  "allocator_retries_max": 0,
+  "cache_release_observations": [
+    {
+      "microstep": 1,
+      "reserved_before": 14736687104,
+      "reserved_after": 10582228992,
+      "released_reserved_bytes": 4154458112,
+      "host_wall_seconds": 0.017338300007395446
+    },
+    {
+      "microstep": 2,
+      "reserved_before": 14883487744,
+      "reserved_after": 10714349568,
+      "released_reserved_bytes": 4169138176,
+      "host_wall_seconds": 0.016747199988458306
+    }
+  ],
+  "peak_allocated_bytes": 13676341248,
+  "peak_reserved_bytes": 14883487744,
+  "new_source_sha256": "b60fd53f91c62d854ef0cf71a15b29fac850fad1aaddd5d07e335831a94ed1a8",
+  "result_sha256": "3b3034d7732bde70f74b0a8a418eb95d79ea904e415a33a8e69905fa0dc1226a"
+}

@@ -1,0 +1,42 @@
+{
+  "id": "tracker-lora-memory-management-amendment-01",
+  "date": "2026-10-24",
+  "timezone": "America/Halifax",
+  "decided_at_utc": "2026-10-24T11:45:44Z",
+  "status": "approved_prospectively_for_implementation_and_smoke_only",
+  "reason": "The live formal run exhibited repeated throughput degradation after update 11 while unused reserved device memory and shared GPU process usage were high. A controlled stop was explicitly authorized after preserving evidence. This is an infrastructure hypothesis, not a diagnosed OOM, dead process, quality failure or test-driven checkpoint choice.",
+  "original_run": "formal-pilot-01",
+  "original_runner_sha256": "7df5f53bb19a944339094f9d77cf1a0fc8ecdcc9c0311d5cb87239a7e02a05d0",
+  "original_runner_archive": "training/formal-pilot-01/runner_source.py",
+  "interruption_record": "training/formal-pilot-01/interruption.json",
+  "preserve": [
+    "All original logs, initial result and interruption record",
+    "Original evaluation/protocol.json and protocol-lock.json",
+    "All frozen annotation, source data, reviews and compiled data",
+    "Original website milestone and evidence bundles"
+  ],
+  "changes": [
+    "Optional release of unused CUDA allocator cache after each microstep backward and detached loss scalar logging, after deleting the local loss reference.",
+    "Optional phase-level host wall-time and memory statistics for forward, backward/readback, cache release and optimizer; no claim of kernel profiling.",
+    "Record actual flags and executed source hash with each run."
+  ],
+  "invariants": [
+    "Same pinned Qwen2.5-14B-Instruct base and NF4 representation",
+    "Same 500 training rows and tokenizer, with zero truncation",
+    "Fresh LoRA from the base, no reuse of partial or smoke adapters",
+    "Same seed and shuffled row order",
+    "Same completion-only loss, causal shift, gradient accumulation including final short group, clipping, optimizer parameters, rank, alpha, dropout and one full epoch",
+    "No test inference, test labels or output-based tuning"
+  ],
+  "verification_required_before_new_formal": [
+    "Review diff and verify core model loading, precision and completion_loss functions unchanged",
+    "Pass actual worst-length synthetic 2048-total/160-completion two-step smoke with cleanup enabled and save/reload checks",
+    "Bind new training implementation through an explicit prospective protocol and lock while retaining originals",
+    "Root authorizes new formal run after these gates"
+  ],
+  "limits": [
+    "Releasing unused cache does not release live weights or gradients and may not solve shared-memory/offload costs.",
+    "A successful two-step smoke does not establish sustained training throughput or tracking quality.",
+    "All assigned test collection remains unstarted."
+  ]
+}
