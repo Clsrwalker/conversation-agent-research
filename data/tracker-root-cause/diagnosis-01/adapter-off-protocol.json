@@ -1,0 +1,179 @@
+{
+  "id": "tracker-root-cause-adapter-only-audit-diagnostic",
+  "status": "frozen_before_new_inference",
+  "date": "2026-10-27",
+  "timezone": "America/Halifax",
+  "frozen_at_utc": "2026-10-27T12:35:48.156247+00:00",
+  "kind": "post_hoc_bounded_component_diagnostic_not_heldout_research",
+  "question": "Does disabling the trained v2 adapter change syntax, contract validity and raw-evidence correctness for the exact audit requests that previously failed?",
+  "scope": {
+    "new_model_generations": 12,
+    "historical_enabled_generations_reused": 12,
+    "input_prefix_pairs": 6,
+    "scenario_families": 5,
+    "training_runs": 0,
+    "new_prompts": 0,
+    "new_cases": 0,
+    "new_model_choices": 0
+  },
+  "historical_arm": {
+    "name": "v2_enabled_captured",
+    "source": "tracker-intent-audit/collection-02",
+    "status": "terminal_completed_immutable",
+    "audit_reports": 12,
+    "accepted": 0,
+    "rejected": 12,
+    "syntax_invalid": 11,
+    "verdict_value_conflict": 1
+  },
+  "new_arm": {
+    "name": "same_base_v2_disabled",
+    "base_model": "Qwen/Qwen2.5-14B-Instruct",
+    "base_revision": "cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8",
+    "adapter_loaded_but_disabled": "tracker_lora_v2",
+    "loader": "unchanged frozen NF4 double-quant bfloat16 loader and prepare_frozen_base",
+    "intervention": "Use the existing PEFT disable_adapter context; no weight changes or alternate adapter."
+  },
+  "input_contract": [
+    "Use all 12 exact captured audit messages, in their original order; do not rerun the ordinary tracker.",
+    "Restore each captured normal-step post_state with its original arrived conversation and receipts. This same pre-audit state is the baseline for both arms.",
+    "Rebuilding audit.messages(audit.build_request(store)) must exactly equal captured messages before generation. If it does not, fail setup rather than rewriting the captured request.",
+    "Verify both canonical message SHA and actual token-ID SHA against the captured call. No focal IDs, condition labels, expected metadata, reference operations or review text may enter model messages.",
+    "Use the unchanged strict audit.apply_report on the restored state; record rejected/held outputs without editing or automatic retry."
+  ],
+  "generation": {
+    "max_prompt_tokens": 2048,
+    "seed": 20261024,
+    "do_sample": false,
+    "num_beams": 1,
+    "repetition_penalty": 1.0,
+    "cache_implementation": "dynamic"
+  },
+  "max_new_tokens": 1024,
+  "generation_contract": [
+    "Keep the same tokenizer/chat template, pad token, logits_to_keep=1, attention mask, bfloat16 autocast and local base precision.",
+    "No constrained decoder, schema repair, JSON extraction, forced output prefix, temperature search, prompt edits or token-limit changes.",
+    "At every actual generation, verify all LoRA-containing layers have disable_adapters=True, every parameter is frozen and model.training=False. Record loaded adapter names and number of disabled layers.",
+    "Validate source/base file hashes and adapter artifacts against captured receipts; retain exact installed package versions and hardware metadata.",
+    "Preserve one durable started/ended journal and one raw result for each attempt. Provider/model errors, token-cap hits and invalid reports remain in the denominator.",
+    "Run one generation per assigned request, no outcome-dependent retries. Zero-generation setup recovery may be recorded separately without replacing an output."
+  ],
+  "case_order": [
+    {
+      "case_id": "owner-zh-faulty",
+      "original_ordinal": 2,
+      "input_messages_sha256": "3fff9a73f69b35b8908b32f66c6076f1fd0acbd50dd12bae74a9813d1871ae99",
+      "input_token_ids_sha256": "f8e8d589962f660bca8c095402b4fe0d1dd00af426646e7816d16c2934a8525f",
+      "input_tokens": 784
+    },
+    {
+      "case_id": "owner-zh-clean",
+      "original_ordinal": 4,
+      "input_messages_sha256": "2fb5ce17e2203482ab3903640bbcf77ffa3a805643032f3c8d35b37a7ffd5883",
+      "input_token_ids_sha256": "4544dc1a6eec4389727138db6643e5b3e21438b5a02570321fd8764b521f87f8",
+      "input_tokens": 784
+    },
+    {
+      "case_id": "owner-en-faulty",
+      "original_ordinal": 6,
+      "input_messages_sha256": "ac08d24484ea6d0c9704bb888ec577b329c1686df8c0d307a65fedaaec0e689a",
+      "input_token_ids_sha256": "ad09432208ceeee0e336789315ee6304784a594dc034f5a3884ece80bb8b91d4",
+      "input_tokens": 862
+    },
+    {
+      "case_id": "owner-en-clean",
+      "original_ordinal": 8,
+      "input_messages_sha256": "61fe3288b676484d868fa6d89467546388fc58db6de1c68bdf69c2eb68bab21f",
+      "input_token_ids_sha256": "ec073ae6adc42e1a2eac9d39a9721fc3d82be6856682250a08d0fa02af9374b2",
+      "input_tokens": 862
+    },
+    {
+      "case_id": "wrong_withdrawn-zh-faulty",
+      "original_ordinal": 10,
+      "input_messages_sha256": "17531d16d35f7b002ea565925dfc965f37b269d76b25eed63a281a59dda2faed",
+      "input_token_ids_sha256": "0f7eae40f0b942e8e880cc0d5fea8de847d3626a86af50bdc706526a2fd02de1",
+      "input_tokens": 879
+    },
+    {
+      "case_id": "wrong_withdrawn-zh-clean",
+      "original_ordinal": 12,
+      "input_messages_sha256": "0ad920561f90d2aab36b7f4988995fa77e49a6608155a678070e7cb713fcef2d",
+      "input_token_ids_sha256": "da6e7708cd82aaff50defcf0d3868d2f892f36fe70d134642c0e3e0ed7dcee4f",
+      "input_tokens": 878
+    },
+    {
+      "case_id": "wrong_withdrawn-en-faulty",
+      "original_ordinal": 14,
+      "input_messages_sha256": "656a3cd25887b14ce7b648c5274184bd6900aedae9cba91f430b0547548564ee",
+      "input_token_ids_sha256": "b0767bfa50560e80fc4276c22a62536c2c0a1d9d9a2a95308dd8ccfa25fc9d89",
+      "input_tokens": 846
+    },
+    {
+      "case_id": "wrong_withdrawn-en-clean",
+      "original_ordinal": 16,
+      "input_messages_sha256": "b85005b8de756868b11a7044ac2865966cfd7bd6a10ccdebe3e8fd7575d25664",
+      "input_token_ids_sha256": "3a45d426d174d284e3e3889b2f03f0d93dcb6281b69ffa917870092d7e0b4494",
+      "input_tokens": 845
+    },
+    {
+      "case_id": "uncertain_status-zh-faulty",
+      "original_ordinal": 18,
+      "input_messages_sha256": "08d4532b905c4458c296c7ea2e1b2d3a2b9f2ab876bb197e0cdc3b61cfe9b8cf",
+      "input_token_ids_sha256": "71592aa27b7b665923ae7f295b0701904ca85f0d6f086c3118c19e73b6d1b795",
+      "input_tokens": 918
+    },
+    {
+      "case_id": "uncertain_status-zh-clean",
+      "original_ordinal": 20,
+      "input_messages_sha256": "f6db76ae05912cf4d956f33c09ab8ac658d07affd0a0fb3dd668dc67467c0025",
+      "input_token_ids_sha256": "cdc55e8c74301d83e716466e15b6f3ef61a68b7d1f2420db84ef4126eb60310e",
+      "input_tokens": 921
+    },
+    {
+      "case_id": "uncertain_status-en-faulty",
+      "original_ordinal": 22,
+      "input_messages_sha256": "d3cdbb3be9788e0d7b3c7d4fe5a898d0fdccbfa0afb79c7e50903414fffde7b5",
+      "input_token_ids_sha256": "a7c08fba3a15d2f2c416bb7879ba5b1056d5b9a01043a50ae2f71672a6b84974",
+      "input_tokens": 933
+    },
+    {
+      "case_id": "uncertain_status-en-clean",
+      "original_ordinal": 24,
+      "input_messages_sha256": "370bd56764ad9ed544c4f95e9ebe7d90144c01dea0a8dbba0b96b8e85a2d10b4",
+      "input_token_ids_sha256": "e48f2e4177af5b6c6dce1a311dcd8390f9bb73057ae3a8f135d5affb7b87d27f",
+      "input_tokens": 902
+    }
+  ],
+  "primary_diagnostics": [
+    "Strict JSON parseability and complete contract-accepted reports, with paired case-by-case enabled/disabled disagreement.",
+    "Focal owner/status correctness after the unchanged runtime, using stable IDs and raw dialogue; report false repairs, retained errors, correct-prior damage and other-record errors.",
+    "Actual executed field changes and whether cited raw evidence is sufficient. Zero changes have a zero evidence-error denominator and do not establish correctness.",
+    "Assess semantic mistakes in readable rejected proposals only as qualitative failure evidence; never repair and credit them as executed outcomes."
+  ],
+  "interpretation": [
+    "If disabled reports are valid while historical enabled reports fail on identical token sequences, the result supports an adapter-associated incompatibility with the new audit task under this pinned setup; it does not by itself identify which training examples or optimization choice caused it.",
+    "If both arms fail, disabling the adapter did not remove the failure. This does not prove that the adapter is harmless or that every base model cannot audit.",
+    "If syntax improves but raw-evidence correctness does not, output validity and intention understanding are separate bottlenecks.",
+    "A well-formed report that is semantically wrong remains a failure. Passing schema is not reduced intention omission.",
+    "This is a frozen historical comparison across processes. Same files/config/token IDs are verified, but identical in-memory model objects or bitwise deterministic GPU behavior are not assumed."
+  ],
+  "limits": [
+    "The diagnostic deliberately reuses exposed synthetic cases and a post-hoc chosen failure boundary; it cannot estimate held-out generalization or statistical superiority.",
+    "All audit inputs use post-states produced by v2 normal tracking. The experiment measures conditional audit behavior, not an end-to-end base-only tracker rollout.",
+    "Training data quality, learning rate, training duration and rank are unchanged and not independently manipulated; their causal contributions remain unidentified by this diagnostic.",
+    "No second output-format arm or new prompting method is authorized by this protocol. Any later necessity must be justified separately from these results."
+  ],
+  "stop_rule": "Stop after these 12 assigned new generations and independent scoring. Keep the failed historical acceptance intact; do not replace it or expand automatically.",
+  "source_hashes": {
+    "output/research/2026-10-27/tracker-intent-audit/collection-02/PRIVATE-calls.jsonl": "0b53b0869092f80970cd8ef86f2a6867552c1e662bc7cde92750ab503f0c4a27",
+    "output/research/2026-10-27/tracker-intent-audit/collection-02/PRIVATE-outcomes.jsonl": "60b6238c8f0165bf3de84fc79f5a69f0a89c848d77f69260c614595281b0622b",
+    "output/research/2026-10-27/tracker-intent-audit/collection-02/config.json": "6fc9589ab166cd4c6a55704bc6666bfa5b86ec36bb5717262fdffb5c88b6548d",
+    "output/research/2026-10-27/tracker-intent-audit/collection-02/result.json": "b93f0459bbd10e251d2ed7cea8ba50b60247472d4ff04f0b1583f2427fc15786",
+    "output/research/2026-10-27/tracker-intent-audit/data/acceptance.records.jsonl": "de64e4b3c191ac2dad277fa4432d1f384cf15dc8914101fa17247e24fffbddde",
+    "output/research/2026-10-27/tracker-intent-audit/review/post-run-review.json": "b7dfcdd6a634ee3500234a60c938967d6230a91f78cf7e6f6c10a1a90bfb528a",
+    "experiments/deep_conversation/tracker_lora/intent_audit/audit.py": "faf4e5b7cd69415a614e82cba8cfb8b3cb86e9d1fa49932086010d31038a06cb",
+    "experiments/deep_conversation/tracker_lora/intent_audit/audit_prompt.txt": "66f262aafe9449176bd7e15ce152308851d244a48ebc0d86e638bcc0b64ba776",
+    "experiments/deep_conversation/tracker_lora/repair_v2/train_tracker.py": "2d329f11c1320c0f2e12c39d6e74600997757d53a0661406b8e6a657222ffd24",
+    "output/research/2026-10-27/tracker-root-cause/method/freeze_protocol.py": "f895154829fd8519b55b4e056e22ff46b52b07ec72e491257c0f350b3eddbae2"
+  }
+}

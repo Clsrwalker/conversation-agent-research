@@ -1,0 +1,144 @@
+{
+  "id": "tracker-root-cause-adapter-off-preflight",
+  "status": "passed",
+  "date": "2026-10-27",
+  "timezone": "America/Halifax",
+  "reviewed_at_utc": "2026-10-27T12:38:16.217968+00:00",
+  "reviewer": "Independent Codex method-design subagent; source review plus 12 CPU store replays, not model quality.",
+  "scope": "One new adapter-disabled generation for each of the 12 already captured audit requests; historical enabled outputs remain immutable.",
+  "checks": [
+    "Protocol/source hashes verified; case order, original ordinals and captured message/token hashes match.",
+    "Twelve captured normal post-states restored exactly; rebuilt messages exactly match; old audit.apply_report results replay exactly.",
+    "Collector verifies pinned base receipt, every local base file size/hash, adapter artifacts and package versions before model loading.",
+    "Collector independently retokenizes all 12 exact messages and checks captured token-ID hashes before any generation.",
+    "Generation config equals protocol and captured config; same local loader, tokenizer, mask, pad, autocast and decoding parameters.",
+    "Collector loads the same v2 adapter frozen, then uses disable_adapter and checks all 336 LoRA layers disabled at every generation.",
+    "No normal tracker rerun, no reference-label input, no prompt change, no forced decoder, no syntax repair, no output retry.",
+    "Same strict audit.apply_report applies the raw outputs to captured baseline states; all errors and token caps remain recorded.",
+    "Hardware fields are recorded for the new run, with explicit lack of historical GPU identity evidence."
+  ],
+  "corrected_before_generation": [
+    "Initial draft used a nonexistent top-level protocol new_calls key; now reads scope.new_model_generations.",
+    "Explicit protocol case/source/decoding bindings and new-run hardware metadata added before this gate."
+  ],
+  "cpu_replays": [
+    {
+      "case_id": "owner-zh-faulty",
+      "baseline_restored_exactly": true,
+      "captured_messages_rebuilt_exactly": true,
+      "historical_complete_result_reproduced": true,
+      "historical_status": "rejected"
+    },
+    {
+      "case_id": "owner-zh-clean",
+      "baseline_restored_exactly": true,
+      "captured_messages_rebuilt_exactly": true,
+      "historical_complete_result_reproduced": true,
+      "historical_status": "rejected"
+    },
+    {
+      "case_id": "owner-en-faulty",
+      "baseline_restored_exactly": true,
+      "captured_messages_rebuilt_exactly": true,
+      "historical_complete_result_reproduced": true,
+      "historical_status": "rejected"
+    },
+    {
+      "case_id": "owner-en-clean",
+      "baseline_restored_exactly": true,
+      "captured_messages_rebuilt_exactly": true,
+      "historical_complete_result_reproduced": true,
+      "historical_status": "rejected"
+    },
+    {
+      "case_id": "wrong_withdrawn-zh-faulty",
+      "baseline_restored_exactly": true,
+      "captured_messages_rebuilt_exactly": true,
+      "historical_complete_result_reproduced": true,
+      "historical_status": "rejected"
+    },
+    {
+      "case_id": "wrong_withdrawn-zh-clean",
+      "baseline_restored_exactly": true,
+      "captured_messages_rebuilt_exactly": true,
+      "historical_complete_result_reproduced": true,
+      "historical_status": "rejected"
+    },
+    {
+      "case_id": "wrong_withdrawn-en-faulty",
+      "baseline_restored_exactly": true,
+      "captured_messages_rebuilt_exactly": true,
+      "historical_complete_result_reproduced": true,
+      "historical_status": "rejected"
+    },
+    {
+      "case_id": "wrong_withdrawn-en-clean",
+      "baseline_restored_exactly": true,
+      "captured_messages_rebuilt_exactly": true,
+      "historical_complete_result_reproduced": true,
+      "historical_status": "rejected"
+    },
+    {
+      "case_id": "uncertain_status-zh-faulty",
+      "baseline_restored_exactly": true,
+      "captured_messages_rebuilt_exactly": true,
+      "historical_complete_result_reproduced": true,
+      "historical_status": "rejected"
+    },
+    {
+      "case_id": "uncertain_status-zh-clean",
+      "baseline_restored_exactly": true,
+      "captured_messages_rebuilt_exactly": true,
+      "historical_complete_result_reproduced": true,
+      "historical_status": "rejected"
+    },
+    {
+      "case_id": "uncertain_status-en-faulty",
+      "baseline_restored_exactly": true,
+      "captured_messages_rebuilt_exactly": true,
+      "historical_complete_result_reproduced": true,
+      "historical_status": "rejected"
+    },
+    {
+      "case_id": "uncertain_status-en-clean",
+      "baseline_restored_exactly": true,
+      "captured_messages_rebuilt_exactly": true,
+      "historical_complete_result_reproduced": true,
+      "historical_status": "rejected"
+    }
+  ],
+  "new_model_calls": 0,
+  "new_training_runs": 0,
+  "tokenizer_execution_by_reviewer": false,
+  "limits": [
+    "Runtime adapter state and retokenized IDs still require the collector live checks. No model was loaded by this reviewer.",
+    "Historical enabled and new disabled results use different processes; same numerical objects or hardware conditions are not asserted.",
+    "Passing this preflight does not predict syntax or semantic diagnostic outcomes."
+  ],
+  "source_hashes": {
+    "experiments/deep_conversation/tracker_lora/intent_audit/audit.py": "faf4e5b7cd69415a614e82cba8cfb8b3cb86e9d1fa49932086010d31038a06cb",
+    "experiments/deep_conversation/tracker_lora/intent_audit/audit_prompt.txt": "66f262aafe9449176bd7e15ce152308851d244a48ebc0d86e638bcc0b64ba776",
+    "experiments/deep_conversation/tracker_lora/intent_audit/pipeline.py": "eb7bef2753dd6de310adcee9345e4abbbc4df60500e3dad3db3f66d74eb64239",
+    "experiments/deep_conversation/tracker_lora/intent_audit/collect_acceptance.py": "01e7abb214389544bc14cd131c52e55fb5558c1bfb3de299aee3ba94c378a23a",
+    "experiments/deep_conversation/tracker_lora/intent_audit/build_acceptance.py": "07512a83a2442f4c3917f73fa61a9df46b38b9e8a6333c1cfe6757cd317dc8c7",
+    "output/research/2026-10-27/tracker-intent-audit/data/acceptance.records.jsonl": "de64e4b3c191ac2dad277fa4432d1f384cf15dc8914101fa17247e24fffbddde",
+    "output/research/2026-10-27/tracker-intent-audit/data/manifest.json": "f56642349abad2b6ab70f5b4911afe5d337800195d056c333ef3268318ab88b1",
+    "output/research/2026-10-27/tracker-intent-audit/data/acceptance-plan.json": "c1bf80c45a9e86ebb580bd93e3542fcf4edf22a73380663ce4f8411c8ae453a6",
+    "output/research/2026-10-27/tracker-intent-audit/data/preflight.json": "cba9da9c41115c7d9a3da901f34da535706eb63a48eee1f46aeb57074a1ee883",
+    "output/research/2026-10-27/tracker-intent-audit/review/preflight-review.json": "edbf3fd93296ba6890409e022b2dbeaaaf21b823b655d975d3bfe3de4f9f59e4",
+    "output/research/2026-10-24/tracker-lora-repair-v2/annotation/system_prompt.txt": "7587583ff3fb2f46f64a32ca598a9f2bd980d8b0c3ff24915d80f5e31cda5abd",
+    "experiments/deep_conversation/tracker_lora/evaluate_tracker.py": "6e628968b52307f8160bcc673cb5abba8043490c810b22f0bd286fb9a4f33a6f",
+    "experiments/deep_conversation/tracker_lora/repair_v2/train_tracker.py": "2d329f11c1320c0f2e12c39d6e74600997757d53a0661406b8e6a657222ffd24",
+    "experiments/deep_conversation/tracker_lora/repair_v2/collect_three_arm.py": "6914ae922056b288a55f4fdaf197816ea4ab649b35e9cf80de0665521d6044d8",
+    "experiments/deep_conversation/intention_state.py": "e028a604a93520801a0f752755d80b305afb1eebd8792ea0aeaaa3cd5c722f73",
+    "output/research/2026-10-27/tracker-intent-audit/collection-02/PRIVATE-calls.jsonl": "0b53b0869092f80970cd8ef86f2a6867552c1e662bc7cde92750ab503f0c4a27",
+    "output/research/2026-10-27/tracker-intent-audit/collection-02/PRIVATE-outcomes.jsonl": "60b6238c8f0165bf3de84fc79f5a69f0a89c848d77f69260c614595281b0622b",
+    "output/research/2026-10-27/tracker-intent-audit/collection-02/config.json": "6fc9589ab166cd4c6a55704bc6666bfa5b86ec36bb5717262fdffb5c88b6548d",
+    "output/research/2026-10-27/tracker-intent-audit/collection-02/result.json": "b93f0459bbd10e251d2ed7cea8ba50b60247472d4ff04f0b1583f2427fc15786",
+    "output/research/2026-10-27/tracker-intent-audit/review/post-run-review.json": "b7dfcdd6a634ee3500234a60c938967d6230a91f78cf7e6f6c10a1a90bfb528a",
+    "output/research/2026-10-27/tracker-root-cause/method/freeze_protocol.py": "f895154829fd8519b55b4e056e22ff46b52b07ec72e491257c0f350b3eddbae2",
+    "experiments/deep_conversation/tracker_lora/diagnostics/collect_audit_adapter_off.py": "900972756080c2bd4390da037141f346a7f3875989f8c48e3fe3d759c93dd9e1",
+    "output/research/2026-10-27/tracker-root-cause/method/adapter-off-protocol.json": "f5828b8bf17a987634af4c403d2ceca7c597ded95512e57916532c0df63724d7",
+    "output/research/2026-10-27/tracker-root-cause/method/review_preflight.py": "b0ed5ff55e8f0d661be28b5c316a834242318f009cdc0935def5ab65fadfc88c"
+  }
+}

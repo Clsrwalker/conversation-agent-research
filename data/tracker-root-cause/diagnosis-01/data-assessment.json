@@ -1,0 +1,91 @@
+{
+  "id": "tracker-root-cause-data-assessment",
+  "status": "completed",
+  "kind": "evidence_graded_data_diagnosis",
+  "date": "2026-10-27",
+  "timezone": "America/Halifax",
+  "created_at_utc": "2026-10-27T12:39:59.441506+00:00",
+  "reviewer": "Codex subagent; AI source inspection, unblinded, no human gold",
+  "source_hashes": {
+    "output/research/2026-10-27/tracker-root-cause/data/write_assessment.py": "76414ad7e060a505e38be0d0faf39bab4cd04c8190af6311c970512ec7e2c23d",
+    "output/research/2026-10-27/tracker-root-cause/data/census.json": "f962ea27347be54cda45efe29021ca3c6d1a26396ddf7e28f40ede6e40b6a19a",
+    "output/research/2026-10-24/tracker-lora-repair-v2/data/compiled/train.records.jsonl": "12c9f6a672fb30846eb62e6ea4ef7456906a167f784f3524ddff212d82f117ea",
+    "output/research/2026-10-24/tracker-lora-repair-v2/data/compiled/test.records.jsonl": "8190b19a0b25718e7e5baf2ac5fd25383df4fcd422696a8564d99a6cb3766ce3",
+    "output/research/2026-10-24/tracker-lora-repair-v2/annotation/system_prompt.txt": "7587583ff3fb2f46f64a32ca598a9f2bd980d8b0c3ff24915d80f5e31cda5abd"
+  },
+  "confirmed": [
+    {
+      "id": "task_contract_shift",
+      "finding": "All 500 SFT completions teach operations patches. Zero teach checks or verdict fields. Every acceptance audit changes the system prompt, state object type, visible input keys and output schema simultaneously.",
+      "implication": "The failed audit is an out-of-training-task interface test, not a direct measurement of the trained patch-output task. The implementation should not have assumed this adapter already learned the new audit role.",
+      "causal_limit": "The shift is proven; whether the adapter worsens the base model on the same new contract still needs a matched adapter-off/on diagnostic."
+    },
+    {
+      "id": "repair_layout_concentration",
+      "finding": "All 30 injected owner repairs target i2, cite event 0 and restore the first speaker. Nineteen of 20 held-out owner faults instead target i3 and belong to another speaker. All eight mistaken-withdrawal training repairs reopen the second participant's i4; all five test faults concern the first speaker's i1.",
+      "implication": "The training distribution permits record-position and speaker-position shortcuts and leaves the important opposite roles weakly covered.",
+      "causal_limit": "This is a specific coverage weakness, not proof that the model actually used a shortcut. Four ordinary owner-resolution updates and five ordinary reopen operations provide some additional diversity."
+    },
+    {
+      "id": "rare_repair_supervision",
+      "finding": "Only 30/500 rows supervise wrong-owner repair, 14/500 status repair (seven active-to-uncertain), and 8/500 mistaken-withdrawal repair. Total operation counts are 518 adds, 232 updates, 37 withdrawals and 13 reopens.",
+      "implication": "The relevant abilities occupy a small and structurally concentrated part of the curriculum; successful formatting or adding cannot establish that these repair skills were learned.",
+      "causal_limit": "There is no empirically established minimum number of examples here; these counts alone do not prove undertraining."
+    },
+    {
+      "id": "single_template_and_unpaired_faults",
+      "finding": "All 60 newly authored training families use five decisions, initial adds i1/i2/i3, then a single i4 add. All 140 fault rows replace their corresponding clean training prefix; none has a same-dialogue clean counterfactual in the training set.",
+      "implication": "Lexical/domain variation overstates variation in decision structure. The dataset does not directly contrast repair-needed versus preserve-correct-state for identical raw evidence.",
+      "causal_limit": "Different later prefixes do contain preserved states; absence of matched pairs is a design limitation, not proof of contradictory labels."
+    },
+    {
+      "id": "valid_supervision_structure",
+      "finding": "All 750 train/dev/test targets are strict parseable JSON, match the compiled SFT target and use arrived source indices. All 500 train prompts match the intended frozen system prompt. No exact identical model input has conflicting target bytes; no exact input is duplicated across splits.",
+      "implication": "There is no evidence in these checks that malformed JSON labels or accidental prompt/target mispairing caused the new malformed audit responses.",
+      "causal_limit": "These checks do not certify semantic correctness, paraphrase consistency or absence of shared templates."
+    },
+    {
+      "id": "context_and_length",
+      "finding": "Training prompts have 815–1887 tokens (mean 1209.918), while audit prompts have 784–933 (mean 867.833). Training completions have 6–148 tokens (mean 62.062); actual audit generations have 103–230 (mean 159.833).",
+      "implication": "The new task asks for a longer, deeper output structure with shorter inputs. A generic claim that too-long audit input caused these failures is unsupported; task/output shift is the relevant observed difference.",
+      "causal_limit": "Generated length differs from reference-output length and does not isolate attention or capacity."
+    }
+  ],
+  "limited_semantic_inspection": {
+    "examples": 20,
+    "injected_repair_examples": 12,
+    "ordinary_owner_resolution_examples": 4,
+    "ordinary_reopen_examples": 4,
+    "focal_semantic_mislabels_found": 0,
+    "citation_minimality_defect": {
+      "example_id": "fresh-train-060-3",
+      "intent_id": "i3",
+      "annotated_sources": [
+        0,
+        2,
+        3
+      ],
+      "sufficient_sources_in_this_reading": [
+        0,
+        2
+      ],
+      "finding": "Assistant event 3 only acknowledges that unit/uncertainty rules stay intact. User event 2 already specifies one decimal place and grams; event 0 identifies the record. Including event 3 is unnecessary under the prompt's minimal-sufficient-evidence instruction.",
+      "severity": "Redundant provenance supervision; not a false requirement or a demonstrated cause of JSON/owner failures."
+    }
+  },
+  "not_established": [
+    "A systematic semantic label-error rate for all 500 training examples.",
+    "Whether training damaged general instruction following or merely failed to improve it.",
+    "Whether more examples, another epoch, another rank, or a different base would improve these outcomes.",
+    "A causal attribution of prior owner/withdrawal failures to data alone."
+  ],
+  "minimal_discriminating_diagnostics": [
+    "On the same frozen raw input and exact audit prompt, compare adapter disabled versus v2 enabled. This tests whether the adapter changes failure rate on the new contract; it does not by itself isolate schema versus input-state changes.",
+    "Keep the same v2 adapter and evidence, but express the audit correction through its existing operations contract in a predeclared tiny comparison. Separate executable-format outcomes from semantic correction and unnecessary modifications.",
+    "Test a small preselected set of existing training repair examples with their original prompt before proposing new training. If learned training examples fail too, poor held-out generalization is not the only issue.",
+    "Only if needed after those checks, use consistent ID/speaker permutation on a few existing inputs to test the suspected positional shortcut, with labels permuted mechanically and no new domain generation."
+  ],
+  "new_model_calls": 0,
+  "new_training_runs": 0,
+  "recommended_conclusion": "The strongest current data/method diagnosis is a new untrained output contract plus a narrow repair curriculum. Direct source inspection does not support saying the LoRA was trained on broken JSON or that all labels are bad. Causal size and weight-side contribution remain to be tested."
+}

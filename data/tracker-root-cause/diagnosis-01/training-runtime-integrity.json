@@ -1,0 +1,248 @@
+{
+  "id": "tracker-training-runtime-readonly-audit",
+  "status": "passed",
+  "status_meaning": "Integrity and arithmetic checks completed; model quality is not certified.",
+  "date": "2026-10-27",
+  "timezone": "America/Halifax",
+  "checked_at_utc": "2026-10-27T12:36:26.548864+00:00",
+  "new_model_calls": 0,
+  "new_training_runs": 0,
+  "loaded_model_weights": false,
+  "loaded_adapter_tensors_on_cpu": true,
+  "cuda_initialized": false,
+  "source_hashes": {
+    "output/research/2026-10-24/tracker-lora-repair-v2/training/formal-01/result.json": "d8b9c1e0931c2d271f14d38e90e88e554c9b97a89494575181adfdf0aca88507",
+    "output/research/2026-10-24/tracker-lora-repair-v2/training/formal-01/run-config.json": "3e73e2f37c91f104d2350330ce9a0c256311726f4f06893f7bba8f05c4ef7a53",
+    "output/research/2026-10-24/tracker-lora-repair-v2/training/formal-01/lengths.json": "79b1575566710fdd629db4d068c502abab4259051e3e6e90508a260d42f42ac7",
+    "output/research/2026-10-24/tracker-lora-repair-v2/training/formal-01/runner_source.py": "2d329f11c1320c0f2e12c39d6e74600997757d53a0661406b8e6a657222ffd24",
+    "experiments/deep_conversation/tracker_lora/repair_v2/train_tracker.py": "2d329f11c1320c0f2e12c39d6e74600997757d53a0661406b8e6a657222ffd24",
+    "experiments/deep_conversation/tracker_lora/train_tracker.py": "b60fd53f91c62d854ef0cf71a15b29fac850fad1aaddd5d07e335831a94ed1a8",
+    "experiments/deep_conversation/tracker_lora/repair_v2/collect_three_arm.py": "6914ae922056b288a55f4fdaf197816ea4ab649b35e9cf80de0665521d6044d8",
+    "experiments/deep_conversation/tracker_lora/intent_audit/collect_acceptance.py": "01e7abb214389544bc14cd131c52e55fb5558c1bfb3de299aee3ba94c378a23a",
+    "experiments/deep_conversation/tracker_lora/intent_audit/pipeline.py": "eb7bef2753dd6de310adcee9345e4abbbc4df60500e3dad3db3f66d74eb64239",
+    "output/research/2026-10-24/tracker-lora-repair-v2/data/compiled/train.sft.jsonl": "78bdadd3b9684600cd761d24b313acf8e34f58d06783fd9508ea6438ed86050c",
+    "output/research/2026-10-24/tracker-lora-repair-v2/training/formal-01.stdout.jsonl": "8309d04d2c7f96b369ec19c807c6ab73a45c955da9da306a9fb533c284ac9990",
+    "output/research/2026-10-24/tracker-lora-repair-v2/training/formal-01/adapter/adapter_config.json": "7c0928386d80bb4bd47ac6d8831475e5f23769a2717127fee8df4b1d9e69708a",
+    "output/research/2026-10-24/tracker-lora-repair-v2/training/formal-01/adapter/adapter_model.safetensors": "a2cf443a6e26e3868c7a905190b20c89bdf980f18ce1d3489d49903df351f176",
+    "experiments/deep_conversation/tracker_lora/model-cache/Qwen2.5-14B-Instruct/cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8/config.json": "0f2085dbbe2ee251bd6a6a0797d84a6ce34436044d629aa3cba793b43d311a9e",
+    "experiments/deep_conversation/tracker_lora/model-cache/Qwen2.5-14B-Instruct/cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8/generation_config.json": "ea35dfb6fc5051b01114f9b995820d55dab01ed33ee490f6378b442af82c09f9",
+    "experiments/deep_conversation/tracker_lora/model-cache/Qwen2.5-14B-Instruct/cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8/tokenizer_config.json": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583",
+    "experiments/deep_conversation/tracker_lora/model-cache/Qwen2.5-14B-Instruct/cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8/tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+    "output/research/2026-10-24/tracker-lora-repair-v2/training/formal-01/adapter/tokenizer_config.json": "b3d4aae9670f7c2de3e3b32675b0118e7e7b517544f5ab32efe04bd74f2238c1",
+    "output/research/2026-10-24/tracker-lora-repair-v2/training/formal-01/adapter/tokenizer.json": "3fd169731d2cbde95e10bf356d66d5997fd885dd8dbb6fb4684da3f23b2585d8",
+    "output/research/2026-10-27/tracker-intent-audit/collection-02/config.json": "6fc9589ab166cd4c6a55704bc6666bfa5b86ec36bb5717262fdffb5c88b6548d",
+    "output/research/2026-10-27/tracker-intent-audit/collection-02/result.json": "b93f0459bbd10e251d2ed7cea8ba50b60247472d4ff04f0b1583f2427fc15786",
+    "output/research/2026-10-27/tracker-intent-audit/collection-02/PRIVATE-calls.jsonl": "0b53b0869092f80970cd8ef86f2a6867552c1e662bc7cde92750ab503f0c4a27",
+    "output/research/2026-10-27/tracker-root-cause/training/audit_training.py": "602b0c65375bd176308f2aacb62b68be9eef49875487c8ccf0411b0e8d2157d3"
+  },
+  "core_functions_AST_equal_to_previously_checked_runner": {
+    "tokenize_row": true,
+    "completion_loss": true,
+    "prepare_frozen_base": true,
+    "quantized_base": true
+  },
+  "tokenization": {
+    "rows": 500,
+    "base_saved_tokenizer_ids_equal_rows": 500,
+    "exact_prompt_prefix_rows": 500,
+    "length_receipt_exact_rows": 500,
+    "completion_token_count": 31031,
+    "completion_tokens_min": 6,
+    "completion_tokens_max": 148,
+    "completion_tokens_mean": 62.062,
+    "last_two_token_ids_and_counts": [
+      {
+        "ids": [
+          151645,
+          198
+        ],
+        "tokens": [
+          "<|im_end|>",
+          "Ċ"
+        ],
+        "count": 500
+      }
+    ],
+    "eos_token": "<|im_end|>",
+    "eos_token_id": 151645,
+    "generation_config": {
+      "bos_token_id": 151643,
+      "pad_token_id": 151643,
+      "do_sample": true,
+      "eos_token_id": [
+        151645,
+        151643
+      ],
+      "repetition_penalty": 1.05,
+      "temperature": 0.7,
+      "top_p": 0.8,
+      "top_k": 20,
+      "transformers_version": "4.37.0"
+    }
+  },
+  "training_execution": {
+    "observed_microsteps": 500,
+    "unique_rows": 500,
+    "random_seed_order_exact": true,
+    "optimizer_updates": 32,
+    "group_sizes": [
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      4
+    ],
+    "gradient_norm_min": 0.33167827129364014,
+    "gradient_norm_max": 2.548704147338867,
+    "updates_with_preclip_norm_over_1": 9,
+    "loss_first_50_mean": 0.7500427724886686,
+    "loss_last_50_mean": 0.20278077743947506,
+    "loss_trend_limit": "Different shuffled rows/checkpoints; not a train-vs-validation convergence or overfitting test."
+  },
+  "loss_algebra_controls": [
+    {
+      "prompt_tokens": 1,
+      "completion_tokens": 1,
+      "loss_max_difference": 0.0,
+      "gradient_max_difference": 0.0
+    },
+    {
+      "prompt_tokens": 5,
+      "completion_tokens": 3,
+      "loss_max_difference": 0.0,
+      "gradient_max_difference": 0.0
+    },
+    {
+      "prompt_tokens": 9,
+      "completion_tokens": 7,
+      "loss_max_difference": 4.440892098500626e-16,
+      "gradient_max_difference": 0.0
+    },
+    {
+      "prompt_tokens": 20,
+      "completion_tokens": 11,
+      "loss_max_difference": 8.881784197001252e-16,
+      "gradient_max_difference": 0.0
+    }
+  ],
+  "adapter": {
+    "tensor_count": 672,
+    "A_tensors": 336,
+    "B_tensors": 336,
+    "all_finite": true,
+    "all_B_nonzero": true,
+    "parameter_elements": 68812800,
+    "B_l2_min": 0.07115784287452698,
+    "B_l2_max": 0.7327622175216675,
+    "configuration": {
+      "alora_invocation_tokens": null,
+      "alpha_pattern": {},
+      "arrow_config": null,
+      "auto_mapping": null,
+      "base_model_name_or_path": "Qwen/Qwen2.5-14B-Instruct",
+      "bias": "none",
+      "corda_config": null,
+      "ensure_weight_tying": false,
+      "eva_config": null,
+      "exclude_modules": null,
+      "fan_in_fan_out": false,
+      "inference_mode": true,
+      "init_lora_weights": true,
+      "kasa_config": null,
+      "layer_replication": null,
+      "layers_pattern": null,
+      "layers_to_transform": null,
+      "loftq_config": {},
+      "lora_alpha": 32,
+      "lora_bias": false,
+      "lora_dropout": 0.05,
+      "lora_ga_config": null,
+      "megatron_config": null,
+      "megatron_core": "megatron.core",
+      "modules_to_save": null,
+      "monteclora_config": null,
+      "peft_type": "LORA",
+      "peft_version": "0.21.2",
+      "qalora_group_size": 16,
+      "r": 16,
+      "rank_pattern": {},
+      "revision": "cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8",
+      "target_modules": [
+        "gate_proj",
+        "q_proj",
+        "k_proj",
+        "up_proj",
+        "down_proj",
+        "o_proj",
+        "v_proj"
+      ],
+      "target_parameters": null,
+      "task_type": "CAUSAL_LM",
+      "trainable_token_indices": null,
+      "use_bdlora": null,
+      "use_dora": false,
+      "use_qalora": false,
+      "use_rslora": false,
+      "velora_config": null
+    },
+    "weight_sha256": "a2cf443a6e26e3868c7a905190b20c89bdf980f18ce1d3489d49903df351f176",
+    "historical_save_reload_probe": {
+      "max_abs_logit_difference": 0.0,
+      "match": true,
+      "enabled_vs_disabled_max_abs_logit_difference": 7.09375,
+      "base_reused_same_object": true,
+      "adapter_files": {
+        "adapter_config.json": "7c0928386d80bb4bd47ac6d8831475e5f23769a2717127fee8df4b1d9e69708a",
+        "adapter_model.safetensors": "a2cf443a6e26e3868c7a905190b20c89bdf980f18ce1d3489d49903df351f176",
+        "chat_template.jinja": "8aa40ce145adb73cb3a75194dc0224702a95850ec5275cabb728496bbd749fc6",
+        "README.md": "30836000add7aff4e3bf213594c690d54c11d655805bb582c0bd7195badbde73",
+        "tokenizer.json": "3fd169731d2cbde95e10bf356d66d5997fd885dd8dbb6fb4684da3f23b2585d8",
+        "tokenizer_config.json": "b3d4aae9670f7c2de3e3b32675b0118e7e7b517544f5ab32efe04bd74f2238c1"
+      }
+    },
+    "probe_limit": "One final-position logit comparison on one training-row probe; adapter activity is not quality or full reload-equivalence evidence."
+  },
+  "audit_inference": {
+    "calls": 24,
+    "correct_v2_active_layer_receipts": 24,
+    "completed": 24,
+    "token_caps_hit": 0,
+    "same_loader_source_sha256": "2d329f11c1320c0f2e12c39d6e74600997757d53a0661406b8e6a657222ffd24",
+    "same_recorded_common_library_versions": true,
+    "max_observed_input_tokens": 1321,
+    "max_observed_output_tokens": 230
+  },
+  "limits": [
+    "CPU algebra controls do not replay CUDA kernels or repeat the original optimizer run.",
+    "No model-generation or quality evaluation is performed here.",
+    "Nonzero finite LoRA tensors and finite training gradients rule out obvious inactive/all-zero corruption, not harmful specialization or inadequate training.",
+    "No checkpoint-matched training/validation loss or train-example generation probe is available here to separate underfitting, overfitting, and format/domain shift."
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "id": "tracker-root-cause-final-synthesis-independent-review",
+  "status": "passed",
+  "status_meaning": "Final synthesis and validation accurately reflect the frozen evidence; this is not capability acceptance.",
+  "date": "2026-10-27",
+  "timezone": "America/Halifax",
+  "reviewed_at_utc": "2026-10-27T13:15:31.787742+00:00",
+  "reviewed_report_sha256": "ec0d09597640ff32725b12817d4fbd468f7e543f54d79631e913326a533d2127",
+  "reviewed_validation_sha256": "b6283d05dcafa70de5a933305dd5f6951a5406ce1f9e83245969ebed59aeebc8",
+  "reviewer": "Independent method reviewer, with data-summary cross-check from the data reviewer; no new model output or semantic scoring.",
+  "numeric_checks": {
+    "new_calls": 18,
+    "adapter_off_calls": 12,
+    "native_training_fit_calls": 6,
+    "reused_calls": 12,
+    "new_training_runs": 0,
+    "comparison_rows_match_frozen_review": true,
+    "fit_summary_and_rows_match_frozen_review": true,
+    "data_counts_and_operation_units_match": true,
+    "training_and_EOS_counts_match": true
+  },
+  "hash_checks": {
+    "direct_report_bindings": 20,
+    "direct_validation_bindings": 20,
+    "transitive_json_artifacts_inspected": 69,
+    "verified_binding_occurrences": 485,
+    "unique_bound_files_verified": 139,
+    "all_match": true,
+    "verified_documented_historical_versions": [
+      {
+        "receipt": "output/research/2026-10-27/tracker-root-cause/method/adapter-off-preflight-review.json",
+        "source": "experiments/deep_conversation/tracker_lora/diagnostics/collect_audit_adapter_off.py",
+        "historical_sha256": "900972756080c2bd4390da037141f346a7f3875989f8c48e3fe3d759c93dd9e1",
+        "current_sha256": "8b486d8ba34703bf3ddef39b8565933ebbb31388386d440d30c35ae556716f5a",
+        "verification": "Exact original bytes recovered in memory by reversing the documented two logging lines and gate filename amendment; no source file modified."
+      }
+    ]
+  },
+  "causal_boundary_review": [
+    "Training-to-audit contract change is described as observed, with component-specific causal contribution unresolved.",
+    "The adapter-off comparison retains cross-process and missing historical hardware/EOS limitations.",
+    "All twelve adapter-off generations are scoreable while the original collection remains failed at its post-context guard; CPU reproduction is not presented as observing the terminated Qwen object.",
+    "Six native inputs are explicitly exposed training samples, with no base-only comparison and no claim of full-training-set underfitting, overfitting or generalization.",
+    "Data positional concentration and fixed repair order are facts; model shortcut use and causal error percentages remain unproven.",
+    "Targeted twenty-case AI label review is not used to certify all 750 labels; passing runtime checks is not capability acceptance.",
+    "Future operations-based audit and data revisions are marked planned, not completed or validated."
+  ],
+  "resolved_issue": {
+    "location": "confirmed[2].limitation",
+    "issue": "Five ordinary reopen operations occur across four examples, so operation and example units must be distinguished.",
+    "resolution": "Parent corrected the final report to four ordinary owner-update operations and five reopen operations in four ordinary examples before this review was frozen."
+  },
+  "new_model_generations": 0,
+  "new_training_runs": 0,
+  "new_semantic_scoring_runs": 0,
+  "source_hashes": {
+    "output/research/2026-10-27/tracker-root-cause/analysis/report.json": "ec0d09597640ff32725b12817d4fbd468f7e543f54d79631e913326a533d2127",
+    "output/research/2026-10-27/tracker-root-cause/engineering/validation.json": "b6283d05dcafa70de5a933305dd5f6951a5406ce1f9e83245969ebed59aeebc8",
+    "output/research/2026-10-27/tracker-root-cause/method/adapter-off-post-review.json": "f8f06563d64b83c3c4d94d8be7f10f1fe606e5ed38b941eb455111ddba2f8480",
+    "output/research/2026-10-27/tracker-root-cause/fit/post-review.json": "81c458476ad9c40748eb597bbee9ed4c3d0dca32a0f068a4516ce234e5ac29d0",
+    "output/research/2026-10-27/tracker-root-cause/data/census.json": "f962ea27347be54cda45efe29021ca3c6d1a26396ddf7e28f40ede6e40b6a19a",
+    "output/research/2026-10-27/tracker-root-cause/data/assessment.json": "8fd4aafb94386a70d0eca5f5a249bab867ab195a8d2e54f6daec30d4a278bbde",
+    "output/research/2026-10-27/tracker-root-cause/data/repair-position-addendum.json": "6a78fbc10b7472f9f778312da8f91aa97279111102bfd1ca7abae65933a118ea",
+    "output/research/2026-10-27/tracker-root-cause/training/runtime-integrity.json": "17f92292e2df3ac26fd3a150b0901530ad789497224a25173209964043cd424a",
+    "output/research/2026-10-27/tracker-root-cause/training/cause-assessment.json": "3a752a357fe195854246eff6c0f24b6580beb857b2e123ece478a4ba43ec48fa",
+    "output/research/2026-10-27/tracker-root-cause/training/adapter-context-postcheck.json": "44931ce7cefd3e3d269a19b8bce350a4480911641050c285901e055068c561a5",
+    "output/research/2026-10-27/tracker-root-cause/review/review_final_report.py": "deac0f0830ed42d31f3188586dbf12f52606eb2e8f28d7cc662b9ab070b85822"
+  }
+}

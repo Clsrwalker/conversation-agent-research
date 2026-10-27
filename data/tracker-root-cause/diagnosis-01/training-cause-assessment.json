@@ -1,0 +1,124 @@
+{
+  "id": "tracker-training-runtime-cause-assessment",
+  "status": "completed_readonly_assessment",
+  "date": "2026-10-27",
+  "timezone": "America/Halifax",
+  "created_at_utc": "2026-10-27T12:40:07.231225+00:00",
+  "new_model_calls": 0,
+  "new_training_runs": 0,
+  "lead": "本次未发现可解释全部失败的训练实现或加载错误；已确认若干工程候选与记录不符。学习是否充分、是否发生过度专化仍缺少直接对照。",
+  "confirmed_training_implementation_defects": [],
+  "checked_explanations": [
+    {
+      "hypothesis": "没有真正加载当前 LoRA / 用错权重",
+      "finding": "与记录不符",
+      "evidence": "当前权重和配置哈希匹配训练保存记录；24/24新调用记录336层当前v2全部启用、0可训练参数。",
+      "limit": "调用时模块状态是程序记录，不是独立硬件层观测。"
+    },
+    {
+      "hypothesis": "标签错位、prompt意外参与loss或EOS模板错配",
+      "finding": "未发现此缺陷",
+      "evidence": "500/500行训练prompt是完整序列的精确前缀，保存tokenizer和底座tokenizer生成完全相同IDs；所有监督以im_end+换行结束。last n+1 logits去掉最后位置与completion目标对齐。四个CPU公式/梯度对照通过，最大loss差8.9e-16；同一AST的此前tiny-Qwen GPU masked-loss对照差0。",
+      "limit": "本轮CPU检查不重放完整CUDA训练或优化器。"
+    },
+    {
+      "hypothesis": "训练未完成、漏样本、最后梯度累积组处理错",
+      "finding": "与真实日志不符",
+      "evidence": "500个唯一行按固定seed顺序各执行一次，31个16行组加最后4行组，32次optimizer更新；最后组除数4，无遗失尾组。",
+      "limit": "正确执行预定recipe不意味着该recipe足够。"
+    },
+    {
+      "hypothesis": "LoRA参数全零、未产生梯度或保存损坏",
+      "finding": "与已检查工件不符",
+      "evidence": "672个A/B张量、68812800参数均有限；336个默认零初始化B矩阵最终全部非零。32次更新前梯度范数0.3317至2.5487，均有限且非零；保存加载探针logit差0，开关adapter差7.09375。",
+      "limit": "一个训练样本最后位置的logit探针以及非零参数不证明正确学习、泛化或所有输入上的保存等价。"
+    },
+    {
+      "hypothesis": "训练和本轮推理换了底座表示、量化方式或常用依赖版本",
+      "finding": "未发现已记录设置漂移",
+      "evidence": "同一固定Qwen2.5-14B revision，同一loader源码SHA；NF4 double quant、bfloat16 compute、norms fp32一致，共同库版本一致。推理显式eval、关闭gradient checkpointing并启用dynamic generation cache。",
+      "limit": "无法由设置一致排除量化能力损失或设备数值差异；需要不同精度因果对照才能作该结论。"
+    },
+    {
+      "hypothesis": "输出因max_new_tokens上限被截断或输入超2048",
+      "finding": "本次记录不支持",
+      "evidence": "24调用输入最大1321 token，生成最大230 token；normal上限512、audit上限1024，全部未触顶，生成全部完成。",
+      "limit": "旧collector未保存生成token IDs和实际终止token；不能追溯每次是哪个EOS终止。"
+    }
+  ],
+  "documented_design_choices_and_gaps": [
+    {
+      "issue": "只有单epoch/单seed/单checkpoint",
+      "facts": "500行、31031监督token、32次更新、lr1e-4 constant、rank16 alpha32、dropout0.05；没有在同一个最终checkpoint上记录固定训练/验证集loss或自由生成的训练修复准确率。",
+      "conclusion": "不能从“训练完成”判定学会，也不能仅因训练少断定欠拟合；同样缺乏直接证据断定过拟合。",
+      "next_discriminator": "先用少量已选训练修复例与同类未见例，在原训练输出协议下比较冻结v2表现；如连训练例也不会，进一步检查学习/监督；训练例会而新组合不会更支持泛化/捷径问题。不要立即延长训练。"
+    },
+    {
+      "issue": "目标函数按行等权，而非所有completion token等权",
+      "facts": "每行先对completion交叉熵求均值，再在16行组（末组4行）内平均。训练completion长度6至148 token，因此等组内最短行的单个token权重可为最长行约24.67倍。",
+      "conclusion": "这是已确认的优化设计选择，不是算术bug。它可能使短模式相对长修复占更大单token权重；尚未证明它导致本次错误。",
+      "next_discriminator": "只有在确认原协议训练例学习不足之后，再以固定数据/初始化/更新预算比较目标权重；本轮不训练。"
+    },
+    {
+      "issue": "新核查协议不是这次训练recipe曾直接检验的任务",
+      "facts": "现有训练/普通推理输出operations，本轮audit切换为嵌套checks/owner/status/verdict/value/source_seqs，另改变状态输入投影。",
+      "conclusion": "把新协议失败直接称作“训练坏了”没有因果依据。需要分离底座能力、adapter带来的格式专化和接口变化。",
+      "next_discriminator": "同一固定原文/状态/核查prompt在adapter关闭与v2启用条件比较；再与兼容原operations输出协议的核查比较。控制其余输入和解码，保留所有失败。"
+    },
+    {
+      "issue": "训练loss下降不构成定位证据",
+      "facts": {
+        "first_50_online_loss_mean": 0.7500427724886686,
+        "last_50_online_loss_mean": 0.20278077743947506,
+        "gradient_clipped_updates": 9
+      },
+      "conclusion": "前后50行来自不同的打乱样本与不同checkpoint；下降只说明在线目标总体下降，不能区分理解、模板记忆、欠拟合或过拟合。"
+    }
+  ],
+  "causal_claim_boundary": "本报告缩小工程故障解释，但没有证明训练方法最优，也没有通过训练干预识别超参数、量化、数据规模等因素的因果效应。不要把未发现bug写成LoRA正确或有效。",
+  "engineering_checks": {
+    "CPU_script_final_status": "passed",
+    "CUDA_model_loads": 0,
+    "GPU_generation_calls": 0,
+    "initial_attempt": {
+      "status": "failed_before_reading_training_result",
+      "error": "Audit script used one parent directory too shallow, producing output/output/... FileNotFoundError.",
+      "initial_script_sha256": "777ce88d6c8b46dfc00ace727fef6bf94d93c6e14ed3f7c8016225b77a9c7fbf",
+      "log_sha256": "9afcd5df584ccdbf95c45aa6b2fed632109cc0f15c65ec9153ca750b88c33849"
+    },
+    "correction": "Corrected this new diagnostic script root path; frozen trainer, data, adapter and model outputs unchanged. CPU algebra tolerances set to1e-12 before execution, to allow reduction roundoff.",
+    "final_script_sha256": "602b0c65375bd176308f2aacb62b68be9eef49875487c8ccf0411b0e8d2157d3",
+    "final_log_sha256": "db7f1b842eba746a2804dee130b896202fc7217022660f648f99f7a6b3d6dfb7"
+  },
+  "evidence": {
+    "runtime_integrity_sha256": "17f92292e2df3ac26fd3a150b0901530ad789497224a25173209964043cd424a",
+    "tensor_statistics_sha256": "21504c9021458012237684db2eed7010724e56c2e13bec40bae1e4119198d995",
+    "historical_tiny_model_masked_loss": {
+      "source": "output/research/2026-10-24/tracker-lora-pilot/training/loss-mask-check-autocast.json",
+      "sha256": "cd9efab599cdbf89d4e09fcb5035416593f234f92c7fec4eaa910bd19acbe1b2"
+    },
+    "installed_library_sources": [
+      {
+        "name": "peft/tuners/lora/layer.py",
+        "sha256": "9a2688af69fd16cef94fdb08ab0e973b37d7b2a672e64ba2057a01df7e98b7d8",
+        "relevant_lines": [
+          278,
+          281,
+          332,
+          343
+        ],
+        "observation": "use_rslora=false scales alpha/r; init_lora_weights=true zero-initializes B."
+      },
+      {
+        "name": "transformers/models/qwen2/modeling_qwen2.py",
+        "sha256": "99fa98c5676604cf6ef505892b70fda5c1c4cd835971459f38d61090cccab1e4",
+        "relevant_lines": [
+          442,
+          474,
+          475
+        ],
+        "observation": "Integer logits_to_keep selects the last requested hidden positions before lm_head."
+      }
+    ]
+  }
+}

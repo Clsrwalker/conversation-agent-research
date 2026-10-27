@@ -1,0 +1,18 @@
+{
+  "status": "failed",
+  "date": "2026-10-27",
+  "timezone": "America/Halifax",
+  "pid": 39608,
+  "assigned_calls": 12,
+  "training_runs": 0,
+  "new_prompt_variants": 0,
+  "retries": 0,
+  "error": {
+    "type": "AssertionError",
+    "message": "",
+    "traceback": "Traceback (most recent call last):\n  File \"experiments\\deep_conversation\\tracker_lora\\diagnostics\\collect_audit_adapter_off.py\", line 149, in main\n    state(model,False)\n    ~~~~~^^^^^^^^^^^^^\n  File \"experiments\\deep_conversation\\tracker_lora\\diagnostics\\collect_audit_adapter_off.py\", line 32, in state\n    assert not model.training and not any(p.requires_grad for p in model.parameters())\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+  },
+  "durable_calls": 12,
+  "elapsed_seconds": 155.9484611999942,
+  "finished_at_utc": "2026-10-27T12:43:50.765986+00:00"
+}

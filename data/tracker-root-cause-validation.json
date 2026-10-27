@@ -1,0 +1,73 @@
+{
+  "id": "tracker-root-cause-engineering",
+  "type": "engineering_validation",
+  "status": "diagnostics_reviewed_quality_failure_retained",
+  "date": "2026-10-27",
+  "timezone": "America/Halifax",
+  "tested_run": [
+    "ablation/adapter-off-01",
+    "fit/collection-01"
+  ],
+  "new_model_calls": 18,
+  "new_training_runs": 0,
+  "capability_acceptance_passed": false,
+  "checks": [
+    {
+      "name": "Dataset structural census and targeted source review",
+      "status": "passed_with_coverage_findings",
+      "result": "750 structural records; 20 targeted semantic cases, 140 repair-position records. No new generation. Data findings do not prove causal effects."
+    },
+    {
+      "name": "Training and loading implementation audit",
+      "status": "passed_bounded_checks",
+      "result": "500 tokenizer/masking checks, completed optimizer logs, tensor integrity, 4 CPU loss/gradient checks. Initial audit root-path failure retained."
+    },
+    {
+      "name": "Adapter-off collection",
+      "status": "failed_postcheck",
+      "result": "12/12 generations complete and durable; adapter restoration trainability assertion failed. Original failed result unchanged."
+    },
+    {
+      "name": "Post-hoc adapter-off integrity",
+      "status": "passed",
+      "result": "Exact historical messages, input hashes, 12 disabled adapter preconditions and output replay verified. Installed PEFT source plus CPU reproduction explains sufficient postcheck mechanism; no claim of observing dead-process final flags."
+    },
+    {
+      "name": "Native training-fit collection",
+      "status": "completed",
+      "result": "6/6 original prompts, enabled v2, EOS termination, strict execution replay and independent all-record review. Correct focal repairs 2/6."
+    },
+    {
+      "name": "Intent repair quality",
+      "status": "not_accepted",
+      "result": "Existing v2 audit 0/6; disabled diagnostic 2/6 with 1/6 sufficiently evidenced; native training-fit 2/6. Different tasks remain separate."
+    }
+  ],
+  "source_hashes": {
+    "output/research/2026-10-27/tracker-root-cause/data/census.json": "f962ea27347be54cda45efe29021ca3c6d1a26396ddf7e28f40ede6e40b6a19a",
+    "output/research/2026-10-27/tracker-root-cause/data/assessment.json": "8fd4aafb94386a70d0eca5f5a249bab867ab195a8d2e54f6daec30d4a278bbde",
+    "output/research/2026-10-27/tracker-root-cause/data/repair-position-addendum.json": "6a78fbc10b7472f9f778312da8f91aa97279111102bfd1ca7abae65933a118ea",
+    "output/research/2026-10-27/tracker-root-cause/training/runtime-integrity.json": "17f92292e2df3ac26fd3a150b0901530ad789497224a25173209964043cd424a",
+    "output/research/2026-10-27/tracker-root-cause/training/cause-assessment.json": "3a752a357fe195854246eff6c0f24b6580beb857b2e123ece478a4ba43ec48fa",
+    "output/research/2026-10-27/tracker-root-cause/training/adapter-tensor-statistics.json": "21504c9021458012237684db2eed7010724e56c2e13bec40bae1e4119198d995",
+    "output/research/2026-10-27/tracker-root-cause/training/adapter-context-postcheck.json": "44931ce7cefd3e3d269a19b8bce350a4480911641050c285901e055068c561a5",
+    "output/research/2026-10-27/tracker-root-cause/method/method-report.json": "9568c56eb730596e6dfef333ca066a36ec59455ee09569fc4e191e934391d124",
+    "output/research/2026-10-27/tracker-root-cause/method/adapter-off-protocol.json": "f5828b8bf17a987634af4c403d2ceca7c597ded95512e57916532c0df63724d7",
+    "output/research/2026-10-27/tracker-root-cause/method/adapter-off-preflight-review-v2.json": "d30dd9a7d9864f5a1d4e7e0d2cdf225fc15e88a81163c31184cd4dae5a6b2266",
+    "output/research/2026-10-27/tracker-root-cause/method/adapter-off-post-review.json": "f8f06563d64b83c3c4d94d8be7f10f1fe606e5ed38b941eb455111ddba2f8480",
+    "output/research/2026-10-27/tracker-root-cause/ablation/adapter-off-01/result.json": "75f58615e01d99d2df83935a401b8c996281878fa8c5d7181f3aa5e9fda98f19",
+    "output/research/2026-10-27/tracker-root-cause/ablation/adapter-off-01/config.json": "4a2b0bbd9d9bb76759a8851843b38d47cd711ac6e76cb8789d6748328d7542de",
+    "output/research/2026-10-27/tracker-root-cause/fit/selection.json": "c8028be138e7dd3acdea2caf57380f29dc4b3b8a6c1e79dfa18242f53dd3801f",
+    "output/research/2026-10-27/tracker-root-cause/fit/protocol.json": "2c128f8ae6fc5cf648c19146ee3727c5b449d338c5a815ebc61cb9e8bdeb883f",
+    "output/research/2026-10-27/tracker-root-cause/fit/source-review.json": "63ed4cfeaf234f5e0e874f63c86a4c1e726261a323abc79af31c3cf0a80f61bc",
+    "output/research/2026-10-27/tracker-root-cause/fit/preflight-review.json": "2d7f81dab0871624887952343a908931c897b3627d589e17b2416e15346565e6",
+    "output/research/2026-10-27/tracker-root-cause/fit/collection-01/config.json": "338971f32194f15638c2d6fb2e76f769a97c49544519f9f0cce23a9a58dc5d58",
+    "output/research/2026-10-27/tracker-root-cause/fit/collection-01/result.json": "1a72cd93a953b15d0f89510e741c662a36dc9dd27d9fcddb05f54f31837928da",
+    "output/research/2026-10-27/tracker-root-cause/fit/post-review.json": "81c458476ad9c40748eb597bbee9ed4c3d0dca32a0f068a4516ce234e5ac29d0"
+  },
+  "limits": [
+    "No new unit tests repeated because production feature was unchanged.",
+    "Software/integrity checks are not quality acceptance.",
+    "Website release validation and publication are recorded separately."
+  ]
+}

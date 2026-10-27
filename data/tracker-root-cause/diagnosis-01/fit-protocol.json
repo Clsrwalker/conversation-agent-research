@@ -1,0 +1,82 @@
+{
+  "id": "tracker-native-training-fit-protocol",
+  "status": "frozen_before_fit_inference",
+  "kind": "bounded_training_input_diagnostic_not_new_quality_evaluation",
+  "date": "2026-10-27",
+  "timezone": "America/Halifax",
+  "new_model_generations": 6,
+  "new_training_runs": 0,
+  "source_hashes": {
+    "output/research/2026-10-27/tracker-root-cause/fit/prepare_selection.py": "b268fed3e1fdc06c217bcdbcfc38d14ab7e1ea286940df9165285ff982819f3a",
+    "output/research/2026-10-24/tracker-lora-repair-v2/data/compiled/train.records.jsonl": "12c9f6a672fb30846eb62e6ea4ef7456906a167f784f3524ddff212d82f117ea",
+    "output/research/2026-10-24/tracker-lora-repair-v2/data/compiled/train.sft.jsonl": "78bdadd3b9684600cd761d24b313acf8e34f58d06783fd9508ea6438ed86050c",
+    "output/research/2026-10-24/tracker-lora-repair-v2/data/compiled/manifest.json": "35e3dfc55bf74ca37b88e6e3aa70738a9d61ec87769f19a8a601c3d9dded16bc",
+    "output/research/2026-10-24/tracker-lora-repair-v2/annotation/system_prompt.txt": "7587583ff3fb2f46f64a32ca598a9f2bd980d8b0c3ff24915d80f5e31cda5abd",
+    "output/research/2026-10-24/tracker-lora-repair-v2/training/formal-01/result.json": "d8b9c1e0931c2d271f14d38e90e88e554c9b97a89494575181adfdf0aca88507",
+    "output/research/2026-10-24/tracker-lora-repair-v2/training/formal-01/lengths.json": "79b1575566710fdd629db4d068c502abab4259051e3e6e90508a260d42f42ac7",
+    "output/research/2026-10-24/tracker-lora-repair-v2/training/formal-01/adapter/adapter_config.json": "7c0928386d80bb4bd47ac6d8831475e5f23769a2717127fee8df4b1d9e69708a",
+    "output/research/2026-10-24/tracker-lora-repair-v2/training/formal-01/adapter/adapter_model.safetensors": "a2cf443a6e26e3868c7a905190b20c89bdf980f18ce1d3489d49903df351f176",
+    "output/research/2026-10-27/tracker-root-cause/data/assessment.json": "8fd4aafb94386a70d0eca5f5a249bab867ab195a8d2e54f6daec30d4a278bbde",
+    "experiments/deep_conversation/tracker_lora/evaluate_tracker.py": "6e628968b52307f8160bcc673cb5abba8043490c810b22f0bd286fb9a4f33a6f",
+    "experiments/deep_conversation/tracker_lora/repair_v2/train_tracker.py": "2d329f11c1320c0f2e12c39d6e74600997757d53a0661406b8e6a657222ffd24",
+    "experiments/deep_conversation/intention_state.py": "e028a604a93520801a0f752755d80b305afb1eebd8792ea0aeaaa3cd5c722f73",
+    "output/research/2026-10-27/tracker-root-cause/fit/selection.json": "c8028be138e7dd3acdea2caf57380f29dc4b3b8a6c1e79dfa18242f53dd3801f",
+    "output/research/2026-10-27/tracker-root-cause/fit/inputs.jsonl": "a29ff9e9eea487a13a818b43db3a5a8587dc7507a6bc8eb3b8ef238ded04bd89",
+    "output/research/2026-10-27/tracker-root-cause/fit/targets.jsonl": "c4c9bae3982eed50ba1f9206b851d5a614e86cbf628ca1534abcec1b865bbaa7",
+    "output/research/2026-10-27/tracker-root-cause/fit/source-review.json": "63ed4cfeaf234f5e0e874f63c86a4c1e726261a323abc79af31c3cf0a80f61bc",
+    "output/research/2026-10-27/tracker-root-cause/fit/preflight-history/protocol-initial.json": "ef6c1128039d25386e842b9be56ac297c5b4007429233f75683597512d74f2c1",
+    "output/research/2026-10-27/tracker-root-cause/fit/align_protocol_contract.py": "2e1fc0066f8e75620fb9d1011456f53eb748f6006240aeb4ece283b4504d028b"
+  },
+  "question": "Can the unchanged v2 adapter generate executable, evidence-supported repairs for six preselected original training inputs under its original operations contract?",
+  "scope": {
+    "inputs": 6,
+    "calls_per_input": 1,
+    "maximum_calls": 6,
+    "base_changes": 0,
+    "adapter_weight_changes": 0,
+    "training": 0,
+    "new_synthetic_cases": 0,
+    "retries": 0
+  },
+  "model": {
+    "base": "Qwen/Qwen2.5-14B-Instruct",
+    "revision": "cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8",
+    "adapter_run": "output/research/2026-10-24/tracker-lora-repair-v2/training/formal-01",
+    "adapter_enabled": true,
+    "same_frozen_loader": "experiments/deep_conversation/tracker_lora/repair_v2/train_tracker.py"
+  },
+  "generation": {
+    "do_sample": false,
+    "num_beams": 1,
+    "seed": 20261024,
+    "max_prompt_tokens": 2048,
+    "max_new_tokens": 512,
+    "repetition_penalty": 1.0,
+    "cache_implementation": "dynamic"
+  },
+  "input_contract": "Use the exact prompt messages from the indexed train.sft.jsonl record. It contains the original tracker system prompt and full conversation/intention_state/tool_receipts input. The canonical completion is preserved for scoring only; never pass it as part of the generation input.",
+  "execution": "Apply strict operations parsing and the unchanged IntentStore to a restored exact original training prior. One call per case; no subsequent audit, normalization repair, hidden retry or altered label.",
+  "outcomes": [
+    "Completed/failed generation and token-cap status.",
+    "Strict JSON and executable operations acceptance.",
+    "Focal owner/status correctness and full focal meaning (including text and qualifiers) after execution.",
+    "Focal repair operation and sufficiency of its cited raw evidence.",
+    "Preservation of all unrelated pre-existing requirements and correctness of ordinary latest-turn changes.",
+    "Exact canonical completion match as a descriptive formatting metric only; semantic equivalents may differ in text."
+  ],
+  "interpretation_rules": [
+    "Failures show the selected training examples were not mastered under greedy generation; they do not quantify total training-set failure or identify the cause.",
+    "Success shows local fit on these exposed training examples; it does not prove generalization or overfitting.",
+    "Mixed results locate which native repair abilities were or were not reproduced here; do not label the whole model underfit or overfit from six examples.",
+    "This check is separate from the 12 new adapter-off audit calls versus 12 historical adapter-on audit calls. Do not merge denominators or treat it as another arm of that comparison."
+  ],
+  "stop_rule": "Stop after the six assigned single-pass generations, retaining every failure. No prompt tuning, new data, retraining, model swap or output-dependent rerun is authorized by this protocol.",
+  "prompt_truncation": false,
+  "preflight_amendment": {
+    "reason": "Match the collector generation dictionary exactly; retain the unchanged no-truncation constraint as a top-level protocol field.",
+    "initial_protocol_sha256": "ef6c1128039d25386e842b9be56ac297c5b4007429233f75683597512d74f2c1",
+    "changed_sample_selection": false,
+    "changed_model_parameters": false,
+    "new_model_calls_before_amendment": 0
+  }
+}

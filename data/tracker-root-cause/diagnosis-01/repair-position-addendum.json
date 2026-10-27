@@ -1,0 +1,217 @@
+{
+  "id": "tracker-repair-position-addendum",
+  "status": "completed",
+  "kind": "read_only_census_addendum_with_existing_output_references",
+  "date": "2026-10-27",
+  "timezone": "America/Halifax",
+  "created_at_utc": "2026-10-27T13:01:05.354504+00:00",
+  "source_hashes": {
+    "output/research/2026-10-27/tracker-root-cause/data/write_repair_position_addendum.py": "7882918231116c5093961fca8004dc1455cea8e36d759bf0b28bf7c3eb731e66",
+    "output/research/2026-10-24/tracker-lora-repair-v2/data/compiled/train.records.jsonl": "12c9f6a672fb30846eb62e6ea4ef7456906a167f784f3524ddff212d82f117ea",
+    "output/research/2026-10-24/tracker-lora-repair-v2/data/source/fresh-eval.jsonl": "d2208f241a842058e6ee4a60ded60813fc6c364d8c39bc7bf900b6fa01b5b68c",
+    "output/research/2026-10-24/tracker-lora-repair-v2/data/source/fresh-train.jsonl": "c4e8d3e79f4045b632b8e15d1bd88aa2507959587b9d7234e2195c06531eb527",
+    "output/research/2026-10-24/tracker-lora-repair-v2/data/source/retained-old-train.jsonl": "ded3b7ed4d95319d215dca5eccb0e0c02def1fe61a07cedfd521bf50b41489dc",
+    "experiments/deep_conversation/tracker_lora/repair_v2/build_dataset.py": "e8a8b4603eee63456574cfc034ec4df87980fc19517dedece52954c26de85acc",
+    "experiments/deep_conversation/tracker_lora/build_dataset.py": "c834fb312454e50257b3a88217aa29ea58a69c342fa7f8f758554adcfc5d3af4",
+    "output/research/2026-10-27/tracker-root-cause/data/census.json": "f962ea27347be54cda45efe29021ca3c6d1a26396ddf7e28f40ede6e40b6a19a",
+    "output/research/2026-10-27/tracker-root-cause/data/assessment.json": "8fd4aafb94386a70d0eca5f5a249bab867ab195a8d2e54f6daec30d4a278bbde",
+    "output/research/2026-10-27/tracker-root-cause/fit/protocol.json": "2c128f8ae6fc5cf648c19146ee3727c5b449d338c5a815ebc61cb9e8bdeb883f",
+    "output/research/2026-10-27/tracker-root-cause/fit/selection.json": "c8028be138e7dd3acdea2caf57380f29dc4b3b8a6c1e79dfa18242f53dd3801f",
+    "output/research/2026-10-27/tracker-root-cause/fit/collection-01/PRIVATE-calls.jsonl": "0c74c49bf7313f7574db1f5de443f95a8283e2b23c36d9348c1980394fce14c4",
+    "output/research/2026-10-27/tracker-root-cause/fit/collection-01/PRIVATE-outcomes.jsonl": "716e8586f358019d32cea0d9617509b1aabd0304b7cc3bab8d1f1c036f24fb73",
+    "output/research/2026-10-27/tracker-root-cause/fit/PRIVATE-review-facts.json": "e01601a2e788b5452dbb59522813bd970e4ea2ec567d9e17cd9432b76b567526"
+  },
+  "new_model_calls": 0,
+  "new_training_runs": 0,
+  "new_semantic_scoring_runs": 0,
+  "method": "For each annotated faulty training row, identify the unique operation on prior_fault_annotation.intent_id. Check its position and assert that preceding operations exactly equal the original source family decision operations. The 140-row census includes the retained legacy compiler route.",
+  "compiler_evidence": [
+    {
+      "path": "experiments/deep_conversation/tracker_lora/repair_v2/build_dataset.py",
+      "line": 125,
+      "expression": "target = {'operations': copy.deepcopy(ordinary['target']['operations']) + [repair]}"
+    },
+    {
+      "path": "experiments/deep_conversation/tracker_lora/build_dataset.py",
+      "line": 135,
+      "expression": "target = {'operations': copy.deepcopy(ordinary['target']['operations']) + [repair]}"
+    }
+  ],
+  "counts": {
+    "fault_rows": 140,
+    "repair_is_last": 140,
+    "has_ordinary_latest_operations_before_repair": 111,
+    "repair_only_no_ordinary_latest_operation": 29,
+    "preceding_ordinary_operation_count_distribution": {
+      "0": 29,
+      "1": 109,
+      "2": 1,
+      "3": 1
+    },
+    "preceding_ordinary_operation_types": {
+      "add": 45,
+      "update": 62,
+      "withdraw": 7
+    }
+  },
+  "by_fault_kind": {
+    "legacy_text": {
+      "fault_rows": 20,
+      "repair_is_last": 20,
+      "has_ordinary_latest_operations_before_repair": 16,
+      "repair_only_no_ordinary_latest_operation": 4,
+      "preceding_ordinary_operation_count_distribution": {
+        "0": 4,
+        "1": 14,
+        "2": 1,
+        "3": 1
+      },
+      "preceding_ordinary_operation_types": {
+        "add": 7,
+        "update": 7,
+        "withdraw": 5
+      }
+    },
+    "missing": {
+      "fault_rows": 30,
+      "repair_is_last": 30,
+      "has_ordinary_latest_operations_before_repair": 24,
+      "repair_only_no_ordinary_latest_operation": 6,
+      "preceding_ordinary_operation_count_distribution": {
+        "0": 6,
+        "1": 24
+      },
+      "preceding_ordinary_operation_types": {
+        "add": 13,
+        "update": 11
+      }
+    },
+    "owner": {
+      "fault_rows": 30,
+      "repair_is_last": 30,
+      "has_ordinary_latest_operations_before_repair": 26,
+      "repair_only_no_ordinary_latest_operation": 4,
+      "preceding_ordinary_operation_count_distribution": {
+        "0": 4,
+        "1": 26
+      },
+      "preceding_ordinary_operation_types": {
+        "add": 10,
+        "update": 14,
+        "withdraw": 2
+      }
+    },
+    "stale_active": {
+      "fault_rows": 8,
+      "repair_is_last": 8,
+      "has_ordinary_latest_operations_before_repair": 4,
+      "repair_only_no_ordinary_latest_operation": 4,
+      "preceding_ordinary_operation_count_distribution": {
+        "0": 4,
+        "1": 4
+      },
+      "preceding_ordinary_operation_types": {
+        "add": 4
+      }
+    },
+    "status": {
+      "fault_rows": 14,
+      "repair_is_last": 14,
+      "has_ordinary_latest_operations_before_repair": 12,
+      "repair_only_no_ordinary_latest_operation": 2,
+      "preceding_ordinary_operation_count_distribution": {
+        "0": 2,
+        "1": 12
+      },
+      "preceding_ordinary_operation_types": {
+        "add": 1,
+        "update": 11
+      }
+    },
+    "text": {
+      "fault_rows": 30,
+      "repair_is_last": 30,
+      "has_ordinary_latest_operations_before_repair": 22,
+      "repair_only_no_ordinary_latest_operation": 8,
+      "preceding_ordinary_operation_count_distribution": {
+        "0": 8,
+        "1": 22
+      },
+      "preceding_ordinary_operation_types": {
+        "add": 8,
+        "update": 14
+      }
+    },
+    "wrong_withdrawn": {
+      "fault_rows": 8,
+      "repair_is_last": 8,
+      "has_ordinary_latest_operations_before_repair": 7,
+      "repair_only_no_ordinary_latest_operation": 1,
+      "preceding_ordinary_operation_count_distribution": {
+        "0": 1,
+        "1": 7
+      },
+      "preceding_ordinary_operation_types": {
+        "add": 2,
+        "update": 5
+      }
+    }
+  },
+  "by_compiler_route": {
+    "v2": {
+      "fault_rows": 120,
+      "repair_is_last": 120,
+      "has_ordinary_latest_operations_before_repair": 95,
+      "repair_only_no_ordinary_latest_operation": 25,
+      "preceding_ordinary_operation_count_distribution": {
+        "0": 25,
+        "1": 95
+      },
+      "preceding_ordinary_operation_types": {
+        "add": 38,
+        "update": 55,
+        "withdraw": 2
+      }
+    },
+    "retained_legacy": {
+      "fault_rows": 20,
+      "repair_is_last": 20,
+      "has_ordinary_latest_operations_before_repair": 16,
+      "repair_only_no_ordinary_latest_operation": 4,
+      "preceding_ordinary_operation_count_distribution": {
+        "0": 4,
+        "1": 14,
+        "2": 1,
+        "3": 1
+      },
+      "preceding_ordinary_operation_types": {
+        "add": 7,
+        "update": 7,
+        "withdraw": 5
+      }
+    }
+  },
+  "observed_fit_sequences": {
+    "focal_repair_omitted": 3,
+    "generated_only_ordinary_prefix": 2,
+    "empty_operations_with_ordinary_and_repair_both_omitted": 1,
+    "focal_reference_operation_reproduced": 2,
+    "focal_withdraw_generated_instead_of_uncertain_update": 1,
+    "all_six_ended_on_configured_eos": true,
+    "any_hit_token_cap": false
+  },
+  "confirmed": "All 140 faulty training targets put the historical repair last, after any ordinary current-decision operations. This is a fixed data/compiler design fact, including retained legacy rows.",
+  "not_established": [
+    "Whether the fixed last position causes the model to omit historical repair or finish generation before supplying it.",
+    "Whether changing operation order, adding prompts, training further, or another intervention would improve repairs.",
+    "Whether the six selected training examples represent full-training-set fit or held-out performance."
+  ],
+  "interpretation": "Two existing fit outputs reproduce only the ordinary prefix and omit the final repair. But one other failed case emits no operations at all, and another has a repair-only target yet emits withdraw instead of uncertain update; a tail-omission account does not explain every observed failure. All six finish on configured EOS without hitting the token cap. This coexistence is not a causal position ablation.",
+  "next_action": "No additional prompt, generation, training or ordering experiment is started by this addendum.",
+  "preserved_frozen_artifacts": {
+    "output/research/2026-10-27/tracker-root-cause/data/census.json": "f962ea27347be54cda45efe29021ca3c6d1a26396ddf7e28f40ede6e40b6a19a",
+    "output/research/2026-10-27/tracker-root-cause/data/assessment.json": "8fd4aafb94386a70d0eca5f5a249bab867ab195a8d2e54f6daec30d4a278bbde",
+    "output/research/2026-10-27/tracker-root-cause/fit/protocol.json": "2c128f8ae6fc5cf648c19146ee3727c5b449d338c5a815ebc61cb9e8bdeb883f",
+    "output/research/2026-10-27/tracker-root-cause/fit/selection.json": "c8028be138e7dd3acdea2caf57380f29dc4b3b8a6c1e79dfa18242f53dd3801f"
+  }
+}

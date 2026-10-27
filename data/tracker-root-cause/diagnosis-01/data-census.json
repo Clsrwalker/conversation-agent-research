@@ -1,0 +1,785 @@
+{
+  "id": "tracker-root-cause-training-data-census",
+  "status": "completed",
+  "kind": "read_only_data_contract_diagnostic",
+  "date": "2026-10-27",
+  "timezone": "America/Halifax",
+  "created_at_utc": "2026-10-27T12:35:21.898826+00:00",
+  "source_hashes": {
+    "output/research/2026-10-27/tracker-root-cause/data/inspect_training_data.py": "524d30bd14c170b4b6dcd6a0721abb406a0bdd418c13ae9950c6c3bedb5f044e",
+    "output/research/2026-10-24/tracker-lora-repair-v2/annotation/system_prompt.txt": "7587583ff3fb2f46f64a32ca598a9f2bd980d8b0c3ff24915d80f5e31cda5abd",
+    "experiments/deep_conversation/tracker_lora/repair_v2/build_dataset.py": "e8a8b4603eee63456574cfc034ec4df87980fc19517dedece52954c26de85acc",
+    "output/research/2026-10-24/tracker-lora-repair-v2/data/authoring/train_author.py": "e021d4aad6a3813d6fdc93276519afa5256e467adcef42d16c69c3d051b3cf3d",
+    "output/research/2026-10-24/tracker-lora-repair-v2/data/authoring/eval_author.py": "febe0d1addc6ad244a2cfad3c8b65271ea4db3f4d4641b18b59f5322ef74ae07",
+    "output/research/2026-10-24/tracker-lora-repair-v2/data/authoring/replace_two_leakage_families.py": "e13426a0ac4dfdaaf56404d258a38f95677e2d8b2edc1ecd05c4bfd42cfcaf0a",
+    "output/research/2026-10-24/tracker-lora-repair-v2/data/compiled/manifest.json": "35e3dfc55bf74ca37b88e6e3aa70738a9d61ec87769f19a8a601c3d9dded16bc",
+    "output/research/2026-10-24/tracker-lora-repair-v2/review/admission.json": "d2cb7337c4b3f5298f253a7da950b21cf40b8583df1542f10148a0b064e2d37f",
+    "output/research/2026-10-24/tracker-lora-repair-v2/training/formal-01/lengths.json": "79b1575566710fdd629db4d068c502abab4259051e3e6e90508a260d42f42ac7",
+    "output/research/2026-10-27/tracker-intent-audit/data/acceptance.records.jsonl": "de64e4b3c191ac2dad277fa4432d1f384cf15dc8914101fa17247e24fffbddde",
+    "output/research/2026-10-27/tracker-intent-audit/collection-02/PRIVATE-calls.jsonl": "0b53b0869092f80970cd8ef86f2a6867552c1e662bc7cde92750ab503f0c4a27",
+    "output/research/2026-10-24/tracker-lora-repair-v2/data/compiled/train.records.jsonl": "12c9f6a672fb30846eb62e6ea4ef7456906a167f784f3524ddff212d82f117ea",
+    "output/research/2026-10-24/tracker-lora-repair-v2/data/compiled/train.sft.jsonl": "78bdadd3b9684600cd761d24b313acf8e34f58d06783fd9508ea6438ed86050c",
+    "output/research/2026-10-24/tracker-lora-repair-v2/data/compiled/dev.records.jsonl": "9cad6d4df10aa51ec79c59e1b68149ad390a1f88fa62748cd2fc4421dd961351",
+    "output/research/2026-10-24/tracker-lora-repair-v2/data/compiled/dev.sft.jsonl": "617a50fe4afaa2ac13c3af829e3a77b55d29a73bd6a292e9079de8107f448cf0",
+    "output/research/2026-10-24/tracker-lora-repair-v2/data/compiled/test.records.jsonl": "8190b19a0b25718e7e5baf2ac5fd25383df4fcd422696a8564d99a6cb3766ce3",
+    "output/research/2026-10-24/tracker-lora-repair-v2/data/compiled/test.sft.jsonl": "5bbac834472b29aaa8f8b3ce5093ec32b9f6dce03c6fe0ab72ada6da20d7ec41",
+    "output/research/2026-10-24/tracker-lora-repair-v2/data/source/fresh-train.jsonl": "c4e8d3e79f4045b632b8e15d1bd88aa2507959587b9d7234e2195c06531eb527"
+  },
+  "training_artifact_bound_to_admission": true,
+  "splits": {
+    "train": {
+      "rows": 500,
+      "families": 100,
+      "language_rows": {
+        "zh": 250,
+        "en": 250
+      },
+      "target_root_keys": {
+        "operations": 500
+      },
+      "input_keys": {
+        "conversation,intention_state,tool_receipts": 500
+      },
+      "intention_state_types": {
+        "dict": 500
+      },
+      "operations": {
+        "add": 518,
+        "update": 232,
+        "reopen": 13,
+        "withdraw": 37
+      },
+      "explicit_update_fields": {
+        "text": 188,
+        "owner": 34,
+        "status": 23
+      },
+      "empty_target_rows": 45,
+      "uncertain_output_operations": {
+        "add": 22,
+        "update": 7
+      },
+      "prefix_events": {
+        "n": 500,
+        "min": 1,
+        "max": 10,
+        "mean": 3.782,
+        "median": 4.0
+      },
+      "prior_records": {
+        "n": 500,
+        "min": 0,
+        "max": 8,
+        "mean": 3.034,
+        "median": 4.0
+      },
+      "nonempty_tool_receipts": 0,
+      "bad_source_structure": [],
+      "semantically_unchanged_update_fields": [],
+      "fault_groups": {
+        "missing": {
+          "inputs": 30,
+          "target_ids": {
+            "i2": 30
+          },
+          "languages": {
+            "zh": 16,
+            "en": 14
+          },
+          "decision_ordinals": {
+            "3": 10,
+            "4": 4,
+            "2": 9,
+            "5": 7
+          },
+          "repair_source_sets": {
+            "[0]": 30
+          }
+        },
+        "text": {
+          "inputs": 30,
+          "target_ids": {
+            "i3": 30
+          },
+          "languages": {
+            "zh": 15,
+            "en": 15
+          },
+          "decision_ordinals": {
+            "5": 12,
+            "3": 2,
+            "4": 14,
+            "2": 2
+          },
+          "repair_source_sets": {
+            "[0,2,3]": 24,
+            "[0]": 5,
+            "[0,2,3,4]": 1
+          }
+        },
+        "owner": {
+          "inputs": 30,
+          "target_ids": {
+            "i2": 30
+          },
+          "languages": {
+            "en": 16,
+            "zh": 14
+          },
+          "decision_ordinals": {
+            "3": 14,
+            "5": 4,
+            "2": 6,
+            "4": 6
+          },
+          "repair_source_sets": {
+            "[0]": 30
+          },
+          "correct_owner_is_first_speaker": 30,
+          "expected_statuses": {
+            "active": 30
+          },
+          "before_statuses": {
+            "active": 30
+          },
+          "all_repair_evidence_available": 30,
+          "historical_evidence_only": 30,
+          "wrong_owner_never_speaks_in_prefix": []
+        },
+        "status": {
+          "inputs": 14,
+          "target_ids": {
+            "i4": 14
+          },
+          "languages": {
+            "zh": 7,
+            "en": 7
+          },
+          "decision_ordinals": {
+            "3": 4,
+            "5": 2,
+            "4": 8
+          },
+          "repair_source_sets": {
+            "[0,1]": 14
+          },
+          "correct_owner_is_first_speaker": 0,
+          "expected_statuses": {
+            "uncertain": 7,
+            "active": 7
+          },
+          "before_statuses": {
+            "active": 7,
+            "uncertain": 7
+          },
+          "all_repair_evidence_available": 14,
+          "historical_evidence_only": 14,
+          "wrong_owner_never_speaks_in_prefix": []
+        },
+        "wrong_withdrawn": {
+          "inputs": 8,
+          "target_ids": {
+            "i4": 8
+          },
+          "languages": {
+            "zh": 4,
+            "en": 4
+          },
+          "decision_ordinals": {
+            "4": 5,
+            "5": 3
+          },
+          "repair_source_sets": {
+            "[0,1]": 8
+          },
+          "correct_owner_is_first_speaker": 0,
+          "expected_statuses": {
+            "active": 8
+          },
+          "before_statuses": {
+            "withdrawn": 8
+          },
+          "all_repair_evidence_available": 8,
+          "historical_evidence_only": 8,
+          "wrong_owner_never_speaks_in_prefix": []
+        },
+        "stale_active": {
+          "inputs": 8,
+          "target_ids": {
+            "i4": 8
+          },
+          "languages": {
+            "zh": 4,
+            "en": 4
+          },
+          "decision_ordinals": {
+            "5": 8
+          },
+          "repair_source_sets": {
+            "[0,1,4]": 8
+          }
+        },
+        "legacy_text": {
+          "inputs": 20,
+          "target_ids": {
+            "i3": 8,
+            "i4": 3,
+            "i2": 8,
+            "i6": 1
+          },
+          "languages": {
+            "en": 10,
+            "zh": 10
+          },
+          "decision_ordinals": {
+            "4": 6,
+            "2": 8,
+            "3": 3,
+            "5": 3
+          },
+          "repair_source_sets": {
+            "[0]": 15,
+            "[1]": 1,
+            "[0,2]": 3,
+            "[0,4]": 1
+          }
+        }
+      }
+    },
+    "dev": {
+      "rows": 50,
+      "families": 10,
+      "language_rows": {
+        "zh": 25,
+        "en": 25
+      },
+      "target_root_keys": {
+        "operations": 50
+      },
+      "input_keys": {
+        "conversation,intention_state,tool_receipts": 50
+      },
+      "intention_state_types": {
+        "dict": 50
+      },
+      "operations": {
+        "add": 45,
+        "update": 22,
+        "reopen": 1,
+        "withdraw": 2
+      },
+      "explicit_update_fields": {
+        "text": 14,
+        "owner": 5,
+        "status": 3
+      },
+      "empty_target_rows": 6,
+      "uncertain_output_operations": {
+        "add": 3,
+        "update": 3
+      },
+      "prefix_events": {
+        "n": 50,
+        "min": 1,
+        "max": 7,
+        "mean": 3.56,
+        "median": 3.5
+      },
+      "prior_records": {
+        "n": 50,
+        "min": 0,
+        "max": 4,
+        "mean": 2.46,
+        "median": 3.0
+      },
+      "nonempty_tool_receipts": 0,
+      "bad_source_structure": [],
+      "semantically_unchanged_update_fields": [],
+      "fault_groups": {
+        "missing": {
+          "inputs": 5,
+          "target_ids": {
+            "i2": 5
+          },
+          "languages": {
+            "zh": 3,
+            "en": 2
+          },
+          "decision_ordinals": {
+            "4": 1,
+            "2": 3,
+            "3": 1
+          },
+          "repair_source_sets": {
+            "[0]": 5
+          }
+        },
+        "text": {
+          "inputs": 5,
+          "target_ids": {
+            "i3": 3,
+            "i2": 2
+          },
+          "languages": {
+            "zh": 3,
+            "en": 2
+          },
+          "decision_ordinals": {
+            "5": 2,
+            "4": 2,
+            "2": 1
+          },
+          "repair_source_sets": {
+            "[0,1,2]": 1,
+            "[0]": 2,
+            "[1]": 2
+          }
+        },
+        "owner": {
+          "inputs": 5,
+          "target_ids": {
+            "i2": 3,
+            "i3": 2
+          },
+          "languages": {
+            "zh": 2,
+            "en": 3
+          },
+          "decision_ordinals": {
+            "3": 3,
+            "5": 1,
+            "4": 1
+          },
+          "repair_source_sets": {
+            "[0]": 3,
+            "[1]": 2
+          },
+          "correct_owner_is_first_speaker": 3,
+          "expected_statuses": {
+            "active": 5
+          },
+          "before_statuses": {
+            "active": 5
+          },
+          "all_repair_evidence_available": 5,
+          "historical_evidence_only": 5,
+          "wrong_owner_never_speaks_in_prefix": []
+        },
+        "status": {
+          "inputs": 3,
+          "target_ids": {
+            "i3": 3
+          },
+          "languages": {
+            "zh": 1,
+            "en": 2
+          },
+          "decision_ordinals": {
+            "5": 3
+          },
+          "repair_source_sets": {
+            "[1,4]": 2,
+            "[1]": 1
+          },
+          "correct_owner_is_first_speaker": 0,
+          "expected_statuses": {
+            "uncertain": 3
+          },
+          "before_statuses": {
+            "active": 3
+          },
+          "all_repair_evidence_available": 3,
+          "historical_evidence_only": 3,
+          "wrong_owner_never_speaks_in_prefix": []
+        },
+        "wrong_withdrawn": {
+          "inputs": 1,
+          "target_ids": {
+            "i1": 1
+          },
+          "languages": {
+            "zh": 1
+          },
+          "decision_ordinals": {
+            "5": 1
+          },
+          "repair_source_sets": {
+            "[0]": 1
+          },
+          "correct_owner_is_first_speaker": 1,
+          "expected_statuses": {
+            "active": 1
+          },
+          "before_statuses": {
+            "withdrawn": 1
+          },
+          "all_repair_evidence_available": 1,
+          "historical_evidence_only": 1,
+          "wrong_owner_never_speaks_in_prefix": []
+        },
+        "stale_active": {
+          "inputs": 1,
+          "target_ids": {
+            "i3": 1
+          },
+          "languages": {
+            "en": 1
+          },
+          "decision_ordinals": {
+            "5": 1
+          },
+          "repair_source_sets": {
+            "[1,2]": 1
+          }
+        }
+      }
+    },
+    "test": {
+      "rows": 200,
+      "families": 40,
+      "language_rows": {
+        "zh": 100,
+        "en": 100
+      },
+      "target_root_keys": {
+        "operations": 200
+      },
+      "input_keys": {
+        "conversation,intention_state,tool_receipts": 200
+      },
+      "intention_state_types": {
+        "dict": 200
+      },
+      "operations": {
+        "add": 184,
+        "update": 90,
+        "reopen": 5,
+        "withdraw": 10
+      },
+      "explicit_update_fields": {
+        "text": 60,
+        "owner": 20,
+        "status": 10
+      },
+      "empty_target_rows": 13,
+      "uncertain_output_operations": {
+        "add": 8,
+        "update": 5
+      },
+      "prefix_events": {
+        "n": 200,
+        "min": 1,
+        "max": 7,
+        "mean": 3.7,
+        "median": 4.0
+      },
+      "prior_records": {
+        "n": 200,
+        "min": 0,
+        "max": 5,
+        "mean": 2.43,
+        "median": 3.0
+      },
+      "nonempty_tool_receipts": 0,
+      "bad_source_structure": [],
+      "semantically_unchanged_update_fields": [],
+      "fault_groups": {
+        "missing": {
+          "inputs": 20,
+          "target_ids": {
+            "i2": 19,
+            "i3": 1
+          },
+          "languages": {
+            "zh": 10,
+            "en": 10
+          },
+          "decision_ordinals": {
+            "3": 4,
+            "2": 8,
+            "4": 5,
+            "5": 3
+          },
+          "repair_source_sets": {
+            "[0]": 18,
+            "[0,1]": 1,
+            "[0,1,2]": 1
+          }
+        },
+        "text": {
+          "inputs": 20,
+          "target_ids": {
+            "i3": 9,
+            "i2": 11
+          },
+          "languages": {
+            "zh": 10,
+            "en": 10
+          },
+          "decision_ordinals": {
+            "4": 6,
+            "5": 3,
+            "3": 9,
+            "2": 2
+          },
+          "repair_source_sets": {
+            "[1,2]": 8,
+            "[0]": 7,
+            "[0,1,2]": 1,
+            "[0,1]": 4
+          }
+        },
+        "owner": {
+          "inputs": 20,
+          "target_ids": {
+            "i2": 1,
+            "i3": 19
+          },
+          "languages": {
+            "zh": 10,
+            "en": 10
+          },
+          "decision_ordinals": {
+            "2": 1,
+            "4": 8,
+            "5": 4,
+            "3": 7
+          },
+          "repair_source_sets": {
+            "[0]": 1,
+            "[1]": 18,
+            "[2]": 1
+          },
+          "correct_owner_is_first_speaker": 1,
+          "expected_statuses": {
+            "active": 20
+          },
+          "before_statuses": {
+            "active": 20
+          },
+          "all_repair_evidence_available": 20,
+          "historical_evidence_only": 20,
+          "wrong_owner_never_speaks_in_prefix": []
+        },
+        "status": {
+          "inputs": 10,
+          "target_ids": {
+            "i4": 5,
+            "i2": 5
+          },
+          "languages": {
+            "zh": 5,
+            "en": 5
+          },
+          "decision_ordinals": {
+            "4": 3,
+            "5": 5,
+            "3": 2
+          },
+          "repair_source_sets": {
+            "[2,3]": 1,
+            "[0]": 5,
+            "[2]": 4
+          },
+          "correct_owner_is_first_speaker": 9,
+          "expected_statuses": {
+            "uncertain": 5,
+            "active": 5
+          },
+          "before_statuses": {
+            "active": 5,
+            "uncertain": 5
+          },
+          "all_repair_evidence_available": 10,
+          "historical_evidence_only": 10,
+          "wrong_owner_never_speaks_in_prefix": []
+        },
+        "wrong_withdrawn": {
+          "inputs": 5,
+          "target_ids": {
+            "i1": 5
+          },
+          "languages": {
+            "zh": 3,
+            "en": 2
+          },
+          "decision_ordinals": {
+            "4": 2,
+            "3": 2,
+            "5": 1
+          },
+          "repair_source_sets": {
+            "[0]": 5
+          },
+          "correct_owner_is_first_speaker": 5,
+          "expected_statuses": {
+            "active": 5
+          },
+          "before_statuses": {
+            "withdrawn": 5
+          },
+          "all_repair_evidence_available": 5,
+          "historical_evidence_only": 5,
+          "wrong_owner_never_speaks_in_prefix": []
+        },
+        "stale_active": {
+          "inputs": 5,
+          "target_ids": {
+            "i3": 5
+          },
+          "languages": {
+            "zh": 2,
+            "en": 3
+          },
+          "decision_ordinals": {
+            "4": 1,
+            "5": 4
+          },
+          "repair_source_sets": {
+            "[1,2]": 5
+          }
+        }
+      }
+    }
+  },
+  "exact_input_duplicates": [],
+  "exact_input_conflicting_targets": [],
+  "exact_cross_split_input_duplicates": [],
+  "faulty_training_prefixes_with_clean_counterfactual_in_train": [],
+  "fresh_training_template": {
+    "fresh_families": 60,
+    "families_with_five_decisions": 60,
+    "first_step_three_adds_i1_i2_i3": 60,
+    "second_step_single_add_i4": 60
+  },
+  "training_completion_tokens_by_row_kind": {
+    "ordinary_nonempty": {
+      "n": 315,
+      "min": 21,
+      "max": 148,
+      "mean": 68.4920634920635,
+      "median": 51
+    },
+    "missing": {
+      "n": 30,
+      "min": 44,
+      "max": 104,
+      "mean": 79.5,
+      "median": 86.5
+    },
+    "text": {
+      "n": 30,
+      "min": 32,
+      "max": 88,
+      "mean": 69.76666666666667,
+      "median": 78.0
+    },
+    "ordinary_empty": {
+      "n": 45,
+      "min": 6,
+      "max": 6,
+      "mean": 6,
+      "median": 6
+    },
+    "owner": {
+      "n": 30,
+      "min": 26,
+      "max": 75,
+      "mean": 58.8,
+      "median": 64.5
+    },
+    "status": {
+      "n": 14,
+      "min": 27,
+      "max": 72,
+      "mean": 58.857142857142854,
+      "median": 63.0
+    },
+    "wrong_withdrawn": {
+      "n": 8,
+      "min": 27,
+      "max": 75,
+      "mean": 62.5,
+      "median": 66.0
+    },
+    "stale_active": {
+      "n": 8,
+      "min": 25,
+      "max": 76,
+      "mean": 47.875,
+      "median": 46.0
+    },
+    "legacy_text": {
+      "n": 20,
+      "min": 31,
+      "max": 120,
+      "mean": 61.85,
+      "median": 65.0
+    }
+  },
+  "audit_task_shift": {
+    "calls": 12,
+    "new_system_prompt_unique_hashes": [
+      "f1b34311f9c1705eb336424bcfc71f6c76c6b9107dd85011be1c01129cc9856f"
+    ],
+    "training_same_system_prompt_calls": 0,
+    "input_key_sets": {
+      "conversation,intention_state,required_intent_ids,through_seq": 12
+    },
+    "intention_state_types": {
+      "list": 12
+    },
+    "required_intent_id_list_present": 12,
+    "audit_prompt_contract": "checks list, per-ID owner/status verdict/value/source_seqs; full-record coverage required",
+    "trained_checks_root_completions": 0,
+    "trained_verdict_fields": 0,
+    "training_prompt_tokens": {
+      "n": 500,
+      "min": 815,
+      "max": 1887,
+      "mean": 1209.918,
+      "median": 1273.5
+    },
+    "audit_prompt_tokens": {
+      "n": 12,
+      "min": 784,
+      "max": 933,
+      "mean": 867.8333333333334,
+      "median": 870.0
+    },
+    "training_completion_tokens": {
+      "n": 500,
+      "min": 6,
+      "max": 148,
+      "mean": 62.062,
+      "median": 53.0
+    },
+    "audit_generated_tokens": {
+      "n": 12,
+      "min": 103,
+      "max": 230,
+      "mean": 159.83333333333334,
+      "median": 144.5
+    },
+    "focal_acceptance_faults": {
+      "owner": {
+        "i2": 1,
+        "i3": 1
+      },
+      "wrong_withdrawn": {
+        "i1": 2
+      },
+      "uncertain_status": {
+        "i4": 2
+      }
+    }
+  },
+  "no_new_model_calls": true,
+  "new_training_runs": 0,
+  "limits": [
+    "Exact-input duplicate checks do not rule out semantic contradictions or broader template overlap.",
+    "A data-contract shift and sparse repair supervision are observable; their causal contribution requires a controlled model comparison.",
+    "Per-row completion lengths do not by themselves quantify useful learning or effective gradient contributions.",
+    "Counts describe model-authored/model-reviewed synthetic supervision, not human-validated annotation quality."
+  ]
+}

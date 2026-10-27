@@ -1,0 +1,530 @@
+{
+  "status": "completed",
+  "kind": "root_cause_diagnostic",
+  "date": "2026-10-27",
+  "timezone": "America/Halifax",
+  "status_meaning": "本轮限定诊断与记录完成；意图核查能力未通过验收，部分训练因果解释仍未确定。",
+  "title": "Tracker 为什么失败：接口错配已确认，原岗位修复也不稳定",
+  "lead": "当前不应换底座或直接加训练。核查改用了没有训练过的接口；回到原生接口后，6 条原训练样本也只修复 2 条。数据覆盖存在明确偏斜，但尚不能把失败唯一归因于数据或训练步数。",
+  "problem": "区分核查方法、训练数据、训练实现和推理配置的影响，解释归属、错误撤销恢复和不确定状态为什么仍会错。",
+  "comparison_conditions": "复用上一轮 12 条精确核查消息及其普通跟踪后状态、同一底座文件、量化和依赖、greedy 解码与 1024 输出上限；仅在新增对照中关闭既有适配器。比较历史 v2 输出，不重跑普通跟踪。不同进程不保证逐位数值相同；历史记录未记录 GPU 名称。",
+  "new_model_calls": 18,
+  "component_calls": {
+    "adapter_off": 12,
+    "training_fit": 6
+  },
+  "reused_model_calls": 12,
+  "training_runs": 0,
+  "model": "Qwen/Qwen2.5-14B-Instruct",
+  "base_revision": "cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8",
+  "adapter": "tracker-lora-repair-v2/formal-01",
+  "weights_changed": false,
+  "new_scenarios": 0,
+  "confirmed": [
+    {
+      "title": "核查任务与训练契约不一致",
+      "evidence": "500 条训练 completion 全部使用 operations，零条 checks/verdict；新核查同时改变系统指令、输入状态投影和嵌套输出。相同核查输入，历史 v2 可执行报告 0/12，关闭适配器后 10/12；合法 JSON 为 1/12 对 11/12。",
+      "implication": "把当前 LoRA 直接用于这个新核查岗位是未验证的方法变更；不能把全部失败先归咎于标签质量。现有证据支持新任务上存在适配器相关的不兼容。",
+      "limitation": "没有分别操纵输入投影、指令与输出格式，不能确认哪一项占主导，也不能证明关闭 LoRA 就能解决意图遗漏。"
+    },
+    {
+      "title": "问题不止是新 JSON 格式",
+      "evidence": "同一 v2 在 6 条精确原训练 prompt 上，operations 6/6 可执行，但完整焦点修复只有 2/6：归属 0/2，撤销恢复 1/2，不确定状态 1/2。三条漏修，一条错误撤销。",
+      "implication": "当前 checkpoint 连这些已经训练过的修复例也没有稳定复现，不能把训练完成或 loss 下降当作岗位能力验收。",
+      "limitation": "只有 6 条定向训练样本；没有在相同六条上关闭适配器，不能断言这些语义错误由 LoRA 单独造成，亦不能推断全量欠拟合。"
+    },
+    {
+      "title": "修复数据的身份与位置覆盖偏窄",
+      "evidence": "30 条注入归属修复全部针对 i2、引用 seq0、修回首位说话人；原测试 20 条归属故障中 19 条在 i3。8 条训练误撤销修复全部是第二人的 i4，原测试 5 条全部是第一人的 i1。140 条故障训练没有同原文干净前态配对；140/140 修复放目标末尾，其中 111 条之前还有当前操作。",
+      "implication": "训练设计给了身份、位置和动作顺序捷径，缺少同内容不同状态的反例。后续数据修订应优先修这些结构，而非无差别扩大数量。",
+      "limitation": "这些是已确认的数据分布事实，不是模型采用捷径的因果证明。另有 4 个普通归属更新操作，以及 4 条普通样本中的 5 个 reopen 操作，不能将固定模式泛化到所有训练操作。尾位置也解释不了六条中的空输出与错误撤销。"
+    },
+    {
+      "title": "核查功能的范围不能覆盖所有遗漏",
+      "evidence": "当前核查只修改已有记录的 owner/status；上一轮一条正确前态经普通跟踪后 i4 文本损坏且漏掉新 i5，元数据核查无法修复。",
+      "implication": "对这版功能只能宣称核查已有意图的归属和状态，不能宣称已实现完整意图恢复。",
+      "limitation": "本轮不新增文本恢复或缺失记录恢复，以遵守限定范围。"
+    }
+  ],
+  "checked_explanations": [
+    {
+      "title": "未发现可解释全部失败的训练实现错误",
+      "evidence": "500/500 tokenizer 前缀与目标对齐；500 行各处理一次，32 次 optimizer 更新与最后 4 行累积组吻合；672 个适配器张量有限、336 个 B 矩阵非零，梯度有限且非零；CPU loss/梯度对照通过。加载工件和已记录量化设置匹配。",
+      "implication": "没有证据支持“根本没训练、标签整体错位、加载了空适配器”等解释。",
+      "limitation": "检查通过不证明优化配方足够，也不排除量化损失或未测实现因素；没有重放完整 CUDA 训练。"
+    },
+    {
+      "title": "当前不支持大面积错误标签作为主因",
+      "evidence": "750 条 train/dev/test 结构与输入目标对应通过，定向复核 20 条未发现焦点语义错标；发现一处冗余 assistant 引用。",
+      "implication": "目前更明确的问题是覆盖与任务契约，而非已有证据证明大量标签错误。",
+      "limitation": "结构检查不是语义标注检查；20 条是未盲人工智能定向复核，并未逐条人工核验全部 750 条。"
+    },
+    {
+      "title": "新诊断没有输出长度截断",
+      "evidence": "18 条新增生成全部以配置 EOS 151645 结束，均未触发 token 上限；历史 24 条输出也未触顶，但没有保存终止 token。",
+      "implication": "不能用“输出上限太小”解释这些新增样本的遗漏。",
+      "limitation": "历史精确终止原因不可追溯；正常 EOS 不表示答案完整。"
+    }
+  ],
+  "unresolved": [
+    {
+      "title": "训练预算与目标权重的作用尚未识别",
+      "evidence": "当前只训练 1 epoch、32 次更新；按样本平均 completion loss，长度 6–148 token，同组最短样本单 token 相对权重可为最长约 24.67 倍。",
+      "implication": "训练强度、短输出权重和岗位监督都是候选解释，但不能据此直接加 epoch 或调 rank。",
+      "limitation": "没有固定其他因素的训练干预；欠拟合、过拟合、学习率、rank、量化各自影响未确定。"
+    },
+    {
+      "title": "数据偏斜究竟造成多少失败尚未识别",
+      "evidence": "已确认身份/位置集中和缺少干净配对，但原训练样本也只修复 2/6。",
+      "implication": "仅用“未见位置泛化差”不能解释全部现象；可能同时存在监督目标与学习不足。",
+      "limitation": "没有重训平衡数据版本，不提供各原因的百分比分摊或成功率预测。"
+    }
+  ],
+  "shared_pre_audit": {
+    "faulty_correct": 0,
+    "faulty_inputs": 6,
+    "clean_correct": 5,
+    "clean_inputs": 6
+  },
+  "comparison_rows": [
+    {
+      "arm": "adapter_disabled",
+      "label": "同一底座，诊断时关闭适配器",
+      "inputs": 12,
+      "json_valid": 11,
+      "accepted_reports": 10,
+      "faulty_correct": 2,
+      "faulty_inputs": 6,
+      "clean_correct": 5,
+      "clean_inputs": 6,
+      "clean_damaged": 0,
+      "new_other_owner_status_errors": 0,
+      "source_error_changes": 1,
+      "executed_changed_fields": 2,
+      "faulty_full_meaning_correct": 2,
+      "clean_full_meaning_correct": 5
+    },
+    {
+      "arm": "tracker_v2",
+      "label": "既有 v2 LoRA 核查（历史输出）",
+      "inputs": 12,
+      "json_valid": 1,
+      "accepted_reports": 0,
+      "faulty_correct": 0,
+      "faulty_inputs": 6,
+      "clean_correct": 5,
+      "clean_inputs": 6,
+      "clean_damaged": 0,
+      "new_other_owner_status_errors": 0,
+      "source_error_changes": 0,
+      "executed_changed_fields": 0,
+      "faulty_full_meaning_correct": 0,
+      "clean_full_meaning_correct": 5
+    }
+  ],
+  "training_fit": {
+    "inputs": 6,
+    "valid_outputs": 6,
+    "focal_metadata_correct": 2,
+    "full_meaning_correct": 2,
+    "source_sufficient_repairs": 2,
+    "full_state_meaning_correct": 2,
+    "rows": [
+      {
+        "focus": "owner",
+        "inputs": 2,
+        "valid_outputs": 2,
+        "focal_metadata_correct": 0,
+        "full_meaning_correct": 0,
+        "full_state_meaning_correct": 0,
+        "source_sufficient_repairs": 0,
+        "label": "归属"
+      },
+      {
+        "focus": "wrong_withdrawn",
+        "inputs": 2,
+        "valid_outputs": 2,
+        "focal_metadata_correct": 1,
+        "full_meaning_correct": 1,
+        "full_state_meaning_correct": 1,
+        "source_sufficient_repairs": 1,
+        "label": "撤销恢复"
+      },
+      {
+        "focus": "uncertain_status",
+        "inputs": 2,
+        "valid_outputs": 2,
+        "focal_metadata_correct": 1,
+        "full_meaning_correct": 1,
+        "full_state_meaning_correct": 1,
+        "source_sufficient_repairs": 1,
+        "label": "不确定状态"
+      }
+    ],
+    "limitations": [
+      "六条按类别、语言和原文件顺序事先确定，不按输出挑样；都曾用于训练，不能作为泛化测试。",
+      "评分为依据原文的未盲 AI 复核，无用户研究或人工独立金标准。",
+      "格式可执行不代表修复正确；不将这六条与上面的十二条合并为一个成功率。"
+    ]
+  },
+  "failures": [
+    "适配器关闭的 12 次生成全部完成，但整个 collection 的最终状态仍为 failed：退出 PEFT disable_adapter 上下文后，0 trainable 参数断言失败。原始失败记录保留，没有将其改写为成功。",
+    "源码与 tiny CPU 重现表明重新启用 adapter 会改变 requires_grad 标志；不改变参数值或 eval 状态。每次实际生成前均记录 336 层 disabled、0 trainable，后验复核确认 12 条输入、日志、输出完整；原进程退出后的逐参数标志不可重建。",
+    "关闭适配器只修复 2/6 故障，均属不确定状态；其中中文修复引用缺少指代所需的 assistant 原文，充分证据支持的修复仅 1/6。归属和撤销恢复仍未修复。",
+    "原生六条训练复现中，一条将应为 uncertain 的要求错误 withdraw；合法 operations 不能成为自动提交的充分依据。",
+    "训练审计首版根目录错误、CPU 上下文复现首版 CUDA 初始化检查失败均保留；修正的是新诊断工具，未改历史训练与输出。"
+  ],
+  "limitations": [
+    "保持原底座与适配器工件不变；关闭适配器仅用于定位，不是更换生产岗位或替代同底座多 LoRA 方向。",
+    "只使用已暴露核查输入和已训练样本，无新场景、无新训练；不能据此声称最终任务质量、用户收益或未见组合泛化改善。",
+    "对照严格绑定消息、token IDs、工件和配置，但历史/新增运行不在同一进程；没有独立硬件层记录保证逐位确定性。",
+    "核查未造成误改的历史结果以零次提交为前提，不能解释为核查准确。",
+    "部分根因仍是候选解释。记录完成不代表原因已全部因果识别，当前功能仍不具备启用依据。"
+  ],
+  "next_action": {
+    "status": "planned_not_run",
+    "text": "保持当前底座与 LoRA 冻结，暂不启用失败的核查。优先把核查职责限制在原生 operations 契约并保留 harness 的来源、归属和状态转换校验；是否有效仍需在原小样本验收中验证。本轮到此停止新增生成。平衡身份/位置、补干净配对和修复顺序的数据方案只作修订依据，尚未训练。"
+  },
+  "index_text": "18 次限定诊断、0 次训练：新核查接口错配；原生训练样本修复 2/6；覆盖偏斜已确认，具体训练因果仍未确定。",
+  "evidence_source_sha256": {
+    "output/research/2026-10-27/tracker-root-cause/data/census.json": "f962ea27347be54cda45efe29021ca3c6d1a26396ddf7e28f40ede6e40b6a19a",
+    "output/research/2026-10-27/tracker-root-cause/data/assessment.json": "8fd4aafb94386a70d0eca5f5a249bab867ab195a8d2e54f6daec30d4a278bbde",
+    "output/research/2026-10-27/tracker-root-cause/data/repair-position-addendum.json": "6a78fbc10b7472f9f778312da8f91aa97279111102bfd1ca7abae65933a118ea",
+    "output/research/2026-10-27/tracker-root-cause/training/runtime-integrity.json": "17f92292e2df3ac26fd3a150b0901530ad789497224a25173209964043cd424a",
+    "output/research/2026-10-27/tracker-root-cause/training/cause-assessment.json": "3a752a357fe195854246eff6c0f24b6580beb857b2e123ece478a4ba43ec48fa",
+    "output/research/2026-10-27/tracker-root-cause/training/adapter-tensor-statistics.json": "21504c9021458012237684db2eed7010724e56c2e13bec40bae1e4119198d995",
+    "output/research/2026-10-27/tracker-root-cause/training/adapter-context-postcheck.json": "44931ce7cefd3e3d269a19b8bce350a4480911641050c285901e055068c561a5",
+    "output/research/2026-10-27/tracker-root-cause/method/method-report.json": "9568c56eb730596e6dfef333ca066a36ec59455ee09569fc4e191e934391d124",
+    "output/research/2026-10-27/tracker-root-cause/method/adapter-off-protocol.json": "f5828b8bf17a987634af4c403d2ceca7c597ded95512e57916532c0df63724d7",
+    "output/research/2026-10-27/tracker-root-cause/method/adapter-off-preflight-review-v2.json": "d30dd9a7d9864f5a1d4e7e0d2cdf225fc15e88a81163c31184cd4dae5a6b2266",
+    "output/research/2026-10-27/tracker-root-cause/method/adapter-off-post-review.json": "f8f06563d64b83c3c4d94d8be7f10f1fe606e5ed38b941eb455111ddba2f8480",
+    "output/research/2026-10-27/tracker-root-cause/ablation/adapter-off-01/result.json": "75f58615e01d99d2df83935a401b8c996281878fa8c5d7181f3aa5e9fda98f19",
+    "output/research/2026-10-27/tracker-root-cause/ablation/adapter-off-01/config.json": "4a2b0bbd9d9bb76759a8851843b38d47cd711ac6e76cb8789d6748328d7542de",
+    "output/research/2026-10-27/tracker-root-cause/fit/selection.json": "c8028be138e7dd3acdea2caf57380f29dc4b3b8a6c1e79dfa18242f53dd3801f",
+    "output/research/2026-10-27/tracker-root-cause/fit/protocol.json": "2c128f8ae6fc5cf648c19146ee3727c5b449d338c5a815ebc61cb9e8bdeb883f",
+    "output/research/2026-10-27/tracker-root-cause/fit/source-review.json": "63ed4cfeaf234f5e0e874f63c86a4c1e726261a323abc79af31c3cf0a80f61bc",
+    "output/research/2026-10-27/tracker-root-cause/fit/preflight-review.json": "2d7f81dab0871624887952343a908931c897b3627d589e17b2416e15346565e6",
+    "output/research/2026-10-27/tracker-root-cause/fit/collection-01/config.json": "338971f32194f15638c2d6fb2e76f769a97c49544519f9f0cce23a9a58dc5d58",
+    "output/research/2026-10-27/tracker-root-cause/fit/collection-01/result.json": "1a72cd93a953b15d0f89510e741c662a36dc9dd27d9fcddb05f54f31837928da",
+    "output/research/2026-10-27/tracker-root-cause/fit/post-review.json": "81c458476ad9c40748eb597bbee9ed4c3d0dca32a0f068a4516ce234e5ac29d0"
+  },
+  "independent_final_audit": "passed",
+  "reviewed_interpretation_source_sha256": "ec0d09597640ff32725b12817d4fbd468f7e543f54d79631e913326a533d2127",
+  "frozen_at_utc": "2026-10-27T13:16:49.710782+00:00",
+  "source_and_export_files": {
+    "report.json": {
+      "source_path": "output/research/2026-10-27/tracker-root-cause/analysis/report.json",
+      "source_sha256": "ec0d09597640ff32725b12817d4fbd468f7e543f54d79631e913326a533d2127",
+      "export_sha256": "ec0d09597640ff32725b12817d4fbd468f7e543f54d79631e913326a533d2127",
+      "transformation": "none"
+    },
+    "final-report-review.json": {
+      "source_path": "output/research/2026-10-27/tracker-root-cause/review/final-report-review.json",
+      "source_sha256": "0c5d6a1c0432f8c92aced7ed94d3fb6a0122279521545528e82c5aa88e6f8c05",
+      "export_sha256": "28a831309075991cf2216d99462f8ef5c200cb6d2fe2a38d9bc51eb02578f9d3",
+      "transformation": "JSON formatting and local path redaction only for retained fields; original source hashes are unchanged."
+    },
+    "engineering-validation.json": {
+      "source_path": "output/research/2026-10-27/tracker-root-cause/engineering/validation.json",
+      "source_sha256": "b6283d05dcafa70de5a933305dd5f6951a5406ce1f9e83245969ebed59aeebc8",
+      "export_sha256": "65fa0ad7f98fc10ba3367e9137c9533abcc3612374cbc3e53572abf5d132f418",
+      "transformation": "JSON formatting and local path redaction only for retained fields; original source hashes are unchanged."
+    },
+    "prior-bundles.json": {
+      "source_path": "output/research/2026-10-27/tracker-root-cause/analysis/prior-bundles.json",
+      "source_sha256": "da839ce891a0916dac460ac5975a5a696b0a48376546af9adfa5856ce54c29f8",
+      "export_sha256": "38c506bfc2b0bc7a6a6390fbb9f9cf3d691756a443679eb56839bac099990d9b",
+      "transformation": "JSON formatting and local path redaction only for retained fields; original source hashes are unchanged."
+    },
+    "data-census.json": {
+      "source_path": "output/research/2026-10-27/tracker-root-cause/data/census.json",
+      "source_sha256": "f962ea27347be54cda45efe29021ca3c6d1a26396ddf7e28f40ede6e40b6a19a",
+      "export_sha256": "6b6b60a99e80a865003279c993348a294bad433c10c4c289764ff7d4c6cb77eb",
+      "transformation": "JSON formatting and local path redaction only for retained fields; original source hashes are unchanged."
+    },
+    "data-assessment.json": {
+      "source_path": "output/research/2026-10-27/tracker-root-cause/data/assessment.json",
+      "source_sha256": "8fd4aafb94386a70d0eca5f5a249bab867ab195a8d2e54f6daec30d4a278bbde",
+      "export_sha256": "33f607884c96a7f4ef844fb29902ce8fd96d3e46ad13c0e5371050071097fb41",
+      "transformation": "Omit reviewed_examples containing individual dialogue/target/output details. JSON formatting and local path redaction only for retained fields; original source hashes are unchanged."
+    },
+    "repair-position-addendum.json": {
+      "source_path": "output/research/2026-10-27/tracker-root-cause/data/repair-position-addendum.json",
+      "source_sha256": "6a78fbc10b7472f9f778312da8f91aa97279111102bfd1ca7abae65933a118ea",
+      "export_sha256": "e5790d6c5683721e60d87c8b78c7edc7f5a226b5e6d5ba3a7ad744723fd3129d",
+      "transformation": "Omit training_row_layouts containing individual dialogue/target/output details. Omit six_training_fit_mappings containing individual dialogue/target/output details. JSON formatting and local path redaction only for retained fields; original source hashes are unchanged."
+    },
+    "method-report.json": {
+      "source_path": "output/research/2026-10-27/tracker-root-cause/method/method-report.json",
+      "source_sha256": "9568c56eb730596e6dfef333ca066a36ec59455ee09569fc4e191e934391d124",
+      "export_sha256": "d2b36ef35a684dd7910eb23ef5b96a1537daab1bb3a3ef307fc4f45e603c28d3",
+      "transformation": "Omit non_syntax_failures_observed containing individual dialogue/target/output details. JSON formatting and local path redaction only for retained fields; original source hashes are unchanged."
+    },
+    "adapter-off-protocol.json": {
+      "source_path": "output/research/2026-10-27/tracker-root-cause/method/adapter-off-protocol.json",
+      "source_sha256": "f5828b8bf17a987634af4c403d2ceca7c597ded95512e57916532c0df63724d7",
+      "export_sha256": "263491ea6551e75d900cc5dca0b0efb102607f02d29233f8ac87d029fb954d50",
+      "transformation": "JSON formatting and local path redaction only for retained fields; original source hashes are unchanged."
+    },
+    "adapter-off-preflight-review-initial.json": {
+      "source_path": "output/research/2026-10-27/tracker-root-cause/method/adapter-off-preflight-review.json",
+      "source_sha256": "b275dc932c9447021f0502be0107e8475ef4361358c3c63b1f811ec41819d7ed",
+      "export_sha256": "9d58c3d5ebfc1e9cb661b144a8a562a3ae31a4913d3982c35ad28a179d02cbb2",
+      "transformation": "JSON formatting and local path redaction only for retained fields; original source hashes are unchanged."
+    },
+    "adapter-off-preflight-review-v2.json": {
+      "source_path": "output/research/2026-10-27/tracker-root-cause/method/adapter-off-preflight-review-v2.json",
+      "source_sha256": "d30dd9a7d9864f5a1d4e7e0d2cdf225fc15e88a81163c31184cd4dae5a6b2266",
+      "export_sha256": "fa99524a9f4074c419fa7aae2e74d4b17f4d04eedd5620b45f43e1e0f73ff038",
+      "transformation": "JSON formatting and local path redaction only for retained fields; original source hashes are unchanged."
+    },
+    "adapter-off-post-review.json": {
+      "source_path": "output/research/2026-10-27/tracker-root-cause/method/adapter-off-post-review.json",
+      "source_sha256": "f8f06563d64b83c3c4d94d8be7f10f1fe606e5ed38b941eb455111ddba2f8480",
+      "export_sha256": "cff05dfe39920026445d4935534e78a3cb9bc62f796381f36b731b85a1b2e94a",
+      "transformation": "Omit record text, changed-field evidence details and raw-evidence commentary; preserve recorded per-case metrics and aggregate judgments. JSON formatting and local path redaction only for retained fields; original source hashes are unchanged."
+    },
+    "adapter-off-config.json": {
+      "source_path": "output/research/2026-10-27/tracker-root-cause/ablation/adapter-off-01/config.json",
+      "source_sha256": "4a2b0bbd9d9bb76759a8851843b38d47cd711ac6e76cb8789d6748328d7542de",
+      "export_sha256": "822fbb396cfd5b74f548d990ad9b19d4a58fd19d43c4f8905b5b88073a344462",
+      "transformation": "JSON formatting and local path redaction only for retained fields; original source hashes are unchanged."
+    },
+    "adapter-off-result.json": {
+      "source_path": "output/research/2026-10-27/tracker-root-cause/ablation/adapter-off-01/result.json",
+      "source_sha256": "75f58615e01d99d2df83935a401b8c996281878fa8c5d7181f3aa5e9fda98f19",
+      "export_sha256": "f0496d13428ed06043f6d797c6c708e0c18a1a19d1c820f0e3e50575c16d5751",
+      "transformation": "JSON formatting and local path redaction only for retained fields; original source hashes are unchanged."
+    },
+    "adapter-off-attempts.jsonl": {
+      "source_path": "output/research/2026-10-27/tracker-root-cause/ablation/adapter-off-01/attempts.jsonl",
+      "source_sha256": "ba540c239cec3cdd387c63f3c0cfa93eb4b7c6e08c2ce37d6f17a0d4290566c6",
+      "export_sha256": "ba540c239cec3cdd387c63f3c0cfa93eb4b7c6e08c2ce37d6f17a0d4290566c6",
+      "transformation": "none"
+    },
+    "training-runtime-integrity.json": {
+      "source_path": "output/research/2026-10-27/tracker-root-cause/training/runtime-integrity.json",
+      "source_sha256": "17f92292e2df3ac26fd3a150b0901530ad789497224a25173209964043cd424a",
+      "export_sha256": "8507505dc0cbe1eddb088ec43da96088727eb15a1494c15d1c7f5c3354c48a7e",
+      "transformation": "JSON formatting and local path redaction only for retained fields; original source hashes are unchanged."
+    },
+    "training-cause-assessment.json": {
+      "source_path": "output/research/2026-10-27/tracker-root-cause/training/cause-assessment.json",
+      "source_sha256": "3a752a357fe195854246eff6c0f24b6580beb857b2e123ece478a4ba43ec48fa",
+      "export_sha256": "810f10cb4b57f2ad34c467db71fdb99684e14fe6ab494a80f43d827c71de9ec7",
+      "transformation": "JSON formatting and local path redaction only for retained fields; original source hashes are unchanged."
+    },
+    "adapter-tensor-statistics.json": {
+      "source_path": "output/research/2026-10-27/tracker-root-cause/training/adapter-tensor-statistics.json",
+      "source_sha256": "21504c9021458012237684db2eed7010724e56c2e13bec40bae1e4119198d995",
+      "export_sha256": "f48975a9484d57a5e878e8622fd5ebb4220ab4313bac57fbb65b7732c7c4b631",
+      "transformation": "JSON formatting and local path redaction only for retained fields; original source hashes are unchanged."
+    },
+    "adapter-context-postcheck.json": {
+      "source_path": "output/research/2026-10-27/tracker-root-cause/training/adapter-context-postcheck.json",
+      "source_sha256": "44931ce7cefd3e3d269a19b8bce350a4480911641050c285901e055068c561a5",
+      "export_sha256": "4bcf4ed328122ce02686623b29d083bfe0296e297654e8c4ab6cf2d3ef9f612e",
+      "transformation": "JSON formatting and local path redaction only for retained fields; original source hashes are unchanged."
+    },
+    "fit-selection.json": {
+      "source_path": "output/research/2026-10-27/tracker-root-cause/fit/selection.json",
+      "source_sha256": "c8028be138e7dd3acdea2caf57380f29dc4b3b8a6c1e79dfa18242f53dd3801f",
+      "export_sha256": "c90ba73f8c56628a910abf9eb20a11f676079084874cd0a49cbe26ab21d4b54a",
+      "transformation": "Omit per-case expected owner/status values; preserve selection IDs, hashes and source-order rule. JSON formatting and local path redaction only for retained fields; original source hashes are unchanged."
+    },
+    "fit-protocol.json": {
+      "source_path": "output/research/2026-10-27/tracker-root-cause/fit/protocol.json",
+      "source_sha256": "2c128f8ae6fc5cf648c19146ee3727c5b449d338c5a815ebc61cb9e8bdeb883f",
+      "export_sha256": "46c95ee426300f2a0ccb676dac642653ceaec1b14fe32690ad454c730f19cab5",
+      "transformation": "JSON formatting and local path redaction only for retained fields; original source hashes are unchanged."
+    },
+    "fit-protocol-initial.json": {
+      "source_path": "output/research/2026-10-27/tracker-root-cause/fit/preflight-history/protocol-initial.json",
+      "source_sha256": "ef6c1128039d25386e842b9be56ac297c5b4007429233f75683597512d74f2c1",
+      "export_sha256": "5ef91f9e883bfc8b11a2dac4355637e057f11d7f5b65dfd6583b98fb117cdc82",
+      "transformation": "JSON formatting and local path redaction only for retained fields; original source hashes are unchanged."
+    },
+    "fit-source-review.json": {
+      "source_path": "output/research/2026-10-27/tracker-root-cause/fit/source-review.json",
+      "source_sha256": "63ed4cfeaf234f5e0e874f63c86a4c1e726261a323abc79af31c3cf0a80f61bc",
+      "export_sha256": "a4e3ee014e1fa717e2b77271df88707938d4736814f38a721fb937a2d2d7b4d2",
+      "transformation": "Project cases to IDs and existing review verdicts; omit dialogue evidence, prior/target state, repair and semantic notes. JSON formatting and local path redaction only for retained fields; original source hashes are unchanged."
+    },
+    "fit-preflight-review.json": {
+      "source_path": "output/research/2026-10-27/tracker-root-cause/fit/preflight-review.json",
+      "source_sha256": "2d7f81dab0871624887952343a908931c897b3627d589e17b2416e15346565e6",
+      "export_sha256": "2732a3ba9a618e66505705e99bf35c0ffc543621031641affb29e51bff2e65b5",
+      "transformation": "JSON formatting and local path redaction only for retained fields; original source hashes are unchanged."
+    },
+    "fit-post-review.json": {
+      "source_path": "output/research/2026-10-27/tracker-root-cause/fit/post-review.json",
+      "source_sha256": "81c458476ad9c40748eb597bbee9ed4c3d0dca32a0f068a4516ce234e5ac29d0",
+      "export_sha256": "bd65587288641b789c3d2aa444510667c9e6032fa6bfa67761af43670de9951c",
+      "transformation": "Omit record states, operation evidence commentary and case notes; preserve recorded per-case metrics and aggregate judgments. JSON formatting and local path redaction only for retained fields; original source hashes are unchanged."
+    },
+    "fit-config.json": {
+      "source_path": "output/research/2026-10-27/tracker-root-cause/fit/collection-01/config.json",
+      "source_sha256": "338971f32194f15638c2d6fb2e76f769a97c49544519f9f0cce23a9a58dc5d58",
+      "export_sha256": "889be436f6b73c4f180642347aff15dbf2f4e38d393decc79de41bac5ea1e194",
+      "transformation": "JSON formatting and local path redaction only for retained fields; original source hashes are unchanged."
+    },
+    "fit-result.json": {
+      "source_path": "output/research/2026-10-27/tracker-root-cause/fit/collection-01/result.json",
+      "source_sha256": "1a72cd93a953b15d0f89510e741c662a36dc9dd27d9fcddb05f54f31837928da",
+      "export_sha256": "35b6b069fbc2fc10371b76eabe1e6dbc626ec7bfc9ae6af04eb826bed4ed2559",
+      "transformation": "JSON formatting and local path redaction only for retained fields; original source hashes are unchanged."
+    },
+    "fit-attempts.jsonl": {
+      "source_path": "output/research/2026-10-27/tracker-root-cause/fit/collection-01/attempts.jsonl",
+      "source_sha256": "7afec06d120f1c85889e2e93e8d2182a78cf74dbfa9537a275ccfd4843f8abdb",
+      "export_sha256": "7afec06d120f1c85889e2e93e8d2182a78cf74dbfa9537a275ccfd4843f8abdb",
+      "transformation": "none"
+    },
+    "build_report.py": {
+      "source_path": "output/research/2026-10-27/tracker-root-cause/build_report.py",
+      "source_sha256": "18768a2e0523b7cf3f273428ec02e65ad0b2cc3d164f497ec6696ff333613811",
+      "export_sha256": "18768a2e0523b7cf3f273428ec02e65ad0b2cc3d164f497ec6696ff333613811",
+      "transformation": "none"
+    },
+    "export_publication.py": {
+      "source_path": "output/research/2026-10-27/tracker-root-cause/export_publication.py",
+      "source_sha256": "6f044777144660b04f621fff83e2e104ff3e4ea935de0c9f07ef8a66a9ce5932",
+      "export_sha256": "6f044777144660b04f621fff83e2e104ff3e4ea935de0c9f07ef8a66a9ce5932",
+      "transformation": "none"
+    },
+    "review_final_report.py": {
+      "source_path": "output/research/2026-10-27/tracker-root-cause/review/review_final_report.py",
+      "source_sha256": "deac0f0830ed42d31f3188586dbf12f52606eb2e8f28d7cc662b9ab070b85822",
+      "export_sha256": "deac0f0830ed42d31f3188586dbf12f52606eb2e8f28d7cc662b9ab070b85822",
+      "transformation": "none"
+    },
+    "inspect_training_data.py": {
+      "source_path": "output/research/2026-10-27/tracker-root-cause/data/inspect_training_data.py",
+      "source_sha256": "524d30bd14c170b4b6dcd6a0721abb406a0bdd418c13ae9950c6c3bedb5f044e",
+      "export_sha256": "524d30bd14c170b4b6dcd6a0721abb406a0bdd418c13ae9950c6c3bedb5f044e",
+      "transformation": "none"
+    },
+    "write_repair_position_addendum.py": {
+      "source_path": "output/research/2026-10-27/tracker-root-cause/data/write_repair_position_addendum.py",
+      "source_sha256": "7882918231116c5093961fca8004dc1455cea8e36d759bf0b28bf7c3eb731e66",
+      "export_sha256": "7882918231116c5093961fca8004dc1455cea8e36d759bf0b28bf7c3eb731e66",
+      "transformation": "none"
+    },
+    "audit_training.py": {
+      "source_path": "output/research/2026-10-27/tracker-root-cause/training/audit_training.py",
+      "source_sha256": "602b0c65375bd176308f2aacb62b68be9eef49875487c8ccf0411b0e8d2157d3",
+      "export_sha256": "602b0c65375bd176308f2aacb62b68be9eef49875487c8ccf0411b0e8d2157d3",
+      "transformation": "none"
+    },
+    "check_adapter_context.py": {
+      "source_path": "output/research/2026-10-27/tracker-root-cause/training/check_adapter_context.py",
+      "source_sha256": "34253cbda02e27829761d029a80c02abc77339ed54ad12ffd4084b096dc01a46",
+      "export_sha256": "34253cbda02e27829761d029a80c02abc77339ed54ad12ffd4084b096dc01a46",
+      "transformation": "none"
+    },
+    "method-freeze-protocol.py": {
+      "source_path": "output/research/2026-10-27/tracker-root-cause/method/freeze_protocol.py",
+      "source_sha256": "f895154829fd8519b55b4e056e22ff46b52b07ec72e491257c0f350b3eddbae2",
+      "export_sha256": "f895154829fd8519b55b4e056e22ff46b52b07ec72e491257c0f350b3eddbae2",
+      "transformation": "none"
+    },
+    "method-review-preflight.py": {
+      "source_path": "output/research/2026-10-27/tracker-root-cause/method/review_preflight.py",
+      "source_sha256": "b0ed5ff55e8f0d661be28b5c316a834242318f009cdc0935def5ab65fadfc88c",
+      "export_sha256": "b0ed5ff55e8f0d661be28b5c316a834242318f009cdc0935def5ab65fadfc88c",
+      "transformation": "none"
+    },
+    "method-review-preflight-v2.py": {
+      "source_path": "output/research/2026-10-27/tracker-root-cause/method/review_preflight_v2.py",
+      "source_sha256": "6250868eff3e56b9e7c3e79d9fe09dfff392e8c7a05d4a3f50d3338b1c371ec9",
+      "export_sha256": "6250868eff3e56b9e7c3e79d9fe09dfff392e8c7a05d4a3f50d3338b1c371ec9",
+      "transformation": "none"
+    },
+    "inspect_completed_diagnostic.py": {
+      "source_path": "output/research/2026-10-27/tracker-root-cause/method/inspect_completed_diagnostic.py",
+      "source_sha256": "3587691937cdf947e6c40a0f1ecdb7d60ee70e67a7857b311a8b207600c53170",
+      "export_sha256": "3587691937cdf947e6c40a0f1ecdb7d60ee70e67a7857b311a8b207600c53170",
+      "transformation": "none"
+    },
+    "fit-prepare-selection.py": {
+      "source_path": "output/research/2026-10-27/tracker-root-cause/fit/prepare_selection.py",
+      "source_sha256": "b268fed3e1fdc06c217bcdbcfc38d14ab7e1ea286940df9165285ff982819f3a",
+      "export_sha256": "b268fed3e1fdc06c217bcdbcfc38d14ab7e1ea286940df9165285ff982819f3a",
+      "transformation": "none"
+    },
+    "fit-align-protocol-contract.py": {
+      "source_path": "output/research/2026-10-27/tracker-root-cause/fit/align_protocol_contract.py",
+      "source_sha256": "2e1fc0066f8e75620fb9d1011456f53eb748f6006240aeb4ece283b4504d028b",
+      "export_sha256": "2e1fc0066f8e75620fb9d1011456f53eb748f6006240aeb4ece283b4504d028b",
+      "transformation": "none"
+    },
+    "fit-write-preflight-review.py": {
+      "source_path": "output/research/2026-10-27/tracker-root-cause/fit/write_preflight_review.py",
+      "source_sha256": "2035f4e12b47a59355baec64f1493a4b587c4426714b03ed81c86a6a36a018c4",
+      "export_sha256": "2035f4e12b47a59355baec64f1493a4b587c4426714b03ed81c86a6a36a018c4",
+      "transformation": "none"
+    },
+    "inspect_generated_fit.py": {
+      "source_path": "output/research/2026-10-27/tracker-root-cause/fit/inspect_generated_fit.py",
+      "source_sha256": "5013cfa357eff582b4d829293ea27e9261b824885237928cc50bbeaf717815c9",
+      "export_sha256": "5013cfa357eff582b4d829293ea27e9261b824885237928cc50bbeaf717815c9",
+      "transformation": "none"
+    },
+    "collect_audit_adapter_off.py": {
+      "source_path": "experiments/deep_conversation/tracker_lora/diagnostics/collect_audit_adapter_off.py",
+      "source_sha256": "8b486d8ba34703bf3ddef39b8565933ebbb31388386d440d30c35ae556716f5a",
+      "export_sha256": "8b486d8ba34703bf3ddef39b8565933ebbb31388386d440d30c35ae556716f5a",
+      "transformation": "none"
+    },
+    "collect_training_fit.py": {
+      "source_path": "experiments/deep_conversation/tracker_lora/diagnostics/collect_training_fit.py",
+      "source_sha256": "36f0b0dc412604bb7474e8da4e583efcc58c16c9e73583c9cfa2c0b6ad1108fd",
+      "export_sha256": "36f0b0dc412604bb7474e8da4e583efcc58c16c9e73583c9cfa2c0b6ad1108fd",
+      "transformation": "none"
+    },
+    "collect_three_arm.py": {
+      "source_path": "experiments/deep_conversation/tracker_lora/repair_v2/collect_three_arm.py",
+      "source_sha256": "6914ae922056b288a55f4fdaf197816ea4ab649b35e9cf80de0665521d6044d8",
+      "export_sha256": "6914ae922056b288a55f4fdaf197816ea4ab649b35e9cf80de0665521d6044d8",
+      "transformation": "none"
+    },
+    "evaluate_tracker.py": {
+      "source_path": "experiments/deep_conversation/tracker_lora/evaluate_tracker.py",
+      "source_sha256": "6e628968b52307f8160bcc673cb5abba8043490c810b22f0bd286fb9a4f33a6f",
+      "export_sha256": "6e628968b52307f8160bcc673cb5abba8043490c810b22f0bd286fb9a4f33a6f",
+      "transformation": "none"
+    },
+    "intention_state.py": {
+      "source_path": "experiments/deep_conversation/intention_state.py",
+      "source_sha256": "e028a604a93520801a0f752755d80b305afb1eebd8792ea0aeaaa3cd5c722f73",
+      "export_sha256": "e028a604a93520801a0f752755d80b305afb1eebd8792ea0aeaaa3cd5c722f73",
+      "transformation": "none"
+    },
+    "intent_audit.py": {
+      "source_path": "experiments/deep_conversation/tracker_lora/intent_audit/audit.py",
+      "source_sha256": "faf4e5b7cd69415a614e82cba8cfb8b3cb86e9d1fa49932086010d31038a06cb",
+      "export_sha256": "faf4e5b7cd69415a614e82cba8cfb8b3cb86e9d1fa49932086010d31038a06cb",
+      "transformation": "none"
+    },
+    "intent_pipeline.py": {
+      "source_path": "experiments/deep_conversation/tracker_lora/intent_audit/pipeline.py",
+      "source_sha256": "eb7bef2753dd6de310adcee9345e4abbbc4df60500e3dad3db3f66d74eb64239",
+      "export_sha256": "eb7bef2753dd6de310adcee9345e4abbbc4df60500e3dad3db3f66d74eb64239",
+      "transformation": "none"
+    }
+  },
+  "publication_policy": {
+    "originals_preserved": true,
+    "original_reports_replaced": false,
+    "excluded_content": [
+      "PRIVATE call/outcome/review files",
+      "Original conversation/prompt/completion text",
+      "Individual generated outputs or operations",
+      "Full generated/input token ID sequences",
+      "Manual review writer scripts that restate omitted case content"
+    ],
+    "source_hashes_include_unpublished_evidence": true,
+    "public_review_limits": "Public summaries are derived exports of the existing reviews, not new scoring. Exact local source files remain bound by SHA256.",
+    "release_checker_sha256": "fe4ad02d2f7abbb2ad23cb4230ea91d4838858b403a4d69e007861eeb4044586"
+  }
+}

@@ -1,0 +1,152 @@
+{
+  "id": "adapter-disable-context-postcheck",
+  "status": "postchecks_passed_original_collection_failed",
+  "date": "2026-10-27",
+  "timezone": "America/Halifax",
+  "checked_at_utc": "2026-10-27T12:49:56.585557+00:00",
+  "original_collection_status": "failed",
+  "original_result_unchanged": true,
+  "repeated_Qwen_generations": 0,
+  "new_training_runs": 0,
+  "scope": "One tiny CPU Linear+LoRA lifecycle reproduction with CUDA devices hidden, source inspection and saved artifact replay. No Qwen load, forward or generation. Final control does not initialize CUDA.",
+  "CPU_reproduction_startup_deviation": "The first control attempt imported PEFT before hiding CUDA devices; PEFT import initialized the CUDA runtime, failing the no-CUDA-initialization gate before Tiny model creation. No Qwen model or generated output was involved. The failed script/log are retained; final control explicitly hides CUDA devices.",
+  "cpu_reproduction": {
+    "peft_version": "0.21.2",
+    "base_linear_shape": [
+      3,
+      4
+    ],
+    "rank": 2,
+    "lora_parameters": 14,
+    "before": {
+      "training": false,
+      "any_nested_training": false,
+      "adapter_config_inference_mode": true,
+      "disabled_layers": 0,
+      "lora_layers": 1,
+      "requires_grad_names": [],
+      "trainable_parameters": 0
+    },
+    "inside_disable_adapter": {
+      "training": false,
+      "any_nested_training": false,
+      "adapter_config_inference_mode": true,
+      "disabled_layers": 1,
+      "lora_layers": 1,
+      "requires_grad_names": [],
+      "trainable_parameters": 0
+    },
+    "after_context": {
+      "training": false,
+      "any_nested_training": false,
+      "adapter_config_inference_mode": true,
+      "disabled_layers": 0,
+      "lora_layers": 1,
+      "requires_grad_names": [
+        "base_model.model.proj.lora_A.tracker_lora_v2.weight",
+        "base_model.model.proj.lora_B.tracker_lora_v2.weight"
+      ],
+      "trainable_parameters": 14
+    },
+    "after_explicit_refreeze": {
+      "training": false,
+      "any_nested_training": false,
+      "adapter_config_inference_mode": true,
+      "disabled_layers": 0,
+      "lora_layers": 1,
+      "requires_grad_names": [],
+      "trainable_parameters": 0
+    },
+    "all_parameter_values_unchanged": true,
+    "model_forward_calls": 0,
+    "optimizer_steps": 0,
+    "cuda_initialized": false
+  },
+  "source_mechanism": [
+    "PeftModel.disable_adapter finally calls base_model.enable_adapter_layers when entry state was enabled.",
+    "BaseTuner._enable_adapter_layers calls each BaseTunerLayer.enable_adapters(True).",
+    "BaseTunerLayer.enable_adapters(True) calls set_adapter(active_adapters) without inference_mode=True.",
+    "BaseTunerLayer.set_adapter defaults inference_mode=False and enables active adapter requires_grad; it does not call model.train()."
+  ],
+  "source_provenance": {
+    "peft/peft_model.py": "d22a1c50dea7a046ce28e71a79dfc20b1d96a2d238a9b457be6a88b6068e04d5",
+    "peft/tuners/tuners_utils.py": "e7f99b2ac5766ea317bcb943619d8a2a2235057acb5b543a1973ae8938173659",
+    "peft/tuners/lora/layer.py": "9a2688af69fd16cef94fdb08ab0e973b37d7b2a672e64ba2057a01df7e98b7d8"
+  },
+  "diagnosis": "The collector added a post-context all-parameters-frozen requirement that PEFT disable_adapter does not restore. The CPU control reproduces the exact sufficient condition for the observed assertion failure: eval remains false-training while LoRA requires_grad becomes true.",
+  "chronology_evidence": "All 12 calls and all 12 applied/rejected audit outcomes were durably appended before leaving disable_adapter; only then did line149 state(model,False) fail.",
+  "independent_postchecks": {
+    "calls": 12,
+    "completed_generations": 12,
+    "outcomes": 12,
+    "started_journal_entries": 12,
+    "ended_journal_entries": 12,
+    "all_call_record_journal_digests_match": true,
+    "all_exact_captured_inputs_match": true,
+    "per_generation_disabled_layer_gate_matches": 12,
+    "all_actual_generation_gates_336_disabled_0_trainable": true,
+    "generated_EOS_counts": {
+      "151645": 12
+    },
+    "token_caps_hit": 0,
+    "source_bindings_verified": 27,
+    "adapter_artifacts_unchanged": {
+      "training_result_sha256": "d8b9c1e0931c2d271f14d38e90e88e554c9b97a89494575181adfdf0aca88507",
+      "weights_sha256": "a2cf443a6e26e3868c7a905190b20c89bdf980f18ce1d3489d49903df351f176",
+      "config_sha256": "7c0928386d80bb4bd47ac6d8831475e5f23769a2717127fee8df4b1d9e69708a"
+    },
+    "all_saved_adapter_files_match_training_receipt": true,
+    "actual_audit_outcome_replays_equal": 12,
+    "outcome_status_counts": {
+      "no_change": 8,
+      "rejected": 2,
+      "applied": 2
+    }
+  },
+  "data_use_assessment": "The post-context flag assertion does not invalidate previously captured outputs by itself. The pre-generation gates, chronology, exact-input journals, unchanged files and 12 exact runtime replays support retaining and scoring all12 with this disclosed terminal failure. Do not label the original run successful or rerun to replace outputs.",
+  "limits": [
+    "The terminated Qwen process did not log its decomposed state after context exit. The specific flag transition is source-supported and reproduced on a tiny CPU model, not directly re-observed on the dead Qwen object.",
+    "Frozen flags do not independently inspect hardware or every operation inside generation. The recorded source uses torch.inference_mode and contains no optimizer/training path.",
+    "Unchanged on-disk adapter hashes do not alone prove in-memory weights unchanged; source and before-generation state records supply additional evidence.",
+    "This verifies engineering integrity only. Semantic correctness and cross-process comparison limitations require separate review."
+  ],
+  "source_bindings": {
+    "experiments/deep_conversation/tracker_lora/diagnostics/collect_audit_adapter_off.py": "8b486d8ba34703bf3ddef39b8565933ebbb31388386d440d30c35ae556716f5a",
+    "output/research/2026-10-27/tracker-root-cause/method/adapter-off-protocol.json": "f5828b8bf17a987634af4c403d2ceca7c597ded95512e57916532c0df63724d7",
+    "output/research/2026-10-27/tracker-root-cause/method/adapter-off-preflight-review-v2.json": "d30dd9a7d9864f5a1d4e7e0d2cdf225fc15e88a81163c31184cd4dae5a6b2266",
+    "output/research/2026-10-27/tracker-intent-audit/collection-02/PRIVATE-calls.jsonl": "0b53b0869092f80970cd8ef86f2a6867552c1e662bc7cde92750ab503f0c4a27",
+    "output/research/2026-10-27/tracker-intent-audit/collection-02/PRIVATE-outcomes.jsonl": "60b6238c8f0165bf3de84fc79f5a69f0a89c848d77f69260c614595281b0622b",
+    "output/research/2026-10-27/tracker-intent-audit/collection-02/config.json": "6fc9589ab166cd4c6a55704bc6666bfa5b86ec36bb5717262fdffb5c88b6548d",
+    "output/research/2026-10-27/tracker-intent-audit/collection-02/result.json": "b93f0459bbd10e251d2ed7cea8ba50b60247472d4ff04f0b1583f2427fc15786",
+    "output/research/2026-10-27/tracker-intent-audit/data/acceptance.records.jsonl": "de64e4b3c191ac2dad277fa4432d1f384cf15dc8914101fa17247e24fffbddde",
+    "output/research/2026-10-27/tracker-intent-audit/review/post-run-review.json": "b7dfcdd6a634ee3500234a60c938967d6230a91f78cf7e6f6c10a1a90bfb528a",
+    "experiments/deep_conversation/tracker_lora/intent_audit/audit.py": "faf4e5b7cd69415a614e82cba8cfb8b3cb86e9d1fa49932086010d31038a06cb",
+    "experiments/deep_conversation/tracker_lora/intent_audit/audit_prompt.txt": "66f262aafe9449176bd7e15ce152308851d244a48ebc0d86e638bcc0b64ba776",
+    "experiments/deep_conversation/tracker_lora/repair_v2/train_tracker.py": "2d329f11c1320c0f2e12c39d6e74600997757d53a0661406b8e6a657222ffd24",
+    "output/research/2026-10-27/tracker-root-cause/method/freeze_protocol.py": "f895154829fd8519b55b4e056e22ff46b52b07ec72e491257c0f350b3eddbae2",
+    "experiments/deep_conversation/tracker_lora/intent_audit/pipeline.py": "eb7bef2753dd6de310adcee9345e4abbbc4df60500e3dad3db3f66d74eb64239",
+    "experiments/deep_conversation/tracker_lora/intent_audit/collect_acceptance.py": "01e7abb214389544bc14cd131c52e55fb5558c1bfb3de299aee3ba94c378a23a",
+    "experiments/deep_conversation/tracker_lora/intent_audit/build_acceptance.py": "07512a83a2442f4c3917f73fa61a9df46b38b9e8a6333c1cfe6757cd317dc8c7",
+    "output/research/2026-10-27/tracker-intent-audit/data/manifest.json": "f56642349abad2b6ab70f5b4911afe5d337800195d056c333ef3268318ab88b1",
+    "output/research/2026-10-27/tracker-intent-audit/data/acceptance-plan.json": "c1bf80c45a9e86ebb580bd93e3542fcf4edf22a73380663ce4f8411c8ae453a6",
+    "output/research/2026-10-27/tracker-intent-audit/data/preflight.json": "cba9da9c41115c7d9a3da901f34da535706eb63a48eee1f46aeb57074a1ee883",
+    "output/research/2026-10-27/tracker-intent-audit/review/preflight-review.json": "edbf3fd93296ba6890409e022b2dbeaaaf21b823b655d975d3bfe3de4f9f59e4",
+    "output/research/2026-10-24/tracker-lora-repair-v2/annotation/system_prompt.txt": "7587583ff3fb2f46f64a32ca598a9f2bd980d8b0c3ff24915d80f5e31cda5abd",
+    "experiments/deep_conversation/tracker_lora/evaluate_tracker.py": "6e628968b52307f8160bcc673cb5abba8043490c810b22f0bd286fb9a4f33a6f",
+    "experiments/deep_conversation/tracker_lora/repair_v2/collect_three_arm.py": "6914ae922056b288a55f4fdaf197816ea4ab649b35e9cf80de0665521d6044d8",
+    "experiments/deep_conversation/intention_state.py": "e028a604a93520801a0f752755d80b305afb1eebd8792ea0aeaaa3cd5c722f73",
+    "output/research/2026-10-27/tracker-root-cause/method/review_preflight.py": "b0ed5ff55e8f0d661be28b5c316a834242318f009cdc0935def5ab65fadfc88c",
+    "output/research/2026-10-27/tracker-root-cause/method/adapter-off-preflight-review.json": "b275dc932c9447021f0502be0107e8475ef4361358c3c63b1f811ec41819d7ed",
+    "output/research/2026-10-27/tracker-root-cause/method/review_preflight_v2.py": "6250868eff3e56b9e7c3e79d9fe09dfff392e8c7a05d4a3f50d3338b1c371ec9"
+  },
+  "artifact_sha256": {
+    "output/research/2026-10-27/tracker-root-cause/ablation/adapter-off-01/result.json": "75f58615e01d99d2df83935a401b8c996281878fa8c5d7181f3aa5e9fda98f19",
+    "output/research/2026-10-27/tracker-root-cause/ablation/adapter-off-01/config.json": "4a2b0bbd9d9bb76759a8851843b38d47cd711ac6e76cb8789d6748328d7542de",
+    "output/research/2026-10-27/tracker-root-cause/ablation/adapter-off-01/PRIVATE-calls.jsonl": "34627a7a79e1ca14aaf20ec1e448bf4e0f9adac58656fd1f230f2929c2abba94",
+    "output/research/2026-10-27/tracker-root-cause/ablation/adapter-off-01/PRIVATE-outcomes.jsonl": "331b6634904a18b02c5c7f6673ae5a13ceea0e416d88b72fb26f0c2ab4d657d8",
+    "output/research/2026-10-27/tracker-root-cause/ablation/adapter-off-01/attempts.jsonl": "ba540c239cec3cdd387c63f3c0cfa93eb4b7c6e08c2ce37d6f17a0d4290566c6",
+    "output/research/2026-10-27/tracker-root-cause/training/check_adapter_context.py": "34253cbda02e27829761d029a80c02abc77339ed54ad12ffd4084b096dc01a46",
+    "output/research/2026-10-27/tracker-root-cause/training/check_adapter_context_initial.py": "36d755e474497cec2139b7ad744efc521813158687a8f8e921e562b16b9d19c1",
+    "output/research/2026-10-27/tracker-root-cause/training/adapter-context-postcheck-initial.log": "f10b3d6c0815e511c1a83cc33251777f1767fae92b57d4624b70eb7f280fa3d2"
+  }
+}

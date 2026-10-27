@@ -1,0 +1,72 @@
+{
+  "status": "passed",
+  "date": "2026-10-27",
+  "timezone": "America/Halifax",
+  "kind": "selection_semantics_and_scripted_reference_validation",
+  "source_hashes": {
+    "output/research/2026-10-27/tracker-root-cause/fit/prepare_selection.py": "b268fed3e1fdc06c217bcdbcfc38d14ab7e1ea286940df9165285ff982819f3a",
+    "output/research/2026-10-24/tracker-lora-repair-v2/data/compiled/train.records.jsonl": "12c9f6a672fb30846eb62e6ea4ef7456906a167f784f3524ddff212d82f117ea",
+    "output/research/2026-10-24/tracker-lora-repair-v2/data/compiled/train.sft.jsonl": "78bdadd3b9684600cd761d24b313acf8e34f58d06783fd9508ea6438ed86050c",
+    "output/research/2026-10-24/tracker-lora-repair-v2/data/compiled/manifest.json": "35e3dfc55bf74ca37b88e6e3aa70738a9d61ec87769f19a8a601c3d9dded16bc",
+    "output/research/2026-10-24/tracker-lora-repair-v2/annotation/system_prompt.txt": "7587583ff3fb2f46f64a32ca598a9f2bd980d8b0c3ff24915d80f5e31cda5abd",
+    "output/research/2026-10-24/tracker-lora-repair-v2/training/formal-01/result.json": "d8b9c1e0931c2d271f14d38e90e88e554c9b97a89494575181adfdf0aca88507",
+    "output/research/2026-10-24/tracker-lora-repair-v2/training/formal-01/lengths.json": "79b1575566710fdd629db4d068c502abab4259051e3e6e90508a260d42f42ac7",
+    "output/research/2026-10-24/tracker-lora-repair-v2/training/formal-01/adapter/adapter_config.json": "7c0928386d80bb4bd47ac6d8831475e5f23769a2717127fee8df4b1d9e69708a",
+    "output/research/2026-10-24/tracker-lora-repair-v2/training/formal-01/adapter/adapter_model.safetensors": "a2cf443a6e26e3868c7a905190b20c89bdf980f18ce1d3489d49903df351f176",
+    "output/research/2026-10-27/tracker-root-cause/data/assessment.json": "8fd4aafb94386a70d0eca5f5a249bab867ab195a8d2e54f6daec30d4a278bbde",
+    "experiments/deep_conversation/tracker_lora/evaluate_tracker.py": "6e628968b52307f8160bcc673cb5abba8043490c810b22f0bd286fb9a4f33a6f",
+    "experiments/deep_conversation/tracker_lora/repair_v2/train_tracker.py": "2d329f11c1320c0f2e12c39d6e74600997757d53a0661406b8e6a657222ffd24",
+    "experiments/deep_conversation/intention_state.py": "e028a604a93520801a0f752755d80b305afb1eebd8792ea0aeaaa3cd5c722f73"
+  },
+  "cases": [
+    {
+      "case_id": "native-fit-owner-zh",
+      "source_example_id": "fresh-train-017-5",
+      "runtime_reference_control": "passed",
+      "semantic_source_review": "supported_by_raw_dialogue",
+      "limitation": "Unblinded AI review of existing training labels; not independent human gold."
+    },
+    {
+      "case_id": "native-fit-owner-en",
+      "source_example_id": "fresh-train-016-3",
+      "runtime_reference_control": "passed",
+      "semantic_source_review": "supported_by_raw_dialogue",
+      "limitation": "Unblinded AI review of existing training labels; not independent human gold."
+    },
+    {
+      "case_id": "native-fit-wrong_withdrawn-zh",
+      "source_example_id": "fresh-train-045-4",
+      "runtime_reference_control": "passed",
+      "semantic_source_review": "supported_by_raw_dialogue",
+      "limitation": "Unblinded AI review of existing training labels; not independent human gold."
+    },
+    {
+      "case_id": "native-fit-wrong_withdrawn-en",
+      "source_example_id": "fresh-train-046-5",
+      "runtime_reference_control": "passed",
+      "semantic_source_review": "supported_by_raw_dialogue",
+      "limitation": "Unblinded AI review of existing training labels; not independent human gold."
+    },
+    {
+      "case_id": "native-fit-uncertain_status-zh",
+      "source_example_id": "fresh-train-031-3",
+      "runtime_reference_control": "passed",
+      "semantic_source_review": "supported_by_raw_dialogue",
+      "limitation": "Unblinded AI review of existing training labels; not independent human gold."
+    },
+    {
+      "case_id": "native-fit-uncertain_status-en",
+      "source_example_id": "fresh-train-032-5",
+      "runtime_reference_control": "passed",
+      "semantic_source_review": "supported_by_raw_dialogue",
+      "limitation": "Unblinded AI review of existing training labels; not independent human gold."
+    }
+  ],
+  "controls_passed": 6,
+  "new_model_calls": 0,
+  "new_training_runs": 0,
+  "limits": [
+    "Scripted reference controls establish execution feasibility, not model capability.",
+    "Six deliberately selected existing training rows cannot establish whole-training-set fit, validation loss, overfitting or generalization."
+  ]
+}

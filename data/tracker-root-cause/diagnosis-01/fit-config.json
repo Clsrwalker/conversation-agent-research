@@ -1,0 +1,47 @@
+{
+  "kind": "six_training_examples_free_generation_fit_not_generalization",
+  "date": "2026-10-27",
+  "timezone": "America/Halifax",
+  "base_id": "Qwen/Qwen2.5-14B-Instruct",
+  "base_revision": "cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8",
+  "adapter": {
+    "training_result_sha256": "d8b9c1e0931c2d271f14d38e90e88e554c9b97a89494575181adfdf0aca88507",
+    "weights_sha256": "a2cf443a6e26e3868c7a905190b20c89bdf980f18ce1d3489d49903df351f176",
+    "config_sha256": "7c0928386d80bb4bd47ac6d8831475e5f23769a2717127fee8df4b1d9e69708a"
+  },
+  "generation": {
+    "seed": 20261024,
+    "do_sample": false,
+    "num_beams": 1,
+    "repetition_penalty": 1.0,
+    "cache_implementation": "dynamic",
+    "max_prompt_tokens": 2048,
+    "max_new_tokens": 512
+  },
+  "versions": {
+    "torch": "2.12.0+cu130",
+    "transformers": "5.14.1",
+    "peft": "0.21.2",
+    "bitsandbytes": "0.50.0",
+    "accelerate": "1.14.0"
+  },
+  "gpu": "NVIDIA GeForce RTX 4080 SUPER",
+  "cuda": "13.0",
+  "cases": [
+    "native-fit-owner-zh",
+    "native-fit-owner-en",
+    "native-fit-wrong_withdrawn-zh",
+    "native-fit-wrong_withdrawn-en",
+    "native-fit-uncertain_status-zh",
+    "native-fit-uncertain_status-en"
+  ],
+  "source_hashes": {
+    "experiments\\deep_conversation\\tracker_lora\\diagnostics\\collect_training_fit.py": "36f0b0dc412604bb7474e8da4e583efcc58c16c9e73583c9cfa2c0b6ad1108fd",
+    "experiments\\deep_conversation\\tracker_lora\\diagnostics\\collect_audit_adapter_off.py": "8b486d8ba34703bf3ddef39b8565933ebbb31388386d440d30c35ae556716f5a",
+    "output\\research\\2026-10-27\\tracker-root-cause\\fit\\selection.json": "c8028be138e7dd3acdea2caf57380f29dc4b3b8a6c1e79dfa18242f53dd3801f",
+    "output\\research\\2026-10-27\\tracker-root-cause\\fit\\protocol.json": "2c128f8ae6fc5cf648c19146ee3727c5b449d338c5a815ebc61cb9e8bdeb883f",
+    "output\\research\\2026-10-27\\tracker-root-cause\\fit\\preflight-review.json": "2d7f81dab0871624887952343a908931c897b3627d589e17b2416e15346565e6",
+    "output\\research\\2026-10-24\\tracker-lora-repair-v2\\data\\compiled\\train.records.jsonl": "12c9f6a672fb30846eb62e6ea4ef7456906a167f784f3524ddff212d82f117ea",
+    "output\\research\\2026-10-24\\tracker-lora-repair-v2\\data\\compiled\\train.sft.jsonl": "78bdadd3b9684600cd761d24b313acf8e34f58d06783fd9508ea6438ed86050c"
+  }
+}

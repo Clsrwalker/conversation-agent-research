@@ -1,0 +1,56 @@
+{
+  "kind": "adapter_only_cross_process_diagnostic",
+  "date": "2026-10-27",
+  "timezone": "America/Halifax",
+  "base_id": "Qwen/Qwen2.5-14B-Instruct",
+  "base_revision": "cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8",
+  "adapter_artifacts": {
+    "training_result_sha256": "d8b9c1e0931c2d271f14d38e90e88e554c9b97a89494575181adfdf0aca88507",
+    "weights_sha256": "a2cf443a6e26e3868c7a905190b20c89bdf980f18ce1d3489d49903df351f176",
+    "config_sha256": "7c0928386d80bb4bd47ac6d8831475e5f23769a2717127fee8df4b1d9e69708a"
+  },
+  "adapter_disabled": true,
+  "versions": {
+    "torch": "2.12.0+cu130",
+    "transformers": "5.14.1",
+    "peft": "0.21.2",
+    "bitsandbytes": "0.50.0",
+    "accelerate": "1.14.0"
+  },
+  "source_hashes": {
+    "experiments\\deep_conversation\\tracker_lora\\diagnostics\\collect_audit_adapter_off.py": "8b486d8ba34703bf3ddef39b8565933ebbb31388386d440d30c35ae556716f5a",
+    "output\\research\\2026-10-27\\tracker-root-cause\\method\\adapter-off-protocol.json": "f5828b8bf17a987634af4c403d2ceca7c597ded95512e57916532c0df63724d7",
+    "output\\research\\2026-10-27\\tracker-root-cause\\method\\adapter-off-preflight-review-v2.json": "d30dd9a7d9864f5a1d4e7e0d2cdf225fc15e88a81163c31184cd4dae5a6b2266",
+    "output\\research\\2026-10-27\\tracker-intent-audit\\collection-02\\PRIVATE-calls.jsonl": "0b53b0869092f80970cd8ef86f2a6867552c1e662bc7cde92750ab503f0c4a27",
+    "output\\research\\2026-10-27\\tracker-intent-audit\\collection-02\\PRIVATE-outcomes.jsonl": "60b6238c8f0165bf3de84fc79f5a69f0a89c848d77f69260c614595281b0622b",
+    "output\\research\\2026-10-27\\tracker-intent-audit\\collection-02\\config.json": "6fc9589ab166cd4c6a55704bc6666bfa5b86ec36bb5717262fdffb5c88b6548d",
+    "output\\research\\2026-10-27\\tracker-intent-audit\\collection-02\\result.json": "b93f0459bbd10e251d2ed7cea8ba50b60247472d4ff04f0b1583f2427fc15786"
+  },
+  "exact_captured_audit_inputs": 12,
+  "replayed_enabled_results": 12,
+  "gpu_name": "NVIDIA GeForce RTX 4080 SUPER",
+  "cuda_version": "13.0",
+  "hardware_limit": "Historical collection config has no GPU name; identical runtime packages and artifact hashes are checked, but exact historical hardware identity is not independently proved.",
+  "case_order": [
+    "owner-zh-faulty",
+    "owner-zh-clean",
+    "owner-en-faulty",
+    "owner-en-clean",
+    "wrong_withdrawn-zh-faulty",
+    "wrong_withdrawn-zh-clean",
+    "wrong_withdrawn-en-faulty",
+    "wrong_withdrawn-en-clean",
+    "uncertain_status-zh-faulty",
+    "uncertain_status-zh-clean",
+    "uncertain_status-en-faulty",
+    "uncertain_status-en-clean"
+  ],
+  "max_prompt_tokens": 2048,
+  "max_new_tokens": 1024,
+  "seed": 20261024,
+  "do_sample": false,
+  "num_beams": 1,
+  "repetition_penalty": 1.0,
+  "cache_implementation": "dynamic",
+  "comparison_limit": "Enabled arm is the existing collection-02 in a different process, not simultaneous paired generation. No normal step is regenerated."
+}

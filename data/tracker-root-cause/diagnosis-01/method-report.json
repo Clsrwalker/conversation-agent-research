@@ -1,0 +1,319 @@
+{
+  "id": "tracker-root-cause-method-contract-audit",
+  "status": "completed",
+  "kind": "read_only_source_and_captured_output_diagnostic",
+  "date": "2026-10-27",
+  "timezone": "America/Halifax",
+  "created_at_utc": "2026-10-27T12:40:24.609283+00:00",
+  "new_model_calls": 0,
+  "new_training_runs": 0,
+  "method_verdict": "A previously trained state-update role was asked to perform a new dense evidence-audit role with a different input/output contract, without compatibility evidence. This distribution change is confirmed; its contribution relative to the adapter itself requires the separately frozen adapter-off diagnostic.",
+  "observed": {
+    "training_rows": 500,
+    "training_parseable_json_targets": 500,
+    "training_target_top_keys": {
+      "operations": 500
+    },
+    "training_input_top_keys": {
+      "conversation,intention_state,tool_receipts": 500
+    },
+    "training_intention_state_types": {
+      "dict": 500
+    },
+    "training_rows_with_checks_target": 0,
+    "training_rows_with_verdict_key_in_target": 0,
+    "all_training_system_prompts_match_normal_prompt": true,
+    "audit_prompt_example_is_well_formed_json": true,
+    "normal_generations": 12,
+    "normal_json_parseable": 12,
+    "normal_runtime_accepted": 12,
+    "audit_generations": 12,
+    "audit_json_parseable": 1,
+    "audit_runtime_accepted": 0,
+    "audit_syntax_patterns": {
+      "object_inserted_where_status_key_required": 6,
+      "next_record_inserted_before_previous_record_closed": 3,
+      "parseable_but_verdict_value_conflict": 1,
+      "stray_quote_after_source_array": 2
+    },
+    "audit_reports_with_no_status_key": 3,
+    "audit_input_token_range": [
+      784,
+      933
+    ],
+    "audit_output_token_range": [
+      103,
+      230
+    ],
+    "audit_prompt_cap": 2048,
+    "audit_output_cap": 1024,
+    "audit_token_cap_hits": 0,
+    "audit_required_record_instances": 47,
+    "audit_required_field_verdicts": 94,
+    "normal_total_generated_tokens": 449,
+    "audit_total_generated_tokens": 1918
+  },
+  "cases": [
+    {
+      "case_id": "owner-zh-faulty",
+      "input_tokens": 784,
+      "output_tokens": 129,
+      "hit_token_cap": false,
+      "required_records": 3,
+      "json_parseable": false,
+      "syntax_pattern": "object_inserted_where_status_key_required",
+      "parse_error": {
+        "message": "Expecting property name enclosed in double quotes",
+        "position": 86
+      },
+      "has_any_status_key_in_raw_report": true,
+      "runtime_status": "rejected",
+      "snapshot_unchanged": true
+    },
+    {
+      "case_id": "owner-zh-clean",
+      "input_tokens": 784,
+      "output_tokens": 129,
+      "hit_token_cap": false,
+      "required_records": 3,
+      "json_parseable": false,
+      "syntax_pattern": "object_inserted_where_status_key_required",
+      "parse_error": {
+        "message": "Expecting property name enclosed in double quotes",
+        "position": 86
+      },
+      "has_any_status_key_in_raw_report": true,
+      "runtime_status": "rejected",
+      "snapshot_unchanged": true
+    },
+    {
+      "case_id": "owner-en-faulty",
+      "input_tokens": 862,
+      "output_tokens": 105,
+      "hit_token_cap": false,
+      "required_records": 4,
+      "json_parseable": false,
+      "syntax_pattern": "next_record_inserted_before_previous_record_closed",
+      "parse_error": {
+        "message": "Expecting property name enclosed in double quotes",
+        "position": 88
+      },
+      "has_any_status_key_in_raw_report": false,
+      "runtime_status": "rejected",
+      "snapshot_unchanged": true
+    },
+    {
+      "case_id": "owner-en-clean",
+      "input_tokens": 862,
+      "output_tokens": 105,
+      "hit_token_cap": false,
+      "required_records": 4,
+      "json_parseable": false,
+      "syntax_pattern": "next_record_inserted_before_previous_record_closed",
+      "parse_error": {
+        "message": "Expecting property name enclosed in double quotes",
+        "position": 88
+      },
+      "has_any_status_key_in_raw_report": false,
+      "runtime_status": "rejected",
+      "snapshot_unchanged": true
+    },
+    {
+      "case_id": "wrong_withdrawn-zh-faulty",
+      "input_tokens": 879,
+      "output_tokens": 230,
+      "hit_token_cap": false,
+      "required_records": 4,
+      "json_parseable": true,
+      "syntax_pattern": "parseable_but_verdict_value_conflict",
+      "parse_error": null,
+      "has_any_status_key_in_raw_report": true,
+      "runtime_status": "rejected",
+      "snapshot_unchanged": true
+    },
+    {
+      "case_id": "wrong_withdrawn-zh-clean",
+      "input_tokens": 878,
+      "output_tokens": 103,
+      "hit_token_cap": false,
+      "required_records": 4,
+      "json_parseable": false,
+      "syntax_pattern": "next_record_inserted_before_previous_record_closed",
+      "parse_error": {
+        "message": "Expecting property name enclosed in double quotes",
+        "position": 86
+      },
+      "has_any_status_key_in_raw_report": false,
+      "runtime_status": "rejected",
+      "snapshot_unchanged": true
+    },
+    {
+      "case_id": "wrong_withdrawn-en-faulty",
+      "input_tokens": 846,
+      "output_tokens": 149,
+      "hit_token_cap": false,
+      "required_records": 3,
+      "json_parseable": false,
+      "syntax_pattern": "stray_quote_after_source_array",
+      "parse_error": {
+        "message": "Expecting ',' delimiter",
+        "position": 90
+      },
+      "has_any_status_key_in_raw_report": true,
+      "runtime_status": "rejected",
+      "snapshot_unchanged": true
+    },
+    {
+      "case_id": "wrong_withdrawn-en-clean",
+      "input_tokens": 845,
+      "output_tokens": 140,
+      "hit_token_cap": false,
+      "required_records": 3,
+      "json_parseable": false,
+      "syntax_pattern": "object_inserted_where_status_key_required",
+      "parse_error": {
+        "message": "Expecting property name enclosed in double quotes",
+        "position": 88
+      },
+      "has_any_status_key_in_raw_report": true,
+      "runtime_status": "rejected",
+      "snapshot_unchanged": true
+    },
+    {
+      "case_id": "uncertain_status-zh-faulty",
+      "input_tokens": 918,
+      "output_tokens": 216,
+      "hit_token_cap": false,
+      "required_records": 5,
+      "json_parseable": false,
+      "syntax_pattern": "stray_quote_after_source_array",
+      "parse_error": {
+        "message": "Expecting ',' delimiter",
+        "position": 86
+      },
+      "has_any_status_key_in_raw_report": true,
+      "runtime_status": "rejected",
+      "snapshot_unchanged": true
+    },
+    {
+      "case_id": "uncertain_status-zh-clean",
+      "input_tokens": 921,
+      "output_tokens": 222,
+      "hit_token_cap": false,
+      "required_records": 5,
+      "json_parseable": false,
+      "syntax_pattern": "object_inserted_where_status_key_required",
+      "parse_error": {
+        "message": "Expecting property name enclosed in double quotes",
+        "position": 86
+      },
+      "has_any_status_key_in_raw_report": true,
+      "runtime_status": "rejected",
+      "snapshot_unchanged": true
+    },
+    {
+      "case_id": "uncertain_status-en-faulty",
+      "input_tokens": 933,
+      "output_tokens": 218,
+      "hit_token_cap": false,
+      "required_records": 5,
+      "json_parseable": false,
+      "syntax_pattern": "object_inserted_where_status_key_required",
+      "parse_error": {
+        "message": "Expecting property name enclosed in double quotes",
+        "position": 89
+      },
+      "has_any_status_key_in_raw_report": true,
+      "runtime_status": "rejected",
+      "snapshot_unchanged": true
+    },
+    {
+      "case_id": "uncertain_status-en-clean",
+      "input_tokens": 902,
+      "output_tokens": 172,
+      "hit_token_cap": false,
+      "required_records": 4,
+      "json_parseable": false,
+      "syntax_pattern": "object_inserted_where_status_key_required",
+      "parse_error": {
+        "message": "Expecting property name enclosed in double quotes",
+        "position": 89
+      },
+      "has_any_status_key_in_raw_report": true,
+      "runtime_status": "rejected",
+      "snapshot_unchanged": true
+    }
+  ],
+  "confirmed_design_changes": [
+    {
+      "dimension": "Training/output objective",
+      "before": "Emit sparse operations only for changed or newly required records; empty operations is meaningful no-change.",
+      "after": "Emit checks for every existing ID, two nested field verdicts with proposed values and per-field evidence; keep and insufficient are new supervised roles.",
+      "evidence": "All 500 actual SFT targets are operations objects; zero checks/verdict targets. Prompt example itself is valid."
+    },
+    {
+      "dimension": "Input representation",
+      "before": "conversation + complete intention_state snapshot (history, version, processed cursor, receipts) + tool_receipts.",
+      "after": "conversation + projected record list + required_intent_ids + through_seq; stored histories/receipts are deliberately removed.",
+      "evidence": "Captured message objects and compiler SFT records differ structurally. This is an additional intervention beyond asking to review evidence."
+    },
+    {
+      "dimension": "Scope and output burden",
+      "before": "One normal update may legitimately be short or empty.",
+      "after": "All 47 existing record instances require 94 owner/status verdicts across 12 requests.",
+      "evidence": "Actual output tokens rise from 449 normal to 1918 audit; this is descriptive, not proof that length caused failure."
+    },
+    {
+      "dimension": "Runtime policy",
+      "before": "Validate operations and apply one legal patch.",
+      "after": "Reject the entire report for malformed JSON, absent/duplicate IDs or contradictory field verdicts before compiling any operations.",
+      "evidence": "All 12 reports rejected and every snapshot unchanged. Guards block execution of faulty reports; they do not generate the faulty reasoning."
+    },
+    {
+      "dimension": "Expressive limit",
+      "before": "The normal tracker may add intentions and revise text.",
+      "after": "Audit may change existing owner/status only, not add a missing intent or correct its text.",
+      "evidence": "uncertain_status-en-clean has a rewritten i4 and missing i5 before audit. The allowed audit operation set cannot fully restore that state even with perfect owner/status judgments."
+    }
+  ],
+  "ruled_out_as_direct_explanation_for_these_outputs": [
+    "Malformed JSON in the actual 500 SFT targets: all parse as JSON. This does not certify their semantic labels.",
+    "A malformed JSON example in the audit prompt: the supplied example parses and has the specified keys.",
+    "Prompt truncation or output-token cap: captured inputs are below 2048, outputs below 1024, with no recorded truncation or cap hits.",
+    "A total inability to emit the original operations format: the same run accepts all 12 normal proposals, although their semantics may be wrong.",
+    "Audit runtime silently discarding legal committed repairs: all failures occur at parsing/field validation and no audit patch commits; CPU reference replays reproduce the results."
+  ],
+  "causal_limits": [
+    "Normal-versus-audit results change task, prompt, input projection, output format, density and generation cap together. They do not isolate any one factor.",
+    "The captured acceptance has no identical-request adapter-disabled arm, so it cannot alone show that LoRA caused malformed audit JSON or harmed base competence.",
+    "No malformed JSON training target does not imply good coverage, good labels or adequate optimization. Those are separate evidence questions.",
+    "No direct evidence identifies a particular training example, rank, learning rate, training duration, quantization choice or internal attention pattern as the cause.",
+    "Post-hoc readable fragments are diagnostic observations only; no syntax-repaired report is executed or credited.",
+    "Strict validation is functioning as designed. Weakening it would risk executing the observed semantic errors and would not demonstrate lower intention omission."
+  ],
+  "minimal_next_diagnostic": {
+    "protocol": "adapter-off-protocol.json",
+    "new_calls": 12,
+    "comparison": "Exact captured audit messages and pre-audit states; existing historical adapter-enabled outputs versus same frozen base/adapter loaded but disabled.",
+    "interpretation": "An adapter-associated difference can be measured conditionally on these fixed audit requests; training-example causation and held-out benefits cannot be inferred.",
+    "no_automatic_second_arm": true
+  },
+  "review_limits": [
+    "This is AI source inspection and deterministic artifact analysis, not independent human labeling.",
+    "The selected cases were already exposed and failures were known before this diagnosis."
+  ],
+  "source_hashes": {
+    "output/research/2026-10-24/tracker-lora-repair-v2/data/compiled/train.sft.jsonl": "78bdadd3b9684600cd761d24b313acf8e34f58d06783fd9508ea6438ed86050c",
+    "output/research/2026-10-24/tracker-lora-repair-v2/annotation/system_prompt.txt": "7587583ff3fb2f46f64a32ca598a9f2bd980d8b0c3ff24915d80f5e31cda5abd",
+    "output/research/2026-10-27/tracker-intent-audit/collection-02/PRIVATE-calls.jsonl": "0b53b0869092f80970cd8ef86f2a6867552c1e662bc7cde92750ab503f0c4a27",
+    "output/research/2026-10-27/tracker-intent-audit/collection-02/PRIVATE-outcomes.jsonl": "60b6238c8f0165bf3de84fc79f5a69f0a89c848d77f69260c614595281b0622b",
+    "output/research/2026-10-27/tracker-intent-audit/collection-02/config.json": "6fc9589ab166cd4c6a55704bc6666bfa5b86ec36bb5717262fdffb5c88b6548d",
+    "output/research/2026-10-27/tracker-intent-audit/review/post-run-review.json": "b7dfcdd6a634ee3500234a60c938967d6230a91f78cf7e6f6c10a1a90bfb528a",
+    "experiments/deep_conversation/tracker_lora/intent_audit/audit.py": "faf4e5b7cd69415a614e82cba8cfb8b3cb86e9d1fa49932086010d31038a06cb",
+    "experiments/deep_conversation/tracker_lora/intent_audit/audit_prompt.txt": "66f262aafe9449176bd7e15ce152308851d244a48ebc0d86e638bcc0b64ba776",
+    "experiments/deep_conversation/tracker_lora/intent_audit/pipeline.py": "eb7bef2753dd6de310adcee9345e4abbbc4df60500e3dad3db3f66d74eb64239",
+    "experiments/deep_conversation/tracker_lora/intent_audit/collect_acceptance.py": "01e7abb214389544bc14cd131c52e55fb5558c1bfb3de299aee3ba94c378a23a",
+    "output/research/2026-10-27/tracker-root-cause/method/adapter-off-protocol.json": "f5828b8bf17a987634af4c403d2ceca7c597ded95512e57916532c0df63724d7",
+    "output/research/2026-10-27/tracker-root-cause/method/inspect_method.py": "e49fef6bf74c6f2179ba81d722040959686b06a2ffef2de279d3793c83e04cc8"
+  }
+}

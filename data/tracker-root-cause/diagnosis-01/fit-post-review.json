@@ -1,0 +1,350 @@
+{
+  "id": "tracker-native-training-fit-independent-post-review",
+  "status": "passed",
+  "status_meaning": "Independent integrity and semantic review completed; this is not an all-cases quality pass.",
+  "run_status": "completed",
+  "date": "2026-10-27",
+  "timezone": "America/Halifax",
+  "reviewed_at_utc": "2026-10-27T13:00:35.614082+00:00",
+  "kind": "six_exposed_training_input_diagnostic_not_generalization",
+  "reviewer": "Independent Codex method reviewer; unblinded raw-dialogue semantic review, not human gold.",
+  "metric_definitions": {
+    "valid_outputs": "Strict operations envelope accepted by the unchanged IntentStore; empty patches can be valid while semantically wrong.",
+    "focal_metadata_correct": "The expected focal owner and status both hold after execution.",
+    "full_meaning_correct": "Focal owner, status, text and qualifiers all correct; physical record presence alone is insufficient.",
+    "full_state_meaning_correct": "Every expected intention and latest-turn change is represented correctly, with no extra or lost requirement.",
+    "source_sufficient_repairs": "An executed focal correction yields correct full meaning and cites enough raw evidence for that correction.",
+    "unaffected_requirements_preserved": "Only pre-existing requirements that need no focal correction or latest-turn update; stable IDs and complete records retained."
+  },
+  "integrity_checks": [
+    "All six exact original SFT prompts and preflight input-token digests match; no training completion appended.",
+    "All six pre-generation records show 336 enabled LoRA layers and zero trainable parameters.",
+    "All six journal-ended digests match durable raw outputs; no retries or additional calls.",
+    "All six recorded outcomes replay exactly with the unchanged strict parser and real IntentStore.",
+    "Protocol, selection, preflight and final config source bindings and adapter artifact hashes match."
+  ],
+  "summary": {
+    "inputs": 6,
+    "valid_outputs": 6,
+    "focal_metadata_correct": 2,
+    "full_meaning_correct": 2,
+    "full_state_meaning_correct": 2,
+    "source_sufficient_repairs": 2,
+    "json_parseable": 6,
+    "strict_operations_envelope": 6,
+    "baseline_focal_metadata_correct": 0,
+    "focal_repairs_omitted": 3,
+    "unsupported_withdrawals": 1,
+    "existing_record_instances_reviewed": 24,
+    "final_record_instances_reviewed": 26,
+    "final_record_instances_full_meaning_correct": 21,
+    "unaffected_requirements_preserved": 15,
+    "missing_expected_records": 0,
+    "ordinary_changes_required": 5,
+    "ordinary_changes_completed": 4,
+    "canonical_target_object_matches": 1,
+    "executed_operations": 7,
+    "sufficiently_cited_operations": 6,
+    "ended_on_configured_eos": 6,
+    "last_token_ids": {
+      "151645": 6
+    },
+    "hit_token_cap": 0,
+    "input_tokens": 8258,
+    "output_tokens": 244,
+    "generation_seconds": 25.681212699739262,
+    "total_run_seconds": 78.5788404000923,
+    "new_model_generations": 6,
+    "new_training_runs": 0,
+    "new_model_generations_by_reviewer": 0
+  },
+  "rows": [
+    {
+      "focus": "owner",
+      "inputs": 2,
+      "valid_outputs": 2,
+      "focal_metadata_correct": 0,
+      "full_meaning_correct": 0,
+      "full_state_meaning_correct": 0,
+      "source_sufficient_repairs": 0
+    },
+    {
+      "focus": "wrong_withdrawn",
+      "inputs": 2,
+      "valid_outputs": 2,
+      "focal_metadata_correct": 1,
+      "full_meaning_correct": 1,
+      "full_state_meaning_correct": 1,
+      "source_sufficient_repairs": 1
+    },
+    {
+      "focus": "uncertain_status",
+      "inputs": 2,
+      "valid_outputs": 2,
+      "focal_metadata_correct": 1,
+      "full_meaning_correct": 1,
+      "full_state_meaning_correct": 1,
+      "source_sufficient_repairs": 1
+    }
+  ],
+  "cases": [
+    {
+      "case_id": "native-fit-owner-zh",
+      "source_example_id": "fresh-train-017-5",
+      "focus": "owner",
+      "language": "zh",
+      "json_parseable": true,
+      "strict_operations_envelope": true,
+      "valid_output": true,
+      "runtime_validity": "valid_patch",
+      "baseline_focal_metadata_correct": false,
+      "focal_metadata_correct": false,
+      "full_meaning_correct": false,
+      "full_state_meaning_correct": false,
+      "source_sufficient_repair": false,
+      "focal_mutated": false,
+      "focal_operation_evidence_sufficient": null,
+      "focal_repair_omitted": true,
+      "unsupported_withdrawal": false,
+      "missing_expected_record_ids": [],
+      "unexpected_record_ids": [],
+      "pre_existing_records_preserved": 4,
+      "unaffected_requirement_ids": [
+        "i1",
+        "i3",
+        "i4"
+      ],
+      "unaffected_requirements_preserved": true,
+      "expected_ordinary_change_ids": [
+        "i5"
+      ],
+      "completed_ordinary_change_ids": [
+        "i5"
+      ],
+      "missed_ordinary_change_ids": [],
+      "canonical_target_object_match": false,
+      "ended_on_configured_eos": true,
+      "last_generated_token": 151645,
+      "hit_token_cap": false
+    },
+    {
+      "case_id": "native-fit-owner-en",
+      "source_example_id": "fresh-train-016-3",
+      "focus": "owner",
+      "language": "en",
+      "json_parseable": true,
+      "strict_operations_envelope": true,
+      "valid_output": true,
+      "runtime_validity": "valid_patch",
+      "baseline_focal_metadata_correct": false,
+      "focal_metadata_correct": false,
+      "full_meaning_correct": false,
+      "full_state_meaning_correct": false,
+      "source_sufficient_repair": false,
+      "focal_mutated": false,
+      "focal_operation_evidence_sufficient": null,
+      "focal_repair_omitted": true,
+      "unsupported_withdrawal": false,
+      "missing_expected_record_ids": [],
+      "unexpected_record_ids": [],
+      "pre_existing_records_preserved": 4,
+      "unaffected_requirement_ids": [
+        "i1",
+        "i4"
+      ],
+      "unaffected_requirements_preserved": true,
+      "expected_ordinary_change_ids": [
+        "i3"
+      ],
+      "completed_ordinary_change_ids": [],
+      "missed_ordinary_change_ids": [
+        "i3"
+      ],
+      "canonical_target_object_match": false,
+      "ended_on_configured_eos": true,
+      "last_generated_token": 151645,
+      "hit_token_cap": false
+    },
+    {
+      "case_id": "native-fit-wrong_withdrawn-zh",
+      "source_example_id": "fresh-train-045-4",
+      "focus": "wrong_withdrawn",
+      "language": "zh",
+      "json_parseable": true,
+      "strict_operations_envelope": true,
+      "valid_output": true,
+      "runtime_validity": "valid_patch",
+      "baseline_focal_metadata_correct": false,
+      "focal_metadata_correct": true,
+      "full_meaning_correct": true,
+      "full_state_meaning_correct": true,
+      "source_sufficient_repair": true,
+      "focal_mutated": true,
+      "focal_operation_evidence_sufficient": true,
+      "focal_repair_omitted": false,
+      "unsupported_withdrawal": false,
+      "missing_expected_record_ids": [],
+      "unexpected_record_ids": [],
+      "pre_existing_records_preserved": 4,
+      "unaffected_requirement_ids": [
+        "i1",
+        "i2"
+      ],
+      "unaffected_requirements_preserved": true,
+      "expected_ordinary_change_ids": [
+        "i3"
+      ],
+      "completed_ordinary_change_ids": [
+        "i3"
+      ],
+      "missed_ordinary_change_ids": [],
+      "canonical_target_object_match": false,
+      "ended_on_configured_eos": true,
+      "last_generated_token": 151645,
+      "hit_token_cap": false
+    },
+    {
+      "case_id": "native-fit-wrong_withdrawn-en",
+      "source_example_id": "fresh-train-046-5",
+      "focus": "wrong_withdrawn",
+      "language": "en",
+      "json_parseable": true,
+      "strict_operations_envelope": true,
+      "valid_output": true,
+      "runtime_validity": "valid_patch",
+      "baseline_focal_metadata_correct": false,
+      "focal_metadata_correct": false,
+      "full_meaning_correct": false,
+      "full_state_meaning_correct": false,
+      "source_sufficient_repair": false,
+      "focal_mutated": false,
+      "focal_operation_evidence_sufficient": null,
+      "focal_repair_omitted": true,
+      "unsupported_withdrawal": false,
+      "missing_expected_record_ids": [],
+      "unexpected_record_ids": [],
+      "pre_existing_records_preserved": 4,
+      "unaffected_requirement_ids": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "unaffected_requirements_preserved": true,
+      "expected_ordinary_change_ids": [
+        "i5"
+      ],
+      "completed_ordinary_change_ids": [
+        "i5"
+      ],
+      "missed_ordinary_change_ids": [],
+      "canonical_target_object_match": false,
+      "ended_on_configured_eos": true,
+      "last_generated_token": 151645,
+      "hit_token_cap": false
+    },
+    {
+      "case_id": "native-fit-uncertain_status-zh",
+      "source_example_id": "fresh-train-031-3",
+      "focus": "uncertain_status",
+      "language": "zh",
+      "json_parseable": true,
+      "strict_operations_envelope": true,
+      "valid_output": true,
+      "runtime_validity": "valid_patch",
+      "baseline_focal_metadata_correct": false,
+      "focal_metadata_correct": true,
+      "full_meaning_correct": true,
+      "full_state_meaning_correct": true,
+      "source_sufficient_repair": true,
+      "focal_mutated": true,
+      "focal_operation_evidence_sufficient": true,
+      "focal_repair_omitted": false,
+      "unsupported_withdrawal": false,
+      "missing_expected_record_ids": [],
+      "unexpected_record_ids": [],
+      "pre_existing_records_preserved": 4,
+      "unaffected_requirement_ids": [
+        "i1",
+        "i2"
+      ],
+      "unaffected_requirements_preserved": true,
+      "expected_ordinary_change_ids": [
+        "i3"
+      ],
+      "completed_ordinary_change_ids": [
+        "i3"
+      ],
+      "missed_ordinary_change_ids": [],
+      "canonical_target_object_match": true,
+      "ended_on_configured_eos": true,
+      "last_generated_token": 151645,
+      "hit_token_cap": false
+    },
+    {
+      "case_id": "native-fit-uncertain_status-en",
+      "source_example_id": "fresh-train-032-5",
+      "focus": "uncertain_status",
+      "language": "en",
+      "json_parseable": true,
+      "strict_operations_envelope": true,
+      "valid_output": true,
+      "runtime_validity": "valid_patch",
+      "baseline_focal_metadata_correct": false,
+      "focal_metadata_correct": false,
+      "full_meaning_correct": false,
+      "full_state_meaning_correct": false,
+      "source_sufficient_repair": false,
+      "focal_mutated": true,
+      "focal_operation_evidence_sufficient": false,
+      "focal_repair_omitted": false,
+      "unsupported_withdrawal": true,
+      "missing_expected_record_ids": [],
+      "unexpected_record_ids": [],
+      "pre_existing_records_preserved": 4,
+      "unaffected_requirement_ids": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "unaffected_requirements_preserved": true,
+      "expected_ordinary_change_ids": [],
+      "completed_ordinary_change_ids": [],
+      "missed_ordinary_change_ids": [],
+      "canonical_target_object_match": false,
+      "ended_on_configured_eos": true,
+      "last_generated_token": 151645,
+      "hit_token_cap": false
+    }
+  ],
+  "findings": [
+    "All six outputs are executable under the adapter's original operations interface, but only two repair their focal error correctly and with sufficient citations.",
+    "Both owner repairs are omitted. The English owner case also misses a newly added qualifier despite returning syntactically valid empty operations.",
+    "The Chinese withdrawal and uncertainty examples succeed; the English withdrawal repair is omitted, and the English uncertainty example executes an unsupported withdrawal.",
+    "A native-interface semantic failure on four selected training examples means the audit schema change is not the sole explanation for those local repair failures. These are different inputs from the audit ablation and do not measure the schema effect in isolation.",
+    "One successful Chinese withdrawal output differs in wording from its canonical completion but preserves the meaning and is scored correct; canonical matching is only descriptive.",
+    "All six end on configured EOS 151645 without reaching the token cap."
+  ],
+  "limitations": [
+    "All six examples were present in training and were selected by a frozen first-eligible-row rule; they are exposed examples, not held-out generalization data.",
+    "Six examples do not estimate full training-set fit or establish underfitting, overfitting, language-group differences, or a specific optimizer/data cause.",
+    "There is no base-only arm on these same six native training inputs; native errors cannot uniquely be attributed to the adapter.",
+    "Selection and labels are synthetic and AI-reviewed; independent human gold is unavailable.",
+    "Keep this six-input local-fit diagnostic separate from the twelve-input adapter-off audit comparison; their denominators and input tasks differ."
+  ],
+  "source_hashes": {
+    "output/research/2026-10-27/tracker-root-cause/fit/PRIVATE-review-facts.json": "e01601a2e788b5452dbb59522813bd970e4ea2ec567d9e17cd9432b76b567526",
+    "output/research/2026-10-27/tracker-root-cause/fit/inspect_generated_fit.py": "5013cfa357eff582b4d829293ea27e9261b824885237928cc50bbeaf717815c9",
+    "output/research/2026-10-27/tracker-root-cause/fit/selection.json": "c8028be138e7dd3acdea2caf57380f29dc4b3b8a6c1e79dfa18242f53dd3801f",
+    "output/research/2026-10-27/tracker-root-cause/fit/protocol.json": "2c128f8ae6fc5cf648c19146ee3727c5b449d338c5a815ebc61cb9e8bdeb883f",
+    "output/research/2026-10-27/tracker-root-cause/fit/preflight-review.json": "2d7f81dab0871624887952343a908931c897b3627d589e17b2416e15346565e6",
+    "output/research/2026-10-27/tracker-root-cause/fit/source-review.json": "63ed4cfeaf234f5e0e874f63c86a4c1e726261a323abc79af31c3cf0a80f61bc",
+    "output/research/2026-10-27/tracker-root-cause/fit/inputs.jsonl": "a29ff9e9eea487a13a818b43db3a5a8587dc7507a6bc8eb3b8ef238ded04bd89",
+    "output/research/2026-10-27/tracker-root-cause/fit/targets.jsonl": "c4c9bae3982eed50ba1f9206b851d5a614e86cbf628ca1534abcec1b865bbaa7",
+    "output/research/2026-10-27/tracker-root-cause/fit/collection-01/result.json": "1a72cd93a953b15d0f89510e741c662a36dc9dd27d9fcddb05f54f31837928da",
+    "output/research/2026-10-27/tracker-root-cause/fit/collection-01/config.json": "338971f32194f15638c2d6fb2e76f769a97c49544519f9f0cce23a9a58dc5d58",
+    "output/research/2026-10-27/tracker-root-cause/fit/collection-01/PRIVATE-calls.jsonl": "0c74c49bf7313f7574db1f5de443f95a8283e2b23c36d9348c1980394fce14c4",
+    "output/research/2026-10-27/tracker-root-cause/fit/collection-01/PRIVATE-outcomes.jsonl": "716e8586f358019d32cea0d9617509b1aabd0304b7cc3bab8d1f1c036f24fb73",
+    "output/research/2026-10-27/tracker-root-cause/fit/collection-01/attempts.jsonl": "7afec06d120f1c85889e2e93e8d2182a78cf74dbfa9537a275ccfd4843f8abdb",
+    "output/research/2026-10-27/tracker-root-cause/fit/write_post_review.py": "547ad43a52eda989605ca6e6172894e2b169595a6072a2971654adad4f408f8e"
+  }
+}
