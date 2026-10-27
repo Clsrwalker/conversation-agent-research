@@ -1,0 +1,122 @@
+{
+  "status": "passed",
+  "date": "2026-10-27",
+  "timezone": "America/Halifax",
+  "checked_at_utc": "2026-10-27T11:31:47.162179+00:00",
+  "http_assets": [
+    {
+      "path": "data/tracker-failure-attribution/diagnosis-01/curriculum-audit.json",
+      "status": 200,
+      "bytes": 9052,
+      "sha256": "b682d687f1627c35bb2df9f6b9c9f08bcbf9a10696d1fa6767a735cdcbaf4a3c"
+    },
+    {
+      "path": "data/tracker-failure-attribution/diagnosis-01/engineering-validation.json",
+      "status": 200,
+      "bytes": 3768,
+      "sha256": "91b48a76a6f9d47d31c5bc3a2595f1657adc54c9836cfbb1ae5317dd4f71d2a8"
+    },
+    {
+      "path": "data/tracker-failure-attribution/diagnosis-01/evidence.zip",
+      "status": 200,
+      "bytes": 76724,
+      "sha256": "6668a4d3ea83ce5dd717df2e784beb1e1a6e72ebf7ebf5c2568aae01b344625e"
+    },
+    {
+      "path": "data/tracker-failure-attribution/diagnosis-01/independent-audit.json",
+      "status": 200,
+      "bytes": 20213,
+      "sha256": "e9e091247f52315b3958d42dc3d3106e2365b9057fc6cce7795f490f2510a2be"
+    },
+    {
+      "path": "data/tracker-failure-attribution/diagnosis-01/independent-computed-checks.json",
+      "status": 200,
+      "bytes": 12625,
+      "sha256": "d53db3e4e6a849224c962c83c667aafb581638c46287ac23656493747953b45e"
+    },
+    {
+      "path": "data/tracker-failure-attribution/diagnosis-01/owner-withdrawal-review.json",
+      "status": 200,
+      "bytes": 14815,
+      "sha256": "aacec784ce539e7da458a68db0f3fdae2b360d44a09f1a30e95e1f9c40a8da9c"
+    },
+    {
+      "path": "data/tracker-failure-attribution/diagnosis-01/prior-bundles.json",
+      "status": 200,
+      "bytes": 1965,
+      "sha256": "c27f7cf8aa3b032a681e160c14ebbefd9ae44453fc6846022062025a967af01e"
+    },
+    {
+      "path": "data/tracker-failure-attribution/diagnosis-01/runtime-artifact-qa.json",
+      "status": 200,
+      "bytes": 9598,
+      "sha256": "b837c3c35711458e1d5dd3967dd2ffe6081dcd61bc58a245fa721a6aaac10bbc"
+    },
+    {
+      "path": "data/tracker-failure-attribution/diagnosis-01/runtime-execution-receipt.json",
+      "status": 200,
+      "bytes": 4691,
+      "sha256": "77d5aa709b5409a52a0e45205cb395dc57791faba577f6807b4657fddb30237c"
+    },
+    {
+      "path": "data/tracker-failure-attribution/diagnosis-01/runtime-final.json",
+      "status": 200,
+      "bytes": 38346,
+      "sha256": "0892e88cefc9b57a6534414806a5028ddbd606cb1f98182b7da2274ef43f8d9a"
+    },
+    {
+      "path": "data/tracker-failure-attribution/diagnosis-01/runtime-superseded-run-01.json",
+      "status": 200,
+      "bytes": 32562,
+      "sha256": "1bbcef89618ab53ade05c2ad0c4cb5af670b1b0493cfa0624e1a0bc27edb87c8"
+    },
+    {
+      "path": "data/tracker-failure-attribution/diagnosis-01/summary.json",
+      "status": 200,
+      "bytes": 17753,
+      "sha256": "09423344171d9a59a80e607a7accb62d3f025a3a0a13b1d1f4f193d928cb2bad"
+    },
+    {
+      "path": "data/tracker-failure-attribution/diagnosis-01/uncertainty-review.json",
+      "status": 200,
+      "bytes": 14300,
+      "sha256": "0f4417fcf2b784eac9245ed62bef9d6a6aa000357190ce0c5d729784d0f83e17"
+    },
+    {
+      "path": "intent-role-separation.html",
+      "status": 200,
+      "bytes": 63765,
+      "sha256": "273fb2f1db667834bcbaa686c557519fb2a72be17a338e179decb6da562682e6"
+    },
+    {
+      "path": "index.html",
+      "status": 200,
+      "bytes": 73820,
+      "sha256": "0669b3c8d3c525aece9863ea0ad9408a0dae502e6650b0d05b916f8c5ef06040"
+    },
+    {
+      "path": "data/research-record.json",
+      "status": 200,
+      "bytes": 295190,
+      "sha256": "ed09886b6b0a21bc918ccbb23ad4f66c5ac8ef2086f7bd8974dd2a8bb65e2e41"
+    },
+    {
+      "path": "data/tracker-failure-attribution-validation.json",
+      "status": 200,
+      "bytes": 3768,
+      "sha256": "91b48a76a6f9d47d31c5bc3a2595f1657adc54c9836cfbb1ae5317dd4f71d2a8"
+    }
+  ],
+  "browser_observations": [
+    "The new heading, diagnostic lead, evidence controls and limitations render legibly at an observed 1265 by 713 desktop viewport.",
+    "After the browser viewport changed to 425 by 645, the new heading and lead reflowed without visible horizontal clipping; inspected through the actual page.",
+    "A coordinate scroll was rejected after the viewport changed. The actual screenshot was refreshed and the heading selected through fresh accessibility state; no page source change was required."
+  ],
+  "limits": [
+    "Visual inspection is not a user study or an exhaustive responsive/accessibility test.",
+    "Downloads here are HTTP byte checks; no browser download completion is claimed.",
+    "This freezes local checks before publication; live deployment is verified separately."
+  ],
+  "new_model_calls": 0,
+  "checker_sha256": "4d253396f2c1501d09ad5bb91718fc0a81a57b4f72cc35a2de3b1eacda9aecb7"
+}

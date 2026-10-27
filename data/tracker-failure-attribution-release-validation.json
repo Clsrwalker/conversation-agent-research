@@ -1,0 +1,58 @@
+{
+  "id": "tracker-failure-attribution-release-validation",
+  "type": "engineering_validation",
+  "status": "passed_local_release_checks_publication_recorded_separately",
+  "date": "2026-10-27",
+  "timezone": "America/Halifax",
+  "checked_at_utc": "2026-10-27T11:32:38.705357+00:00",
+  "scope": "Grouped release checks for the 27 October post-hoc tracker failure attribution; independent research interpretation audit is inside its frozen package.",
+  "checks": [
+    {
+      "name": "Reviewed diagnostic export and site build",
+      "status": "passed",
+      "detail": "Independent final audit passed; 19 frozen public files exported. Diagnostic, overview and data builders completed with exit 0."
+    },
+    {
+      "name": "Displayed metrics and evidence preservation",
+      "status": "passed",
+      "detail": "28 displayed table cells and reviewed prose match; 19 ZIP members and 12 JSON copies match exact frozen bytes. All 10 old ZIPs and previous page content remain unchanged."
+    },
+    {
+      "name": "Links and indexes",
+      "status": "passed",
+      "detail": "Eight supporting record links and both homepage entries checked. The final release record is created separately here; the first static check explicitly deferred only this link. Prior structured index entries are unchanged."
+    },
+    {
+      "name": "Browser and HTTP delivery",
+      "status": "passed",
+      "detail": "New diagnostic heading and lead inspected in desktop and narrow actual browser views; 17 HTTP assets match local bytes. Two supporting release receipts also served with exact bytes."
+    }
+  ],
+  "evidence": [
+    {
+      "record": "tracker-failure-attribution-release/static-release-checks-01.json",
+      "sha256": "683c54ddf43c3e9efbc909ce716ef030cb13bec36edafaa4e6b45221a1605f7b",
+      "local_http_status": 200
+    },
+    {
+      "record": "tracker-failure-attribution-release/local-preview-checks-01.json",
+      "sha256": "f3e940c196f26d3174ab518561ccdceced14de0fc9788bd56a4ea43d15747da7",
+      "local_http_status": 200
+    }
+  ],
+  "artifact_sha256": {
+    "build_tracker_failure_attribution.py": "1c74cf4b74dc4651fe59fbbd889707ffb24f773dc7ef0b6d1e4b184ddd5bef74",
+    "build_data.py": "00971a45f41c27972188c96a0288ecc1d609fe7ddd73e60bf07555f61636f5a4",
+    "dist/intent-role-separation.html": "273fb2f1db667834bcbaa686c557519fb2a72be17a338e179decb6da562682e6",
+    "dist/index.html": "0669b3c8d3c525aece9863ea0ad9408a0dae502e6650b0d05b916f8c5ef06040",
+    "dist/data/research-record.json": "ed09886b6b0a21bc918ccbb23ad4f66c5ac8ef2086f7bd8974dd2a8bb65e2e41",
+    "dist/data/tracker-failure-attribution/diagnosis-01/evidence.zip": "6668a4d3ea83ce5dd717df2e784beb1e1a6e72ebf7ebf5c2568aae01b344625e"
+  },
+  "preserved_prior_bundle_count": 10,
+  "new_model_calls": 0,
+  "limitations": [
+    "Engineering checks do not establish an improved tracker or a causal mechanism.",
+    "Browser visual checks are limited to the observed views; no usability study is claimed.",
+    "This record excludes its own hash and predates deployment. Final receipt-link verification and actual deployment/live-byte verification are kept in the subsequent local release receipt."
+  ]
+}

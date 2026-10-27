@@ -1,0 +1,279 @@
+{
+  "schema": "tracker-owner-withdrawal-attribution-v1",
+  "study_kind": "retrospective_unblinded_diagnosis",
+  "date_halifax": "2026-10-27",
+  "status": "all_75_assignments_reviewed",
+  "scope": "All wrong-owner and mistaken-withdrawal inputs in the completed repair-v2 study; no fresh model generation or training.",
+  "coverage": {
+    "unique_inputs": 25,
+    "assignments": 75,
+    "arms": 3,
+    "owner_inputs": 20,
+    "owner_assignments": 60,
+    "wrong_withdrawn_inputs": 5,
+    "wrong_withdrawn_assignments": 15,
+    "unreviewed_inputs": 0,
+    "unreviewed_assignments": 0
+  },
+  "method": {
+    "manual_review": "Per-input raw arrived conversation, actual prior state/history, compiled correction and amended reference, and each arm’s actual proposal, recorded runtime result, candidate state, and sealed target judgment.",
+    "blinding": "Retrospective and unblinded; arm identities and frozen score labels were visible.",
+    "score_policy": "Original labels and artifacts preserved. Attribution is separate from frozen scoring.",
+    "raw_proposal_integrity": "75/75 original output rows match the mapping’s canonical hashes; 75/75 raw JSON operation lists match the reviewed proposals.",
+    "runtime_execution": "No runtime replay by this review; recorded results inspected. The separate runtime audit must substantiate executable-patch claims."
+  },
+  "source_artifacts": [
+    {
+      "path": "output/research/2026-10-24/tracker-lora-repair-v2/data/compiled/test.records.jsonl",
+      "sha256": "8190b19a0b25718e7e5baf2ac5fd25383df4fcd422696a8564d99a6cb3766ce3"
+    },
+    {
+      "path": "output/research/2026-10-24/tracker-lora-repair-v2/evaluation/blind-prepared-reference-01/PRIVATE-mapping.json",
+      "sha256": "b2ec11d485ff5ce5d74e283164e8901a1c0fde621409e5d243fddae214a34f5e"
+    },
+    {
+      "path": "output/research/2026-10-24/tracker-lora-repair-v2/evaluation/blind-prepared-reference-01/review-packets.json",
+      "sha256": "0b7516781206e86a7e2addc3f9f96a72fac6a476822013bb65b8d0104bf04500"
+    },
+    {
+      "path": "output/research/2026-10-24/tracker-lora-repair-v2/evaluation/blind-sealed-reference-01/final-judgments.json",
+      "sha256": "8ed6058cd94e25ccb35fd6d6b9b0f0511bceba4499404c21e504c1700c536280"
+    },
+    {
+      "path": "output/research/2026-10-24/tracker-lora-repair-v2/evaluation/collection-01/outputs.jsonl",
+      "sha256": "8112bf62b4b3c33371f557610b7e5223e3e57a818a418975c525e0ca77d1a013"
+    },
+    {
+      "path": "output/research/2026-10-24/tracker-lora-repair-v2/evaluation/blind-prepared-reference-01/PRIVATE-runtime-results.json",
+      "sha256": "90e4a571b822ccd4bc45b326cc55a2ebcc343c5af8336f76858f804a96effaf0"
+    },
+    {
+      "path": "output/research/2026-10-24/tracker-lora-repair-v2/annotation/system_prompt.txt",
+      "sha256": "7587583ff3fb2f46f64a32ca598a9f2bd980d8b0c3ff24915d80f5e31cda5abd"
+    },
+    {
+      "path": "output/research/2026-10-24/tracker-lora-repair-v2/evaluation/blind-prepared-reference-01/reference-amendment-v1-ledger.json",
+      "sha256": "25e417ab9bf048150a39a074e6583dc97fd19471210fc9eaaba2524ee34b89da"
+    },
+    {
+      "path": "output/research/2026-10-24/tracker-lora-repair-v2/evaluation/blind-prepared-reference-01/reference-amendment-v1-manifest.json",
+      "sha256": "c385038240e0a4690943d033b8d85d219a6e8d66f899e0e2f60a47b8addb989f"
+    },
+    {
+      "path": "experiments/deep_conversation/tracker_lora/repair_v2/evaluate_three_arm.py",
+      "sha256": "80d1fc6eeee56c128454d838701df98b5fbb4ec7ed1ee1cb2c1b61263776279c"
+    },
+    {
+      "path": "experiments/deep_conversation/tracker_lora/repair_v2/gates.py",
+      "sha256": "c7626f2955e830d5dfefcda3dd1435c08475cfc27ac91fd4c62730158db38990"
+    }
+  ],
+  "aggregates_by_fault_and_arm": [
+    {
+      "fault_kind": "owner",
+      "arm": "adapter_disabled",
+      "assignments": 20,
+      "runtime_valid": 19,
+      "runtime_rejected": 1,
+      "empty_patch": 0,
+      "target_touched": 12,
+      "target_text_update": 10,
+      "target_wrongly_withdrawn": 2,
+      "target_reopen_proposed": 0,
+      "correct_fault_field_revision_proposed": 0,
+      "target_state_fully_correct_frozen": 0,
+      "candidate_retains_faulty_supplied_field": 20,
+      "target_meaning_wrong_frozen": 1,
+      "target_status_wrong_frozen": 2,
+      "target_owner_wrong_frozen": 20,
+      "original_repair_evidence_cited_in_target_operation": 7,
+      "target_state_and_its_repair_citation_correct_posthoc": 0
+    },
+    {
+      "fault_kind": "owner",
+      "arm": "tracker_lora_v1",
+      "assignments": 20,
+      "runtime_valid": 20,
+      "runtime_rejected": 0,
+      "empty_patch": 4,
+      "target_touched": 0,
+      "target_text_update": 0,
+      "target_wrongly_withdrawn": 0,
+      "target_reopen_proposed": 0,
+      "correct_fault_field_revision_proposed": 0,
+      "target_state_fully_correct_frozen": 0,
+      "candidate_retains_faulty_supplied_field": 20,
+      "target_meaning_wrong_frozen": 0,
+      "target_status_wrong_frozen": 0,
+      "target_owner_wrong_frozen": 20,
+      "original_repair_evidence_cited_in_target_operation": 0,
+      "target_state_and_its_repair_citation_correct_posthoc": 0
+    },
+    {
+      "fault_kind": "owner",
+      "arm": "tracker_lora_v2",
+      "assignments": 20,
+      "runtime_valid": 20,
+      "runtime_rejected": 0,
+      "empty_patch": 4,
+      "target_touched": 0,
+      "target_text_update": 0,
+      "target_wrongly_withdrawn": 0,
+      "target_reopen_proposed": 0,
+      "correct_fault_field_revision_proposed": 0,
+      "target_state_fully_correct_frozen": 0,
+      "candidate_retains_faulty_supplied_field": 20,
+      "target_meaning_wrong_frozen": 0,
+      "target_status_wrong_frozen": 0,
+      "target_owner_wrong_frozen": 20,
+      "original_repair_evidence_cited_in_target_operation": 0,
+      "target_state_and_its_repair_citation_correct_posthoc": 0
+    },
+    {
+      "fault_kind": "wrong_withdrawn",
+      "arm": "adapter_disabled",
+      "assignments": 5,
+      "runtime_valid": 4,
+      "runtime_rejected": 1,
+      "empty_patch": 0,
+      "target_touched": 3,
+      "target_text_update": 0,
+      "target_wrongly_withdrawn": 0,
+      "target_reopen_proposed": 3,
+      "correct_fault_field_revision_proposed": 2,
+      "target_state_fully_correct_frozen": 2,
+      "candidate_retains_faulty_supplied_field": 3,
+      "target_meaning_wrong_frozen": 0,
+      "target_status_wrong_frozen": 3,
+      "target_owner_wrong_frozen": 0,
+      "original_repair_evidence_cited_in_target_operation": 0,
+      "target_state_and_its_repair_citation_correct_posthoc": 0
+    },
+    {
+      "fault_kind": "wrong_withdrawn",
+      "arm": "tracker_lora_v1",
+      "assignments": 5,
+      "runtime_valid": 5,
+      "runtime_rejected": 0,
+      "empty_patch": 0,
+      "target_touched": 2,
+      "target_text_update": 0,
+      "target_wrongly_withdrawn": 0,
+      "target_reopen_proposed": 2,
+      "correct_fault_field_revision_proposed": 2,
+      "target_state_fully_correct_frozen": 2,
+      "candidate_retains_faulty_supplied_field": 3,
+      "target_meaning_wrong_frozen": 0,
+      "target_status_wrong_frozen": 3,
+      "target_owner_wrong_frozen": 0,
+      "original_repair_evidence_cited_in_target_operation": 0,
+      "target_state_and_its_repair_citation_correct_posthoc": 0
+    },
+    {
+      "fault_kind": "wrong_withdrawn",
+      "arm": "tracker_lora_v2",
+      "assignments": 5,
+      "runtime_valid": 5,
+      "runtime_rejected": 0,
+      "empty_patch": 2,
+      "target_touched": 0,
+      "target_text_update": 0,
+      "target_wrongly_withdrawn": 0,
+      "target_reopen_proposed": 0,
+      "correct_fault_field_revision_proposed": 0,
+      "target_state_fully_correct_frozen": 0,
+      "candidate_retains_faulty_supplied_field": 5,
+      "target_meaning_wrong_frozen": 0,
+      "target_status_wrong_frozen": 5,
+      "target_owner_wrong_frozen": 0,
+      "original_repair_evidence_cited_in_target_operation": 0,
+      "target_state_and_its_repair_citation_correct_posthoc": 0
+    }
+  ],
+  "mutually_exclusive_observable_attribution_counts": {
+    "owner_repair_absent_target_untouched": 47,
+    "target_text_rewritten_without_owner_repair": 10,
+    "reopen_applied_with_insufficient_target_citation": 4,
+    "reopen_absent_retains_withdrawn_status": 10,
+    "owner_repair_absent_and_target_wrongly_withdrawn": 2,
+    "repair_absent_with_incidental_runtime_rejection": 1,
+    "reopen_attempt_rejected_with_wrong_proposed_status": 1
+  },
+  "input_evidence_review": {
+    "repair_evidence_present_and_sufficient_inputs": 25,
+    "repair_evidence_missing_inputs": 0,
+    "repair_evidence_at_or_before_processed_cursor_inputs": 25,
+    "owner_field_and_owner_history_contradict_direct_speaker_inputs": 20,
+    "withdraw_history_without_supporting_cancellation_inputs": 5,
+    "target_reference_contradictions_found": 0,
+    "semantic_ambiguities_in_target_repairs_found": 0,
+    "compiled_target_repairs_semantically_supported": 25,
+    "compiled_target_source_coverage_sufficient": 25,
+    "latest_event_categories_manual": {
+      "new_requirement_other_owner": 1,
+      "acknowledgement": 5,
+      "new_requirement": 3,
+      "revision": 5,
+      "possible_need_uncertain": 3,
+      "elliptical_acceptance": 7,
+      "unaccepted_proposal_rejection": 1
+    }
+  },
+  "findings": [
+    "No owner-field correction is proposed in any of the 60 wrong-owner assignments. All 60 retain the faulty supplied owner. The visible error boundary is the proposal, not only state application.",
+    "Adapter-disabled touches the target in 12/20 owner inputs: 10 text rewrites without owner repair and 2 mistaken withdrawals. Both LoRA arms leave all 20 owner targets untouched. Seven base target operations cite the original ownership evidence while still omitting the owner field; six preserve equivalent target meaning and one adds a wrong restriction.",
+    "For mistaken withdrawal, adapter-disabled and v1 each produce the correct target state in 2/5 inputs; v2 produces it in 0/5. All four successful state reopenings have insufficient target-operation citations under the frozen judgments. This conjunction is a post-hoc diagnostic and does not replace the frozen state-repair score.",
+    "One base wrong-withdrawal proposal attempts reopen with an illegal text field and uncertain status. Runtime rejects it. Removing the illegal field alone would still leave the requested active task incorrectly uncertain; runtime-only attribution would therefore be incomplete.",
+    "One base owner-cohort patch is rejected for changing an unknown intention. Its proposal never requests owner repair, making the runtime rejection incidental to the missing owner correction.",
+    "In three v2 mistaken-withdrawal assignments, other operations explicitly cite the original active-task event but omit reopening. Together with owner evidence citations, this rules out a blanket claim that repair evidence was absent from the supplied input or all emitted citations.",
+    "All 25 target repairs can be supported by already-arrived raw evidence. The supplied state histories themselves contain the seeded owner/status error. No target-reference defect or actual raw cancellation was found in this cohort."
+  ],
+  "paired_observations": {
+    "same_wrong_owner_retained_in_all_arms_inputs": 20,
+    "base_and_v1_correct_status_v2_wrong_status_inputs": 2,
+    "all_arms_wrong_withdrawn_status_inputs": 3,
+    "v2_reopen_absent_but_original_task_event_cited_elsewhere_inputs": 3,
+    "owner_target_source_cited_without_owner_field_in_base_inputs": 7
+  },
+  "representative_source_quotes_without_assignment_join": [
+    {
+      "scenario": "Two participants, separate ownership",
+      "quote": "My reference cross-sections must keep their horizontal scale unchanged.",
+      "observation": "The raw first-person speaker identifies ownership. The supplied target text names that person while both current and historical owner fields name another participant."
+    },
+    {
+      "scenario": "Faulty withdrawal history",
+      "quote": "Yes, outside only.",
+      "observation": "This accepts registration ticks outside an image. The full earlier conversation still contains the proof request and never cancels it; the latest feature acceptance does not justify preserving a withdrawn task."
+    },
+    {
+      "scenario": "Acknowledge versus cancel",
+      "quote": "Understood.",
+      "observation": "A supplied history entry treats this acknowledgment as a withdrawal even though the raw conversation contains no cancellation."
+    }
+  ],
+  "interpretation": "Retention of explicitly contradictory supplied fields is consistent with prior-state anchoring or a latest-event-only update strategy. These are hypotheses, not demonstrated attention, reasoning, or training mechanisms. Citing an event does not establish what the model internally understood.",
+  "limitations": [
+    "Synthetic short dialogues and deliberately corrupted prior states; these are not naturally occurring model-rollout errors.",
+    "All repair evidence lies at or before the processed cursor, so this cohort tests historical correction, not only extraction of new turns.",
+    "One retrospective model-assisted reviewer; no new independent human adjudication.",
+    "Source-field sufficiency and full-state quality are different outcomes; frozen target repair counts alone do not imply evidence-complete or globally correct patches.",
+    "Other candidate errors are retained in private frozen judgments but this attribution is scoped to designated owner/withdrawal targets.",
+    "No causal intervention, new inference, retraining, production trial, or new improvement estimate.",
+    "No runtime acceptability claim is inferred solely from semantic support; use the separate recorded-replay and compiled-patch audit."
+  ],
+  "frozen_label_contradictions": [],
+  "private_audit_record": {
+    "path": "output/research/2026-10-27/tracker-lora-failure-attribution/semantic/PRIVATE-owner-withdrawal-review-details.json",
+    "sha256": "f587562185c382282b0b544fd0dac12615fcd6513be8187cf8a60ad9b0c43e05",
+    "publication_policy": "PRIVATE: includes exact case IDs, blinded IDs, per-assignment arm joins, source quotes, raw proposals and frozen judgments; do not publish this record or the input packet."
+  },
+  "integrity": {
+    "source_hashes_stable_at_end": true,
+    "raw_proposal_operation_equivalence": 75,
+    "frozen_output_row_digest_match": 75,
+    "new_model_inference_calls": 0,
+    "training_runs": 0,
+    "runtime_replays_performed_by_this_review": 0
+  }
+}

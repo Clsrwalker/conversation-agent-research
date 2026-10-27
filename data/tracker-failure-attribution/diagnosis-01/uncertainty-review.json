@@ -1,0 +1,328 @@
+{
+  "date": "2026-10-27",
+  "timezone": "America/Halifax",
+  "created_at_utc": "2026-10-27T11:23:58.979492+00:00",
+  "reviewer": "tracker_attribution_uncertainty",
+  "source_bindings": {
+    "mapping": {
+      "study_relative_path": "evaluation/blind-prepared-reference-01/PRIVATE-mapping.json",
+      "sha256": "b2ec11d485ff5ce5d74e283164e8901a1c0fde621409e5d243fddae214a34f5e"
+    },
+    "packets": {
+      "study_relative_path": "evaluation/blind-prepared-reference-01/review-packets.json",
+      "sha256": "0b7516781206e86a7e2addc3f9f96a72fac6a476822013bb65b8d0104bf04500"
+    },
+    "judgments": {
+      "study_relative_path": "evaluation/blind-sealed-reference-01/final-judgments.json",
+      "sha256": "8ed6058cd94e25ccb35fd6d6b9b0f0511bceba4499404c21e504c1700c536280"
+    },
+    "runtime": {
+      "study_relative_path": "evaluation/blind-prepared-reference-01/PRIVATE-runtime-results.json",
+      "sha256": "90e4a571b822ccd4bc45b326cc55a2ebcc343c5af8336f76858f804a96effaf0"
+    },
+    "outputs": {
+      "study_relative_path": "evaluation/collection-01/outputs.jsonl",
+      "sha256": "8112bf62b4b3c33371f557610b7e5223e3e57a818a418975c525e0ca77d1a013"
+    },
+    "records": {
+      "study_relative_path": "data/compiled/test.records.jsonl",
+      "sha256": "8190b19a0b25718e7e5baf2ac5fd25383df4fcd422696a8564d99a6cb3766ce3"
+    },
+    "system_prompt": {
+      "study_relative_path": "annotation/system_prompt.txt",
+      "sha256": "7587583ff3fb2f46f64a32ca598a9f2bd980d8b0c3ff24915d80f5e31cda5abd"
+    },
+    "policy": {
+      "study_relative_path": "annotation/policy-v3.json",
+      "sha256": "7e36104bbbaf2e7cc89d95490682b004a1415bfa54c4c7a131328595021dc457"
+    },
+    "reference_disclosure": {
+      "study_relative_path": "analysis/reference-amendment-disclosure.json",
+      "sha256": "dd05a89839c43bfc0ae9239c2ffd093417c61929bda54d6f8a911e02ad61a7c0"
+    }
+  },
+  "schema": "tracker-uncertainty-manual-attribution-v1",
+  "record_kind": "retrospective_unblinded_diagnostic_not_new_experiment",
+  "scope": {
+    "scope_rule": "All reference-uncertain units in all three arms of the frozen amended study",
+    "arms": [
+      "adapter_disabled",
+      "tracker_lora_v1",
+      "tracker_lora_v2"
+    ],
+    "matched_reference_units": 24,
+    "units_per_arm": 24,
+    "arm_unit_assignments_expected": 72,
+    "arm_unit_assignments_reviewed": 72,
+    "manual_coverage_complete": true,
+    "scenario_families": 8,
+    "prefixes_per_family": 3,
+    "independently_compiled_prefixes": true,
+    "new_uncertain_introductions_per_arm": 8,
+    "injected_active_faults_per_arm": 5,
+    "correct_uncertain_priors_per_arm": 11
+  },
+  "method": {
+    "retrospective": true,
+    "unblinded": true,
+    "manual_semantic_review": true,
+    "baseline_labels_unchanged": true,
+    "new_semantic_scoring": false,
+    "new_model_inference_training_or_replay": false,
+    "evidence_read": "Arrived raw conversations, target prior state/history, original operations, original runtime/candidates, amended references, sealed judgments and annotation rules.",
+    "counting": "Full correctness means equivalent meaning with correct owner and status. Error dimensions overlap. Duplicate identity and source errors remain separate."
+  },
+  "original_artifact_binding_checks": {
+    "assignments": 72,
+    "original_output_record_hashes_match_mapping": 72,
+    "original_canonical_proposals_match_runtime_and_review_packet": 72,
+    "committed_candidates_match_review_packets": 72,
+    "valid_committed_patches": 72,
+    "runtime_errors": 0,
+    "representation_only_original_vs_shared_packet_differences": 3,
+    "note": "Mapping hashes bind whole canonical collection records. Shared blinded packets can differ in JSON formatting; all canonical proposals match."
+  },
+  "sealed_uncertainty_results": {
+    "adapter_disabled": {
+      "units": 24,
+      "fully_correct": 17,
+      "missing": 1,
+      "wrong_value": 1,
+      "wrong_owner": 0,
+      "wrong_status": 5,
+      "active_promotion": 5
+    },
+    "tracker_lora_v1": {
+      "units": 24,
+      "fully_correct": 18,
+      "missing": 1,
+      "wrong_value": 0,
+      "wrong_owner": 0,
+      "wrong_status": 5,
+      "active_promotion": 5
+    },
+    "tracker_lora_v2": {
+      "units": 24,
+      "fully_correct": 14,
+      "missing": 3,
+      "wrong_value": 2,
+      "wrong_owner": 0,
+      "wrong_status": 6,
+      "active_promotion": 6
+    }
+  },
+  "manual_attribution_counts": {
+    "adapter_disabled": {
+      "correct_new_uncertain": 6,
+      "prior_active_fault_retained_text_only_update": 3,
+      "correct_prior_uncertainty_preserved": 7,
+      "new_uncertain_qualifier_omitted": 1,
+      "correct_coverage_with_new_duplicate": 1,
+      "equivalent_rewording_preserves_uncertainty": 3,
+      "new_uncertain_intent_omitted": 1,
+      "prior_active_fault_retained_with_uncertain_duplicate": 1,
+      "prior_active_fault_retained_untouched": 1
+    },
+    "tracker_lora_v1": {
+      "correct_new_uncertain": 7,
+      "prior_active_fault_retained_untouched": 4,
+      "correct_prior_uncertainty_preserved": 11,
+      "new_uncertain_intent_omitted": 1,
+      "prior_active_fault_retained_text_only_update": 1
+    },
+    "tracker_lora_v2": {
+      "new_uncertain_intent_omitted": 3,
+      "prior_active_fault_retained_untouched": 5,
+      "correct_prior_uncertainty_preserved": 9,
+      "correct_new_uncertain": 5,
+      "new_wrong_target_overwrite_and_unsupported_rejection": 1,
+      "new_unsupported_active_promotion": 1
+    }
+  },
+  "fully_correct_by_prior_condition_and_expression": {
+    "adapter_disabled": {
+      "new_intent_absent": {
+        "units": 8,
+        "fully_correct": 6
+      },
+      "antecedent_required_introduction": {
+        "units": 3,
+        "fully_correct": 1
+      },
+      "injected_active_fault": {
+        "units": 5,
+        "fully_correct": 0
+      },
+      "correct_uncertain_prior": {
+        "units": 11,
+        "fully_correct": 11
+      },
+      "self_contained_introduction": {
+        "units": 5,
+        "fully_correct": 5
+      }
+    },
+    "tracker_lora_v1": {
+      "new_intent_absent": {
+        "units": 8,
+        "fully_correct": 7
+      },
+      "antecedent_required_introduction": {
+        "units": 3,
+        "fully_correct": 2
+      },
+      "injected_active_fault": {
+        "units": 5,
+        "fully_correct": 0
+      },
+      "correct_uncertain_prior": {
+        "units": 11,
+        "fully_correct": 11
+      },
+      "self_contained_introduction": {
+        "units": 5,
+        "fully_correct": 5
+      }
+    },
+    "tracker_lora_v2": {
+      "new_intent_absent": {
+        "units": 8,
+        "fully_correct": 5
+      },
+      "antecedent_required_introduction": {
+        "units": 3,
+        "fully_correct": 0
+      },
+      "injected_active_fault": {
+        "units": 5,
+        "fully_correct": 0
+      },
+      "correct_uncertain_prior": {
+        "units": 11,
+        "fully_correct": 9
+      },
+      "self_contained_introduction": {
+        "units": 5,
+        "fully_correct": 5
+      }
+    }
+  },
+  "v1_to_v2_matched_unit_transitions": {
+    "retained_correct": 14,
+    "regressed": 4,
+    "recovered": 0,
+    "both_wrong": 6
+  },
+  "v1_to_v2_regression_attribution": {
+    "empty_patch_omissions_at_new_uncertain_introduction": 2,
+    "wrong_target_overwrite_with_unsupported_rejection": 1,
+    "new_explicit_active_promotion": 1
+  },
+  "injected_status_fault_review": {
+    "matched_cases_per_arm": 5,
+    "assignments": 15,
+    "correct_repairs": 0,
+    "retained_active_faults": 15,
+    "current_vs_history_status_disagreements": 0,
+    "prior_and_history_conflict_with_raw_undecided_evidence": 15,
+    "text_only_updates_omitting_status": 4,
+    "uncertain_duplicate_added_beside_wrong_active_record": 1,
+    "wrong_active_target_untouched": 10,
+    "interpretation": "Inherited active errors are distinct from the one new v2 promotion. Injected active metadata is also in history, so current-versus-history consistency alone cannot find these errors."
+  },
+  "reference_and_rubric_review": {
+    "uncertain_references_reviewed": 24,
+    "identified_raw_reference_status_contradictions": 0,
+    "identified_uncertainty_label_rubric_contradictions": 0,
+    "labels_modified": 0,
+    "accepted_reference_amendments_affect_these_units": false,
+    "limitation": "Unblinded model-assisted manual audit; not human gold or a new exhaustive review of every other reference."
+  },
+  "observations": [
+    {
+      "finding": "New uncertainty full correctness: disabled 6/8, v1 7/8, v2 5/8. Existing correct uncertain prior: disabled 11/11, v1 11/11, v2 9/11.",
+      "limit": "Small constructed cohort."
+    },
+    {
+      "finding": "Five self-contained introductions are correct in all arms. Three introductions requiring proposal antecedents are correct in 1/3 disabled, 2/3 v1, 0/3 v2.",
+      "limit": "Expression form is confounded with language and scenario; no causal inference."
+    },
+    {
+      "finding": "All 15 injected active-fault assignments retain the wrong status. Four text-only updates omit status; one adds an uncertain duplicate without correcting original active metadata.",
+      "limit": "Frozen active-promotion counts describe final state; this attribution distinguishes retained prior error from a newly written active status."
+    },
+    {
+      "finding": "Two v2 regressions damage an already-correct uncertain record during a separate proposal acceptance: one wrong-target overwrite plus invented rejection, one explicit active promotion.",
+      "limit": "Co-occurrence does not establish internal attention or reasoning mechanism."
+    },
+    {
+      "finding": "All 72 proposals are valid committed patches and match actual scored candidates. Semantic errors are visible in proposals and resulting states.",
+      "limit": "Source binding is not a substitute for separate full replay/oracle audit."
+    }
+  ],
+  "representative_patterns": [
+    {
+      "pattern": "Concrete possible user need omitted",
+      "raw_relation": "Assistant proposes an optional feature; user says maybe, undecided.",
+      "observed": "Empty patch leaves no uncertain record.",
+      "desired": "Add uncertain record supported by proposal and user response."
+    },
+    {
+      "pattern": "Text changed without status repair",
+      "raw_relation": "Raw says undecided; supplied record and history say active.",
+      "observed": "Text update repeats undecided but omitted status retains active.",
+      "desired": "Explicitly update status on the existing stable ID from raw evidence."
+    },
+    {
+      "pattern": "Unrelated acceptance changes old uncertainty",
+      "raw_relation": "A yes accepts a different layout proposal.",
+      "observed": "Old optional feature promoted or overwritten with unrelated layout and unsupported rejection.",
+      "desired": "Bind acceptance to its proposal and preserve unaffected uncertain records."
+    },
+    {
+      "pattern": "Duplicate fails to repair contradiction",
+      "raw_relation": "Undecided raw evidence conflicts with old active record.",
+      "observed": "A new uncertain duplicate is added alongside old active record.",
+      "desired": "Repair original stable ID and detect contradictory duplicates."
+    }
+  ],
+  "concrete_followup_hypotheses": [
+    {
+      "priority": 1,
+      "hypothesis": "Field-specific status repair examples plus raw-source reconciliation may improve inherited fault repair.",
+      "data": "Contrast correct uncertain prior, faulty active prior, and truly adopted active prior on matched raw dialogues; include fallible histories and no-repair controls.",
+      "validation": "Repair rate plus false downgrades, collateral edits, stable-ID retention, fixed inference budget."
+    },
+    {
+      "priority": 2,
+      "hypothesis": "Contrastive proposal-response examples may improve detection of possible needs.",
+      "data": "Assistant suggestion alone versus user undecided possibility, explicit adoption/rejection, quotation and unrelated acknowledgement; vary language and scenario independently.",
+      "validation": "Uncertainty recall plus unsupported additions and antecedent citation completeness on held-out families."
+    },
+    {
+      "priority": 3,
+      "hypothesis": "Acceptance-to-proposal binding plus unchanged-intent checks may prevent collateral promotion.",
+      "data": "Several optional features and speakers followed by acceptance of a different proposal; include genuine acceptance controls.",
+      "validation": "Wrong-target changes, unsupported promotions, preservation of other requirements and correct intended update."
+    },
+    {
+      "priority": 4,
+      "hypothesis": "A semantic guard could flag undecided text with active metadata or contradictory duplicates for raw-evidence review.",
+      "data": "Include legitimate later adoption so old uncertain history does not trigger blind downgrades.",
+      "validation": "Guard precision, recall, false interventions and final state correctness against no guard."
+    }
+  ],
+  "limits": [
+    "No new inference, training, checkpoint selection, or end-to-end assistance experiment.",
+    "72 assignments are 24 prefixes from eight scenario families, not 72 independent dialogues.",
+    "Prefix inputs are independently compiled; later correct preservation is not longitudinal recovery from an earlier omission.",
+    "Retrospective unblinded review localizes observable errors but cannot establish model cognition or causal training/harness benefit.",
+    "Source errors, duplicates, and errors on other references can coexist with a fully correct uncertainty unit.",
+    "The original 17/24,18/24,14/24 uncertainty results remain frozen; this report does not establish real-world assistance quality."
+  ],
+  "private_evidence": {
+    "relative_path": "PRIVATE-uncertainty-case-review.json",
+    "sha256": "fc39ef99b6a8debdc45678678828f0dc4da702527b0504542a6fc34e927ef66f",
+    "publication_rule": "Do not publish raw case-arm joins or this private file."
+  }
+}

@@ -363,7 +363,7 @@
       "experiments/deep_conversation/benchmarks/TOOL_RECOVERY_RESULTS.md"
     ]
   },
-  "website_record_date": "2026-10-24",
+  "website_record_date": "2026-10-27",
   "investigation_progress": {
     "id": "experiment-02",
     "date": "2026-10-08",
@@ -5900,6 +5900,13 @@
       "type": "engineering_validation",
       "record": "tracker-lora-repair-validation.json",
       "status": "completed_through_scoring_pending_independent_results_audit"
+    },
+    {
+      "id": "tracker-failure-attribution-engineering",
+      "date": "2026-10-27",
+      "type": "engineering_validation",
+      "record": "tracker-failure-attribution-validation.json",
+      "status": "passed"
     }
   ],
   "literature_reviews": [
@@ -7188,5 +7195,18 @@
         "download_note": "Original report download; source-language Markdown. Internal links refer to the full research archive."
       }
     ]
-  }
+  },
+  "research_diagnostics": [
+    {
+      "id": "tracker-failure-attribution",
+      "date": "2026-10-27",
+      "type": "post_hoc_scripted_diagnostic",
+      "status": "completed",
+      "record": "tracker-failure-attribution/diagnosis-01/summary.json",
+      "page": "intent-role-separation.html#tracker-failure-attribution",
+      "new_model_calls": 0,
+      "captured_outputs_replayed": 600,
+      "evidence": "tracker-failure-attribution/diagnosis-01/evidence.zip"
+    }
+  ]
 }

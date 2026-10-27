@@ -1,0 +1,144 @@
+{
+  "id": "tracker-failure-attribution-static-release-checks",
+  "type": "engineering_validation",
+  "date": "2026-10-27",
+  "timezone": "America/Halifax",
+  "checked_at_utc": "2026-10-27T11:29:03.722173+00:00",
+  "status": "passed_with_final_release_receipt_deferred",
+  "baseline_source_commit": "8775c0287dd7183acbb7266154a4f122677ac491",
+  "new_model_calls": 0,
+  "new_training_runs": 0,
+  "checks": [
+    {
+      "name": "Frozen diagnostic identity and review gate",
+      "status": "passed",
+      "detail": "Completed post-hoc record, matching reviewed interpretation hash, no inference/training, proposed test not run."
+    },
+    {
+      "name": "Displayed table and interpretation",
+      "status": "passed",
+      "detail": "Six fault rows plus total: 28 numeric cells match; all reviewed observations, limitations and corrections appear with diagnostic/no-new-call and planned-work labels."
+    },
+    {
+      "name": "Original page preservation",
+      "status": "passed",
+      "detail": "Removing the single appended block and insertion newline exactly reproduces the pre-change page, including all earlier result sections."
+    },
+    {
+      "name": "Evidence source bindings and downloads",
+      "status": "passed",
+      "detail": "19 exact ZIP members and 12 JSON reading copies match the frozen package; source/export hashes and aggregate-only publication checks pass."
+    },
+    {
+      "name": "New section evidence links",
+      "status": "passed",
+      "detail": "8 local link targets verified; 1 explicitly deferred final release-validation record."
+    },
+    {
+      "name": "Previous evidence retention",
+      "status": "passed",
+      "detail": "All ten prior ZIP byte hashes and page download links remain unchanged."
+    },
+    {
+      "name": "Overview and structured index",
+      "status": "passed",
+      "detail": "Both homepage entry links present; new result remains a post-hoc diagnostic, date correct; every earlier study, engineering and diagnostic index entry retained."
+    }
+  ],
+  "checker_sha256": "1b496b9402434706ce70777abefceb384a61e12e53fbfcb664dbd120ad88cb03",
+  "artifact_sha256": {
+    "dist/intent-role-separation.html": "273fb2f1db667834bcbaa686c557519fb2a72be17a338e179decb6da562682e6",
+    "dist/index.html": "0669b3c8d3c525aece9863ea0ad9408a0dae502e6650b0d05b916f8c5ef06040",
+    "dist/data/research-record.json": "ed09886b6b0a21bc918ccbb23ad4f66c5ac8ef2086f7bd8974dd2a8bb65e2e41",
+    "dist/data/tracker-failure-attribution/diagnosis-01/evidence.zip": "6668a4d3ea83ce5dd717df2e784beb1e1a6e72ebf7ebf5c2568aae01b344625e",
+    "build_tracker_failure_attribution.py": "1c74cf4b74dc4651fe59fbbd889707ffb24f773dc7ef0b6d1e4b184ddd5bef74",
+    "build_data.py": "00971a45f41c27972188c96a0288ecc1d609fe7ddd73e60bf07555f61636f5a4"
+  },
+  "limits": [
+    "Static consistency checks do not establish model quality or browser rendering.",
+    "Deployment and live HTTP verification are separate. The explicitly deferred release receipt must exist and be verified before publication."
+  ],
+  "preserved_old_page_sha256": "2495583edffd81ced1766f32d18c6d1fcada94165b661c29c3c0fbfb5a7d3573",
+  "exported_json_files": 12,
+  "zip_payload_files": 19,
+  "verified_section_links": [
+    {
+      "href": "data/tracker-failure-attribution/diagnosis-01/evidence.zip",
+      "sha256": "6668a4d3ea83ce5dd717df2e784beb1e1a6e72ebf7ebf5c2568aae01b344625e"
+    },
+    {
+      "href": "data/tracker-failure-attribution/diagnosis-01/summary.json",
+      "sha256": "09423344171d9a59a80e607a7accb62d3f025a3a0a13b1d1f4f193d928cb2bad"
+    },
+    {
+      "href": "data/tracker-failure-attribution/diagnosis-01/runtime-final.json",
+      "sha256": "0892e88cefc9b57a6534414806a5028ddbd606cb1f98182b7da2274ef43f8d9a"
+    },
+    {
+      "href": "data/tracker-failure-attribution/diagnosis-01/owner-withdrawal-review.json",
+      "sha256": "aacec784ce539e7da458a68db0f3fdae2b360d44a09f1a30e95e1f9c40a8da9c"
+    },
+    {
+      "href": "data/tracker-failure-attribution/diagnosis-01/uncertainty-review.json",
+      "sha256": "0f4417fcf2b784eac9245ed62bef9d6a6aa000357190ce0c5d729784d0f83e17"
+    },
+    {
+      "href": "data/tracker-failure-attribution/diagnosis-01/curriculum-audit.json",
+      "sha256": "b682d687f1627c35bb2df9f6b9c9f08bcbf9a10696d1fa6767a735cdcbaf4a3c"
+    },
+    {
+      "href": "data/tracker-failure-attribution/diagnosis-01/independent-audit.json",
+      "sha256": "e9e091247f52315b3958d42dc3d3106e2365b9057fc6cce7795f490f2510a2be"
+    },
+    {
+      "href": "data/tracker-failure-attribution-validation.json",
+      "sha256": "91b48a76a6f9d47d31c5bc3a2595f1657adc54c9836cfbb1ae5317dd4f71d2a8"
+    }
+  ],
+  "pending_release_validation_links": [
+    "data/tracker-failure-attribution-release-validation.json"
+  ],
+  "preserved_prior_bundles": [
+    {
+      "path_relative_to_site": "dist/data/intent-role-separation/evidence.zip",
+      "sha256": "865cf0e08c7052d2d327bbbe1d7740c007047ea4542917eaa4796ca5f77452a5"
+    },
+    {
+      "path_relative_to_site": "dist/data/intent-role-diagnostics/evidence.zip",
+      "sha256": "32e6d9566b1f989195dfc023a36e312f281ac61e97c277a8d769784914def613"
+    },
+    {
+      "path_relative_to_site": "dist/data/tracker-lora-plan/evidence.zip",
+      "sha256": "061027b393a7ff07ca4255aa4f740fd4eda308e1ec7b70dc13e90e7161a64aac"
+    },
+    {
+      "path_relative_to_site": "dist/data/tracker-lora-pilot/evidence.zip",
+      "sha256": "7e4018e684cd4a92fe12b333a931170105ba7d61649048ddecd512e58aed5c80"
+    },
+    {
+      "path_relative_to_site": "dist/data/tracker-lora-pilot/followup-01/evidence.zip",
+      "sha256": "0d25311a746e3461b7bb3d22ab1d0ba1609213bf2c4c89f055904f4399c50bff"
+    },
+    {
+      "path_relative_to_site": "dist/data/tracker-lora-pilot/memory-revision-01/evidence.zip",
+      "sha256": "b63049ba6ea557c798e715cbaeb250a826add84a804d272469387c554ea292a4"
+    },
+    {
+      "path_relative_to_site": "dist/data/tracker-lora-pilot/formal-training-02/evidence.zip",
+      "sha256": "e4f9601655aa624fbd7e37837cf6774829874a4003a18840a268046c2d88f0d5"
+    },
+    {
+      "path_relative_to_site": "dist/data/tracker-lora-pilot/heldout-results-01/evidence.zip",
+      "sha256": "90edfd00b0a02f940d17440f23a431ff1007da81df316a2907f2e0e84be10110"
+    },
+    {
+      "path_relative_to_site": "dist/data/tracker-lora-pilot/heldout-collection-01/evidence.zip",
+      "sha256": "96f035dde9ca638f3846543ba8ee0b29fe75d6ffa9774b13a63c459fb57fd37c"
+    },
+    {
+      "path_relative_to_site": "dist/data/tracker-lora-repair-v2/results-01/evidence.zip",
+      "sha256": "6cb402fa6c67caa26a814bb13a01681f98d2bfbedec2a801f2b20b6d8eee95e4"
+    }
+  ],
+  "publication_ready_from_static_checks": false
+}

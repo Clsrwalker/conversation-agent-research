@@ -1,0 +1,254 @@
+{
+  "status": "passed",
+  "created_at_utc": "2026-10-27T11:20:50.599343+00:00",
+  "date": "2026-10-27",
+  "timezone": "America/Halifax",
+  "source_bindings_rechecked": {
+    "run-01": 38,
+    "run-02": 38
+  },
+  "private_output_hashes_rechecked": 6,
+  "captured_assignments": 600,
+  "fault_assignment_joins_checked": 240,
+  "aggregate_groups_checked": 21,
+  "all_reference_controls_unchanged_between_diagnostic_revisions": true,
+  "fault_controls_with_full_projected_amended_state_equality": 80,
+  "all_200_controls_preserve_all_annotated_unrelated_fields": true,
+  "known_ordinary_original_target_vs_amended_reference_mismatches": 2,
+  "semantic_judgments_unchanged": 240,
+  "revision_correction": {
+    "reason": "An absent target has no prior identity. A newly added intent reusing its annotated reference ID is not automatically the same semantic target. Run-02 uses only sealed semantic matched candidate IDs for missing-target touches; existing-target rules are unchanged.",
+    "missing_assignments_reclassified_from_target_touched_to_other_identity_only": {
+      "adapter_disabled": 6,
+      "tracker_lora_v1": 6,
+      "tracker_lora_v2": 4
+    },
+    "original_code_and_run_retained": true,
+    "run_01_superseded_only_for_missing_target_identity_aggregates": true,
+    "new_model_trials": 0
+  },
+  "aggregate_checks": [
+    {
+      "arm": "adapter_disabled",
+      "fault_kind": "all_faults",
+      "assignments": 80,
+      "frozen_target_fully_correct": 23,
+      "target_identity_touched_in_proposal": 51,
+      "target_literal_fields_unchanged_from_input": 43,
+      "empty_parsed_proposal": 0,
+      "only_other_identity_operations_proposed": 29
+    },
+    {
+      "arm": "adapter_disabled",
+      "fault_kind": "missing",
+      "assignments": 20,
+      "frozen_target_fully_correct": 8,
+      "target_identity_touched_in_proposal": 8,
+      "target_literal_fields_unchanged_from_input": 13,
+      "empty_parsed_proposal": 0,
+      "only_other_identity_operations_proposed": 12
+    },
+    {
+      "arm": "adapter_disabled",
+      "fault_kind": "owner",
+      "assignments": 20,
+      "frozen_target_fully_correct": 0,
+      "target_identity_touched_in_proposal": 12,
+      "target_literal_fields_unchanged_from_input": 15,
+      "empty_parsed_proposal": 0,
+      "only_other_identity_operations_proposed": 8
+    },
+    {
+      "arm": "adapter_disabled",
+      "fault_kind": "stale_active",
+      "assignments": 5,
+      "frozen_target_fully_correct": 2,
+      "target_identity_touched_in_proposal": 5,
+      "target_literal_fields_unchanged_from_input": 1,
+      "empty_parsed_proposal": 0,
+      "only_other_identity_operations_proposed": 0
+    },
+    {
+      "arm": "adapter_disabled",
+      "fault_kind": "status",
+      "assignments": 10,
+      "frozen_target_fully_correct": 0,
+      "target_identity_touched_in_proposal": 6,
+      "target_literal_fields_unchanged_from_input": 6,
+      "empty_parsed_proposal": 0,
+      "only_other_identity_operations_proposed": 4
+    },
+    {
+      "arm": "adapter_disabled",
+      "fault_kind": "text",
+      "assignments": 20,
+      "frozen_target_fully_correct": 11,
+      "target_identity_touched_in_proposal": 17,
+      "target_literal_fields_unchanged_from_input": 5,
+      "empty_parsed_proposal": 0,
+      "only_other_identity_operations_proposed": 3
+    },
+    {
+      "arm": "adapter_disabled",
+      "fault_kind": "wrong_withdrawn",
+      "assignments": 5,
+      "frozen_target_fully_correct": 2,
+      "target_identity_touched_in_proposal": 3,
+      "target_literal_fields_unchanged_from_input": 3,
+      "empty_parsed_proposal": 0,
+      "only_other_identity_operations_proposed": 2
+    },
+    {
+      "arm": "tracker_lora_v1",
+      "fault_kind": "all_faults",
+      "assignments": 80,
+      "frozen_target_fully_correct": 19,
+      "target_identity_touched_in_proposal": 23,
+      "target_literal_fields_unchanged_from_input": 54,
+      "empty_parsed_proposal": 10,
+      "only_other_identity_operations_proposed": 47
+    },
+    {
+      "arm": "tracker_lora_v1",
+      "fault_kind": "missing",
+      "assignments": 20,
+      "frozen_target_fully_correct": 5,
+      "target_identity_touched_in_proposal": 5,
+      "target_literal_fields_unchanged_from_input": 11,
+      "empty_parsed_proposal": 3,
+      "only_other_identity_operations_proposed": 12
+    },
+    {
+      "arm": "tracker_lora_v1",
+      "fault_kind": "owner",
+      "assignments": 20,
+      "frozen_target_fully_correct": 0,
+      "target_identity_touched_in_proposal": 0,
+      "target_literal_fields_unchanged_from_input": 20,
+      "empty_parsed_proposal": 4,
+      "only_other_identity_operations_proposed": 16
+    },
+    {
+      "arm": "tracker_lora_v1",
+      "fault_kind": "stale_active",
+      "assignments": 5,
+      "frozen_target_fully_correct": 5,
+      "target_identity_touched_in_proposal": 5,
+      "target_literal_fields_unchanged_from_input": 0,
+      "empty_parsed_proposal": 0,
+      "only_other_identity_operations_proposed": 0
+    },
+    {
+      "arm": "tracker_lora_v1",
+      "fault_kind": "status",
+      "assignments": 10,
+      "frozen_target_fully_correct": 0,
+      "target_identity_touched_in_proposal": 2,
+      "target_literal_fields_unchanged_from_input": 9,
+      "empty_parsed_proposal": 1,
+      "only_other_identity_operations_proposed": 7
+    },
+    {
+      "arm": "tracker_lora_v1",
+      "fault_kind": "text",
+      "assignments": 20,
+      "frozen_target_fully_correct": 7,
+      "target_identity_touched_in_proposal": 9,
+      "target_literal_fields_unchanged_from_input": 11,
+      "empty_parsed_proposal": 2,
+      "only_other_identity_operations_proposed": 9
+    },
+    {
+      "arm": "tracker_lora_v1",
+      "fault_kind": "wrong_withdrawn",
+      "assignments": 5,
+      "frozen_target_fully_correct": 2,
+      "target_identity_touched_in_proposal": 2,
+      "target_literal_fields_unchanged_from_input": 3,
+      "empty_parsed_proposal": 0,
+      "only_other_identity_operations_proposed": 3
+    },
+    {
+      "arm": "tracker_lora_v2",
+      "fault_kind": "all_faults",
+      "assignments": 80,
+      "frozen_target_fully_correct": 20,
+      "target_identity_touched_in_proposal": 22,
+      "target_literal_fields_unchanged_from_input": 54,
+      "empty_parsed_proposal": 14,
+      "only_other_identity_operations_proposed": 44
+    },
+    {
+      "arm": "tracker_lora_v2",
+      "fault_kind": "missing",
+      "assignments": 20,
+      "frozen_target_fully_correct": 6,
+      "target_identity_touched_in_proposal": 7,
+      "target_literal_fields_unchanged_from_input": 9,
+      "empty_parsed_proposal": 4,
+      "only_other_identity_operations_proposed": 9
+    },
+    {
+      "arm": "tracker_lora_v2",
+      "fault_kind": "owner",
+      "assignments": 20,
+      "frozen_target_fully_correct": 0,
+      "target_identity_touched_in_proposal": 0,
+      "target_literal_fields_unchanged_from_input": 20,
+      "empty_parsed_proposal": 4,
+      "only_other_identity_operations_proposed": 16
+    },
+    {
+      "arm": "tracker_lora_v2",
+      "fault_kind": "stale_active",
+      "assignments": 5,
+      "frozen_target_fully_correct": 4,
+      "target_identity_touched_in_proposal": 4,
+      "target_literal_fields_unchanged_from_input": 1,
+      "empty_parsed_proposal": 0,
+      "only_other_identity_operations_proposed": 1
+    },
+    {
+      "arm": "tracker_lora_v2",
+      "fault_kind": "status",
+      "assignments": 10,
+      "frozen_target_fully_correct": 2,
+      "target_identity_touched_in_proposal": 2,
+      "target_literal_fields_unchanged_from_input": 8,
+      "empty_parsed_proposal": 1,
+      "only_other_identity_operations_proposed": 7
+    },
+    {
+      "arm": "tracker_lora_v2",
+      "fault_kind": "text",
+      "assignments": 20,
+      "frozen_target_fully_correct": 8,
+      "target_identity_touched_in_proposal": 9,
+      "target_literal_fields_unchanged_from_input": 11,
+      "empty_parsed_proposal": 3,
+      "only_other_identity_operations_proposed": 8
+    },
+    {
+      "arm": "tracker_lora_v2",
+      "fault_kind": "wrong_withdrawn",
+      "assignments": 5,
+      "frozen_target_fully_correct": 0,
+      "target_identity_touched_in_proposal": 0,
+      "target_literal_fields_unchanged_from_input": 5,
+      "empty_parsed_proposal": 2,
+      "only_other_identity_operations_proposed": 3
+    }
+  ],
+  "evidence_files": {
+    "replay_diagnostic.py": "386f002495bca5cacd30872c387e6b3695ba9df65a191d8ac30d67d9b2ecd8b5",
+    "replay_diagnostic_v2.py": "af2931bc14c7a17f093ea09a8b84a4b92fecbd43737f920d1a0a4898d29cd02b",
+    "run-01/summary.json": "1bbcef89618ab53ade05c2ad0c4cb5af670b1b0493cfa0624e1a0bc27edb87c8",
+    "run-02/summary.json": "0892e88cefc9b57a6534414806a5028ddbd606cb1f98182b7da2274ef43f8d9a",
+    "run-01.log": "b1a8cabac36752e43e6b07d656f661f8a2840768acf27787621c5f2a3216d0c7",
+    "run-02.log": "4e93be6b6825a3d2fa9fc8ba80701df719edb750f1e2801b0c25b1dbca523f02",
+    "verify_runtime_artifacts.py": "6366726fd2a018414cbac0cd03f2a0fc40bdf550e682488dc7ee338c9b78e5f1"
+  },
+  "limits": [
+    "This QA validates recorded-data consistency and deterministic runtime capability, not new semantic labels, internal cognition or a training benefit. Full state means the complete evaluation projection (intent ID, text, owner, status); replay equality additionally checked the entire runtime return against the historical record."
+  ]
+}

@@ -45,8 +45,8 @@
     },
     {
       "path": "data.js",
-      "sha256": "3dc6c576bd170e657f09476670c15cfa513ad4345f75aece33cdabc13c5239dc",
-      "bytes": 200502
+      "sha256": "81f214d9b18b956676a1aff9874e1bb18a06aa557d738e48cf3c6799e5a9b0cd",
+      "bytes": 201095
     },
     {
       "path": "data/analyze_harness_latency.py",
@@ -615,8 +615,8 @@
     },
     {
       "path": "data/research-record.json",
-      "sha256": "5a665e86d797bc1c17e83f6e869fb60d8816355f480d3d5b10ed5c9f9d5000d4",
-      "bytes": 294467
+      "sha256": "ed09886b6b0a21bc918ccbb23ad4f66c5ac8ef2086f7bd8974dd2a8bb65e2e41",
+      "bytes": 295190
     },
     {
       "path": "data/results.csv",
@@ -827,6 +827,91 @@
       "path": "data/summary-placement/scoring/REVIEW-PROCESS-AUDIT.json",
       "sha256": "09abad0e3ac3b6eea79fdaf8371490dca01bf3945628b4e913a81f09d18ae908",
       "bytes": 20155
+    },
+    {
+      "path": "data/tracker-failure-attribution-release-validation.json",
+      "sha256": "fd0cd843dd882f32915d2429c263ae28aaf1487bef55f5e2444935097bd077ac",
+      "bytes": 3232
+    },
+    {
+      "path": "data/tracker-failure-attribution-release/local-preview-checks-01.json",
+      "sha256": "f3e940c196f26d3174ab518561ccdceced14de0fc9788bd56a4ea43d15747da7",
+      "bytes": 4885
+    },
+    {
+      "path": "data/tracker-failure-attribution-release/static-release-checks-01.json",
+      "sha256": "683c54ddf43c3e9efbc909ce716ef030cb13bec36edafaa4e6b45221a1605f7b",
+      "bytes": 6817
+    },
+    {
+      "path": "data/tracker-failure-attribution-validation.json",
+      "sha256": "91b48a76a6f9d47d31c5bc3a2595f1657adc54c9836cfbb1ae5317dd4f71d2a8",
+      "bytes": 3768
+    },
+    {
+      "path": "data/tracker-failure-attribution/diagnosis-01/curriculum-audit.json",
+      "sha256": "b682d687f1627c35bb2df9f6b9c9f08bcbf9a10696d1fa6767a735cdcbaf4a3c",
+      "bytes": 9052
+    },
+    {
+      "path": "data/tracker-failure-attribution/diagnosis-01/engineering-validation.json",
+      "sha256": "91b48a76a6f9d47d31c5bc3a2595f1657adc54c9836cfbb1ae5317dd4f71d2a8",
+      "bytes": 3768
+    },
+    {
+      "path": "data/tracker-failure-attribution/diagnosis-01/evidence.zip",
+      "sha256": "6668a4d3ea83ce5dd717df2e784beb1e1a6e72ebf7ebf5c2568aae01b344625e",
+      "bytes": 76724
+    },
+    {
+      "path": "data/tracker-failure-attribution/diagnosis-01/independent-audit.json",
+      "sha256": "e9e091247f52315b3958d42dc3d3106e2365b9057fc6cce7795f490f2510a2be",
+      "bytes": 20213
+    },
+    {
+      "path": "data/tracker-failure-attribution/diagnosis-01/independent-computed-checks.json",
+      "sha256": "d53db3e4e6a849224c962c83c667aafb581638c46287ac23656493747953b45e",
+      "bytes": 12625
+    },
+    {
+      "path": "data/tracker-failure-attribution/diagnosis-01/owner-withdrawal-review.json",
+      "sha256": "aacec784ce539e7da458a68db0f3fdae2b360d44a09f1a30e95e1f9c40a8da9c",
+      "bytes": 14815
+    },
+    {
+      "path": "data/tracker-failure-attribution/diagnosis-01/prior-bundles.json",
+      "sha256": "c27f7cf8aa3b032a681e160c14ebbefd9ae44453fc6846022062025a967af01e",
+      "bytes": 1965
+    },
+    {
+      "path": "data/tracker-failure-attribution/diagnosis-01/runtime-artifact-qa.json",
+      "sha256": "b837c3c35711458e1d5dd3967dd2ffe6081dcd61bc58a245fa721a6aaac10bbc",
+      "bytes": 9598
+    },
+    {
+      "path": "data/tracker-failure-attribution/diagnosis-01/runtime-execution-receipt.json",
+      "sha256": "77d5aa709b5409a52a0e45205cb395dc57791faba577f6807b4657fddb30237c",
+      "bytes": 4691
+    },
+    {
+      "path": "data/tracker-failure-attribution/diagnosis-01/runtime-final.json",
+      "sha256": "0892e88cefc9b57a6534414806a5028ddbd606cb1f98182b7da2274ef43f8d9a",
+      "bytes": 38346
+    },
+    {
+      "path": "data/tracker-failure-attribution/diagnosis-01/runtime-superseded-run-01.json",
+      "sha256": "1bbcef89618ab53ade05c2ad0c4cb5af670b1b0493cfa0624e1a0bc27edb87c8",
+      "bytes": 32562
+    },
+    {
+      "path": "data/tracker-failure-attribution/diagnosis-01/summary.json",
+      "sha256": "09423344171d9a59a80e607a7accb62d3f025a3a0a13b1d1f4f193d928cb2bad",
+      "bytes": 17753
+    },
+    {
+      "path": "data/tracker-failure-attribution/diagnosis-01/uncertainty-review.json",
+      "sha256": "0f4417fcf2b784eac9245ed62bef9d6a6aa000357190ce0c5d729784d0f83e17",
+      "bytes": 14300
     },
     {
       "path": "data/tracker-lora-data-validation.json",
@@ -1690,13 +1775,13 @@
     },
     {
       "path": "index.html",
-      "sha256": "dfa001d48afca78d8e5a54697a90a57e832907b6cefcfc72e6c01781a2d8a1b2",
-      "bytes": 72876
+      "sha256": "0669b3c8d3c525aece9863ea0ad9408a0dae502e6650b0d05b916f8c5ef06040",
+      "bytes": 73820
     },
     {
       "path": "intent-role-separation.html",
-      "sha256": "e8fc34253ddbb296c6210cd38cdf6609e2816f647dec59d4b2c5a498120b248a",
-      "bytes": 54562
+      "sha256": "273fb2f1db667834bcbaa686c557519fb2a72be17a338e179decb6da562682e6",
+      "bytes": 63765
     },
     {
       "path": "intention-literature.css",

@@ -1,0 +1,273 @@
+{
+  "kind": "posthoc_curriculum_structure_diagnostic",
+  "status": "completed",
+  "date": "2026-10-27",
+  "timezone": "America/Halifax",
+  "created_at_utc": "2026-10-27T11:14:52.290128+00:00",
+  "source_hashes": {
+    "output/research/2026-10-24/tracker-lora-repair-v2/data/compiled/manifest.json": "35e3dfc55bf74ca37b88e6e3aa70738a9d61ec87769f19a8a601c3d9dded16bc",
+    "output/research/2026-10-27/tracker-lora-failure-attribution/data-audit/inspect_curriculum.py": "c4ce3b0f7a45d294d21259c934d89da276aaffd0f8cba85df7e4f1557ab25c99",
+    "output/research/2026-10-24/tracker-lora-repair-v2/data/compiled/train.records.jsonl": "12c9f6a672fb30846eb62e6ea4ef7456906a167f784f3524ddff212d82f117ea",
+    "output/research/2026-10-24/tracker-lora-repair-v2/data/compiled/dev.records.jsonl": "9cad6d4df10aa51ec79c59e1b68149ad390a1f88fa62748cd2fc4421dd961351",
+    "output/research/2026-10-24/tracker-lora-repair-v2/data/compiled/test.records.jsonl": "8190b19a0b25718e7e5baf2ac5fd25383df4fcd422696a8564d99a6cb3766ce3"
+  },
+  "splits": {
+    "train": {
+      "updates": 500,
+      "fault_inputs": 140,
+      "groups": {
+        "legacy_text": {
+          "inputs": 20,
+          "annotated_target_operations": 20,
+          "operation_types": {
+            "update": 20
+          },
+          "explicit_fields": {
+            "text": 20
+          },
+          "all_repair_evidence_at_or_before_processed_cursor": 20,
+          "all_repair_source_ids_arrived": true
+        },
+        "missing": {
+          "inputs": 30,
+          "annotated_target_operations": 30,
+          "operation_types": {
+            "add": 30
+          },
+          "explicit_fields": {
+            "owner": 30,
+            "text": 30,
+            "status": 30
+          },
+          "all_repair_evidence_at_or_before_processed_cursor": 30,
+          "all_repair_source_ids_arrived": true
+        },
+        "owner": {
+          "inputs": 30,
+          "annotated_target_operations": 30,
+          "operation_types": {
+            "update": 30
+          },
+          "explicit_fields": {
+            "owner": 30
+          },
+          "all_repair_evidence_at_or_before_processed_cursor": 30,
+          "all_repair_source_ids_arrived": true
+        },
+        "stale_active": {
+          "inputs": 8,
+          "annotated_target_operations": 8,
+          "operation_types": {
+            "withdraw": 8
+          },
+          "explicit_fields": {},
+          "all_repair_evidence_at_or_before_processed_cursor": 8,
+          "all_repair_source_ids_arrived": true
+        },
+        "status": {
+          "inputs": 14,
+          "annotated_target_operations": 14,
+          "operation_types": {
+            "update": 14
+          },
+          "explicit_fields": {
+            "status": 14
+          },
+          "all_repair_evidence_at_or_before_processed_cursor": 14,
+          "all_repair_source_ids_arrived": true
+        },
+        "text": {
+          "inputs": 30,
+          "annotated_target_operations": 30,
+          "operation_types": {
+            "update": 30
+          },
+          "explicit_fields": {
+            "text": 30
+          },
+          "all_repair_evidence_at_or_before_processed_cursor": 30,
+          "all_repair_source_ids_arrived": true
+        },
+        "wrong_withdrawn": {
+          "inputs": 8,
+          "annotated_target_operations": 8,
+          "operation_types": {
+            "reopen": 8
+          },
+          "explicit_fields": {
+            "status": 8
+          },
+          "all_repair_evidence_at_or_before_processed_cursor": 8,
+          "all_repair_source_ids_arrived": true
+        }
+      }
+    },
+    "dev": {
+      "updates": 50,
+      "fault_inputs": 20,
+      "groups": {
+        "missing": {
+          "inputs": 5,
+          "annotated_target_operations": 5,
+          "operation_types": {
+            "add": 5
+          },
+          "explicit_fields": {
+            "owner": 5,
+            "text": 5,
+            "status": 5
+          },
+          "all_repair_evidence_at_or_before_processed_cursor": 5,
+          "all_repair_source_ids_arrived": true
+        },
+        "owner": {
+          "inputs": 5,
+          "annotated_target_operations": 5,
+          "operation_types": {
+            "update": 5
+          },
+          "explicit_fields": {
+            "owner": 5
+          },
+          "all_repair_evidence_at_or_before_processed_cursor": 5,
+          "all_repair_source_ids_arrived": true
+        },
+        "stale_active": {
+          "inputs": 1,
+          "annotated_target_operations": 1,
+          "operation_types": {
+            "withdraw": 1
+          },
+          "explicit_fields": {},
+          "all_repair_evidence_at_or_before_processed_cursor": 1,
+          "all_repair_source_ids_arrived": true
+        },
+        "status": {
+          "inputs": 3,
+          "annotated_target_operations": 3,
+          "operation_types": {
+            "update": 3
+          },
+          "explicit_fields": {
+            "status": 3
+          },
+          "all_repair_evidence_at_or_before_processed_cursor": 3,
+          "all_repair_source_ids_arrived": true
+        },
+        "text": {
+          "inputs": 5,
+          "annotated_target_operations": 5,
+          "operation_types": {
+            "update": 5
+          },
+          "explicit_fields": {
+            "text": 5
+          },
+          "all_repair_evidence_at_or_before_processed_cursor": 5,
+          "all_repair_source_ids_arrived": true
+        },
+        "wrong_withdrawn": {
+          "inputs": 1,
+          "annotated_target_operations": 1,
+          "operation_types": {
+            "reopen": 1
+          },
+          "explicit_fields": {
+            "status": 1
+          },
+          "all_repair_evidence_at_or_before_processed_cursor": 1,
+          "all_repair_source_ids_arrived": true
+        }
+      }
+    },
+    "test": {
+      "updates": 200,
+      "fault_inputs": 80,
+      "groups": {
+        "missing": {
+          "inputs": 20,
+          "annotated_target_operations": 20,
+          "operation_types": {
+            "add": 20
+          },
+          "explicit_fields": {
+            "owner": 20,
+            "text": 20,
+            "status": 20
+          },
+          "all_repair_evidence_at_or_before_processed_cursor": 20,
+          "all_repair_source_ids_arrived": true
+        },
+        "owner": {
+          "inputs": 20,
+          "annotated_target_operations": 20,
+          "operation_types": {
+            "update": 20
+          },
+          "explicit_fields": {
+            "owner": 20
+          },
+          "all_repair_evidence_at_or_before_processed_cursor": 20,
+          "all_repair_source_ids_arrived": true
+        },
+        "stale_active": {
+          "inputs": 5,
+          "annotated_target_operations": 5,
+          "operation_types": {
+            "withdraw": 5
+          },
+          "explicit_fields": {},
+          "all_repair_evidence_at_or_before_processed_cursor": 5,
+          "all_repair_source_ids_arrived": true
+        },
+        "status": {
+          "inputs": 10,
+          "annotated_target_operations": 10,
+          "operation_types": {
+            "update": 10
+          },
+          "explicit_fields": {
+            "status": 10
+          },
+          "all_repair_evidence_at_or_before_processed_cursor": 10,
+          "all_repair_source_ids_arrived": true
+        },
+        "text": {
+          "inputs": 20,
+          "annotated_target_operations": 20,
+          "operation_types": {
+            "update": 20
+          },
+          "explicit_fields": {
+            "text": 20
+          },
+          "all_repair_evidence_at_or_before_processed_cursor": 20,
+          "all_repair_source_ids_arrived": true
+        },
+        "wrong_withdrawn": {
+          "inputs": 5,
+          "annotated_target_operations": 5,
+          "operation_types": {
+            "reopen": 5
+          },
+          "explicit_fields": {
+            "status": 5
+          },
+          "all_repair_evidence_at_or_before_processed_cursor": 5,
+          "all_repair_source_ids_arrived": true
+        }
+      }
+    }
+  },
+  "new_model_calls": 0,
+  "preserved_initial_inspection_failure": {
+    "error": "KeyError: fault_kind",
+    "cause": "Twenty retained training faults use the earlier wrong_text/repair_text annotation schema.",
+    "resolution": "Explicitly recognize that schema as legacy_text and verify counts against the frozen manifest; no source data changes."
+  },
+  "limits": [
+    "Counts inspect annotated operations and evidence indices, not whether the model learned them or whether labels are semantically correct.",
+    "Evidence existing at or before the processed cursor does not establish model attention or prove the cursor caused a failure.",
+    "This is a retrospective description of exposed data, not a new training ablation."
+  ]
+}

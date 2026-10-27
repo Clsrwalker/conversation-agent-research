@@ -1,0 +1,66 @@
+{
+  "id": "tracker-failure-attribution-engineering",
+  "type": "engineering_validation",
+  "status": "passed",
+  "date": "2026-10-27",
+  "timezone": "America/Halifax",
+  "scope": "Grouped recorded-output replay, scripted reference controls, curriculum structure and diagnostic consistency checks; publication checks are separate.",
+  "checks": [
+    {
+      "name": "Frozen runtime dependencies",
+      "status": "passed",
+      "result": "18/18 source bindings match the experimental lock."
+    },
+    {
+      "name": "Captured runtime replay",
+      "status": "passed",
+      "result": "600 complete runtime returns reproduced; rejected outputs preserve input state."
+    },
+    {
+      "name": "Original reference patch controls",
+      "status": "passed",
+      "result": "200/200 accepted, 200/200 match original projected references, 80/80 fault inputs match amended projected references; two ordinary known reference differences retained."
+    },
+    {
+      "name": "Artifact and target identity audit",
+      "status": "passed_after_diagnostic_correction",
+      "result": "Run-02 corrects missing-intent ID reuse; run-01/code retained. All 240 fault assignment joins, 21 aggregate groups and private output hashes verified."
+    },
+    {
+      "name": "Curriculum structure audit",
+      "status": "passed_after_schema_handling",
+      "result": "500/50/200 source updates verified; 140/20/80 corrupted priors including 20 legacy-schema train cases. Initial KeyError preserved in audit record."
+    },
+    {
+      "name": "Independent interpretation audit",
+      "status": "passed",
+      "record": "independent-audit.json"
+    }
+  ],
+  "new_model_calls": 0,
+  "new_training_runs": 0,
+  "tested_source_sha256": {
+    "runtime-final.json": "0892e88cefc9b57a6534414806a5028ddbd606cb1f98182b7da2274ef43f8d9a",
+    "runtime-superseded-run-01.json": "1bbcef89618ab53ade05c2ad0c4cb5af670b1b0493cfa0624e1a0bc27edb87c8",
+    "runtime-artifact-qa.json": "b837c3c35711458e1d5dd3967dd2ffe6081dcd61bc58a245fa721a6aaac10bbc",
+    "runtime-execution-receipt.json": "9af4b248a928929b2e71260ab83456f91abc4eb6c9c9e67740ec4fcbea56b953",
+    "replay_diagnostic.py": "386f002495bca5cacd30872c387e6b3695ba9df65a191d8ac30d67d9b2ecd8b5",
+    "replay_diagnostic_v2.py": "af2931bc14c7a17f093ea09a8b84a4b92fecbd43737f920d1a0a4898d29cd02b",
+    "verify_runtime_artifacts.py": "6366726fd2a018414cbac0cd03f2a0fc40bdf550e682488dc7ee338c9b78e5f1",
+    "curriculum-audit.json": "b682d687f1627c35bb2df9f6b9c9f08bcbf9a10696d1fa6767a735cdcbaf4a3c",
+    "inspect_curriculum.py": "c4ce3b0f7a45d294d21259c934d89da276aaffd0f8cba85df7e4f1557ab25c99",
+    "owner-withdrawal-review.json": "aacec784ce539e7da458a68db0f3fdae2b360d44a09f1a30e95e1f9c40a8da9c",
+    "uncertainty-review.json": "0f4417fcf2b784eac9245ed62bef9d6a6aa000357190ce0c5d729784d0f83e17",
+    "independent-audit.json": "e9e091247f52315b3958d42dc3d3106e2365b9057fc6cce7795f490f2510a2be",
+    "independent-computed-checks.json": "d53db3e4e6a849224c962c83c667aafb581638c46287ac23656493747953b45e",
+    "independent_verify_claims.py": "33614003d5a48d2e828ace9f4483dc8b6c78a8c2e6fcbfcd97e1a94536a7c8b0",
+    "prior-bundles.json": "c27f7cf8aa3b032a681e160c14ebbefd9ae44453fc6846022062025a967af01e",
+    "build_report.py": "edb576b01470b96846f2eefcc5ae2d047857fac1a69f7760a35a1ab128a1a11e",
+    "export_publication.py": "c7fcb9953332a759bd1a3a44d3d09870d588cb7cc1f5b1a3d624b953e8b94554"
+  },
+  "limitations": [
+    "CPU replay and reference execution do not demonstrate a model-quality improvement.",
+    "Semantic review is retrospective model review; no new independent human labels.",
+    "Website and deployment checks are recorded after this package is frozen."
+  ]
+}

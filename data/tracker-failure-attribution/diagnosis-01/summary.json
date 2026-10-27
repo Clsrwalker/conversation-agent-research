@@ -1,0 +1,244 @@
+{
+  "id": "tracker-failure-attribution",
+  "type": "post_hoc_scripted_diagnostic",
+  "status": "completed",
+  "date": "2026-10-27",
+  "timezone": "America/Halifax",
+  "created_at_utc": "2026-10-27T11:21:06.828660+00:00",
+  "title": "Where tracker repairs fail before state execution",
+  "lead": "In the captured v2 outputs, 58 of 80 corrupted-prior inputs propose no operation on the erroneous intent. All 80 annotated repair controls can be executed by the frozen runtime. This locates an observable failure boundary; it does not establish why the model missed the repair or prove a better tracker.",
+  "problem": "The revised tracker failed every wrong-owner and mistaken-withdrawal case and regressed on uncertain intents. Determine whether source evidence, repair proposals, runtime execution or label ambiguity explain the observed outcomes.",
+  "baseline": "The frozen 24 October three-arm experiment: adapter disabled, tracker LoRA v1 and tracker LoRA v2, sharing the same base model and runtime; 200 independently compiled prefix inputs from 40 families per arm. Overall v1-to-v2 quality benefit remains unestablished.",
+  "change": "No model, adapter, prompt, training data or runtime change. Replay captured proposals; execute original annotated patches as scripted feasibility controls; inspect source evidence and existing sealed judgments.",
+  "comparison_conditions": "All 18 protocol-locked dependencies match. All 600 captured complete runtime results reproduce exactly. Original reviewed quality labels are reused, with no re-scoring or replacement of earlier results.",
+  "new_model_calls": 0,
+  "new_training_runs": 0,
+  "captured_assignments": 600,
+  "scenario_families": 40,
+  "unique_inputs": 200,
+  "v2_fault_breakdown": [
+    {
+      "kind": "missing",
+      "label": "Missing intent",
+      "inputs": 20,
+      "fully_correct": 6,
+      "no_target_operation": 13,
+      "related_operation_still_incorrect": 1,
+      "invalid": 0
+    },
+    {
+      "kind": "owner",
+      "label": "Wrong owner",
+      "inputs": 20,
+      "fully_correct": 0,
+      "no_target_operation": 20,
+      "related_operation_still_incorrect": 0,
+      "invalid": 0
+    },
+    {
+      "kind": "stale_active",
+      "label": "Withdrawn request still active",
+      "inputs": 5,
+      "fully_correct": 4,
+      "no_target_operation": 1,
+      "related_operation_still_incorrect": 0,
+      "invalid": 0
+    },
+    {
+      "kind": "status",
+      "label": "Wrong status",
+      "inputs": 10,
+      "fully_correct": 2,
+      "no_target_operation": 8,
+      "related_operation_still_incorrect": 0,
+      "invalid": 0
+    },
+    {
+      "kind": "text",
+      "label": "Wrong value or qualifier",
+      "inputs": 20,
+      "fully_correct": 8,
+      "no_target_operation": 11,
+      "related_operation_still_incorrect": 1,
+      "invalid": 0
+    },
+    {
+      "kind": "wrong_withdrawn",
+      "label": "Active request wrongly withdrawn",
+      "inputs": 5,
+      "fully_correct": 0,
+      "no_target_operation": 5,
+      "related_operation_still_incorrect": 0,
+      "invalid": 0
+    }
+  ],
+  "v2_fault_totals": {
+    "inputs": 80,
+    "fully_correct": 20,
+    "no_target_operation": 58,
+    "related_operation_still_incorrect": 2,
+    "invalid": 0,
+    "empty_proposals": 14,
+    "other_identity_only": 44
+  },
+  "observations": [
+    "V2 repairs 20/80 corrupted targets. Of the 60 remaining failures, 58 have no operation on the existing or semantically matched target; 14 proposals are empty and 44 contain only other-identity operations. Two contain a related committed operation but remain incorrect. All 80 proposals are accepted.",
+    "All three arms repair 0/20 wrong-owner targets. The adapter-disabled arm touches 12 targets, including 10 text updates that omit owner and two withdrawals; both tracker LoRAs touch none. Some captured text updates cite the original ownership evidence, so a blanket claim that the model never encountered the historical source is unsupported.",
+    "V2 touches and repairs 0/5 mistakenly withdrawn targets. The adapter-disabled and v1 arms each restore 2/5 target states, but those four reopen operations cite insufficient evidence. State correctness and evidence sufficiency remain distinct.",
+    "V1-to-v2 uncertain-intent correctness decreases from 18/24 to 14/24: 14 retained correct, four regressed, none recovered, six incorrect in both. The regressions comprise two empty patches at initial introduction, one unrelated content overwrite, and one explicit promotion to active.",
+    "Five injected active-status faults on uncertain intentions remain active in all three arms. The current metadata and stored history agree on the wrong status; raw dialogue and record wording say the user is undecided. A check only comparing the state with its own history would miss these contradictions.",
+    "The original 200 annotated patches are accepted and exactly match their original projected references while preserving annotated unrelated fields. They match 198/200 amended references; the two known ordinary text omissions are disclosed. All 80 corrupted-prior controls match the complete amended reference projection (intent ID, text, owner and status).",
+    "All 80 repair evidence sets are available in the arrived dialogue and at or before the processed cursor. The runtime accepts these historical citations. This rules out an interface prohibition on citing processed evidence for these cases; it does not establish model attention or a cursor-induced cause.",
+    "Training already contains 30 explicit owner updates, 14 status updates and eight reopen repairs, within 140 corrupted-prior inputs out of 500 updates. These counts rule out zero exposure to the operations, not insufficient diversity, weighting or learning."
+  ],
+  "hypotheses_not_established": [
+    "A tracker may prioritize the latest delta over auditing prior state.",
+    "Repeated wrong metadata in state and history may be treated as more authoritative than raw dialogue.",
+    "Field-specific repair supervision may be insufficient despite examples being present.",
+    "A separate audit step or revised training distribution may improve repair; this requires a controlled model experiment."
+  ],
+  "next_discriminating_experiment_proposal": {
+    "status": "not_run",
+    "first_test": "Freeze a fresh development set of paired correct/corrupted priors, including no-change and uncertain-intent negative controls. With the same trained adapter, compare the current single-pass tracker against an explicit field-by-field evidence audit under a matched total inference budget.",
+    "separate_followup": "Only after mechanism tests, compare matched-training-budget curricula that vary repair diversity or weight; do not simultaneously change data, prompt and runtime.",
+    "success_conditions": [
+      "More fully correct repairs, including owner and reopen, without increased false repairs of already-correct state.",
+      "Preserve uncertainty, source sufficiency and unrelated constraints; report cost and family-level uncertainty.",
+      "Reserve another unseen family set for final evaluation; current exposed cases remain diagnostic material."
+    ]
+  },
+  "review_scope": "Retrospective unblinded model inspection of all 25 owner/withdrawal inputs across three arms (75 assignments), plus all 24 uncertain reference units across three arms (72 arm-unit checks; eight families, three independent prefixes each). These views overlap and are not 147 independent scenarios. No independent human annotation is claimed.",
+  "limitations": [
+    "This is post-hoc diagnosis on exposed synthetic data with existing model-authored/model-reviewed labels, not fresh held-out evidence or a human study.",
+    "The structural replay covers all 600 outputs; new detailed source inspection focuses on owner, mistaken withdrawal and uncertainty. It does not newly adjudicate every semantic label across all fault types.",
+    "The unit is an independently supplied one-step prefix. Later correctness does not demonstrate longitudinal self-recovery or end-to-end work completion.",
+    "Reference patch controls demonstrate executable annotated operations, not model ability to produce them.",
+    "Target matching inherits the sealed semantic judgments. A literal ID reused for an unrelated new intent is not evidence of missing-intent repair.",
+    "The observed boundaries cannot distinguish attention, state authority, prompt interpretation, data balance or optimization as internal causes.",
+    "No new model inference, training, ASR, user study or end-to-end quality benefit is claimed."
+  ],
+  "diagnostic_corrections": [
+    "The initial curriculum inspection encountered the legacy fault schema; the final audit explicitly recognizes 20 legacy text faults and checks manifest counts without modifying inputs.",
+    "Runtime diagnostic run-01 counted a missing target’s reference ID as target-related even when reused for another intent. Run-02 uses sealed semantic candidate matching for missing targets; both scripts and summaries are preserved. The v2 no-target-operation count changes from 54 to 58, with no change to original quality results."
+  ],
+  "sources": {
+    "output/research/2026-10-27/tracker-lora-failure-attribution/runtime/run-02/summary.json": "0892e88cefc9b57a6534414806a5028ddbd606cb1f98182b7da2274ef43f8d9a",
+    "output/research/2026-10-27/tracker-lora-failure-attribution/data-audit/result-01.json": "b682d687f1627c35bb2df9f6b9c9f08bcbf9a10696d1fa6767a735cdcbaf4a3c",
+    "output/research/2026-10-24/tracker-lora-repair-v2/analysis/three-arm-results.json": "d20ffe481dd98fe1bcd558ba500df61014980ee1d6c81c8299dda6c860a41d2b",
+    "output/research/2026-10-27/tracker-lora-failure-attribution/build_report.py": "edb576b01470b96846f2eefcc5ae2d047857fac1a69f7760a35a1ab128a1a11e"
+  },
+  "independent_final_audit": "passed",
+  "display_date": "27 Oct 2026",
+  "index_text": "Post-hoc diagnosis: 58/80 v2 fault inputs have no target operation; annotated repairs are executable. No new model calls or demonstrated improvement.",
+  "reviewed_interpretation_source_sha256": "5032d9f4b30e0c9838cc147b1c151e0e2b48a9f3dc671e0dcc289104ac512618",
+  "frozen_at_utc": "2026-10-27T11:28:33.445564+00:00",
+  "source_and_export_files": {
+    "runtime-final.json": {
+      "source_path": "output/research/2026-10-27/tracker-lora-failure-attribution/runtime/run-02/summary.json",
+      "source_sha256": "0892e88cefc9b57a6534414806a5028ddbd606cb1f98182b7da2274ef43f8d9a",
+      "export_sha256": "0892e88cefc9b57a6534414806a5028ddbd606cb1f98182b7da2274ef43f8d9a",
+      "transformation": "none; publication-safe aggregate or diagnostic source"
+    },
+    "runtime-superseded-run-01.json": {
+      "source_path": "output/research/2026-10-27/tracker-lora-failure-attribution/runtime/run-01/summary.json",
+      "source_sha256": "1bbcef89618ab53ade05c2ad0c4cb5af670b1b0493cfa0624e1a0bc27edb87c8",
+      "export_sha256": "1bbcef89618ab53ade05c2ad0c4cb5af670b1b0493cfa0624e1a0bc27edb87c8",
+      "transformation": "none; publication-safe aggregate or diagnostic source"
+    },
+    "runtime-artifact-qa.json": {
+      "source_path": "output/research/2026-10-27/tracker-lora-failure-attribution/runtime/artifact-qa.json",
+      "source_sha256": "b837c3c35711458e1d5dd3967dd2ffe6081dcd61bc58a245fa721a6aaac10bbc",
+      "export_sha256": "b837c3c35711458e1d5dd3967dd2ffe6081dcd61bc58a245fa721a6aaac10bbc",
+      "transformation": "none; publication-safe aggregate or diagnostic source"
+    },
+    "runtime-execution-receipt.json": {
+      "source_path": "output/research/2026-10-27/tracker-lora-failure-attribution/runtime/execution-receipt.json",
+      "source_sha256": "9af4b248a928929b2e71260ab83456f91abc4eb6c9c9e67740ec4fcbea56b953",
+      "export_sha256": "77d5aa709b5409a52a0e45205cb395dc57791faba577f6807b4657fddb30237c",
+      "transformation": "Local workspace and Python paths made project-relative; execution results unchanged."
+    },
+    "replay_diagnostic.py": {
+      "source_path": "output/research/2026-10-27/tracker-lora-failure-attribution/runtime/replay_diagnostic.py",
+      "source_sha256": "386f002495bca5cacd30872c387e6b3695ba9df65a191d8ac30d67d9b2ecd8b5",
+      "export_sha256": "386f002495bca5cacd30872c387e6b3695ba9df65a191d8ac30d67d9b2ecd8b5",
+      "transformation": "none; publication-safe aggregate or diagnostic source"
+    },
+    "replay_diagnostic_v2.py": {
+      "source_path": "output/research/2026-10-27/tracker-lora-failure-attribution/runtime/replay_diagnostic_v2.py",
+      "source_sha256": "af2931bc14c7a17f093ea09a8b84a4b92fecbd43737f920d1a0a4898d29cd02b",
+      "export_sha256": "af2931bc14c7a17f093ea09a8b84a4b92fecbd43737f920d1a0a4898d29cd02b",
+      "transformation": "none; publication-safe aggregate or diagnostic source"
+    },
+    "verify_runtime_artifacts.py": {
+      "source_path": "output/research/2026-10-27/tracker-lora-failure-attribution/runtime/verify_runtime_artifacts.py",
+      "source_sha256": "6366726fd2a018414cbac0cd03f2a0fc40bdf550e682488dc7ee338c9b78e5f1",
+      "export_sha256": "6366726fd2a018414cbac0cd03f2a0fc40bdf550e682488dc7ee338c9b78e5f1",
+      "transformation": "none; publication-safe aggregate or diagnostic source"
+    },
+    "curriculum-audit.json": {
+      "source_path": "output/research/2026-10-27/tracker-lora-failure-attribution/data-audit/result-01.json",
+      "source_sha256": "b682d687f1627c35bb2df9f6b9c9f08bcbf9a10696d1fa6767a735cdcbaf4a3c",
+      "export_sha256": "b682d687f1627c35bb2df9f6b9c9f08bcbf9a10696d1fa6767a735cdcbaf4a3c",
+      "transformation": "none; publication-safe aggregate or diagnostic source"
+    },
+    "inspect_curriculum.py": {
+      "source_path": "output/research/2026-10-27/tracker-lora-failure-attribution/data-audit/inspect_curriculum.py",
+      "source_sha256": "c4ce3b0f7a45d294d21259c934d89da276aaffd0f8cba85df7e4f1557ab25c99",
+      "export_sha256": "c4ce3b0f7a45d294d21259c934d89da276aaffd0f8cba85df7e4f1557ab25c99",
+      "transformation": "none; publication-safe aggregate or diagnostic source"
+    },
+    "owner-withdrawal-review.json": {
+      "source_path": "output/research/2026-10-27/tracker-lora-failure-attribution/semantic/owner-withdrawal-review.json",
+      "source_sha256": "aacec784ce539e7da458a68db0f3fdae2b360d44a09f1a30e95e1f9c40a8da9c",
+      "export_sha256": "aacec784ce539e7da458a68db0f3fdae2b360d44a09f1a30e95e1f9c40a8da9c",
+      "transformation": "none; publication-safe aggregate or diagnostic source"
+    },
+    "uncertainty-review.json": {
+      "source_path": "output/research/2026-10-27/tracker-lora-failure-attribution/semantic/uncertainty-review.json",
+      "source_sha256": "0f4417fcf2b784eac9245ed62bef9d6a6aa000357190ce0c5d729784d0f83e17",
+      "export_sha256": "0f4417fcf2b784eac9245ed62bef9d6a6aa000357190ce0c5d729784d0f83e17",
+      "transformation": "none; publication-safe aggregate or diagnostic source"
+    },
+    "independent-audit.json": {
+      "source_path": "output/research/2026-10-27/tracker-lora-failure-attribution/audit/final-review.json",
+      "source_sha256": "e9e091247f52315b3958d42dc3d3106e2365b9057fc6cce7795f490f2510a2be",
+      "export_sha256": "e9e091247f52315b3958d42dc3d3106e2365b9057fc6cce7795f490f2510a2be",
+      "transformation": "none; publication-safe aggregate or diagnostic source"
+    },
+    "independent-computed-checks.json": {
+      "source_path": "output/research/2026-10-27/tracker-lora-failure-attribution/audit/computed-checks.json",
+      "source_sha256": "d53db3e4e6a849224c962c83c667aafb581638c46287ac23656493747953b45e",
+      "export_sha256": "d53db3e4e6a849224c962c83c667aafb581638c46287ac23656493747953b45e",
+      "transformation": "none; publication-safe aggregate or diagnostic source"
+    },
+    "independent_verify_claims.py": {
+      "source_path": "output/research/2026-10-27/tracker-lora-failure-attribution/audit/verify_claims.py",
+      "source_sha256": "33614003d5a48d2e828ace9f4483dc8b6c78a8c2e6fcbfcd97e1a94536a7c8b0",
+      "export_sha256": "33614003d5a48d2e828ace9f4483dc8b6c78a8c2e6fcbfcd97e1a94536a7c8b0",
+      "transformation": "none; publication-safe aggregate or diagnostic source"
+    },
+    "prior-bundles.json": {
+      "source_path": "output/research/2026-10-27/tracker-lora-failure-attribution/analysis/prior-bundles.json",
+      "source_sha256": "c27f7cf8aa3b032a681e160c14ebbefd9ae44453fc6846022062025a967af01e",
+      "export_sha256": "c27f7cf8aa3b032a681e160c14ebbefd9ae44453fc6846022062025a967af01e",
+      "transformation": "none; publication-safe aggregate or diagnostic source"
+    },
+    "build_report.py": {
+      "source_path": "output/research/2026-10-27/tracker-lora-failure-attribution/build_report.py",
+      "source_sha256": "edb576b01470b96846f2eefcc5ae2d047857fac1a69f7760a35a1ab128a1a11e",
+      "export_sha256": "edb576b01470b96846f2eefcc5ae2d047857fac1a69f7760a35a1ab128a1a11e",
+      "transformation": "none; publication-safe aggregate or diagnostic source"
+    },
+    "export_publication.py": {
+      "source_path": "output/research/2026-10-27/tracker-lora-failure-attribution/export_publication.py",
+      "source_sha256": "c7fcb9953332a759bd1a3a44d3d09870d588cb7cc1f5b1a3d624b953e8b94554",
+      "export_sha256": "c7fcb9953332a759bd1a3a44d3d09870d588cb7cc1f5b1a3d624b953e8b94554",
+      "transformation": "none; publication-safe aggregate or diagnostic source"
+    }
+  },
+  "generated_metadata": {
+    "engineering-validation.json": {
+      "sha256": "91b48a76a6f9d47d31c5bc3a2595f1657adc54c9836cfbb1ae5317dd4f71d2a8"
+    }
+  }
+}

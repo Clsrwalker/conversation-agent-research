@@ -1,0 +1,92 @@
+{
+  "kind": "observed_execution_receipt",
+  "status": "completed",
+  "created_at_utc": "2026-10-27T11:21:20.005970+00:00",
+  "date": "2026-10-27",
+  "timezone": "America/Halifax",
+  "working_directory": ".",
+  "python_executable": "experiments/deep_conversation/.venv/Scripts/python.exe",
+  "python_version": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "executions": [
+    {
+      "script": "replay_diagnostic.py",
+      "arguments": [
+        "--output",
+        "output\\research\\2026-10-27\\tracker-lora-failure-attribution\\runtime\\run-01",
+        "--date",
+        "2026-10-27"
+      ],
+      "observed_exit_code": 0,
+      "result": "completed; missing-target identity aggregate superseded by run-02",
+      "log": "run-01.log"
+    },
+    {
+      "script": "replay_diagnostic_v2.py",
+      "arguments": [
+        "--output",
+        "output\\research\\2026-10-27\\tracker-lora-failure-attribution\\runtime\\run-02",
+        "--date",
+        "2026-10-27"
+      ],
+      "observed_exit_code": 0,
+      "result": "completed; authoritative corrected runtime diagnostic",
+      "log": "run-02.log"
+    },
+    {
+      "script": "verify_runtime_artifacts.py",
+      "arguments": [],
+      "observed_exit_code": 0,
+      "result": "passed; source/output hashes, 240 joins, 21 grouped aggregates and 80 full state controls",
+      "log": "artifact-qa.log"
+    }
+  ],
+  "failed_execution_attempts": 0,
+  "revision_disclosure": {
+    "reason": "An absent target has no prior identity. A newly added intent reusing its annotated reference ID is not automatically the same semantic target. Run-02 uses only sealed semantic matched candidate IDs for missing-target touches; existing-target rules are unchanged.",
+    "missing_assignments_reclassified_from_target_touched_to_other_identity_only": {
+      "adapter_disabled": 6,
+      "tracker_lora_v1": 6,
+      "tracker_lora_v2": 4
+    },
+    "original_code_and_run_retained": true,
+    "run_01_superseded_only_for_missing_target_identity_aggregates": true,
+    "new_model_trials": 0
+  },
+  "verified_runtime_sha256": "e028a604a93520801a0f752755d80b305afb1eebd8792ea0aeaaa3cd5c722f73",
+  "verified_frozen_dependency_count": 18,
+  "source_bindings_rechecked": {
+    "run-01": 38,
+    "run-02": 38
+  },
+  "public_safe_files": [
+    "replay_diagnostic.py",
+    "replay_diagnostic_v2.py",
+    "verify_runtime_artifacts.py",
+    "run-01/summary.json",
+    "run-02/summary.json",
+    "run-01.log",
+    "run-02.log",
+    "artifact-qa.json",
+    "artifact-qa.log",
+    "execution-receipt.json"
+  ],
+  "private_files": "All PRIVATE-*.json under run-01 and run-02 contain joined assignment identities, operations or review detail and must not be included in public package.",
+  "artifact_hashes": {
+    "artifact-qa.json": "b837c3c35711458e1d5dd3967dd2ffe6081dcd61bc58a245fa721a6aaac10bbc",
+    "artifact-qa.log": "e3079fd82f8351cbb8d472f5f6ba1eb2ad28c037364b1cef00363f3b9e05ed4d",
+    "replay_diagnostic.py": "386f002495bca5cacd30872c387e6b3695ba9df65a191d8ac30d67d9b2ecd8b5",
+    "replay_diagnostic_v2.py": "af2931bc14c7a17f093ea09a8b84a4b92fecbd43737f920d1a0a4898d29cd02b",
+    "run-01/PRIVATE-assignment-analysis.json": "d7306ba8884e87f9aa64ad8d1e136f19ab106bd4895aeda30cdcf3a7e2b1cf43",
+    "run-01/PRIVATE-fault-target-analysis.json": "1e8ac19450e1a8a5fa4d9a1e5b3e8f9a1f277968dc550e1de42b8bcb33d9984a",
+    "run-01/PRIVATE-reference-controls.json": "b93d6ed131106c2283e11f89cfabbb628acd376b27aa93c9226eea0c361cc35e",
+    "run-01/summary.json": "1bbcef89618ab53ade05c2ad0c4cb5af670b1b0493cfa0624e1a0bc27edb87c8",
+    "run-01.log": "b1a8cabac36752e43e6b07d656f661f8a2840768acf27787621c5f2a3216d0c7",
+    "run-02/PRIVATE-assignment-analysis.json": "838d0aff2249cf02c8e4d0ab519bce0a19b27a5f3b05d577c41dfe708e2b77c6",
+    "run-02/PRIVATE-fault-target-analysis.json": "6c56737ccc9ff6ae7c1a6c2179e07468af0db241cd1b03f23fbc2ea11a2396e6",
+    "run-02/PRIVATE-reference-controls.json": "b93d6ed131106c2283e11f89cfabbb628acd376b27aa93c9226eea0c361cc35e",
+    "run-02/summary.json": "0892e88cefc9b57a6534414806a5028ddbd606cb1f98182b7da2274ef43f8d9a",
+    "run-02.log": "4e93be6b6825a3d2fa9fc8ba80701df719edb750f1e2801b0c25b1dbca523f02",
+    "verify_runtime_artifacts.py": "6366726fd2a018414cbac0cd03f2a0fc40bdf550e682488dc7ee338c9b78e5f1"
+  },
+  "interpretation": "All 600 captured runtime results replayed exactly. Original annotated patches were executable on all 200 supplied priors. All 80 faulty-prior controls equal the full reviewed projected state and preserve annotated unrelated requirements. This is scripted reference-patch feasibility; it supplies no new model inference, training benefit or internal-mechanism proof."
+}
