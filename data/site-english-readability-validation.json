@@ -1,0 +1,81 @@
+{
+  "id": "site-english-readability-2026-10-27",
+  "date": "2026-10-27",
+  "timezone": "America/Halifax",
+  "type": "engineering_validation",
+  "status": "passed_with_documented_limits",
+  "change": "English presentation, current findings first, technical details and earlier studies in disclosures. No new research runs.",
+  "comparison_revision": "cdc0b5ab9eae416f5de42e079873225172e8abb7",
+  "tested_revision": "Source hashes below; publication commit recorded separately.",
+  "new_model_calls": 0,
+  "new_training_runs": 0,
+  "checks": [
+    {
+      "name": "All root HTML pages contain no Chinese display text",
+      "result": "pass",
+      "pages": 7
+    },
+    {
+      "name": "Existing metric values preserved, with Yes/No translated",
+      "result": "pass",
+      "metric_occurrences": 79
+    },
+    {
+      "name": "All previous data-table cell numbers preserved in the three translated sections",
+      "result": "pass"
+    },
+    {
+      "name": "All previous tracker-page IDs preserved and current IDs unique",
+      "result": "pass",
+      "previous_ids": 21
+    },
+    {
+      "name": "Existing evidence ZIPs byte-identical",
+      "result": "pass",
+      "files": 22
+    },
+    {
+      "name": "Local links and HTML anchors resolve",
+      "result": "pass",
+      "checked_links": 224
+    }
+  ],
+  "browser_checks": {
+    "status": "passed",
+    "surface": "Codex in-app browser, local preview",
+    "checks": [
+      "English homepage and tracker page visibly rendered",
+      "Current findings appear before historical studies",
+      "History and technical details start collapsed",
+      "Clicking technical details reveals the original token table",
+      "Direct link to tracker-lora-results opens the enclosing archive",
+      "No page horizontal overflow at the inspected desktop viewport",
+      "No browser console errors observed"
+    ],
+    "screenshot": "output/publications/research-site/qa/english-readability-2026-10-27/preview.png"
+  },
+  "limitations": [
+    "Presentation and navigation checks do not establish assistance quality or measured user comprehension.",
+    "Frozen downloadable research records retain their original language.",
+    "No model inference, training or new experimental scoring was performed.",
+    "Visual checks used the available desktop viewport; a separate mobile viewport was not exercised."
+  ],
+  "source_sha256": {
+    "README.md": "ff8c7be4e103dc816e62b632825eb9156faf58483099896efbc7be6674ec9cef",
+    "build_data.py": "58f9060142567f48cf25a318c5b09c5c38afd60765a468dbccbfcf8365f1ae91",
+    "build_tracker_intent_audit.py": "d12a4e29fcaa48fc65ef15a7f2409cdc38963d2e8d4411a932fd7c458a208b4e",
+    "build_tracker_root_cause.py": "fe3d0e93e9650b84c428fc679c7a542e3f6ff374eefad7a2a967b3d3fb36beef",
+    "build_tracker_native_token_effect.py": "4a03bc31b85994159683f23cc52720684825c71095fd23497976abd7dc5f876a",
+    "build_tracker_reading_guide.py": "7679256ebbf28876dc9df997159785762c8e69dd88af9e511c22cf8d62be6ccf",
+    "tracker-reading-guide.html": "5132bda2eb87981655efa798f30a2102c83361c50db5f94cd5c7a8f6e5b8a0bd",
+    "overview-section.html": "2da1ddbba24329f81d2f47886d27ba28a18cd130b998d61510b6c7bde15d0dbe",
+    "methods-section.html": "7605cd88d8ada775d3113bcebb8b65b50f2bf3ec3ba9abcffcd755ca7cb08719",
+    "dist/index.html": "5b334858096fcabe256830f96f93f6e57b0430854249cf63dbd4529290921358",
+    "dist/intent-role-separation.html": "c39781e2dadee1ca8d5cbcb460f1ebec0daef1d156344a0c82893ce2b4b0328d",
+    "dist/tracker-reading.css": "97387a1d22b618eb884a460dccf6be749aaffa8b39119f0908b35c28eb118325",
+    "dist/tracker-reading.js": "3412754e34276c6356b33823f1a66ad0eebba211df53fd877591ff802af4fef3",
+    "copy/tracker-intent-audit.en.json": "4094de1c1e57963ab99fb7969ed3c804abf5f313df4f314d6ce22961c0e408cd",
+    "copy/tracker-native-token-effect.en.json": "2788419ccf5156ecc954eafbadc6b9eceac166e33e2ed1ae73b16bde5677abfc",
+    "copy/tracker-root-cause.en.json": "5c9383dcc60a9926570938bd66bf8cd94c935a24c25da59278fbfd5e18b13226"
+  }
+}

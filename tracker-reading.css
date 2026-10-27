@@ -1,0 +1,32 @@
+.tracker-current-heading { margin: 36px 0 28px; }
+.tracker-reading-guide { padding: 26px; border: 1px solid var(--line, #d7dedc); border-radius: 14px; }
+.tracker-reading-guide > h2 { margin-top: 0; }
+.tracker-summary-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
+.tracker-summary-grid article { padding: 6px 0; }
+.tracker-summary-grid h3 { font-size: 1.22rem; line-height: 1.4; }
+.tracker-summary-grid p { font-size: .95rem; }
+.tracker-summary-grid a, .tracker-section-nav a { font-size: .9rem; text-underline-offset: 4px; }
+.tracker-reading-note { color: var(--muted, #52645f); font-size: .93rem; }
+.tracker-next-step { border-top: 1px solid var(--line, #d7dedc); margin-top: 24px; padding-top: 22px; }
+.tracker-next-step h3 { margin-top: 8px; }
+.tracker-section-nav { display: flex; flex-wrap: wrap; gap: 14px 24px; margin-top: 24px; }
+.source-study details { border-top: 1px solid var(--line, #d7dedc); padding-top: 18px; margin-top: 22px; }
+.source-study details > summary { cursor: pointer; font-weight: 600; line-height: 1.55; }
+.source-study details[open] > summary { margin-bottom: 22px; }
+.source-study .tracker-history { margin-top: 40px; padding-top: 28px; }
+.tracker-history > summary { font-size: 1.35rem; }
+.source-study :is(section, details)[id] { scroll-margin-top: 24px; }
+.tracker-validation-link { margin-top: 28px; font-size: .85rem; }
+.recent-archive { grid-column: 1 / -1; border-top: 1px solid var(--line, #d7dedc); padding: 18px 0; }
+.recent-archive > summary { cursor: pointer; font-size: .95rem; font-weight: 600; }
+.recent-archive > a { display: grid; gap: 8px; padding: 20px 0; border-bottom: 1px solid var(--line, #d7dedc); text-decoration: none; }
+.recent-archive > a > span, .recent-archive > a > p { color: var(--muted, #52645f); }
+.tracker-home-summary { max-width: 850px; line-height: 1.7; margin: 0 0 24px; }
+.recent-progress-rows .recent-entry-link { white-space: normal; overflow-wrap: anywhere; }
+@media (max-width: 760px) {
+  .tracker-summary-grid { grid-template-columns: 1fr; gap: 16px; }
+  .tracker-summary-grid article + article { border-top: 1px solid var(--line, #d7dedc); padding-top: 20px; }
+  .tracker-reading-guide { padding: 20px 16px; }
+  .tracker-section-nav { flex-direction: column; }
+}
+@media print { .tracker-section-nav { display: none; } }

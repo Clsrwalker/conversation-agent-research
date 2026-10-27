@@ -45,8 +45,8 @@
     },
     {
       "path": "data.js",
-      "sha256": "cabd395a4ca07197fff979c9643d3fe66a589b0b32b16e528b59337b8ffa1538",
-      "bytes": 201733
+      "sha256": "60ea5b90df8ce2a827d248da52773453199921b918e37737be7cfa9a1f75a2d9",
+      "bytes": 201933
     },
     {
       "path": "data/analyze_harness_latency.py",
@@ -615,8 +615,8 @@
     },
     {
       "path": "data/research-record.json",
-      "sha256": "35cfa9f167d1f7163722ddf9e93b5a68c97a5851d4ba2f7e8f8ab9aa0f4ee24b",
-      "bytes": 295969
+      "sha256": "21648a4cfd91ce3144b7a9622f1fa2ac3d0fc33e5228ef1f9749639fcc83ca91",
+      "bytes": 296216
     },
     {
       "path": "data/results.csv",
@@ -632,6 +632,11 @@
       "path": "data/site-copy-cleanup-validation.json",
       "sha256": "e4390a698be7633110e7e7895bd4ce42bd67010dcb71d3d93e89f8560e36e6dd",
       "bytes": 7912
+    },
+    {
+      "path": "data/site-english-readability-validation.json",
+      "sha256": "f2d253f947d3d5c5bacde05fbacfeff493275955438f1dfa98061f9dbe68faf9",
+      "bytes": 4096
     },
     {
       "path": "data/site-focus-validation.json",
@@ -2105,13 +2110,13 @@
     },
     {
       "path": "index.html",
-      "sha256": "26462525af0149ab93f4b1aaecf359429810dbfa7e9bc477b37aed3b70d2f336",
-      "bytes": 76700
+      "sha256": "5b334858096fcabe256830f96f93f6e57b0430854249cf63dbd4529290921358",
+      "bytes": 77626
     },
     {
       "path": "intent-role-separation.html",
-      "sha256": "2a03a739e6146ef834a9c336500f1043a0c40f6800cff97fd8ae7a996608b706",
-      "bytes": 96711
+      "sha256": "c39781e2dadee1ca8d5cbcb460f1ebec0daef1d156344a0c82893ce2b4b0328d",
+      "bytes": 110096
     },
     {
       "path": "intention-literature.css",
@@ -2182,6 +2187,16 @@
       "path": "summary-placement.html",
       "sha256": "0f1912d3242735242af6658f45370becd0af025bba5fed8608217b30370b02e1",
       "bytes": 15938
+    },
+    {
+      "path": "tracker-reading.css",
+      "sha256": "97387a1d22b618eb884a460dccf6be749aaffa8b39119f0908b35c28eb118325",
+      "bytes": 2337
+    },
+    {
+      "path": "tracker-reading.js",
+      "sha256": "3412754e34276c6356b33823f1a66ad0eebba211df53fd877591ff802af4fef3",
+      "bytes": 563
     }
   ]
 }
