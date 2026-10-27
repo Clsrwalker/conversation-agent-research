@@ -1,0 +1,305 @@
+{
+  "id": "tracker-intent-audit-acceptance",
+  "status": "completed",
+  "kind": "bounded_engineering_acceptance",
+  "date": "2026-10-27",
+  "timezone": "America/Halifax",
+  "acceptance_passed": false,
+  "training_runs": 0,
+  "title": "意图核查已实现，但本轮能力验收失败",
+  "lead": "固定当前底座与 LoRA，完成 12 个输入、24 次生成。12 份核查报告全部被执行层拒绝；6 个故障目标从核查前 0 个正确到核查后仍为 0 个，未获得修复收益。",
+  "problem": "已有意图的归属错误、错误撤销和不确定状态被错误激活，可能被后续普通跟踪保留下来。",
+  "baseline": "使用现有 v2 LoRA 完成一次普通跟踪，保存实际状态作为配对基线。正确前态也可能被本次普通跟踪破坏。",
+  "change": "在同一 IntentStore 上增加一次独立核查，读取原始对话及所有已有记录（包括撤销项），逐字段报告保留、更正或证据不足。Harness 校验覆盖、引用与版本，合法结果才原子提交；不改文本或 ID。",
+  "comparison_conditions": "底座 Qwen/Qwen2.5-14B-Instruct，revision cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8；固定现有 tracker v2 formal-01 LoRA，同一次加载、同一个适配器，两阶段均冻结权重。6 个中英文故障前态加 6 个配对正确前态，来自 6 个前缀、5 个场景家庭；贪心生成，无重试、无提示词搜索、无新增训练。核查额外消耗一次调用，不是等算力对照。",
+  "rows": [
+    {
+      "focus": "owner",
+      "label": "归属",
+      "inputs": 2,
+      "baseline_correct": 0,
+      "audit_correct": 0,
+      "clean_inputs": 2,
+      "clean_damaged": 0
+    },
+    {
+      "focus": "wrong_withdrawn",
+      "label": "误撤销恢复",
+      "inputs": 2,
+      "baseline_correct": 0,
+      "audit_correct": 0,
+      "clean_inputs": 2,
+      "clean_damaged": 0
+    },
+    {
+      "focus": "uncertain_status",
+      "label": "不确定状态",
+      "inputs": 2,
+      "baseline_correct": 0,
+      "audit_correct": 0,
+      "clean_inputs": 2,
+      "clean_damaged": 0
+    }
+  ],
+  "metrics": {
+    "actual_model_calls": 24,
+    "baseline_calls": 12,
+    "audit_calls": 12,
+    "faulty_baseline_correct": 0,
+    "faulty_audit_correct": 0,
+    "faulty_inputs": 6,
+    "clean_baseline_correct": 5,
+    "clean_audit_correct": 5,
+    "clean_inputs": 6,
+    "clean_damaged": 0,
+    "new_other_owner_status_errors": 0,
+    "source_error_changes": 0,
+    "unresolved_audits": 0,
+    "rejected_audits": 12,
+    "malformed_json_audits": 11,
+    "verdict_value_conflict_audits": 1,
+    "committed_audits": 0,
+    "failed_calls": 0,
+    "input_tokens": 24954,
+    "output_tokens": 2367,
+    "elapsed_seconds": 456.7564755999483,
+    "costs": {
+      "normal": {
+        "calls": 12,
+        "completed": 12,
+        "input_tokens": 14540,
+        "output_tokens": 449,
+        "hit_token_cap": 0,
+        "elapsed_seconds": 74.047
+      },
+      "audit": {
+        "calls": 12,
+        "completed": 12,
+        "input_tokens": 10414,
+        "output_tokens": 1918,
+        "hit_token_cap": 0,
+        "elapsed_seconds": 235.214
+      }
+    }
+  },
+  "engineering": {
+    "tests_passed": 18,
+    "tests_total": 18
+  },
+  "failures": [
+    "11 份报告不是合法 JSON；另 1 份虽能解析，但 owner 的 change 判定给出了未变化的值，违反字段契约。12 份均被拒绝，0 份提交。",
+    "6 个故障目标均未修复。核查没有新增误改，原因是所有报告均未执行，不能解读成核查判断可靠。",
+    "6 个正确前态中，普通跟踪先把英文不确定需求 i4 误激活并改写为另一任务，还遗漏了对应新增项；核查未修复。目标字段整体仅 5/6 保持正确，核查新增损伤则是 0/6。",
+    "本轮输出协议失败已经足以阻断功能；部分拒绝报告还提出了错误状态或归属。没有通过自动补标点、忽略矛盾或二次生成来替换原始结果。",
+    "首次 collection-01 启动误用了没有 PyTorch 的通用测试环境，0 次模型调用；collection-02 使用既有推理环境完成。未安装新依赖，未更改冻结来源。"
+  ],
+  "limitations": [
+    "这是已暴露合成案例上的小规模工程验收，标签与语义复核均由模型产生或检查，没有新增独立人工金标准。",
+    "12 个输入不是 12 个独立场景，也不是新测试集上的泛化结果；本轮不估计统计显著性。",
+    "表中正确仅指目标归属与状态，完整文本含义和证据充分性另行复核；语义复核不把未执行的提议当作修复。",
+    "核查不能补回整个缺失的意图，也不能修复被普通步骤改坏的文本；证据不足和不支持的组合修改会保留记录并返回未决项。",
+    "0 个执行后证据错误、0 个新增误改均以 0 个已执行核查修改为前提，不能据此计算可信的修改准确率。",
+    "验收不通过，原型未接入默认聊天或工作执行流程；本轮在冻结范围内结束，不扩样本、不重训、不换底座。",
+    "当前证据定位了输出协议与接入失败，不能确定其内部成因，也不能证明整个意图核查方向无效。"
+  ],
+  "index_text": "固定模型与 LoRA：18 项工程测试通过；12 份模型核查均被拒绝，故障修复 0/6，能力验收失败。",
+  "scope_stop": "All 24 assigned calls retained. No output-dependent retries, prompt edits, extra model arms or enlarged acceptance.",
+  "provenance": {
+    "output\\research\\2026-10-27\\tracker-intent-audit\\analysis\\automatic-metrics.json": "03c1c16ec1243f8ac0103b1370932d03eaecac72db5e7c6ad7b60e83725bad28",
+    "output\\research\\2026-10-27\\tracker-intent-audit\\review\\post-run-review.json": "b7dfcdd6a634ee3500234a60c938967d6230a91f78cf7e6f6c10a1a90bfb528a",
+    "output\\research\\2026-10-27\\tracker-intent-audit\\collection-02\\result.json": "b93f0459bbd10e251d2ed7cea8ba50b60247472d4ff04f0b1583f2427fc15786",
+    "output\\research\\2026-10-27\\tracker-intent-audit\\collection-02\\config.json": "6fc9589ab166cd4c6a55704bc6666bfa5b86ec36bb5717262fdffb5c88b6548d",
+    "output\\research\\2026-10-27\\tracker-intent-audit\\data\\acceptance-plan.json": "c1bf80c45a9e86ebb580bd93e3542fcf4edf22a73380663ce4f8411c8ae453a6"
+  },
+  "independent_final_audit": "passed",
+  "reviewed_interpretation_source_sha256": "09da8816c999ccc44d9fc1fbfce4843dc7ee990b01ccf9ff2ddf45fe502f5e90",
+  "frozen_at_utc": "2026-10-27T12:19:19.867162+00:00",
+  "source_and_export_files": {
+    "acceptance-summary.json": {
+      "source_path": "output/research/2026-10-27/tracker-intent-audit/analysis/acceptance-summary.json",
+      "source_sha256": "09da8816c999ccc44d9fc1fbfce4843dc7ee990b01ccf9ff2ddf45fe502f5e90",
+      "export_sha256": "09da8816c999ccc44d9fc1fbfce4843dc7ee990b01ccf9ff2ddf45fe502f5e90",
+      "transformation": "none"
+    },
+    "automatic-metrics.json": {
+      "source_path": "output/research/2026-10-27/tracker-intent-audit/analysis/automatic-metrics.json",
+      "source_sha256": "03c1c16ec1243f8ac0103b1370932d03eaecac72db5e7c6ad7b60e83725bad28",
+      "export_sha256": "aad8ea6cb29a7392b534debb5e4bfc0a4642ea28c22636d8b2acec8ac3de0930",
+      "transformation": "JSON formatting and local path redaction only; hashes retain exact source provenance."
+    },
+    "post-run-review.json": {
+      "source_path": "output/research/2026-10-27/tracker-intent-audit/review/post-run-review.json",
+      "source_sha256": "b7dfcdd6a634ee3500234a60c938967d6230a91f78cf7e6f6c10a1a90bfb528a",
+      "export_sha256": "59f49a4133f718e84d6056c2fe6d4cc9bde03359736ff904322284729052f58a",
+      "transformation": "JSON formatting and local path redaction only; hashes retain exact source provenance."
+    },
+    "final-report-review.json": {
+      "source_path": "output/research/2026-10-27/tracker-intent-audit/review/final-report-review.json",
+      "source_sha256": "d8cb1d87ddf160fa0a57789b1d6c66392d0126662de361b269212a2de60081f5",
+      "export_sha256": "7ef373ae041099416765e64bd89bfb07fe03cdec2347e23d81e091e15ceca094",
+      "transformation": "JSON formatting and local path redaction only; hashes retain exact source provenance."
+    },
+    "preflight-review.json": {
+      "source_path": "output/research/2026-10-27/tracker-intent-audit/review/preflight-review.json",
+      "source_sha256": "edbf3fd93296ba6890409e022b2dbeaaaf21b823b655d975d3bfe3de4f9f59e4",
+      "export_sha256": "aea9ccbba37370d5a704bff0534091d04dbfe8321781b1a0be552cc48371e26e",
+      "transformation": "JSON formatting and local path redaction only; hashes retain exact source provenance."
+    },
+    "acceptance-plan.json": {
+      "source_path": "output/research/2026-10-27/tracker-intent-audit/data/acceptance-plan.json",
+      "source_sha256": "c1bf80c45a9e86ebb580bd93e3542fcf4edf22a73380663ce4f8411c8ae453a6",
+      "export_sha256": "969c309595d5a550eb72a817945cedca75d1c2ca3a5dc63adf89eafd626b74b3",
+      "transformation": "JSON formatting and local path redaction only; hashes retain exact source provenance."
+    },
+    "data-manifest.json": {
+      "source_path": "output/research/2026-10-27/tracker-intent-audit/data/manifest.json",
+      "source_sha256": "f56642349abad2b6ab70f5b4911afe5d337800195d056c333ef3268318ab88b1",
+      "export_sha256": "36fa925e26ce6b1c55f365f1c69ddc16bdda3b6bc1a303e47c473183e53d2b80",
+      "transformation": "JSON formatting and local path redaction only; hashes retain exact source provenance."
+    },
+    "data-preflight.json": {
+      "source_path": "output/research/2026-10-27/tracker-intent-audit/data/preflight.json",
+      "source_sha256": "cba9da9c41115c7d9a3da901f34da535706eb63a48eee1f46aeb57074a1ee883",
+      "export_sha256": "1df1b0d2de65af12f28a7856dee076d8d7837a8ad6aa59928af444409d9b128c",
+      "transformation": "JSON formatting and local path redaction only; hashes retain exact source provenance."
+    },
+    "selection.json": {
+      "source_path": "output/research/2026-10-27/tracker-intent-audit/data/selection.json",
+      "source_sha256": "ca6f998854c210d2ef30c3f7f88c9401d16f830f71fa689bce22a78a54c04be0",
+      "export_sha256": "8f6c4464b8eff345e044fdb9c8128670cff563d37287a9b983b791abf51076b3",
+      "transformation": "JSON formatting and local path redaction only; hashes retain exact source provenance."
+    },
+    "prior-bundles.json": {
+      "source_path": "output/research/2026-10-27/tracker-intent-audit/analysis/prior-bundles.json",
+      "source_sha256": "2bfef89227400d3663cfb01337ba0034df98c1e488c4e4b856311bbf9e9aa6e2",
+      "export_sha256": "1c93352eec558f32d35dfd7d3a7a134a0c5aa95e43481e1436c34b8a2df3559b",
+      "transformation": "JSON formatting and local path redaction only; hashes retain exact source provenance."
+    },
+    "engineering-validation.json": {
+      "source_path": "output/research/2026-10-27/tracker-intent-audit/engineering/validation.json",
+      "source_sha256": "7a2b4867bf9fd567101f9fb8a054c6e16787041314217eac9f4365659c7df2f3",
+      "export_sha256": "77cf942f4b2d9c223e8888597c4dbb74bfdfe6658ad970eaf809b02822a5ac34",
+      "transformation": "JSON formatting and local path redaction only; hashes retain exact source provenance."
+    },
+    "core-validation.json": {
+      "source_path": "output/research/2026-10-27/tracker-intent-audit/engineering/core-validation-01.json",
+      "source_sha256": "d62bd3650a007ad79a7d1c4c9344f92c9cb5c0edc64f799a89dc5c17431c98d1",
+      "export_sha256": "b0ff008d2fb316abc9d92adcfb077171172868f2b8c7d4053e32a39c5af81855",
+      "transformation": "JSON formatting and local path redaction only; hashes retain exact source provenance."
+    },
+    "startup-recovery.json": {
+      "source_path": "output/research/2026-10-27/tracker-intent-audit/engineering/startup-recovery.json",
+      "source_sha256": "6f442560be7f265aaeaf0be0b8cbacbd24c8a8be2a9a63bab200a8397c1c9a20",
+      "export_sha256": "a36c1da2ff3674975a76e9572921c8c4059ce651c473331c754fd47800a502fc",
+      "transformation": "JSON formatting and local path redaction only; hashes retain exact source provenance."
+    },
+    "startup-failure.json": {
+      "source_path": "output/research/2026-10-27/tracker-intent-audit/collection-01/result.json",
+      "source_sha256": "8a8de14d743fccaba86c17c03cf42a70c80c3c5bb54014e52a9059b925d38c89",
+      "export_sha256": "4bc0ef0bec4a145f1cb7936d7b65886b13b59e42ecff8040a773df6ab9434d40",
+      "transformation": "JSON formatting and local path redaction only; hashes retain exact source provenance."
+    },
+    "collection-result.json": {
+      "source_path": "output/research/2026-10-27/tracker-intent-audit/collection-02/result.json",
+      "source_sha256": "b93f0459bbd10e251d2ed7cea8ba50b60247472d4ff04f0b1583f2427fc15786",
+      "export_sha256": "7d5e35d5b7640a3351f61b1a75c4c78b56534032a835a3c8fe1fcaad459e7292",
+      "transformation": "JSON formatting and local path redaction only; hashes retain exact source provenance."
+    },
+    "collection-config.json": {
+      "source_path": "output/research/2026-10-27/tracker-intent-audit/collection-02/config.json",
+      "source_sha256": "6fc9589ab166cd4c6a55704bc6666bfa5b86ec36bb5717262fdffb5c88b6548d",
+      "export_sha256": "f4edfbbf1a16affb382a85e55b14db558bf59e7265361076c179c9831b3a689d",
+      "transformation": "JSON formatting and local path redaction only; hashes retain exact source provenance."
+    },
+    "token-preflight.json": {
+      "source_path": "output/research/2026-10-27/tracker-intent-audit/collection-02/token-preflight.json",
+      "source_sha256": "9bd3c225736e9e3cc7acb96d3e74e56c5a460649bad02750e16bc00876576496",
+      "export_sha256": "e764c17695773ac41fb009c34ab3ff12387edcb351bfefd18eb60f3ae34de170",
+      "transformation": "JSON formatting and local path redaction only; hashes retain exact source provenance."
+    },
+    "core-tests.txt": {
+      "source_path": "output/research/2026-10-27/tracker-intent-audit/engineering/core-tests-01.log",
+      "source_sha256": "07f9c088c4fe37b78578e82d7e543b617c6763f4c0e136b464fbfd0715ae8ccb",
+      "export_sha256": "07f9c088c4fe37b78578e82d7e543b617c6763f4c0e136b464fbfd0715ae8ccb",
+      "transformation": "UTF-8 encoding; execution content unchanged."
+    },
+    "pipeline-tests.txt": {
+      "source_path": "output/research/2026-10-27/tracker-intent-audit/engineering/pipeline-tests-01.log",
+      "source_sha256": "cbd79dec9555145766d3de589e6d323ed7d9c41e8680681d853e99e0dd490ca1",
+      "export_sha256": "cbd79dec9555145766d3de589e6d323ed7d9c41e8680681d853e99e0dd490ca1",
+      "transformation": "UTF-8 encoding; execution content unchanged."
+    },
+    "compute_metrics.py": {
+      "source_path": "output/research/2026-10-27/tracker-intent-audit/compute_metrics.py",
+      "source_sha256": "264d0bf915e5cd3649e63adf669d7e18067200d9421ea1bf0f625c31cb1fd28f",
+      "export_sha256": "264d0bf915e5cd3649e63adf669d7e18067200d9421ea1bf0f625c31cb1fd28f",
+      "transformation": "none"
+    },
+    "build_report.py": {
+      "source_path": "output/research/2026-10-27/tracker-intent-audit/build_report.py",
+      "source_sha256": "97756310ab2e3e3bf444e759235f5fd61a8f2b156b5817e568ef65066aa1d37b",
+      "export_sha256": "97756310ab2e3e3bf444e759235f5fd61a8f2b156b5817e568ef65066aa1d37b",
+      "transformation": "none"
+    },
+    "export_publication.py": {
+      "source_path": "output/research/2026-10-27/tracker-intent-audit/export_publication.py",
+      "source_sha256": "8909e6aef31618966eeaa792607842e82df1752e06695ec0eee0aea5a172b19a",
+      "export_sha256": "8909e6aef31618966eeaa792607842e82df1752e06695ec0eee0aea5a172b19a",
+      "transformation": "none"
+    },
+    "audit.py": {
+      "source_path": "experiments/deep_conversation/tracker_lora/intent_audit/audit.py",
+      "source_sha256": "faf4e5b7cd69415a614e82cba8cfb8b3cb86e9d1fa49932086010d31038a06cb",
+      "export_sha256": "faf4e5b7cd69415a614e82cba8cfb8b3cb86e9d1fa49932086010d31038a06cb",
+      "transformation": "none"
+    },
+    "audit_prompt.txt": {
+      "source_path": "experiments/deep_conversation/tracker_lora/intent_audit/audit_prompt.txt",
+      "source_sha256": "66f262aafe9449176bd7e15ce152308851d244a48ebc0d86e638bcc0b64ba776",
+      "export_sha256": "66f262aafe9449176bd7e15ce152308851d244a48ebc0d86e638bcc0b64ba776",
+      "transformation": "none"
+    },
+    "pipeline.py": {
+      "source_path": "experiments/deep_conversation/tracker_lora/intent_audit/pipeline.py",
+      "source_sha256": "eb7bef2753dd6de310adcee9345e4abbbc4df60500e3dad3db3f66d74eb64239",
+      "export_sha256": "eb7bef2753dd6de310adcee9345e4abbbc4df60500e3dad3db3f66d74eb64239",
+      "transformation": "none"
+    },
+    "collect_acceptance.py": {
+      "source_path": "experiments/deep_conversation/tracker_lora/intent_audit/collect_acceptance.py",
+      "source_sha256": "01e7abb214389544bc14cd131c52e55fb5558c1bfb3de299aee3ba94c378a23a",
+      "export_sha256": "01e7abb214389544bc14cd131c52e55fb5558c1bfb3de299aee3ba94c378a23a",
+      "transformation": "none"
+    },
+    "build_acceptance.py": {
+      "source_path": "experiments/deep_conversation/tracker_lora/intent_audit/build_acceptance.py",
+      "source_sha256": "07512a83a2442f4c3917f73fa61a9df46b38b9e8a6333c1cfe6757cd317dc8c7",
+      "export_sha256": "07512a83a2442f4c3917f73fa61a9df46b38b9e8a6333c1cfe6757cd317dc8c7",
+      "transformation": "none"
+    },
+    "test_audit.py": {
+      "source_path": "experiments/deep_conversation/tracker_lora/intent_audit/test_audit.py",
+      "source_sha256": "6a2f6a686f21400912f109b4d84692bfeb7fef0a4317b3626ba4a72040f626fb",
+      "export_sha256": "6a2f6a686f21400912f109b4d84692bfeb7fef0a4317b3626ba4a72040f626fb",
+      "transformation": "none"
+    },
+    "test_pipeline.py": {
+      "source_path": "experiments/deep_conversation/tracker_lora/intent_audit/test_pipeline.py",
+      "source_sha256": "6e58618c074928eea673aef35188014239484fea67de6333cc0ff09dbb1f7962",
+      "export_sha256": "6e58618c074928eea673aef35188014239484fea67de6333cc0ff09dbb1f7962",
+      "transformation": "none"
+    },
+    "README.md": {
+      "source_path": "experiments/deep_conversation/tracker_lora/intent_audit/README.md",
+      "source_sha256": "e62073702528c4338d69f2281adc222a1176e6d4104641582a77e608906d8d00",
+      "export_sha256": "e62073702528c4338d69f2281adc222a1176e6d4104641582a77e608906d8d00",
+      "transformation": "none"
+    },
+    "USAGE.md": {
+      "source_path": "experiments/deep_conversation/tracker_lora/intent_audit/USAGE.md",
+      "source_sha256": "069b152968dbbacff21eecc1a752c257a7da2eb23f067f204b093066473436ba",
+      "export_sha256": "069b152968dbbacff21eecc1a752c257a7da2eb23f067f204b093066473436ba",
+      "transformation": "none"
+    }
+  }
+}

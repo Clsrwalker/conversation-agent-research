@@ -1,0 +1,375 @@
+{
+  "kind": "automated_arithmetic_not_semantic_adjudication",
+  "date": "2026-10-27",
+  "timezone": "America/Halifax",
+  "sources": {
+    "data\\acceptance.records.jsonl": "de64e4b3c191ac2dad277fa4432d1f384cf15dc8914101fa17247e24fffbddde",
+    "collection-02\\result.json": "b93f0459bbd10e251d2ed7cea8ba50b60247472d4ff04f0b1583f2427fc15786",
+    "collection-02\\config.json": "6fc9589ab166cd4c6a55704bc6666bfa5b86ec36bb5717262fdffb5c88b6548d",
+    "collection-02\\PRIVATE-calls.jsonl": "0b53b0869092f80970cd8ef86f2a6867552c1e662bc7cde92750ab503f0c4a27",
+    "collection-02\\PRIVATE-outcomes.jsonl": "60b6238c8f0165bf3de84fc79f5a69f0a89c848d77f69260c614595281b0622b"
+  },
+  "inputs": 12,
+  "faulty_inputs": 6,
+  "clean_inputs": 6,
+  "calls": 24,
+  "faulty_baseline_correct": 0,
+  "faulty_audit_correct": 0,
+  "faulty_corrected": 0,
+  "clean_baseline_correct": 5,
+  "clean_audit_correct": 5,
+  "clean_damaged": 0,
+  "audit_statuses": {
+    "rejected": 12
+  },
+  "baseline_statuses": {
+    "applied": 12
+  },
+  "coverage_complete": 0,
+  "audit_committed": 0,
+  "all_ids_and_text_preserved": true,
+  "metadata_changed_fields": 0,
+  "costs": {
+    "normal": {
+      "calls": 12,
+      "completed": 12,
+      "input_tokens": 14540,
+      "output_tokens": 449,
+      "hit_token_cap": 0,
+      "elapsed_seconds": 74.047
+    },
+    "audit": {
+      "calls": 12,
+      "completed": 12,
+      "input_tokens": 10414,
+      "output_tokens": 1918,
+      "hit_token_cap": 0,
+      "elapsed_seconds": 235.214
+    }
+  },
+  "rows": [
+    {
+      "focus": "owner",
+      "label": "归属",
+      "inputs": 2,
+      "baseline_correct": 0,
+      "audit_correct": 0,
+      "clean_inputs": 2,
+      "clean_damaged": 0
+    },
+    {
+      "focus": "wrong_withdrawn",
+      "label": "误撤销恢复",
+      "inputs": 2,
+      "baseline_correct": 0,
+      "audit_correct": 0,
+      "clean_inputs": 2,
+      "clean_damaged": 0
+    },
+    {
+      "focus": "uncertain_status",
+      "label": "不确定状态",
+      "inputs": 2,
+      "baseline_correct": 0,
+      "audit_correct": 0,
+      "clean_inputs": 2,
+      "clean_damaged": 0
+    }
+  ],
+  "cases": [
+    {
+      "case_id": "owner-zh-faulty",
+      "focus": "owner",
+      "condition": "faulty",
+      "focal_intent_id": "i2",
+      "baseline_focal_metadata_correct": false,
+      "audit_focal_metadata_correct": false,
+      "focal_corrected": false,
+      "focal_damaged": false,
+      "baseline_status": "applied",
+      "audit_status": "rejected",
+      "audit_committed": false,
+      "audit_coverage_complete": false,
+      "unresolved_records": 0,
+      "baseline_records": 3,
+      "post_audit_records": 3,
+      "ids_preserved": true,
+      "text_preserved": true,
+      "changed_fields": [],
+      "audit_error": {
+        "message": "Expecting property name enclosed in double quotes: line 1 column 87 (char 86)",
+        "type": "AuditValidationError"
+      }
+    },
+    {
+      "case_id": "owner-zh-clean",
+      "focus": "owner",
+      "condition": "clean",
+      "focal_intent_id": "i2",
+      "baseline_focal_metadata_correct": true,
+      "audit_focal_metadata_correct": true,
+      "focal_corrected": false,
+      "focal_damaged": false,
+      "baseline_status": "applied",
+      "audit_status": "rejected",
+      "audit_committed": false,
+      "audit_coverage_complete": false,
+      "unresolved_records": 0,
+      "baseline_records": 3,
+      "post_audit_records": 3,
+      "ids_preserved": true,
+      "text_preserved": true,
+      "changed_fields": [],
+      "audit_error": {
+        "message": "Expecting property name enclosed in double quotes: line 1 column 87 (char 86)",
+        "type": "AuditValidationError"
+      }
+    },
+    {
+      "case_id": "owner-en-faulty",
+      "focus": "owner",
+      "condition": "faulty",
+      "focal_intent_id": "i3",
+      "baseline_focal_metadata_correct": false,
+      "audit_focal_metadata_correct": false,
+      "focal_corrected": false,
+      "focal_damaged": false,
+      "baseline_status": "applied",
+      "audit_status": "rejected",
+      "audit_committed": false,
+      "audit_coverage_complete": false,
+      "unresolved_records": 0,
+      "baseline_records": 4,
+      "post_audit_records": 4,
+      "ids_preserved": true,
+      "text_preserved": true,
+      "changed_fields": [],
+      "audit_error": {
+        "message": "Expecting property name enclosed in double quotes: line 1 column 89 (char 88)",
+        "type": "AuditValidationError"
+      }
+    },
+    {
+      "case_id": "owner-en-clean",
+      "focus": "owner",
+      "condition": "clean",
+      "focal_intent_id": "i3",
+      "baseline_focal_metadata_correct": true,
+      "audit_focal_metadata_correct": true,
+      "focal_corrected": false,
+      "focal_damaged": false,
+      "baseline_status": "applied",
+      "audit_status": "rejected",
+      "audit_committed": false,
+      "audit_coverage_complete": false,
+      "unresolved_records": 0,
+      "baseline_records": 4,
+      "post_audit_records": 4,
+      "ids_preserved": true,
+      "text_preserved": true,
+      "changed_fields": [],
+      "audit_error": {
+        "message": "Expecting property name enclosed in double quotes: line 1 column 89 (char 88)",
+        "type": "AuditValidationError"
+      }
+    },
+    {
+      "case_id": "wrong_withdrawn-zh-faulty",
+      "focus": "wrong_withdrawn",
+      "condition": "faulty",
+      "focal_intent_id": "i1",
+      "baseline_focal_metadata_correct": false,
+      "audit_focal_metadata_correct": false,
+      "focal_corrected": false,
+      "focal_damaged": false,
+      "baseline_status": "applied",
+      "audit_status": "rejected",
+      "audit_committed": false,
+      "audit_coverage_complete": false,
+      "unresolved_records": 0,
+      "baseline_records": 4,
+      "post_audit_records": 4,
+      "ids_preserved": true,
+      "text_preserved": true,
+      "changed_fields": [],
+      "audit_error": {
+        "message": "owner: verdict and proposed value disagree.",
+        "type": "AuditValidationError"
+      }
+    },
+    {
+      "case_id": "wrong_withdrawn-zh-clean",
+      "focus": "wrong_withdrawn",
+      "condition": "clean",
+      "focal_intent_id": "i1",
+      "baseline_focal_metadata_correct": true,
+      "audit_focal_metadata_correct": true,
+      "focal_corrected": false,
+      "focal_damaged": false,
+      "baseline_status": "applied",
+      "audit_status": "rejected",
+      "audit_committed": false,
+      "audit_coverage_complete": false,
+      "unresolved_records": 0,
+      "baseline_records": 4,
+      "post_audit_records": 4,
+      "ids_preserved": true,
+      "text_preserved": true,
+      "changed_fields": [],
+      "audit_error": {
+        "message": "Expecting property name enclosed in double quotes: line 1 column 87 (char 86)",
+        "type": "AuditValidationError"
+      }
+    },
+    {
+      "case_id": "wrong_withdrawn-en-faulty",
+      "focus": "wrong_withdrawn",
+      "condition": "faulty",
+      "focal_intent_id": "i1",
+      "baseline_focal_metadata_correct": false,
+      "audit_focal_metadata_correct": false,
+      "focal_corrected": false,
+      "focal_damaged": false,
+      "baseline_status": "applied",
+      "audit_status": "rejected",
+      "audit_committed": false,
+      "audit_coverage_complete": false,
+      "unresolved_records": 0,
+      "baseline_records": 3,
+      "post_audit_records": 3,
+      "ids_preserved": true,
+      "text_preserved": true,
+      "changed_fields": [],
+      "audit_error": {
+        "message": "Expecting ',' delimiter: line 1 column 91 (char 90)",
+        "type": "AuditValidationError"
+      }
+    },
+    {
+      "case_id": "wrong_withdrawn-en-clean",
+      "focus": "wrong_withdrawn",
+      "condition": "clean",
+      "focal_intent_id": "i1",
+      "baseline_focal_metadata_correct": true,
+      "audit_focal_metadata_correct": true,
+      "focal_corrected": false,
+      "focal_damaged": false,
+      "baseline_status": "applied",
+      "audit_status": "rejected",
+      "audit_committed": false,
+      "audit_coverage_complete": false,
+      "unresolved_records": 0,
+      "baseline_records": 3,
+      "post_audit_records": 3,
+      "ids_preserved": true,
+      "text_preserved": true,
+      "changed_fields": [],
+      "audit_error": {
+        "message": "Expecting property name enclosed in double quotes: line 1 column 89 (char 88)",
+        "type": "AuditValidationError"
+      }
+    },
+    {
+      "case_id": "uncertain_status-zh-faulty",
+      "focus": "uncertain_status",
+      "condition": "faulty",
+      "focal_intent_id": "i4",
+      "baseline_focal_metadata_correct": false,
+      "audit_focal_metadata_correct": false,
+      "focal_corrected": false,
+      "focal_damaged": false,
+      "baseline_status": "applied",
+      "audit_status": "rejected",
+      "audit_committed": false,
+      "audit_coverage_complete": false,
+      "unresolved_records": 0,
+      "baseline_records": 5,
+      "post_audit_records": 5,
+      "ids_preserved": true,
+      "text_preserved": true,
+      "changed_fields": [],
+      "audit_error": {
+        "message": "Expecting ',' delimiter: line 1 column 87 (char 86)",
+        "type": "AuditValidationError"
+      }
+    },
+    {
+      "case_id": "uncertain_status-zh-clean",
+      "focus": "uncertain_status",
+      "condition": "clean",
+      "focal_intent_id": "i4",
+      "baseline_focal_metadata_correct": true,
+      "audit_focal_metadata_correct": true,
+      "focal_corrected": false,
+      "focal_damaged": false,
+      "baseline_status": "applied",
+      "audit_status": "rejected",
+      "audit_committed": false,
+      "audit_coverage_complete": false,
+      "unresolved_records": 0,
+      "baseline_records": 5,
+      "post_audit_records": 5,
+      "ids_preserved": true,
+      "text_preserved": true,
+      "changed_fields": [],
+      "audit_error": {
+        "message": "Expecting property name enclosed in double quotes: line 1 column 87 (char 86)",
+        "type": "AuditValidationError"
+      }
+    },
+    {
+      "case_id": "uncertain_status-en-faulty",
+      "focus": "uncertain_status",
+      "condition": "faulty",
+      "focal_intent_id": "i4",
+      "baseline_focal_metadata_correct": false,
+      "audit_focal_metadata_correct": false,
+      "focal_corrected": false,
+      "focal_damaged": false,
+      "baseline_status": "applied",
+      "audit_status": "rejected",
+      "audit_committed": false,
+      "audit_coverage_complete": false,
+      "unresolved_records": 0,
+      "baseline_records": 5,
+      "post_audit_records": 5,
+      "ids_preserved": true,
+      "text_preserved": true,
+      "changed_fields": [],
+      "audit_error": {
+        "message": "Expecting property name enclosed in double quotes: line 1 column 90 (char 89)",
+        "type": "AuditValidationError"
+      }
+    },
+    {
+      "case_id": "uncertain_status-en-clean",
+      "focus": "uncertain_status",
+      "condition": "clean",
+      "focal_intent_id": "i4",
+      "baseline_focal_metadata_correct": false,
+      "audit_focal_metadata_correct": false,
+      "focal_corrected": false,
+      "focal_damaged": false,
+      "baseline_status": "applied",
+      "audit_status": "rejected",
+      "audit_committed": false,
+      "audit_coverage_complete": false,
+      "unresolved_records": 0,
+      "baseline_records": 4,
+      "post_audit_records": 4,
+      "ids_preserved": true,
+      "text_preserved": true,
+      "changed_fields": [],
+      "audit_error": {
+        "message": "Expecting property name enclosed in double quotes: line 1 column 90 (char 89)",
+        "type": "AuditValidationError"
+      }
+    }
+  ],
+  "semantic_review_required": [
+    "field evidence sufficiency",
+    "all-record metadata regressions",
+    "focal text completeness",
+    "identity matching"
+  ]
+}

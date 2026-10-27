@@ -1,0 +1,91 @@
+{
+  "id": "tracker-intent-audit-acceptance-data",
+  "status": "frozen_before_acceptance_inference",
+  "date": "2026-10-27",
+  "timezone": "America/Halifax",
+  "frozen_at_utc": "2026-10-27T11:54:01.666457+00:00",
+  "kind": "bounded_exposed_engineering_acceptance",
+  "rows": 12,
+  "pairs": 6,
+  "families": 5,
+  "conditions": {
+    "faulty": 6,
+    "clean": 6
+  },
+  "languages": {
+    "zh": 6,
+    "en": 6
+  },
+  "model_calls_budget": 24,
+  "new_model_calls_during_data_build": 0,
+  "source_hashes": {
+    "output/research/2026-10-24/tracker-lora-repair-v2/evaluation/protocol-lock.json": "a80ef0ca2c6fed06452596b3a39a187158973917a285a7cb8fbd0985a5ae9f21",
+    "experiments/deep_conversation/tracker_lora/intent_audit/build_acceptance.py": "07512a83a2442f4c3917f73fa61a9df46b38b9e8a6333c1cfe6757cd317dc8c7",
+    "output/research/2026-10-24/tracker-lora-repair-v2/evaluation/protocol.json": "1fff46568a31e35eaa75f053ee417b83a79d1fb601b90e234dd209ac35e37600",
+    "output/research/2026-10-24/tracker-lora-repair-v2/data/compiled/manifest.json": "35e3dfc55bf74ca37b88e6e3aa70738a9d61ec87769f19a8a601c3d9dded16bc",
+    "output/research/2026-10-24/tracker-lora-repair-v2/data/compiled/test.records.jsonl": "8190b19a0b25718e7e5baf2ac5fd25383df4fcd422696a8564d99a6cb3766ce3",
+    "output/research/2026-10-24/tracker-lora-repair-v2/annotation/system_prompt.txt": "7587583ff3fb2f46f64a32ca598a9f2bd980d8b0c3ff24915d80f5e31cda5abd",
+    "output/research/2026-10-24/tracker-lora-repair-v2/annotation/policy-v3.json": "7e36104bbbaf2e7cc89d95490682b004a1415bfa54c4c7a131328595021dc457",
+    "output/research/2026-10-24/tracker-lora-repair-v2/review/admission.json": "d2cb7337c4b3f5298f253a7da950b21cf40b8583df1542f10148a0b064e2d37f",
+    "experiments/deep_conversation/tracker_lora/repair_v2/collect_three_arm.py": "6914ae922056b288a55f4fdaf197816ea4ab649b35e9cf80de0665521d6044d8",
+    "experiments/deep_conversation/tracker_lora/repair_v2/train_tracker.py": "2d329f11c1320c0f2e12c39d6e74600997757d53a0661406b8e6a657222ffd24",
+    "experiments/deep_conversation/tracker_lora/repair_v2/gates.py": "c7626f2955e830d5dfefcda3dd1435c08475cfc27ac91fd4c62730158db38990",
+    "experiments/deep_conversation/tracker_lora/repair_v2/build_dataset.py": "e8a8b4603eee63456574cfc034ec4df87980fc19517dedece52954c26de85acc",
+    "experiments/deep_conversation/tracker_lora/repair_v2/evaluate_three_arm.py": "80d1fc6eeee56c128454d838701df98b5fbb4ec7ed1ee1cb2c1b61263776279c",
+    "experiments/deep_conversation/tracker_lora/evaluate_tracker.py": "6e628968b52307f8160bcc673cb5abba8043490c810b22f0bd286fb9a4f33a6f",
+    "experiments/deep_conversation/tracker_lora/build_dataset.py": "c834fb312454e50257b3a88217aa29ea58a69c342fa7f8f758554adcfc5d3af4",
+    "experiments/deep_conversation/intention_state.py": "e028a604a93520801a0f752755d80b305afb1eebd8792ea0aeaaa3cd5c722f73",
+    "experiments/deep_conversation/tracker_lora/repair_v2/review_workflow.py": "4345cd1a14554c172e2cac21b47603212ec0140d72eb5818947b40f04f29798d",
+    "output/research/2026-10-24/tracker-lora-repair-v2/training/length-inspection-reviewed-01/result.json": "bc405641d69a9db562026342a3ac470351c685cd9c1eee96af63f2814e0ae679",
+    "output/research/2026-10-24/tracker-lora-repair-v2/audit/cross-split-similarity-review-02.json": "11aeef3a6f5c6ca9b5c8c7b06320920c199468c8b5545be3c9abe392ea7d7f00",
+    "output/research/2026-10-24/tracker-lora-repair-v2/audit/cross-split-similarity-review-01.json": "ab8693a5666ef7e23df3f69ac18b9debbc91e09136a459648ebc722e224998ca",
+    "output/research/2026-10-24/tracker-lora-repair-v2/data/source/fresh-eval.jsonl": "d2208f241a842058e6ee4a60ded60813fc6c364d8c39bc7bf900b6fa01b5b68c",
+    "output/research/2026-10-24/tracker-lora-repair-v2/data/source/fresh-train.jsonl": "c4e8d3e79f4045b632b8e15d1bd88aa2507959587b9d7234e2195c06531eb527",
+    "output/research/2026-10-24/tracker-lora-repair-v2/data/source/retained-old-train.jsonl": "ded3b7ed4d95319d215dca5eccb0e0c02def1fe61a07cedfd521bf50b41489dc",
+    "output/research/2026-10-24/tracker-lora-repair-v2/data/faults/fresh-eval.json": "668a9215d44d2bf740e0d2f86656605195ca5a59fa2f22bf9f85551d2db60b11",
+    "output/research/2026-10-24/tracker-lora-repair-v2/data/faults/fresh-train.json": "166b717e6c099cd88ff10edd62aaf0d5d94f445444ae49114a4d24515775524d",
+    "output/research/2026-10-24/tracker-lora-repair-v2/data/faults/retained-old-train.json": "6c3736032cebaa5eb7548f89d00ef20d9292af34e761ecabbbab8f5db1085e56",
+    "output/research/2026-10-24/tracker-lora-repair-v2/data/citation-revisions.json": "974738a5cf73c89a09b3773708a01e883d9792652610051862b339ac77a4c394",
+    "output/research/2026-10-24/tracker-lora-repair-v2/data/retained-selection.json": "5cf84c5ad9f7621b33922f1f0d63f7dfb3fa85c074470337bd90dbf6b333a7ad",
+    "output/research/2026-10-24/tracker-lora-repair-v2/data/fault-position-revision.json": "dee45921c76a5fcaa42f27c58fdd042ae98630878ce82392e80ba76ddeafc52f",
+    "output/research/2026-10-24/tracker-lora-repair-v2/data/authoring/redistribute_fault_positions.py": "0766ca79f63716331551ce8becccde10d4b09b5f620d3c35612512c67b74ce4b",
+    "output/research/2026-10-24/tracker-lora-repair-v2/review/history/before-position-revision/fresh-eval-binding.json": "727384c7258e4c25f2b1e17bc43280d7728df2d0e758a4cc6a32e17b04c75b78",
+    "output/research/2026-10-24/tracker-lora-repair-v2/review/history/before-position-revision/fresh-eval.json": "8f3f554df3637d9b08aa30dfe4d8c5614e0f94558a991fba6e6d403d378a25ce",
+    "output/research/2026-10-24/tracker-lora-repair-v2/review/history/before-position-revision/fresh-train-binding.json": "fa139a51ffdcbd274be4882786f07fa48cf237feadaf5b833a0d0cf07103286e",
+    "output/research/2026-10-24/tracker-lora-repair-v2/review/history/before-position-revision/fresh-train.json": "11877563ab6b23672dc03eadd8b4e0fa79ac79c8fb75f0c6854d09be31e7d677",
+    "output/research/2026-10-24/tracker-lora-repair-v2/data/leakage-replacements.json": "5b49f8d673799ae2d177388bdd719d7c728a0b3e355a76d9ad1d09d3573a7e6f",
+    "output/research/2026-10-24/tracker-lora-repair-v2/review/history/before-leakage-replacement/fresh-train-independent-review.json": "4877ff876c9f38bb79b9dbc7842dbd4f30f1289f5885b28edcb8b58304ab8337",
+    "output/research/2026-10-24/tracker-lora-repair-v2/review/history/before-leakage-replacement/fresh-train-revisions.json": "c777e377ff130916bc3ec09cb86419a73b89e75c8d6a7cd509676e7e857a5da7",
+    "output/research/2026-10-24/tracker-lora-repair-v2/review/history/before-leakage-replacement/fresh-train.json": "166b717e6c099cd88ff10edd62aaf0d5d94f445444ae49114a4d24515775524d",
+    "output/research/2026-10-24/tracker-lora-repair-v2/review/history/before-leakage-replacement/fresh-train.jsonl": "04c4bafaadbd6c71e27a0e867935bebb098d59107ccf7b64ea55b328b978b687"
+  },
+  "files": {
+    "acceptance-plan.json": {
+      "sha256": "c1bf80c45a9e86ebb580bd93e3542fcf4edf22a73380663ce4f8411c8ae453a6",
+      "bytes": 4123
+    },
+    "acceptance.records.jsonl": {
+      "sha256": "de64e4b3c191ac2dad277fa4432d1f384cf15dc8914101fa17247e24fffbddde",
+      "bytes": 64343
+    },
+    "inputs.jsonl": {
+      "sha256": "73f172e56fdf35c666cc26cc0a78962fe0f8b230ab23a5d3fdeed544d1ecacf4",
+      "bytes": 21426
+    },
+    "preflight.json": {
+      "sha256": "cba9da9c41115c7d9a3da901f34da535706eb63a48eee1f46aeb57074a1ee883",
+      "bytes": 4933
+    },
+    "selection.json": {
+      "sha256": "ca6f998854c210d2ef30c3f7f88c9401d16f830f71fa689bce22a78a54c04be0",
+      "bytes": 5846
+    },
+    "source-faulty.records.jsonl": {
+      "sha256": "5c912c92b3272bf0268096683fe4eb8c6cbcfb01eb916a5855ee86ae572bc329",
+      "bytes": 29605
+    }
+  },
+  "source_artifacts_modified": false,
+  "reference_quality": "Existing frozen model-authored/model-reviewed synthetic references; not human gold.",
+  "publication_note": "Inputs and references are fictional authored material. No new model outputs or private blind-ID joins are present."
+}

@@ -1,0 +1,52 @@
+{
+  "id": "tracker-intent-audit-final-report-independent-review",
+  "status": "passed",
+  "status_meaning": "The final report matches the reviewed evidence; capability acceptance failed.",
+  "acceptance_passed": false,
+  "date": "2026-10-27",
+  "timezone": "America/Halifax",
+  "reviewed_at_utc": "2026-10-27T12:19:14.308001+00:00",
+  "reviewed_report_sha256": "09da8816c999ccc44d9fc1fbfce4843dc7ee990b01ccf9ff2ddf45fe502f5e90",
+  "reviewed_engineering_sha256": "7a2b4867bf9fd567101f9fb8a054c6e16787041314217eac9f4365659c7df2f3",
+  "reviewed_post_run_review_sha256": "b7dfcdd6a634ee3500234a60c938967d6230a91f78cf7e6f6c10a1a90bfb528a",
+  "reviewed_automatic_metrics_sha256": "03c1c16ec1243f8ac0103b1370932d03eaecac72db5e7c6ad7b60e83725bad28",
+  "checks": {
+    "all_12_inputs_and_24_raw_calls_retained": true,
+    "journal_24_started_24_ended": true,
+    "completed_generations_not_treated_as_valid_audits": true,
+    "11_json_and_1_verdict_rejections_match_raw_outputs": true,
+    "faulty_0_to_0_and_clean_5_to_5_match_manual_review": true,
+    "audit_zero_damage_distinguished_from_normal_step_clean_regression": true,
+    "zero_executed_changes_denominator_disclosed": true,
+    "tokens_stage_times_and_total_elapsed_match_logs": true,
+    "fixed_base_and_adapter_no_new_training_disclosed": true,
+    "18_scripted_tests_distinguished_from_capability": true,
+    "exposed_synthetic_cases_and_unblinded_AI_review_disclosed": true,
+    "extra_audit_compute_and_no_equal_budget_claim_disclosed": true,
+    "all_failures_including_zero_call_startup_retained": true,
+    "scope_stopped_without_expansion_or_output_retry": true,
+    "report_contains_no_complete_private_messages_or_generated_outputs": true
+  },
+  "reviewer": "Independent Codex subagent; AI non-blind engineering review.",
+  "notes": [
+    "Audit has no observed repair benefit and all reports are rejected; zero new damage is only the result of no commits.",
+    "The separate post-run semantic review additionally records the normal-step missing corner-label intention and an incomplete citation on a semantically correct corner-label record.",
+    "The report correctly limits deployed state: this additive prototype has not been connected to the default chat/work flow.",
+    "Publication and website preview are outside this receipt and still require their own records."
+  ],
+  "new_model_calls": 0,
+  "new_test_runs": 0,
+  "source_hashes": {
+    "output/research/2026-10-27/tracker-intent-audit/analysis/acceptance-summary.json": "09da8816c999ccc44d9fc1fbfce4843dc7ee990b01ccf9ff2ddf45fe502f5e90",
+    "output/research/2026-10-27/tracker-intent-audit/engineering/validation.json": "7a2b4867bf9fd567101f9fb8a054c6e16787041314217eac9f4365659c7df2f3",
+    "output/research/2026-10-27/tracker-intent-audit/review/post-run-review.json": "b7dfcdd6a634ee3500234a60c938967d6230a91f78cf7e6f6c10a1a90bfb528a",
+    "output/research/2026-10-27/tracker-intent-audit/analysis/automatic-metrics.json": "03c1c16ec1243f8ac0103b1370932d03eaecac72db5e7c6ad7b60e83725bad28",
+    "output/research/2026-10-27/tracker-intent-audit/build_report.py": "97756310ab2e3e3bf444e759235f5fd61a8f2b156b5817e568ef65066aa1d37b",
+    "output/research/2026-10-27/tracker-intent-audit/collection-02/result.json": "b93f0459bbd10e251d2ed7cea8ba50b60247472d4ff04f0b1583f2427fc15786",
+    "output/research/2026-10-27/tracker-intent-audit/collection-02/config.json": "6fc9589ab166cd4c6a55704bc6666bfa5b86ec36bb5717262fdffb5c88b6548d",
+    "output/research/2026-10-27/tracker-intent-audit/collection-02/PRIVATE-calls.jsonl": "0b53b0869092f80970cd8ef86f2a6867552c1e662bc7cde92750ab503f0c4a27",
+    "output/research/2026-10-27/tracker-intent-audit/collection-02/PRIVATE-outcomes.jsonl": "60b6238c8f0165bf3de84fc79f5a69f0a89c848d77f69260c614595281b0622b",
+    "output/research/2026-10-27/tracker-intent-audit/collection-02/attempts.jsonl": "13978bdc24dcbab2c3b877f27110a19d7fd1e69a68dc70ea28eec700d6c4063e",
+    "output/research/2026-10-27/tracker-intent-audit/collection-01/result.json": "8a8de14d743fccaba86c17c03cf42a70c80c3c5bb54014e52a9059b925d38c89"
+  }
+}

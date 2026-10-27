@@ -1,0 +1,116 @@
+{
+  "rule": "First matching row in the frozen 200-row test order, separately for each category and language. Selection never reads generated model outputs.",
+  "pairs": [
+    {
+      "pair_id": "owner-zh",
+      "focus": "owner",
+      "language": "zh",
+      "source_row_index": 6,
+      "source_example_id": "fresh-test-002-2",
+      "source_family_id": "fresh-test-002",
+      "focal_intent_id": "i2",
+      "expected_focal_metadata": {
+        "owner": "棠",
+        "status": "active"
+      },
+      "source_faulty_line_sha256": "3db3851769f22a9fd47f25b46504cd49470eef7677195b79e9af9bac73cd7fb3",
+      "original_faulty_record_sha256": "5b218962da3a505d341cfb599553b9976605fb22a6c985c523374d3d7075b2e6",
+      "clean_record_sha256": "bfc3e3b64cccd4cb5fee89dfd72a01f29723a7798c6bb511410b5cb558e04fd2",
+      "conversation_sha256": "4d12dc7ce295cd48eb738cbdb97bbf24ad883c66637b50e591a543e98ae9f3d9",
+      "clean_control_method": "Original family materialized through public IntentStore operations; no metadata/history hand edits."
+    },
+    {
+      "pair_id": "owner-en",
+      "focus": "owner",
+      "language": "en",
+      "source_row_index": 107,
+      "source_example_id": "fresh-test-022-3",
+      "source_family_id": "fresh-test-022",
+      "focal_intent_id": "i3",
+      "expected_focal_metadata": {
+        "owner": "Oren",
+        "status": "active"
+      },
+      "source_faulty_line_sha256": "5312e60a976ede2ee965a2bdffa1d6bb42f0dd216ea3c3d24bdb4c7286349124",
+      "original_faulty_record_sha256": "c5135e070bb5522d919bdcca4c5cfbb41e37c65669d060e10abe0aaef7344df2",
+      "clean_record_sha256": "f6ef2261887b38b24a95b2e26f153249ad14f6e38cf9af83a94de2e7fb5152ef",
+      "conversation_sha256": "c89916ddf32179d99ab87ac58ae861c14c8c9fc4581ab1bb55eaa7ce5e9a6921",
+      "clean_control_method": "Original family materialized through public IntentStore operations; no metadata/history hand edits."
+    },
+    {
+      "pair_id": "wrong_withdrawn-zh",
+      "focus": "wrong_withdrawn",
+      "language": "zh",
+      "source_row_index": 18,
+      "source_example_id": "fresh-test-004-4",
+      "source_family_id": "fresh-test-004",
+      "focal_intent_id": "i1",
+      "expected_focal_metadata": {
+        "owner": "芮",
+        "status": "active"
+      },
+      "source_faulty_line_sha256": "14aa99973a55128a00148ba4d150c36b47af72555523244be92d731e3418c9b2",
+      "original_faulty_record_sha256": "95d8d44dc0824f122132a25a89791fba9a8ccf8c552c6cb27c3266f8327a948b",
+      "clean_record_sha256": "bc76cedfe86e459aee1e390e658301c5ea43146b57f41e421452c29afd752c9a",
+      "conversation_sha256": "c028cdfd945afcdc5015c3f88720d0b00c659567afa3cabf3a0b0c9520aabf20",
+      "clean_control_method": "Original family materialized through public IntentStore operations; no metadata/history hand edits."
+    },
+    {
+      "pair_id": "wrong_withdrawn-en",
+      "focus": "wrong_withdrawn",
+      "language": "en",
+      "source_row_index": 137,
+      "source_example_id": "fresh-test-028-3",
+      "source_family_id": "fresh-test-028",
+      "focal_intent_id": "i1",
+      "expected_focal_metadata": {
+        "owner": "Rae",
+        "status": "active"
+      },
+      "source_faulty_line_sha256": "80568cb1bf77951cfb125b2076d90473d91f9a809ff866001ecba07173517cee",
+      "original_faulty_record_sha256": "d0c4a8fce14f75327cfddfb25642a43a358563973289d2c45c0415fa4d4f36a4",
+      "clean_record_sha256": "2bdece5a47b27c919e621fa80e1a20ba774db646340b04f796f94823e23cbea6",
+      "conversation_sha256": "6543bb0b907c0bb267b5ad864d21cb383fe5714f5e66c0f8390e2261f0f28f62",
+      "clean_control_method": "Original family materialized through public IntentStore operations; no metadata/history hand edits."
+    },
+    {
+      "pair_id": "uncertain_status-zh",
+      "focus": "uncertain_status",
+      "language": "zh",
+      "source_row_index": 8,
+      "source_example_id": "fresh-test-002-4",
+      "source_family_id": "fresh-test-002",
+      "focal_intent_id": "i4",
+      "expected_focal_metadata": {
+        "owner": "棠",
+        "status": "uncertain"
+      },
+      "source_faulty_line_sha256": "87859699385d5945267a28e438075c993500d8492d54b4c9a522abbb05fa98e0",
+      "original_faulty_record_sha256": "2111bfca349bb597d001ac8fe7d21f42b065cc0b67015ae79c0ac1ac6279549a",
+      "clean_record_sha256": "e771cb74fa76256bc4ac79bcb6f54586a3130fc8f23398ab4be7eb62d901a1df",
+      "conversation_sha256": "abf89926b5d8c9772cc351f27699198c56a66876e3c14ec54d4d0ddddcccf2ee",
+      "clean_control_method": "Original family materialized through public IntentStore operations; no metadata/history hand edits."
+    },
+    {
+      "pair_id": "uncertain_status-en",
+      "focus": "uncertain_status",
+      "language": "en",
+      "source_row_index": 128,
+      "source_example_id": "fresh-test-026-4",
+      "source_family_id": "fresh-test-026",
+      "focal_intent_id": "i4",
+      "expected_focal_metadata": {
+        "owner": "Dara",
+        "status": "uncertain"
+      },
+      "source_faulty_line_sha256": "6992571f6bb1c29e55265424e9d588ee07b951e792f0ab7159f51288a56c8b28",
+      "original_faulty_record_sha256": "1ed9aaee11ef8b9c4311284b86096544900e214d91f0f3f716a7db85d30e9037",
+      "clean_record_sha256": "74ab302fc7ec910803cdf10ed6d70fa09cd88ff6f55e9b9ef64fd74227243f26",
+      "conversation_sha256": "2313f35f9dc835858d28339e72b5f3810ce717b6402aa9755af0f34943552fe0",
+      "clean_control_method": "Original family materialized through public IntentStore operations; no metadata/history hand edits."
+    }
+  ],
+  "unique_prefixes": 6,
+  "unique_families": 5,
+  "dependency_note": "The Chinese owner and uncertain-status selections are different prefixes from the same family; pairs and repeated prefixes are not independent trials."
+}

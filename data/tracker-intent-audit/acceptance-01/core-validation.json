@@ -1,0 +1,49 @@
+{
+  "id": "tracker-intent-audit-core-validation",
+  "type": "engineering_validation",
+  "status": "passed",
+  "date": "2026-10-27",
+  "timezone": "America/Halifax",
+  "created_at_utc": "2026-10-27T11:57:55.126319+00:00",
+  "test_command": [
+    "experiments/deep_conversation/.venv/Scripts/python.exe",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "experiments/deep_conversation/tracker_lora/intent_audit",
+    "-p",
+    "test_audit.py",
+    "-v"
+  ],
+  "observed_exit_code": 0,
+  "tests_passed": 14,
+  "failed_test_attempts": 0,
+  "source_sha256": {
+    "experiments/deep_conversation/tracker_lora/intent_audit/audit.py": "faf4e5b7cd69415a614e82cba8cfb8b3cb86e9d1fa49932086010d31038a06cb",
+    "experiments/deep_conversation/tracker_lora/intent_audit/audit_prompt.txt": "66f262aafe9449176bd7e15ce152308851d244a48ebc0d86e638bcc0b64ba776",
+    "experiments/deep_conversation/tracker_lora/intent_audit/test_audit.py": "6a2f6a686f21400912f109b4d84692bfeb7fef0a4317b3626ba4a72040f626fb",
+    "experiments/deep_conversation/tracker_lora/intent_audit/README.md": "e62073702528c4338d69f2281adc222a1176e6d4104641582a77e608906d8d00",
+    "experiments/deep_conversation/tracker_lora/intent_audit/__init__.py": "a5143eccf68d3bc32c6e1fe073f95fc157f219a40f48faf5b7c1f71dcb757651",
+    "experiments/deep_conversation/intention_state.py": "e028a604a93520801a0f752755d80b305afb1eebd8792ea0aeaaa3cd5c722f73",
+    "output/research/2026-10-27/tracker-intent-audit/engineering/core-tests-01.log": "07f9c088c4fe37b78578e82d7e543b617c6763f4c0e136b464fbfd0715ae8ccb"
+  },
+  "coverage": [
+    "Three supported owner/reopen/uncertain repairs in one real store patch; text and IDs preserved.",
+    "Keep-all semantic state preservation and explicit no-change version increment.",
+    "Insufficient evidence and unsupported compound transitions hold whole records.",
+    "Missing/duplicate/unknown record coverage, strict JSON, extra text writes, source validation and verdict/value conflicts rejected.",
+    "Stale version or observation rejected without audit mutation.",
+    "Injected runtime failure after a legal first operation rolls back atomically.",
+    "All existing IDs including withdrawn are in annotation-free prompt; no silent truncation.",
+    "Generator callback called once; malformed output and generation failure do not retry."
+  ],
+  "new_model_calls": 0,
+  "new_training_runs": 0,
+  "limitations": [
+    "These tests use scripted reports and callbacks; they do not establish that the tracker produces correct audit reports.",
+    "Coverage and arrived user citations are structural checks, not semantic sufficiency judgments.",
+    "Existing-record audit does not recover missing intentions or rewrite text.",
+    "Accepted held-only/no-change reports increment store version; no semantic field changes are claimed for them."
+  ]
+}

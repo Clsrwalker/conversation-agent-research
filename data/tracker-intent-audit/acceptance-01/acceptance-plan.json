@@ -1,0 +1,64 @@
+{
+  "id": "tracker-intent-audit-small-acceptance",
+  "type": "engineering_acceptance_plan",
+  "date": "2026-10-27",
+  "timezone": "America/Halifax",
+  "status": "frozen_before_acceptance_inference",
+  "purpose": "Check whether one explicit owner/status audit after normal tracking repairs the known focal failures without damaging correct states.",
+  "scope": {
+    "inputs": 12,
+    "faulty": 6,
+    "matched_clean": 6,
+    "prefix_pairs": 6,
+    "families": 5,
+    "focus_categories": [
+      "owner",
+      "wrong_withdrawn",
+      "uncertain_status"
+    ],
+    "languages": [
+      "zh",
+      "en"
+    ],
+    "normal_tracker_calls": 12,
+    "maximum_audit_calls": 12,
+    "maximum_total_model_calls": 24,
+    "training_runs": 0,
+    "base_model_changes": 0,
+    "adapter_weight_changes": 0
+  },
+  "input_contract": "The normal tracker receives only each row.input. Audit receives arrived raw dialogue and ALL existing post-tracker intents, including withdrawn; never focal IDs, fault kind, references, expected metadata, preserve_ids, scenario labels, or review notes.",
+  "procedure": [
+    "Freeze these cases and the implementation/prompt before inference.",
+    "For each input, generate and apply one normal-tracker proposal using the fixed current v2 LoRA.",
+    "Run at most one audit with the same loaded base and adapter over every existing post-tracker record; retain the normal result as the paired baseline.",
+    "Preserve failures, truncations and rejected audits; no output-dependent sample selection, prompt tuning, retry or additional model arm.",
+    "Review raw source meaning and changed-field citations separately from structural coverage."
+  ],
+  "primary_outcome": "Focal existing stable-ID owner and status both correct against the predeclared reference after the normal step and after audit; score meaning/text separately so metadata correctness is not called full intent correctness.",
+  "secondary_outcomes": [
+    "Changes from baseline-correct to wrong owner/status on every audited record, not only the focal record.",
+    "Fault target corrections, remaining errors, clean-target damage and newly unsupported changes.",
+    "Strict report coverage, accepted/rejected/unresolved results and changes supported by sufficient cited arrived user evidence.",
+    "Audit preserves text and record IDs exactly; absent or newly misidentified baseline intents require explicit manual matching or an unscorable flag, never arbitrary ID matching.",
+    "Normal plus audit calls/tokens/time; audit consumes additional compute, so no matched-budget superiority claim."
+  ],
+  "desired_acceptance": {
+    "faulty_targets_correct_after_audit": 6,
+    "faulty_target_denominator": 6,
+    "clean_focal_targets_damaged_by_audit": 0,
+    "clean_target_denominator": 6,
+    "new_owner_or_status_errors_elsewhere": 0,
+    "changed_fields_supported_by_sufficient_raw_evidence": true,
+    "all_completed_audit_reports_structurally_complete": true,
+    "text_and_ids_preserved_by_audit": true
+  },
+  "interpretation_rule": "A functional audit requires valid behavior, not just completed calls. Meeting the desired checks is acceptance on these exposed cases; a repair benefit additionally requires observed baseline-to-audit corrections with no offsetting damage. Do not claim held-out generalization, causal mechanism, statistical superiority, or production reliability.",
+  "stop_rule": "One frozen implementation and one bounded acceptance collection. If the focal capability does not work or causes regressions, report it and stop this scope; do not add prompt sweeps, new models, retraining or a larger evaluation.",
+  "limitations": [
+    "Previously exposed synthetic examples and model-authored/model-reviewed reference labels.",
+    "Five families with six prefixes and matched priors; 12 inputs are not 12 independent scenarios.",
+    "No real rollout, end-to-end task success, ASR, or user study is tested.",
+    "Correct-prior controls are original family histories; they can still require ordinary updates from the latest turn."
+  ]
+}

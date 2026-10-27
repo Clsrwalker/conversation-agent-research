@@ -1,0 +1,195 @@
+{
+  "id": "tracker-intent-audit-release-validation",
+  "type": "engineering_validation",
+  "date": "2026-10-27",
+  "timezone": "America/Halifax",
+  "status": "passed_after_checker_correction",
+  "checked_at_utc": "2026-10-27T12:22:25.723292+00:00",
+  "source_baseline_commit": "0e18f10b1fa6bfb41f34ebb28e778b3145741518",
+  "capability_acceptance_passed": false,
+  "new_model_calls": 0,
+  "new_training_runs": 0,
+  "checks": [
+    {
+      "name": "Static source/result/download consistency",
+      "status": "passed",
+      "groups": 7,
+      "detail": "Reviewed report and visible table agree; all 11 earlier related evidence ZIPs and previous page bytes preserved. Original 19 ZIPs checked unchanged during build."
+    },
+    {
+      "name": "Local HTTP delivery",
+      "status": "passed",
+      "assets": 23,
+      "detail": "23 page/data/download responses are HTTP 200 and byte-identical to current dist."
+    },
+    {
+      "name": "Browser rendering",
+      "status": "passed",
+      "detail": "Observed 997 by 658 viewport: Chinese heading, failed capability versus 18/18 software tests, all table totals, 24 calls, 12 rejected reports and clean 5/6 limitation render legibly. Existing Site tab reused."
+    }
+  ],
+  "validation_correction": {
+    "initial_status": "failed",
+    "cause": "The initial release checker incorrectly compared total collection wall time (including loading) with the sum of generation durations.",
+    "correction": "The checker now compares total wall time with collection-result elapsed_seconds and each generation stage with its own logged costs. Research data, model outputs and report were unchanged.",
+    "initial_checker_sha256": "796c586cae8809336d603a802be57c9a897ee3ac50ffce543cb5b39beeb2bb22",
+    "initial_receipt_sha256": "9a0f6ec37cdf49fceed220cafd5ae5425213de84b807379aa90d66ce47dc2baf",
+    "corrected_checker_sha256": "f4b90d41d6fd88974381923687692c7ebf2732a2a39ee6d1dd37e5be4d98a584",
+    "corrected_receipt_sha256": "86ffd4a36e3fe3eb90549cb9ce6f00524e7a98efc43ef1de90d8a5641f03fb25"
+  },
+  "artifact_sha256": {
+    "dist/intent-role-separation.html": "d3beb6b2ee5f777a4d66a0e70e712c658a734b7e328b6ad4214f8e0fffa5eb69",
+    "dist/index.html": "8bf00168604eb6b091f441f1447f07985ab0bc01b815f6750226119b0a467522",
+    "dist/data/research-record.json": "b0691e8bef151c5bc6be5619f556873719d732f7680107bf76b2de464e716ad2",
+    "dist/data/tracker-intent-audit/acceptance-01/evidence.zip": "e36c3d383c0035554a64adfcaabfe732b09d66d3c120f05cf5f7ca13fa4efbc0",
+    "build_tracker_intent_audit.py": "fa7ebcc3842561a1949f7f125f2d709fd10f19cb205ddf638a88e4726138f6d5",
+    "build_data.py": "76c5f25500ad8709ca2a46cd743ebe4f53413fdc8cb31f1b027142b3a1e9454f"
+  },
+  "local_http_assets": [
+    {
+      "path": "data/tracker-intent-audit/acceptance-01/acceptance-plan.json",
+      "status": 200,
+      "bytes": 4059,
+      "sha256": "969c309595d5a550eb72a817945cedca75d1c2ca3a5dc63adf89eafd626b74b3"
+    },
+    {
+      "path": "data/tracker-intent-audit/acceptance-01/acceptance-summary.json",
+      "status": 200,
+      "bytes": 6455,
+      "sha256": "09da8816c999ccc44d9fc1fbfce4843dc7ee990b01ccf9ff2ddf45fe502f5e90"
+    },
+    {
+      "path": "data/tracker-intent-audit/acceptance-01/automatic-metrics.json",
+      "status": 200,
+      "bytes": 11696,
+      "sha256": "aad8ea6cb29a7392b534debb5e4bfc0a4642ea28c22636d8b2acec8ac3de0930"
+    },
+    {
+      "path": "data/tracker-intent-audit/acceptance-01/collection-config.json",
+      "status": 200,
+      "bytes": 3891,
+      "sha256": "f4edfbbf1a16affb382a85e55b14db558bf59e7265361076c179c9831b3a689d"
+    },
+    {
+      "path": "data/tracker-intent-audit/acceptance-01/collection-result.json",
+      "status": 200,
+      "bytes": 1057,
+      "sha256": "7d5e35d5b7640a3351f61b1a75c4c78b56534032a835a3c8fe1fcaad459e7292"
+    },
+    {
+      "path": "data/tracker-intent-audit/acceptance-01/core-validation.json",
+      "status": 200,
+      "bytes": 2838,
+      "sha256": "b0ff008d2fb316abc9d92adcfb077171172868f2b8c7d4053e32a39c5af81855"
+    },
+    {
+      "path": "data/tracker-intent-audit/acceptance-01/data-manifest.json",
+      "status": 200,
+      "bytes": 7897,
+      "sha256": "36fa925e26ce6b1c55f365f1c69ddc16bdda3b6bc1a303e47c473183e53d2b80"
+    },
+    {
+      "path": "data/tracker-intent-audit/acceptance-01/data-preflight.json",
+      "status": 200,
+      "bytes": 4804,
+      "sha256": "1df1b0d2de65af12f28a7856dee076d8d7837a8ad6aa59928af444409d9b128c"
+    },
+    {
+      "path": "data/tracker-intent-audit/acceptance-01/engineering-validation.json",
+      "status": 200,
+      "bytes": 4409,
+      "sha256": "77cf942f4b2d9c223e8888597c4dbb74bfdfe6658ad970eaf809b02822a5ac34"
+    },
+    {
+      "path": "data/tracker-intent-audit/acceptance-01/evidence.zip",
+      "status": 200,
+      "bytes": 74614,
+      "sha256": "e36c3d383c0035554a64adfcaabfe732b09d66d3c120f05cf5f7ca13fa4efbc0"
+    },
+    {
+      "path": "data/tracker-intent-audit/acceptance-01/final-report-review.json",
+      "status": 200,
+      "bytes": 4084,
+      "sha256": "7ef373ae041099416765e64bd89bfb07fe03cdec2347e23d81e091e15ceca094"
+    },
+    {
+      "path": "data/tracker-intent-audit/acceptance-01/post-run-review.json",
+      "status": 200,
+      "bytes": 63393,
+      "sha256": "59f49a4133f718e84d6056c2fe6d4cc9bde03359736ff904322284729052f58a"
+    },
+    {
+      "path": "data/tracker-intent-audit/acceptance-01/preflight-review.json",
+      "status": 200,
+      "bytes": 15015,
+      "sha256": "aea9ccbba37370d5a704bff0534091d04dbfe8321781b1a0be552cc48371e26e"
+    },
+    {
+      "path": "data/tracker-intent-audit/acceptance-01/prior-bundles.json",
+      "status": 200,
+      "bytes": 2166,
+      "sha256": "1c93352eec558f32d35dfd7d3a7a134a0c5aa95e43481e1436c34b8a2df3559b"
+    },
+    {
+      "path": "data/tracker-intent-audit/acceptance-01/selection.json",
+      "status": 200,
+      "bytes": 5730,
+      "sha256": "8f6c4464b8eff345e044fdb9c8128670cff563d37287a9b983b791abf51076b3"
+    },
+    {
+      "path": "data/tracker-intent-audit/acceptance-01/startup-failure.json",
+      "status": 200,
+      "bytes": 646,
+      "sha256": "4bc0ef0bec4a145f1cb7936d7b65886b13b59e42ecff8040a773df6ab9434d40"
+    },
+    {
+      "path": "data/tracker-intent-audit/acceptance-01/startup-recovery.json",
+      "status": 200,
+      "bytes": 702,
+      "sha256": "a36c1da2ff3674975a76e9572921c8c4059ce651c473331c754fd47800a502fc"
+    },
+    {
+      "path": "data/tracker-intent-audit/acceptance-01/summary.json",
+      "status": 200,
+      "bytes": 18983,
+      "sha256": "d1e7aa74d872b71e8bf86770c0a8c8faf424fcc53a4a0c25d764c3e6377161d7"
+    },
+    {
+      "path": "data/tracker-intent-audit/acceptance-01/token-preflight.json",
+      "status": 200,
+      "bytes": 1393,
+      "sha256": "e764c17695773ac41fb009c34ab3ff12387edcb351bfefd18eb60f3ae34de170"
+    },
+    {
+      "path": "intent-role-separation.html",
+      "status": 200,
+      "bytes": 70618,
+      "sha256": "d3beb6b2ee5f777a4d66a0e70e712c658a734b7e328b6ad4214f8e0fffa5eb69"
+    },
+    {
+      "path": "index.html",
+      "status": 200,
+      "bytes": 74711,
+      "sha256": "8bf00168604eb6b091f441f1447f07985ab0bc01b815f6750226119b0a467522"
+    },
+    {
+      "path": "data/research-record.json",
+      "status": 200,
+      "bytes": 295440,
+      "sha256": "b0691e8bef151c5bc6be5619f556873719d732f7680107bf76b2de464e716ad2"
+    },
+    {
+      "path": "data/tracker-intent-audit-validation.json",
+      "status": 200,
+      "bytes": 4479,
+      "sha256": "7a2b4867bf9fd567101f9fb8a054c6e16787041314217eac9f4365659c7df2f3"
+    }
+  ],
+  "evidence_package_sha256": "e36c3d383c0035554a64adfcaabfe732b09d66d3c120f05cf5f7ca13fa4efbc0",
+  "limitations": [
+    "Website checks do not repair or validate model reasoning; capability acceptance remains failed.",
+    "Visual QA covers one observed desktop viewport, not an exhaustive accessibility/mobile study.",
+    "This receipt precedes deployment. Native deployment and public mirror verification have separate local publication receipts.",
+    "This file excludes its own hash to avoid circular evidence binding."
+  ]
+}

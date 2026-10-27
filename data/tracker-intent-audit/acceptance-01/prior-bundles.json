@@ -1,0 +1,51 @@
+{
+  "kind": "prior_evidence_preservation",
+  "date": "2026-10-27",
+  "files": [
+    {
+      "path_relative_to_site": "dist/data/intent-role-separation/evidence.zip",
+      "sha256": "865cf0e08c7052d2d327bbbe1d7740c007047ea4542917eaa4796ca5f77452a5"
+    },
+    {
+      "path_relative_to_site": "dist/data/intent-role-diagnostics/evidence.zip",
+      "sha256": "32e6d9566b1f989195dfc023a36e312f281ac61e97c277a8d769784914def613"
+    },
+    {
+      "path_relative_to_site": "dist/data/tracker-lora-plan/evidence.zip",
+      "sha256": "061027b393a7ff07ca4255aa4f740fd4eda308e1ec7b70dc13e90e7161a64aac"
+    },
+    {
+      "path_relative_to_site": "dist/data/tracker-lora-pilot/evidence.zip",
+      "sha256": "7e4018e684cd4a92fe12b333a931170105ba7d61649048ddecd512e58aed5c80"
+    },
+    {
+      "path_relative_to_site": "dist/data/tracker-lora-pilot/followup-01/evidence.zip",
+      "sha256": "0d25311a746e3461b7bb3d22ab1d0ba1609213bf2c4c89f055904f4399c50bff"
+    },
+    {
+      "path_relative_to_site": "dist/data/tracker-lora-pilot/memory-revision-01/evidence.zip",
+      "sha256": "b63049ba6ea557c798e715cbaeb250a826add84a804d272469387c554ea292a4"
+    },
+    {
+      "path_relative_to_site": "dist/data/tracker-lora-pilot/formal-training-02/evidence.zip",
+      "sha256": "e4f9601655aa624fbd7e37837cf6774829874a4003a18840a268046c2d88f0d5"
+    },
+    {
+      "path_relative_to_site": "dist/data/tracker-lora-pilot/heldout-results-01/evidence.zip",
+      "sha256": "90edfd00b0a02f940d17440f23a431ff1007da81df316a2907f2e0e84be10110"
+    },
+    {
+      "path_relative_to_site": "dist/data/tracker-lora-pilot/heldout-collection-01/evidence.zip",
+      "sha256": "96f035dde9ca638f3846543ba8ee0b29fe75d6ffa9774b13a63c459fb57fd37c"
+    },
+    {
+      "path_relative_to_site": "dist/data/tracker-lora-repair-v2/results-01/evidence.zip",
+      "sha256": "6cb402fa6c67caa26a814bb13a01681f98d2bfbedec2a801f2b20b6d8eee95e4"
+    },
+    {
+      "path_relative_to_site": "dist/data/tracker-failure-attribution/diagnosis-01/evidence.zip",
+      "sha256": "6668a4d3ea83ce5dd717df2e784beb1e1a6e72ebf7ebf5c2568aae01b344625e"
+    }
+  ],
+  "id": "tracker-intent-audit-eleven-prior-bundles"
+}

@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-27",
+  "timezone": "America/Halifax",
+  "kind": "infrastructure_startup_recovery",
+  "initial_run": "collection-01",
+  "initial_status": "failed",
+  "initial_error": "ModuleNotFoundError: No module named 'torch'",
+  "initial_durable_model_calls": 0,
+  "recovery_run": "collection-02",
+  "recovery_python": "experiments/deep_conversation/tracker_lora/.venv/Scripts/python.exe",
+  "model_prompt_data_source_changes": 0,
+  "new_packages_installed": 0,
+  "actual_generation_budget_unchanged": 24,
+  "usage_documentation_corrected": true,
+  "note": "The initial general test environment lacks torch; use the existing inference environment. This is not a retry of a generated output."
+}

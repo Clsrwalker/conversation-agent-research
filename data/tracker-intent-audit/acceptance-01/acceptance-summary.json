@@ -1,0 +1,114 @@
+{
+  "id": "tracker-intent-audit-acceptance",
+  "status": "completed",
+  "kind": "bounded_engineering_acceptance",
+  "date": "2026-10-27",
+  "timezone": "America/Halifax",
+  "acceptance_passed": false,
+  "training_runs": 0,
+  "title": "意图核查已实现，但本轮能力验收失败",
+  "lead": "固定当前底座与 LoRA，完成 12 个输入、24 次生成。12 份核查报告全部被执行层拒绝；6 个故障目标从核查前 0 个正确到核查后仍为 0 个，未获得修复收益。",
+  "problem": "已有意图的归属错误、错误撤销和不确定状态被错误激活，可能被后续普通跟踪保留下来。",
+  "baseline": "使用现有 v2 LoRA 完成一次普通跟踪，保存实际状态作为配对基线。正确前态也可能被本次普通跟踪破坏。",
+  "change": "在同一 IntentStore 上增加一次独立核查，读取原始对话及所有已有记录（包括撤销项），逐字段报告保留、更正或证据不足。Harness 校验覆盖、引用与版本，合法结果才原子提交；不改文本或 ID。",
+  "comparison_conditions": "底座 Qwen/Qwen2.5-14B-Instruct，revision cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8；固定现有 tracker v2 formal-01 LoRA，同一次加载、同一个适配器，两阶段均冻结权重。6 个中英文故障前态加 6 个配对正确前态，来自 6 个前缀、5 个场景家庭；贪心生成，无重试、无提示词搜索、无新增训练。核查额外消耗一次调用，不是等算力对照。",
+  "rows": [
+    {
+      "focus": "owner",
+      "label": "归属",
+      "inputs": 2,
+      "baseline_correct": 0,
+      "audit_correct": 0,
+      "clean_inputs": 2,
+      "clean_damaged": 0
+    },
+    {
+      "focus": "wrong_withdrawn",
+      "label": "误撤销恢复",
+      "inputs": 2,
+      "baseline_correct": 0,
+      "audit_correct": 0,
+      "clean_inputs": 2,
+      "clean_damaged": 0
+    },
+    {
+      "focus": "uncertain_status",
+      "label": "不确定状态",
+      "inputs": 2,
+      "baseline_correct": 0,
+      "audit_correct": 0,
+      "clean_inputs": 2,
+      "clean_damaged": 0
+    }
+  ],
+  "metrics": {
+    "actual_model_calls": 24,
+    "baseline_calls": 12,
+    "audit_calls": 12,
+    "faulty_baseline_correct": 0,
+    "faulty_audit_correct": 0,
+    "faulty_inputs": 6,
+    "clean_baseline_correct": 5,
+    "clean_audit_correct": 5,
+    "clean_inputs": 6,
+    "clean_damaged": 0,
+    "new_other_owner_status_errors": 0,
+    "source_error_changes": 0,
+    "unresolved_audits": 0,
+    "rejected_audits": 12,
+    "malformed_json_audits": 11,
+    "verdict_value_conflict_audits": 1,
+    "committed_audits": 0,
+    "failed_calls": 0,
+    "input_tokens": 24954,
+    "output_tokens": 2367,
+    "elapsed_seconds": 456.7564755999483,
+    "costs": {
+      "normal": {
+        "calls": 12,
+        "completed": 12,
+        "input_tokens": 14540,
+        "output_tokens": 449,
+        "hit_token_cap": 0,
+        "elapsed_seconds": 74.047
+      },
+      "audit": {
+        "calls": 12,
+        "completed": 12,
+        "input_tokens": 10414,
+        "output_tokens": 1918,
+        "hit_token_cap": 0,
+        "elapsed_seconds": 235.214
+      }
+    }
+  },
+  "engineering": {
+    "tests_passed": 18,
+    "tests_total": 18
+  },
+  "failures": [
+    "11 份报告不是合法 JSON；另 1 份虽能解析，但 owner 的 change 判定给出了未变化的值，违反字段契约。12 份均被拒绝，0 份提交。",
+    "6 个故障目标均未修复。核查没有新增误改，原因是所有报告均未执行，不能解读成核查判断可靠。",
+    "6 个正确前态中，普通跟踪先把英文不确定需求 i4 误激活并改写为另一任务，还遗漏了对应新增项；核查未修复。目标字段整体仅 5/6 保持正确，核查新增损伤则是 0/6。",
+    "本轮输出协议失败已经足以阻断功能；部分拒绝报告还提出了错误状态或归属。没有通过自动补标点、忽略矛盾或二次生成来替换原始结果。",
+    "首次 collection-01 启动误用了没有 PyTorch 的通用测试环境，0 次模型调用；collection-02 使用既有推理环境完成。未安装新依赖，未更改冻结来源。"
+  ],
+  "limitations": [
+    "这是已暴露合成案例上的小规模工程验收，标签与语义复核均由模型产生或检查，没有新增独立人工金标准。",
+    "12 个输入不是 12 个独立场景，也不是新测试集上的泛化结果；本轮不估计统计显著性。",
+    "表中正确仅指目标归属与状态，完整文本含义和证据充分性另行复核；语义复核不把未执行的提议当作修复。",
+    "核查不能补回整个缺失的意图，也不能修复被普通步骤改坏的文本；证据不足和不支持的组合修改会保留记录并返回未决项。",
+    "0 个执行后证据错误、0 个新增误改均以 0 个已执行核查修改为前提，不能据此计算可信的修改准确率。",
+    "验收不通过，原型未接入默认聊天或工作执行流程；本轮在冻结范围内结束，不扩样本、不重训、不换底座。",
+    "当前证据定位了输出协议与接入失败，不能确定其内部成因，也不能证明整个意图核查方向无效。"
+  ],
+  "index_text": "固定模型与 LoRA：18 项工程测试通过；12 份模型核查均被拒绝，故障修复 0/6，能力验收失败。",
+  "scope_stop": "All 24 assigned calls retained. No output-dependent retries, prompt edits, extra model arms or enlarged acceptance.",
+  "provenance": {
+    "output\\research\\2026-10-27\\tracker-intent-audit\\analysis\\automatic-metrics.json": "03c1c16ec1243f8ac0103b1370932d03eaecac72db5e7c6ad7b60e83725bad28",
+    "output\\research\\2026-10-27\\tracker-intent-audit\\review\\post-run-review.json": "b7dfcdd6a634ee3500234a60c938967d6230a91f78cf7e6f6c10a1a90bfb528a",
+    "output\\research\\2026-10-27\\tracker-intent-audit\\collection-02\\result.json": "b93f0459bbd10e251d2ed7cea8ba50b60247472d4ff04f0b1583f2427fc15786",
+    "output\\research\\2026-10-27\\tracker-intent-audit\\collection-02\\config.json": "6fc9589ab166cd4c6a55704bc6666bfa5b86ec36bb5717262fdffb5c88b6548d",
+    "output\\research\\2026-10-27\\tracker-intent-audit\\data\\acceptance-plan.json": "c1bf80c45a9e86ebb580bd93e3542fcf4edf22a73380663ce4f8411c8ae453a6"
+  }
+}

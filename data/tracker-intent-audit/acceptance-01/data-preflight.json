@@ -1,0 +1,129 @@
+{
+  "status": "passed",
+  "date": "2026-10-27",
+  "timezone": "America/Halifax",
+  "checked_at_utc": "2026-10-27T11:54:01.623117+00:00",
+  "frozen_protocol_dependencies_verified": 18,
+  "manifest_source_files_verified": 19,
+  "exact_regenerated_faulty_rows": 6,
+  "clean_controls_regenerated_from_original_histories": 6,
+  "input_restores_checked": 12,
+  "annotated_reference_controls_checked": 12,
+  "all_pairs_same_arrived_conversation": true,
+  "no_selected_reference_overlay_corrections": true,
+  "checks": [
+    {
+      "case_id": "owner-zh-faulty",
+      "input_sha256": "22da3848699892543ded9ecbe600c6da15cd30ac1b8a99ebe35919b2dd6bf561",
+      "original_input_identical": true,
+      "public_store_restore_exact": true,
+      "annotated_patch_matches_reference_projection": true,
+      "current_intents": 2,
+      "arrived_events": 2
+    },
+    {
+      "case_id": "owner-zh-clean",
+      "input_sha256": "7983887e4e1d90192697e704f9d88b8894ffe6df173d1cf74a68b5af25fef538",
+      "original_input_identical": true,
+      "public_store_restore_exact": true,
+      "annotated_patch_matches_reference_projection": true,
+      "current_intents": 2,
+      "arrived_events": 2
+    },
+    {
+      "case_id": "owner-en-faulty",
+      "input_sha256": "5424e130eb96a8ecdc3daac6defd9417527af3f94316951b5b23a94b03a372fb",
+      "original_input_identical": true,
+      "public_store_restore_exact": true,
+      "annotated_patch_matches_reference_projection": true,
+      "current_intents": 3,
+      "arrived_events": 4
+    },
+    {
+      "case_id": "owner-en-clean",
+      "input_sha256": "2e545f48f185ef76a6922881c3093a02298a7c2ab732b57d120c3b018b70861a",
+      "original_input_identical": true,
+      "public_store_restore_exact": true,
+      "annotated_patch_matches_reference_projection": true,
+      "current_intents": 3,
+      "arrived_events": 4
+    },
+    {
+      "case_id": "wrong_withdrawn-zh-faulty",
+      "input_sha256": "d1073b3e502320fb2bffdeeae5a2a58010a2e6519c6fb9ef932a62e6a69395fc",
+      "original_input_identical": true,
+      "public_store_restore_exact": true,
+      "annotated_patch_matches_reference_projection": true,
+      "current_intents": 4,
+      "arrived_events": 5
+    },
+    {
+      "case_id": "wrong_withdrawn-zh-clean",
+      "input_sha256": "8962f4f11e69ce7f639b6e1468465e2f49fb1e32f524782d90256d56e4c325a7",
+      "original_input_identical": true,
+      "public_store_restore_exact": true,
+      "annotated_patch_matches_reference_projection": true,
+      "current_intents": 4,
+      "arrived_events": 5
+    },
+    {
+      "case_id": "wrong_withdrawn-en-faulty",
+      "input_sha256": "d1360d2de1b72ea502a28809920d9300ec7c77d90fd2d7695991f62171ec4bc9",
+      "original_input_identical": true,
+      "public_store_restore_exact": true,
+      "annotated_patch_matches_reference_projection": true,
+      "current_intents": 2,
+      "arrived_events": 4
+    },
+    {
+      "case_id": "wrong_withdrawn-en-clean",
+      "input_sha256": "516f8b13fa8c1ab0821b3b20180f3bcc6e2a816d8e39552c52017376c7c91ac0",
+      "original_input_identical": true,
+      "public_store_restore_exact": true,
+      "annotated_patch_matches_reference_projection": true,
+      "current_intents": 2,
+      "arrived_events": 4
+    },
+    {
+      "case_id": "uncertain_status-zh-faulty",
+      "input_sha256": "5e60a65f7d2c1847e0c8230e30895d369ddb1c00ae185829a88f27dd2022a084",
+      "original_input_identical": true,
+      "public_store_restore_exact": true,
+      "annotated_patch_matches_reference_projection": true,
+      "current_intents": 4,
+      "arrived_events": 5
+    },
+    {
+      "case_id": "uncertain_status-zh-clean",
+      "input_sha256": "945c513fe9ac371c99a3a9cae9c0e397df88571c815617bd1a6c93072344a435",
+      "original_input_identical": true,
+      "public_store_restore_exact": true,
+      "annotated_patch_matches_reference_projection": true,
+      "current_intents": 4,
+      "arrived_events": 5
+    },
+    {
+      "case_id": "uncertain_status-en-faulty",
+      "input_sha256": "fb77085c0a1c0fcc2791cad0f8d7f1f20a813355d0bf37a9dc773d85834f00a5",
+      "original_input_identical": true,
+      "public_store_restore_exact": true,
+      "annotated_patch_matches_reference_projection": true,
+      "current_intents": 4,
+      "arrived_events": 5
+    },
+    {
+      "case_id": "uncertain_status-en-clean",
+      "input_sha256": "3d3cabc3868bd0c32bde5e6bf17318257937751b623da144d6146b4a16b65c85",
+      "original_input_identical": true,
+      "public_store_restore_exact": true,
+      "annotated_patch_matches_reference_projection": true,
+      "current_intents": 4,
+      "arrived_events": 5
+    }
+  ],
+  "new_model_calls": 0,
+  "training_runs": 0,
+  "limits": [
+    "Preflight establishes executable reference transitions and exact provenance, not new semantic gold or model quality."
+  ]
+}

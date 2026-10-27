@@ -1,0 +1,18 @@
+{
+  "status": "failed",
+  "date": "2026-10-27",
+  "timezone": "America/Halifax",
+  "assigned_inputs": 12,
+  "maximum_assigned_calls": 24,
+  "new_training_runs": 0,
+  "retries": 0,
+  "pid": 63720,
+  "error": {
+    "type": "ModuleNotFoundError",
+    "message": "No module named 'torch'",
+    "traceback": "Traceback (most recent call last):\n  File \"experiments\\deep_conversation\\tracker_lora\\intent_audit\\collect_acceptance.py\", line 65, in main\n    import torch\nModuleNotFoundError: No module named 'torch'\n"
+  },
+  "durable_calls": 0,
+  "elapsed_seconds": 0.000905499910004437,
+  "finished_at_utc": "2026-10-27T12:02:48.755118+00:00"
+}

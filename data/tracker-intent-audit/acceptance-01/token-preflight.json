@@ -1,0 +1,66 @@
+{
+  "status": "passed",
+  "lengths": [
+    {
+      "case_id": "owner-zh-faulty",
+      "normal": 1026,
+      "audit_before_normal": 751
+    },
+    {
+      "case_id": "owner-zh-clean",
+      "normal": 1026,
+      "audit_before_normal": 751
+    },
+    {
+      "case_id": "owner-en-faulty",
+      "normal": 1168,
+      "audit_before_normal": 831
+    },
+    {
+      "case_id": "owner-en-clean",
+      "normal": 1168,
+      "audit_before_normal": 831
+    },
+    {
+      "case_id": "wrong_withdrawn-zh-faulty",
+      "normal": 1321,
+      "audit_before_normal": 879
+    },
+    {
+      "case_id": "wrong_withdrawn-zh-clean",
+      "normal": 1278,
+      "audit_before_normal": 878
+    },
+    {
+      "case_id": "wrong_withdrawn-en-faulty",
+      "normal": 1196,
+      "audit_before_normal": 818
+    },
+    {
+      "case_id": "wrong_withdrawn-en-clean",
+      "normal": 1153,
+      "audit_before_normal": 817
+    },
+    {
+      "case_id": "uncertain_status-zh-faulty",
+      "normal": 1298,
+      "audit_before_normal": 889
+    },
+    {
+      "case_id": "uncertain_status-zh-clean",
+      "normal": 1300,
+      "audit_before_normal": 890
+    },
+    {
+      "case_id": "uncertain_status-en-faulty",
+      "normal": 1302,
+      "audit_before_normal": 901
+    },
+    {
+      "case_id": "uncertain_status-en-clean",
+      "normal": 1304,
+      "audit_before_normal": 902
+    }
+  ],
+  "truncation": false
+}

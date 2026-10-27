@@ -1,0 +1,70 @@
+{
+  "id": "tracker-intent-audit-engineering",
+  "type": "engineering_validation",
+  "status": "implementation_passed_acceptance_failed",
+  "date": "2026-10-27",
+  "timezone": "America/Halifax",
+  "tested_run": "collection-02",
+  "tests_passed": 18,
+  "tests_total": 18,
+  "capability_acceptance_passed": false,
+  "checks": [
+    {
+      "name": "Core and real-store integration",
+      "status": "passed",
+      "result": "14 core + 4 pipeline unit tests; scripted callbacks, not model quality. First functional test runs passed."
+    },
+    {
+      "name": "Frozen data and independent source review",
+      "status": "passed",
+      "result": "12 restored inputs, all-record audit inputs without labels, 18 legacy dependency hashes preserved; preflight-review.json binds 58 source records."
+    },
+    {
+      "name": "Model startup recovery",
+      "status": "recovered",
+      "result": "collection-01 failed before inference (missing torch); existing tracker venv used for collection-02, no package installation."
+    },
+    {
+      "name": "Bounded real-model collection",
+      "status": "completed",
+      "result": "24/24 generations completed, no truncation or retries; fixed base files and adapter hashes verified."
+    },
+    {
+      "name": "Desired owner/status repair acceptance",
+      "status": "failed",
+      "result": "12/12 audit reports rejected; faulty target metadata correct 0/6 before and after. No audit operations executed."
+    },
+    {
+      "name": "Independent raw-dialogue review",
+      "status": "completed",
+      "record": "post-run-review.json",
+      "result": "Unblinded AI source review; does not convert malformed or incorrect reports into successful results."
+    }
+  ],
+  "source_hashes": {
+    "experiments/deep_conversation/tracker_lora/intent_audit/audit.py": "faf4e5b7cd69415a614e82cba8cfb8b3cb86e9d1fa49932086010d31038a06cb",
+    "experiments/deep_conversation/tracker_lora/intent_audit/audit_prompt.txt": "66f262aafe9449176bd7e15ce152308851d244a48ebc0d86e638bcc0b64ba776",
+    "experiments/deep_conversation/tracker_lora/intent_audit/pipeline.py": "eb7bef2753dd6de310adcee9345e4abbbc4df60500e3dad3db3f66d74eb64239",
+    "experiments/deep_conversation/tracker_lora/intent_audit/collect_acceptance.py": "01e7abb214389544bc14cd131c52e55fb5558c1bfb3de299aee3ba94c378a23a",
+    "experiments/deep_conversation/tracker_lora/intent_audit/build_acceptance.py": "07512a83a2442f4c3917f73fa61a9df46b38b9e8a6333c1cfe6757cd317dc8c7",
+    "output/research/2026-10-27/tracker-intent-audit/data/acceptance.records.jsonl": "de64e4b3c191ac2dad277fa4432d1f384cf15dc8914101fa17247e24fffbddde",
+    "output/research/2026-10-27/tracker-intent-audit/data/manifest.json": "f56642349abad2b6ab70f5b4911afe5d337800195d056c333ef3268318ab88b1",
+    "output/research/2026-10-27/tracker-intent-audit/data/acceptance-plan.json": "c1bf80c45a9e86ebb580bd93e3542fcf4edf22a73380663ce4f8411c8ae453a6",
+    "output/research/2026-10-27/tracker-intent-audit/data/preflight.json": "cba9da9c41115c7d9a3da901f34da535706eb63a48eee1f46aeb57074a1ee883",
+    "output/research/2026-10-27/tracker-intent-audit/review/preflight-review.json": "edbf3fd93296ba6890409e022b2dbeaaaf21b823b655d975d3bfe3de4f9f59e4",
+    "output/research/2026-10-24/tracker-lora-repair-v2/annotation/system_prompt.txt": "7587583ff3fb2f46f64a32ca598a9f2bd980d8b0c3ff24915d80f5e31cda5abd",
+    "experiments/deep_conversation/tracker_lora/evaluate_tracker.py": "6e628968b52307f8160bcc673cb5abba8043490c810b22f0bd286fb9a4f33a6f",
+    "experiments/deep_conversation/tracker_lora/repair_v2/train_tracker.py": "2d329f11c1320c0f2e12c39d6e74600997757d53a0661406b8e6a657222ffd24",
+    "experiments/deep_conversation/tracker_lora/repair_v2/collect_three_arm.py": "6914ae922056b288a55f4fdaf197816ea4ab649b35e9cf80de0665521d6044d8",
+    "experiments/deep_conversation/intention_state.py": "e028a604a93520801a0f752755d80b305afb1eebd8792ea0aeaaa3cd5c722f73"
+  },
+  "pipeline_test_log_sha256": "cbd79dec9555145766d3de589e6d323ed7d9c41e8680681d853e99e0dd490ca1",
+  "core_validation_sha256": "d62bd3650a007ad79a7d1c4c9344f92c9cb5c0edc64f799a89dc5c17431c98d1",
+  "new_model_calls": 24,
+  "new_training_runs": 0,
+  "limits": [
+    "Only existing-record metadata audit is implemented.",
+    "Unit tests establish software behavior, not assistance quality.",
+    "Website checks and deployment are recorded separately after publication preparation."
+  ]
+}
