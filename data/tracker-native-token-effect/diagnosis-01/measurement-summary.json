@@ -1,0 +1,686 @@
+{
+  "id": "native-token-effect-measurement-summary",
+  "status": "completed",
+  "date": "2026-10-27",
+  "timezone": "America/Halifax",
+  "kind": "teacher_forced_conditional_distribution_measurements_not_task_quality",
+  "units": {
+    "log_probability": "natural log",
+    "margin": "log p(canonical next token) minus log p(historical next token)",
+    "negative_log_likelihood": "natural-log units; lower is higher likelihood for the fixed target under teacher forcing"
+  },
+  "summary": {
+    "existing_inputs": 6,
+    "completed_forward_calls": 12,
+    "new_generations": 0,
+    "new_training_runs": 0,
+    "per_token_positions_checked": 696,
+    "body_nll_lower_with_adapter_cases": 6,
+    "historical_failed_branch_pairs": 4,
+    "failure_pair_margin_decreased_cases": 4,
+    "failure_pair_sign_flips_toward_historical_token": 4,
+    "enabled_top1_equals_historical_failed_token": 4,
+    "disabled_top1_equals_canonical_token": 2,
+    "disabled_top1_is_third_token": 2,
+    "failed_branch_gold_absolute_probability_increased": 2,
+    "failed_branch_gold_absolute_probability_decreased": 2,
+    "successful_wording_variant_cases": 1,
+    "match_through_eos_cases": 1,
+    "forward_seconds": 13.024183299858123,
+    "total_run_seconds": 66.62766060000286
+  },
+  "cases": [
+    {
+      "case_id": "native-fit-owner-zh",
+      "focus": "owner",
+      "language": "zh",
+      "frozen_historical_focal_full_meaning_correct": false,
+      "segments": {
+        "adapter_enabled": {
+          "all_training_positions": {
+            "target_argmax_tokens": 70,
+            "target_nll_mean": 0.10436342840325342,
+            "target_nll_sum": 7.6185302734375,
+            "tokens": 73
+          },
+          "body": {
+            "target_argmax_tokens": 68,
+            "target_nll_mean": 0.10730251795809034,
+            "target_nll_sum": 7.618478775024414,
+            "tokens": 71
+          },
+          "eos": {
+            "target_argmax_tokens": 1,
+            "target_nll_mean": 5.14984130859375e-05,
+            "target_nll_sum": 5.14984130859375e-05,
+            "tokens": 1
+          },
+          "post_eos_newline": {
+            "target_argmax_tokens": 1,
+            "target_nll_mean": -0.0,
+            "target_nll_sum": -0.0,
+            "tokens": 1
+          },
+          "through_eos": {
+            "target_argmax_tokens": 69,
+            "target_nll_mean": 0.10581292046440972,
+            "target_nll_sum": 7.6185302734375,
+            "tokens": 72
+          }
+        },
+        "adapter_disabled": {
+          "all_training_positions": {
+            "target_argmax_tokens": 60,
+            "target_nll_mean": 1.0318548124130458,
+            "target_nll_sum": 75.32540130615234,
+            "tokens": 73
+          },
+          "body": {
+            "target_argmax_tokens": 58,
+            "target_nll_mean": 1.0608551401487538,
+            "target_nll_sum": 75.32071495056152,
+            "tokens": 71
+          },
+          "eos": {
+            "target_argmax_tokens": 1,
+            "target_nll_mean": 1.71661376953125e-05,
+            "target_nll_sum": 1.71661376953125e-05,
+            "tokens": 1
+          },
+          "post_eos_newline": {
+            "target_argmax_tokens": 1,
+            "target_nll_mean": 0.004669189453125,
+            "target_nll_sum": 0.004669189453125,
+            "tokens": 1
+          },
+          "through_eos": {
+            "target_argmax_tokens": 59,
+            "target_nll_mean": 1.0461212793986003,
+            "target_nll_sum": 75.32073211669922,
+            "tokens": 72
+          }
+        }
+      },
+      "body_nll_mean_on_minus_off": -0.9535526221906635,
+      "first_divergence": {
+        "status": "historical_failed_output_single_token_branch",
+        "common_prefix_completion_tokens": 49,
+        "completion_index": 49,
+        "gold_token_id": 36509,
+        "historical_token_id": 9207,
+        "shared_full_prefix_sha256": "ef263435c81aa89072de3d8142bc79b75713ce77d57b618ffc4daf2d529e0db5",
+        "adapter_enabled": {
+          "gold_logprob": -1.4277801513671875,
+          "historical_logprob": -0.3027801513671875,
+          "gold_minus_historical_logprob": -1.125,
+          "gold_rank": 2,
+          "historical_rank": 1,
+          "top1_token_id": 9207,
+          "top1_logprob": -0.3027801513671875,
+          "gold_probability": 0.2398407418887846,
+          "historical_probability": 0.738761494222835,
+          "top1_probability": 0.738761494222835,
+          "historical_token_is_top1": true,
+          "gold_token_is_top1": false
+        },
+        "adapter_disabled": {
+          "gold_logprob": -2.2321605682373047,
+          "historical_logprob": -2.6071605682373047,
+          "gold_minus_historical_logprob": 0.375,
+          "gold_rank": 2,
+          "historical_rank": 3,
+          "top1_token_id": 2198,
+          "top1_logprob": -0.2321605682373047,
+          "gold_probability": 0.10729635841870364,
+          "historical_probability": 0.07374363679448848,
+          "top1_probability": 0.7928188115667711,
+          "historical_token_is_top1": false,
+          "gold_token_is_top1": false
+        },
+        "on_minus_off_margin": -1.5,
+        "on_minus_off_gold_logprob": 0.8043804168701172,
+        "on_minus_off_historical_logprob": 2.304380416870117
+      }
+    },
+    {
+      "case_id": "native-fit-owner-en",
+      "focus": "owner",
+      "language": "en",
+      "frozen_historical_focal_full_meaning_correct": false,
+      "segments": {
+        "adapter_enabled": {
+          "all_training_positions": {
+            "target_argmax_tokens": 56,
+            "target_nll_mean": 0.13294717821024232,
+            "target_nll_sum": 7.843883514404297,
+            "tokens": 59
+          },
+          "body": {
+            "target_argmax_tokens": 54,
+            "target_nll_mean": 0.13761115492435924,
+            "target_nll_sum": 7.843835830688477,
+            "tokens": 57
+          },
+          "eos": {
+            "target_argmax_tokens": 1,
+            "target_nll_mean": 4.76837158203125e-05,
+            "target_nll_sum": 4.76837158203125e-05,
+            "tokens": 1
+          },
+          "post_eos_newline": {
+            "target_argmax_tokens": 1,
+            "target_nll_mean": -0.0,
+            "target_nll_sum": -0.0,
+            "tokens": 1
+          },
+          "through_eos": {
+            "target_argmax_tokens": 55,
+            "target_nll_mean": 0.13523937093800512,
+            "target_nll_sum": 7.843883514404297,
+            "tokens": 58
+          }
+        },
+        "adapter_disabled": {
+          "all_training_positions": {
+            "target_argmax_tokens": 49,
+            "target_nll_mean": 1.1891199208922305,
+            "target_nll_sum": 70.1580753326416,
+            "tokens": 59
+          },
+          "body": {
+            "target_argmax_tokens": 47,
+            "target_nll_mean": 1.2308425234075178,
+            "target_nll_sum": 70.15802383422852,
+            "tokens": 57
+          },
+          "eos": {
+            "target_argmax_tokens": 1,
+            "target_nll_mean": 2.09808349609375e-05,
+            "target_nll_sum": 2.09808349609375e-05,
+            "tokens": 1
+          },
+          "post_eos_newline": {
+            "target_argmax_tokens": 1,
+            "target_nll_mean": 3.0517578125e-05,
+            "target_nll_sum": 3.0517578125e-05,
+            "tokens": 1
+          },
+          "through_eos": {
+            "target_argmax_tokens": 48,
+            "target_nll_mean": 1.2096214623286807,
+            "target_nll_sum": 70.15804481506348,
+            "tokens": 58
+          }
+        }
+      },
+      "body_nll_mean_on_minus_off": -1.0932313684831585,
+      "first_divergence": {
+        "status": "historical_failed_output_single_token_branch",
+        "common_prefix_completion_tokens": 2,
+        "completion_index": 2,
+        "gold_token_id": 66582,
+        "historical_token_id": 788,
+        "shared_full_prefix_sha256": "854b1f6c93b7ce235f6b8dc8a5ff61c27dc5ca4a0a26937937794d9034ad8cac",
+        "adapter_enabled": {
+          "gold_logprob": -1.6137981414794922,
+          "historical_logprob": -0.2387981414794922,
+          "gold_minus_historical_logprob": -1.375,
+          "gold_rank": 2,
+          "historical_rank": 1,
+          "top1_token_id": 788,
+          "top1_logprob": -0.2387981414794922,
+          "gold_probability": 0.1991298525904999,
+          "historical_probability": 0.7875738448192919,
+          "top1_probability": 0.7875738448192919,
+          "historical_token_is_top1": true,
+          "gold_token_is_top1": false
+        },
+        "adapter_disabled": {
+          "gold_logprob": -0.00049591064453125,
+          "historical_logprob": -8.000495910644531,
+          "gold_minus_historical_logprob": 8.0,
+          "gold_rank": 1,
+          "historical_rank": 2,
+          "top1_token_id": 66582,
+          "top1_logprob": -0.00049591064453125,
+          "gold_probability": 0.9995042122988286,
+          "historical_probability": 0.00033529630965739517,
+          "top1_probability": 0.9995042122988286,
+          "historical_token_is_top1": false,
+          "gold_token_is_top1": true
+        },
+        "on_minus_off_margin": -9.375,
+        "on_minus_off_gold_logprob": -1.613302230834961,
+        "on_minus_off_historical_logprob": 7.761697769165039
+      }
+    },
+    {
+      "case_id": "native-fit-wrong_withdrawn-zh",
+      "focus": "wrong_withdrawn",
+      "language": "zh",
+      "frozen_historical_focal_full_meaning_correct": true,
+      "segments": {
+        "adapter_enabled": {
+          "all_training_positions": {
+            "target_argmax_tokens": 62,
+            "target_nll_mean": 0.0571060786171565,
+            "target_nll_sum": 3.5976829528808594,
+            "tokens": 63
+          },
+          "body": {
+            "target_argmax_tokens": 60,
+            "target_nll_mean": 0.058977877507444286,
+            "target_nll_sum": 3.5976505279541016,
+            "tokens": 61
+          },
+          "eos": {
+            "target_argmax_tokens": 1,
+            "target_nll_mean": 3.24249267578125e-05,
+            "target_nll_sum": 3.24249267578125e-05,
+            "tokens": 1
+          },
+          "post_eos_newline": {
+            "target_argmax_tokens": 1,
+            "target_nll_mean": -0.0,
+            "target_nll_sum": -0.0,
+            "tokens": 1
+          },
+          "through_eos": {
+            "target_argmax_tokens": 61,
+            "target_nll_mean": 0.05802714440130418,
+            "target_nll_sum": 3.5976829528808594,
+            "tokens": 62
+          }
+        },
+        "adapter_disabled": {
+          "all_training_positions": {
+            "target_argmax_tokens": 52,
+            "target_nll_mean": 0.796029529874287,
+            "target_nll_sum": 50.14986038208008,
+            "tokens": 63
+          },
+          "body": {
+            "target_argmax_tokens": 50,
+            "target_nll_mean": 0.8221284835064997,
+            "target_nll_sum": 50.149837493896484,
+            "tokens": 61
+          },
+          "eos": {
+            "target_argmax_tokens": 1,
+            "target_nll_mean": 1.9073486328125e-05,
+            "target_nll_sum": 1.9073486328125e-05,
+            "tokens": 1
+          },
+          "post_eos_newline": {
+            "target_argmax_tokens": 1,
+            "target_nll_mean": 3.814697265625e-06,
+            "target_nll_sum": 3.814697265625e-06,
+            "tokens": 1
+          },
+          "through_eos": {
+            "target_argmax_tokens": 51,
+            "target_nll_mean": 0.808868654312626,
+            "target_nll_sum": 50.14985656738281,
+            "tokens": 62
+          }
+        }
+      },
+      "body_nll_mean_on_minus_off": -0.7631506059990554,
+      "first_divergence": {
+        "status": "successful_semantic_variant_not_an_error",
+        "common_prefix_completion_tokens": 34,
+        "completion_index": 34,
+        "gold_token_id": 109852,
+        "historical_token_id": 16530,
+        "shared_full_prefix_sha256": "1cbc5e8c73c4a4dea185a998ed37e3bfa0cd24df11c0225524303040a174cda6",
+        "adapter_enabled": {
+          "gold_logprob": -1.735076904296875,
+          "historical_logprob": -0.235076904296875,
+          "gold_minus_historical_logprob": -1.5,
+          "gold_rank": 2,
+          "historical_rank": 1,
+          "top1_token_id": 16530,
+          "top1_logprob": -0.235076904296875,
+          "gold_probability": 0.17638663487459427,
+          "historical_probability": 0.7905100536711801,
+          "top1_probability": 0.7905100536711801,
+          "historical_token_is_top1": true,
+          "gold_token_is_top1": false
+        },
+        "adapter_disabled": {
+          "gold_logprob": -3.730072021484375,
+          "historical_logprob": -0.105072021484375,
+          "gold_minus_historical_logprob": -3.625,
+          "gold_rank": 3,
+          "historical_rank": 1,
+          "top1_token_id": 16530,
+          "top1_logprob": -0.105072021484375,
+          "gold_probability": 0.023991107899282906,
+          "historical_probability": 0.9002596822127077,
+          "top1_probability": 0.9002596822127077,
+          "historical_token_is_top1": true,
+          "gold_token_is_top1": false
+        },
+        "on_minus_off_margin": 2.125,
+        "on_minus_off_gold_logprob": 1.9949951171875,
+        "on_minus_off_historical_logprob": -0.1300048828125
+      }
+    },
+    {
+      "case_id": "native-fit-wrong_withdrawn-en",
+      "focus": "wrong_withdrawn",
+      "language": "en",
+      "frozen_historical_focal_full_meaning_correct": false,
+      "segments": {
+        "adapter_enabled": {
+          "all_training_positions": {
+            "target_argmax_tokens": 67,
+            "target_nll_mean": 0.07935453863704905,
+            "target_nll_sum": 5.396108627319336,
+            "tokens": 68
+          },
+          "body": {
+            "target_argmax_tokens": 65,
+            "target_nll_mean": 0.08175861474239465,
+            "target_nll_sum": 5.396068572998047,
+            "tokens": 66
+          },
+          "eos": {
+            "target_argmax_tokens": 1,
+            "target_nll_mean": 4.00543212890625e-05,
+            "target_nll_sum": 4.00543212890625e-05,
+            "tokens": 1
+          },
+          "post_eos_newline": {
+            "target_argmax_tokens": 1,
+            "target_nll_mean": -0.0,
+            "target_nll_sum": -0.0,
+            "tokens": 1
+          },
+          "through_eos": {
+            "target_argmax_tokens": 66,
+            "target_nll_mean": 0.08053893473610949,
+            "target_nll_sum": 5.396108627319336,
+            "tokens": 67
+          }
+        },
+        "adapter_disabled": {
+          "all_training_positions": {
+            "target_argmax_tokens": 57,
+            "target_nll_mean": 0.8857224127825569,
+            "target_nll_sum": 60.22912406921387,
+            "tokens": 68
+          },
+          "body": {
+            "target_argmax_tokens": 55,
+            "target_nll_mean": 0.9099207213430693,
+            "target_nll_sum": 60.05476760864258,
+            "tokens": 66
+          },
+          "eos": {
+            "target_argmax_tokens": 1,
+            "target_nll_mean": 1.71661376953125e-05,
+            "target_nll_sum": 1.71661376953125e-05,
+            "tokens": 1
+          },
+          "post_eos_newline": {
+            "target_argmax_tokens": 1,
+            "target_nll_mean": 0.17433929443359375,
+            "target_nll_sum": 0.17433929443359375,
+            "tokens": 1
+          },
+          "through_eos": {
+            "target_argmax_tokens": 56,
+            "target_nll_mean": 0.8963400712653772,
+            "target_nll_sum": 60.05478477478027,
+            "tokens": 67
+          }
+        }
+      },
+      "body_nll_mean_on_minus_off": -0.8281621066006747,
+      "first_divergence": {
+        "status": "historical_failed_output_single_token_branch",
+        "common_prefix_completion_tokens": 43,
+        "completion_index": 43,
+        "gold_token_id": 36509,
+        "historical_token_id": 9207,
+        "shared_full_prefix_sha256": "d228af206197e425480db8d76ec0c231f9d25e2a1e6c0789a6e98b221bcb01f6",
+        "adapter_enabled": {
+          "gold_logprob": -1.815469741821289,
+          "historical_logprob": -0.19046974182128906,
+          "gold_minus_historical_logprob": -1.625,
+          "gold_rank": 2,
+          "historical_rank": 1,
+          "top1_token_id": 9207,
+          "top1_logprob": -0.19046974182128906,
+          "gold_probability": 0.1627614345774151,
+          "historical_probability": 0.8265707678766852,
+          "top1_probability": 0.8265707678766852,
+          "historical_token_is_top1": true,
+          "gold_token_is_top1": false
+        },
+        "adapter_disabled": {
+          "gold_logprob": -2.853361129760742,
+          "historical_logprob": -3.478361129760742,
+          "gold_minus_historical_logprob": 0.625,
+          "gold_rank": 2,
+          "historical_rank": 3,
+          "top1_token_id": 2198,
+          "top1_logprob": -0.10336112976074219,
+          "gold_probability": 0.057650224979928735,
+          "historical_probability": 0.03085794177719783,
+          "top1_probability": 0.9018012474016546,
+          "historical_token_is_top1": false,
+          "gold_token_is_top1": false
+        },
+        "on_minus_off_margin": -2.25,
+        "on_minus_off_gold_logprob": 1.0378913879394531,
+        "on_minus_off_historical_logprob": 3.287891387939453
+      }
+    },
+    {
+      "case_id": "native-fit-uncertain_status-zh",
+      "focus": "uncertain_status",
+      "language": "zh",
+      "frozen_historical_focal_full_meaning_correct": true,
+      "segments": {
+        "adapter_enabled": {
+          "all_training_positions": {
+            "target_argmax_tokens": 57,
+            "target_nll_mean": 0.03659542819909882,
+            "target_nll_sum": 2.085939407348633,
+            "tokens": 57
+          },
+          "body": {
+            "target_argmax_tokens": 55,
+            "target_nll_mean": 0.037925650856711644,
+            "target_nll_sum": 2.0859107971191406,
+            "tokens": 55
+          },
+          "eos": {
+            "target_argmax_tokens": 1,
+            "target_nll_mean": 2.86102294921875e-05,
+            "target_nll_sum": 2.86102294921875e-05,
+            "tokens": 1
+          },
+          "post_eos_newline": {
+            "target_argmax_tokens": 1,
+            "target_nll_mean": -0.0,
+            "target_nll_sum": -0.0,
+            "tokens": 1
+          },
+          "through_eos": {
+            "target_argmax_tokens": 56,
+            "target_nll_mean": 0.03724891798836844,
+            "target_nll_sum": 2.085939407348633,
+            "tokens": 56
+          }
+        },
+        "adapter_disabled": {
+          "all_training_positions": {
+            "target_argmax_tokens": 51,
+            "target_nll_mean": 0.815517224763569,
+            "target_nll_sum": 46.48448181152344,
+            "tokens": 57
+          },
+          "body": {
+            "target_argmax_tokens": 49,
+            "target_nll_mean": 0.845171494917436,
+            "target_nll_sum": 46.484432220458984,
+            "tokens": 55
+          },
+          "eos": {
+            "target_argmax_tokens": 1,
+            "target_nll_mean": 1.71661376953125e-05,
+            "target_nll_sum": 1.71661376953125e-05,
+            "tokens": 1
+          },
+          "post_eos_newline": {
+            "target_argmax_tokens": 1,
+            "target_nll_mean": 3.24249267578125e-05,
+            "target_nll_sum": 3.24249267578125e-05,
+            "tokens": 1
+          },
+          "through_eos": {
+            "target_argmax_tokens": 50,
+            "target_nll_mean": 0.8300794533320835,
+            "target_nll_sum": 46.48444938659668,
+            "tokens": 56
+          }
+        }
+      },
+      "body_nll_mean_on_minus_off": -0.8072458440607244,
+      "first_divergence": {
+        "status": "match_through_eos",
+        "common_prefix_completion_tokens": 56
+      }
+    },
+    {
+      "case_id": "native-fit-uncertain_status-en",
+      "focus": "uncertain_status",
+      "language": "en",
+      "frozen_historical_focal_full_meaning_correct": false,
+      "segments": {
+        "adapter_enabled": {
+          "all_training_positions": {
+            "target_argmax_tokens": 27,
+            "target_nll_mean": 0.0567317008972168,
+            "target_nll_sum": 1.5884876251220703,
+            "tokens": 28
+          },
+          "body": {
+            "target_argmax_tokens": 25,
+            "target_nll_mean": 0.06109399061936598,
+            "target_nll_sum": 1.5884437561035156,
+            "tokens": 26
+          },
+          "eos": {
+            "target_argmax_tokens": 1,
+            "target_nll_mean": 4.38690185546875e-05,
+            "target_nll_sum": 4.38690185546875e-05,
+            "tokens": 1
+          },
+          "post_eos_newline": {
+            "target_argmax_tokens": 1,
+            "target_nll_mean": -0.0,
+            "target_nll_sum": -0.0,
+            "tokens": 1
+          },
+          "through_eos": {
+            "target_argmax_tokens": 26,
+            "target_nll_mean": 0.05883287500452112,
+            "target_nll_sum": 1.5884876251220703,
+            "tokens": 27
+          }
+        },
+        "adapter_disabled": {
+          "all_training_positions": {
+            "target_argmax_tokens": 22,
+            "target_nll_mean": 1.0412556103297643,
+            "target_nll_sum": 29.1551570892334,
+            "tokens": 28
+          },
+          "body": {
+            "target_argmax_tokens": 20,
+            "target_nll_mean": 1.1213491146381085,
+            "target_nll_sum": 29.15507698059082,
+            "tokens": 26
+          },
+          "eos": {
+            "target_argmax_tokens": 1,
+            "target_nll_mean": 2.09808349609375e-05,
+            "target_nll_sum": 2.09808349609375e-05,
+            "tokens": 1
+          },
+          "post_eos_newline": {
+            "target_argmax_tokens": 1,
+            "target_nll_mean": 5.91278076171875e-05,
+            "target_nll_sum": 5.91278076171875e-05,
+            "tokens": 1
+          },
+          "through_eos": {
+            "target_argmax_tokens": 21,
+            "target_nll_mean": 1.0798184430157696,
+            "target_nll_sum": 29.15509796142578,
+            "tokens": 27
+          }
+        }
+      },
+      "body_nll_mean_on_minus_off": -1.0602551240187426,
+      "first_divergence": {
+        "status": "historical_failed_output_single_token_branch",
+        "common_prefix_completion_tokens": 11,
+        "completion_index": 11,
+        "gold_token_id": 2386,
+        "historical_token_id": 62446,
+        "shared_full_prefix_sha256": "057905afe229ee808ed3477ac78cce53dca2f3a1488c3fcb92241d3ff8175a20",
+        "adapter_enabled": {
+          "gold_logprob": -0.7613601684570312,
+          "historical_logprob": -0.6363601684570312,
+          "gold_minus_historical_logprob": -0.125,
+          "gold_rank": 2,
+          "historical_rank": 1,
+          "top1_token_id": 62446,
+          "top1_logprob": -0.6363601684570312,
+          "gold_probability": 0.4670307542964674,
+          "historical_probability": 0.5292151767656751,
+          "top1_probability": 0.5292151767656751,
+          "historical_token_is_top1": true,
+          "gold_token_is_top1": false
+        },
+        "adapter_disabled": {
+          "gold_logprob": -0.25688934326171875,
+          "historical_logprob": -1.5068893432617188,
+          "gold_minus_historical_logprob": 1.25,
+          "gold_rank": 1,
+          "historical_rank": 2,
+          "top1_token_id": 2386,
+          "top1_logprob": -0.25688934326171875,
+          "gold_probability": 0.773453796904563,
+          "historical_probability": 0.22159822296288453,
+          "top1_probability": 0.773453796904563,
+          "historical_token_is_top1": false,
+          "gold_token_is_top1": true
+        },
+        "on_minus_off_margin": -1.375,
+        "on_minus_off_gold_logprob": -0.5044708251953125,
+        "on_minus_off_historical_logprob": 0.8705291748046875
+      }
+    }
+  ],
+  "privacy": "Only case IDs, numeric token IDs, aggregate segment statistics and provenance hashes; no source dialogue, completions, decoded tokens or full token sequences.",
+  "source_hashes": {
+    "output/research/2026-10-27/tracker-root-cause/followup/native-token-effect/collection-01/result.json": "c70e8254f03e2a22df7f1e0e7c7121d1226e3d3b71030107ce3d4be57467ad5e",
+    "output/research/2026-10-27/tracker-root-cause/followup/native-token-effect/collection-01/config.json": "e463e1deac19fa4bdada663b1b4c50d01008ded25d549efe9c5cb6136110d1c6",
+    "output/research/2026-10-27/tracker-root-cause/followup/native-token-effect/collection-01/PRIVATE-forwards.jsonl": "5a61dab4a76aa2ac6b7a2bf25691dd34d9ecca19a8fd90128ad386bc05741d34",
+    "output/research/2026-10-27/tracker-root-cause/followup/native-token-effect/collection-01/attempts.jsonl": "51d2ed6901ea6a33f42e762c40069ae31aea50dc2c2d59060f0977f5f1fff0b4",
+    "output/research/2026-10-27/tracker-root-cause/followup/native-token-effect/collection-01/paired-deltas.json": "c9fd6d939b36269d8b58eea25edf994d2a9b7fe47774556eddbe298bc5e7345d",
+    "output/research/2026-10-27/tracker-root-cause/followup/native-token-effect/protocol.json": "5d1a7640d6892ca23ddbe665d1bbc9b9fce46952a18a3417dd130bb713141655",
+    "output/research/2026-10-27/tracker-root-cause/followup/native-token-effect/cpu-preparation.json": "1b7edc783b3d65adc7995d64254e778f905d1dbf56f08fada339a229a2a129b2",
+    "output/research/2026-10-27/tracker-root-cause/followup/native-token-effect/PRIVATE-prepared.json": "f67e4834f4d13058ec1ed026ca96265164f7f043d13b38a22cd66d80722e491d",
+    "output/research/2026-10-27/tracker-root-cause/followup/native-token-effect/preflight-review.json": "7e72205b2e131647b4a07abad92457fc0a7634fdc61c5088b32d9c5eb7d581fe",
+    "output/research/2026-10-27/tracker-root-cause/fit/post-review.json": "81c458476ad9c40748eb597bbee9ed4c3d0dca32a0f068a4516ce234e5ac29d0",
+    "experiments/deep_conversation/tracker_lora/diagnostics/score_native_fit_tokens.py": "5170477d797213f3e89f835f99c511ca2f1d8837bee6cd30eb1fd54e68e01439",
+    "output/research/2026-10-27/tracker-root-cause/followup/native-token-effect/write_post_review.py": "70f477835554e4c8c3832def7e6aea633f2663b992deadd84802a750c3f7a110"
+  }
+}

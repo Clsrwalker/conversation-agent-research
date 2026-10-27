@@ -45,8 +45,8 @@
     },
     {
       "path": "data.js",
-      "sha256": "be8e8762dc0d04b4ad503bf741d2490918cc2cbe3813a4c450fa76260e0af562",
-      "bytes": 201503
+      "sha256": "cabd395a4ca07197fff979c9643d3fe66a589b0b32b16e528b59337b8ffa1538",
+      "bytes": 201733
     },
     {
       "path": "data/analyze_harness_latency.py",
@@ -615,8 +615,8 @@
     },
     {
       "path": "data/research-record.json",
-      "sha256": "393f1301640f2b1a08cea3d05ddb146f39e48c3fda5b538c5a53afaab4e9909f",
-      "bytes": 295692
+      "sha256": "35cfa9f167d1f7163722ddf9e93b5a68c97a5851d4ba2f7e8f8ab9aa0f4ee24b",
+      "bytes": 295969
     },
     {
       "path": "data/results.csv",
@@ -1799,6 +1799,81 @@
       "bytes": 60765
     },
     {
+      "path": "data/tracker-native-token-effect-release-validation.json",
+      "sha256": "7ace2fc0da98dab59eba523b890b7f22d9b944e3590683ee9806ce6edb061d2f",
+      "bytes": 8110
+    },
+    {
+      "path": "data/tracker-native-token-effect-validation.json",
+      "sha256": "12b4a06d0577172244e88c863393d984ca0f6f4196463d938e7b9420381bcaa7",
+      "bytes": 3316
+    },
+    {
+      "path": "data/tracker-native-token-effect/diagnosis-01/collection-config.json",
+      "sha256": "0d162aeb975bf38c5087a833d4f5381a01e1c2f5ead740622f61ace5071b56c7",
+      "bytes": 3275
+    },
+    {
+      "path": "data/tracker-native-token-effect/diagnosis-01/collection-result.json",
+      "sha256": "021453d704895f1f161d57faa520e63e7c27fb1bcca5c7807eb631e21e3246f3",
+      "bytes": 830
+    },
+    {
+      "path": "data/tracker-native-token-effect/diagnosis-01/cpu-preparation.json",
+      "sha256": "0b0344d464b26e5680ea36e41ad66c26aec06832d1a9f592a2b4b65f6046e81c",
+      "bytes": 13694
+    },
+    {
+      "path": "data/tracker-native-token-effect/diagnosis-01/engineering-validation.json",
+      "sha256": "f3e3b9862a329aae49cd2c3475aea0d91cb6587837c07842d435d7197f647d47",
+      "bytes": 3267
+    },
+    {
+      "path": "data/tracker-native-token-effect/diagnosis-01/evidence.zip",
+      "sha256": "22ac6fd63a4e1f8f7d4ebe095c58104315428aa872ab80d38cb1893b95b8c335",
+      "bytes": 53482
+    },
+    {
+      "path": "data/tracker-native-token-effect/diagnosis-01/final-report-review.json",
+      "sha256": "26d174b2662f9932490a6d70f488a0e55d38d6d0604d002590289d8aca725b33",
+      "bytes": 3357
+    },
+    {
+      "path": "data/tracker-native-token-effect/diagnosis-01/first-token-structural-summary.json",
+      "sha256": "247af4adc8f6c6ee0c00350d17dd56f6217896c5a4828dd02c4e50a80dbb2400",
+      "bytes": 7206
+    },
+    {
+      "path": "data/tracker-native-token-effect/diagnosis-01/measurement-summary.json",
+      "sha256": "c63bc5d88e6daf85967289f543d2c59f541a3f6746e68e930ee87417f37a0c2d",
+      "bytes": 26103
+    },
+    {
+      "path": "data/tracker-native-token-effect/diagnosis-01/post-review.json",
+      "sha256": "807a1218a37813d3fe55eb6cf4f2d1e55bfdbef3d91af36ec73e49700b3a3ea1",
+      "bytes": 7033
+    },
+    {
+      "path": "data/tracker-native-token-effect/diagnosis-01/preflight-review.json",
+      "sha256": "627da36697e1aaf50953884c3fecd0792933405cf1ebeb3e13caf50870c144ed",
+      "bytes": 8019
+    },
+    {
+      "path": "data/tracker-native-token-effect/diagnosis-01/protocol.json",
+      "sha256": "0e1714349424250d5d3b8da2981790318ccac47549d275a0d8d71934ce1ece75",
+      "bytes": 9784
+    },
+    {
+      "path": "data/tracker-native-token-effect/diagnosis-01/report.json",
+      "sha256": "46e1e7368c95d3ddc36ed60e022cf7146a37e7ba7219e86420809cd9b91c8488",
+      "bytes": 12088
+    },
+    {
+      "path": "data/tracker-native-token-effect/diagnosis-01/summary.json",
+      "sha256": "bd35122ffb23a62d1abd526c1f5edc9b34aa8d69ad36aeefd6589bb6143f8a83",
+      "bytes": 18780
+    },
+    {
       "path": "data/tracker-root-cause-release-validation.json",
       "sha256": "87e9cd0a6d732e632bb99ec7e92b461ed5586cf14a0e9570014f20a3aa9bbea8",
       "bytes": 13467
@@ -2030,13 +2105,13 @@
     },
     {
       "path": "index.html",
-      "sha256": "e732bbf3e6af53138bd66ef89bf767f59fd6180ecda326e085b4f27ab5faa157",
-      "bytes": 75668
+      "sha256": "26462525af0149ab93f4b1aaecf359429810dbfa7e9bc477b37aed3b70d2f336",
+      "bytes": 76700
     },
     {
       "path": "intent-role-separation.html",
-      "sha256": "c9ec009f59768b4244b4d90b24a9c6203e708ace82f50db78fdb9c771eaa5459",
-      "bytes": 87211
+      "sha256": "2a03a739e6146ef834a9c336500f1043a0c40f6800cff97fd8ae7a996608b706",
+      "bytes": 96711
     },
     {
       "path": "intention-literature.css",

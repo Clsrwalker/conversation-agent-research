@@ -1,0 +1,20 @@
+{
+  "status": "completed",
+  "date": "2026-10-27",
+  "timezone": "America/Halifax",
+  "assigned_logical_forwards": 12,
+  "logical_forwards_attempted": 12,
+  "new_generations": 0,
+  "new_training_runs": 0,
+  "retries": 0,
+  "logical_forwards_completed": 12,
+  "adapter_weights_unchanged": true,
+  "config_sha256": "e463e1deac19fa4bdada663b1b4c50d01008ded25d549efe9c5cb6136110d1c6",
+  "forward_records_sha256": "5a61dab4a76aa2ac6b7a2bf25691dd34d9ecca19a8fd90128ad386bc05741d34",
+  "paired_deltas_sha256": "c9fd6d939b36269d8b58eea25edf994d2a9b7fe47774556eddbe298bc5e7345d",
+  "journal_sha256": "51d2ed6901ea6a33f42e762c40069ae31aea50dc2c2d59060f0977f5f1fff0b4",
+  "quality_acceptance_assessed": false,
+  "durable_forward_records": 12,
+  "elapsed_seconds": 66.62766060000286,
+  "finished_at_utc": "2026-10-27T13:39:30.546136+00:00"
+}

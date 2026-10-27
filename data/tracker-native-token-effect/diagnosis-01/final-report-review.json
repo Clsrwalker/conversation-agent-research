@@ -1,0 +1,41 @@
+{
+  "id": "native-token-effect-final-narrative-review",
+  "status": "passed",
+  "date": "2026-10-27",
+  "timezone": "America/Halifax",
+  "reviewed_at_utc": "2026-10-27T13:47:20.757882+00:00",
+  "status_meaning": "The final narrative agrees with the frozen local measurements and their limits; no capability acceptance.",
+  "reviewed_report_sha256": "46e1e7368c95d3ddc36ed60e022cf7146a37e7ba7219e86420809cd9b91c8488",
+  "reviewed_validation_sha256": "12b4a06d0577172244e88c863393d984ca0f6f4196463d938e7b9420381bcaa7",
+  "review_scope": "This follow-up only: four branch rows, six body-NLL rows, local direct source bindings and causal wording. No historical audit replay.",
+  "checks": {
+    "new_forward_passes": 12,
+    "new_generations": 0,
+    "new_training_runs": 0,
+    "failure_rows_checked": 4,
+    "body_nll_rows_checked": 6,
+    "direct_source_bindings_checked": 9,
+    "all_report_numeric_fields_match_measurement": true,
+    "all_direct_hashes_match": true
+  },
+  "narrative_findings": [
+    "All four pairwise canonical-minus-historical margins flip positive to negative; this is kept distinct from absolute canonical probability, which rises in two cases and falls in two.",
+    "All four enabled local top1 IDs match historical branch tokens. Disabled top1 is canonical in two cases and a third token in two, so no disabled-task success is inferred.",
+    "The body-NLL improvement is measured on teacher-forced canonical prefixes, excludes EOS/newline, and is not called autonomous repair quality.",
+    "BPE fragments are explicitly distinguished from complete actions; downstream canonical prefixes cannot describe the actual generated history after divergence.",
+    "Historical repair quality remains 2/6; no new semantic score, unseen-input claim, training-cause identification or production readiness is asserted.",
+    "One model object is used with fixed arm order and one measurement. Full-prefix versus cached-decoding and unmeasured training interventions remain explicit limits."
+  ],
+  "new_model_forwards_by_reviewer": 0,
+  "new_generations_by_reviewer": 0,
+  "new_semantic_scoring_runs": 0,
+  "source_hashes": {
+    "output/research/2026-10-27/tracker-root-cause/followup/native-token-effect/analysis/report.json": "46e1e7368c95d3ddc36ed60e022cf7146a37e7ba7219e86420809cd9b91c8488",
+    "output/research/2026-10-27/tracker-root-cause/followup/native-token-effect/engineering/validation.json": "12b4a06d0577172244e88c863393d984ca0f6f4196463d938e7b9420381bcaa7",
+    "output/research/2026-10-27/tracker-root-cause/followup/native-token-effect/measurement-summary.json": "f82cbc04b0e4f864771b1a7c51bb8a9cd9b004b37077fe7cf0f3291ff3441634",
+    "output/research/2026-10-27/tracker-root-cause/followup/native-token-effect/post-review.json": "fe54ff6ab539b76a94c23cd2c39038e638d1e7f5d524497c89d5ba9762c7d30b",
+    "output/research/2026-10-27/tracker-root-cause/followup/native-token-effect/protocol.json": "5d1a7640d6892ca23ddbe665d1bbc9b9fce46952a18a3417dd130bb713141655",
+    "output/research/2026-10-27/tracker-root-cause/followup/native-token-effect/collection-01/result.json": "c70e8254f03e2a22df7f1e0e7c7121d1226e3d3b71030107ce3d4be57467ad5e",
+    "output/research/2026-10-27/tracker-root-cause/followup/native-token-effect/review/write_final_review.py": "6b280c8ca3e70f2a72f4e5c2091ee5d57e52d5634ccebcd97ee16b659c205bb7"
+  }
+}

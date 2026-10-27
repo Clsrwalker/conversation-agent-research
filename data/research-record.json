@@ -5921,6 +5921,13 @@
       "type": "engineering_validation",
       "record": "tracker-root-cause-validation.json",
       "status": "diagnostics_reviewed_quality_failure_retained"
+    },
+    {
+      "id": "tracker-native-token-effect-engineering",
+      "date": "2026-10-27",
+      "type": "engineering_validation",
+      "record": "tracker-native-token-effect-validation.json",
+      "status": "bounded_measurements_verified_quality_not_reassessed"
     }
   ],
   "literature_reviews": [

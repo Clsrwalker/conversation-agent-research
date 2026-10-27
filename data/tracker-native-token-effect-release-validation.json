@@ -1,0 +1,163 @@
+{
+  "id": "tracker-native-token-effect-release-validation",
+  "type": "engineering_validation",
+  "date": "2026-10-27",
+  "timezone": "America/Halifax",
+  "status": "passed",
+  "checked_at_utc": "2026-10-27T13:51:37.784436+00:00",
+  "source_baseline_commit": "15b5bb92004c46ecd4281bbebca205d87e2a830b",
+  "capability_acceptance_passed": false,
+  "new_model_calls": 0,
+  "new_training_runs": 0,
+  "checks": [
+    {
+      "name": "Static report, page and downloads",
+      "status": "passed",
+      "groups": 4,
+      "detail": "Reviewed metrics and visible numbers agree; original page content and all 21 previous evidence ZIPs preserved."
+    },
+    {
+      "name": "Local HTTP delivery",
+      "status": "passed",
+      "assets": 17,
+      "detail": "Every checked page/data/download response is HTTP 200 and byte-identical to the prepared dist."
+    },
+    {
+      "name": "Browser rendering",
+      "status": "passed",
+      "detail": "Observed the new heading, six-input/12-forward/zero-generation/zero-training scope, all four exact on/off margins, four historical top-1 matches and adjacent BPE/whole-action caveats. Table columns and prose were legible in the observed 997x658 desktop viewport. Existing Site tab reused."
+    }
+  ],
+  "artifact_sha256": {
+    "dist/intent-role-separation.html": "2a03a739e6146ef834a9c336500f1043a0c40f6800cff97fd8ae7a996608b706",
+    "dist/index.html": "26462525af0149ab93f4b1aaecf359429810dbfa7e9bc477b37aed3b70d2f336",
+    "dist/data/research-record.json": "35cfa9f167d1f7163722ddf9e93b5a68c97a5851d4ba2f7e8f8ab9aa0f4ee24b",
+    "dist/data/tracker-native-token-effect-validation.json": "12b4a06d0577172244e88c863393d984ca0f6f4196463d938e7b9420381bcaa7",
+    "dist/data/tracker-native-token-effect/diagnosis-01/collection-config.json": "0d162aeb975bf38c5087a833d4f5381a01e1c2f5ead740622f61ace5071b56c7",
+    "dist/data/tracker-native-token-effect/diagnosis-01/collection-result.json": "021453d704895f1f161d57faa520e63e7c27fb1bcca5c7807eb631e21e3246f3",
+    "dist/data/tracker-native-token-effect/diagnosis-01/cpu-preparation.json": "0b0344d464b26e5680ea36e41ad66c26aec06832d1a9f592a2b4b65f6046e81c",
+    "dist/data/tracker-native-token-effect/diagnosis-01/engineering-validation.json": "f3e3b9862a329aae49cd2c3475aea0d91cb6587837c07842d435d7197f647d47",
+    "dist/data/tracker-native-token-effect/diagnosis-01/evidence.zip": "22ac6fd63a4e1f8f7d4ebe095c58104315428aa872ab80d38cb1893b95b8c335",
+    "dist/data/tracker-native-token-effect/diagnosis-01/final-report-review.json": "26d174b2662f9932490a6d70f488a0e55d38d6d0604d002590289d8aca725b33",
+    "dist/data/tracker-native-token-effect/diagnosis-01/first-token-structural-summary.json": "247af4adc8f6c6ee0c00350d17dd56f6217896c5a4828dd02c4e50a80dbb2400",
+    "dist/data/tracker-native-token-effect/diagnosis-01/measurement-summary.json": "c63bc5d88e6daf85967289f543d2c59f541a3f6746e68e930ee87417f37a0c2d",
+    "dist/data/tracker-native-token-effect/diagnosis-01/post-review.json": "807a1218a37813d3fe55eb6cf4f2d1e55bfdbef3d91af36ec73e49700b3a3ea1",
+    "dist/data/tracker-native-token-effect/diagnosis-01/preflight-review.json": "627da36697e1aaf50953884c3fecd0792933405cf1ebeb3e13caf50870c144ed",
+    "dist/data/tracker-native-token-effect/diagnosis-01/protocol.json": "0e1714349424250d5d3b8da2981790318ccac47549d275a0d8d71934ce1ece75",
+    "dist/data/tracker-native-token-effect/diagnosis-01/report.json": "46e1e7368c95d3ddc36ed60e022cf7146a37e7ba7219e86420809cd9b91c8488",
+    "dist/data/tracker-native-token-effect/diagnosis-01/summary.json": "bd35122ffb23a62d1abd526c1f5edc9b34aa8d69ad36aeefd6589bb6143f8a83"
+  },
+  "local_http_assets": [
+    {
+      "path": "data/tracker-native-token-effect/diagnosis-01/collection-config.json",
+      "status": 200,
+      "bytes": 3275,
+      "sha256": "0d162aeb975bf38c5087a833d4f5381a01e1c2f5ead740622f61ace5071b56c7"
+    },
+    {
+      "path": "data/tracker-native-token-effect/diagnosis-01/collection-result.json",
+      "status": 200,
+      "bytes": 830,
+      "sha256": "021453d704895f1f161d57faa520e63e7c27fb1bcca5c7807eb631e21e3246f3"
+    },
+    {
+      "path": "data/tracker-native-token-effect/diagnosis-01/cpu-preparation.json",
+      "status": 200,
+      "bytes": 13694,
+      "sha256": "0b0344d464b26e5680ea36e41ad66c26aec06832d1a9f592a2b4b65f6046e81c"
+    },
+    {
+      "path": "data/tracker-native-token-effect/diagnosis-01/engineering-validation.json",
+      "status": 200,
+      "bytes": 3267,
+      "sha256": "f3e3b9862a329aae49cd2c3475aea0d91cb6587837c07842d435d7197f647d47"
+    },
+    {
+      "path": "data/tracker-native-token-effect/diagnosis-01/evidence.zip",
+      "status": 200,
+      "bytes": 53482,
+      "sha256": "22ac6fd63a4e1f8f7d4ebe095c58104315428aa872ab80d38cb1893b95b8c335"
+    },
+    {
+      "path": "data/tracker-native-token-effect/diagnosis-01/final-report-review.json",
+      "status": 200,
+      "bytes": 3357,
+      "sha256": "26d174b2662f9932490a6d70f488a0e55d38d6d0604d002590289d8aca725b33"
+    },
+    {
+      "path": "data/tracker-native-token-effect/diagnosis-01/first-token-structural-summary.json",
+      "status": 200,
+      "bytes": 7206,
+      "sha256": "247af4adc8f6c6ee0c00350d17dd56f6217896c5a4828dd02c4e50a80dbb2400"
+    },
+    {
+      "path": "data/tracker-native-token-effect/diagnosis-01/measurement-summary.json",
+      "status": 200,
+      "bytes": 26103,
+      "sha256": "c63bc5d88e6daf85967289f543d2c59f541a3f6746e68e930ee87417f37a0c2d"
+    },
+    {
+      "path": "data/tracker-native-token-effect/diagnosis-01/post-review.json",
+      "status": 200,
+      "bytes": 7033,
+      "sha256": "807a1218a37813d3fe55eb6cf4f2d1e55bfdbef3d91af36ec73e49700b3a3ea1"
+    },
+    {
+      "path": "data/tracker-native-token-effect/diagnosis-01/preflight-review.json",
+      "status": 200,
+      "bytes": 8019,
+      "sha256": "627da36697e1aaf50953884c3fecd0792933405cf1ebeb3e13caf50870c144ed"
+    },
+    {
+      "path": "data/tracker-native-token-effect/diagnosis-01/protocol.json",
+      "status": 200,
+      "bytes": 9784,
+      "sha256": "0e1714349424250d5d3b8da2981790318ccac47549d275a0d8d71934ce1ece75"
+    },
+    {
+      "path": "data/tracker-native-token-effect/diagnosis-01/report.json",
+      "status": 200,
+      "bytes": 12088,
+      "sha256": "46e1e7368c95d3ddc36ed60e022cf7146a37e7ba7219e86420809cd9b91c8488"
+    },
+    {
+      "path": "data/tracker-native-token-effect/diagnosis-01/summary.json",
+      "status": 200,
+      "bytes": 18780,
+      "sha256": "bd35122ffb23a62d1abd526c1f5edc9b34aa8d69ad36aeefd6589bb6143f8a83"
+    },
+    {
+      "path": "intent-role-separation.html",
+      "status": 200,
+      "bytes": 96711,
+      "sha256": "2a03a739e6146ef834a9c336500f1043a0c40f6800cff97fd8ae7a996608b706"
+    },
+    {
+      "path": "index.html",
+      "status": 200,
+      "bytes": 76700,
+      "sha256": "26462525af0149ab93f4b1aaecf359429810dbfa7e9bc477b37aed3b70d2f336"
+    },
+    {
+      "path": "data/research-record.json",
+      "status": 200,
+      "bytes": 295969,
+      "sha256": "35cfa9f167d1f7163722ddf9e93b5a68c97a5851d4ba2f7e8f8ab9aa0f4ee24b"
+    },
+    {
+      "path": "data/tracker-native-token-effect-validation.json",
+      "status": 200,
+      "bytes": 3316,
+      "sha256": "12b4a06d0577172244e88c863393d984ca0f6f4196463d938e7b9420381bcaa7"
+    }
+  ],
+  "static_receipt_sha256": "4cdd0cb1bcd597738c63df7b0379089917c5b646adc7f5ac66709a45787b7fda",
+  "visual_receipt_sha256": "1e2afdd23502754af77af5c2c024fadae3be3f4530f775b209144ca696eef68d",
+  "evidence_package_sha256": "22ac6fd63a4e1f8f7d4ebe095c58104315428aa872ab80d38cb1893b95b8c335",
+  "limitations": [
+    "Website checks establish consistency and delivery only; intent repair capability is not accepted.",
+    "Visual QA covers the observed desktop viewport; no exhaustive mobile or accessibility study.",
+    "Deployment and live mirror verification follow in a separate local publication receipt.",
+    "This file excludes its own hash to avoid circular provenance."
+  ]
+}

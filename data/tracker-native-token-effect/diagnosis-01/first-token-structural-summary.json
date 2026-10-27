@@ -1,0 +1,134 @@
+{
+  "id": "native-fit-first-token-divergence-followup",
+  "status": "completed",
+  "kind": "six_existing_outputs_cpu_tokenizer_structural_diagnostic",
+  "date": "2026-10-27",
+  "timezone": "America/Halifax",
+  "created_at_utc": "2026-10-27T13:31:50.853116+00:00",
+  "new_model_calls": 0,
+  "new_forward_passes": 0,
+  "new_training_runs": 0,
+  "loaded_model_or_adapter_weights": false,
+  "cuda_initialized": false,
+  "new_semantic_scoring_runs": 0,
+  "checked_inputs": 6,
+  "source_hashes": {
+    "output/research/2026-10-27/tracker-root-cause/followup/first-token-divergence/write_interpretation.py": "77922278d9ac404acc0fbf19a8717ce5a82e61fbb2010acfabed7c95cf772bf3",
+    "output/research/2026-10-27/tracker-root-cause/followup/first-token-divergence/PRIVATE-token-alignment.json": "0d111e30007f1d08ca71568b2ac60e7d3222ed2bb29d463600af2eb0105d060f",
+    "output/research/2026-10-27/tracker-root-cause/followup/first-token-divergence/align_existing_tokens.py": "7adef567a8759aab22b1febc09139e024bae2cfbca017ab2ef75c8f919e08867"
+  },
+  "alignment_checks": {
+    "full_chat_template_used": true,
+    "original_prompt_token_hash_matches": 6,
+    "full_sequence_has_exact_prompt_prefix": 6,
+    "original_completion_length_receipt_matches": 6,
+    "decoded_historical_generated_ids_match_saved_output": 6,
+    "source_selection_unchanged": true
+  },
+  "rows": [
+    {
+      "case_id": "native-fit-owner-zh",
+      "focus": "owner",
+      "language": "zh",
+      "source_row_index": 84,
+      "longest_common_token_prefix": 49,
+      "first_divergence_completion_index_zero_based": 49,
+      "observed_two_next_token_choices": true,
+      "category": "earlier_operations_list_closure",
+      "target_next_token_id": 36509,
+      "historical_next_token_id": 9207
+    },
+    {
+      "case_id": "native-fit-owner-en",
+      "focus": "owner",
+      "language": "en",
+      "source_row_index": 77,
+      "longest_common_token_prefix": 2,
+      "first_divergence_completion_index_zero_based": 2,
+      "observed_two_next_token_choices": true,
+      "category": "empty_operations_path_with_delimiter_tokenization_caveat",
+      "target_next_token_id": 66582,
+      "historical_next_token_id": 788
+    },
+    {
+      "case_id": "native-fit-wrong_withdrawn-zh",
+      "focus": "wrong_withdrawn",
+      "language": "zh",
+      "source_row_index": 223,
+      "longest_common_token_prefix": 34,
+      "first_divergence_completion_index_zero_based": 34,
+      "observed_two_next_token_choices": true,
+      "category": "equivalent_wording_in_ordinary_update",
+      "target_next_token_id": 109852,
+      "historical_next_token_id": 16530
+    },
+    {
+      "case_id": "native-fit-wrong_withdrawn-en",
+      "focus": "wrong_withdrawn",
+      "language": "en",
+      "source_row_index": 229,
+      "longest_common_token_prefix": 43,
+      "first_divergence_completion_index_zero_based": 43,
+      "observed_two_next_token_choices": true,
+      "category": "earlier_operations_list_closure",
+      "target_next_token_id": 36509,
+      "historical_next_token_id": 9207
+    },
+    {
+      "case_id": "native-fit-uncertain_status-zh",
+      "focus": "uncertain_status",
+      "language": "zh",
+      "source_row_index": 152,
+      "longest_common_token_prefix": 56,
+      "first_divergence_completion_index_zero_based": 56,
+      "observed_two_next_token_choices": false,
+      "category": "no_content_divergence_only_template_newline_after_eos",
+      "target_next_token_id": 198,
+      "historical_next_token_id": null
+    },
+    {
+      "case_id": "native-fit-uncertain_status-en",
+      "focus": "uncertain_status",
+      "language": "en",
+      "source_row_index": 159,
+      "longest_common_token_prefix": 11,
+      "first_divergence_completion_index_zero_based": 11,
+      "observed_two_next_token_choices": true,
+      "category": "different_operation_action",
+      "target_next_token_id": 2386,
+      "historical_next_token_id": 62446
+    }
+  ],
+  "category_counts": {
+    "earlier_operations_list_closure": 2,
+    "empty_operations_path_with_delimiter_tokenization_caveat": 1,
+    "equivalent_wording_in_ordinary_update": 1,
+    "no_content_divergence_only_template_newline_after_eos": 1,
+    "different_operation_action": 1
+  },
+  "autoregressive_meaning": [
+    "At the first unequal completion token, both branches share exactly the same original prompt and all previous generated/target token IDs. A next-token logit comparison there uses the same conditioning prefix as the historical greedy branch, subject to the recorded model/runtime identity.",
+    "After the first unequal token, a teacher-forced canonical suffix conditions on target text, while the historical free generation conditions on its different emitted text. Later logit differences cannot automatically be described as decisions made under the same history.",
+    "If the generated sequence ends on EOS after exact target content and the target only has template newline remaining, there is no observed next-token choice after EOS. Do not count that tail exhaustion as premature semantic closure.",
+    "A token boundary may include punctuation or partial characters. Interpret decoded windows and JSON structure together; token-level mismatch alone does not establish a semantic error."
+  ],
+  "decision_support": {
+    "recommendation": "A bounded 12-forward on/off diagnostic on these same six inputs has targeted value if the question is local next-token preference under the frozen checkpoint. This file does not authorize or execute it.",
+    "why": "Four observed failure paths start with a structural/action divergence; two are list-closure continuations, one is the delimiter path that ends in an empty list, and one is update versus withdraw. Their first unequal token shares the exact same preceding token history across target and historical output.",
+    "required_reporting": [
+      "Report the first-divergence target-token and historically emitted-token probabilities/ranks or margin for each actual unequal-token pair, separately from any average completion loss.",
+      "Keep the Chinese equivalent-wording case descriptive and exclude the Chinese uncertainty post-EOS newline from semantic-failure conclusions.",
+      "Do not turn the English owner delimiter-token margin into a probability of the full empty-list action.",
+      "Later teacher-forced positions condition on the canonical target; after the first divergence they are not the historical free-generation history.",
+      "If the enabled full-prefix forward does not reproduce the historical next-token ranking, retain and report that mismatch rather than claiming an exact replay."
+    ],
+    "not_answered": [
+      "Whether any data-order shortcut caused the errors.",
+      "Whether the full training set is underfit or overfit.",
+      "Whether changing training, prompts, or model would improve task quality.",
+      "An isolated causal effect on future free-generation repairs."
+    ]
+  },
+  "frozen_report_and_publication": "Unmodified; this is a separately scoped diagnostic follow-up.",
+  "privacy": "This summary omits original conversations, full target completions and full generated outputs. The companion PRIVATE alignment file remains local."
+}

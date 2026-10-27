@@ -1,0 +1,102 @@
+{
+  "kind": "teacher_forced_token_distribution_only",
+  "date": "2026-10-27",
+  "timezone": "America/Halifax",
+  "base_id": "Qwen/Qwen2.5-14B-Instruct",
+  "base_revision": "cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8",
+  "adapter": {
+    "training_result_sha256": "d8b9c1e0931c2d271f14d38e90e88e554c9b97a89494575181adfdf0aca88507",
+    "weights_sha256": "a2cf443a6e26e3868c7a905190b20c89bdf980f18ce1d3489d49903df351f176",
+    "config_sha256": "7c0928386d80bb4bd47ac6d8831475e5f23769a2717127fee8df4b1d9e69708a"
+  },
+  "versions": {
+    "torch": "2.12.0+cu130",
+    "transformers": "5.14.1",
+    "peft": "0.21.2",
+    "bitsandbytes": "0.50.0",
+    "accelerate": "1.14.0"
+  },
+  "gpu": "NVIDIA GeForce RTX 4080 SUPER",
+  "cuda": "13.0",
+  "forward": {
+    "use_cache": false,
+    "logits_to_keep": "completion_tokens + 1",
+    "batch_size": 1,
+    "attention_mask": "all ones",
+    "autocast_dtype": "bfloat16",
+    "softmax_dtype": "float32",
+    "maximum_full_input_tokens": 2048,
+    "seed": 20261024,
+    "eval": true,
+    "inference_mode": true
+  },
+  "assignments": [
+    {
+      "ordinal": 1,
+      "arm": "adapter_enabled",
+      "case_id": "native-fit-owner-zh"
+    },
+    {
+      "ordinal": 2,
+      "arm": "adapter_enabled",
+      "case_id": "native-fit-owner-en"
+    },
+    {
+      "ordinal": 3,
+      "arm": "adapter_enabled",
+      "case_id": "native-fit-wrong_withdrawn-zh"
+    },
+    {
+      "ordinal": 4,
+      "arm": "adapter_enabled",
+      "case_id": "native-fit-wrong_withdrawn-en"
+    },
+    {
+      "ordinal": 5,
+      "arm": "adapter_enabled",
+      "case_id": "native-fit-uncertain_status-zh"
+    },
+    {
+      "ordinal": 6,
+      "arm": "adapter_enabled",
+      "case_id": "native-fit-uncertain_status-en"
+    },
+    {
+      "ordinal": 7,
+      "arm": "adapter_disabled",
+      "case_id": "native-fit-owner-zh"
+    },
+    {
+      "ordinal": 8,
+      "arm": "adapter_disabled",
+      "case_id": "native-fit-owner-en"
+    },
+    {
+      "ordinal": 9,
+      "arm": "adapter_disabled",
+      "case_id": "native-fit-wrong_withdrawn-zh"
+    },
+    {
+      "ordinal": 10,
+      "arm": "adapter_disabled",
+      "case_id": "native-fit-wrong_withdrawn-en"
+    },
+    {
+      "ordinal": 11,
+      "arm": "adapter_disabled",
+      "case_id": "native-fit-uncertain_status-zh"
+    },
+    {
+      "ordinal": 12,
+      "arm": "adapter_disabled",
+      "case_id": "native-fit-uncertain_status-en"
+    }
+  ],
+  "source_hashes": {
+    "experiments/deep_conversation/tracker_lora/diagnostics/score_native_fit_tokens.py": "5170477d797213f3e89f835f99c511ca2f1d8837bee6cd30eb1fd54e68e01439",
+    "output/research/2026-10-27/tracker-root-cause/followup/native-token-effect/protocol.json": "5d1a7640d6892ca23ddbe665d1bbc9b9fce46952a18a3417dd130bb713141655",
+    "output/research/2026-10-27/tracker-root-cause/followup/native-token-effect/cpu-preparation.json": "1b7edc783b3d65adc7995d64254e778f905d1dbf56f08fada339a229a2a129b2",
+    "output/research/2026-10-27/tracker-root-cause/followup/native-token-effect/PRIVATE-prepared.json": "f67e4834f4d13058ec1ed026ca96265164f7f043d13b38a22cd66d80722e491d",
+    "output/research/2026-10-27/tracker-root-cause/followup/native-token-effect/preflight-review.json": "7e72205b2e131647b4a07abad92457fc0a7634fdc61c5088b32d9c5eb7d581fe"
+  }
+}

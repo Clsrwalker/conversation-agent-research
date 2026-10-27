@@ -1,0 +1,179 @@
+{
+  "status": "completed",
+  "kind": "native_token_effect_diagnostic",
+  "date": "2026-10-27",
+  "timezone": "America/Halifax",
+  "title": "整体目标拟合改善，但四个失败分歧处的相对偏好变差",
+  "lead": "同一冻结底座上开关当前 LoRA：六条标准目标的正文损失都下降，但四个历史失败分歧处，标准 token 相对历史 token 的偏好全部由正转负。已确认的是这些固定前缀上的适配器负面作用，尚不能将它归因于某项训练配方。",
+  "problem": "原生 operations 接口下，当前适配器是否只是不够强，还是在既有失败的具体选择处改变了概率分布？整体训练目标拟合与关键选择是否一致？",
+  "conditions": "使用前一诊断的六条精确训练 prompt 与原标准 completion；单个已加载的 Qwen2.5-14B、原 NF4/bfloat16 设置，先六次 LoRA 开启，再六次关闭。全程 eval、inference_mode、无梯度与参数更新；不使用 generate、不构造新候选，不重跑原答案。",
+  "new_forward_passes": 12,
+  "new_model_generations": 0,
+  "new_training_runs": 0,
+  "inputs": 6,
+  "new_scenarios": 0,
+  "failure_rows": [
+    {
+      "case_id": "native-fit-owner-zh",
+      "label": "归属·中文",
+      "completion_index_zero_based": 49,
+      "target_token_id": 36509,
+      "historical_token_id": 9207,
+      "target_token_label": "\"},{\"",
+      "historical_token_label": "\"}",
+      "on_margin": -1.125,
+      "off_margin": 0.375,
+      "on_minus_off_margin": -1.5,
+      "on_target_logprob": -1.4277801513671875,
+      "off_target_logprob": -2.2321605682373047,
+      "on_historical_logprob": -0.3027801513671875,
+      "off_historical_logprob": -2.6071605682373047,
+      "on_top1_token_id": 9207,
+      "off_top1_token_id": 2198,
+      "historical_top1_reproduced": true,
+      "note": "历史完整输出在普通新增之后漏掉归属修复。此处比较开始下一对象的 token 与仅结束当前对象的 token；后者本身不强制关闭整个列表。关闭适配器后的 top-1 是第三种 token，不能推断它会修复成功。"
+    },
+    {
+      "case_id": "native-fit-owner-en",
+      "label": "归属·英文",
+      "completion_index_zero_based": 2,
+      "target_token_id": 66582,
+      "historical_token_id": 788,
+      "target_token_label": "\":[{\"",
+      "historical_token_label": "\":",
+      "on_margin": -1.375,
+      "off_margin": 8.0,
+      "on_minus_off_margin": -9.375,
+      "on_target_logprob": -1.6137981414794922,
+      "off_target_logprob": -0.00049591064453125,
+      "on_historical_logprob": -0.2387981414794922,
+      "off_historical_logprob": -8.000495910644531,
+      "on_top1_token_id": 788,
+      "off_top1_token_id": 66582,
+      "historical_top1_reproduced": true,
+      "note": "历史完整输出为空列表；此处历史 token 只是引号加冒号，而非完整空列表。标准 token 将冒号、开列表与开对象合并，属于 BPE 路径比较，不能把其概率称为“要不要修复”的完整动作概率。"
+    },
+    {
+      "case_id": "native-fit-wrong_withdrawn-en",
+      "label": "撤销恢复·英文",
+      "completion_index_zero_based": 43,
+      "target_token_id": 36509,
+      "historical_token_id": 9207,
+      "target_token_label": "\"},{\"",
+      "historical_token_label": "\"}",
+      "on_margin": -1.625,
+      "off_margin": 0.625,
+      "on_minus_off_margin": -2.25,
+      "on_target_logprob": -1.815469741821289,
+      "off_target_logprob": -2.853361129760742,
+      "on_historical_logprob": -0.19046974182128906,
+      "off_historical_logprob": -3.478361129760742,
+      "on_top1_token_id": 9207,
+      "off_top1_token_id": 2198,
+      "historical_top1_reproduced": true,
+      "note": "历史完整输出完成新增后漏掉 reopen。这里仍只是下一对象与当前对象结束的首个 token 分歧；关闭适配器后的 top-1 为第三种 token，未验证其自由生成。"
+    },
+    {
+      "case_id": "native-fit-uncertain_status-en",
+      "label": "不确定状态·英文",
+      "completion_index_zero_based": 11,
+      "target_token_id": 2386,
+      "historical_token_id": 62446,
+      "target_token_label": "update",
+      "historical_token_label": "withdraw",
+      "on_margin": -0.125,
+      "off_margin": 1.25,
+      "on_minus_off_margin": -1.375,
+      "on_target_logprob": -0.7613601684570312,
+      "off_target_logprob": -0.25688934326171875,
+      "on_historical_logprob": -0.6363601684570312,
+      "off_historical_logprob": -1.5068893432617188,
+      "on_top1_token_id": 62446,
+      "off_top1_token_id": 2386,
+      "historical_top1_reproduced": true,
+      "note": "标准下一 token 是 update，历史输出为 withdraw；当前开启适配器仍偏向 withdraw。这里只比较 op 字段的这个 token，不推断余下操作字段必然正确。"
+    }
+  ],
+  "body_nll_rows": [
+    {
+      "case_id": "native-fit-owner-zh",
+      "label": "归属·中文",
+      "body_tokens": 71,
+      "on_body_nll": 0.10730251795809034,
+      "off_body_nll": 1.0608551401487538,
+      "definition": "Mean negative log probability over canonical JSON body tokens with teacher-forced gold prefixes; excludes EOS and template newline."
+    },
+    {
+      "case_id": "native-fit-owner-en",
+      "label": "归属·英文",
+      "body_tokens": 57,
+      "on_body_nll": 0.13761115492435924,
+      "off_body_nll": 1.2308425234075178,
+      "definition": "Mean negative log probability over canonical JSON body tokens with teacher-forced gold prefixes; excludes EOS and template newline."
+    },
+    {
+      "case_id": "native-fit-wrong_withdrawn-zh",
+      "label": "撤销恢复·中文",
+      "body_tokens": 61,
+      "on_body_nll": 0.058977877507444286,
+      "off_body_nll": 0.8221284835064997,
+      "definition": "Mean negative log probability over canonical JSON body tokens with teacher-forced gold prefixes; excludes EOS and template newline."
+    },
+    {
+      "case_id": "native-fit-wrong_withdrawn-en",
+      "label": "撤销恢复·英文",
+      "body_tokens": 66,
+      "on_body_nll": 0.08175861474239465,
+      "off_body_nll": 0.9099207213430693,
+      "definition": "Mean negative log probability over canonical JSON body tokens with teacher-forced gold prefixes; excludes EOS and template newline."
+    },
+    {
+      "case_id": "native-fit-uncertain_status-zh",
+      "label": "不确定状态·中文",
+      "body_tokens": 55,
+      "on_body_nll": 0.037925650856711644,
+      "off_body_nll": 0.845171494917436,
+      "definition": "Mean negative log probability over canonical JSON body tokens with teacher-forced gold prefixes; excludes EOS and template newline."
+    },
+    {
+      "case_id": "native-fit-uncertain_status-en",
+      "label": "不确定状态·英文",
+      "body_tokens": 26,
+      "on_body_nll": 0.06109399061936598,
+      "off_body_nll": 1.1213491146381085,
+      "definition": "Mean negative log probability over canonical JSON body tokens with teacher-forced gold prefixes; excludes EOS and template newline."
+    }
+  ],
+  "findings": [
+    "在四个历史失败的首次 token 分歧处，on 模式的 top-1 全部与历史生成 token 相同。这里只复现了这些局部选择，没有重新生成完整答案，也没有重新计算修复成功率。",
+    "标准 token 减历史 token 的 margin，关闭→开启 LoRA 分别为：中文归属 0.375→−1.125，英文归属 8→−1.375，英文撤销恢复 0.625→−1.625，英文不确定状态 1.25→−0.125。四个相对偏好都翻转，且 on 模式仍将标准 token 排在第二。",
+    "不能写成“四个标准 token 的绝对概率都下降”：中文归属与英文撤销恢复的标准 token 概率实际上提高，但历史 token 提高更多；另外两例标准 token 概率才下降。",
+    "六条标准 JSON 正文的平均 NLL 均在开启适配器后降低，逐例数值见完整记录。这证明在这批给定标准前缀的测量中，整体目标似然改善可以与关键分歧恶化同时出现；平均 loss 不能替代归属、恢复和不确定状态的行为验收。",
+    "关闭适配器时，英文归属和英文不确定状态的标准 token 为 top-1；另两例的 top-1 是第三种 token 2198。因此不能将四个正 margin 写成底座能正确修复四条，更不能据此更换底座或移除岗位 LoRA。",
+    "上一轮确认的接口错配不能解释这次原接口下的局部负面影响。也不能笼统声称 LoRA 完全没学到：六条目标的整体似然确实改善。具体监督、样本权重和优化过程如何形成这些相对偏好，仍未被识别。"
+  ],
+  "limitations": [
+    "六条都是训练中见过且已暴露的样本，四条失败不是随机抽样；不推断总体负迁移率、泛化、实际用户收益或全量欠拟合。",
+    "只有第一次分歧之前，标准与历史生成共享完全相同的 token 前缀；后续 teacher forcing 提供了标准答案，不能解释为模型自主发现修复内容。",
+    "BPE 首 token 不是完整动作：9207 只结束当前对象，788 只给出冒号；本表不测完整关闭列表、空 patch 或整段修复的概率。",
+    "完整序列 use_cache=False 与历史缓存生成数值路径不同。四个失败点的 top-1 相同不等于所有 logits 或完整输出逐位复现；没有增加生成来追求这种保证。",
+    "同一模型对象的开关比较识别的是当前适配器在固定前缀的分布作用；固定开关顺序、一次测量，不能量化运行波动或拆分数据、学习率、训练时长、loss 权重与量化的训练因果。",
+    "原生六例的历史修复结果仍为 2/6，原核查能力验收仍失败。此次测量不改变这两项结果，也不构成启用依据。"
+  ],
+  "next_action": {
+    "status": "planned_not_run",
+    "text": "本轮止于预定 12 次前向计算，继续冻结当前底座和 LoRA。具体数据结构、修复顺序、目标权重与训练预算的因果贡献需要额外可比 checkpoint 或训练干预，目前均未执行；不自动扩展训练、解码或 prompt 搜索。"
+  },
+  "index_text": "12 次前向、零生成与训练：整体目标损失下降，四个失败点的标准 token 相对偏好却全部翻转；训练成因仍待受控干预。",
+  "source_hashes": {
+    "output/research/2026-10-27/tracker-root-cause/followup/native-token-effect/protocol.json": "5d1a7640d6892ca23ddbe665d1bbc9b9fce46952a18a3417dd130bb713141655",
+    "output/research/2026-10-27/tracker-root-cause/followup/native-token-effect/cpu-preparation.json": "1b7edc783b3d65adc7995d64254e778f905d1dbf56f08fada339a229a2a129b2",
+    "output/research/2026-10-27/tracker-root-cause/followup/native-token-effect/preflight-review.json": "7e72205b2e131647b4a07abad92457fc0a7634fdc61c5088b32d9c5eb7d581fe",
+    "output/research/2026-10-27/tracker-root-cause/followup/native-token-effect/post-review.json": "fe54ff6ab539b76a94c23cd2c39038e638d1e7f5d524497c89d5ba9762c7d30b",
+    "output/research/2026-10-27/tracker-root-cause/followup/native-token-effect/measurement-summary.json": "f82cbc04b0e4f864771b1a7c51bb8a9cd9b004b37077fe7cf0f3291ff3441634",
+    "output/research/2026-10-27/tracker-root-cause/followup/native-token-effect/collection-01/config.json": "e463e1deac19fa4bdada663b1b4c50d01008ded25d549efe9c5cb6136110d1c6",
+    "output/research/2026-10-27/tracker-root-cause/followup/native-token-effect/collection-01/result.json": "c70e8254f03e2a22df7f1e0e7c7121d1226e3d3b71030107ce3d4be57467ad5e",
+    "output/research/2026-10-27/tracker-root-cause/followup/native-token-effect/collection-01/PRIVATE-forwards.jsonl": "5a61dab4a76aa2ac6b7a2bf25691dd34d9ecca19a8fd90128ad386bc05741d34",
+    "output/research/2026-10-27/tracker-root-cause/followup/native-token-effect/collection-01/attempts.jsonl": "51d2ed6901ea6a33f42e762c40069ae31aea50dc2c2d59060f0977f5f1fff0b4"
+  }
+}

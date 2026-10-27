@@ -1,0 +1,157 @@
+{
+  "id": "native-target-token-effect-protocol",
+  "status": "frozen_before_model_forward",
+  "date": "2026-10-27",
+  "timezone": "America/Halifax",
+  "created_at_utc": "2026-10-27T13:35:42.285597+00:00",
+  "kind": "bounded_teacher_forced_distribution_diagnostic_not_quality_acceptance",
+  "scope": {
+    "existing_inputs": 6,
+    "logical_forwards": 12,
+    "forwards_per_input_per_arm": 1,
+    "new_generations": 0,
+    "new_training_runs": 0,
+    "new_prompt_variants": 0,
+    "new_scenarios": 0,
+    "candidate_sequences_constructed": 0,
+    "retries": 0
+  },
+  "assignments": [
+    {
+      "ordinal": 1,
+      "arm": "adapter_enabled",
+      "case_id": "native-fit-owner-zh"
+    },
+    {
+      "ordinal": 2,
+      "arm": "adapter_enabled",
+      "case_id": "native-fit-owner-en"
+    },
+    {
+      "ordinal": 3,
+      "arm": "adapter_enabled",
+      "case_id": "native-fit-wrong_withdrawn-zh"
+    },
+    {
+      "ordinal": 4,
+      "arm": "adapter_enabled",
+      "case_id": "native-fit-wrong_withdrawn-en"
+    },
+    {
+      "ordinal": 5,
+      "arm": "adapter_enabled",
+      "case_id": "native-fit-uncertain_status-zh"
+    },
+    {
+      "ordinal": 6,
+      "arm": "adapter_enabled",
+      "case_id": "native-fit-uncertain_status-en"
+    },
+    {
+      "ordinal": 7,
+      "arm": "adapter_disabled",
+      "case_id": "native-fit-owner-zh"
+    },
+    {
+      "ordinal": 8,
+      "arm": "adapter_disabled",
+      "case_id": "native-fit-owner-en"
+    },
+    {
+      "ordinal": 9,
+      "arm": "adapter_disabled",
+      "case_id": "native-fit-wrong_withdrawn-zh"
+    },
+    {
+      "ordinal": 10,
+      "arm": "adapter_disabled",
+      "case_id": "native-fit-wrong_withdrawn-en"
+    },
+    {
+      "ordinal": 11,
+      "arm": "adapter_disabled",
+      "case_id": "native-fit-uncertain_status-zh"
+    },
+    {
+      "ordinal": 12,
+      "arm": "adapter_disabled",
+      "case_id": "native-fit-uncertain_status-en"
+    }
+  ],
+  "base_id": "Qwen/Qwen2.5-14B-Instruct",
+  "base_revision": "cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8",
+  "adapter": {
+    "training_result_sha256": "d8b9c1e0931c2d271f14d38e90e88e554c9b97a89494575181adfdf0aca88507",
+    "weights_sha256": "a2cf443a6e26e3868c7a905190b20c89bdf980f18ce1d3489d49903df351f176",
+    "config_sha256": "7c0928386d80bb4bd47ac6d8831475e5f23769a2717127fee8df4b1d9e69708a"
+  },
+  "versions": {
+    "torch": "2.12.0+cu130",
+    "transformers": "5.14.1",
+    "peft": "0.21.2",
+    "bitsandbytes": "0.50.0",
+    "accelerate": "1.14.0"
+  },
+  "forward": {
+    "use_cache": false,
+    "logits_to_keep": "completion_tokens + 1",
+    "batch_size": 1,
+    "attention_mask": "all ones",
+    "autocast_dtype": "bfloat16",
+    "softmax_dtype": "float32",
+    "maximum_full_input_tokens": 2048,
+    "seed": 20261024,
+    "eval": true,
+    "inference_mode": true
+  },
+  "alignment": "For prompt P and completion L, target IDs at P..P+L-1 use predicting positions P-1..P+L-2. Request last L+1 logits and discard the final logit.",
+  "segments": "Original SFT completion includes JSON body, first EOS, and trailing template newline. Preserve all training positions; report body/EOS/post-EOS newline separately and through-EOS aggregate.",
+  "metrics": [
+    "Every target token log probability, strict-greater rank, tied-logit count, argmax token ID and its log probability.",
+    "At the first token divergence before or at EOS, gold/historical token log probabilities and gold-minus-historical margin under the identical prior token prefix.",
+    "On-minus-off change for identical target positions and existing branch; no complete-candidate or short-vs-long sequence ranking."
+  ],
+  "rank_definition": "1 + count(logit > target logit); tie count includes the target. Argmax uses the first maximum token ID; rank 1 does not alone imply unique top1.",
+  "state_policy": "Six enabled forwards then six disabled forwards. Check 336-layer active adapter/eval/zero-trainability before each. Exit disable_adapter inside finally, immediately requires_grad_(False), then verify enabled frozen state.",
+  "failure_policy": "Stop at the first failed forward or gate, retain all durable attempts, never retry or resume automatically.",
+  "interpretation_limits": [
+    "Correct target prefixes are teacher-forced, including after a historical error; later scores do not establish autonomous repair.",
+    "These are six exposed training samples. No held-out quality, generalization or whole-training-set fit claim.",
+    "A canonical target is not the only valid answer. One semantically correct wording variant and one match through EOS are kept separate from the four historical failures.",
+    "Single-token BPE alternatives are not probabilities of complete closures, empty patches or withdraw/update actions.",
+    "Full-sequence use_cache=False forward can differ numerically from historical cached greedy generation; historical token need not remain current top1.",
+    "On/off within this protocol shares settings, but fixed arm order is not randomized and no repeat is budgeted.",
+    "The adapter toggle measures conditional distribution change here; it does not identify data/optimizer causes."
+  ],
+  "source_hashes": {
+    "experiments/deep_conversation/tracker_lora/diagnostics/score_native_fit_tokens.py": "5170477d797213f3e89f835f99c511ca2f1d8837bee6cd30eb1fd54e68e01439",
+    "experiments/deep_conversation/tracker_lora/diagnostics/collect_audit_adapter_off.py": "8b486d8ba34703bf3ddef39b8565933ebbb31388386d440d30c35ae556716f5a",
+    "experiments/deep_conversation/tracker_lora/repair_v2/train_tracker.py": "2d329f11c1320c0f2e12c39d6e74600997757d53a0661406b8e6a657222ffd24",
+    "experiments/deep_conversation/tracker_lora/repair_v2/collect_three_arm.py": "6914ae922056b288a55f4fdaf197816ea4ab649b35e9cf80de0665521d6044d8",
+    "experiments/deep_conversation/tracker_lora/repair_v2/gates.py": "c7626f2955e830d5dfefcda3dd1435c08475cfc27ac91fd4c62730158db38990",
+    "experiments/deep_conversation/tracker_lora/evaluate_tracker.py": "6e628968b52307f8160bcc673cb5abba8043490c810b22f0bd286fb9a4f33a6f",
+    "experiments/deep_conversation/tracker_lora/intent_audit/pipeline.py": "eb7bef2753dd6de310adcee9345e4abbbc4df60500e3dad3db3f66d74eb64239",
+    "experiments/deep_conversation/tracker_lora/intent_audit/audit.py": "faf4e5b7cd69415a614e82cba8cfb8b3cb86e9d1fa49932086010d31038a06cb",
+    "experiments/deep_conversation/intention_state.py": "e028a604a93520801a0f752755d80b305afb1eebd8792ea0aeaaa3cd5c722f73",
+    "output/research/2026-10-27/tracker-root-cause/fit/selection.json": "c8028be138e7dd3acdea2caf57380f29dc4b3b8a6c1e79dfa18242f53dd3801f",
+    "output/research/2026-10-27/tracker-root-cause/fit/post-review.json": "81c458476ad9c40748eb597bbee9ed4c3d0dca32a0f068a4516ce234e5ac29d0",
+    "output/research/2026-10-27/tracker-root-cause/fit/preflight-review.json": "2d7f81dab0871624887952343a908931c897b3627d589e17b2416e15346565e6",
+    "output/research/2026-10-27/tracker-root-cause/fit/collection-01/config.json": "338971f32194f15638c2d6fb2e76f769a97c49544519f9f0cce23a9a58dc5d58",
+    "output/research/2026-10-27/tracker-root-cause/fit/collection-01/result.json": "1a72cd93a953b15d0f89510e741c662a36dc9dd27d9fcddb05f54f31837928da",
+    "output/research/2026-10-27/tracker-root-cause/fit/collection-01/PRIVATE-calls.jsonl": "0c74c49bf7313f7574db1f5de443f95a8283e2b23c36d9348c1980394fce14c4",
+    "output/research/2026-10-24/tracker-lora-repair-v2/data/compiled/train.records.jsonl": "12c9f6a672fb30846eb62e6ea4ef7456906a167f784f3524ddff212d82f117ea",
+    "output/research/2026-10-24/tracker-lora-repair-v2/data/compiled/train.sft.jsonl": "78bdadd3b9684600cd761d24b313acf8e34f58d06783fd9508ea6438ed86050c",
+    "output/research/2026-10-24/tracker-lora-repair-v2/annotation/system_prompt.txt": "7587583ff3fb2f46f64a32ca598a9f2bd980d8b0c3ff24915d80f5e31cda5abd",
+    "output/research/2026-10-24/tracker-lora-repair-v2/training/formal-01/lengths.json": "79b1575566710fdd629db4d068c502abab4259051e3e6e90508a260d42f42ac7",
+    "output/research/2026-10-24/tracker-lora-repair-v2/training/formal-01/result.json": "d8b9c1e0931c2d271f14d38e90e88e554c9b97a89494575181adfdf0aca88507",
+    "output/research/2026-10-24/tracker-lora-repair-v2/training/formal-01/adapter/adapter_config.json": "7c0928386d80bb4bd47ac6d8831475e5f23769a2717127fee8df4b1d9e69708a",
+    "output/research/2026-10-24/tracker-lora-repair-v2/training/formal-01/adapter/adapter_model.safetensors": "a2cf443a6e26e3868c7a905190b20c89bdf980f18ce1d3489d49903df351f176",
+    "output/research/2026-10-27/tracker-root-cause/training/adapter-context-postcheck.json": "44931ce7cefd3e3d269a19b8bce350a4480911641050c285901e055068c561a5",
+    "output/research/2026-10-27/tracker-root-cause/followup/first-token-divergence/PRIVATE-token-alignment.json": "0d111e30007f1d08ca71568b2ac60e7d3222ed2bb29d463600af2eb0105d060f",
+    "output/research/2026-10-24/tracker-lora-pilot/training/base-model-manifest.json": "1287f3e5b81d0594061c4e41b167237ee60a8f364e9f8b335b00f8f6b54aee17",
+    "experiments/deep_conversation/tracker_lora/model-cache/Qwen2.5-14B-Instruct/cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8/generation_config.json": "ea35dfb6fc5051b01114f9b995820d55dab01ed33ee490f6378b442af82c09f9",
+    "experiments/deep_conversation/tracker_lora/model-cache/Qwen2.5-14B-Instruct/cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8/tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+    "experiments/deep_conversation/tracker_lora/model-cache/Qwen2.5-14B-Instruct/cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8/tokenizer_config.json": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583",
+    "output/research/2026-10-27/tracker-root-cause/followup/native-token-effect/PRIVATE-prepared.json": "f67e4834f4d13058ec1ed026ca96265164f7f043d13b38a22cd66d80722e491d"
+  }
+}

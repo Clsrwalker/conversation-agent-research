@@ -1,0 +1,133 @@
+{
+  "id": "native-token-effect-independent-preflight",
+  "status": "passed",
+  "date": "2026-10-27",
+  "timezone": "America/Halifax",
+  "checked_at_utc": "2026-10-27T13:38:05.707786+00:00",
+  "status_meaning": "Source and six-case preparation are admitted for twelve bounded forwards; no outcome or capability prediction.",
+  "authorized_scope": {
+    "existing_inputs": 6,
+    "logical_forwards": 12,
+    "forwards_per_input_per_arm": 1,
+    "new_generations": 0,
+    "new_training_runs": 0,
+    "new_prompt_variants": 0,
+    "new_scenarios": 0,
+    "candidate_sequences_constructed": 0,
+    "retries": 0
+  },
+  "reviewer": "Independent method reviewer; source and saved-token inspection without model or tokenizer execution.",
+  "new_model_forwards": 0,
+  "new_generations": 0,
+  "new_training_runs": 0,
+  "new_semantic_scoring_runs": 0,
+  "cases": [
+    {
+      "case_id": "native-fit-owner-zh",
+      "prompt_tokens": 1430,
+      "body_tokens": 71,
+      "eos_tokens": 1,
+      "post_eos_newline_tokens": 1,
+      "shared_prefix_tokens": 49,
+      "branch_category": "historical_failed_output_single_token_branch",
+      "alignment_passed": true,
+      "gold_token_id": 36509,
+      "historical_token_id": 9207
+    },
+    {
+      "case_id": "native-fit-owner-en",
+      "prompt_tokens": 1297,
+      "body_tokens": 57,
+      "eos_tokens": 1,
+      "post_eos_newline_tokens": 1,
+      "shared_prefix_tokens": 2,
+      "branch_category": "historical_failed_output_single_token_branch",
+      "alignment_passed": true,
+      "gold_token_id": 66582,
+      "historical_token_id": 788
+    },
+    {
+      "case_id": "native-fit-wrong_withdrawn-zh",
+      "prompt_tokens": 1404,
+      "body_tokens": 61,
+      "eos_tokens": 1,
+      "post_eos_newline_tokens": 1,
+      "shared_prefix_tokens": 34,
+      "branch_category": "successful_semantic_variant_not_an_error",
+      "alignment_passed": true,
+      "gold_token_id": 109852,
+      "historical_token_id": 16530
+    },
+    {
+      "case_id": "native-fit-wrong_withdrawn-en",
+      "prompt_tokens": 1420,
+      "body_tokens": 66,
+      "eos_tokens": 1,
+      "post_eos_newline_tokens": 1,
+      "shared_prefix_tokens": 43,
+      "branch_category": "historical_failed_output_single_token_branch",
+      "alignment_passed": true,
+      "gold_token_id": 36509,
+      "historical_token_id": 9207
+    },
+    {
+      "case_id": "native-fit-uncertain_status-zh",
+      "prompt_tokens": 1304,
+      "body_tokens": 55,
+      "eos_tokens": 1,
+      "post_eos_newline_tokens": 1,
+      "shared_prefix_tokens": 56,
+      "branch_category": "match_through_eos",
+      "alignment_passed": true,
+      "gold_token_id": null,
+      "historical_token_id": null
+    },
+    {
+      "case_id": "native-fit-uncertain_status-en",
+      "prompt_tokens": 1403,
+      "body_tokens": 26,
+      "eos_tokens": 1,
+      "post_eos_newline_tokens": 1,
+      "shared_prefix_tokens": 11,
+      "branch_category": "historical_failed_output_single_token_branch",
+      "alignment_passed": true,
+      "gold_token_id": 2386,
+      "historical_token_id": 62446
+    }
+  ],
+  "checks": [
+    "All six full-input/target token lists match the fixed preparation and independent alignment record; prompt prefixes match historical input-token hashes.",
+    "Original targets remain unchanged: JSON body, EOS 151645 and one post-EOS newline 198. Matching through EOS is not a semantic error.",
+    "The five actual unequal-token pairs use exact common prompt/completion prefixes. The successful wording variant is kept separate from the four prior failed cases.",
+    "The L+1 logit tail discards its last position and predicts each of the L target IDs with the preceding hidden position; scalar and per-token statistics share that alignment.",
+    "One forward call site is used exactly once per six-case arm, enabled then disabled. No generate, optimizer, backward, alternative candidate or retry path exists.",
+    "Both arms use one loaded base/adapter object, fixed precision, full target sequences, use_cache=False, eval and inference_mode.",
+    "Every forward checks the same active adapter and all 336 layer enable/disable flags, plus zero trainability. A finally block refreezes immediately after PEFT context restoration and rechecks enabled state.",
+    "Rank uses strictly-greater logits; ties are explicit, argmax is distinct from rank-one. Logprob margins use the same normalization and on-minus-off pairs use identical target positions.",
+    "The independently reviewed CPU preparation contains four index checks and a tiny tensor arithmetic control; this review does not repeat them or load weights."
+  ],
+  "interpretation_limits": [
+    "The permitted outcome claim is the adapter toggle's conditional effect on these fixed target positions and first-divergence token pairs. It is not a probability of complete semantic repair.",
+    "The English owner token 788 is a colon, and the two token-9207 alternatives end an object; none alone logically forces the subsequent empty/closed-list outcome.",
+    "After the first differing token, canonical teacher forcing supplies a different history from the old free output. Later likelihood cannot demonstrate autonomous recovery.",
+    "The successful Chinese withdrawal wording difference is not an error; the Chinese uncertainty EOS match has no observed post-EOS competing token.",
+    "Full-sequence no-cache scores may rank tokens differently from historical cached greedy decoding. Such differences must be retained and prevent claims of exact historical replay.",
+    "Six exposed training examples and fixed nonrandomized arm order cannot establish generalization, whole-training-set fit, a training-data cause, or production readiness."
+  ],
+  "stop_policy": "At most the twelve frozen assignments; stop on first runtime failure, retain every attempt, do not resume/retry or add candidates/generations.",
+  "source_hashes": {
+    "experiments/deep_conversation/tracker_lora/diagnostics/score_native_fit_tokens.py": "5170477d797213f3e89f835f99c511ca2f1d8837bee6cd30eb1fd54e68e01439",
+    "output/research/2026-10-27/tracker-root-cause/followup/native-token-effect/protocol.json": "5d1a7640d6892ca23ddbe665d1bbc9b9fce46952a18a3417dd130bb713141655",
+    "output/research/2026-10-27/tracker-root-cause/followup/native-token-effect/cpu-preparation.json": "1b7edc783b3d65adc7995d64254e778f905d1dbf56f08fada339a229a2a129b2",
+    "output/research/2026-10-27/tracker-root-cause/followup/native-token-effect/PRIVATE-prepared.json": "f67e4834f4d13058ec1ed026ca96265164f7f043d13b38a22cd66d80722e491d",
+    "experiments/deep_conversation/tracker_lora/diagnostics/collect_audit_adapter_off.py": "8b486d8ba34703bf3ddef39b8565933ebbb31388386d440d30c35ae556716f5a",
+    "experiments/deep_conversation/tracker_lora/repair_v2/train_tracker.py": "2d329f11c1320c0f2e12c39d6e74600997757d53a0661406b8e6a657222ffd24",
+    "experiments/deep_conversation/tracker_lora/repair_v2/collect_three_arm.py": "6914ae922056b288a55f4fdaf197816ea4ab649b35e9cf80de0665521d6044d8",
+    "output/research/2026-10-27/tracker-root-cause/fit/post-review.json": "81c458476ad9c40748eb597bbee9ed4c3d0dca32a0f068a4516ce234e5ac29d0",
+    "output/research/2026-10-27/tracker-root-cause/fit/collection-01/PRIVATE-calls.jsonl": "0c74c49bf7313f7574db1f5de443f95a8283e2b23c36d9348c1980394fce14c4",
+    "output/research/2026-10-27/tracker-root-cause/followup/first-token-divergence/PRIVATE-token-alignment.json": "0d111e30007f1d08ca71568b2ac60e7d3222ed2bb29d463600af2eb0105d060f",
+    "output/research/2026-10-27/tracker-root-cause/followup/first-token-divergence/diagnostic-summary.json": "c7e34d94e27e9b38e42b991b0960cdabee94258a21b0b04b48c3a15d4e273674",
+    "output/research/2026-10-27/tracker-root-cause/training/adapter-context-postcheck.json": "44931ce7cefd3e3d269a19b8bce350a4480911641050c285901e055068c561a5",
+    "output/research/2026-10-27/tracker-root-cause/followup/native-token-effect/write_preflight_review.py": "feb7b28df36d361ad6b6f793107bcbaa01ecb70c88afd57525cdc8497eb99e74"
+  }
+}
