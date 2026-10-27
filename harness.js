@@ -7,7 +7,7 @@
   const short = n => n >= 1000 ? `${+(n / 1000).toFixed(1)}k` : fmt(n);
   let selected, tokenMode = 'cumulative', toolFilter = 'all', callIndex = 0;
   if (!$('harness-dashboard')) return;
-  if (!data?.runs?.length) { $('harness-dashboard').innerHTML = '<p>Recorded run data could not be loaded. Reload the page or download the evidence record.</p>'; return; }
+  if (!data?.runs?.length) { $('harness-dashboard').innerHTML = '<p>Recorded run data could not be loaded. Reload the page.</p>'; return; }
   const toolName = name => ({search:'Search',read_document:'Read document',wait:'Wait for an event',publish_card:'Publish a card',update_card:'Update a card',withdraw_card:'Withdraw a card'}[name] || String(name).replaceAll('_',' '));
   const isError = t => !!(t.error || t.result?.error || t.result?.error_code);
   function sourceNote(id, text) { $(id).textContent = text; }

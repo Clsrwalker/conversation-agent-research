@@ -1,0 +1,34 @@
+{
+  "date": "2026-10-27",
+  "type": "website_presentation_validation",
+  "status": "passed",
+  "scope": "Shared typography, focused study directory, concise current studies and removal of download controls",
+  "checks": {
+    "html_pages": 7,
+    "local_links": 139,
+    "duplicate_ids": 0,
+    "broken_local_links": 0,
+    "download_controls": 0,
+    "raw_file_links_in_ui": 0,
+    "research_data_files_changed": 0,
+    "repeat_build_identical": true,
+    "desktop_width": 1440,
+    "mobile_widths": [
+      390,
+      320
+    ],
+    "horizontal_page_overflow": false,
+    "primary_tables_clipped": false,
+    "browser_console_errors": 0,
+    "architecture_switch": "passed",
+    "recorded_dashboard_and_case_view": "passed",
+    "historical_anchor_expansion": "passed",
+    "theme_switch_and_shared_study_navigation": "passed",
+    "independent_numeric_review": "passed; comparison labels clarified",
+    "new_model_calls": 0
+  },
+  "limitations": [
+    "Browser checks use Chromium; native Safari was not tested.",
+    "Existing scientific outcomes and uncertainty are unchanged."
+  ]
+}

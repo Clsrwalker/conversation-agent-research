@@ -4,7 +4,7 @@
   const $ = id => document.getElementById(id);
   if (!$('home-dashboard-content')) return;
   if (!data?.runs?.length) {
-    $('home-dashboard-content').innerHTML = '<p class="home-chart-note">The recorded snapshot could not be loaded. <a href="data/harness-dashboard.json">Open the saved run data</a>.</p>';
+    $('home-dashboard-content').innerHTML = '<p class="home-chart-note">The recorded snapshot could not be loaded. Reload the page.</p>';
     return;
   }
   const esc = value => String(value ?? '').replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));

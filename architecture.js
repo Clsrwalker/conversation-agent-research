@@ -44,7 +44,6 @@
     const sources=$('architecture-node-sources');sources.replaceChildren();
     const label=document.createElement('span');label.textContent='Source references';sources.append(label);
     for(const item of node.sources||[]){const value=typeof item==='string'?{label:item}:item;const safeHref=value.href&&!/^\s*(?:javascript|data|vbscript):/i.test(value.href);const el=document.createElement(safeHref?'a':'span');el.textContent=value.label;if(safeHref)el.href=value.href;sources.append(el);}
-    const evidence=document.createElement('a');evidence.href='data/harness-architecture-evidence.json';evidence.textContent='Component evidence ↓';evidence.setAttribute('download','');sources.append(evidence);
     if(focus)canvas.querySelector(`[data-node="${CSS.escape(id)}"]`)?.focus();
   }
   function size() {
@@ -58,7 +57,7 @@
     active=view;const spec=currentView(), seq=++request;
     document.querySelectorAll('[data-architecture-view]').forEach(tab=>{const chosen=tab.dataset.architectureView===view;tab.setAttribute('aria-selected',String(chosen));tab.tabIndex=chosen?0:-1;});
     $('architecture-diagram-panel').setAttribute('aria-labelledby',view==='architecture'?'architecture-tab-components':'architecture-tab-execution');
-    $('architecture-open').href=spec.src;$('architecture-download').href=spec.src;
+    $('architecture-open').href=spec.src;
     try {
       let markup=cache.get(spec.src);
       if(!markup){const response=await fetch(spec.src);if(!response.ok)throw new Error('Diagram unavailable');markup=await response.text();cache.set(spec.src,markup);}

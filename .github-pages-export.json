@@ -30,8 +30,8 @@
     },
     {
       "path": "architecture.js",
-      "sha256": "641ff7f81cf4bbddb1a58211315b82cd0ba580de6c6e5948e21c49a57b951e4b",
-      "bytes": 12756
+      "sha256": "736508353f726dc80569db6c4d4fd2ef822c9de4f173fc5be16784edf1a4a9c9",
+      "bytes": 12503
     },
     {
       "path": "assets/harness-architecture.svg",
@@ -612,6 +612,11 @@
       "path": "data/question-test-validation.json",
       "sha256": "86f31d3772b8921d45e9b486467a463bd7db5c84d5627651face02e8f08ef421",
       "bytes": 5548
+    },
+    {
+      "path": "data/reader-ui-validation.json",
+      "sha256": "b794cad78f10685bb3c09bb47a9dd26b38608765400e1dd481f3b04a8c8d4cfd",
+      "bytes": 1124
     },
     {
       "path": "data/research-record.json",
@@ -2090,8 +2095,8 @@
     },
     {
       "path": "goal-directed-plan.html",
-      "sha256": "4c9449ce6a2b856f954a38acf3643997f9a310d3a0ead2d1d38c0571329aca45",
-      "bytes": 10267
+      "sha256": "4f34fca23cee28823d1ec887e4e4980c7ec4adeeb6a5d30d2f8b8d1d958524cf",
+      "bytes": 9577
     },
     {
       "path": "harness-data.js",
@@ -2105,18 +2110,18 @@
     },
     {
       "path": "harness.js",
-      "sha256": "823af9964f3577995fed476d3e6fff3d8189d2879176cb2fb0dd65a93d934e96",
-      "bytes": 15975
+      "sha256": "1c08ebe7bbb5f1f939b99bfe84a851d0a0139ac591de4d2838b91085ba502ed9",
+      "bytes": 15943
     },
     {
       "path": "index.html",
-      "sha256": "5b334858096fcabe256830f96f93f6e57b0430854249cf63dbd4529290921358",
-      "bytes": 77626
+      "sha256": "96b95122a77f966d40f1f87b9fe72d96a5699dba6b8dd989454f079601af77ad",
+      "bytes": 61302
     },
     {
       "path": "intent-role-separation.html",
-      "sha256": "c39781e2dadee1ca8d5cbcb460f1ebec0daef1d156344a0c82893ce2b4b0328d",
-      "bytes": 110096
+      "sha256": "62861db72ca570f07b998a353621c6a71bfb0afc4fba16273655c8a368c27fa1",
+      "bytes": 68282
     },
     {
       "path": "intention-literature.css",
@@ -2125,8 +2130,8 @@
     },
     {
       "path": "intention-literature.html",
-      "sha256": "a352425e1b29c982993325ef55397b525c261bf1779dcc897e08dfd16cab8c63",
-      "bytes": 19545
+      "sha256": "cd22ee36047aefc173413f522cb8b6e21f14f0aad5b61fa18a0ddc647822e41c",
+      "bytes": 19697
     },
     {
       "path": "latency-data.js",
@@ -2140,8 +2145,8 @@
     },
     {
       "path": "october-studies.html",
-      "sha256": "2cbf629a4e01dfe84e76c182f50ff06813c6c96843ee72385961623e3d4ebc5d",
-      "bytes": 22014
+      "sha256": "9f6e770a6f96491c2c58738ac792f6d1c44d23626a82a1383d22393f68553880",
+      "bytes": 18920
     },
     {
       "path": "overview-dashboard.css",
@@ -2150,8 +2155,8 @@
     },
     {
       "path": "overview-dashboard.js",
-      "sha256": "d12ba3a6ed666aa3f031d327cc34ff75808ed4766e1bdf3a2ea13a87438f7a5c",
-      "bytes": 11587
+      "sha256": "ae65ea7705c46c37be27332fb1e22250ba3aec3c1ee20b61effec02412e1e680",
+      "bytes": 11537
     },
     {
       "path": "overview.css",
@@ -2162,6 +2167,16 @@
       "path": "overview.js",
       "sha256": "6f16ae013e5ad979a2f01618931b58281dac369d8d92e18dd2e502bbb56da81d",
       "bytes": 1714
+    },
+    {
+      "path": "reader-ui.css",
+      "sha256": "d4337ed69d408f971944c2ab7ae84f14ae3f708e2ad602a4b3636eee6161122b",
+      "bytes": 10825
+    },
+    {
+      "path": "reader-ui.js",
+      "sha256": "3d2697ce3cc255bc4ed797ecfc6c98a83bee85e4b5ba52372185680ec5c9ca43",
+      "bytes": 742
     },
     {
       "path": "recent-entry.css",
@@ -2175,8 +2190,8 @@
     },
     {
       "path": "source-authority.html",
-      "sha256": "d69336588c1074f183ef6e99aaa6e6dfe993b38697b66a0a66a47e5d9ad7974d",
-      "bytes": 11424
+      "sha256": "226ded4a8133242f04e33c0e162c96f4c3dba834750a62cee5933533cfbec9f4",
+      "bytes": 10493
     },
     {
       "path": "style.css",
@@ -2185,8 +2200,8 @@
     },
     {
       "path": "summary-placement.html",
-      "sha256": "0f1912d3242735242af6658f45370becd0af025bba5fed8608217b30370b02e1",
-      "bytes": 15938
+      "sha256": "4d3e28a3d6beb0b15fb4a3de2dc8f8727d3ab4a763848bb18e6a87fd9fa3458a",
+      "bytes": 14803
     },
     {
       "path": "tracker-reading.css",
