@@ -1,0 +1,869 @@
+{
+  "schema_version": "interview-dev-reanalysis-v1",
+  "audit_date": "2026-11-25",
+  "timezone": "America/Halifax",
+  "model": "Qwen/Qwen3.5-9B",
+  "training_examples": 3482,
+  "training_updates": 218,
+  "split": "dev",
+  "cases": 404,
+  "evaluation_groups": 202,
+  "training_completed_local_date": "2026-11-18",
+  "training_run": "2026-11-18-qwen35-9b-round01-run11",
+  "checkpoint_id": "checkpoint-0218",
+  "evaluations": [
+    {
+      "update_step": 0,
+      "arm": "base_adapter_disabled",
+      "metrics": {
+        "rows": 404,
+        "evaluation_groups": 202,
+        "sequence_macro_nll": 2.611718517874872,
+        "token_micro_nll": 2.510076282465402,
+        "conversation_macro_nll": 2.667484612519285,
+        "target_tokens": 12515,
+        "per_source": {
+          "annomi": {
+            "rows": 71,
+            "evaluation_groups": 10,
+            "sequence_macro_nll": 2.4950091519612876,
+            "token_micro_nll": 2.350522033015908,
+            "conversation_macro_nll": 2.688224823029418
+          },
+          "bath": {
+            "rows": 20,
+            "evaluation_groups": 2,
+            "sequence_macro_nll": 2.5054497419606827,
+            "token_micro_nll": 2.3934060047944787,
+            "conversation_macro_nll": 2.5199446852903726
+          },
+          "fed": {
+            "rows": 4,
+            "evaluation_groups": 1,
+            "sequence_macro_nll": 3.039836805169781,
+            "token_micro_nll": 2.9183092993262925,
+            "conversation_macro_nll": 3.039836805169781
+          },
+          "news": {
+            "rows": 76,
+            "evaluation_groups": 26,
+            "sequence_macro_nll": 2.83556590440709,
+            "token_micro_nll": 2.747501126824284,
+            "conversation_macro_nll": 2.810014600513903
+          },
+          "rring": {
+            "rows": 73,
+            "evaluation_groups": 3,
+            "sequence_macro_nll": 2.4199342082291033,
+            "token_micro_nll": 2.370899640137799,
+            "conversation_macro_nll": 2.4158180909495477
+          },
+          "uk": {
+            "rows": 160,
+            "evaluation_groups": 160,
+            "sequence_macro_nll": 2.647263021479005,
+            "token_micro_nll": 2.536650624455253,
+            "conversation_macro_nll": 2.647263021479005
+          }
+        },
+        "source_equal_conversation_macro_nll": 2.686850337738671,
+        "source_equal_sequence_macro_nll": 2.6571764722011584,
+        "per_profile": {
+          "native-harness-message-only-v1": {
+            "rows": 55,
+            "sequence_macro_nll": 2.564202809896567,
+            "target_tokens": 1878
+          },
+          "quoted-context-continuation-eos-v1": {
+            "rows": 349,
+            "sequence_macro_nll": 2.6192066666966682,
+            "target_tokens": 10637
+          }
+        },
+        "perplexity_from_token_micro_nll": 12.30586874671422
+      }
+    },
+    {
+      "update_step": 109,
+      "arm": "lora",
+      "metrics": {
+        "rows": 404,
+        "evaluation_groups": 202,
+        "sequence_macro_nll": 1.974275816532301,
+        "token_micro_nll": 2.0383925191741263,
+        "conversation_macro_nll": 2.014352285346958,
+        "target_tokens": 12515,
+        "per_source": {
+          "annomi": {
+            "rows": 71,
+            "evaluation_groups": 10,
+            "sequence_macro_nll": 1.816820033575043,
+            "token_micro_nll": 1.824163778136392,
+            "conversation_macro_nll": 1.9187307395006998
+          },
+          "bath": {
+            "rows": 20,
+            "evaluation_groups": 2,
+            "sequence_macro_nll": 1.9830383320519585,
+            "token_micro_nll": 2.006320428202412,
+            "conversation_macro_nll": 1.9667009437000296
+          },
+          "fed": {
+            "rows": 4,
+            "evaluation_groups": 1,
+            "sequence_macro_nll": 2.369813831013159,
+            "token_micro_nll": 2.445271675480174,
+            "conversation_macro_nll": 2.369813831013159
+          },
+          "news": {
+            "rows": 76,
+            "evaluation_groups": 26,
+            "sequence_macro_nll": 2.1623979303981287,
+            "token_micro_nll": 2.2581246314826973,
+            "conversation_macro_nll": 2.150696059233386
+          },
+          "rring": {
+            "rows": 73,
+            "evaluation_groups": 3,
+            "sequence_macro_nll": 1.8513098207084608,
+            "token_micro_nll": 1.9077525236045372,
+            "conversation_macro_nll": 1.8350716928143247
+          },
+          "uk": {
+            "rows": 160,
+            "evaluation_groups": 160,
+            "sequence_macro_nll": 1.9999082869259648,
+            "token_micro_nll": 2.0709088021786215,
+            "conversation_macro_nll": 1.9999082869259648
+          }
+        },
+        "source_equal_conversation_macro_nll": 2.0401535921979272,
+        "source_equal_sequence_macro_nll": 2.0305480391121193,
+        "per_profile": {
+          "native-harness-message-only-v1": {
+            "rows": 55,
+            "sequence_macro_nll": 1.9419392663492463,
+            "target_tokens": 1878
+          },
+          "quoted-context-continuation-eos-v1": {
+            "rows": 349,
+            "sequence_macro_nll": 1.9793718344694589,
+            "target_tokens": 10637
+          }
+        },
+        "perplexity_from_token_micro_nll": 7.6782566229768845
+      }
+    },
+    {
+      "update_step": 218,
+      "arm": "lora",
+      "metrics": {
+        "rows": 404,
+        "evaluation_groups": 202,
+        "sequence_macro_nll": 1.9609661893121313,
+        "token_micro_nll": 2.024369771335628,
+        "conversation_macro_nll": 2.0024535196851847,
+        "target_tokens": 12515,
+        "per_source": {
+          "annomi": {
+            "rows": 71,
+            "evaluation_groups": 10,
+            "sequence_macro_nll": 1.8016969520470114,
+            "token_micro_nll": 1.8077567496642701,
+            "conversation_macro_nll": 1.9053968990538643
+          },
+          "bath": {
+            "rows": 20,
+            "evaluation_groups": 2,
+            "sequence_macro_nll": 1.9658712506574993,
+            "token_micro_nll": 1.9955091257123703,
+            "conversation_macro_nll": 1.9483081792799135
+          },
+          "fed": {
+            "rows": 4,
+            "evaluation_groups": 1,
+            "sequence_macro_nll": 2.3599263772773034,
+            "token_micro_nll": 2.430557067699605,
+            "conversation_macro_nll": 2.3599263772773034
+          },
+          "news": {
+            "rows": 76,
+            "evaluation_groups": 26,
+            "sequence_macro_nll": 2.1499735655257224,
+            "token_micro_nll": 2.2484529671505915,
+            "conversation_macro_nll": 2.1398972583271467
+          },
+          "rring": {
+            "rows": 73,
+            "evaluation_groups": 3,
+            "sequence_macro_nll": 1.8365456198368835,
+            "token_micro_nll": 1.8917471260535046,
+            "conversation_macro_nll": 1.8202884656897007
+          },
+          "uk": {
+            "rows": 160,
+            "evaluation_groups": 160,
+            "sequence_macro_nll": 1.988043157102854,
+            "token_micro_nll": 2.0565324600878054,
+            "conversation_macro_nll": 1.988043157102854
+          }
+        },
+        "source_equal_conversation_macro_nll": 2.0269767227884636,
+        "source_equal_sequence_macro_nll": 2.017009487074546,
+        "per_profile": {
+          "native-harness-message-only-v1": {
+            "rows": 55,
+            "sequence_macro_nll": 1.9216844920799763,
+            "target_tokens": 1878
+          },
+          "quoted-context-continuation-eos-v1": {
+            "rows": 349,
+            "sequence_macro_nll": 1.9671567146639035,
+            "target_tokens": 10637
+          }
+        },
+        "perplexity_from_token_micro_nll": 7.571337766609866
+      }
+    }
+  ],
+  "comparisons": [
+    {
+      "before_step": 0,
+      "after_step": 218,
+      "overall": {
+        "rows": 404,
+        "evaluation_groups": 202,
+        "before": 2.611718517874872,
+        "after": 1.9609661893121313,
+        "delta": -0.6507523285627409,
+        "relative_reduction_percent": 24.91663340091685,
+        "improved": 401,
+        "regressed": 3,
+        "tied": 0,
+        "paired_source_stratified_cluster_bootstrap_ci95": [
+          -0.6993128247593251,
+          -0.6050869334737901
+        ]
+      },
+      "per_source": {
+        "annomi": {
+          "rows": 71,
+          "evaluation_groups": 10,
+          "before": 2.4950091519612876,
+          "after": 1.8016969520470114,
+          "delta": -0.6933121999142762,
+          "relative_reduction_percent": 27.78796219521978,
+          "improved": 71,
+          "regressed": 0,
+          "tied": 0,
+          "paired_source_stratified_cluster_bootstrap_ci95": [
+            -0.8493147746075923,
+            -0.6033333225586323
+          ]
+        },
+        "bath": {
+          "rows": 20,
+          "evaluation_groups": 2,
+          "before": 2.5054497419606827,
+          "after": 1.9658712506574993,
+          "delta": -0.5395784913031835,
+          "relative_reduction_percent": 21.53619297431714,
+          "improved": 19,
+          "regressed": 1,
+          "tied": 0,
+          "paired_source_stratified_cluster_bootstrap_ci95": [
+            -0.7319265795468372,
+            -0.411346432474081
+          ]
+        },
+        "fed": {
+          "rows": 4,
+          "evaluation_groups": 1,
+          "before": 3.039836805169781,
+          "after": 2.3599263772773034,
+          "delta": -0.6799104278924772,
+          "relative_reduction_percent": 22.366675300995407,
+          "improved": 4,
+          "regressed": 0,
+          "tied": 0,
+          "paired_source_stratified_cluster_bootstrap_ci95": null
+        },
+        "news": {
+          "rows": 76,
+          "evaluation_groups": 26,
+          "before": 2.83556590440709,
+          "after": 2.1499735655257224,
+          "delta": -0.6855923388813677,
+          "relative_reduction_percent": 24.178324962075727,
+          "improved": 74,
+          "regressed": 2,
+          "tied": 0,
+          "paired_source_stratified_cluster_bootstrap_ci95": [
+            -0.8027952781005426,
+            -0.5654416067617073
+          ]
+        },
+        "rring": {
+          "rows": 73,
+          "evaluation_groups": 3,
+          "before": 2.4199342082291033,
+          "after": 1.8365456198368835,
+          "delta": -0.5833885883922201,
+          "relative_reduction_percent": 24.107621868742505,
+          "improved": 73,
+          "regressed": 0,
+          "tied": 0,
+          "paired_source_stratified_cluster_bootstrap_ci95": [
+            -0.6693497141281399,
+            -0.4773265580871251
+          ]
+        },
+        "uk": {
+          "rows": 160,
+          "evaluation_groups": 160,
+          "before": 2.647263021479005,
+          "after": 1.988043157102854,
+          "delta": -0.6592198643761508,
+          "relative_reduction_percent": 24.901940571354704,
+          "improved": 160,
+          "regressed": 0,
+          "tied": 0,
+          "paired_source_stratified_cluster_bootstrap_ci95": [
+            -0.7334650094050965,
+            -0.5909319568765277
+          ]
+        }
+      },
+      "per_profile": {
+        "native-harness-message-only-v1": {
+          "rows": 55,
+          "evaluation_groups": 5,
+          "before": 2.564202809896567,
+          "after": 1.9216844920799763,
+          "delta": -0.6425183178165907,
+          "relative_reduction_percent": 25.05723476071334,
+          "improved": 55,
+          "regressed": 0,
+          "tied": 0,
+          "paired_source_stratified_cluster_bootstrap_ci95": [
+            -0.7327723816275198,
+            -0.5759759298789924
+          ]
+        },
+        "quoted-context-continuation-eos-v1": {
+          "rows": 349,
+          "evaluation_groups": 202,
+          "before": 2.6192066666966682,
+          "after": 1.9671567146639035,
+          "delta": -0.6520499520327645,
+          "relative_reduction_percent": 24.894940911826822,
+          "improved": 346,
+          "regressed": 3,
+          "tied": 0,
+          "paired_source_stratified_cluster_bootstrap_ci95": [
+            -0.7097207510159189,
+            -0.6009815790912438
+          ]
+        }
+      }
+    },
+    {
+      "before_step": 109,
+      "after_step": 218,
+      "overall": {
+        "rows": 404,
+        "evaluation_groups": 202,
+        "before": 1.974275816532301,
+        "after": 1.9609661893121313,
+        "delta": -0.013309627220169866,
+        "relative_reduction_percent": 0.6741523706422865,
+        "improved": 292,
+        "regressed": 112,
+        "tied": 0,
+        "paired_source_stratified_cluster_bootstrap_ci95": [
+          -0.017265445683280967,
+          -0.00941224438625108
+        ]
+      },
+      "per_source": {
+        "annomi": {
+          "rows": 71,
+          "evaluation_groups": 10,
+          "before": 1.816820033575043,
+          "after": 1.8016969520470114,
+          "delta": -0.015123081528031738,
+          "relative_reduction_percent": 0.8323929309758508,
+          "improved": 52,
+          "regressed": 19,
+          "tied": 0,
+          "paired_source_stratified_cluster_bootstrap_ci95": [
+            -0.0303423859971283,
+            -0.0013987374085415948
+          ]
+        },
+        "bath": {
+          "rows": 20,
+          "evaluation_groups": 2,
+          "before": 1.9830383320519585,
+          "after": 1.9658712506574993,
+          "delta": -0.01716708139445915,
+          "relative_reduction_percent": 0.8656958928623145,
+          "improved": 14,
+          "regressed": 6,
+          "tied": 0,
+          "paired_source_stratified_cluster_bootstrap_ci95": [
+            -0.02452117954839983,
+            -0.01226434929183203
+          ]
+        },
+        "fed": {
+          "rows": 4,
+          "evaluation_groups": 1,
+          "before": 2.369813831013159,
+          "after": 2.3599263772773034,
+          "delta": -0.009887453735855534,
+          "relative_reduction_percent": 0.4172249147363775,
+          "improved": 3,
+          "regressed": 1,
+          "tied": 0,
+          "paired_source_stratified_cluster_bootstrap_ci95": null
+        },
+        "news": {
+          "rows": 76,
+          "evaluation_groups": 26,
+          "before": 2.1623979303981287,
+          "after": 2.1499735655257224,
+          "delta": -0.012424364872406524,
+          "relative_reduction_percent": 0.5745642232518702,
+          "improved": 53,
+          "regressed": 23,
+          "tied": 0,
+          "paired_source_stratified_cluster_bootstrap_ci95": [
+            -0.022333024625277146,
+            -0.003098466397040632
+          ]
+        },
+        "rring": {
+          "rows": 73,
+          "evaluation_groups": 3,
+          "before": 1.8513098207084608,
+          "after": 1.8365456198368835,
+          "delta": -0.014764200871577463,
+          "relative_reduction_percent": 0.7975002728569486,
+          "improved": 54,
+          "regressed": 19,
+          "tied": 0,
+          "paired_source_stratified_cluster_bootstrap_ci95": [
+            -0.01813010359886177,
+            -0.009036632765475144
+          ]
+        },
+        "uk": {
+          "rows": 160,
+          "evaluation_groups": 160,
+          "before": 1.9999082869259648,
+          "after": 1.988043157102854,
+          "delta": -0.01186512982311073,
+          "relative_reduction_percent": 0.5932836970913541,
+          "improved": 116,
+          "regressed": 44,
+          "tied": 0,
+          "paired_source_stratified_cluster_bootstrap_ci95": [
+            -0.018036933188015452,
+            -0.005791688476359709
+          ]
+        }
+      },
+      "per_profile": {
+        "native-harness-message-only-v1": {
+          "rows": 55,
+          "evaluation_groups": 5,
+          "before": 1.9419392663492463,
+          "after": 1.9216844920799763,
+          "delta": -0.020254774269269863,
+          "relative_reduction_percent": 1.043017905876525,
+          "improved": 40,
+          "regressed": 15,
+          "tied": 0,
+          "paired_source_stratified_cluster_bootstrap_ci95": [
+            -0.03244334825096569,
+            -0.010463060824524814
+          ]
+        },
+        "quoted-context-continuation-eos-v1": {
+          "rows": 349,
+          "evaluation_groups": 202,
+          "before": 1.9793718344694589,
+          "after": 1.9671567146639035,
+          "delta": -0.012215119805555253,
+          "relative_reduction_percent": 0.6171210276329578,
+          "improved": 252,
+          "regressed": 97,
+          "tied": 0,
+          "paired_source_stratified_cluster_bootstrap_ci95": [
+            -0.016882168862710635,
+            -0.007631742811368447
+          ]
+        }
+      }
+    }
+  ],
+  "bootstrap": {
+    "seed": 20261116,
+    "replicates": 2000,
+    "unit": "evaluation_group_id within source strata",
+    "interval": "95% percentile, linearly interpolated"
+  },
+  "generation_summary": {
+    "base": {
+      "rows": 404,
+      "output_tokens": 35109,
+      "median_output_tokens": 74.5,
+      "p95_output_tokens_nearest_rank": 190,
+      "eos": 395,
+      "length": 9,
+      "empty_text": 0,
+      "unmapped_output_tokens": 0,
+      "repeated_eight_gram": 1,
+      "nonempty_identical_output_cases_within_arm": 11,
+      "native_format": {
+        "invalid_json": 52,
+        "valid": 3
+      },
+      "native_valid_decisions": {
+        "respond": 2,
+        "complete": 1
+      }
+    },
+    "step218": {
+      "rows": 404,
+      "output_tokens": 7116,
+      "median_output_tokens": 13.0,
+      "p95_output_tokens_nearest_rank": 33,
+      "eos": 401,
+      "length": 3,
+      "empty_text": 0,
+      "unmapped_output_tokens": 0,
+      "repeated_eight_gram": 3,
+      "nonempty_identical_output_cases_within_arm": 21,
+      "native_format": {
+        "invalid_json": 55
+      },
+      "native_valid_decisions": {}
+    }
+  },
+  "generation_by_profile": {
+    "native-harness-message-only-v1": {
+      "base": {
+        "rows": 55,
+        "output_tokens": 7817,
+        "median_output_tokens": 130,
+        "p95_output_tokens_nearest_rank": 256,
+        "eos": 48,
+        "length": 7,
+        "empty_text": 0,
+        "unmapped_output_tokens": 0,
+        "repeated_eight_gram": 1,
+        "nonempty_identical_output_cases_within_arm": 0,
+        "native_format": {
+          "invalid_json": 52,
+          "valid": 3
+        },
+        "native_valid_decisions": {
+          "respond": 2,
+          "complete": 1
+        }
+      },
+      "step218": {
+        "rows": 55,
+        "output_tokens": 1614,
+        "median_output_tokens": 19,
+        "p95_output_tokens_nearest_rank": 75,
+        "eos": 53,
+        "length": 2,
+        "empty_text": 0,
+        "unmapped_output_tokens": 0,
+        "repeated_eight_gram": 2,
+        "nonempty_identical_output_cases_within_arm": 4,
+        "native_format": {
+          "invalid_json": 55
+        },
+        "native_valid_decisions": {}
+      }
+    },
+    "quoted-context-continuation-eos-v1": {
+      "base": {
+        "rows": 349,
+        "output_tokens": 27292,
+        "median_output_tokens": 68,
+        "p95_output_tokens_nearest_rank": 163,
+        "eos": 347,
+        "length": 2,
+        "empty_text": 0,
+        "unmapped_output_tokens": 0,
+        "repeated_eight_gram": 0,
+        "nonempty_identical_output_cases_within_arm": 11,
+        "native_format": {},
+        "native_valid_decisions": {}
+      },
+      "step218": {
+        "rows": 349,
+        "output_tokens": 5502,
+        "median_output_tokens": 12,
+        "p95_output_tokens_nearest_rank": 31,
+        "eos": 348,
+        "length": 1,
+        "empty_text": 0,
+        "unmapped_output_tokens": 0,
+        "repeated_eight_gram": 1,
+        "nonempty_identical_output_cases_within_arm": 16,
+        "native_format": {},
+        "native_valid_decisions": {}
+      }
+    }
+  },
+  "generation_by_source": {
+    "annomi": {
+      "base": {
+        "rows": 71,
+        "output_tokens": 3702,
+        "median_output_tokens": 50,
+        "p95_output_tokens_nearest_rank": 85,
+        "eos": 71,
+        "length": 0,
+        "empty_text": 0,
+        "unmapped_output_tokens": 0,
+        "repeated_eight_gram": 0,
+        "nonempty_identical_output_cases_within_arm": 0,
+        "native_format": {},
+        "native_valid_decisions": {}
+      },
+      "step218": {
+        "rows": 71,
+        "output_tokens": 1173,
+        "median_output_tokens": 12,
+        "p95_output_tokens_nearest_rank": 28,
+        "eos": 70,
+        "length": 1,
+        "empty_text": 0,
+        "unmapped_output_tokens": 0,
+        "repeated_eight_gram": 1,
+        "nonempty_identical_output_cases_within_arm": 5,
+        "native_format": {},
+        "native_valid_decisions": {}
+      }
+    },
+    "bath": {
+      "base": {
+        "rows": 20,
+        "output_tokens": 1792,
+        "median_output_tokens": 85.0,
+        "p95_output_tokens_nearest_rank": 186,
+        "eos": 20,
+        "length": 0,
+        "empty_text": 0,
+        "unmapped_output_tokens": 0,
+        "repeated_eight_gram": 0,
+        "nonempty_identical_output_cases_within_arm": 2,
+        "native_format": {
+          "invalid_json": 8,
+          "valid": 2
+        },
+        "native_valid_decisions": {
+          "respond": 2
+        }
+      },
+      "step218": {
+        "rows": 20,
+        "output_tokens": 871,
+        "median_output_tokens": 18.0,
+        "p95_output_tokens_nearest_rank": 256,
+        "eos": 18,
+        "length": 2,
+        "empty_text": 0,
+        "unmapped_output_tokens": 0,
+        "repeated_eight_gram": 2,
+        "nonempty_identical_output_cases_within_arm": 2,
+        "native_format": {
+          "invalid_json": 10
+        },
+        "native_valid_decisions": {}
+      }
+    },
+    "fed": {
+      "base": {
+        "rows": 4,
+        "output_tokens": 279,
+        "median_output_tokens": 78.0,
+        "p95_output_tokens_nearest_rank": 85,
+        "eos": 4,
+        "length": 0,
+        "empty_text": 0,
+        "unmapped_output_tokens": 0,
+        "repeated_eight_gram": 0,
+        "nonempty_identical_output_cases_within_arm": 0,
+        "native_format": {},
+        "native_valid_decisions": {}
+      },
+      "step218": {
+        "rows": 4,
+        "output_tokens": 102,
+        "median_output_tokens": 7.5,
+        "p95_output_tokens_nearest_rank": 81,
+        "eos": 4,
+        "length": 0,
+        "empty_text": 0,
+        "unmapped_output_tokens": 0,
+        "repeated_eight_gram": 0,
+        "nonempty_identical_output_cases_within_arm": 0,
+        "native_format": {},
+        "native_valid_decisions": {}
+      }
+    },
+    "news": {
+      "base": {
+        "rows": 76,
+        "output_tokens": 4271,
+        "median_output_tokens": 50.5,
+        "p95_output_tokens_nearest_rank": 104,
+        "eos": 76,
+        "length": 0,
+        "empty_text": 0,
+        "unmapped_output_tokens": 0,
+        "repeated_eight_gram": 0,
+        "nonempty_identical_output_cases_within_arm": 0,
+        "native_format": {},
+        "native_valid_decisions": {}
+      },
+      "step218": {
+        "rows": 76,
+        "output_tokens": 798,
+        "median_output_tokens": 9.0,
+        "p95_output_tokens_nearest_rank": 20,
+        "eos": 76,
+        "length": 0,
+        "empty_text": 0,
+        "unmapped_output_tokens": 0,
+        "repeated_eight_gram": 0,
+        "nonempty_identical_output_cases_within_arm": 0,
+        "native_format": {},
+        "native_valid_decisions": {}
+      }
+    },
+    "rring": {
+      "base": {
+        "rows": 73,
+        "output_tokens": 7472,
+        "median_output_tokens": 87,
+        "p95_output_tokens_nearest_rank": 256,
+        "eos": 66,
+        "length": 7,
+        "empty_text": 0,
+        "unmapped_output_tokens": 0,
+        "repeated_eight_gram": 1,
+        "nonempty_identical_output_cases_within_arm": 9,
+        "native_format": {
+          "invalid_json": 44,
+          "valid": 1
+        },
+        "native_valid_decisions": {
+          "complete": 1
+        }
+      },
+      "step218": {
+        "rows": 73,
+        "output_tokens": 1513,
+        "median_output_tokens": 20,
+        "p95_output_tokens_nearest_rank": 48,
+        "eos": 73,
+        "length": 0,
+        "empty_text": 0,
+        "unmapped_output_tokens": 0,
+        "repeated_eight_gram": 0,
+        "nonempty_identical_output_cases_within_arm": 5,
+        "native_format": {
+          "invalid_json": 45
+        },
+        "native_valid_decisions": {}
+      }
+    },
+    "uk": {
+      "base": {
+        "rows": 160,
+        "output_tokens": 17593,
+        "median_output_tokens": 102.5,
+        "p95_output_tokens_nearest_rank": 189,
+        "eos": 158,
+        "length": 2,
+        "empty_text": 0,
+        "unmapped_output_tokens": 0,
+        "repeated_eight_gram": 0,
+        "nonempty_identical_output_cases_within_arm": 0,
+        "native_format": {},
+        "native_valid_decisions": {}
+      },
+      "step218": {
+        "rows": 160,
+        "output_tokens": 2659,
+        "median_output_tokens": 13.0,
+        "p95_output_tokens_nearest_rank": 32,
+        "eos": 160,
+        "length": 0,
+        "empty_text": 0,
+        "unmapped_output_tokens": 0,
+        "repeated_eight_gram": 0,
+        "nonempty_identical_output_cases_within_arm": 4,
+        "native_format": {},
+        "native_valid_decisions": {}
+      }
+    }
+  },
+  "verification_scope": [
+    "404 unique IDs at each step",
+    "identical paired IDs, order, profile, group, source and target-token count",
+    "all recorded aggregate NLL metrics recomputed",
+    "selected checkpoint recomputed",
+    "808 generation rows paired to identical input hashes",
+    "original generation artifact hashes verified",
+    "generation counts, stops, repetition and profile/source summaries recomputed"
+  ],
+  "limitations": [
+    "Development split used for checkpoint selection; not an independent test-set estimate. No new model inference or training.",
+    "NLL measures prediction of observed reference speech, not interview decision quality or human preference.",
+    "Source-stratified cluster bootstrap retains paired rows; UK supplies 160/202 groups. Fed has one group; its stratum interval is omitted, while overall intervals condition on that observed group. Bath has two groups and RRING three.",
+    "Bootstrap intervals are descriptive reanalysis of selected development results and do not adjust for checkpoint selection or multiple diagnostic slices.",
+    "Native speech-only training masked the JSON wrapper, decisions and EOS. Free greedy JSON validity is 3/55 before and 0/55 after; structured decoding and online Harness behavior are untested.",
+    "Shorter outputs and fewer capped outputs do not alone prove better answers; repeated outputs and repeated eight-grams increased.",
+    "No 381-case test evaluation or human A/B ratings; no production Harness promotion."
+  ],
+  "model_calls_during_audit": 0,
+  "test_evaluated": false,
+  "human_review_performed": false,
+  "harness_promoted": false,
+  "source_artifact_sha256": {
+    "dev-evaluations.json": "5e6348dcde6cc979613a111dd080a76f7edb94f7e7e12389ca0367419be30e55",
+    "generation-summary.json": "c8b4908db1d430a4c203ef1687dea014330ce7e1c1289dcf25acd2b8d1853793",
+    "paired.jsonl": "e0430f4ff25d0acd178a10ae357642d164c44628d0f017ff2933213c75583fa8",
+    "configuration-lock.json": "fb8f8cc235dd3059507b2b2aeaffb4739b162646e96b503050ba199ab219e9e7",
+    "generations.jsonl": "db82e8705a9b069dc5cb564b1ac943725e35337db5dae9a9b9ddd93acbe664b7",
+    "compare_dev.py": "04206d03ecbe3d6e4d0fe5b6bf8c90e3fb3631555a75a8613f4ff149344dc13c",
+    "generation-recheck.json": "fc80916647e4be0e18bd128e211716f43481bc3ff291a7872b28871d0813655b"
+  },
+  "fresh_generation_verification": {
+    "status": "passed_full_recorded_generation_recheck",
+    "local_date": "2026-11-25",
+    "cases": 404,
+    "outputs": 808,
+    "checks": [
+      "All six frozen summary artifact hashes match",
+      "Configuration lock, adapter fingerprint, sources and prompt hashes match",
+      "All 404 prompts match frozen dev IDs, metadata and token-prefix boundaries",
+      "All 808 recorded token sequences decode to the recorded raw text",
+      "EOS, length cap, repeated eight-grams and unmapped token diagnostics match",
+      "All 110 native outputs rechecked with each input-bound frozen JSON Schema",
+      "Every reconstructed pair and overall/source/profile aggregate matches",
+      "Final event confirms complete coverage and unchanged Harness receipt"
+    ],
+    "new_model_calls": 0
+  }
+}

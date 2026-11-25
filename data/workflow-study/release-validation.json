@@ -1,0 +1,389 @@
+{
+  "id": "workflow-study-release-2026-11-02",
+  "date": "2026-11-02",
+  "timezone": "America/Halifax",
+  "type": "publication_validation_not_model_experiment",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "source_records_unchanged",
+      "passed": true,
+      "detail": 19
+    },
+    {
+      "name": "bounded_evidence_review_passed",
+      "passed": true,
+      "detail": 206
+    },
+    {
+      "name": "identical_export_evidence.json",
+      "passed": true,
+      "detail": "5c2adc7958c7d3ca8058fcf83a61d1a65a0b40be3b84a4de165bb91664d75e7d"
+    },
+    {
+      "name": "review_hash_evidence.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "identical_export_scored-rows.json",
+      "passed": true,
+      "detail": "69894dc11a2f5dc976e960dc6e3942954b58b6bbb87b0c7cc9e84e266ab38062"
+    },
+    {
+      "name": "review_hash_scored-rows.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "versions_have_full_fixed_denominators",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "save_counts",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "mechanical_counts",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "all_36_unique_scored_rows",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "completion_failure_cross_tab",
+      "passed": true,
+      "detail": "{(False, True): 9, (True, False): 11, (False, False): 10}"
+    },
+    {
+      "name": "completion_saved_partition",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "saved_mechanical_failures",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "semantic_failure_counts",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "five_case_reader",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "91_visible_messages",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "visible_messages_are_allowlisted",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "no_local_paths_in_public_evidence",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "no_hidden_input_or_reasoning_fields",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "e2_remains_unrun_and_paused",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "unique_html_ids",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "required_sections",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "result_numbers_visible",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "theoretical_limits_visible",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "links_and_assets_exist",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "home_and_experiment_directory_link",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "all_other_historical_site_files_unchanged",
+      "passed": true,
+      "detail": {
+        "checked": 439,
+        "altered": []
+      }
+    },
+    {
+      "name": "interactive_and_json_data_agree",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "site_registry_json_js_agree",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "new_study_registered",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "javascript_syntax",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "browser_qa": {
+    "status": "passed",
+    "checks": [
+      {
+        "name": "initial case renders",
+        "passed": true,
+        "details": "Saved successfully, but graded the answer incorrectly"
+      },
+      {
+        "name": "case W04__A__r1",
+        "passed": true,
+        "details": {
+          "messages": 6
+        }
+      },
+      {
+        "name": "conversation opens W04__A__r1",
+        "passed": true
+      },
+      {
+        "name": "case W03__C__r1",
+        "passed": true,
+        "details": {
+          "messages": 28
+        }
+      },
+      {
+        "name": "conversation opens W03__C__r1",
+        "passed": true
+      },
+      {
+        "name": "case W06__C__r2",
+        "passed": true,
+        "details": {
+          "messages": 14
+        }
+      },
+      {
+        "name": "conversation opens W06__C__r2",
+        "passed": true
+      },
+      {
+        "name": "case W04__B__r1",
+        "passed": true,
+        "details": {
+          "messages": 14
+        }
+      },
+      {
+        "name": "conversation opens W04__B__r1",
+        "passed": true
+      },
+      {
+        "name": "case W03__C__r2",
+        "passed": true,
+        "details": {
+          "messages": 29
+        }
+      },
+      {
+        "name": "conversation opens W03__C__r2",
+        "passed": true
+      },
+      {
+        "name": "all selected conversations complete",
+        "passed": true,
+        "details": 91
+      },
+      {
+        "name": "filter all",
+        "passed": true,
+        "details": 36
+      },
+      {
+        "name": "filter completed",
+        "passed": true,
+        "details": 30
+      },
+      {
+        "name": "filter paused",
+        "passed": true,
+        "details": 6
+      },
+      {
+        "name": "filter semantic_only",
+        "passed": true,
+        "details": 11
+      },
+      {
+        "name": "filter mechanical_only",
+        "passed": true,
+        "details": 9
+      },
+      {
+        "name": "filter both",
+        "passed": true,
+        "details": 10
+      },
+      {
+        "name": "theme toggles",
+        "passed": true
+      },
+      {
+        "name": "no page overflow 1365",
+        "passed": true,
+        "details": {
+          "viewport": 1365,
+          "document": 1350
+        }
+      },
+      {
+        "name": "no page overflow 768",
+        "passed": true,
+        "details": {
+          "viewport": 768,
+          "document": 753
+        }
+      },
+      {
+        "name": "no page overflow 390",
+        "passed": true,
+        "details": {
+          "viewport": 390,
+          "document": 375
+        }
+      },
+      {
+        "name": "no page overflow 320",
+        "passed": true,
+        "details": {
+          "viewport": 320,
+          "document": 305
+        }
+      },
+      {
+        "name": "no JavaScript errors",
+        "passed": true,
+        "details": []
+      },
+      {
+        "name": "directory study link",
+        "passed": true
+      },
+      {
+        "name": "case selection by keyboard",
+        "passed": true
+      },
+      {
+        "name": "E2 section navigation",
+        "passed": true,
+        "details": "0/12\nFormal automatic compilations\n0/144\nFormal dialogue assignments run\n\nPaused Reference review is model-assisted. Simulator acceptance and the final runtime are not complete."
+      },
+      {
+        "name": "homepage study entry",
+        "passed": true
+      },
+      {
+        "name": "navigation JavaScript errors",
+        "passed": true,
+        "details": []
+      }
+    ],
+    "viewports": [
+      {
+        "viewport": 1365,
+        "document": 1350
+      },
+      {
+        "viewport": 768,
+        "document": 753
+      },
+      {
+        "viewport": 390,
+        "document": 375
+      },
+      {
+        "viewport": 320,
+        "document": 305
+      }
+    ],
+    "js_errors": [],
+    "visual_review": {
+      "status": "passed",
+      "inspected": [
+        "desktop-overview.png",
+        "desktop-case.png",
+        "mobile-overview.png",
+        "mobile-dark-case.png"
+      ],
+      "observations": "Main results, selected case evidence, navigation and light/dark text are readable. No page-level horizontal overflow at 320, 390, 768 or 1365 CSS pixels; wide tables scroll inside their containers."
+    },
+    "scope": "Local browser checks of this publication, not model quality tests.",
+    "initial_favicon_404_resolved": true
+  },
+  "new_experiment_model_calls": 0,
+  "rescoring_performed": false,
+  "frozen_evidence_changed": false,
+  "scientific_review_kind": "model_assisted_artifact_check_not_human_or_domain_expert_review",
+  "checked_source_inputs": 19,
+  "tested_artifacts": {
+    "workflow-study.html": "9e78ecd0e025f234e25a07b131da468cdbd57a3944b90a6d3305d1ef95ef11a3",
+    "build_workflow_study.py": "d798c4d91d1349fe1677282db0c13858f97bbf29dc155e9efaa4e0b5c2dcd895",
+    "validate_workflow_study.py": "8b66b862e59db3de83a8d8ecc42a7e767bbacd2f9861eba513ad79ef4f535124",
+    "reader-methods.html": "dfcbf51c589836d740d7d12d0bd7ba0feac7aee79ee1a1c6bf265e3cb73c17e5",
+    "overview-section.html": "1660a860666d26b18c4c754c91dca72e9b5ece5cbaa1380080c874dad6e6fa27",
+    "build_data.py": "637d717a14d0718eb71fdd118177aad81f4af2da7f4e0e16da7d32314aac766d",
+    "dist/workflow-study.html": "42823e46fc5f1fc9bd19b3a1d216e689a868eab6c7e46c477933fbcf8687c9c0",
+    "dist/workflow-study.js": "9f34c4a5379e1d29c56886496ee70705796f640240c693c361268b572081878e",
+    "dist/workflow-study.css": "66f88c6455089314c01737c2e864a12fe7c30a7454776902ff88772ba3557830",
+    "dist/workflow-study-data.js": "4c0dd32e1a481695029213d15e9b7df438a1513baace96ac0fd91e27adb37804",
+    "dist/data/workflow-study/evidence.json": "5c2adc7958c7d3ca8058fcf83a61d1a65a0b40be3b84a4de165bb91664d75e7d",
+    "dist/data/workflow-study/scored-rows.json": "69894dc11a2f5dc976e960dc6e3942954b58b6bbb87b0c7cc9e84e266ab38062",
+    "dist/index.html": "d2cecb9824bbccce786d6c40203d9df1007cd458a5cf51ae23c074a63d98c293",
+    "dist/data/research-record.json": "d54e412e03d7791750f340fb512038b0e4eef4792af72d8f25fcea6d9efb2ae7",
+    "dist/data.js": "565a15b79bacd98e1c35ef3c3b1394ee3a0bb0eb8d35678aab64b47c06921ee6"
+  },
+  "publication": "recorded_separately_after_deployment",
+  "limits": [
+    "Model-assisted review is not human expert validation.",
+    "Proposed remedies have no measured repair benefit in this publication.",
+    "E2 remains paused and unrun."
+  ]
+}

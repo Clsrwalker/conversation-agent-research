@@ -1,0 +1,38 @@
+{
+  "date": "2026-11-08",
+  "timezone": "America/Halifax",
+  "classification": "consolidated_website_validation_not_model_evaluation",
+  "status": "passed",
+  "local_data_manifest_sha256": "7800d9bc8809efcb8176c3061e1ed6c01d1d0d39e28702891c11c698a4ec6303",
+  "aggregate_sha256": "790bc2da824e714104b9c69b93cf6f4aa20e6c9b2f59ff973234cb257408d4a4",
+  "page_sha256": "4e11b291f20005fd1a5b56e099335cf3e85a910c7915fb0835fa561e45e79c9b",
+  "checks": {
+    "aggregate_matches_local_validation": true,
+    "all_split_and_token_counts_match": true,
+    "local_links_and_anchors_resolve": true,
+    "unique_page_ids": true,
+    "homepage_and_research_record_linked": true,
+    "previous_milestones_unchanged": true,
+    "no_transcript_jsonl_published": true,
+    "no_retained_target_at_least_50_characters_in_public_copy": true
+  },
+  "local_links_checked": [
+    "style.css",
+    "reader-ui.css",
+    "workflow-study.css",
+    "reader-ui.js?v=20261027",
+    "index.html#overview",
+    "index.html#overview",
+    "index.html#methods",
+    "index.html#harness",
+    "data/human-interview-data/aggregate.json",
+    "mission-foundation.html#context-method"
+  ],
+  "browser": {
+    "desktop": "Local page loaded and screenshot visually inspected; heading, metrics, methods and tables present in accessibility state.",
+    "mobile": "not separately browser-tested; responsive CSS provided"
+  },
+  "scope": "Aggregate methods/counts/limitations only; no source transcript or derived sample download.",
+  "model_calls": 0,
+  "training_performed": false
+}

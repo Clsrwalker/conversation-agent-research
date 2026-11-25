@@ -1,0 +1,25 @@
+{
+  "date": "2026-11-08",
+  "timezone": "America/Halifax",
+  "kind": "data_release_and_publication_validation",
+  "new_release_manifest_sha256": "1550c5feb365f457a783fa27f0f67d52e6534f4f71b48ea2007b7723dd2b61b9",
+  "counts_match_frozen_release": true,
+  "old_680_aggregate_content_unchanged": true,
+  "public_content": "Only aggregate counts, method, attribution, source links and limitations. No transcript rows, source utterance mappings, per-interview review reasons or identifiers copied.",
+  "desktop_viewport": [
+    1280,
+    900
+  ],
+  "mobile_viewport": [
+    390,
+    844
+  ],
+  "page_horizontal_overflow": false,
+  "tables_scroll_within_containers": true,
+  "new_page_sha256": "cf2ccb942f78c0621d694ec32e9a2887e4b3f2e65e6df71ebe6a8483cb85325d",
+  "aggregate_sha256": "00e08b60638fd641dc0429946bb6fbfe92f0bd2a63fbdba2fe6dad8c0eb0872d",
+  "local_release_frozen_code_rebuild": "5 JSONL files byte-identical; all source/prefix/split checks passed",
+  "new_model_calls": 0,
+  "new_training": false,
+  "internal_links_and_anchors_verified": 12
+}

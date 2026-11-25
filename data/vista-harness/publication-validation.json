@@ -1,0 +1,26 @@
+{
+  "date": "2026-11-08",
+  "timezone": "America/Halifax",
+  "kind": "consolidated_website_validation",
+  "baseline_manifest_sha256": "c93aa4c192f99f12fe89e2d0b1193e826c41c02f6e1af20ca29fb3ff7521331e",
+  "local_counts_match": true,
+  "aggregate_byte_identical": true,
+  "new_page_and_home_links_checked": 90,
+  "desktop_viewport": [
+    1440,
+    1000
+  ],
+  "mobile_viewport": [
+    390,
+    844
+  ],
+  "overflow": false,
+  "six_process_steps": true,
+  "details_expand": true,
+  "historical_evidence_preserved": true,
+  "model_calls": 0,
+  "training": false,
+  "verification_limit": "Engineering and local page checks only; no native-token-equivalence or interviewing-quality claim.",
+  "page_sha256": "b23fc994e9d66c7b2b36d97b9f3919402de99eb441074eda7d79ad5d40ccf423",
+  "aggregate_sha256": "e4965f2c519bff8aaf301735a60da259932567e6ff031b47a96e54480a177b0b"
+}

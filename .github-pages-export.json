@@ -45,8 +45,8 @@
     },
     {
       "path": "data.js",
-      "sha256": "60ea5b90df8ce2a827d248da52773453199921b918e37737be7cfa9a1f75a2d9",
-      "bytes": 201933
+      "sha256": "c4a72e68ed4a82fa558846fb28e8037740cf320abbcf1fe7cb2b0ab1f57b993c",
+      "bytes": 208896
     },
     {
       "path": "data/analyze_harness_latency.py",
@@ -184,6 +184,21 @@
       "bytes": 44243
     },
     {
+      "path": "data/harness-failure-audit/audit.json",
+      "sha256": "bcb9b6b54d39239d29cd879a607dd0821f1f3db4b4c895e8d62415860c7c0822",
+      "bytes": 13793
+    },
+    {
+      "path": "data/harness-failure-audit/export.json",
+      "sha256": "2206953af0c7ccf8ac9fcb67f4e96e6009efc6675b58c896708509c7c5aea2c2",
+      "bytes": 329
+    },
+    {
+      "path": "data/harness-failure-audit/release-validation.json",
+      "sha256": "00cd503ac432ff1c3223ce0cb212e49557ddce995cbb0c8d92fc50f315be587c",
+      "bytes": 4488
+    },
+    {
       "path": "data/harness-latency-audit.json",
       "sha256": "1c4f0905b5f5614bad058f9a703bc1e9da2ac906f03599865785adab5f8595bf",
       "bytes": 65637
@@ -212,6 +227,16 @@
       "path": "data/harness-run-lab-validation.json",
       "sha256": "ebea99200a66ec95df008248499ef12b05c687548091f1eeef620373cb938ece",
       "bytes": 22381
+    },
+    {
+      "path": "data/human-interview-data/aggregate.json",
+      "sha256": "790bc2da824e714104b9c69b93cf6f4aa20e6c9b2f59ff973234cb257408d4a4",
+      "bytes": 6213
+    },
+    {
+      "path": "data/human-interview-data/release-validation.json",
+      "sha256": "29b8fcc351746932629f8868bdc776e07b66fa431b8bca1eafcc838e8e3fa326",
+      "bytes": 1576
     },
     {
       "path": "data/intent-role-diagnostics-validation.json",
@@ -399,9 +424,69 @@
       "bytes": 1798
     },
     {
+      "path": "data/interview-expansion/aggregate.json",
+      "sha256": "00e08b60638fd641dc0429946bb6fbfe92f0bd2a63fbdba2fe6dad8c0eb0872d",
+      "bytes": 4603
+    },
+    {
+      "path": "data/interview-expansion/publication-validation.json",
+      "sha256": "42cbd2b0d9655158a1fe769f5116263fbd2dec34d2716482965d25c74c101807",
+      "bytes": 1076
+    },
+    {
+      "path": "data/interview-training/publication-validation.json",
+      "sha256": "d20b49fee255d3cab6fead49a62b8863d7512e9ab94ebae9bebe5d46b24e9800",
+      "bytes": 1526
+    },
+    {
+      "path": "data/interview-training/summary.json",
+      "sha256": "07792ab8735c919a65cfc35655c57a373d1e6dd326e2ac5014ee23d52297760c",
+      "bytes": 29248
+    },
+    {
       "path": "data/langgraph-studio-validation.json",
       "sha256": "67d94701eb9756af7935e922d7a86293c3a6a02cdaf100712f40799a7eb7a203",
       "bytes": 6169
+    },
+    {
+      "path": "data/mission-foundation/evidence.json",
+      "sha256": "c18d66e9ba5d438d2faf13a2f4aaaf9c2953cd2c4343d13596eaae7a40a78137",
+      "bytes": 24561
+    },
+    {
+      "path": "data/mission-foundation/harness-context-evidence.json",
+      "sha256": "818d823e318fb24830533161bb17a525d70434f431abd9add0335a241108c21b",
+      "bytes": 17238
+    },
+    {
+      "path": "data/mission-foundation/harness-context-method-release-validation.json",
+      "sha256": "429479b9cded28d2c5c9cca28821e2bdec8f56747490508d6bc3cc194cbb4b66",
+      "bytes": 2483
+    },
+    {
+      "path": "data/mission-foundation/harness-context-method.json",
+      "sha256": "6cd266acb312153f9665dd5e69cf9a24f8a10ad5664cc4850ea812b633679b18",
+      "bytes": 14534
+    },
+    {
+      "path": "data/mission-foundation/harness-context-release-validation.json",
+      "sha256": "ad7563411f7e667c86ee270de6afc09145d410e10186fca8a622856f66676e5c",
+      "bytes": 1654
+    },
+    {
+      "path": "data/mission-foundation/release-validation.json",
+      "sha256": "2be0b826488ee0bbdff4cb55d42b86d52ef0c657081b22564397761a3c050d18",
+      "bytes": 1202
+    },
+    {
+      "path": "data/mission-foundation/review-evidence.json",
+      "sha256": "c500b56c6f5868f6ab9d8733278d0e39a25bfc91dac1531e3bafeaffda603f31",
+      "bytes": 32554
+    },
+    {
+      "path": "data/mission-foundation/review-release-validation.json",
+      "sha256": "95a40aaadf33e4f6cfb55185bb5649dfc639a9a19ca0b36c61317d25ee769769",
+      "bytes": 1237
     },
     {
       "path": "data/october-studies-tables.csv",
@@ -620,8 +705,8 @@
     },
     {
       "path": "data/research-record.json",
-      "sha256": "21648a4cfd91ce3144b7a9622f1fa2ac3d0fc33e5228ef1f9749639fcc83ca91",
-      "bytes": 296216
+      "sha256": "c6000c19b598d5fa028f6d6bea9bfd11df58c3b2c052f0fffc99a9e103351954",
+      "bytes": 304633
     },
     {
       "path": "data/results.csv",
@@ -2034,6 +2119,26 @@
       "bytes": 10461
     },
     {
+      "path": "data/vista-harness/aggregate.json",
+      "sha256": "e4965f2c519bff8aaf301735a60da259932567e6ff031b47a96e54480a177b0b",
+      "bytes": 4077
+    },
+    {
+      "path": "data/vista-harness/publication-validation.json",
+      "sha256": "a7964166844b2c7df0a4808628a852e858aa198550298e33e4623d1c39a6da06",
+      "bytes": 886
+    },
+    {
+      "path": "data/vista-live-study/aggregate.json",
+      "sha256": "c854c4f6b644bdf36392c85da7d46a2eeade5b43501609610485f1b1ab1e8406",
+      "bytes": 42785
+    },
+    {
+      "path": "data/vista-live-study/publication-validation.json",
+      "sha256": "d7d68604e9047e17bbccc20fd8c20c71159a36e590aacc1723814e8c77691ac6",
+      "bytes": 4925
+    },
+    {
       "path": "data/web-knowledge-diagnostics.json",
       "sha256": "2e46aca18e2de2949fc07cbfecd731163290fd2efc06cf99476a5f7ff487dc90",
       "bytes": 317356
@@ -2049,6 +2154,71 @@
       "bytes": 10160
     },
     {
+      "path": "data/weight-editing-baseline/evidence.json",
+      "sha256": "f086dab8509e5314a8af5cba5b6ed005dd12f00e579e49840f4e3f25c08b8115",
+      "bytes": 39223
+    },
+    {
+      "path": "data/weight-editing-baseline/release-validation.json",
+      "sha256": "a0f357b554e3ee38a4f366b2f908e4a2d63c72ee878ab5cf4b6217420c9e15a5",
+      "bytes": 2266
+    },
+    {
+      "path": "data/weight-editing-effect/dialogue-evidence.json",
+      "sha256": "576d1aa923c310615eb17f64d0b9c4e60b3c73df04baa45f4749509b43e4efad",
+      "bytes": 844
+    },
+    {
+      "path": "data/weight-editing-effect/dialogue-release-validation.json",
+      "sha256": "a3478932c88c45635485c3d59de46ac5c98fa41ffddcc1ce98cca6da94a4082d",
+      "bytes": 1104
+    },
+    {
+      "path": "data/weight-editing-effect/evidence.json",
+      "sha256": "2015d2fa7319927090416836ed744ab7d0c58be8296b2fcce96d40f0f00fcba6",
+      "bytes": 10254
+    },
+    {
+      "path": "data/weight-editing-effect/heldout-final-evidence.json",
+      "sha256": "0414d40a08a7fa636d4b5f01ff3070f6cd24923e48d22402c9f127307363dd1a",
+      "bytes": 3525
+    },
+    {
+      "path": "data/weight-editing-effect/heldout-final-release-validation.json",
+      "sha256": "f52b6b8d2a99c90fbbd065a0f45080918d2e6b0788b13fe6748c6973202a8038",
+      "bytes": 1248
+    },
+    {
+      "path": "data/weight-editing-effect/heldout-halfway-evidence.json",
+      "sha256": "c0f3762d4db58583507bcf7b4b36a2c327b8eba46ef1df5ad036caa78d17a36a",
+      "bytes": 7975
+    },
+    {
+      "path": "data/weight-editing-effect/heldout-halfway-release-validation.json",
+      "sha256": "90e1c63b6654b891164bc92da51615139a473d5944d2fe605f9e93788efe598b",
+      "bytes": 659
+    },
+    {
+      "path": "data/weight-editing-effect/heldout-interim-evidence.json",
+      "sha256": "042c5522626fc61515105917fc01777fcabd9a1ff9b8d6731cd0984d6c4e332f",
+      "bytes": 3701
+    },
+    {
+      "path": "data/weight-editing-effect/heldout-interim-release-validation.json",
+      "sha256": "fbccf828d782c7a5673af6758b33030aaf4f9e15fe166e3a99c96f150ad26b04",
+      "bytes": 706
+    },
+    {
+      "path": "data/weight-editing-effect/release-validation.json",
+      "sha256": "9a87ee3685b0b9201843e50ee8ba1dd315c7315176becf6fd6ea051c2aca57e7",
+      "bytes": 1745
+    },
+    {
+      "path": "data/weight-editing-effect/review-integrity-validation.json",
+      "sha256": "101f96619107603bc1c3d128a5ee8efe111d99a1d87f89b68cc2ec08f68bc72c",
+      "bytes": 677
+    },
+    {
       "path": "data/worker-ingress-diagnostics.json",
       "sha256": "fa4437f51eaf602795638bafc9becdca46109949b33f499e7e8cf428772426c5",
       "bytes": 8029
@@ -2057,6 +2227,21 @@
       "path": "data/worker-ingress-source.zip",
       "sha256": "59dc25296ee5a453606821dbd9d3e11bddaf4ed64918806146891fb84d68a5f0",
       "bytes": 10862
+    },
+    {
+      "path": "data/workflow-study/evidence.json",
+      "sha256": "5c2adc7958c7d3ca8058fcf83a61d1a65a0b40be3b84a4de165bb91664d75e7d",
+      "bytes": 85824
+    },
+    {
+      "path": "data/workflow-study/release-validation.json",
+      "sha256": "b71584a7e0d64717e062b426aebc297937a00ea4b788e38167a9c071bacaedc5",
+      "bytes": 10289
+    },
+    {
+      "path": "data/workflow-study/scored-rows.json",
+      "sha256": "69894dc11a2f5dc976e960dc6e3942954b58b6bbb87b0c7cc9e84e266ab38062",
+      "bytes": 22601
     },
     {
       "path": "data/workspace-organization-checks.json",
@@ -2099,6 +2284,16 @@
       "bytes": 9577
     },
     {
+      "path": "harness-context-methods.css",
+      "sha256": "846ca3a810c9fb13271dd880dd6e4ae3f54dc9fbb334aed10982d4c7c9a5f43a",
+      "bytes": 5876
+    },
+    {
+      "path": "harness-context-methods.js",
+      "sha256": "6ec5565bd04eeac8bae3ed54bfdd35ae146da0ace0e3415a3b915d59fbfa301d",
+      "bytes": 2011
+    },
+    {
       "path": "harness-data.js",
       "sha256": "952ce7ed4c3a8da76e03008cfdc5a2d5f79fcc54e65656bbbe4d8b0443451a24",
       "bytes": 44271
@@ -2114,14 +2309,19 @@
       "bytes": 15943
     },
     {
+      "path": "human-interview-data.html",
+      "sha256": "4e11b291f20005fd1a5b56e099335cf3e85a910c7915fb0835fa561e45e79c9b",
+      "bytes": 10723
+    },
+    {
       "path": "index.html",
-      "sha256": "96b95122a77f966d40f1f87b9fe72d96a5699dba6b8dd989454f079601af77ad",
-      "bytes": 61302
+      "sha256": "4118201c9b646b51906de96ccb5ddc56faaf3446ba5c05e1ca2e195acd1a478b",
+      "bytes": 77510
     },
     {
       "path": "intent-role-separation.html",
-      "sha256": "62861db72ca570f07b998a353621c6a71bfb0afc4fba16273655c8a368c27fa1",
-      "bytes": 68282
+      "sha256": "ec5157f670e14dc43c74c0c8fae2657280bc9288dcd3d441e96ba26320fb6f39",
+      "bytes": 76250
     },
     {
       "path": "intention-literature.css",
@@ -2134,9 +2334,24 @@
       "bytes": 19697
     },
     {
+      "path": "interview-expansion.html",
+      "sha256": "cf2ccb942f78c0621d694ec32e9a2887e4b3f2e65e6df71ebe6a8483cb85325d",
+      "bytes": 12519
+    },
+    {
+      "path": "interview-training.html",
+      "sha256": "673824c4901027a08ada7bb9a0fbdea034d403a761c9d305be81be9103760b43",
+      "bytes": 14235
+    },
+    {
       "path": "latency-data.js",
       "sha256": "77657680694a1619febe7bb7eca2d507bfb68408dcfad136653d275d83bf862a",
       "bytes": 44077
+    },
+    {
+      "path": "mission-foundation.html",
+      "sha256": "56f54fde20c32b67088dc37c54b326eda6478d09338ee0e47e4ca020a530ede7",
+      "bytes": 128657
     },
     {
       "path": "october-studies.css",
@@ -2212,6 +2427,56 @@
       "path": "tracker-reading.js",
       "sha256": "3412754e34276c6356b33823f1a66ad0eebba211df53fd877591ff802af4fef3",
       "bytes": 563
+    },
+    {
+      "path": "vista-harness.html",
+      "sha256": "96b06072d83f9c41992301b5384b39700bb06f29491000484f8e5da89814a3f0",
+      "bytes": 12458
+    },
+    {
+      "path": "vista-live-study.css",
+      "sha256": "8a3b6ac66098284176cfef7989bbbf20876f91176ff9f0a8ae99743c23d971a1",
+      "bytes": 4019
+    },
+    {
+      "path": "vista-live-study.html",
+      "sha256": "93a3674caa74eddb03cf2f68c4494b120b8b5e41694b4e9825d1db624f808fe1",
+      "bytes": 18693
+    },
+    {
+      "path": "vista-live-study.js",
+      "sha256": "387e99900c68d5d0a105d758df8c95c6bd53287e58492020f11ddb5e5eec622e",
+      "bytes": 4352
+    },
+    {
+      "path": "weight-editing-baseline.html",
+      "sha256": "87c5b8e5bf35a3143b4daf9b4539f7fab924a6a0f05d93a2e518af94809e0c9e",
+      "bytes": 35310
+    },
+    {
+      "path": "weight-editing-effect.html",
+      "sha256": "443a0474a88ff92bf8137e6785b94339e2d615601348560ddb9365352f5852ba",
+      "bytes": 13208
+    },
+    {
+      "path": "workflow-study-data.js",
+      "sha256": "4c0dd32e1a481695029213d15e9b7df438a1513baace96ac0fd91e27adb37804",
+      "bytes": 84910
+    },
+    {
+      "path": "workflow-study.css",
+      "sha256": "66f88c6455089314c01737c2e864a12fe7c30a7454776902ff88772ba3557830",
+      "bytes": 9257
+    },
+    {
+      "path": "workflow-study.html",
+      "sha256": "2465f238417332b88272fc109ce6cca9842ca233427b7513130d9a4932459f8c",
+      "bytes": 23859
+    },
+    {
+      "path": "workflow-study.js",
+      "sha256": "9f34c4a5379e1d29c56886496ee70705796f640240c693c361268b572081878e",
+      "bytes": 9076
     }
   ]
 }

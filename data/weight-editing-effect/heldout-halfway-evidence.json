@@ -1,0 +1,149 @@
+{
+  "kind": "held_out_dialogue_halfway",
+  "date": "2026-11-05",
+  "timezone": "America/Halifax",
+  "status": "partial",
+  "reviewed_tasks": 24,
+  "planned_tasks": 48,
+  "completed_families": 8,
+  "planned_families": 16,
+  "arms": {
+    "W0": {
+      "reviewed_episodes": 24,
+      "successes": 0,
+      "failures": 24,
+      "unknown_success": 0,
+      "known_total_tokens": 749320,
+      "unknown_cost_episodes": 0
+    },
+    "edit": {
+      "reviewed_episodes": 24,
+      "successes": 0,
+      "failures": 24,
+      "unknown_success": 0,
+      "known_total_tokens": 632189,
+      "unknown_cost_episodes": 0
+    },
+    "random": {
+      "reviewed_episodes": 24,
+      "successes": 0,
+      "failures": 24,
+      "unknown_success": 0,
+      "known_total_tokens": 719605,
+      "unknown_cost_episodes": 0
+    }
+  },
+  "execution_errors": {
+    "W0": 4,
+    "edit": 5,
+    "random": 3
+  },
+  "source_results_sha256": {
+    "dialogue-review-final-T-01-evidence_challenge": {
+      "original_result_sha256": "859d0a9e57fc1c90f01647d108f9477e2734bac6893da9613ccb68fde4968498",
+      "verified_result_sha256": "859d0a9e57fc1c90f01647d108f9477e2734bac6893da9613ccb68fde4968498"
+    },
+    "dialogue-review-final-T-01-execution_challenge": {
+      "original_result_sha256": "e5f53b37b0e3edcf5137ccd30cf0fe76010a57d78ba765b0c075e735ecb9b537",
+      "verified_result_sha256": "e5f53b37b0e3edcf5137ccd30cf0fe76010a57d78ba765b0c075e735ecb9b537"
+    },
+    "dialogue-review-final-T-01-ordinary": {
+      "original_result_sha256": "75735707e93cdbb7367c60cc9655ee90516903a781172a02e06cd0bd6632c025",
+      "verified_result_sha256": "75735707e93cdbb7367c60cc9655ee90516903a781172a02e06cd0bd6632c025"
+    },
+    "dialogue-review-final-T-02-evidence_challenge": {
+      "original_result_sha256": "60ffd554d15e50abbbc07160faf34fc60e7b8ba831b5caae38cbc24da91c7d48",
+      "verified_result_sha256": "60ffd554d15e50abbbc07160faf34fc60e7b8ba831b5caae38cbc24da91c7d48"
+    },
+    "dialogue-review-final-T-02-execution_challenge": {
+      "original_result_sha256": "7492fb4eecd793d289e87a90b7de37e243a2fecaec30f65270150f9fe45039c2",
+      "verified_result_sha256": "7492fb4eecd793d289e87a90b7de37e243a2fecaec30f65270150f9fe45039c2"
+    },
+    "dialogue-review-final-T-02-ordinary": {
+      "original_result_sha256": "665ad942208275d976f71b3bb809355df75b5b1146964d80b1bf134929ae394e",
+      "verified_result_sha256": "665ad942208275d976f71b3bb809355df75b5b1146964d80b1bf134929ae394e"
+    },
+    "dialogue-review-final-T-03-evidence_challenge": {
+      "original_result_sha256": "def6d63fef0bfff96012732fc449e294b62316c841236ff79b52805d4eeaea28",
+      "verified_result_sha256": "def6d63fef0bfff96012732fc449e294b62316c841236ff79b52805d4eeaea28"
+    },
+    "dialogue-review-final-T-03-execution_challenge": {
+      "original_result_sha256": "1ced433365c8e59187640e69ddef93e971960220db7dba86cbfe2e18cfda7c9d",
+      "verified_result_sha256": "1ced433365c8e59187640e69ddef93e971960220db7dba86cbfe2e18cfda7c9d"
+    },
+    "dialogue-review-final-T-03-ordinary": {
+      "original_result_sha256": "c3f4aa99cafc093af7632339555e5542c932a5c0db2a40faab87a30dece34cfa",
+      "verified_result_sha256": "c3f4aa99cafc093af7632339555e5542c932a5c0db2a40faab87a30dece34cfa"
+    },
+    "dialogue-review-final-T-04-evidence_challenge": {
+      "original_result_sha256": "40d6b64d0a53bb772dadecf91cdaaa1e8176c162a373776f2ecd5cf30b8993c5",
+      "verified_result_sha256": "40d6b64d0a53bb772dadecf91cdaaa1e8176c162a373776f2ecd5cf30b8993c5"
+    },
+    "dialogue-review-final-T-04-execution_challenge": {
+      "original_result_sha256": "348ba56cca24e51b11ea757ea0569e07c2fe7a4cc0596f8227ff75153db51acc",
+      "verified_result_sha256": "762baed7de473e16906395db9d2060ff9130a43acb7f9f0ebf48250e442a1bf6"
+    },
+    "dialogue-review-final-T-04-ordinary": {
+      "original_result_sha256": "75e75b5bdd9382973d2362bc516519a9e238c116cc14fcbc4da9110e6e9b4394",
+      "verified_result_sha256": "75e75b5bdd9382973d2362bc516519a9e238c116cc14fcbc4da9110e6e9b4394"
+    },
+    "dialogue-review-final-T-05-evidence_challenge": {
+      "original_result_sha256": "ee375bd9e80e4fcafafbd3df8ffca23a18a7e9f08f5e2d639b1581b4d144ccd0",
+      "verified_result_sha256": "ee375bd9e80e4fcafafbd3df8ffca23a18a7e9f08f5e2d639b1581b4d144ccd0"
+    },
+    "dialogue-review-final-T-05-execution_challenge": {
+      "original_result_sha256": "c6e66d98e2155f763c67475ad34335bea985302e37ccbcd96bc3fca7da9d1508",
+      "verified_result_sha256": "c6e66d98e2155f763c67475ad34335bea985302e37ccbcd96bc3fca7da9d1508"
+    },
+    "dialogue-review-final-T-05-ordinary": {
+      "original_result_sha256": "293c4c549aaab1004a2726e9a564078cea36dfb8fd901e4630f38f9fb11ce339",
+      "verified_result_sha256": "293c4c549aaab1004a2726e9a564078cea36dfb8fd901e4630f38f9fb11ce339"
+    },
+    "dialogue-review-final-T-06-evidence_challenge": {
+      "original_result_sha256": "a6aee8cae81a18472a2b0159e32c81d28a38e50a8833e77f9029edaf8b53021b",
+      "verified_result_sha256": "a6aee8cae81a18472a2b0159e32c81d28a38e50a8833e77f9029edaf8b53021b"
+    },
+    "dialogue-review-final-T-06-execution_challenge": {
+      "original_result_sha256": "7622b8986f0a1b9e513804579cba657450c632464ea989a41405fa7964841ce6",
+      "verified_result_sha256": "7622b8986f0a1b9e513804579cba657450c632464ea989a41405fa7964841ce6"
+    },
+    "dialogue-review-final-T-06-ordinary": {
+      "original_result_sha256": "fdee912ce6faa701a212379bbd2934154c3a37dfea6593bb680876cd42bb833d",
+      "verified_result_sha256": "fdee912ce6faa701a212379bbd2934154c3a37dfea6593bb680876cd42bb833d"
+    },
+    "dialogue-review-final-T-07-evidence_challenge": {
+      "original_result_sha256": "af997d500600ca7a9b625dfe86f82d5fa9601eb24ebda77aece4b6f0b0fcf301",
+      "verified_result_sha256": "af997d500600ca7a9b625dfe86f82d5fa9601eb24ebda77aece4b6f0b0fcf301"
+    },
+    "dialogue-review-final-T-07-execution_challenge": {
+      "original_result_sha256": "acc35431d5e9a73f06a5f5409d5b0792dd77fa193c0d34096b4708e7ced0bafa",
+      "verified_result_sha256": "acc35431d5e9a73f06a5f5409d5b0792dd77fa193c0d34096b4708e7ced0bafa"
+    },
+    "dialogue-review-final-T-07-ordinary": {
+      "original_result_sha256": "0121714bb990bb29b42f401f00f6a2fc08f83750c1af27a266dee399b9d04632",
+      "verified_result_sha256": "0121714bb990bb29b42f401f00f6a2fc08f83750c1af27a266dee399b9d04632"
+    },
+    "dialogue-review-final-T-08-evidence_challenge": {
+      "original_result_sha256": "f86dbd106861d7c028255c490da2a2d96860e71a0fb2e452a7ee79997a8e4734",
+      "verified_result_sha256": "f86dbd106861d7c028255c490da2a2d96860e71a0fb2e452a7ee79997a8e4734"
+    },
+    "dialogue-review-final-T-08-execution_challenge": {
+      "original_result_sha256": "9b81a0d396ee486692799737de61d642e6d3f20713cd6c59caaa26949bb83479",
+      "verified_result_sha256": "9b81a0d396ee486692799737de61d642e6d3f20713cd6c59caaa26949bb83479"
+    },
+    "dialogue-review-final-T-08-ordinary": {
+      "original_result_sha256": "2908203ef8c0942ee889d6ab950a38a6e062c11091a2334799f571b3ae44be5f",
+      "verified_result_sha256": "2908203ef8c0942ee889d6ab950a38a6e062c11091a2334799f571b3ae44be5f"
+    }
+  },
+  "source_aggregate_sha256": "c7555d7f637d3ca734f98d8bafae0611c530d0cc857722755d58b0903e867465",
+  "review_integrity_amendment_sha256": "91718e37a65afc10d211339e2edbced4a4d9876365ee61003ee9431afd0752db",
+  "limitations": [
+    "The other 24 held-out cases remain in progress; these are not final results.",
+    "Independent model reviews with adjudication are not human gold.",
+    "The three tasks per family are related.",
+    "Execution errors reflect malformed model calls and harness handling together.",
+    "One original second-review file was overwritten; a separately bound replacement reproduced the labels and costs.",
+    "Prior interrupted attempts, including one unknown cost, are excluded."
+  ]
+}

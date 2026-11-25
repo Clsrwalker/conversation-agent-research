@@ -1,0 +1,384 @@
+{
+  "schema_version": "harness-context-milestone-v1",
+  "title": "Compact task context with on-demand original history",
+  "date": "2026-11-06",
+  "timezone": "America/Halifax",
+  "classification": "Engineering feature milestone with two live capability demonstrations",
+  "summary": "The Actor now receives one task/progress view, complete recent exchanges and linked older evidence, and can request original history when needed. Two real model continuations demonstrate correction-aware answering and a model-selected read before an answer; authoritative evidence and resumable delivery remain intact.",
+  "implementation": [
+    {
+      "label": "One task view",
+      "detail": "Combine contract and current projection. Keep source coordinates and explicitly marked invalidated values; omit the full sources map and duplicate record table from compact Actor input."
+    },
+    {
+      "label": "Complete recent exchanges",
+      "detail": "Retain recent original user messages and their actual assistant questions and replies; emit selected raw roles once in chronological order."
+    },
+    {
+      "label": "Linked older evidence",
+      "detail": "Use current sources, prior revisions and dependency relationships to add older exchanges within a character budget. Expose omitted ranges; omission is not evidence of irrelevance."
+    },
+    {
+      "label": "Model-selected readback",
+      "detail": "Read user turn IDs, backward pages or literal case-sensitive matches under a per-user read limit. Readback does not write evidence or become a delivered assistant reply."
+    },
+    {
+      "label": "Same authority and recovery",
+      "detail": "Observer retains full history. The Evidence Store and Projector semantics stay unchanged. Persist context settings, read results and reply acknowledgments; legacy sessions retain full-context behavior."
+    }
+  ],
+  "defaults": {
+    "recent_exchanges": 3,
+    "evidence_chars": 6000,
+    "read_chars": 12000,
+    "max_history_reads": 2
+  },
+  "engineering": {
+    "passed": 110,
+    "total": 110,
+    "model_calls": 0,
+    "source_hashes": {
+      "mission_guided/__init__.py": "3dc1d19d9ce15e3b5fbdd5c2d7c321ca956945762c3225670545ebb9c9c885a9",
+      "mission_guided/__main__.py": "fe7d53b67fd6b823e281f81d3b74f0ef40e41ab35d39e4491e51e55076c4479b",
+      "mission_guided/compiler.py": "d6e3316853594be1ffbef59bde6a0fa31861f23988b874c83dd90a437867c817",
+      "mission_guided/context.py": "80871f8b565f63d2197c1374a0c1131f63b09661b027023740115aa9906aaca0",
+      "mission_guided/contracts.py": "e79b181b6b8d7c56ee986ad5644716df4ab509297f97916a2b3b198beed5f018",
+      "mission_guided/projector.py": "fcab656ef5ef3eade6be7fdaa86a5d4d534368cbb9c65bcdf465bcfff2e2544b",
+      "mission_guided/session.py": "2393e12e6052ddfbe64931cdee22f31a019de1a3c25502fd439985e85d021356",
+      "mission_guided/state.py": "6cfcc74328ef58cff869c99b149732438becc8f3829565df206f38a1e89c64c0",
+      "mission_guided/test_actor_memory.py": "2415a650efd334214fadab0d116401b0adce6bb5d595b698665112aad55771d4",
+      "mission_guided/test_cli_context.py": "5c69be06a7c8602b08c4336d8e5700720f05a74dbcaa13f8cdf0f8124446b709",
+      "mission_guided/test_compiler.py": "21dd9a32794bef9a1cb967ac1c325be01d91fbcf6ed7ba6478f4b9e1f7f1f2ae",
+      "mission_guided/test_context.py": "c4958c8c7835a3ecdcf1b4c17db8bf14940d10c8d4f6022a0f83404ec7f45127",
+      "mission_guided/test_context_integration.py": "f571b829b99b6ea6f26c9d5b2a3f0fb063efa90213cfd3e069c13d9712f4a467",
+      "mission_guided/test_delivery.py": "cae840aab19111f744360b756fe0e439c8f733cc537adc4e7177252e0d8b7d8e",
+      "mission_guided/test_review_regressions.py": "ca770b3e5729fefbbbab7c26663e9248c5f803c2f338b91ae976f198bd252b6b",
+      "mission_guided/test_session.py": "e539a30947ec70e8b3714a04a4ed30a58c91d89ed531ac4e2f55ad56f3de4d0c",
+      "mission_guided/test_state_projector.py": "08f07f76493276591faaac72d0c423b05cf8885df135f734ea236b193a769f02",
+      "mission_guided/test_transport.py": "e3953be7a8918c660e7457d8a0e7ca3034cfb12a9dee4767119c7d1f32f2b2ce",
+      "mission_guided/transport.py": "cf907f31bc02a76d97fce48518c296dd1213b3554c63e97ef7227e5e3052e9d3"
+    },
+    "core_unchanged": [
+      "compiler.py",
+      "contracts.py",
+      "state.py",
+      "projector.py",
+      "transport.py"
+    ]
+  },
+  "model": {
+    "name": "qwen3.5:9b",
+    "digest": "56671c2ab9385f9cfcb404638e32cd62d88e3501d44822208363c010179a3c90",
+    "context_window": 16384,
+    "output_tokens": 1400
+  },
+  "usage": {
+    "calls": 5,
+    "input_tokens": 8329,
+    "output_tokens": 183,
+    "total_tokens": 8512
+  },
+  "conditions": {
+    "prefix_user_turns_per_case": 5,
+    "live_user_turns_per_case": 1,
+    "compiler": "Authored structured mission; zero live compiler calls for these demonstrations.",
+    "review": "Assistant review of native requests, outputs, source hashes, receipts and exact offline replay; no human preference labels.",
+    "baseline_comparison": false
+  },
+  "cases": [
+    {
+      "id": "live-correction-01",
+      "title": "Correction plus a current explanation request",
+      "transcript": [
+        {
+          "role": "user",
+          "text": "Let's discuss my device.",
+          "turn_id": "u1",
+          "provenance": "authored_prefix"
+        },
+        {
+          "role": "assistant",
+          "text": "Has your own laptop failed in the last month?",
+          "turn_id": null,
+          "provenance": "authored_prefix"
+        },
+        {
+          "role": "user",
+          "text": "Yes. Restarting restored it.",
+          "turn_id": "u2",
+          "provenance": "authored_prefix"
+        },
+        {
+          "role": "assistant",
+          "text": "Thank you for explaining.",
+          "turn_id": null,
+          "provenance": "authored_prefix"
+        },
+        {
+          "role": "user",
+          "text": "I meant my colleague's laptop, not mine. My own laptop has not failed this month.",
+          "turn_id": "u3",
+          "provenance": "authored_prefix"
+        },
+        {
+          "role": "assistant",
+          "text": "Understood; we are discussing your own laptop.",
+          "turn_id": null,
+          "provenance": "authored_prefix"
+        },
+        {
+          "role": "user",
+          "text": "I'll answer briefly from now on.",
+          "turn_id": "u4",
+          "provenance": "authored_prefix"
+        },
+        {
+          "role": "assistant",
+          "text": "That's fine.",
+          "turn_id": null,
+          "provenance": "authored_prefix"
+        },
+        {
+          "role": "user",
+          "text": "Let's keep the rest concise.",
+          "turn_id": "u5",
+          "provenance": "authored_prefix"
+        },
+        {
+          "role": "assistant",
+          "text": "Of course.",
+          "turn_id": null,
+          "provenance": "authored_prefix"
+        },
+        {
+          "role": "user",
+          "text": "Before asking anything else, explain what you mean by failure. Then tell me whether I reported a failure of my own laptop.",
+          "turn_id": "u6",
+          "provenance": "authored_live_input"
+        },
+        {
+          "role": "assistant",
+          "text": "By 'failure' in this context, I mean any significant malfunction or breakdown that prevented your laptop from functioning as intended (e.g., hardware crash, software corruption, inability to boot). You have not reported such a failure for your own laptop; you only mentioned a colleague's laptop issue. Therefore, the answer is no.",
+          "turn_id": null,
+          "provenance": "actual_model_output"
+        }
+      ],
+      "live_actions": [
+        {
+          "stage": "observer",
+          "call": 1,
+          "output": {
+            "records": [
+              {
+                "requirement_id": "failure",
+                "answer_state": "answered",
+                "value": false,
+                "source": {
+                  "turn_id": "u3",
+                  "quote": "My own laptop has not failed this month."
+                }
+              }
+            ]
+          },
+          "input_tokens": 1263,
+          "output_tokens": 50,
+          "total_tokens": 1313
+        },
+        {
+          "stage": "actor",
+          "call": 1,
+          "output": {
+            "records": [],
+            "message": "By 'failure' in this context, I mean any significant malfunction or breakdown that prevented your laptop from functioning as intended (e.g., hardware crash, software corruption, inability to boot). You have not reported such a failure for your own laptop; you only mentioned a colleague's laptop issue. Therefore, the answer is no.",
+            "decision": "complete"
+          },
+          "input_tokens": 2090,
+          "output_tokens": 76,
+          "total_tokens": 2166
+        }
+      ],
+      "total_tokens": 3479,
+      "final_status": "completed",
+      "complete_eligible": true,
+      "verdict": "Demonstrated in this fixture: the reply first explains failure and then correctly uses the correction to distinguish the participant's own laptop from the colleague's. It does not ask another interview question or treat the invalidated recovery as a current obligation.",
+      "checks": {
+        "observer_full_native_history_verified": true,
+        "compact_actor_source_pointer_only_no_full_sources_or_duplicate_record_map": true,
+        "exact_resume_no_generation": true,
+        "recorded_output_replay_reproduces_requests_and_saved_session": true,
+        "question_short_answer_and_correction_preserved": true,
+        "own_laptop_failure_false": true,
+        "old_recovery_invalidated": true
+      },
+      "read_action": null,
+      "read_count": 0,
+      "limitation": "One reviewed continuation; the observer re-proposed unchanged u3 evidence. No population-level quality gain is measured."
+    },
+    {
+      "id": "live-history-read-01",
+      "title": "Read older text, then answer the current request",
+      "transcript": [
+        {
+          "role": "user",
+          "text": "My own laptop has not failed this month.",
+          "turn_id": "u1",
+          "provenance": "authored_prefix"
+        },
+        {
+          "role": "assistant",
+          "text": "Thank you.",
+          "turn_id": null,
+          "provenance": "authored_prefix"
+        },
+        {
+          "role": "user",
+          "text": "One unrelated note: I put the envelope inside the blue folder on the hallway shelf.",
+          "turn_id": "u2",
+          "provenance": "authored_prefix"
+        },
+        {
+          "role": "assistant",
+          "text": "Understood.",
+          "turn_id": null,
+          "provenance": "authored_prefix"
+        },
+        {
+          "role": "user",
+          "text": "I have a few minutes for this conversation.",
+          "turn_id": "u3",
+          "provenance": "authored_prefix"
+        },
+        {
+          "role": "assistant",
+          "text": "We can keep it brief.",
+          "turn_id": null,
+          "provenance": "authored_prefix"
+        },
+        {
+          "role": "user",
+          "text": "I'll answer briefly from now on.",
+          "turn_id": "u4",
+          "provenance": "authored_prefix"
+        },
+        {
+          "role": "assistant",
+          "text": "That's fine.",
+          "turn_id": null,
+          "provenance": "authored_prefix"
+        },
+        {
+          "role": "user",
+          "text": "Let's keep the rest concise.",
+          "turn_id": "u5",
+          "provenance": "authored_prefix"
+        },
+        {
+          "role": "assistant",
+          "text": "Of course.",
+          "turn_id": null,
+          "provenance": "authored_prefix"
+        },
+        {
+          "role": "user",
+          "text": "Earlier I told you where I put the envelope. Please repeat the exact location I gave, without asking another question.",
+          "turn_id": "u6",
+          "provenance": "authored_live_input"
+        },
+        {
+          "role": "assistant",
+          "text": "You placed the envelope inside the blue folder on the hallway shelf.",
+          "turn_id": null,
+          "provenance": "actual_model_output"
+        }
+      ],
+      "live_actions": [
+        {
+          "stage": "observer",
+          "call": 1,
+          "output": {
+            "records": []
+          },
+          "input_tokens": 1166,
+          "output_tokens": 6,
+          "total_tokens": 1172
+        },
+        {
+          "stage": "actor",
+          "call": 1,
+          "output": {
+            "decision": "read_history",
+            "request": {
+              "mode": "before",
+              "before_turn_id": null,
+              "limit": 8
+            }
+          },
+          "input_tokens": 1748,
+          "output_tokens": 23,
+          "total_tokens": 1771
+        },
+        {
+          "stage": "actor",
+          "call": 2,
+          "output": {
+            "records": [],
+            "message": "You placed the envelope inside the blue folder on the hallway shelf.",
+            "decision": "complete"
+          },
+          "input_tokens": 2062,
+          "output_tokens": 28,
+          "total_tokens": 2090
+        }
+      ],
+      "total_tokens": 5033,
+      "final_status": "completed",
+      "complete_eligible": true,
+      "verdict": "Demonstrated in this fixture: the actual model chooses a read_history action while the answer is absent from its initial request, receives the exact older u2 text, and answers the current location request without another question.",
+      "checks": {
+        "observer_full_native_history_verified": true,
+        "compact_actor_source_pointer_only_no_full_sources_or_duplicate_record_map": true,
+        "exact_resume_no_generation": true,
+        "recorded_output_replay_reproduces_requests_and_saved_session": true,
+        "initial_actor_location_absent": true,
+        "observer_location_present": true,
+        "readonly_full_state_equality_before_after_read": true
+      },
+      "read_action": {
+        "decision": "read_history",
+        "request": {
+          "mode": "before",
+          "before_turn_id": null,
+          "limit": 8
+        }
+      },
+      "read_count": 1,
+      "limitation": "The chosen before(null,8) action fetched all six currently available user exchanges in this small fixture; this demonstrates access, not efficient targeted retrieval."
+    }
+  ],
+  "limitations": [
+    "Each case has five authored/scripted prefix user turns and one real-model continuation; the prefix is not a live model dialogue or a human participant session.",
+    "The real inference is qwen3.5:9b on the pinned local digest. There is no baseline comparison or general assistance-quality, training, or cost-saving claim.",
+    "The history read is a broad backward page in this small case, not evidence of optimized search or retrieval precision.",
+    "No hard total-character or total-token guarantee follows from the context character targets: recent text is complete and an explicitly read first exchange may be oversized.",
+    "CLI display acknowledgments are recorded and replay-consistent; they are not proof that a human read the output.",
+    "Quoted text/type/source validation remains mechanical. The two observed responses were reviewed by an assistant, not a blinded human panel.",
+    "Observer still reads full history, so this change does not bound the whole pipeline's input cost.",
+    "Older uncommitted facts or intent can be omitted from the first Actor view. Automatic evidence links do not guarantee retention of all relevant semantics; the model must request history when needed.",
+    "There is no summarizer, embedding retriever, attention replacement or weight update. Whether the model chooses the right explanation, deferral, return or ending remains a policy research question."
+  ],
+  "next_step": "Freeze this harness for meeting-directed work: collect real interview decision points, calibrate human preferences, and only then study local preference learning and full-dialogue behavior.",
+  "artifact_hashes": {
+    "engineering-baseline.json": "fb1225eef9a514a99f6243b02ed0596daaff20eb1d3baec8100ffb184635c13b",
+    "engineering-integration-review.json": "1c69a57298328dc707a04794c564cbd50cb9f875b3d236a0e5ca4b3c8fc2beaa",
+    "engineering-final-audit.json": "dc41a0d8dbff989d7efe37935d76ea17338a3e91d651945be42d1f93fc796d3d",
+    "live-review.json": "18bf5b0e13e78e3977d54f863925a86f37d2ef1a4938bd54abb0cce8832e5b67",
+    "audit_live.py": "19177c78657be3bc97be4d7afc44da43ad3272b49c4a7fc97853e2b28ad29bc0",
+    "prepare_acceptance.py": "551b56486b0c5786805e5119b545ce939a6fb97fa7467b07d629f59a93d12716",
+    "live-correction-01/session.json": "26dfb1d455fda64abe3dd6e9e32da482edc2fc08e1564d2a865c1b338810aae9",
+    "live-correction-01/usage.json": "570712dae6dd67f1b65d22ebe70b4c8ef5403f3b196576bb8ca417c0ea9b4465",
+    "live-correction-01/source-manifest.json": "745b31bcf2183d464a6ac8366467b0b0c2bb4ceeb38cea11486d144e4b1cfb6c",
+    "live-history-read-01/session.json": "eafc182605d314920ce43efcb1c571e3dce17b05ea9971f63c4d538775d73fc6",
+    "live-history-read-01/usage.json": "76ba46d567add3aee05a99d65a3785bf633847fb9656c3f63a01d8e0770eae8c",
+    "live-history-read-01/source-manifest.json": "745b31bcf2183d464a6ac8366467b0b0c2bb4ceeb38cea11486d144e4b1cfb6c"
+  }
+}

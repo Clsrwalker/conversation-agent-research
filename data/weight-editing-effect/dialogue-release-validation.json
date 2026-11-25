@@ -1,0 +1,24 @@
+{
+  "kind": "full_dialogue_development_publication_validation",
+  "date": "2026-11-05",
+  "timezone": "America/Halifax",
+  "status": "passed",
+  "checks": {
+    "dialogue_counts_and_tokens_match_blind_review": true,
+    "website_and_evidence_match": true,
+    "paired_outcomes_and_execution_errors_reconciled": true,
+    "prior_study_and_evidence_retained": true,
+    "held_out_pending_disclosed": true,
+    "historical_evidence_points_to_current_dialogue_record": true
+  },
+  "artifacts": {
+    "review_result_sha256": "aa666899e719a972e2db935ee1a07c56c0136cd2c80365e2f246f011b137bc77",
+    "page_sha256": "aa9b1009e249ef48d9c97629e70861cbedbc89d32222d547f6ffdd036894d35f",
+    "dialogue_evidence_sha256": "576d1aa923c310615eb17f64d0b9c4e60b3c73df04baa45f4749509b43e4efad",
+    "single_decision_evidence_sha256": "2015d2fa7319927090416836ed744ab7d0c58be8296b2fcce96d40f0f00fcba6"
+  },
+  "limitations": [
+    "This release was checked against local files; no new browser visual inspection was performed.",
+    "Research scores are independent model review, not human gold."
+  ]
+}

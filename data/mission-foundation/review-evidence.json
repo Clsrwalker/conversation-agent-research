@@ -1,0 +1,942 @@
+{
+  "schema_version": "mission-foundation-review-v1",
+  "date": "2026-11-05",
+  "timezone": "America/Halifax",
+  "category": "Engineering feature validation and controlled development diagnostics",
+  "summary": "The observer now sees assistant context and saved replies can be redisplayed without inference. A controlled six-case diagnostic shows improved interpretation in specific cases, with unresolved source-ID and scope errors.",
+  "model": {
+    "model": "qwen3.5:9b",
+    "digest": "56671c2ab9385f9cfcb404638e32cd62d88e3501d44822208363c010179a3c90"
+  },
+  "engineering": {
+    "tests_total": 82,
+    "tests_passed": 82,
+    "checks": [
+      "Complete project suite: 82 offline tests passed; no model-quality implication.",
+      "Different assistant questions produce different observer inputs for the same short answer; assistant text remains non-citable.",
+      "Overlapping quotes are rejected; duplicate system-JSON conversation removed while user source text remains.",
+      "A saved reply survives interruption before return; redisplay does not repeat inference or evidence commit.",
+      "Four historical sessions preserve state/history, with legacy display status unknown.",
+      "Independent Observer and Actor generators share the CLI invocation budget and have separate call logs.",
+      "Actual offline CLI redisplay succeeded against an unavailable model endpoint with zero model calls."
+    ],
+    "display_limit": "Caller output acknowledgment is not human receipt. A crash after output but before acknowledgment persistence may cause a duplicate display; exactly-once external delivery is not established."
+  },
+  "input_checks": {
+    "yes_legacy_visibility_inputs_identical": true,
+    "yes_full_history_inputs_differ": true,
+    "all_paired_schemas_identical": true,
+    "all_legacy_inputs_have_no_assistant_message": true,
+    "all_new_inputs_include_assistant_message": true,
+    "review_targets_not_sent_as_context_fields": true
+  },
+  "paired": [
+    {
+      "id": "yes_failure",
+      "question": "Did your device fail during that incident?",
+      "user": "Yes.",
+      "expected": [
+        {
+          "requirement_id": "failure",
+          "answer_state": "answered",
+          "value": true
+        }
+      ],
+      "arms": [
+        {
+          "condition": "without_assistant_history",
+          "records": [
+            {
+              "requirement_id": "failure",
+              "answer_state": "answered",
+              "value": true,
+              "source": {
+                "turn_id": "u2",
+                "quote": "Yes."
+              }
+            }
+          ],
+          "native_accepted": false,
+          "error": {
+            "type": "ValueError",
+            "message": "Source turn was not delivered to the agent"
+          },
+          "review_note": "Proposed failure=true but cited nonexistent u2; rejected."
+        },
+        {
+          "condition": "with_assistant_history",
+          "records": [
+            {
+              "requirement_id": "failure",
+              "answer_state": "answered",
+              "value": true,
+              "source": {
+                "turn_id": "u2",
+                "quote": "Yes."
+              }
+            }
+          ],
+          "native_accepted": false,
+          "error": {
+            "type": "ValueError",
+            "message": "Source turn was not delivered to the agent"
+          },
+          "review_note": "Proposed the requested failure=true but still cited nonexistent u2; rejected."
+        }
+      ]
+    },
+    {
+      "id": "yes_replacement",
+      "question": "Did you replace the device during that incident?",
+      "user": "Yes.",
+      "expected": [
+        {
+          "requirement_id": "replacement",
+          "answer_state": "answered",
+          "value": true
+        }
+      ],
+      "arms": [
+        {
+          "condition": "without_assistant_history",
+          "records": [
+            {
+              "requirement_id": "failure",
+              "answer_state": "answered",
+              "value": true,
+              "source": {
+                "turn_id": "u2",
+                "quote": "Yes."
+              }
+            }
+          ],
+          "native_accepted": false,
+          "error": {
+            "type": "ValueError",
+            "message": "Source turn was not delivered to the agent"
+          },
+          "review_note": "Returned the same failure=true proposal as the other Yes case, with nonexistent u2; rejected."
+        },
+        {
+          "condition": "with_assistant_history",
+          "records": [
+            {
+              "requirement_id": "failure",
+              "answer_state": "answered",
+              "value": true,
+              "source": {
+                "turn_id": "u1",
+                "quote": "Yes."
+              }
+            },
+            {
+              "requirement_id": "replacement",
+              "answer_state": "answered",
+              "value": true,
+              "source": {
+                "turn_id": "u2",
+                "quote": "Yes."
+              }
+            }
+          ],
+          "native_accepted": false,
+          "error": {
+            "type": "ValueError",
+            "message": "Source turn was not delivered to the agent"
+          },
+          "review_note": "Added replacement=true but also unsupported failure=true, and cited nonexistent u2; the whole proposal was rejected."
+        }
+      ]
+    },
+    {
+      "id": "short_number",
+      "question": "How many people will attend in your group?",
+      "user": "Three.",
+      "expected": [
+        {
+          "requirement_id": "group_size",
+          "answer_state": "answered",
+          "value": 3
+        }
+      ],
+      "arms": [
+        {
+          "condition": "without_assistant_history",
+          "records": [
+            {
+              "requirement_id": "group_size",
+              "answer_state": "answered",
+              "value": 3,
+              "source": {
+                "turn_id": "u1",
+                "quote": "Three."
+              }
+            }
+          ],
+          "native_accepted": true,
+          "error": null,
+          "review_note": "Recorded group_size=3 with the valid u1 source."
+        },
+        {
+          "condition": "with_assistant_history",
+          "records": [
+            {
+              "requirement_id": "group_size",
+              "answer_state": "answered",
+              "value": 3,
+              "source": {
+                "turn_id": "u2",
+                "quote": "Three."
+              }
+            }
+          ],
+          "native_accepted": false,
+          "error": {
+            "type": "ValueError",
+            "message": "Source turn was not delivered to the agent"
+          },
+          "review_note": "Still mapped Three to group_size=3, but cited nonexistent u2; rejected."
+        }
+      ]
+    },
+    {
+      "id": "short_reordered_option",
+      "question": "Would you prefer in-person attendance, hybrid attendance, or online attendance?",
+      "user": "The second option.",
+      "expected": [
+        {
+          "requirement_id": "attendance",
+          "answer_state": "answered",
+          "value": "hybrid"
+        }
+      ],
+      "arms": [
+        {
+          "condition": "without_assistant_history",
+          "records": [],
+          "native_accepted": true,
+          "error": null,
+          "review_note": "Returned no records; the option was not resolved."
+        },
+        {
+          "condition": "with_assistant_history",
+          "records": [
+            {
+              "requirement_id": "attendance",
+              "answer_state": "answered",
+              "value": "hybrid",
+              "source": {
+                "turn_id": "u1",
+                "quote": "The second option."
+              }
+            }
+          ],
+          "native_accepted": true,
+          "error": null,
+          "review_note": "Resolved the assistant's second option to hybrid, with a valid user source."
+        }
+      ]
+    },
+    {
+      "id": "unknown_cause",
+      "question": "Do you know what caused the device failure?",
+      "user": "I don't know.",
+      "expected": [
+        {
+          "requirement_id": "root_cause",
+          "answer_state": "unknown",
+          "value": null
+        }
+      ],
+      "arms": [
+        {
+          "condition": "without_assistant_history",
+          "records": [
+            {
+              "requirement_id": "failure",
+              "answer_state": "unknown",
+              "value": null,
+              "source": {
+                "turn_id": "u1",
+                "quote": "I don't know."
+              }
+            },
+            {
+              "requirement_id": "replacement",
+              "answer_state": "unknown",
+              "value": null,
+              "source": {
+                "turn_id": "u1",
+                "quote": "I don't know."
+              }
+            },
+            {
+              "requirement_id": "group_size",
+              "answer_state": "unknown",
+              "value": null,
+              "source": {
+                "turn_id": "u1",
+                "quote": "I don't know."
+              }
+            },
+            {
+              "requirement_id": "attendance",
+              "answer_state": "unknown",
+              "value": null,
+              "source": {
+                "turn_id": "u1",
+                "quote": "I don't know."
+              }
+            },
+            {
+              "requirement_id": "root_cause",
+              "answer_state": "unknown",
+              "value": null,
+              "source": {
+                "turn_id": "u1",
+                "quote": "I don't know."
+              }
+            },
+            {
+              "requirement_id": "improvement",
+              "answer_state": "unknown",
+              "value": null,
+              "source": {
+                "turn_id": "u1",
+                "quote": "I don't know."
+              }
+            }
+          ],
+          "native_accepted": true,
+          "error": null,
+          "review_note": "Applied unknown to all six fields, exceeding the question's scope. Native completion eligibility became true; this checkpoint has no Actor and did not execute completion."
+        },
+        {
+          "condition": "with_assistant_history",
+          "records": [
+            {
+              "requirement_id": "failure",
+              "answer_state": "unknown",
+              "value": null,
+              "source": {
+                "turn_id": "u1",
+                "quote": "I don't know."
+              }
+            },
+            {
+              "requirement_id": "root_cause",
+              "answer_state": "unknown",
+              "value": null,
+              "source": {
+                "turn_id": "u1",
+                "quote": "I don't know."
+              }
+            }
+          ],
+          "native_accepted": true,
+          "error": null,
+          "review_note": "Recorded unknown for root_cause but also incorrectly for failure; accepted mechanically."
+        }
+      ]
+    },
+    {
+      "id": "refused_improvement",
+      "question": "What would you like improved about the device?",
+      "user": "I'd rather not say.",
+      "expected": [
+        {
+          "requirement_id": "improvement",
+          "answer_state": "refused",
+          "value": null
+        }
+      ],
+      "arms": [
+        {
+          "condition": "without_assistant_history",
+          "records": [
+            {
+              "requirement_id": "failure",
+              "answer_state": "refused",
+              "value": null,
+              "source": {
+                "turn_id": "u1",
+                "quote": "I'd rather not say."
+              }
+            },
+            {
+              "requirement_id": "replacement",
+              "answer_state": "refused",
+              "value": null,
+              "source": {
+                "turn_id": "u1",
+                "quote": "I'd rather not say."
+              }
+            },
+            {
+              "requirement_id": "group_size",
+              "answer_state": "refused",
+              "value": null,
+              "source": {
+                "turn_id": "u1",
+                "quote": "I'd rather not say."
+              }
+            },
+            {
+              "requirement_id": "attendance",
+              "answer_state": "refused",
+              "value": null,
+              "source": {
+                "turn_id": "u1",
+                "quote": "I'd rather not say."
+              }
+            },
+            {
+              "requirement_id": "root_cause",
+              "answer_state": "refused",
+              "value": null,
+              "source": {
+                "turn_id": "u1",
+                "quote": "I'd rather not say."
+              }
+            },
+            {
+              "requirement_id": "improvement",
+              "answer_state": "refused",
+              "value": null,
+              "source": {
+                "turn_id": "u1",
+                "quote": "I'd rather not say."
+              }
+            }
+          ],
+          "native_accepted": true,
+          "error": null,
+          "review_note": "Applied refusal to all six fields, exceeding the question's scope."
+        },
+        {
+          "condition": "with_assistant_history",
+          "records": [
+            {
+              "requirement_id": "improvement",
+              "answer_state": "refused",
+              "value": null,
+              "source": {
+                "turn_id": "u1",
+                "quote": "I'd rather not say."
+              }
+            }
+          ],
+          "native_accepted": true,
+          "error": null,
+          "review_note": "Recorded refused/null only for the requested improvement, with a valid user source."
+        }
+      ]
+    }
+  ],
+  "end_to_end": [
+    {
+      "id": "device_unknown_refusal",
+      "turns": [
+        {
+          "index": 1,
+          "user": "My laptop failed yesterday. Restarting restored it. What does root cause mean?",
+          "observations": [
+            {
+              "records": [
+                {
+                  "requirement_id": "failure",
+                  "answer_state": "answered",
+                  "value": true,
+                  "source": {
+                    "turn_id": "u1",
+                    "quote": "My laptop failed yesterday."
+                  }
+                },
+                {
+                  "requirement_id": "time",
+                  "answer_state": "answered",
+                  "value": "yesterday",
+                  "source": {
+                    "turn_id": "u1",
+                    "quote": "My laptop failed yesterday."
+                  }
+                },
+                {
+                  "requirement_id": "recovery",
+                  "answer_state": "answered",
+                  "value": "Restarting",
+                  "source": {
+                    "turn_id": "u1",
+                    "quote": "Restarting restored it."
+                  }
+                }
+              ]
+            }
+          ],
+          "reply": "'Root cause' refers to the underlying reason why your device stopped working. For example, if a software update caused the crash, that would be the root cause. If a specific app was running and crashed the system, that app might be the root cause.\n\nSince you haven't mentioned what specifically went wrong with your laptop yet, I'd like to know: do you remember why it failed?",
+          "decision": "respond",
+          "eligible": false,
+          "unresolved": [
+            "root_cause"
+          ],
+          "state": [
+            {
+              "id": "failure",
+              "applicability": "applicable",
+              "evidence_status": "answered",
+              "value": true,
+              "invalidated_by": []
+            },
+            {
+              "id": "time",
+              "applicability": "applicable",
+              "evidence_status": "answered",
+              "value": "yesterday",
+              "invalidated_by": []
+            },
+            {
+              "id": "recovery",
+              "applicability": "applicable",
+              "evidence_status": "answered",
+              "value": "Restarting",
+              "invalidated_by": []
+            },
+            {
+              "id": "root_cause",
+              "applicability": "applicable",
+              "evidence_status": "missing",
+              "value": null,
+              "invalidated_by": []
+            },
+            {
+              "id": "improvement",
+              "applicability": "applicable",
+              "evidence_status": "missing",
+              "value": null,
+              "invalidated_by": []
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "user": "I don't know the cause, and I don't want to suggest improvements.",
+          "observations": [
+            {
+              "records": [
+                {
+                  "requirement_id": "root_cause",
+                  "answer_state": "unknown",
+                  "value": null,
+                  "source": {
+                    "turn_id": "u2",
+                    "quote": "I don't know the cause, and I don't want to suggest improvements."
+                  }
+                },
+                {
+                  "requirement_id": "improvement",
+                  "answer_state": "refused",
+                  "value": null,
+                  "source": {
+                    "turn_id": "u2",
+                    "quote": "I don't know the cause, and I don't want to suggest improvements."
+                  }
+                }
+              ]
+            }
+          ],
+          "reply": "Understood. I've noted that you don't know the cause of the failure and prefer not to discuss improvements.\n\nIs there anything else you'd like to share about your laptop experience, or is there anything specific you need help with today?",
+          "decision": "complete",
+          "eligible": true,
+          "unresolved": [],
+          "state": [
+            {
+              "id": "failure",
+              "applicability": "applicable",
+              "evidence_status": "answered",
+              "value": true,
+              "invalidated_by": []
+            },
+            {
+              "id": "time",
+              "applicability": "applicable",
+              "evidence_status": "answered",
+              "value": "yesterday",
+              "invalidated_by": []
+            },
+            {
+              "id": "recovery",
+              "applicability": "applicable",
+              "evidence_status": "answered",
+              "value": "Restarting",
+              "invalidated_by": []
+            },
+            {
+              "id": "root_cause",
+              "applicability": "applicable",
+              "evidence_status": "unknown",
+              "value": null,
+              "invalidated_by": []
+            },
+            {
+              "id": "improvement",
+              "applicability": "applicable",
+              "evidence_status": "refused",
+              "value": null,
+              "invalidated_by": []
+            }
+          ]
+        }
+      ],
+      "final_status": "completed",
+      "final_eligible": true
+    },
+    {
+      "id": "event_correction",
+      "turns": [
+        {
+          "index": 1,
+          "user": "There are three of us. We will attend online using our laptops, and we do not need to borrow any workshop equipment.",
+          "observations": [
+            {
+              "records": [
+                {
+                  "requirement_id": "group_size",
+                  "answer_state": "answered",
+                  "value": 3,
+                  "source": {
+                    "turn_id": "u1",
+                    "quote": "There are three of us."
+                  }
+                },
+                {
+                  "requirement_id": "attendance",
+                  "answer_state": "answered",
+                  "value": "online",
+                  "source": {
+                    "turn_id": "u1",
+                    "quote": "We will attend online"
+                  }
+                },
+                {
+                  "requirement_id": "remote_setup",
+                  "answer_state": "answered",
+                  "value": "our laptops",
+                  "source": {
+                    "turn_id": "u1",
+                    "quote": "using our laptops"
+                  }
+                },
+                {
+                  "requirement_id": "equipment_needed",
+                  "answer_state": "answered",
+                  "value": false,
+                  "source": {
+                    "turn_id": "u1",
+                    "quote": "we do not need to borrow any workshop equipment."
+                  }
+                }
+              ]
+            }
+          ],
+          "reply": "Thanks for sharing that! I've noted that your group consists of three people, you'll be attending online using laptops, and no workshop equipment is needed.\n\nIs there anything else you'd like to add or clarify about your attendance preferences?",
+          "decision": "complete",
+          "eligible": true,
+          "unresolved": [],
+          "state": [
+            {
+              "id": "attendance",
+              "applicability": "applicable",
+              "evidence_status": "answered",
+              "value": "online",
+              "invalidated_by": []
+            },
+            {
+              "id": "group_size",
+              "applicability": "applicable",
+              "evidence_status": "answered",
+              "value": 3,
+              "invalidated_by": []
+            },
+            {
+              "id": "travel",
+              "applicability": "not_applicable",
+              "evidence_status": "missing",
+              "value": null,
+              "invalidated_by": []
+            },
+            {
+              "id": "remote_setup",
+              "applicability": "applicable",
+              "evidence_status": "answered",
+              "value": "our laptops",
+              "invalidated_by": []
+            },
+            {
+              "id": "equipment_needed",
+              "applicability": "applicable",
+              "evidence_status": "answered",
+              "value": false,
+              "invalidated_by": []
+            },
+            {
+              "id": "equipment_details",
+              "applicability": "not_applicable",
+              "evidence_status": "missing",
+              "value": null,
+              "invalidated_by": []
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "user": "We have changed our plan to attend in person. All three of us will take the bus. We will need to borrow two microscopes.",
+          "observations": [
+            {
+              "records": [
+                {
+                  "requirement_id": "attendance",
+                  "answer_state": "answered",
+                  "value": "in_person",
+                  "source": {
+                    "turn_id": "u2",
+                    "quote": "We have changed our plan to attend in person."
+                  }
+                },
+                {
+                  "requirement_id": "group_size",
+                  "answer_state": "answered",
+                  "value": 3,
+                  "source": {
+                    "turn_id": "u2",
+                    "quote": "All three of us will take the bus."
+                  }
+                },
+                {
+                  "requirement_id": "travel",
+                  "answer_state": "answered",
+                  "value": "the bus",
+                  "source": {
+                    "turn_id": "u2",
+                    "quote": "All three of us will take the bus."
+                  }
+                },
+                {
+                  "requirement_id": "equipment_needed",
+                  "answer_state": "answered",
+                  "value": true,
+                  "source": {
+                    "turn_id": "u2",
+                    "quote": "We will need to borrow two microscopes."
+                  }
+                },
+                {
+                  "requirement_id": "equipment_details",
+                  "answer_state": "answered",
+                  "value": "two microscopes",
+                  "source": {
+                    "turn_id": "u2",
+                    "quote": "We will need to borrow two microscopes."
+                  }
+                }
+              ]
+            }
+          ],
+          "reply": "Got it! So your group of three will now be attending in person, traveling by bus, and you'll need to borrow two microscopes. Is there anything else you'd like to add or clarify about your workshop attendance?",
+          "decision": "complete",
+          "eligible": true,
+          "unresolved": [],
+          "state": [
+            {
+              "id": "attendance",
+              "applicability": "applicable",
+              "evidence_status": "answered",
+              "value": "in_person",
+              "invalidated_by": []
+            },
+            {
+              "id": "group_size",
+              "applicability": "applicable",
+              "evidence_status": "answered",
+              "value": 3,
+              "invalidated_by": []
+            },
+            {
+              "id": "travel",
+              "applicability": "applicable",
+              "evidence_status": "answered",
+              "value": "the bus",
+              "invalidated_by": []
+            },
+            {
+              "id": "remote_setup",
+              "applicability": "not_applicable",
+              "evidence_status": "invalidated",
+              "value": null,
+              "invalidated_by": [
+                "attendance"
+              ]
+            },
+            {
+              "id": "equipment_needed",
+              "applicability": "applicable",
+              "evidence_status": "answered",
+              "value": true,
+              "invalidated_by": []
+            },
+            {
+              "id": "equipment_details",
+              "applicability": "applicable",
+              "evidence_status": "answered",
+              "value": "two microscopes",
+              "invalidated_by": []
+            }
+          ]
+        }
+      ],
+      "final_status": "completed",
+      "final_eligible": true
+    },
+    {
+      "id": "withdraw_incomplete",
+      "turns": [
+        {
+          "index": 1,
+          "user": "I do not want to answer any questions. Please stop the interview.",
+          "observations": [
+            {
+              "records": []
+            }
+          ],
+          "reply": "I understand you don't want to continue. I will stop the interview now.",
+          "decision": "withdraw",
+          "eligible": false,
+          "unresolved": [
+            "used",
+            "mode",
+            "collaboration",
+            "main_goal"
+          ],
+          "state": [
+            {
+              "id": "used",
+              "applicability": "applicable",
+              "evidence_status": "missing",
+              "value": null,
+              "invalidated_by": []
+            },
+            {
+              "id": "mode",
+              "applicability": "blocked",
+              "evidence_status": "missing",
+              "value": null,
+              "invalidated_by": []
+            },
+            {
+              "id": "collaboration",
+              "applicability": "blocked",
+              "evidence_status": "missing",
+              "value": null,
+              "invalidated_by": []
+            },
+            {
+              "id": "main_goal",
+              "applicability": "applicable",
+              "evidence_status": "missing",
+              "value": null,
+              "invalidated_by": []
+            },
+            {
+              "id": "switching",
+              "applicability": "blocked",
+              "evidence_status": "missing",
+              "value": null,
+              "invalidated_by": []
+            }
+          ]
+        }
+      ],
+      "final_status": "withdrawn",
+      "final_eligible": false
+    }
+  ],
+  "cost": {
+    "calls": 22,
+    "total_tokens": 33492,
+    "by_stage": {
+      "observer_checkpoint": {
+        "calls": 12,
+        "input_tokens": 12688,
+        "output_tokens": 968,
+        "wall_seconds": 18.61,
+        "total_tokens": 13656
+      },
+      "observer": {
+        "calls": 5,
+        "input_tokens": 6363,
+        "output_tokens": 676,
+        "wall_seconds": 9.515,
+        "total_tokens": 7039
+      },
+      "actor": {
+        "calls": 5,
+        "input_tokens": 12494,
+        "output_tokens": 303,
+        "wall_seconds": 6.235,
+        "total_tokens": 12797
+      }
+    },
+    "scope": "This follow-up only: 12 paired Observer calls plus 5 Observer and 5 Actor calls in three end-to-end fixtures. All attempts retained.",
+    "latency_limit": "Measured sequential wall time includes cold-load and caching effects. It is not a latency-benefit estimate."
+  },
+  "mechanical": [
+    {
+      "id": "same_incident_reaffirmation",
+      "effect": {
+        "same_parent_value": true,
+        "new_source_turn": true,
+        "recovery_evidence_status": "invalidated",
+        "complete_eligible_before": true,
+        "complete_eligible_after": false
+      },
+      "actual_followup_questions": null
+    },
+    {
+      "id": "different_device_same_boolean",
+      "effect": {
+        "same_parent_value": true,
+        "new_source_turn": true,
+        "recovery_evidence_status": "invalidated",
+        "complete_eligible_before": true,
+        "complete_eligible_after": false
+      },
+      "actual_followup_questions": null
+    }
+  ],
+  "limitations": [
+    "Six authored checkpoints and three fixed-user scripts, not held-out natural interviews or a human study.",
+    "Paired arms keep the current prompt, schema, model digest, temperature and seed fixed; only assistant-history visibility changes. This is not a whole-version before/after comparison.",
+    "With history, three of the six paired proposals cite nonexistent u2 and are rejected; replacement also adds unsupported failure=true, and the cause case overextends unknown to failure.",
+    "The three end-to-end fixtures handled unknown/refusal, a branch correction and incomplete withdrawal in this run. Some complete actions still invite further conversation; no general policy-quality gain is claimed.",
+    "Accepted empty extraction is not an assurance of completeness, and there is no automatic same-turn re-observation path.",
+    "The conservative same-value/new-source invalidation rule is retained. Scripted diagnostics measure invalidation, not actual repeat-question burden.",
+    "No SFT, DPO or RL, no human preference labels, and no composite interview-quality score."
+  ],
+  "provenance": {
+    "review_type": "Two assistant reviews, neither human nor blinded; one reviewer authored the diagnostic fixtures and runner.",
+    "review_sha256": {
+      "review-code.json": "e6ac2e8e12d5b5c7dd4dc7744c8d58ffc294c15149a5c1367fec314725f292cc",
+      "review-live.json": "119bc50b2f60c3d438a46fb827f16b8757f258d66aff3715f904f3a710f05c55",
+      "review-live-independent.json": "abe733f6b0140191c51be4512e18f864de98dff5ba1aa1b6403e81caa2966ece"
+    },
+    "protocol_sha256": "f9d8c18204b6ea126211a8c477e8304e9ef2f4b79c6014e9419fc63f8f5af9e7",
+    "source_manifest_sha256": "1e62784e30d05781ce7169f38407c3b8d6642c7965b3315d062adc66445f4d67",
+    "prepared_manifest_sha256": "e45310441880e37c85232e8ff97f129c5012e1b68a58c5b29493e811bef774ee",
+    "unchanged_mechanical_modules": [
+      "contracts.py",
+      "compiler.py",
+      "state.py",
+      "projector.py",
+      "transport.py"
+    ]
+  }
+}

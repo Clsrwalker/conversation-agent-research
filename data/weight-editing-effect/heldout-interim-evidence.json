@@ -1,0 +1,71 @@
+{
+  "kind": "held_out_dialogue_interim",
+  "date": "2026-11-05",
+  "timezone": "America/Halifax",
+  "status": "partial",
+  "reviewed_tasks": 12,
+  "planned_tasks": 48,
+  "completed_families": 4,
+  "planned_families": 16,
+  "arms": {
+    "W0": {
+      "reviewed_episodes": 12,
+      "successes": 0,
+      "failures": 12,
+      "unknown_success": 0,
+      "known_total_tokens": 361384,
+      "unknown_cost_episodes": 0
+    },
+    "edit": {
+      "reviewed_episodes": 12,
+      "successes": 0,
+      "failures": 12,
+      "unknown_success": 0,
+      "known_total_tokens": 325585,
+      "unknown_cost_episodes": 0
+    },
+    "random": {
+      "reviewed_episodes": 12,
+      "successes": 0,
+      "failures": 12,
+      "unknown_success": 0,
+      "known_total_tokens": 389550,
+      "unknown_cost_episodes": 0
+    }
+  },
+  "execution_errors": {
+    "W0": 4,
+    "edit": 4,
+    "random": 3
+  },
+  "source_results_sha256": {
+    "dialogue-review-final-T-01-evidence_challenge": "859d0a9e57fc1c90f01647d108f9477e2734bac6893da9613ccb68fde4968498",
+    "dialogue-review-final-T-01-execution_challenge": "e5f53b37b0e3edcf5137ccd30cf0fe76010a57d78ba765b0c075e735ecb9b537",
+    "dialogue-review-final-T-01-ordinary": "75735707e93cdbb7367c60cc9655ee90516903a781172a02e06cd0bd6632c025",
+    "dialogue-review-final-T-02-evidence_challenge": "60ffd554d15e50abbbc07160faf34fc60e7b8ba831b5caae38cbc24da91c7d48",
+    "dialogue-review-final-T-02-execution_challenge": "7492fb4eecd793d289e87a90b7de37e243a2fecaec30f65270150f9fe45039c2",
+    "dialogue-review-final-T-02-ordinary": "665ad942208275d976f71b3bb809355df75b5b1146964d80b1bf134929ae394e",
+    "dialogue-review-final-T-03-evidence_challenge": "def6d63fef0bfff96012732fc449e294b62316c841236ff79b52805d4eeaea28",
+    "dialogue-review-final-T-03-execution_challenge": "1ced433365c8e59187640e69ddef93e971960220db7dba86cbfe2e18cfda7c9d",
+    "dialogue-review-final-T-03-ordinary": "c3f4aa99cafc093af7632339555e5542c932a5c0db2a40faab87a30dece34cfa",
+    "dialogue-review-final-T-04-evidence_challenge": "40d6b64d0a53bb772dadecf91cdaaa1e8176c162a373776f2ecd5cf30b8993c5",
+    "dialogue-review-final-T-04-execution_challenge": "348ba56cca24e51b11ea757ea0569e07c2fe7a4cc0596f8227ff75153db51acc",
+    "dialogue-review-final-T-04-ordinary": "75e75b5bdd9382973d2362bc516519a9e238c116cc14fcbc4da9110e6e9b4394"
+  },
+  "source_aggregate_sha256": "9853354b65d229175ea7fcf13246bd4b674534e31a48953c538d3c175393c202",
+  "limitations": [
+    "The other 36 held-out cases remain in progress; these are not final results.",
+    "Two independent model reviews with adjudication are not human gold.",
+    "The three tasks per family are related.",
+    "Execution errors reflect malformed model calls and harness handling together.",
+    "Prior interrupted attempts, including one unknown cost, are excluded.",
+    "One original second-review file was overwritten; a separately bound revalidation reproduced the scored outcomes and costs."
+  ],
+  "review_integrity_note": {
+    "issue": "One second-review file was accidentally overwritten after scoring; original review bytes are unavailable.",
+    "resolution": "The same second reviewer had independently reviewed the case again. The replacement and the first reviewer agreed; revalidation found identical success labels, error labels and costs to the original score.",
+    "original_result_sha256": "348ba56cca24e51b11ea757ea0569e07c2fe7a4cc0596f8227ff75153db51acc",
+    "revalidated_result_sha256": "762baed7de473e16906395db9d2060ff9130a43acb7f9f0ebf48250e442a1bf6",
+    "amendment_sha256": "91718e37a65afc10d211339e2edbced4a4d9876365ee61003ee9431afd0752db"
+  }
+}

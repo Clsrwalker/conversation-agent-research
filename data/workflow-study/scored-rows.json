@@ -1,0 +1,772 @@
+{
+  "schema_version": "workflow-public-scored-rows-1",
+  "version": "v4",
+  "assigned": 36,
+  "review_kind": "existing_model_assisted_not_human",
+  "source_refs": [
+    "e1-v4-scores",
+    "e1-v4-reviews"
+  ],
+  "note": "Frozen scored outcomes copied without rescoring. Semantic pass alone does not establish task completion. Paused runs have real_save=null because saving is not required.",
+  "rows": [
+    {
+      "run_id": "W01__A__r1",
+      "case_id": "W01",
+      "arm": "A",
+      "repeat": 1,
+      "expected_terminal": "completed",
+      "primary_pass": false,
+      "mechanical_pass": false,
+      "semantic_pass": true,
+      "real_save": false,
+      "mechanical_failed_checks": [
+        "required_answers_recorded",
+        "assessment_saved",
+        "assessment_snapshot_current",
+        "rating_revision_current",
+        "current_receipt_id_in_final_confirmation"
+      ],
+      "semantic_failed_checks": [],
+      "semantic_failure_labels": [],
+      "stop_reason": "user_simulator_end"
+    },
+    {
+      "run_id": "W01__A__r2",
+      "case_id": "W01",
+      "arm": "A",
+      "repeat": 2,
+      "expected_terminal": "completed",
+      "primary_pass": false,
+      "mechanical_pass": false,
+      "semantic_pass": true,
+      "real_save": false,
+      "mechanical_failed_checks": [
+        "required_answers_recorded",
+        "assessment_saved",
+        "assessment_snapshot_current",
+        "rating_revision_current",
+        "current_receipt_id_in_final_confirmation"
+      ],
+      "semantic_failed_checks": [],
+      "semantic_failure_labels": [],
+      "stop_reason": "user_simulator_end"
+    },
+    {
+      "run_id": "W01__B__r1",
+      "case_id": "W01",
+      "arm": "B",
+      "repeat": 1,
+      "expected_terminal": "completed",
+      "primary_pass": false,
+      "mechanical_pass": false,
+      "semantic_pass": true,
+      "real_save": false,
+      "mechanical_failed_checks": [
+        "required_answers_recorded",
+        "assessment_saved",
+        "assessment_snapshot_current",
+        "rating_revision_current",
+        "current_receipt_id_in_final_confirmation"
+      ],
+      "semantic_failed_checks": [],
+      "semantic_failure_labels": [],
+      "stop_reason": "user_simulator_end"
+    },
+    {
+      "run_id": "W01__B__r2",
+      "case_id": "W01",
+      "arm": "B",
+      "repeat": 2,
+      "expected_terminal": "completed",
+      "primary_pass": false,
+      "mechanical_pass": true,
+      "semantic_pass": false,
+      "real_save": true,
+      "mechanical_failed_checks": [],
+      "semantic_failed_checks": [
+        "answer_content_and_source_faithful",
+        "ratings_correct_for_actual_answers",
+        "assisted_flags_match_teaching_timing"
+      ],
+      "semantic_failure_labels": [
+        "Unsupported answer content or attribution",
+        "Wrong rating for the actual answer",
+        "Incorrect assistance flag after teaching"
+      ],
+      "stop_reason": "user_simulator_end"
+    },
+    {
+      "run_id": "W01__C__r1",
+      "case_id": "W01",
+      "arm": "C",
+      "repeat": 1,
+      "expected_terminal": "completed",
+      "primary_pass": false,
+      "mechanical_pass": false,
+      "semantic_pass": true,
+      "real_save": false,
+      "mechanical_failed_checks": [
+        "required_answers_recorded",
+        "assessment_saved",
+        "assessment_snapshot_current",
+        "rating_revision_current",
+        "current_receipt_id_in_final_confirmation"
+      ],
+      "semantic_failed_checks": [],
+      "semantic_failure_labels": [],
+      "stop_reason": "user_simulator_end"
+    },
+    {
+      "run_id": "W01__C__r2",
+      "case_id": "W01",
+      "arm": "C",
+      "repeat": 2,
+      "expected_terminal": "completed",
+      "primary_pass": false,
+      "mechanical_pass": false,
+      "semantic_pass": false,
+      "real_save": true,
+      "mechanical_failed_checks": [
+        "source_turn_exists_precedes_record_and_identifies_question"
+      ],
+      "semantic_failed_checks": [
+        "answer_content_and_source_faithful"
+      ],
+      "semantic_failure_labels": [
+        "Unsupported answer content or attribution"
+      ],
+      "stop_reason": "user_simulator_end"
+    },
+    {
+      "run_id": "W02__A__r1",
+      "case_id": "W02",
+      "arm": "A",
+      "repeat": 1,
+      "expected_terminal": "completed",
+      "primary_pass": false,
+      "mechanical_pass": true,
+      "semantic_pass": false,
+      "real_save": true,
+      "mechanical_failed_checks": [],
+      "semantic_failed_checks": [
+        "ratings_correct_for_actual_answers"
+      ],
+      "semantic_failure_labels": [
+        "Wrong rating for the actual answer"
+      ],
+      "stop_reason": "user_simulator_end"
+    },
+    {
+      "run_id": "W02__A__r2",
+      "case_id": "W02",
+      "arm": "A",
+      "repeat": 2,
+      "expected_terminal": "completed",
+      "primary_pass": false,
+      "mechanical_pass": true,
+      "semantic_pass": false,
+      "real_save": true,
+      "mechanical_failed_checks": [],
+      "semantic_failed_checks": [
+        "ratings_correct_for_actual_answers"
+      ],
+      "semantic_failure_labels": [
+        "Wrong rating for the actual answer"
+      ],
+      "stop_reason": "user_simulator_end"
+    },
+    {
+      "run_id": "W02__B__r1",
+      "case_id": "W02",
+      "arm": "B",
+      "repeat": 1,
+      "expected_terminal": "completed",
+      "primary_pass": false,
+      "mechanical_pass": true,
+      "semantic_pass": false,
+      "real_save": true,
+      "mechanical_failed_checks": [],
+      "semantic_failed_checks": [
+        "answer_content_and_source_faithful",
+        "ratings_correct_for_actual_answers"
+      ],
+      "semantic_failure_labels": [
+        "Unsupported answer content or attribution",
+        "Wrong rating for the actual answer"
+      ],
+      "stop_reason": "user_simulator_end"
+    },
+    {
+      "run_id": "W02__B__r2",
+      "case_id": "W02",
+      "arm": "B",
+      "repeat": 2,
+      "expected_terminal": "completed",
+      "primary_pass": false,
+      "mechanical_pass": true,
+      "semantic_pass": false,
+      "real_save": true,
+      "mechanical_failed_checks": [],
+      "semantic_failed_checks": [
+        "ratings_correct_for_actual_answers"
+      ],
+      "semantic_failure_labels": [
+        "Wrong rating for the actual answer"
+      ],
+      "stop_reason": "user_simulator_end"
+    },
+    {
+      "run_id": "W02__C__r1",
+      "case_id": "W02",
+      "arm": "C",
+      "repeat": 1,
+      "expected_terminal": "completed",
+      "primary_pass": false,
+      "mechanical_pass": true,
+      "semantic_pass": false,
+      "real_save": true,
+      "mechanical_failed_checks": [],
+      "semantic_failed_checks": [
+        "answer_content_and_source_faithful"
+      ],
+      "semantic_failure_labels": [
+        "Unsupported answer content or attribution"
+      ],
+      "stop_reason": "user_simulator_end"
+    },
+    {
+      "run_id": "W02__C__r2",
+      "case_id": "W02",
+      "arm": "C",
+      "repeat": 2,
+      "expected_terminal": "completed",
+      "primary_pass": false,
+      "mechanical_pass": true,
+      "semantic_pass": false,
+      "real_save": true,
+      "mechanical_failed_checks": [],
+      "semantic_failed_checks": [
+        "answer_content_and_source_faithful",
+        "ratings_correct_for_actual_answers"
+      ],
+      "semantic_failure_labels": [
+        "Unsupported answer content or attribution",
+        "Wrong rating for the actual answer"
+      ],
+      "stop_reason": "user_simulator_end"
+    },
+    {
+      "run_id": "W03__A__r1",
+      "case_id": "W03",
+      "arm": "A",
+      "repeat": 1,
+      "expected_terminal": "completed",
+      "primary_pass": false,
+      "mechanical_pass": false,
+      "semantic_pass": true,
+      "real_save": false,
+      "mechanical_failed_checks": [
+        "required_answers_recorded",
+        "correction_propagated_to_current_record_and_save",
+        "assessment_saved",
+        "assessment_snapshot_current",
+        "rating_revision_current",
+        "current_receipt_id_in_final_confirmation"
+      ],
+      "semantic_failed_checks": [],
+      "semantic_failure_labels": [],
+      "stop_reason": "user_simulator_end"
+    },
+    {
+      "run_id": "W03__A__r2",
+      "case_id": "W03",
+      "arm": "A",
+      "repeat": 2,
+      "expected_terminal": "completed",
+      "primary_pass": false,
+      "mechanical_pass": false,
+      "semantic_pass": true,
+      "real_save": false,
+      "mechanical_failed_checks": [
+        "required_answers_recorded",
+        "correction_propagated_to_current_record_and_save",
+        "assessment_saved",
+        "assessment_snapshot_current",
+        "rating_revision_current",
+        "current_receipt_id_in_final_confirmation"
+      ],
+      "semantic_failed_checks": [],
+      "semantic_failure_labels": [],
+      "stop_reason": "user_simulator_end"
+    },
+    {
+      "run_id": "W03__B__r1",
+      "case_id": "W03",
+      "arm": "B",
+      "repeat": 1,
+      "expected_terminal": "completed",
+      "primary_pass": false,
+      "mechanical_pass": false,
+      "semantic_pass": false,
+      "real_save": true,
+      "mechanical_failed_checks": [
+        "source_turn_exists_precedes_record_and_identifies_question"
+      ],
+      "semantic_failed_checks": [
+        "answer_content_and_source_faithful",
+        "ratings_correct_for_actual_answers",
+        "assisted_flags_match_teaching_timing"
+      ],
+      "semantic_failure_labels": [
+        "Unsupported answer content or attribution",
+        "Wrong rating for the actual answer",
+        "Incorrect assistance flag after teaching"
+      ],
+      "stop_reason": "user_simulator_end"
+    },
+    {
+      "run_id": "W03__B__r2",
+      "case_id": "W03",
+      "arm": "B",
+      "repeat": 2,
+      "expected_terminal": "completed",
+      "primary_pass": false,
+      "mechanical_pass": false,
+      "semantic_pass": false,
+      "real_save": true,
+      "mechanical_failed_checks": [
+        "source_turn_exists_precedes_record_and_identifies_question"
+      ],
+      "semantic_failed_checks": [
+        "answer_content_and_source_faithful",
+        "ratings_correct_for_actual_answers",
+        "assisted_flags_match_teaching_timing"
+      ],
+      "semantic_failure_labels": [
+        "Unsupported answer content or attribution",
+        "Wrong rating for the actual answer",
+        "Incorrect assistance flag after teaching"
+      ],
+      "stop_reason": "user_simulator_end"
+    },
+    {
+      "run_id": "W03__C__r1",
+      "case_id": "W03",
+      "arm": "C",
+      "repeat": 1,
+      "expected_terminal": "completed",
+      "primary_pass": false,
+      "mechanical_pass": true,
+      "semantic_pass": false,
+      "real_save": true,
+      "mechanical_failed_checks": [],
+      "semantic_failed_checks": [
+        "assisted_flags_match_teaching_timing"
+      ],
+      "semantic_failure_labels": [
+        "Incorrect assistance flag after teaching"
+      ],
+      "stop_reason": "user_simulator_end"
+    },
+    {
+      "run_id": "W03__C__r2",
+      "case_id": "W03",
+      "arm": "C",
+      "repeat": 2,
+      "expected_terminal": "completed",
+      "primary_pass": false,
+      "mechanical_pass": false,
+      "semantic_pass": false,
+      "real_save": false,
+      "mechanical_failed_checks": [
+        "required_answers_recorded",
+        "correction_propagated_to_current_record_and_save",
+        "assessment_saved",
+        "assessment_snapshot_current",
+        "rating_revision_current",
+        "current_receipt_id_in_final_confirmation"
+      ],
+      "semantic_failed_checks": [
+        "assisted_flags_match_teaching_timing"
+      ],
+      "semantic_failure_labels": [
+        "Incorrect assistance flag after teaching"
+      ],
+      "stop_reason": "turn_limit"
+    },
+    {
+      "run_id": "W04__A__r1",
+      "case_id": "W04",
+      "arm": "A",
+      "repeat": 1,
+      "expected_terminal": "completed",
+      "primary_pass": false,
+      "mechanical_pass": true,
+      "semantic_pass": false,
+      "real_save": true,
+      "mechanical_failed_checks": [],
+      "semantic_failed_checks": [
+        "answer_content_and_source_faithful",
+        "ratings_correct_for_actual_answers"
+      ],
+      "semantic_failure_labels": [
+        "Unsupported answer content or attribution",
+        "Wrong rating for the actual answer"
+      ],
+      "stop_reason": "user_simulator_end"
+    },
+    {
+      "run_id": "W04__A__r2",
+      "case_id": "W04",
+      "arm": "A",
+      "repeat": 2,
+      "expected_terminal": "completed",
+      "primary_pass": false,
+      "mechanical_pass": true,
+      "semantic_pass": false,
+      "real_save": true,
+      "mechanical_failed_checks": [],
+      "semantic_failed_checks": [
+        "answer_content_and_source_faithful",
+        "ratings_correct_for_actual_answers"
+      ],
+      "semantic_failure_labels": [
+        "Unsupported answer content or attribution",
+        "Wrong rating for the actual answer"
+      ],
+      "stop_reason": "user_simulator_end"
+    },
+    {
+      "run_id": "W04__B__r1",
+      "case_id": "W04",
+      "arm": "B",
+      "repeat": 1,
+      "expected_terminal": "completed",
+      "primary_pass": false,
+      "mechanical_pass": false,
+      "semantic_pass": false,
+      "real_save": false,
+      "mechanical_failed_checks": [
+        "required_answers_recorded",
+        "assessment_saved",
+        "assessment_snapshot_current",
+        "rating_revision_current",
+        "current_receipt_id_in_final_confirmation"
+      ],
+      "semantic_failed_checks": [
+        "answer_content_and_source_faithful",
+        "deferred_explanation_content_and_timing"
+      ],
+      "semantic_failure_labels": [
+        "Unsupported answer content or attribution",
+        "Requested explanation missing or mistimed"
+      ],
+      "stop_reason": "user_simulator_end"
+    },
+    {
+      "run_id": "W04__B__r2",
+      "case_id": "W04",
+      "arm": "B",
+      "repeat": 2,
+      "expected_terminal": "completed",
+      "primary_pass": false,
+      "mechanical_pass": false,
+      "semantic_pass": false,
+      "real_save": false,
+      "mechanical_failed_checks": [
+        "required_answers_recorded",
+        "assessment_saved",
+        "assessment_snapshot_current",
+        "rating_revision_current",
+        "current_receipt_id_in_final_confirmation"
+      ],
+      "semantic_failed_checks": [
+        "answer_content_and_source_faithful",
+        "deferred_explanation_content_and_timing"
+      ],
+      "semantic_failure_labels": [
+        "Unsupported answer content or attribution",
+        "Requested explanation missing or mistimed"
+      ],
+      "stop_reason": "user_simulator_end"
+    },
+    {
+      "run_id": "W04__C__r1",
+      "case_id": "W04",
+      "arm": "C",
+      "repeat": 1,
+      "expected_terminal": "completed",
+      "primary_pass": false,
+      "mechanical_pass": false,
+      "semantic_pass": false,
+      "real_save": false,
+      "mechanical_failed_checks": [
+        "required_answers_recorded",
+        "assessment_saved",
+        "assessment_snapshot_current",
+        "rating_revision_current",
+        "current_receipt_id_in_final_confirmation"
+      ],
+      "semantic_failed_checks": [
+        "deferred_explanation_content_and_timing"
+      ],
+      "semantic_failure_labels": [
+        "Requested explanation missing or mistimed"
+      ],
+      "stop_reason": "user_simulator_end"
+    },
+    {
+      "run_id": "W04__C__r2",
+      "case_id": "W04",
+      "arm": "C",
+      "repeat": 2,
+      "expected_terminal": "completed",
+      "primary_pass": false,
+      "mechanical_pass": false,
+      "semantic_pass": false,
+      "real_save": false,
+      "mechanical_failed_checks": [
+        "required_answers_recorded",
+        "assessment_saved",
+        "assessment_snapshot_current",
+        "rating_revision_current",
+        "current_receipt_id_in_final_confirmation"
+      ],
+      "semantic_failed_checks": [
+        "deferred_explanation_content_and_timing"
+      ],
+      "semantic_failure_labels": [
+        "Requested explanation missing or mistimed"
+      ],
+      "stop_reason": "user_simulator_end"
+    },
+    {
+      "run_id": "W05__A__r1",
+      "case_id": "W05",
+      "arm": "A",
+      "repeat": 1,
+      "expected_terminal": "paused",
+      "primary_pass": true,
+      "mechanical_pass": true,
+      "semantic_pass": true,
+      "real_save": null,
+      "mechanical_failed_checks": [],
+      "semantic_failed_checks": [],
+      "semantic_failure_labels": [],
+      "stop_reason": "user_simulator_end"
+    },
+    {
+      "run_id": "W05__A__r2",
+      "case_id": "W05",
+      "arm": "A",
+      "repeat": 2,
+      "expected_terminal": "paused",
+      "primary_pass": true,
+      "mechanical_pass": true,
+      "semantic_pass": true,
+      "real_save": null,
+      "mechanical_failed_checks": [],
+      "semantic_failed_checks": [],
+      "semantic_failure_labels": [],
+      "stop_reason": "user_simulator_end"
+    },
+    {
+      "run_id": "W05__B__r1",
+      "case_id": "W05",
+      "arm": "B",
+      "repeat": 1,
+      "expected_terminal": "paused",
+      "primary_pass": true,
+      "mechanical_pass": true,
+      "semantic_pass": true,
+      "real_save": null,
+      "mechanical_failed_checks": [],
+      "semantic_failed_checks": [],
+      "semantic_failure_labels": [],
+      "stop_reason": "user_simulator_end"
+    },
+    {
+      "run_id": "W05__B__r2",
+      "case_id": "W05",
+      "arm": "B",
+      "repeat": 2,
+      "expected_terminal": "paused",
+      "primary_pass": true,
+      "mechanical_pass": true,
+      "semantic_pass": true,
+      "real_save": null,
+      "mechanical_failed_checks": [],
+      "semantic_failed_checks": [],
+      "semantic_failure_labels": [],
+      "stop_reason": "user_simulator_end"
+    },
+    {
+      "run_id": "W05__C__r1",
+      "case_id": "W05",
+      "arm": "C",
+      "repeat": 1,
+      "expected_terminal": "paused",
+      "primary_pass": true,
+      "mechanical_pass": true,
+      "semantic_pass": true,
+      "real_save": null,
+      "mechanical_failed_checks": [],
+      "semantic_failed_checks": [],
+      "semantic_failure_labels": [],
+      "stop_reason": "user_simulator_end"
+    },
+    {
+      "run_id": "W05__C__r2",
+      "case_id": "W05",
+      "arm": "C",
+      "repeat": 2,
+      "expected_terminal": "paused",
+      "primary_pass": true,
+      "mechanical_pass": true,
+      "semantic_pass": true,
+      "real_save": null,
+      "mechanical_failed_checks": [],
+      "semantic_failed_checks": [],
+      "semantic_failure_labels": [],
+      "stop_reason": "user_simulator_end"
+    },
+    {
+      "run_id": "W06__A__r1",
+      "case_id": "W06",
+      "arm": "A",
+      "repeat": 1,
+      "expected_terminal": "completed",
+      "primary_pass": false,
+      "mechanical_pass": false,
+      "semantic_pass": true,
+      "real_save": false,
+      "mechanical_failed_checks": [
+        "specific_intervention_delivered",
+        "required_answers_recorded",
+        "assessment_saved",
+        "assessment_snapshot_current",
+        "rating_revision_current",
+        "current_receipt_id_in_final_confirmation",
+        "save_failure_recovered"
+      ],
+      "semantic_failed_checks": [],
+      "semantic_failure_labels": [],
+      "stop_reason": "user_simulator_end"
+    },
+    {
+      "run_id": "W06__A__r2",
+      "case_id": "W06",
+      "arm": "A",
+      "repeat": 2,
+      "expected_terminal": "completed",
+      "primary_pass": false,
+      "mechanical_pass": false,
+      "semantic_pass": true,
+      "real_save": false,
+      "mechanical_failed_checks": [
+        "specific_intervention_delivered",
+        "required_answers_recorded",
+        "assessment_saved",
+        "assessment_snapshot_current",
+        "rating_revision_current",
+        "current_receipt_id_in_final_confirmation",
+        "save_failure_recovered"
+      ],
+      "semantic_failed_checks": [],
+      "semantic_failure_labels": [],
+      "stop_reason": "user_simulator_end"
+    },
+    {
+      "run_id": "W06__B__r1",
+      "case_id": "W06",
+      "arm": "B",
+      "repeat": 1,
+      "expected_terminal": "completed",
+      "primary_pass": false,
+      "mechanical_pass": false,
+      "semantic_pass": true,
+      "real_save": false,
+      "mechanical_failed_checks": [
+        "specific_intervention_delivered",
+        "required_answers_recorded",
+        "assessment_saved",
+        "assessment_snapshot_current",
+        "rating_revision_current",
+        "current_receipt_id_in_final_confirmation",
+        "save_failure_recovered"
+      ],
+      "semantic_failed_checks": [],
+      "semantic_failure_labels": [],
+      "stop_reason": "user_simulator_end"
+    },
+    {
+      "run_id": "W06__B__r2",
+      "case_id": "W06",
+      "arm": "B",
+      "repeat": 2,
+      "expected_terminal": "completed",
+      "primary_pass": false,
+      "mechanical_pass": false,
+      "semantic_pass": false,
+      "real_save": true,
+      "mechanical_failed_checks": [
+        "one_retry_limit_respected"
+      ],
+      "semantic_failed_checks": [
+        "answer_content_and_source_faithful",
+        "ratings_correct_for_actual_answers",
+        "assisted_flags_match_teaching_timing"
+      ],
+      "semantic_failure_labels": [
+        "Unsupported answer content or attribution",
+        "Wrong rating for the actual answer",
+        "Incorrect assistance flag after teaching"
+      ],
+      "stop_reason": "user_simulator_end"
+    },
+    {
+      "run_id": "W06__C__r1",
+      "case_id": "W06",
+      "arm": "C",
+      "repeat": 1,
+      "expected_terminal": "completed",
+      "primary_pass": false,
+      "mechanical_pass": true,
+      "semantic_pass": false,
+      "real_save": true,
+      "mechanical_failed_checks": [],
+      "semantic_failed_checks": [
+        "answer_content_and_source_faithful",
+        "ratings_correct_for_actual_answers",
+        "assisted_flags_match_teaching_timing"
+      ],
+      "semantic_failure_labels": [
+        "Unsupported answer content or attribution",
+        "Wrong rating for the actual answer",
+        "Incorrect assistance flag after teaching"
+      ],
+      "stop_reason": "user_simulator_end"
+    },
+    {
+      "run_id": "W06__C__r2",
+      "case_id": "W06",
+      "arm": "C",
+      "repeat": 2,
+      "expected_terminal": "completed",
+      "primary_pass": false,
+      "mechanical_pass": false,
+      "semantic_pass": false,
+      "real_save": true,
+      "mechanical_failed_checks": [
+        "source_turn_exists_precedes_record_and_identifies_question"
+      ],
+      "semantic_failed_checks": [
+        "answer_content_and_source_faithful"
+      ],
+      "semantic_failure_labels": [
+        "Unsupported answer content or attribution"
+      ],
+      "stop_reason": "user_simulator_end"
+    }
+  ]
+}

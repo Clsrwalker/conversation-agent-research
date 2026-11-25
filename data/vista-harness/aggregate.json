@@ -1,0 +1,39 @@
+{
+  "id": "mission-harness-vista-v1-2026-11-08",
+  "date": "2026-11-08",
+  "timezone": "America/Halifax",
+  "kind": "engineering_feature_milestone_scripted_acceptance",
+  "manifest_sha256": "c93aa4c192f99f12fe89e2d0b1193e826c41c02f6e1af20ca29fb3ff7521331e",
+  "paper": "https://arxiv.org/html/2610.02200v1",
+  "official_source_revision": "30542e943d21922ad73f91e55888067dbec765bd",
+  "mechanisms": [
+    ["Evidence inspection", "Up to four labeled views by requirement/revision or user-turn span, with original question context and revision links.", "Read-only. Partial and omitted views are explicit; the tool does not decide what the evidence means."],
+    ["Session working notes", "The Actor may replace up to six notes with prior-turn references. Changes to associated evidence produce review flags.", "Non-authoritative. Notes do not commit facts, choose the next question or authorize completion."],
+    ["Whole-request planning", "Index Observer sources; tokenize all rendered messages; reserve schema, uncertainty and output capacity before sending.", "Overflow preserves the pending turn and stops automatic retry. Native token equivalence is not certified."]
+  ],
+  "walkthrough": [
+    ["Archive the first disclosure", "The authored user says a device failed, a restart helped, and asks for a warranty explanation. The scripted Observer records failure and recovery; the Actor stores a pending-request note."],
+    ["Receive a correction", "The next user turn says the failed device belonged to a colleague and the participant’s own device never failed. The Observer commits a new failure revision."],
+    ["Project consequences", "The old recovery record is invalidated by the changed prerequisite. The previous failure is superseded; the pending note is marked as needing evidence review."],
+    ["Choose a labeled inspection", "The scripted Actor requests the recovery evidence and its dependencies. The Harness returns the old bound failure, the new failure revision and original source context without modifying evidence."],
+    ["Keep the current request visible", "The Actor receives the inspection alongside recent role messages and the non-authoritative note. It returns an authored response addressing the explanation request and clears that note."],
+    ["Restore the same state", "Saving and replaying produce identical evidence, note state and next input. Completion eligibility remains a Projector result; it does not force the Actor to end the interview."]
+  ],
+  "validation": {
+    "offline_tests": 125, "failures": 0, "errors": 0,
+    "scripted_traces": 2, "scripted_inputs": 17,
+    "maximum_planned_request_tokens": 7195, "context_window": 16384, "output_reserve": 1400,
+    "byte_identical_trace_artifacts": 23, "frozen_files": 45, "unchanged_data_artifacts": 280,
+    "same_state_observer_prompt_tokens": {"legacy": 990, "vista": 993},
+    "model_calls": 0, "training_performed": false, "quality_gain_measured": false,
+    "native_token_equivalence_measured": false
+  },
+  "limitations": [
+    "No LLM behavior comparison, user study, human preference calibration or training was performed. Authored responses do not demonstrate autonomous inspection or useful notes.",
+    "The planner uses actual local HF tokenization of a reviewed renderer branch plus explicit reserves. Native Ollama token equivalence and truncation behavior have not been measured.",
+    "The Observer retains full history and can reach an explicit capacity failure. No automatic summary or semantic retriever is added; reserved template-token strings are rejected.",
+    "Provenance validates exact sources, not semantic truth. Offline tests of instruction-like notes establish software authority boundaries, not model prompt-injection resistance.",
+    "The release pins an existing Windows tokenizer runtime, not a standalone cross-platform image. Future live use must pass model and server preflight.",
+    "Data-to-Harness input reconstruction is a subsequent task. Missing human tool calls, historical Evidence State and working notes are not fabricated."
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "date": "2026-11-06",
+  "timezone": "America/Halifax",
+  "kind": "existing_milestone_method_process_editorial_expansion",
+  "new_model_calls": 0,
+  "runtime_changed": false,
+  "new_research_experiment": false,
+  "method_record_sha256": "6cd266acb312153f9665dd5e69cf9a24f8a10ad5664cc4850ea812b633679b18",
+  "method_copy_and_export_equal": true,
+  "previous_evidence_unchanged": {
+    "foundation": "c18d66e9ba5d438d2faf13a2f4aaaf9c2953cd2c4343d13596eaae7a40a78137",
+    "observer_review": "c500b56c6f5868f6ab9d8733278d0e39a25bfc91dac1531e3bafeaffda603f31",
+    "harness_context": "818d823e318fb24830533161bb17a525d70434f431abd9add0335a241108c21b"
+  },
+  "old_sections_byte_identical": true,
+  "browser": {
+    "date": "2026-11-06",
+    "timezone": "America/Halifax",
+    "kind": "method_page_browser_validation",
+    "new_model_calls": 0,
+    "http_status": 200,
+    "method_layers": 3,
+    "selection_steps": 5,
+    "walkthrough_steps": 6,
+    "all_stage_coverage_matches_record": true,
+    "omitted_raw_location_absent_at_first_actor": true,
+    "original_location_present_after_read": true,
+    "keyboard_arrows_home_end": true,
+    "no_javascript_all_stages_readable": true,
+    "desktop_overflow": false,
+    "mobile_overflow": false,
+    "homepage_method_and_process_links": true,
+    "old_paired_rows": 6,
+    "old_review_conversations": 3,
+    "old_original_conversations": 4,
+    "page_errors": []
+  },
+  "visual_review": [
+    "Method comparison and three responsibilities readable on desktop",
+    "Actual read request and recovered original visible on desktop",
+    "Mobile step controls and omitted-target coverage fit the viewport"
+  ],
+  "independent_content_review": {
+    "reviewer": "Codex child /root/foundation_runtime_audit",
+    "blocking_findings": 0,
+    "verified": [
+      "Seven source bindings match",
+      "Character accounting scope is explicit",
+      "Evidence-store revision is distinguished from record revision",
+      "First Actor omits u2; read stage contains it",
+      "History read is optional",
+      "Outbox is identified as pre-existing capability"
+    ]
+  },
+  "page_sha256": "c404bce41395814995689d1a5ae0e6085ac3ab729eafa9ae5e9f23627fdbc62d",
+  "assets_sha256": {
+    "harness-context-methods.css": "846ca3a810c9fb13271dd880dd6e4ae3f54dc9fbb334aed10982d4c7c9a5f43a",
+    "harness-context-methods.js": "6ec5565bd04eeac8bae3ed54bfdd35ae146da0ace0e3415a3b915d59fbfa301d"
+  }
+}

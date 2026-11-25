@@ -1,0 +1,82 @@
+{
+  "kind": "held_out_full_dialogue_weight_comparison",
+  "date": "2026-11-05",
+  "timezone": "America/Halifax",
+  "status": "completed_scored",
+  "tasks_per_arm": 48,
+  "families": 16,
+  "arms": {
+    "W0": {
+      "episodes": 48,
+      "successes": 0,
+      "unknown_successes": 0,
+      "known_tokens": 1386185,
+      "unknown_cost_episodes": 0
+    },
+    "edit": {
+      "episodes": 48,
+      "successes": 0,
+      "unknown_successes": 0,
+      "known_tokens": 1253612,
+      "unknown_cost_episodes": 0
+    },
+    "random": {
+      "episodes": 48,
+      "successes": 0,
+      "unknown_successes": 0,
+      "known_tokens": 1354687,
+      "unknown_cost_episodes": 0
+    }
+  },
+  "paired_success_difference": 0.0,
+  "edit_to_baseline_token_ratio": 0.9043612504824392,
+  "stop_reasons": {
+    "W0": {
+      "normal_end": 37,
+      "turn_limit": 1,
+      "receipt_error": 8,
+      "context_overflow": 2
+    },
+    "edit": {
+      "normal_end": 40,
+      "turn_limit": 0,
+      "receipt_error": 8,
+      "context_overflow": 0
+    },
+    "random": {
+      "normal_end": 39,
+      "turn_limit": 2,
+      "receipt_error": 5,
+      "context_overflow": 2
+    }
+  },
+  "adjudicated_disagreements": 38,
+  "source_result_sha256": "5683597a8e7dcd25b2f0743c6a51f20d1f0bb0fb78f4d4dbc13cf128be2b907c",
+  "closure_sha256": "9652fddd7fbe73867c0cec557db35c2c08e513adab7c38e6cad8f2238231b568",
+  "review_integrity_correction": "One original second-review file was overwritten. Separately bound revalidation using the same second reviewer independently reviewing again reproduced the original labels and costs. The original bytes are unavailable.",
+  "limitations": [
+    "All 48 cases use one fictional workflow and include three related tasks per family.",
+    "The assessment is independent model review with adjudication, not human gold.",
+    "Zero successes in all arms does not prove equal general ability or absence of any benefit.",
+    "Run costs exclude earlier interrupted attempts including one in-flight call of unknown cost.",
+    "Tool-call receipt errors and context overflows are system failures and cannot be attributed solely to weight changes.",
+    "A revalidation replaced one overwritten second-review file; the original bytes are unavailable.",
+    "An independent audit identified potential false-completion category boundary inconsistencies. Category counts are withheld for the full dataset; the affected trajectories remain unsuccessful under the full-task contract.",
+    "Any actual save counts are intermediate diagnostics, not proof that the saved assessment was current, correct or delivered."
+  ],
+  "scoring_context": "The frozen full-task contract includes requested conditions, evidence and confirmation. All 15 pause trajectories stopped subsequent operations but failed the full contract, mainly because existing persisted state was not explicitly reported. Some trajectories saved records.",
+  "false_completion_audit": {
+    "scope": "Nine originally flagged trajectories, not all 144 trajectories.",
+    "not_meeting_strict_definition": 6,
+    "meeting_strict_definition": 2,
+    "uncertain": 1,
+    "all_nine_full_tasks_failed": true,
+    "audit_sha256": "df6f4196c7a0cd6040c968ad392def9db86a122006c58ca6c48ffacd5481b501"
+  },
+  "independent_run_audit_sha256": "9929c8169c9e416a48d849859ad196d615ac4451849bbcba29357f1a71e1322c",
+  "intermediate_save_diagnostic": {
+    "W0": 19,
+    "edit": 26,
+    "random": 26
+  }
+}

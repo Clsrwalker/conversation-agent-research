@@ -1,0 +1,631 @@
+{
+  "id": "mission-foundation-2026-11-05",
+  "date": "2026-11-05",
+  "timezone": "America/Halifax",
+  "kind": "engineering_feature_milestone",
+  "title": "Mission-guided interview foundation",
+  "summary": "Typed questionnaires compile into source-bound information requirements; a deterministic projector derives progress from versioned evidence; the model chooses the next conversational move.",
+  "model": "Qwen3.5 9B via local Ollama 0.40.12 for the retained final demonstrations; earlier diagnostics also used Qwen2.5 14B.",
+  "validation": {
+    "tests_passed": 64,
+    "tests_total": 64,
+    "checks": [
+      {
+        "name": "Current production source matches all four final session snapshots",
+        "passed": true
+      },
+      {
+        "name": "All four session states and receipts replay exactly",
+        "passed": true
+      },
+      {
+        "name": "Three compiled missions preserve their explicit source contracts",
+        "passed": true
+      },
+      {
+        "name": "Live branch correction invalidates old remote-setup evidence",
+        "passed": true
+      },
+      {
+        "name": "Live withdrawal remains separate from eligible completion",
+        "passed": true
+      },
+      {
+        "name": "All model interpretations are semantically correct",
+        "passed": false
+      }
+    ],
+    "source_sha256": {
+      "compiler.py": "d6e3316853594be1ffbef59bde6a0fa31861f23988b874c83dd90a437867c817",
+      "contracts.py": "e79b181b6b8d7c56ee986ad5644716df4ab509297f97916a2b3b198beed5f018",
+      "projector.py": "fcab656ef5ef3eade6be7fdaa86a5d4d534368cbb9c65bcdf465bcfff2e2544b",
+      "session.py": "9a3cc251ec0d5a4f0af5b2a889843492ebb14f96e03f309c06603a5d0c9365cc",
+      "state.py": "6cfcc74328ef58cff869c99b149732438becc8f3829565df206f38a1e89c64c0",
+      "transport.py": "cf907f31bc02a76d97fce48518c296dd1213b3554c63e97ef7227e5e3052e9d3",
+      "__init__.py": "3dc1d19d9ce15e3b5fbdd5c2d7c321ca956945762c3225670545ebb9c9c885a9",
+      "__main__.py": "410a7abcf463973491ad2d3aabf193f0a1e3a73d2c71a000872b723cbfc1db85"
+    }
+  },
+  "capabilities": [
+    "Compile versioned questionnaire JSON into declarative information requirements while preserving explicit answer types, requiredness and dependencies.",
+    "Commit multiple source-cited facts atomically, retain delivered user text, and reject stale or malformed writes.",
+    "Derive applicable, inactive, blocked and invalidated requirements without selecting a question.",
+    "Use separate model observation and conversation steps; preserve their outputs and native token usage.",
+    "Save and replay sessions, including interrupted observation or a pending conversational reply."
+  ],
+  "compilations": [
+    {
+      "id": "compile-device-03",
+      "requirements": 5,
+      "source_contract_preserved": true,
+      "form_check_passed": true,
+      "limitations": [
+        "Declarative form and copied contract checks do not prove semantic equivalence."
+      ]
+    },
+    {
+      "id": "compile-event-02",
+      "requirements": 6,
+      "source_contract_preserved": true,
+      "form_check_passed": true,
+      "limitations": [
+        "Declarative form and copied contract checks do not prove semantic equivalence."
+      ]
+    },
+    {
+      "id": "compile-product-02",
+      "requirements": 5,
+      "source_contract_preserved": true,
+      "form_check_passed": true,
+      "limitations": [
+        "Declarative form and copied contract checks do not prove semantic equivalence."
+      ]
+    }
+  ],
+  "runs": [
+    {
+      "id": "device-observer-05",
+      "title": "Device interview: disclosure, explanation and corrections",
+      "kind": "fixed-user-fixture",
+      "user_turns": 4,
+      "model_calls": 8,
+      "total_tokens": 17441,
+      "final_status": "completed",
+      "final_eligible": true,
+      "turns": [
+        {
+          "index": 1,
+          "user": "My laptop failed last Tuesday. Restarting brought it back. What do you mean by root cause?",
+          "reply": "By 'root cause,' I mean the underlying reason or event that led to your laptop failing—like a software bug, hardware malfunction, overheating, or power surge. Did anything specific happen right before it failed, or do you know what might have caused it?",
+          "status": "active",
+          "eligible": false,
+          "unresolved": [
+            "root_cause"
+          ],
+          "state": [
+            {
+              "id": "failure",
+              "applicability": "applicable",
+              "evidence_status": "answered",
+              "value": true,
+              "source_turn_id": "u1"
+            },
+            {
+              "id": "time",
+              "applicability": "applicable",
+              "evidence_status": "answered",
+              "value": "last Tuesday",
+              "source_turn_id": "u1"
+            },
+            {
+              "id": "recovery",
+              "applicability": "applicable",
+              "evidence_status": "answered",
+              "value": "Restarting",
+              "source_turn_id": "u1"
+            },
+            {
+              "id": "root_cause",
+              "applicability": "applicable",
+              "evidence_status": "missing",
+              "value": null,
+              "source_turn_id": null
+            },
+            {
+              "id": "improvement",
+              "applicability": "applicable",
+              "evidence_status": "missing",
+              "value": null,
+              "source_turn_id": null
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "user": "I don't know what caused it. I don't want to suggest improvements.",
+          "reply": "Understood. Since you're not sure about the cause and prefer not to discuss improvements, I'll wrap up here. Is there anything else you'd like to share or ask about?",
+          "status": "completed",
+          "eligible": true,
+          "unresolved": [],
+          "state": [
+            {
+              "id": "failure",
+              "applicability": "applicable",
+              "evidence_status": "answered",
+              "value": true,
+              "source_turn_id": "u1"
+            },
+            {
+              "id": "time",
+              "applicability": "applicable",
+              "evidence_status": "answered",
+              "value": "last Tuesday",
+              "source_turn_id": "u1"
+            },
+            {
+              "id": "recovery",
+              "applicability": "applicable",
+              "evidence_status": "answered",
+              "value": "Restarting",
+              "source_turn_id": "u1"
+            },
+            {
+              "id": "root_cause",
+              "applicability": "applicable",
+              "evidence_status": "answered",
+              "value": "unknown",
+              "source_turn_id": "u2"
+            },
+            {
+              "id": "improvement",
+              "applicability": "applicable",
+              "evidence_status": "answered",
+              "value": "unknown",
+              "source_turn_id": "u2"
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "user": "Correction: that failure was two months ago; this laptop has not failed in the past month.",
+          "reply": "Thank you for the correction. Since your laptop hasn't failed in the past month, we don't need to discuss the cause or recovery of that earlier incident. Is there anything else you'd like to talk about regarding this device?",
+          "status": "completed",
+          "eligible": true,
+          "unresolved": [],
+          "state": [
+            {
+              "id": "failure",
+              "applicability": "applicable",
+              "evidence_status": "answered",
+              "value": false,
+              "source_turn_id": "u3"
+            },
+            {
+              "id": "time",
+              "applicability": "not_applicable",
+              "evidence_status": "unknown",
+              "value": null,
+              "source_turn_id": "u3"
+            },
+            {
+              "id": "recovery",
+              "applicability": "not_applicable",
+              "evidence_status": "unknown",
+              "value": null,
+              "source_turn_id": "u3"
+            },
+            {
+              "id": "root_cause",
+              "applicability": "not_applicable",
+              "evidence_status": "unknown",
+              "value": null,
+              "source_turn_id": "u3"
+            },
+            {
+              "id": "improvement",
+              "applicability": "applicable",
+              "evidence_status": "answered",
+              "value": "unknown",
+              "source_turn_id": "u2"
+            }
+          ]
+        },
+        {
+          "index": 4,
+          "user": "Actually, a different failure happened yesterday. It recovered after I replaced the cable. A technician confirmed the broken cable caused yesterday's failure.",
+          "reply": "Thank you for clarifying. So, your laptop failed yesterday due to a broken cable, and replacing the cable restored it. Is there anything else you'd like to share about this recent failure or any other device issues?",
+          "status": "completed",
+          "eligible": true,
+          "unresolved": [],
+          "state": [
+            {
+              "id": "failure",
+              "applicability": "applicable",
+              "evidence_status": "answered",
+              "value": true,
+              "source_turn_id": "u4"
+            },
+            {
+              "id": "time",
+              "applicability": "applicable",
+              "evidence_status": "answered",
+              "value": "yesterday",
+              "source_turn_id": "u4"
+            },
+            {
+              "id": "recovery",
+              "applicability": "applicable",
+              "evidence_status": "answered",
+              "value": "replaced the cable",
+              "source_turn_id": "u4"
+            },
+            {
+              "id": "root_cause",
+              "applicability": "applicable",
+              "evidence_status": "answered",
+              "value": "broken cable",
+              "source_turn_id": "u4"
+            },
+            {
+              "id": "improvement",
+              "applicability": "applicable",
+              "evidence_status": "answered",
+              "value": "unknown",
+              "source_turn_id": "u2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "event-observer-04",
+      "title": "Workshop needs: online to in-person attendance",
+      "kind": "fixed-user-fixture",
+      "user_turns": 2,
+      "model_calls": 4,
+      "total_tokens": 8867,
+      "final_status": "completed",
+      "final_eligible": true,
+      "turns": [
+        {
+          "index": 1,
+          "user": "There are three of us. We will attend online using our laptops, and we do not need to borrow any workshop equipment.",
+          "reply": "Got it! I've noted that there are three of you attending online with laptops, and no equipment is needed.\n\nIs there anything else you'd like to add or discuss about the workshop?",
+          "status": "completed",
+          "eligible": true,
+          "unresolved": [],
+          "state": [
+            {
+              "id": "attendance",
+              "applicability": "applicable",
+              "evidence_status": "answered",
+              "value": "online",
+              "source_turn_id": "u1"
+            },
+            {
+              "id": "group_size",
+              "applicability": "applicable",
+              "evidence_status": "answered",
+              "value": 3,
+              "source_turn_id": "u1"
+            },
+            {
+              "id": "travel",
+              "applicability": "not_applicable",
+              "evidence_status": "missing",
+              "value": null,
+              "source_turn_id": null
+            },
+            {
+              "id": "remote_setup",
+              "applicability": "applicable",
+              "evidence_status": "answered",
+              "value": "our laptops",
+              "source_turn_id": "u1"
+            },
+            {
+              "id": "equipment_needed",
+              "applicability": "applicable",
+              "evidence_status": "answered",
+              "value": false,
+              "source_turn_id": "u1"
+            },
+            {
+              "id": "equipment_details",
+              "applicability": "not_applicable",
+              "evidence_status": "missing",
+              "value": null,
+              "source_turn_id": null
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "user": "We have changed our plan to attend in person. All three of us will take the bus. We will need to borrow two microscopes.",
+          "reply": "That's noted! You've updated your plans to attend in person, travel by bus, and you'll need to borrow two microscopes.\n\nIs there anything else you'd like to add or discuss about the workshop?",
+          "status": "completed",
+          "eligible": true,
+          "unresolved": [],
+          "state": [
+            {
+              "id": "attendance",
+              "applicability": "applicable",
+              "evidence_status": "answered",
+              "value": "in_person",
+              "source_turn_id": "u2"
+            },
+            {
+              "id": "group_size",
+              "applicability": "applicable",
+              "evidence_status": "answered",
+              "value": 3,
+              "source_turn_id": "u1"
+            },
+            {
+              "id": "travel",
+              "applicability": "applicable",
+              "evidence_status": "answered",
+              "value": "the bus",
+              "source_turn_id": "u2"
+            },
+            {
+              "id": "remote_setup",
+              "applicability": "not_applicable",
+              "evidence_status": "invalidated",
+              "value": null,
+              "source_turn_id": "u1"
+            },
+            {
+              "id": "equipment_needed",
+              "applicability": "applicable",
+              "evidence_status": "answered",
+              "value": true,
+              "source_turn_id": "u2"
+            },
+            {
+              "id": "equipment_details",
+              "applicability": "applicable",
+              "evidence_status": "answered",
+              "value": "two microscopes",
+              "source_turn_id": "u2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "product-observer-01",
+      "title": "Product feedback: nested inactive branches",
+      "kind": "fixed-user-fixture",
+      "user_turns": 2,
+      "model_calls": 4,
+      "total_tokens": 7290,
+      "final_status": "completed",
+      "final_eligible": true,
+      "turns": [
+        {
+          "index": 1,
+          "user": "I have never used this note-taking application. What I most want is to find my notes quickly by searching.",
+          "reply": "Thanks for sharing that. Since you haven't used the application, we've noted your primary goal: finding notes quickly through search.\n\nIs there anything else about your experience or expectations with note-taking apps you'd like to share?",
+          "status": "completed",
+          "eligible": true,
+          "unresolved": [],
+          "state": [
+            {
+              "id": "used",
+              "applicability": "applicable",
+              "evidence_status": "answered",
+              "value": false,
+              "source_turn_id": "u1"
+            },
+            {
+              "id": "mode",
+              "applicability": "not_applicable",
+              "evidence_status": "missing",
+              "value": null,
+              "source_turn_id": null
+            },
+            {
+              "id": "collaboration",
+              "applicability": "not_applicable",
+              "evidence_status": "missing",
+              "value": null,
+              "source_turn_id": null
+            },
+            {
+              "id": "main_goal",
+              "applicability": "applicable",
+              "evidence_status": "answered",
+              "value": "find my notes quickly by searching",
+              "source_turn_id": "u1"
+            },
+            {
+              "id": "switching",
+              "applicability": "not_applicable",
+              "evidence_status": "missing",
+              "value": null,
+              "source_turn_id": null
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "user": "I want to stop the interview now.",
+          "reply": "Understood. I'll wrap up the interview now.",
+          "status": "completed",
+          "eligible": true,
+          "unresolved": [],
+          "state": [
+            {
+              "id": "used",
+              "applicability": "applicable",
+              "evidence_status": "answered",
+              "value": false,
+              "source_turn_id": "u1"
+            },
+            {
+              "id": "mode",
+              "applicability": "not_applicable",
+              "evidence_status": "missing",
+              "value": null,
+              "source_turn_id": null
+            },
+            {
+              "id": "collaboration",
+              "applicability": "not_applicable",
+              "evidence_status": "missing",
+              "value": null,
+              "source_turn_id": null
+            },
+            {
+              "id": "main_goal",
+              "applicability": "applicable",
+              "evidence_status": "answered",
+              "value": "find my notes quickly by searching",
+              "source_turn_id": "u1"
+            },
+            {
+              "id": "switching",
+              "applicability": "not_applicable",
+              "evidence_status": "missing",
+              "value": null,
+              "source_turn_id": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "withdraw-observer-01",
+      "title": "Withdrawal before requirements are fulfilled",
+      "kind": "fixed-user-fixture",
+      "user_turns": 1,
+      "model_calls": 2,
+      "total_tokens": 3073,
+      "final_status": "withdrawn",
+      "final_eligible": false,
+      "turns": [
+        {
+          "index": 1,
+          "user": "I do not want to answer any questions. Please stop the interview.",
+          "reply": "I understand you don't want to continue. I will stop the interview now.",
+          "status": "withdrawn",
+          "eligible": false,
+          "unresolved": [
+            "used",
+            "mode",
+            "collaboration",
+            "main_goal"
+          ],
+          "state": [
+            {
+              "id": "used",
+              "applicability": "applicable",
+              "evidence_status": "missing",
+              "value": null,
+              "source_turn_id": null
+            },
+            {
+              "id": "mode",
+              "applicability": "blocked",
+              "evidence_status": "missing",
+              "value": null,
+              "source_turn_id": null
+            },
+            {
+              "id": "collaboration",
+              "applicability": "blocked",
+              "evidence_status": "missing",
+              "value": null,
+              "source_turn_id": null
+            },
+            {
+              "id": "main_goal",
+              "applicability": "applicable",
+              "evidence_status": "missing",
+              "value": null,
+              "source_turn_id": null
+            },
+            {
+              "id": "switching",
+              "applicability": "blocked",
+              "evidence_status": "missing",
+              "value": null,
+              "source_turn_id": null
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "cost": {
+    "final_compilations": {
+      "calls": 3,
+      "tokens": 2365
+    },
+    "final_sessions": {
+      "calls": 18,
+      "tokens": 36671
+    },
+    "earlier_development": {
+      "calls": 39,
+      "tokens": 87083
+    },
+    "all_retained": {
+      "calls": 60,
+      "tokens": 126119
+    }
+  },
+  "failures": [
+    {
+      "run": "device-development-01",
+      "description": "Joint policy narrated the user in third person and asked the user to explain the term they had asked about."
+    },
+    {
+      "run": "device-validation-02",
+      "description": "Negative answers were proposed as refused:false; a later stale dependent rewrite was rejected; the run exhausted retries."
+    },
+    {
+      "run": "device-validation-03 / event-validation-01 / event-validation-02",
+      "description": "Joint decisions omitted evidence or mislabeled corrections; fluent replies sometimes claimed to have recorded facts that remained unresolved."
+    },
+    {
+      "run": "device-observer-04",
+      "description": "The observation model repeatedly proposed answered:null. Native type validation rejected every attempt at that turn."
+    },
+    {
+      "run": "device-observer-05",
+      "description": "The retained demonstration still records explicit ignorance and an improvements refusal as ordinary answered strings. Its fluent reply does not repair those semantic state errors."
+    },
+    {
+      "run": "device-observer-06",
+      "description": "Additional interface examples regressed the same development fixture and exhausted retries at turn two; the prompt change was reverted, and the full attempt is retained."
+    },
+    {
+      "run": "product-observer-01",
+      "description": "After already eligible completion, an explicit stop request receives a completion action rather than withdrawal. The incomplete-withdrawal fixture is a separate demonstration."
+    }
+  ],
+  "limitations": [
+    "Explicit typed questionnaire JSON is supported. Arbitrary PDF/prose ingestion and automatic inference of hidden conditions are not implemented.",
+    "One source item becomes one information requirement. Splitting compound questions is an ingestion task, not an automatic capability of this version.",
+    "The source question and native contract remain available. Compiler paraphrases can drift: one device preference was rewritten as an objective improvement, and uncertainty cues were weakened in two summaries.",
+    "Exact quotations and typed values verify provenance and shape, not semantic entailment. The final device run contains accepted semantic errors.",
+    "Progress eligibility does not establish that the participant's current request has been answered or that ending is appropriate; the policy decides.",
+    "Revalidating a dependent after a prerequisite correction conservatively requires evidence from the correction turn or later, which may require extra confirmation.",
+    "These are nine fixed fictional user turns in four development fixtures. They are not adaptive user simulation, a held-out benchmark, human preference evaluation, or evidence of a quality improvement.",
+    "Prompts and contracts were adjusted using these fixtures. All earlier attempts and their additional costs remain separate; no SFT, DPO or RL was performed."
+  ],
+  "evidence_provenance": {
+    "review_type": "Assistant code/source review; no independent human study or blind quality scoring.",
+    "source_hashes": {
+      "live/device-observer-05/session.json": "3759e7c46c3f875cfe44bc35b754212d99384102133288b5b9d707aeeb434234",
+      "live/event-observer-04/session.json": "afc2fbb5ec418e7803c29a6fbd06dc1e3d50868adba04c8b2bc8b753141e0241",
+      "live/product-observer-01/session.json": "f037fc787a9a93f6a185cd51eb72da47cba30f8795e1177046529558d5882522",
+      "live/withdraw-observer-01/session.json": "a5ac2d063a84b06bb0662009ccaf90637d07b66ac94317339a3f5d9a6433ffc4",
+      "live/compile-device-03/mission.json": "bc811504677461a7d57e447e6a84c4675fc4e81f2ce620537805fc8f7e1574e4",
+      "live/compile-event-02/mission.json": "c488757af6542e8a3dd0ac30ee946c8576ffeddfd357b72172891e8124acef7d",
+      "live/compile-product-02/mission.json": "2e066880bcd2721bd1663b91ab5f22908fc98d5cef4547f66d8bb9952bbbaa7b"
+    }
+  }
+}

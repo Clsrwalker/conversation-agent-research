@@ -1,0 +1,8 @@
+{
+  "source": "output/research/2026-10-30/harness-failure-audit/audit.json",
+  "sha256": "bcb9b6b54d39239d29cd879a607dd0821f1f3db4b4c895e8d62415860c7c0822",
+  "page": "intent-role-separation.html#harness-failure-audit",
+  "kind": "retrospective_failure_analysis",
+  "new_model_calls": 0,
+  "repairs_implemented": false
+}

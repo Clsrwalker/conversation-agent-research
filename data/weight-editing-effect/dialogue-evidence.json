@@ -1,0 +1,33 @@
+{
+  "kind": "exploratory_full_dialogue_development_comparison",
+  "date": "2026-11-05",
+  "timezone": "America/Halifax",
+  "episodes_per_arm": 12,
+  "arms": {
+    "W0": {
+      "successes": 3,
+      "known_tokens": 250525
+    },
+    "edit": {
+      "successes": 3,
+      "known_tokens": 288539
+    },
+    "random": {
+      "successes": 4,
+      "known_tokens": 244948
+    }
+  },
+  "execution_errors": {
+    "W0": 2,
+    "edit": 1,
+    "random": 2
+  },
+  "token_ratio": 1.1517373515617204,
+  "same_success_outcome_pairs": 12,
+  "review_result_sha256": "aa666899e719a972e2db935ee1a07c56c0136cd2c80365e2f246f011b137bc77",
+  "limitations": [
+    "Development cases are not held out.",
+    "Model review is not human gold.",
+    "Prior interrupted attempts are excluded, including one call with unknown cost."
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "date": "2026-11-06",
+  "timezone": "America/Halifax",
+  "kind": "consolidated_website_release_validation",
+  "record_sha256": "818d823e318fb24830533161bb17a525d70434f431abd9add0335a241108c21b",
+  "record_matches_local_and_copy": true,
+  "historical_evidence_sha256": {
+    "evidence.json": "c18d66e9ba5d438d2faf13a2f4aaaf9c2953cd2c4343d13596eaae7a40a78137",
+    "review-evidence.json": "c500b56c6f5868f6ab9d8733278d0e39a25bfc91dac1531e3bafeaffda603f31"
+  },
+  "historical_content_unchanged_except_heading_level": true,
+  "browser": {
+    "date": "2026-11-06",
+    "timezone": "America/Halifax",
+    "kind": "website_engineering_checks_not_model_evidence",
+    "http_status": 200,
+    "desktop_viewport": [
+      1440,
+      1000
+    ],
+    "mobile_viewport": [
+      390,
+      844
+    ],
+    "desktop_body_overflow": false,
+    "mobile_body_overflow": false,
+    "expanded_body_overflow": false,
+    "paired_rows_preserved": 6,
+    "review_conversations_preserved": 3,
+    "original_conversations_preserved": 4,
+    "new_continuations": 2,
+    "all_transcript_text_present": true,
+    "prefix_and_action_disclosures": true,
+    "index_link": true,
+    "page_errors": []
+  },
+  "visual_inspection": [
+    "Desktop milestone and limits readable",
+    "Mobile hero fits viewport",
+    "Expanded mobile continuation distinguishes authored input and actual model reply"
+  ],
+  "evidence_scope": "One engineering feature milestone with two authored-prefix live continuations; no quality, training or efficiency gain claim",
+  "page_sha256": "3a2e6ca2833a5158d1fd5898c4a0455c11836b34ae622aef0c84f2c4b97faf9c"
+}

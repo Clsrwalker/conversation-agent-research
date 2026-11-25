@@ -1,0 +1,138 @@
+{
+  "date": "2026-11-08",
+  "timezone": "America/Halifax",
+  "scope": "Publication consistency and software checks; not independent model-quality evidence.",
+  "aggregate_sha256": "c854c4f6b644bdf36392c85da7d46a2eeade5b43501609610485f1b1ab1e8406",
+  "source_comparisons": [
+    {
+      "condition": "before",
+      "calls": 8,
+      "result_sha256": "37c003401123d2ff63728306c3723c92c5cbf9732bd71adc66f64a7fa8019654",
+      "usage_and_displayed_data_match": true
+    },
+    {
+      "condition": "vista1",
+      "calls": 4,
+      "result_sha256": "45a4fcef689b92fd922cdb95515b2580bc2b567b36a16781107b446e2559bf05",
+      "usage_and_displayed_data_match": true
+    },
+    {
+      "condition": "final",
+      "calls": 8,
+      "result_sha256": "5707c586cb0af031e4619ea46f1922edca4d321c91724a91b6d66bd84271a9ba",
+      "usage_and_displayed_data_match": true
+    },
+    {
+      "condition": "boundary_before",
+      "calls": 4,
+      "result_sha256": "05ac4c7ba6f416133396a84199c82afbbe93eb4ed352eb49f605543707a3287b",
+      "usage_and_displayed_data_match": true
+    },
+    {
+      "condition": "boundary_final",
+      "calls": 4,
+      "result_sha256": "d6cb9ba9d6516951e79b7bef5650ea2e36b8023da42ae9cf2d3b471d9a2697b4",
+      "usage_and_displayed_data_match": true
+    }
+  ],
+  "api_phases": [
+    {
+      "phase": "api-diagnostic",
+      "calls": 8,
+      "input_tokens": 19584,
+      "output_tokens": 445
+    },
+    {
+      "phase": "luna-harness-pilot",
+      "calls": 12,
+      "input_tokens": 32485,
+      "output_tokens": 1006
+    },
+    {
+      "phase": "luna-harness-repair",
+      "calls": 8,
+      "input_tokens": 24169,
+      "output_tokens": 753
+    },
+    {
+      "phase": "luna-boundary-check",
+      "calls": 4,
+      "input_tokens": 7397,
+      "output_tokens": 257
+    },
+    {
+      "phase": "luna-boundary-repair",
+      "calls": 4,
+      "input_tokens": 7328,
+      "output_tokens": 189
+    }
+  ],
+  "api_total": {
+    "calls": 36,
+    "input_tokens": 90963,
+    "output_tokens": 2650,
+    "conservative_estimated_usd": 0.02406575
+  },
+  "frozen_validation": {
+    "baseline_id": "mission-harness-vista-v2-luna-2026-11-08",
+    "manifest_sha256": "6dd411f0a3ce0bfca5e93f04844608d61bcea13c93087e3f67e5a29116c30e55",
+    "artifacts_verified": 46,
+    "data_releases_verified": 2,
+    "tokenizer_binding_verified": true,
+    "model_calls": 0,
+    "tests_run": 133,
+    "failures": 0,
+    "errors": 0,
+    "passed": true
+  },
+  "integration_validation": {
+    "date": "2026-11-08",
+    "offline_tests": 133,
+    "tests_passed": true,
+    "initial_engineering_failure": "Ledger used exclusive-create writer; fixed with atomic replacement before adoption. No paid requests in that failure.",
+    "recorded_response_replays": [
+      {
+        "trace": "luna-harness-repair",
+        "requests_matched": 8,
+        "projection_equal": true,
+        "paid_calls": 0
+      },
+      {
+        "trace": "luna-boundary-repair",
+        "requests_matched": 4,
+        "projection_equal": true,
+        "paid_calls": 0
+      }
+    ],
+    "scope": "Production API adapter sends the same messages/schema/settings as actual measured requests; saved responses replay to the same projections. This does not create new model-quality samples."
+  },
+  "browser_checks": {
+    "desktop_width": 1440,
+    "mobile_width": 390,
+    "document_horizontal_overflow": false,
+    "v1_failure_is_missing_reply": true,
+    "native_completed_vs_withdrawn_visible": true,
+    "refusal_then_exit_case_switches": true,
+    "previous_next_controls_work": true,
+    "boundary_hides_irrelevant_comparison": true,
+    "full_authored_original_expands": true,
+    "pending_notes_and_final_clear_visible": true,
+    "light_dark_toggle_works": true,
+    "visual_capture_limit": "Browser screenshots timed out or produced scaled/blank captures; layout bounds and interactive DOM checked, pixel-level visual approval not claimed."
+  },
+  "files": {
+    "dist/vista-live-study.html": "93a3674caa74eddb03cf2f68c4494b120b8b5e41694b4e9825d1db624f808fe1",
+    "dist/vista-live-study.css": "8a3b6ac66098284176cfef7989bbbf20876f91176ff9f0a8ae99743c23d971a1",
+    "dist/vista-live-study.js": "387e99900c68d5d0a105d758df8c95c6bd53287e58492020f11ddb5e5eec622e",
+    "dist/data/vista-live-study/aggregate.json": "c854c4f6b644bdf36392c85da7d46a2eeade5b43501609610485f1b1ab1e8406"
+  },
+  "new_model_calls_during_publication": 0,
+  "passed_data_and_interaction_checks": true,
+  "editorial_update": {
+    "date": "2026-11-08",
+    "timezone": "America/Halifax",
+    "change": "Removed meeting references from the next-step paragraph and navigation label.",
+    "checks": "Generated source and page contain the revised paragraph and no meeting reference; aggregate, JavaScript and CSS hashes unchanged.",
+    "model_calls": 0
+  }
+}

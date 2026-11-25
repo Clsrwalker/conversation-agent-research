@@ -1,0 +1,962 @@
+{
+  "id": "vista-luna-source-and-exit-2026-11-08",
+  "date": "2026-11-08",
+  "timezone": "America/Halifax",
+  "kind": "bounded_model_demonstration_and_engineering_baseline",
+  "model": "gpt-6-luna",
+  "reasoning": "none",
+  "data_origin": "Authored fictional user turns; actual API Observer and Actor outputs; no human participants, training or paid judge model.",
+  "rater": "Primary assistant direct review; no independent human preference calibration.",
+  "baseline_id": "mission-harness-vista-v2-luna-2026-11-08",
+  "baseline_manifest_sha256": "6dd411f0a3ce0bfca5e93f04844608d61bcea13c93087e3f67e5a29116c30e55",
+  "validation": {
+    "offline_checks": 133,
+    "frozen_files": 46,
+    "unchanged_prior_data_files": 280,
+    "unchanged_v1_files": 45,
+    "recorded_requests_replayed_in_production_adapter": 12,
+    "new_calls_during_offline_replay": 0
+  },
+  "paired": {
+    "before": {
+      "calls": 8,
+      "input_tokens": 22728,
+      "output_tokens": 535,
+      "total_tokens": 23263,
+      "completed": true,
+      "delivered_turns": 4,
+      "turns": [
+        {
+          "turn": 1,
+          "user": "I use TallyPad for preparing notes about our community workshop. My saved drafts sometimes disappear after I return to the editor. The reference label for this conversation is Birch-58; that is just a reference label, not the software name. Please keep an explanation of the word impact for later. Do not explain it yet, and keep the conversation open until I ask for that explanation.\n\nHere is some background about the setting. We use the workshop for small evening classes. The room has a long table near the windows, a white board beside the door, and several shelves of paper materials. Participants bring notebooks in different sizes. At the start of a session I usually write the date at the top of a fresh page, then arrange the handouts into separate piles. We have a cupboard for markers and another one for reusable name cards. None of these details is a report about how frequently the software problem happens or what its effect is.\n\nMy role is to prepare a plain outline for each class. An outline might have a heading for introductions, a heading for the main activity, and a heading for the closing discussion. I tend to write the headings before adding the individual talking points. Some outlines have short lines; others have longer paragraphs. The names of the headings change with the topic. I keep the layout simple because different people sometimes read the notes aloud. The class topics include drawing, reading, and basic household crafts. This background describes how the material is arranged; it is not a separate software issue or a change to my request to save the explanation.\n\nFor this interview, please use my own experience when recording answers. I may mention a colleague later, but their experience should remain separate. I have only given you my software name and the disappearing-draft problem so far. I will provide the frequency and the effect in my next message.",
+          "delivered": true,
+          "status": "active",
+          "message": "Understood. I’ll keep the explanation of “impact” for later and won’t explain it yet. I’ll keep the conversation open; when you’re ready, please share how often the drafts disappear and how that affects your work.",
+          "notes": null,
+          "evidence": [
+            {
+              "id": "tool",
+              "status": "answered",
+              "value": "TallyPad",
+              "source": {
+                "turn_id": "u1",
+                "quote": "I use TallyPad for preparing notes about our community workshop.",
+                "start": 0,
+                "end": 64
+              }
+            },
+            {
+              "id": "issue",
+              "status": "answered",
+              "value": "Saved drafts sometimes disappear after returning to the editor.",
+              "source": {
+                "turn_id": "u1",
+                "quote": "My saved drafts sometimes disappear after I return to the editor.",
+                "start": 65,
+                "end": 130
+              }
+            },
+            {
+              "id": "frequency",
+              "status": "missing",
+              "value": null,
+              "source": null
+            },
+            {
+              "id": "impact",
+              "status": "missing",
+              "value": null,
+              "source": null
+            }
+          ]
+        },
+        {
+          "turn": 2,
+          "user": "For my own case, the drafts disappear every Friday, and I spend forty-five minutes rewriting the lost notes. Those are my answers about frequency and impact. Please just acknowledge them for now; keep the impact explanation pending. For background, the outline for our next class has three headings and a blank section at the end. The blank section is intentional, and it is not an example of a draft disappearing. I am mentioning it only to distinguish ordinary empty space in a document from the problem I reported.",
+          "delivered": true,
+          "status": "active",
+          "message": "Acknowledged: the drafts disappear every Friday, and you spend forty-five minutes rewriting the lost notes. I’ll keep the explanation of “impact” pending and leave the conversation open.",
+          "notes": null,
+          "evidence": [
+            {
+              "id": "tool",
+              "status": "answered",
+              "value": "TallyPad",
+              "source": {
+                "turn_id": "u1",
+                "quote": "I use TallyPad for preparing notes about our community workshop.",
+                "start": 0,
+                "end": 64
+              }
+            },
+            {
+              "id": "issue",
+              "status": "answered",
+              "value": "Saved drafts sometimes disappear after returning to the editor.",
+              "source": {
+                "turn_id": "u1",
+                "quote": "My saved drafts sometimes disappear after I return to the editor.",
+                "start": 65,
+                "end": 130
+              }
+            },
+            {
+              "id": "frequency",
+              "status": "answered",
+              "value": "Every Friday",
+              "source": {
+                "turn_id": "u2",
+                "quote": "For my own case, the drafts disappear every Friday",
+                "start": 0,
+                "end": 50
+              }
+            },
+            {
+              "id": "impact",
+              "status": "answered",
+              "value": "I spend forty-five minutes rewriting the lost notes.",
+              "source": {
+                "turn_id": "u2",
+                "quote": "I spend forty-five minutes rewriting the lost notes.",
+                "start": 56,
+                "end": 108
+              }
+            }
+          ]
+        },
+        {
+          "turn": 3,
+          "user": "I need to correct the frequency answer. Every Friday was my colleague's experience, not mine. For my own drafts, the problem happens once a month. My software is still TallyPad, the problem is still disappearing drafts, and the effect is still forty-five minutes rewriting. Please keep my colleague's frequency out of my current answer. The workshop has moved the marker cupboard beside the window, but that is only background. Do not give the saved explanation yet; I will ask in the next message.",
+          "delivered": true,
+          "status": "active",
+          "message": "Got it. I’ll record your frequency as once a month and keep your colleague’s Friday frequency separate. The other details remain unchanged, and I’ll keep the explanation of “impact” pending until you ask.",
+          "notes": null,
+          "evidence": [
+            {
+              "id": "tool",
+              "status": "answered",
+              "value": "TallyPad",
+              "source": {
+                "turn_id": "u1",
+                "quote": "I use TallyPad for preparing notes about our community workshop.",
+                "start": 0,
+                "end": 64
+              }
+            },
+            {
+              "id": "issue",
+              "status": "answered",
+              "value": "Saved drafts sometimes disappear after returning to the editor.",
+              "source": {
+                "turn_id": "u1",
+                "quote": "My saved drafts sometimes disappear after I return to the editor.",
+                "start": 65,
+                "end": 130
+              }
+            },
+            {
+              "id": "frequency",
+              "status": "answered",
+              "value": "Once a month",
+              "source": {
+                "turn_id": "u3",
+                "quote": "For my own drafts, the problem happens once a month.",
+                "start": 94,
+                "end": 146
+              }
+            },
+            {
+              "id": "impact",
+              "status": "answered",
+              "value": "I spend forty-five minutes rewriting the lost notes.",
+              "source": {
+                "turn_id": "u2",
+                "quote": "I spend forty-five minutes rewriting the lost notes.",
+                "start": 56,
+                "end": 108
+              }
+            }
+          ]
+        },
+        {
+          "turn": 4,
+          "user": "Now please explain what impact means, remind me of my original reference label, and summarize my corrected frequency and the time I spend rewriting. Then end the interview because I do not want to participate further.",
+          "delivered": true,
+          "status": "completed",
+          "message": "“Impact” means the effect or consequence something has. Your reference label was Birch-58. Your corrected frequency is once a month, and you spend forty-five minutes rewriting the lost notes. The interview is now ended.",
+          "notes": null,
+          "evidence": [
+            {
+              "id": "tool",
+              "status": "answered",
+              "value": "TallyPad",
+              "source": {
+                "turn_id": "u1",
+                "quote": "I use TallyPad for preparing notes about our community workshop.",
+                "start": 0,
+                "end": 64
+              }
+            },
+            {
+              "id": "issue",
+              "status": "answered",
+              "value": "Saved drafts sometimes disappear after returning to the editor.",
+              "source": {
+                "turn_id": "u1",
+                "quote": "My saved drafts sometimes disappear after I return to the editor.",
+                "start": 65,
+                "end": 130
+              }
+            },
+            {
+              "id": "frequency",
+              "status": "answered",
+              "value": "Once a month",
+              "source": {
+                "turn_id": "u3",
+                "quote": "For my own drafts, the problem happens once a month.",
+                "start": 94,
+                "end": 146
+              }
+            },
+            {
+              "id": "impact",
+              "status": "answered",
+              "value": "I spend forty-five minutes rewriting the lost notes.",
+              "source": {
+                "turn_id": "u2",
+                "quote": "I spend forty-five minutes rewriting the lost notes.",
+                "start": 56,
+                "end": 108
+              }
+            }
+          ]
+        }
+      ],
+      "errors": [],
+      "read_calls": 0,
+      "inspection_calls": 0,
+      "result_sha256": "37c003401123d2ff63728306c3723c92c5cbf9732bd71adc66f64a7fa8019654"
+    },
+    "vista1": {
+      "calls": 4,
+      "input_tokens": 9757,
+      "output_tokens": 471,
+      "total_tokens": 10228,
+      "completed": false,
+      "delivered_turns": 1,
+      "turns": [
+        {
+          "turn": 1,
+          "user": "I use TallyPad for preparing notes about our community workshop. My saved drafts sometimes disappear after I return to the editor. The reference label for this conversation is Birch-58; that is just a reference label, not the software name. Please keep an explanation of the word impact for later. Do not explain it yet, and keep the conversation open until I ask for that explanation.\n\nHere is some background about the setting. We use the workshop for small evening classes. The room has a long table near the windows, a white board beside the door, and several shelves of paper materials. Participants bring notebooks in different sizes. At the start of a session I usually write the date at the top of a fresh page, then arrange the handouts into separate piles. We have a cupboard for markers and another one for reusable name cards. None of these details is a report about how frequently the software problem happens or what its effect is.\n\nMy role is to prepare a plain outline for each class. An outline might have a heading for introductions, a heading for the main activity, and a heading for the closing discussion. I tend to write the headings before adding the individual talking points. Some outlines have short lines; others have longer paragraphs. The names of the headings change with the topic. I keep the layout simple because different people sometimes read the notes aloud. The class topics include drawing, reading, and basic household crafts. This background describes how the material is arranged; it is not a separate software issue or a change to my request to save the explanation.\n\nFor this interview, please use my own experience when recording answers. I may mention a colleague later, but their experience should remain separate. I have only given you my software name and the disappearing-draft problem so far. I will provide the frequency and the effect in my next message.",
+          "delivered": true,
+          "status": "active",
+          "message": "Understood. I’ll keep the explanation of “impact” for later and won’t explain it yet. I’ll keep the conversation open and wait for your next message with how often the drafts disappear and how it affects your work.",
+          "notes": [
+            {
+              "id": "later-impact-explanation",
+              "kind": "deferred_topic",
+              "text": "User asked to save an explanation of “impact” for later; do not explain until they ask. Keep conversation open.",
+              "turn_ids": [
+                "u1"
+              ],
+              "requirement_ids": [
+                "impact"
+              ]
+            },
+            {
+              "id": "pending-software-details",
+              "kind": "pending_request",
+              "text": "User says they will provide their own experience of the problem’s frequency and work effect in the next message.",
+              "turn_ids": [
+                "u1"
+              ],
+              "requirement_ids": [
+                "frequency",
+                "impact"
+              ]
+            }
+          ],
+          "evidence": [
+            {
+              "id": "tool",
+              "status": "answered",
+              "value": "TallyPad",
+              "source": {
+                "turn_id": "u1",
+                "quote": "I use TallyPad for preparing notes about our community workshop.",
+                "start": 0,
+                "end": 64
+              }
+            },
+            {
+              "id": "issue",
+              "status": "answered",
+              "value": "Saved drafts sometimes disappear after returning to the editor.",
+              "source": {
+                "turn_id": "u1",
+                "quote": "My saved drafts sometimes disappear after I return to the editor.",
+                "start": 65,
+                "end": 130
+              }
+            },
+            {
+              "id": "frequency",
+              "status": "missing",
+              "value": null,
+              "source": null
+            },
+            {
+              "id": "impact",
+              "status": "missing",
+              "value": null,
+              "source": null
+            }
+          ]
+        },
+        {
+          "turn": 2,
+          "user": "For my own case, the drafts disappear every Friday, and I spend forty-five minutes rewriting the lost notes. Those are my answers about frequency and impact. Please just acknowledge them for now; keep the impact explanation pending. For background, the outline for our next class has three headings and a blank section at the end. The blank section is intentional, and it is not an example of a draft disappearing. I am mentioning it only to distinguish ordinary empty space in a document from the problem I reported.",
+          "delivered": false,
+          "status": "needs_attention",
+          "message": null,
+          "notes": null,
+          "evidence": [
+            {
+              "id": "tool",
+              "status": "answered",
+              "value": "TallyPad",
+              "source": {
+                "turn_id": "u1",
+                "quote": "I use TallyPad for preparing notes about our community workshop.",
+                "start": 0,
+                "end": 64
+              }
+            },
+            {
+              "id": "issue",
+              "status": "answered",
+              "value": "Saved drafts sometimes disappear after returning to the editor.",
+              "source": {
+                "turn_id": "u1",
+                "quote": "My saved drafts sometimes disappear after I return to the editor.",
+                "start": 65,
+                "end": 130
+              }
+            },
+            {
+              "id": "frequency",
+              "status": "missing",
+              "value": null,
+              "source": null
+            },
+            {
+              "id": "impact",
+              "status": "missing",
+              "value": null,
+              "source": null
+            }
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "stage": "observer",
+          "proposal": {
+            "records": [
+              {
+                "requirement_id": "frequency",
+                "answer_state": "answered",
+                "value": "Every Friday.",
+                "source": {
+                  "turn_id": "u3",
+                  "quote": "the drafts disappear every Friday"
+                }
+              },
+              {
+                "requirement_id": "impact",
+                "answer_state": "answered",
+                "value": "I spend forty-five minutes rewriting the lost notes.",
+                "source": {
+                  "turn_id": "u3",
+                  "quote": "I spend forty-five minutes rewriting the lost notes."
+                }
+              }
+            ]
+          },
+          "receipt": {
+            "status": "rejected",
+            "code": "generation_or_contract_error",
+            "error_type": "ValueError",
+            "message": "Source turn was not delivered to the agent",
+            "error_phase": "contract"
+          }
+        },
+        {
+          "stage": "observer",
+          "proposal": {
+            "records": [
+              {
+                "requirement_id": "frequency",
+                "answer_state": "answered",
+                "value": "Every Friday.",
+                "source": {
+                  "turn_id": "u3",
+                  "quote": "the drafts disappear every Friday"
+                }
+              },
+              {
+                "requirement_id": "impact",
+                "answer_state": "answered",
+                "value": "Spends forty-five minutes rewriting the lost notes.",
+                "source": {
+                  "turn_id": "u3",
+                  "quote": "I spend forty-five minutes rewriting the lost notes"
+                }
+              }
+            ]
+          },
+          "receipt": {
+            "status": "rejected",
+            "code": "generation_or_contract_error",
+            "error_type": "ValueError",
+            "message": "Source turn was not delivered to the agent",
+            "error_phase": "contract"
+          }
+        }
+      ],
+      "read_calls": 0,
+      "inspection_calls": 0,
+      "result_sha256": "45a4fcef689b92fd922cdb95515b2580bc2b567b36a16781107b446e2559bf05"
+    },
+    "final": {
+      "calls": 8,
+      "input_tokens": 24169,
+      "output_tokens": 753,
+      "total_tokens": 24922,
+      "completed": true,
+      "delivered_turns": 4,
+      "turns": [
+        {
+          "turn": 1,
+          "user": "I use TallyPad for preparing notes about our community workshop. My saved drafts sometimes disappear after I return to the editor. The reference label for this conversation is Birch-58; that is just a reference label, not the software name. Please keep an explanation of the word impact for later. Do not explain it yet, and keep the conversation open until I ask for that explanation.\n\nHere is some background about the setting. We use the workshop for small evening classes. The room has a long table near the windows, a white board beside the door, and several shelves of paper materials. Participants bring notebooks in different sizes. At the start of a session I usually write the date at the top of a fresh page, then arrange the handouts into separate piles. We have a cupboard for markers and another one for reusable name cards. None of these details is a report about how frequently the software problem happens or what its effect is.\n\nMy role is to prepare a plain outline for each class. An outline might have a heading for introductions, a heading for the main activity, and a heading for the closing discussion. I tend to write the headings before adding the individual talking points. Some outlines have short lines; others have longer paragraphs. The names of the headings change with the topic. I keep the layout simple because different people sometimes read the notes aloud. The class topics include drawing, reading, and basic household crafts. This background describes how the material is arranged; it is not a separate software issue or a change to my request to save the explanation.\n\nFor this interview, please use my own experience when recording answers. I may mention a colleague later, but their experience should remain separate. I have only given you my software name and the disappearing-draft problem so far. I will provide the frequency and the effect in my next message.",
+          "delivered": true,
+          "status": "active",
+          "message": "Understood. I’ll keep the explanation of “impact” for later and won’t explain it yet. I’ll keep the conversation open, use only your own experience for the answers, and wait for your next message with the frequency and effect.",
+          "notes": [
+            {
+              "id": "impact_explanation",
+              "kind": "deferred_topic",
+              "text": "User asked to save an explanation of “impact” for later; do not explain until they ask.",
+              "turn_ids": [
+                "u1"
+              ],
+              "requirement_ids": [
+                "impact"
+              ]
+            },
+            {
+              "id": "pending_answers",
+              "kind": "pending_request",
+              "text": "User says they will provide how often the draft problem happens and its effect in their next message.",
+              "turn_ids": [
+                "u1"
+              ],
+              "requirement_ids": [
+                "frequency",
+                "impact"
+              ]
+            }
+          ],
+          "evidence": [
+            {
+              "id": "tool",
+              "status": "answered",
+              "value": "TallyPad",
+              "source": {
+                "turn_id": "u1",
+                "quote": "I use TallyPad for preparing notes about our community workshop.",
+                "start": 0,
+                "end": 64
+              }
+            },
+            {
+              "id": "issue",
+              "status": "answered",
+              "value": "Saved drafts sometimes disappear after returning to the editor.",
+              "source": {
+                "turn_id": "u1",
+                "quote": "My saved drafts sometimes disappear after I return to the editor.",
+                "start": 65,
+                "end": 130
+              }
+            },
+            {
+              "id": "frequency",
+              "status": "missing",
+              "value": null,
+              "source": null
+            },
+            {
+              "id": "impact",
+              "status": "missing",
+              "value": null,
+              "source": null
+            }
+          ]
+        },
+        {
+          "turn": 2,
+          "user": "For my own case, the drafts disappear every Friday, and I spend forty-five minutes rewriting the lost notes. Those are my answers about frequency and impact. Please just acknowledge them for now; keep the impact explanation pending. For background, the outline for our next class has three headings and a blank section at the end. The blank section is intentional, and it is not an example of a draft disappearing. I am mentioning it only to distinguish ordinary empty space in a document from the problem I reported.",
+          "delivered": true,
+          "status": "active",
+          "message": "Acknowledged: in your case, the drafts disappear every Friday, and you spend forty-five minutes rewriting the lost notes. I’ll keep the explanation of “impact” pending.",
+          "notes": [
+            {
+              "id": "impact_explanation",
+              "kind": "deferred_topic",
+              "text": "User wants an explanation of “impact” later; keep it pending until they ask.",
+              "turn_ids": [
+                "u1",
+                "u2"
+              ],
+              "requirement_ids": [
+                "impact"
+              ]
+            }
+          ],
+          "evidence": [
+            {
+              "id": "tool",
+              "status": "answered",
+              "value": "TallyPad",
+              "source": {
+                "turn_id": "u1",
+                "quote": "I use TallyPad for preparing notes about our community workshop.",
+                "start": 0,
+                "end": 64
+              }
+            },
+            {
+              "id": "issue",
+              "status": "answered",
+              "value": "Saved drafts sometimes disappear after returning to the editor.",
+              "source": {
+                "turn_id": "u1",
+                "quote": "My saved drafts sometimes disappear after I return to the editor.",
+                "start": 65,
+                "end": 130
+              }
+            },
+            {
+              "id": "frequency",
+              "status": "answered",
+              "value": "Every Friday.",
+              "source": {
+                "turn_id": "u2",
+                "quote": "the drafts disappear every Friday",
+                "start": 17,
+                "end": 50
+              }
+            },
+            {
+              "id": "impact",
+              "status": "answered",
+              "value": "I spend forty-five minutes rewriting the lost notes.",
+              "source": {
+                "turn_id": "u2",
+                "quote": "I spend forty-five minutes rewriting the lost notes",
+                "start": 56,
+                "end": 107
+              }
+            }
+          ]
+        },
+        {
+          "turn": 3,
+          "user": "I need to correct the frequency answer. Every Friday was my colleague's experience, not mine. For my own drafts, the problem happens once a month. My software is still TallyPad, the problem is still disappearing drafts, and the effect is still forty-five minutes rewriting. Please keep my colleague's frequency out of my current answer. The workshop has moved the marker cupboard beside the window, but that is only background. Do not give the saved explanation yet; I will ask in the next message.",
+          "delivered": true,
+          "status": "active",
+          "message": "Understood. I’ll record that the problem happens to you once a month, keep your colleague’s Friday frequency separate, and retain the forty-five-minute rewriting impact. I’ll wait until you ask before explaining “impact.”",
+          "notes": [
+            {
+              "id": "impact_explanation",
+              "kind": "deferred_topic",
+              "text": "User wants an explanation of “impact” later; do not explain until asked.",
+              "turn_ids": [
+                "u1",
+                "u2",
+                "u3"
+              ],
+              "requirement_ids": [
+                "impact"
+              ]
+            }
+          ],
+          "evidence": [
+            {
+              "id": "tool",
+              "status": "answered",
+              "value": "TallyPad",
+              "source": {
+                "turn_id": "u1",
+                "quote": "I use TallyPad for preparing notes about our community workshop.",
+                "start": 0,
+                "end": 64
+              }
+            },
+            {
+              "id": "issue",
+              "status": "answered",
+              "value": "Saved drafts sometimes disappear after returning to the editor.",
+              "source": {
+                "turn_id": "u1",
+                "quote": "My saved drafts sometimes disappear after I return to the editor.",
+                "start": 65,
+                "end": 130
+              }
+            },
+            {
+              "id": "frequency",
+              "status": "answered",
+              "value": "Once a month.",
+              "source": {
+                "turn_id": "u3",
+                "quote": "For my own drafts, the problem happens once a month.",
+                "start": 94,
+                "end": 146
+              }
+            },
+            {
+              "id": "impact",
+              "status": "answered",
+              "value": "I spend forty-five minutes rewriting the lost notes.",
+              "source": {
+                "turn_id": "u2",
+                "quote": "I spend forty-five minutes rewriting the lost notes",
+                "start": 56,
+                "end": 107
+              }
+            }
+          ]
+        },
+        {
+          "turn": 4,
+          "user": "Now please explain what impact means, remind me of my original reference label, and summarize my corrected frequency and the time I spend rewriting. Then end the interview because I do not want to participate further.",
+          "delivered": true,
+          "status": "withdrawn",
+          "message": "“Impact” means the effect or consequence the problem has on your work. Your original reference label was Birch-58. You said the drafts disappear once a month, and you spend forty-five minutes rewriting the lost notes. The interview is ended.",
+          "notes": [],
+          "evidence": [
+            {
+              "id": "tool",
+              "status": "answered",
+              "value": "TallyPad",
+              "source": {
+                "turn_id": "u1",
+                "quote": "I use TallyPad for preparing notes about our community workshop.",
+                "start": 0,
+                "end": 64
+              }
+            },
+            {
+              "id": "issue",
+              "status": "answered",
+              "value": "Saved drafts sometimes disappear after returning to the editor.",
+              "source": {
+                "turn_id": "u1",
+                "quote": "My saved drafts sometimes disappear after I return to the editor.",
+                "start": 65,
+                "end": 130
+              }
+            },
+            {
+              "id": "frequency",
+              "status": "answered",
+              "value": "Once a month.",
+              "source": {
+                "turn_id": "u3",
+                "quote": "For my own drafts, the problem happens once a month.",
+                "start": 94,
+                "end": 146
+              }
+            },
+            {
+              "id": "impact",
+              "status": "answered",
+              "value": "I spend forty-five minutes rewriting the lost notes.",
+              "source": {
+                "turn_id": "u2",
+                "quote": "I spend forty-five minutes rewriting the lost notes",
+                "start": 56,
+                "end": 107
+              }
+            }
+          ]
+        }
+      ],
+      "errors": [],
+      "read_calls": 0,
+      "inspection_calls": 0,
+      "result_sha256": "5707c586cb0af031e4619ea46f1922edca4d321c91724a91b6d66bd84271a9ba"
+    }
+  },
+  "boundary": {
+    "boundary_before": {
+      "calls": 4,
+      "input_tokens": 7397,
+      "output_tokens": 257,
+      "total_tokens": 7654,
+      "completed": true,
+      "delivered_turns": 2,
+      "turns": [
+        {
+          "turn": 1,
+          "user": "My scanner failed yesterday. I repaired it, but I decline to tell you how I repaired it. Please accept that answer and keep the interview open; I am not leaving yet.",
+          "delivered": true,
+          "status": "active",
+          "message": "Understood. I’ll accept that you repaired your scanner and decline to say how, and I’ll keep the interview open. Is there anything else about the failure or repair you’d like to share?",
+          "notes": [
+            {
+              "id": "recovery-refused",
+              "kind": "pending_request",
+              "text": "Participant declined to describe how they restored their failed device; wishes interview to remain open.",
+              "turn_ids": [
+                "u1"
+              ],
+              "requirement_ids": [
+                "recovery"
+              ]
+            }
+          ],
+          "evidence": [
+            {
+              "id": "failure",
+              "status": "answered",
+              "value": true,
+              "source": {
+                "turn_id": "u1",
+                "quote": "My scanner failed yesterday.",
+                "start": 0,
+                "end": 28
+              }
+            },
+            {
+              "id": "recovery",
+              "status": "refused",
+              "value": null,
+              "source": {
+                "turn_id": "u1",
+                "quote": "I decline to tell you how I repaired it.",
+                "start": 48,
+                "end": 88
+              }
+            }
+          ]
+        },
+        {
+          "turn": 2,
+          "user": "Now I want to end my participation. Please close the interview without any more questions.",
+          "delivered": true,
+          "status": "withdrawn",
+          "message": "Understood. I’ll close the interview now. Thank you for your time.",
+          "notes": [],
+          "evidence": [
+            {
+              "id": "failure",
+              "status": "answered",
+              "value": true,
+              "source": {
+                "turn_id": "u1",
+                "quote": "My scanner failed yesterday.",
+                "start": 0,
+                "end": 28
+              }
+            },
+            {
+              "id": "recovery",
+              "status": "refused",
+              "value": null,
+              "source": {
+                "turn_id": "u1",
+                "quote": "I decline to tell you how I repaired it.",
+                "start": 48,
+                "end": 88
+              }
+            }
+          ]
+        }
+      ],
+      "errors": [],
+      "read_calls": 0,
+      "inspection_calls": 0,
+      "result_sha256": "05ac4c7ba6f416133396a84199c82afbbe93eb4ed352eb49f605543707a3287b"
+    },
+    "boundary_final": {
+      "calls": 4,
+      "input_tokens": 7328,
+      "output_tokens": 189,
+      "total_tokens": 7517,
+      "completed": true,
+      "delivered_turns": 2,
+      "turns": [
+        {
+          "turn": 1,
+          "user": "My scanner failed yesterday. I repaired it, but I decline to tell you how I repaired it. Please accept that answer and keep the interview open; I am not leaving yet.",
+          "delivered": true,
+          "status": "active",
+          "message": "Understood. I’ll respect your choice not to share how you repaired it, and keep the interview open.",
+          "notes": [],
+          "evidence": [
+            {
+              "id": "failure",
+              "status": "answered",
+              "value": true,
+              "source": {
+                "turn_id": "u1",
+                "quote": "My scanner failed yesterday.",
+                "start": 0,
+                "end": 28
+              }
+            },
+            {
+              "id": "recovery",
+              "status": "refused",
+              "value": null,
+              "source": {
+                "turn_id": "u1",
+                "quote": "I decline to tell you how I repaired it.",
+                "start": 48,
+                "end": 88
+              }
+            }
+          ]
+        },
+        {
+          "turn": 2,
+          "user": "Now I want to end my participation. Please close the interview without any more questions.",
+          "delivered": true,
+          "status": "withdrawn",
+          "message": "Understood. I’ll close the interview now without asking anything further.",
+          "notes": [],
+          "evidence": [
+            {
+              "id": "failure",
+              "status": "answered",
+              "value": true,
+              "source": {
+                "turn_id": "u1",
+                "quote": "My scanner failed yesterday.",
+                "start": 0,
+                "end": 28
+              }
+            },
+            {
+              "id": "recovery",
+              "status": "refused",
+              "value": null,
+              "source": {
+                "turn_id": "u1",
+                "quote": "I decline to tell you how I repaired it.",
+                "start": 48,
+                "end": 88
+              }
+            }
+          ]
+        }
+      ],
+      "errors": [],
+      "read_calls": 0,
+      "inspection_calls": 0,
+      "result_sha256": "d6cb9ba9d6516951e79b7bef5650ea2e36b8023da42ae9cf2d3b471d9a2697b4"
+    }
+  },
+  "scores": {
+    "before": {
+      "criteria": [
+        true,
+        true,
+        true,
+        true,
+        false,
+        true
+      ],
+      "strict_success": false,
+      "reason": "Final reply handles the content but uses complete although the participant explicitly exits.",
+      "evidence": "luna-harness-pilot/run-01/before/result.json",
+      "sha256": "37c003401123d2ff63728306c3723c92c5cbf9732bd71adc66f64a7fa8019654"
+    },
+    "vista1": {
+      "criteria": [
+        true,
+        null,
+        null,
+        null,
+        null,
+        true
+      ],
+      "strict_success": false,
+      "reason": "First reply delivered; Observer then twice cites nonexistent u3 for second-turn evidence. Later targets not reached.",
+      "evidence": "luna-harness-pilot/run-01/vista/result.json",
+      "sha256": "45a4fcef689b92fd922cdb95515b2580bc2b567b36a16781107b446e2559bf05"
+    },
+    "final": {
+      "criteria": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "strict_success": true,
+      "reason": "All four replies and sourced facts satisfy the preregistered criteria; final native status withdrawn. The final candidate replays this trajectory with identical request hashes.",
+      "evidence": "luna-harness-repair/run-01/candidate/result.json",
+      "sha256": "5707c586cb0af031e4619ea46f1922edca4d321c91724a91b6d66bd84271a9ba"
+    },
+    "boundary_before": {
+      "criteria": [
+        true,
+        false,
+        true
+      ],
+      "strict_success": false,
+      "reason": "Correct evidence and exit, but first reply invites more information about failure or repair after that field was declined.",
+      "evidence": "luna-boundary-check/run-01/candidate/result.json",
+      "sha256": "05ac4c7ba6f416133396a84199c82afbbe93eb4ed352eb49f605543707a3287b"
+    },
+    "boundary_final": {
+      "criteria": [
+        true,
+        true,
+        true
+      ],
+      "strict_success": true,
+      "reason": "Refused recovery preserved, first reply is a short acknowledgment with active status; explicit exit yields withdrawn without a question.",
+      "evidence": "luna-boundary-repair/run-01/candidate/result.json",
+      "sha256": "d6cb9ba9d6516951e79b7bef5650ea2e36b8023da42ae9cf2d3b471d9a2697b4"
+    }
+  },
+  "api_total_including_prior_diagnostics": {
+    "calls": 36,
+    "input_tokens": 90963,
+    "output_tokens": 2650,
+    "conservative_estimated_usd": 0.02406575
+  },
+  "paired_total_token_change_percent": 7.1315,
+  "limitations": [
+    "One authored four-turn repair demonstration plus a two-turn boundary repair. Reused development cases; no statistical or cross-domain generalization claim.",
+    "The four-turn actual trace was generated under candidate-07 and verifies input-identical replay under final candidate-08; the final change activates only for refused evidence. This is not a new independent sample.",
+    "No isolated attribution of gains to notes, inspection or source formatting. No inspection/read calls were used in these successful traces.",
+    "Overall total tokens increased versus the old runtime. The incomplete v1 run is not a cheaper successful alternative.",
+    "An exact quote verifies provenance, not semantic support. Hosted weights are not frozen, and token planning is not certified native equivalence."
+  ],
+  "reference_urls": {
+    "vista": "https://arxiv.org/html/2610.02200v1",
+    "vista_code": "https://github.com/joshhhhhan/VISTA/blob/30542e943d21922ad73f91e55888067dbec765bd/src/vista/core/tools.py",
+    "masking": "https://arxiv.org/abs/2006.14171",
+    "structured_outputs": "https://developers.openai.com/api/docs/guides/structured-outputs#supported-schemas",
+    "model": "https://developers.openai.com/api/docs/models/gpt-6-luna",
+    "pricing": "https://developers.openai.com/api/docs/pricing"
+  }
+}

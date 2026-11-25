@@ -1,0 +1,140 @@
+{
+  "id": "harness-failure-audit-release-2026-10-30",
+  "date": "2026-10-30",
+  "timezone": "America/Halifax",
+  "kind": "grouped_record_and_website_release_validation",
+  "status": "passed_with_browser_qa_unavailable",
+  "base_revision": "2247d7df42e79a88e23ee4f5af6adb6b0da33380",
+  "tested_artifact_sha256": {
+    "harness-failure-audit-section.html": "79621175c812236a39c5cbea1f23135e95aa3dbc49952745fa4fd8104c275a63",
+    "build_harness_failure_audit.py": "b2681251983b4dd2d8aaf3bcf0e0a60a5eafea40efd46e2283e4fe6c49525595",
+    "validate_harness_failure_audit.py": "bb218859fe715b480b9af81edee3b47664028894a9a8bb996b84fa8de4c11c05",
+    "reader-methods.html": "09b88c587b6ff41ce254f4f0436ae2dfccf6a15fc8505c9ccc4e72f2053e2da9",
+    "build_data.py": "d968b7bd606d2a3ceb7680d9d22def04168004971d187c366f02d027f8cfa80a",
+    "dist/index.html": "b8ca486336e46f340649af82bf1ec9afe788fe8e4b2678dc3635ba0001a66757",
+    "dist/intent-role-separation.html": "ec5157f670e14dc43c74c0c8fae2657280bc9288dcd3d441e96ba26320fb6f39",
+    "dist/data.js": "96aa95d379318c5daf6a6e881d2590061a7c1fd528e5d24afa34b02d7caa4c05",
+    "dist/data/research-record.json": "f1b019c633e2ac2fb662f58e790e43c5227a7b65071fbce8545cd35778e25b9e",
+    "dist/data/harness-failure-audit/audit.json": "bcb9b6b54d39239d29cd879a607dd0821f1f3db4b4c895e8d62415860c7c0822"
+  },
+  "checks": [
+    {
+      "name": "original_score_counts",
+      "status": "pass",
+      "details": {
+        "tracked": 4,
+        "unified": 4,
+        "split": 2
+      }
+    },
+    {
+      "name": "original_failure_families",
+      "status": "pass",
+      "details": {
+        "irs-room-withdrawal": 2,
+        "irs-combined-workshop-change": 6,
+        "irs-unaccepted-assistant-proposal": 1,
+        "irs-multiple-request-owners": 1
+      }
+    },
+    {
+      "name": "captured_call_count",
+      "status": "pass",
+      "details": null
+    },
+    {
+      "name": "correct_private_result_without_tool",
+      "status": "pass",
+      "details": null
+    },
+    {
+      "name": "empty_notes_next_chat",
+      "status": "pass",
+      "details": null
+    },
+    {
+      "name": "step9_unchanged_receipt",
+      "status": "pass",
+      "details": null
+    },
+    {
+      "name": "step16_real_commit",
+      "status": "pass",
+      "details": null
+    },
+    {
+      "name": "byte_identical_audit_export",
+      "status": "pass",
+      "details": null
+    },
+    {
+      "name": "audit_source_hashes",
+      "status": "pass",
+      "details": {
+        "count": 9
+      }
+    },
+    {
+      "name": "audit_counts_match_original",
+      "status": "pass",
+      "details": null
+    },
+    {
+      "name": "historical_archives_unchanged",
+      "status": "pass",
+      "details": {
+        "count": 22
+      }
+    },
+    {
+      "name": "unique_study_anchor",
+      "status": "pass",
+      "details": null
+    },
+    {
+      "name": "study_directory_link",
+      "status": "pass",
+      "details": null
+    },
+    {
+      "name": "new_section_links_resolve",
+      "status": "pass",
+      "details": []
+    },
+    {
+      "name": "proposals_and_limits_visible",
+      "status": "pass",
+      "details": null
+    },
+    {
+      "name": "json_js_consistency",
+      "status": "pass",
+      "details": null
+    },
+    {
+      "name": "diagnostic_registered_without_quality_gain",
+      "status": "pass",
+      "details": null
+    }
+  ],
+  "scientific_review": {
+    "status": "no_blockers",
+    "independent_reviewer": "harness_audit",
+    "precision_change": "Step 9 distinguishes attempted publication with unchanged receipt from step 16 displayed commit."
+  },
+  "browser_qa": {
+    "status": "unavailable",
+    "reason": "cua_repl createBrowserTab returned: Local browser use is disabled in Work settings. No visual or interaction checks claimed."
+  },
+  "new_model_calls": 0,
+  "new_runtime_scenarios": 0,
+  "prior_attempt": {
+    "status": "failed_before_receipt_write",
+    "reason": "Python timezone database was unavailable. Date conversion now uses the Windows Atlantic time zone; the failed attempt is retained in the local build-validation-log.json."
+  },
+  "limitations": [
+    "Read-only record checks and static website checks do not measure repair efficacy.",
+    "No browser layout or interaction verification.",
+    "Deployment is recorded separately only after the native publication result."
+  ]
+}

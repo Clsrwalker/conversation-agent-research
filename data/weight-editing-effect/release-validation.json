@@ -1,0 +1,37 @@
+{
+  "kind": "grouped_weight_effect_publication_validation",
+  "created_utc": "2026-11-05T06:18:19.265644+00:00",
+  "date": "2026-11-05",
+  "timezone": "America/Halifax",
+  "status": "passed",
+  "new_model_calls_for_publication": 0,
+  "artifact_hashes": {
+    "page": "bdb7d1f0ee2b04f03ceda8154911e5b58cb965d4a81b28f2c82800f17c2ced0f",
+    "public_evidence": "3de35936a27cc385c4b32cbb58a3e10a3b2ea00d1f0effcfbff01cc6d5a3ed44",
+    "reviewed_results": "0cbec0cda1fab4b76467069d7f223eb29549179b5e673334827620244a8c1732",
+    "model_receipt": "8884ac554ac67013c446cb11898c08d31bbcb3d2c36a8c873d9072df40e93f63",
+    "postflight": "0cc585af497c51e49c7700b153f4a586575bbf10014d57e26985cb2368c90fe8"
+  },
+  "checks": {
+    "240_output_hashes_and_costs_reconciled": true,
+    "all_10_condition_scores_reconciled": true,
+    "independent_review_and_adjudication_bound": true,
+    "selection_bound_to_complete_comparison": true,
+    "original_model_files_unchanged_after_comparison": true,
+    "website_and_public_data_match": true,
+    "existing_historical_pages_and_data_unchanged": true,
+    "local_links_and_assets_resolve": true,
+    "desktop_1440x1000_and_mobile_390x844_visual_check": true,
+    "mobile_table_scrollable_without_page_overflow": true,
+    "theme_toggle_checked": true,
+    "overview_new_and_historical_entries_checked": true
+  },
+  "screenshots": {
+    "desktop.png": "b392e4c98619ac4916b1c5e7f3ec6ca7b698d2829c5b919445ae5d42ce802a74",
+    "mobile.png": "5392f69281c1e794d6010178489ffb44b97fba598832b06a006c488de8a61259"
+  },
+  "limitations": [
+    "Local preview only; deployment is recorded separately.",
+    "Publication checks do not establish full-dialogue quality or a held-out gain."
+  ]
+}

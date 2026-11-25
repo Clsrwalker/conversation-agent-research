@@ -1,0 +1,41 @@
+{
+  "schema_version": "interview-training-publication-validation-v1",
+  "date": "2026-11-25",
+  "timezone": "America/Halifax",
+  "status": "passed_static_aggregate_validation",
+  "classification": "engineering_publication_validation_not_model_quality",
+  "source_allowlist_sha256": "07792ab8735c919a65cfc35655c57a373d1e6dd326e2ac5014ee23d52297760c",
+  "download_sha256": "07792ab8735c919a65cfc35655c57a373d1e6dd326e2ac5014ee23d52297760c",
+  "page_sha256": "673824c4901027a08ada7bb9a0fbdea034d403a761c9d305be81be9103760b43",
+  "builder_sha256": "a49b61a39e01674e674e4084c5080ac4defa1707b434f7b85d444e4ad048aa13",
+  "aggregate_download_byte_identical": true,
+  "checkpoint_steps_verified": [
+    0,
+    109,
+    218
+  ],
+  "matched_dev_cases": 404,
+  "generation_outputs": 808,
+  "native_profile_denominator_per_arm": 55,
+  "local_resource_links_checked": [
+    "style.css",
+    "reader-ui.css",
+    "workflow-study.css",
+    "reader-ui.js?v=20261027",
+    "index.html#overview",
+    "index.html#overview",
+    "index.html#methods",
+    "index.html#harness",
+    "data/interview-training/summary.json",
+    "human-interview-data.html",
+    "interview-expansion.html",
+    "vista-live-study.html"
+  ],
+  "historical_html_files_preserved_byte_for_byte": 14,
+  "homepage_and_studies_links_verified": true,
+  "raw_record_key_and_local_path_scan_passed": true,
+  "browser_visual_check": "not_performed_by_builder",
+  "model_calls": 0,
+  "training_started": false,
+  "test_evaluated": false
+}

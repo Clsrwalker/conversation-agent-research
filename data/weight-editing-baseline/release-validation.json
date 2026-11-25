@@ -1,0 +1,45 @@
+{
+  "kind": "grouped_research_publication_validation",
+  "date": "2026-11-05",
+  "timezone": "America/Halifax",
+  "created_utc": "2026-11-05T04:13:49.875456+00:00",
+  "status": "passed",
+  "new_model_calls": 0,
+  "tested_source_files": {
+    "build_weight_editing_baseline.py": "d9505110f6281cb47b418626f354dbf5255808241464bd092a9b2ee82391504b",
+    "copy/weight-editing-baseline.json": "f086dab8509e5314a8af5cba5b6ed005dd12f00e579e49840f4e3f25c08b8115",
+    "reader-methods.html": "6300c74d1da307c42243919551579287d9b3cc0ac657099176bf6081510fc9cf",
+    "overview-section.html": "8457f3d197f65d4c384380b6a0f375f0eb2dbefc97f8910e938aae118fd9ce61",
+    "build_data.py": "598550d58ca21ef0c567335181a6c60d73d2c6836d96bf5773e78caaaaa424ef"
+  },
+  "artifact_hashes": {
+    "page": "db6c88bc8596a48270a17978637ccb8a0b2e24bf33335edcbb792b0cbc7210e7",
+    "public_evidence": "f086dab8509e5314a8af5cba5b6ed005dd12f00e579e49840f4e3f25c08b8115",
+    "source_decision": "fcb3e16e84a8cae4e59f9bea4786d3fd750c73993b1d8c59753054354d6251a0"
+  },
+  "checks": {
+    "48_labels_match_frozen_adjudication": true,
+    "gate_recomputed": true,
+    "token_costs_match_physical_logs": true,
+    "published_data_matches_source_copy_and_local_http": true,
+    "existing_historical_pages_and_data_unchanged": true,
+    "all_new_page_asset_and_local_links_resolve": true,
+    "desktop_1440x1000_visual_check": true,
+    "mobile_390x844_visual_check": true,
+    "no_horizontal_page_overflow": true,
+    "theme_toggle_dark_and_light": true,
+    "48_rows_disclosure_opens": true,
+    "homepage_new_study_and_old_workflow_visible": true
+  },
+  "screenshots": {
+    "desktop.png": "0b30748f48d5d5422492af5d3af5ad463aa01684968cd6b230c4d464348b9f81",
+    "mobile.png": "4044e270e4ca606357cdc4b7f24ad4f523562249586531f55330c652b1ef595f"
+  },
+  "corrected_local_build_attempts": [
+    "Initial export popped a lookup key inside a generator; failed before publication files were written. Corrected before the successful export and final validation."
+  ],
+  "limitations": [
+    "Browser validation used local preview. Deployment is verified by a separate native Sites receipt.",
+    "These are publication checks, not additional model-quality evidence."
+  ]
+}

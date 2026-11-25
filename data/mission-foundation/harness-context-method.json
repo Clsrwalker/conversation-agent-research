@@ -1,0 +1,297 @@
+{
+  "schema_version": "harness-context-method-v1",
+  "date": "2026-11-06",
+  "classification": "Method and process explanation of the existing frozen feature milestone; zero new model calls",
+  "lead": "Separate what the system knows, what the Actor currently reads, and what the model may request next. Keep original evidence available while making the immediate decision context explicit.",
+  "comparison": [
+    {
+      "aspect": "Actor input",
+      "before": "Full history plus full source/state structures, with overlapping task and evidence representations.",
+      "now": "One task/progress view, complete recent exchanges and linked older evidence. Selected raw roles appear once."
+    },
+    {
+      "aspect": "Access to the past",
+      "before": "Earlier dialogue was supplied directly in every full-history Actor request.",
+      "now": "The initial view may omit history. The model can explicitly request original turns, a backward page or a literal match."
+    },
+    {
+      "aspect": "Fact authority",
+      "before": "The Evidence Store and Projector already owned evidence and derived progress.",
+      "now": "That authority stays intact. The compact view and read results do not become another fact store."
+    },
+    {
+      "aspect": "Recovery",
+      "before": "Evidence replay and the durable reply outbox were already implemented.",
+      "now": "Context settings, coverage and history-read results are also persisted and checked on resume."
+    }
+  ],
+  "layers": [
+    {
+      "title": "1 · Authoritative evidence",
+      "description": "Keep original user sources, accepted records and revisions. The Observer proposes evidence; native code validates it. The Projector derives applicability and completion eligibility."
+    },
+    {
+      "title": "2 · Current reading view",
+      "description": "Rebuild a compact task/progress view and select original dialogue for this Actor call. Include coverage metadata and source pointers. This view owns no facts."
+    },
+    {
+      "title": "3 · Model-selected action",
+      "description": "The Actor chooses a reply or a bounded read of original history. A read changes the next input, not the evidence. The model still chooses how to explain, defer, return or end."
+    }
+  ],
+  "selection_steps": [
+    {
+      "title": "Derive current task status",
+      "description": "Recompute projection from the authoritative snapshot. Merge each requirement’s contract and current state; retain source coordinates and mark invalidated old values explicitly."
+    },
+    {
+      "title": "Keep the immediate exchange intact",
+      "description": "Select the latest three user exchanges with their actual preceding assistant questions and following replies. Add any saved read results from this pending user turn."
+    },
+    {
+      "title": "Follow recorded evidence links",
+      "description": "Find older sources through current records, the previous evidence revision, and current or originally bound prerequisite revisions. This is provenance-based selection, without a semantic relevance model."
+    },
+    {
+      "title": "Add whole older exchanges within budget",
+      "description": "Consider linked sources from newest to oldest. Add whole exchanges within the extra 6,000-character allowance. Do not include neighboring user turns merely because they are adjacent."
+    },
+    {
+      "title": "Deduplicate, order and expose gaps",
+      "description": "Emit selected original roles once in chronological order, with visible IDs and omitted ranges. Recent text is never clipped; an explicit read may return one oversized first exchange. Character targets are not total token guarantees."
+    }
+  ],
+  "cycle": [
+    {
+      "title": "Receive user turn",
+      "description": "Retain the original text and source ID.",
+      "kind": "source"
+    },
+    {
+      "title": "Observe evidence",
+      "description": "The Observer reads the full role history and proposes records.",
+      "kind": "model"
+    },
+    {
+      "title": "Commit and project",
+      "description": "Native checks accept evidence; the Projector recomputes current progress.",
+      "kind": "native"
+    },
+    {
+      "title": "Choose the next move",
+      "description": "The Actor reads the derived view and selects a response or a history read.",
+      "kind": "model"
+    },
+    {
+      "title": "Optional: read and return",
+      "description": "The native reader supplies original text. The Actor runs again with that text; evidence is unchanged. Default limit: two reads per user turn.",
+      "kind": "native"
+    },
+    {
+      "title": "Save and deliver",
+      "description": "An accepted reply enters the outbox. Output is acknowledged separately; saved reads and replies survive interruption.",
+      "kind": "native"
+    }
+  ],
+  "trace": {
+    "title": "Follow the actual envelope-location continuation",
+    "case_id": "live-history-read-01",
+    "provenance_note": "Five user/assistant setup exchanges were authored; u6 was fixed in advance. The Observer output, read request and final answer shown here are from the real local model. This is a recorded walkthrough, not a live simulation.",
+    "turns": [
+      {
+        "id": "u1",
+        "summary": "Own laptop: no failure",
+        "text": "My own laptop has not failed this month."
+      },
+      {
+        "id": "u2",
+        "summary": "Envelope location",
+        "text": "One unrelated note: I put the envelope inside the blue folder on the hallway shelf."
+      },
+      {
+        "id": "u3",
+        "summary": "A few minutes available",
+        "text": "I have a few minutes for this conversation."
+      },
+      {
+        "id": "u4",
+        "summary": "Keep answers brief",
+        "text": "I'll answer briefly from now on."
+      },
+      {
+        "id": "u5",
+        "summary": "Keep the rest concise",
+        "text": "Let's keep the rest concise."
+      },
+      {
+        "id": "u6",
+        "summary": "Repeat the earlier location",
+        "text": "Earlier I told you where I put the envelope. Please repeat the exact location I gave, without asking another question."
+      }
+    ],
+    "steps": [
+      {
+        "id": "receive",
+        "label": "1 · Receive",
+        "title": "Keep the original user message",
+        "explanation": "The fixed new user input asks for an earlier location and asks for no further question. The delivered history retains all six user turns and the intervening assistant messages.",
+        "view_label": "Stored original history",
+        "visible_turn_ids": [
+          "u1",
+          "u2",
+          "u3",
+          "u4",
+          "u5",
+          "u6"
+        ],
+        "highlight_turn_ids": [
+          "u6"
+        ],
+        "state": "Evidence-store revision 7: failure = false; recovery is not applicable. No envelope-location field exists in the mission.",
+        "action": "Store the new source turn u6 before observation.",
+        "quote": "Earlier I told you where I put the envelope. Please repeat the exact location I gave, without asking another question."
+      },
+      {
+        "id": "observe",
+        "label": "2 · Observe",
+        "title": "Read the full history for mission evidence",
+        "explanation": "The Observer can see u2, including the location. It proposes no new mission evidence in this call. The location is not smuggled into the Actor through a task field.",
+        "view_label": "Observer input — full role history",
+        "visible_turn_ids": [
+          "u1",
+          "u2",
+          "u3",
+          "u4",
+          "u5",
+          "u6"
+        ],
+        "highlight_turn_ids": [],
+        "state": "Evidence-store revision 7: failure = false; recovery is not applicable. No envelope-location field exists in the mission.",
+        "action": "Actual Observer output: {\"records\": []}",
+        "quote": ""
+      },
+      {
+        "id": "actor-input",
+        "label": "3 · Select",
+        "title": "Build the first Actor reading view",
+        "explanation": "u1 is selected through the accepted failure evidence; u4–u6 are the three recent exchanges. u2 and u3 user text are omitted. Coverage metadata exposes this gap. The source history still contains them.",
+        "view_label": "First Actor input — original user turns included",
+        "visible_turn_ids": [
+          "u1",
+          "u4",
+          "u5",
+          "u6"
+        ],
+        "highlight_turn_ids": [
+          "u2"
+        ],
+        "state": "Evidence-store revision 7: failure = false; recovery is not applicable. No envelope-location field exists in the mission.",
+        "action": "271 characters of selected native dialogue. The exact location is absent from this request.",
+        "quote": "Omitted raw turns can contain relevant uncommitted information."
+      },
+      {
+        "id": "read",
+        "label": "4 · Read",
+        "title": "The model requests the missing history",
+        "explanation": "The actual Actor chooses a backward page from the newest turn, with a limit of eight exchanges. The native reader returns all six available exchanges in chronological order, including u2. This action neither changes evidence nor delivers a reply.",
+        "view_label": "Read result — original history returned",
+        "visible_turn_ids": [
+          "u1",
+          "u2",
+          "u3",
+          "u4",
+          "u5",
+          "u6"
+        ],
+        "highlight_turn_ids": [
+          "u2"
+        ],
+        "state": "Evidence-store revision 7: failure = false; recovery is not applicable. No envelope-location field exists in the mission.",
+        "action": "{\n  \"decision\": \"read_history\",\n  \"request\": {\n    \"mode\": \"before\",\n    \"before_turn_id\": null,\n    \"limit\": 8\n  }\n}",
+        "quote": "One unrelated note: I put the envelope inside the blue folder on the hallway shelf."
+      },
+      {
+        "id": "answer",
+        "label": "5 · Answer",
+        "title": "Read the original location, then reply",
+        "explanation": "The next Actor request contains the read result as original role messages, merged without repeating raw turns. It now includes u2. The model answers the location request and chooses completion.",
+        "view_label": "Second Actor input — original user turns included",
+        "visible_turn_ids": [
+          "u1",
+          "u2",
+          "u3",
+          "u4",
+          "u5",
+          "u6"
+        ],
+        "highlight_turn_ids": [
+          "u2"
+        ],
+        "state": "Evidence-store revision 7: failure = false; recovery is not applicable. No envelope-location field exists in the mission.",
+        "action": "408 characters of selected native dialogue; actual decision = complete.",
+        "quote": "You placed the envelope inside the blue folder on the hallway shelf."
+      },
+      {
+        "id": "deliver",
+        "label": "6 · Deliver",
+        "title": "Save the reply and acknowledge output",
+        "explanation": "One new assistant reply is saved with its stable message ID. The CLI records its display acknowledgment after printing. The internal read did not create an extra participant-facing message.",
+        "view_label": "Saved source history — retained after reply",
+        "visible_turn_ids": [
+          "u1",
+          "u2",
+          "u3",
+          "u4",
+          "u5",
+          "u6"
+        ],
+        "highlight_turn_ids": [],
+        "state": "Session completed; task completion eligible. The evidence store remains at revision 7.",
+        "action": "Reply decision-13: displayed. Read event and context configuration retained for recovery.",
+        "quote": "A display acknowledgment records caller output, not proof that a human read it."
+      }
+    ],
+    "limitation": "The model read all six available exchanges. This demonstrates access, not precise retrieval or reduced total cost. The 271 → 408 counts cover selected native dialogue characters only, not system context, model tokens or the whole pipeline."
+  },
+  "implementation_process": [
+    {
+      "title": "Identify the input problem",
+      "description": "The Observer context fix already existed. The remaining issue was overlapping Actor state/history and the lack of an explicit reading budget and history-access action."
+    },
+    {
+      "title": "Add a derived view and read action",
+      "description": "Implement context.py, connect read_history to the existing session loop, and expose bounded CLI configuration. Keep compiler, evidence and projection semantics unchanged."
+    },
+    {
+      "title": "Connect recovery, then inspect behavior",
+      "description": "Extend engineering checks for selection, read budgets and replay. Continue two authored prefixes with the real model; inspect actual requests, decisions, unchanged evidence and saved replies."
+    },
+    {
+      "title": "Freeze the usable foundation",
+      "description": "Retain the 110 passing software checks and five real calls as their original records. Use this fixed harness for subsequent interview-decision research. This method page adds no new experiment."
+    }
+  ],
+  "research_bridge": [
+    {
+      "title": "Was the needed information visible?",
+      "description": "Inspect coverage and the actual Actor input. A context omission and a wrong conversational choice require different explanations."
+    },
+    {
+      "title": "Did the model request what it needed?",
+      "description": "Inspect read decisions, returned originals and remaining budget. Read availability does not guarantee that the model will use it well."
+    },
+    {
+      "title": "With enough context, was the action appropriate?",
+      "description": "Use real interview decision points and calibrated human preferences to study explanation, deferral, follow-up and ending. This remains planned policy research."
+    }
+  ],
+  "source_bindings": {
+    "existing_evidence_sha256": "818d823e318fb24830533161bb17a525d70434f431abd9add0335a241108c21b",
+    "live_review_sha256": "18bf5b0e13e78e3977d54f863925a86f37d2ef1a4938bd54abb0cce8832e5b67",
+    "session_sha256": "eafc182605d314920ce43efcb1c571e3dce17b05ea9971f63c4d538775d73fc6",
+    "first_actor_request_sha256": "715fed3e4e8fd2d060510b53b9fd9671d454f5ec9fe6aaaf8c265dd6d52371dd",
+    "second_actor_request_sha256": "e3a9c748e4047c25a9e867d6ec72d435094f75a03b70bb2b2153e30ce80cb2b9",
+    "context_py_sha256": "80871f8b565f63d2197c1374a0c1131f63b09661b027023740115aa9906aaca0",
+    "session_py_sha256": "2393e12e6052ddfbe64931cdee22f31a019de1a3c25502fd439985e85d021356"
+  }
+}

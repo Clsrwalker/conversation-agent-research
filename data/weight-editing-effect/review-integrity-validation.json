@@ -1,0 +1,15 @@
+{
+  "kind": "heldout_review_integrity_correction_validation",
+  "status": "passed",
+  "date": "2026-11-05",
+  "timezone": "America/Halifax",
+  "checks": {
+    "review_overwrite_and_limit_disclosed": true,
+    "revalidation_reproduced_labels_and_costs": true,
+    "website_and_data_match": true,
+    "interim_counts_unchanged": true
+  },
+  "heldout_evidence_sha256": "042c5522626fc61515105917fc01777fcabd9a1ff9b8d6731cd0984d6c4e332f",
+  "page_sha256": "bca2b09b51e593a8256b5319fd1326d57e5d86c05d32dfeebf3103090c5355be",
+  "limitation": "Original overwritten second review is unavailable; the replacement review and resulting revalidation are separately bound."
+}

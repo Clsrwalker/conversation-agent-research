@@ -1,0 +1,27 @@
+{
+  "kind": "held_out_final_release_validation",
+  "status": "passed",
+  "date": "2026-11-05",
+  "timezone": "America/Halifax",
+  "checks": {
+    "144_attempted_and_48_per_arm": true,
+    "result_closure_and_audit_hashes_match": true,
+    "success_costs_and_stop_reasons_reconciled": true,
+    "intermediate_saves_labeled_as_diagnostic": true,
+    "page_and_evidence_consistent": true,
+    "category_dispute_reaudited_and_full_count_withheld": true,
+    "previous_snapshots_and_review_correction_retained": true
+  },
+  "hashes": {
+    "final_evidence_sha256": "0414d40a08a7fa636d4b5f01ff3070f6cd24923e48d22402c9f127307363dd1a",
+    "scored_result_sha256": "5683597a8e7dcd25b2f0743c6a51f20d1f0bb0fb78f4d4dbc13cf128be2b907c",
+    "page_sha256": "ed6bc41dfdb1b1455b21ae6af10ac41077cda2dc3bbd42d66fa1b5f684176f71",
+    "category_audit_sha256": "df6f4196c7a0cd6040c968ad392def9db86a122006c58ca6c48ffacd5481b501",
+    "run_audit_sha256": "9929c8169c9e416a48d849859ad196d615ac4451849bbcba29357f1a71e1322c"
+  },
+  "limitations": [
+    "No new browser visual inspection was performed.",
+    "Model reviews and adjudications are not human gold.",
+    "Only originally flagged false-completion trajectories were re-reviewed."
+  ]
+}

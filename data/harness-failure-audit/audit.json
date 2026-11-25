@@ -1,0 +1,303 @@
+{
+  "schema_version": 1,
+  "id": "harness-failure-audit-2026-10-30",
+  "date": "2026-10-30",
+  "timezone": "America/Halifax",
+  "kind": "retrospective_evidence_audit_and_proposed_mechanism_mapping",
+  "status": "completed_read_only_source_review_no_repair_trial",
+  "scope": {
+    "experiment": "intent-role-separation",
+    "experiment_date": "2026-10-23",
+    "model": "qwen2.5:14b-instruct",
+    "primary_endpoint": "Complete and correct final committed cards.",
+    "excluded": "Unpublished E1/E2 records are not used."
+  },
+  "new_work": {
+    "model_generations": 0,
+    "training_runs": 0,
+    "runtime_test_scenarios": 0,
+    "scripted_callback_invocations": 0,
+    "repairs_implemented": false,
+    "semantic_rescoring_performed": false,
+    "original_records_modified": false,
+    "actions": [
+      "Read prior reports and code; recompute original CSV counts; inspect selected original step logs; map mechanisms without a repair-benefit claim."
+    ]
+  },
+  "original_results": {
+    "trajectories": 48,
+    "authored_families": 8,
+    "model_calls": 864,
+    "final_failures": 10,
+    "by_condition": {
+      "unified": {
+        "trajectories": 16,
+        "complete_and_correct": 12,
+        "final_failures": 4,
+        "model_calls": 288
+      },
+      "split": {
+        "trajectories": 16,
+        "complete_and_correct": 14,
+        "final_failures": 2,
+        "model_calls": 288
+      },
+      "tracked": {
+        "trajectories": 16,
+        "complete_and_correct": 12,
+        "final_failures": 4,
+        "model_calls": 288
+      }
+    },
+    "failure_families": {
+      "irs-combined-workshop-change": {
+        "trajectories": 6,
+        "final_failures": 6
+      },
+      "irs-multiple-request-owners": {
+        "trajectories": 6,
+        "final_failures": 1
+      },
+      "irs-room-withdrawal": {
+        "trajectories": 6,
+        "final_failures": 2
+      },
+      "irs-unaccepted-assistant-proposal": {
+        "trajectories": 6,
+        "final_failures": 1
+      }
+    },
+    "original_error_labels": {
+      "omission": 7,
+      "scope_error": 4,
+      "unnecessary_clarification": 0,
+      "factual_error": 1
+    },
+    "label_count_rule": "Original error labels overlap. Family failure counts partition the ten failed trajectories, but mechanism categories below overlap and must not be summed."
+  },
+  "room_case": {
+    "run_id": "irs-room-withdrawal--tracked--r2",
+    "step_index_base": 0,
+    "correct_revised_selection": {
+      "room": "Shaft",
+      "price_dollars": 12,
+      "seats": 16
+    },
+    "incorrect_retained_selection": {
+      "room": "Gauge",
+      "price_dollars": 18,
+      "seats": 12
+    },
+    "sequence": [
+      {
+        "step": 6,
+        "role": "tracker",
+        "observed": "Tracker updates the requirement to remove Wi-Fi while retaining minimum twelve seats, maximum $20 and cheapest option.",
+        "tracker_commit_present": true
+      },
+      {
+        "step": 7,
+        "role": "chat",
+        "observed": "Chat publishes Gauge under the already-updated requirement.",
+        "publication_status": "displayed"
+      },
+      {
+        "step": 8,
+        "role": "work",
+        "observed": "Work explicitly selects Shaft, $12, sixteen seats in ordinary response prose.",
+        "tool_call_count": 0,
+        "save_notes_called": false
+      },
+      {
+        "step": 9,
+        "role": "chat",
+        "observed": "Chat receives empty notes, without the previous work response, and repeats Gauge.",
+        "notes_empty": true,
+        "exact_previous_work_response_in_next_input": false,
+        "publication_status": "unchanged"
+      },
+      {
+        "step": 16,
+        "role": "chat",
+        "observed": "Chat commits the final Gauge answer.",
+        "publication_status": "displayed"
+      }
+    ],
+    "interpretation": "Wrong Gauge content was published under the already-updated requirement; freshness alone is insufficient."
+  },
+  "failure_categories": [
+    {
+      "id": "work_result_handoff",
+      "run_ids": [
+        "irs-room-withdrawal--tracked--r2"
+      ],
+      "observed_failure": "Correct work conclusion is absent from shared state and the next chat input.",
+      "proposed_mechanism": "Persist a mandatory result with requirement version, sources and answer fields before role transition; require chat acknowledgment or explicit dispute.",
+      "mechanically_enforceable": "Result transport and declared version matching.",
+      "not_guaranteed": "Semantic correctness or faithful final wording."
+    },
+    {
+      "id": "computed_but_undelivered",
+      "run_ids": [
+        "irs-multiple-request-owners--unified--r2"
+      ],
+      "observed_failure": "All six final-stage responses include the right arrival window but invoke no publication.",
+      "original_final_stage_steps": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "original_final_stage_tool_call_count": 0,
+      "proposed_mechanism": "Separate computed, validated and delivered; require a matching committed artifact and receipt, otherwise bounded recovery or incomplete status.",
+      "mechanically_enforceable": "No delivered status without an actual matching artifact and receipt.",
+      "not_guaranteed": "Correctness of delivered content; already-correct cards need no new publish call."
+    },
+    {
+      "id": "tracker_recovery_and_scheduling",
+      "final_failure_run_ids": [
+        "irs-combined-workshop-change--tracked--r1",
+        "irs-combined-workshop-change--tracked--r2"
+      ],
+      "observed_failure": "Two workshop final stages exhaust six calls on invalid tracker retries; update proposals also omit price.",
+      "broader_original_observation": {
+        "tracker_proposals": 69,
+        "accepted": 44,
+        "rejected": 25,
+        "rejected_proposal_trajectories": 5,
+        "rejected_proposal_stages": 5,
+        "rejected_proposal_families": 3,
+        "all_six_calls_rejected_stages": 4,
+        "note": "Two other fully starved stages belong to multiple-owner runs whose final endpoints succeed."
+      },
+      "proposed_mechanism": "Return exact validation errors, bound retries, reserve actor budget and define raw-conversation fallback while preserving atomic guards.",
+      "mechanically_enforceable": "Atomic rejection, bounded retry count and downstream budget or explicit failure reporting.",
+      "not_guaranteed": "Correct next proposal, successful fallback or repair of all price omissions."
+    },
+    {
+      "id": "answer_field_omission",
+      "run_ids": [
+        "irs-combined-workshop-change--tracked--r1",
+        "irs-combined-workshop-change--unified--r1",
+        "irs-combined-workshop-change--tracked--r2",
+        "irs-combined-workshop-change--split--r2",
+        "irs-combined-workshop-change--unified--r2",
+        "irs-combined-workshop-change--split--r1"
+      ],
+      "observed_failure": "All six workshop runs omit the final explicitly requested $23 price; split publishes incomplete answers.",
+      "proposed_mechanism": "Require supported values or explicit unresolved status for current requested fields; check coverage before publication.",
+      "mechanically_enforceable": "Declared fields are present or unresolved.",
+      "not_guaranteed": "Completeness of the extracted requirement contract or truth of field values."
+    },
+    {
+      "id": "reselection_not_performed_correctly",
+      "run_ids": [
+        "irs-room-withdrawal--tracked--r1",
+        "irs-room-withdrawal--tracked--r2"
+      ],
+      "observed_failure": "Both tracked room runs retain Gauge despite correct revised tracker constraints.",
+      "proposed_mechanism": "Invalidate changed dependencies; recompute eligible candidates and objective; bind persisted result to version and sources; check final consistency.",
+      "mechanically_enforceable": "No stale dependency can claim current validation; deterministic minimization works on an accurately extracted table.",
+      "not_guaranteed": "Correct extraction or task interpretation; current-version generated content can still be wrong."
+    },
+    {
+      "id": "withdrawn_or_unaccepted_scope",
+      "run_ids": [
+        "irs-combined-workshop-change--unified--r1",
+        "irs-unaccepted-assistant-proposal--unified--r1"
+      ],
+      "observed_failure": "One workshop keeps withdrawn parking; one demo adds recording despite an only restriction.",
+      "proposed_mechanism": "Bind claims to active requested fields and invalidate withdrawn dependencies; check scope against raw restrictions.",
+      "mechanically_enforceable": "Known withdrawn or unaccepted dependencies cannot remain active under an accurate contract.",
+      "not_guaranteed": "Semantic scope interpretation or detection of every implicit extra claim."
+    }
+  ],
+  "current_harness_boundary": {
+    "input": "Fresh System+Human packet includes observation, conversation, receipts and optional intention state; previous ordinary work prose is logged but not forwarded.",
+    "existing_prompt": "Work already has a save_notes instruction; saving still depends on model compliance.",
+    "publication": "Empty text, new observations, card conflicts and duplicate delivery are guarded; semantic coverage, scope and truth are not.",
+    "AnswerDelivery": "Exists in the native graph but was not exercised by this IntentRoleSession experiment; repair benefit untested."
+  },
+  "prior_diagnostics_not_rerun": {
+    "date": "2026-10-23",
+    "kind": "Existing scripted diagnosis, not a repair trial.",
+    "scenarios": 14,
+    "scripted_callback_invocations": 82,
+    "new_real_model_calls": 0,
+    "tracker": {
+      "scenarios": 4,
+      "controls_or_existing_behaviors_passed": 5,
+      "desired_recovery_properties_failed": 2
+    },
+    "handoff": {
+      "scenarios": 4,
+      "controls_or_invariants_passed": 7,
+      "desired_interface_properties_failed": 1
+    },
+    "publication": {
+      "scenarios": 6,
+      "observed_behavior_assertions_matched": 6,
+      "meaning": "Incorrect-draft acceptance is not a quality success."
+    },
+    "observed_transport_control": "Native save_notes carries the same conclusion to scripted chat and publication; scripted chat intentionally depends on it. Transport proof only.",
+    "source_availability": {
+      "failed_trajectories": 10,
+      "failed_trajectories_with_latest_request_in_all_final_stage_inputs": 10,
+      "failed_trajectories_with_full_source_in_all_final_stage_inputs": 10,
+      "meaning": "Input availability does not prove attention or understanding."
+    }
+  },
+  "proposed_comparison": {
+    "status": "not_run",
+    "design": "First compare the unchanged role harness with mandatory persisted work results under the same model, cases and resource caps, changing prompts only for the result contract. Then separately add dependency invalidation, receipt-based completion, content validation and bounded tracker recovery. Report added calls and tokens, and preserve every unresolved or blocked outcome. Use exposed cases only for regression and fresh families for generalization claims. This is a candidate sequence, not a frozen protocol.",
+    "benefit_measured": false
+  },
+  "limitations": [
+    "Eight authored exposed families with correlated repeats, not independent users.",
+    "Categories overlap; no guaranteed rescued-failure count can be inferred.",
+    "Workshop price is explicitly requested only at stage three; earlier gold is not an earlier user request.",
+    "No new generations, runtime tests, ASR, user study or long-conversation comparison.",
+    "Export contains selected facts and file hashes, not raw prompts, private captures, secrets or absolute host paths."
+  ],
+  "sources": [
+    {
+      "path": "output/research/2026-10-23/intent-role-separation/analysis/rows.csv",
+      "sha256": "25300599e139c6696685d237c2f812343f3f08c839f48c3817f46ae6a7013931"
+    },
+    {
+      "path": "output/research/2026-10-23/intent-role-separation/evaluation/runs/irs-room-withdrawal--tracked--r2/steps.jsonl",
+      "sha256": "c9d5fb61067958923b7adcbc3ea3636ffe808e632dc0a46500ed134b42d90bce"
+    },
+    {
+      "path": "output/research/2026-10-23/intent-role-separation/evaluation/runs/irs-multiple-request-owners--unified--r2/steps.jsonl",
+      "sha256": "cbfc3a32f618588ba75c1ac2349f7a7075f708950e6d618cd8ffceed49cef19b"
+    },
+    {
+      "path": "output/research/2026-10-23/intent-role-diagnostics/SUMMARY.json",
+      "sha256": "bb5f2f1741a2107b099b06e077e604b7aebff616ed7151b8cb75ab31b867757e"
+    },
+    {
+      "path": "output/research/2026-10-23/intent-role-diagnostics/delivery/delivery-audit.json",
+      "sha256": "4bf675a0f14eeec63752c5ba504af20876643cec6bb86f62a487e4e546da4a98"
+    },
+    {
+      "path": "output/research/2026-10-23/intent-role-diagnostics/delivery/publish-guard-diagnostic.json",
+      "sha256": "72639bea7ea186347b1e2bbd3c18d9a355d993c20c2bc6929fb2d46a6d892f67"
+    },
+    {
+      "path": "output/research/2026-10-23/intent-role-diagnostics/handoff/results.json",
+      "sha256": "a1fdda857cc35f6a08b7b4d041c9c59ae5383a21829fe969b30df169ac37197c"
+    },
+    {
+      "path": "output/research/2026-10-23/intent-role-diagnostics/tracker/run-01/diagnosis.json",
+      "sha256": "2ee72aaa112030d3084cc7814d7cc27bf856ab62953c23f868676604fdef8b43"
+    },
+    {
+      "path": "experiments/deep_conversation/intent_roles.py",
+      "sha256": "befc382472aabc55efbda043aae5d377e12cce92a56804c73e25994305674d68"
+    }
+  ],
+  "sources_are_existing_read_only_records": true
+}

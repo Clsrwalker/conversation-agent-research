@@ -1,0 +1,663 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Compact Actor context and model-selected original-history access: two real continuations from authored setups, engineering checks, and preserved earlier mission-guided records.">
+<title>Mission-guided interview foundation · Conversation Agent Research</title>
+<link rel="icon" href="data:,"><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="workflow-study.css">
+<link rel="stylesheet" href="harness-context-methods.css"><script src="harness-context-methods.js" defer></script>
+<style>
+.mission-foundation .wf-headline>div:nth-child(2) strong{color:var(--ink)}
+.mf-return{display:inline-block;font-size:14px;margin-bottom:28px}
+.mf-pipeline{margin-top:28px}.mf-pipeline li{min-width:0}.mf-pipeline b{font-size:16px}
+.mf-detail-meta{font-size:12px;font-weight:400;color:var(--muted);margin-left:12px}
+.mf-conversation>summary{line-height:1.6}.mf-conversation[open]{padding-bottom:24px}
+.mf-transcript-turn{margin-top:25px;padding-top:20px;border-top:1px solid var(--line)}
+.mf-transcript-turn h4{font-size:14px;margin:0 0 12px}.mf-turn-state{display:flex;flex-wrap:wrap;gap:7px 24px;font-size:12px;color:var(--muted);padding:10px 0}
+.mf-turn-state b{font-weight:600;color:var(--ink)}.mf-state-details{margin-top:4px;padding-block:12px}.mf-state-details summary{font-size:13px}
+.mission-foundation .mf-state-table{font-size:12px}.mf-state-table th,.mf-state-table td{overflow-wrap:anywhere}
+.mf-records-table td{font-variant-numeric:tabular-nums}.mf-records-table th:first-child{min-width:180px}
+.mf-records-table ul{margin:0;padding-left:18px}.mf-evidence-hash{overflow-wrap:anywhere;font-size:12px}
+.mf-validation{display:grid;grid-template-columns:1fr 2fr;gap:30px;padding-top:20px}.mf-validation strong{font-size:36px;letter-spacing:-.04em}
+.mf-validation p{margin-top:6px}.mf-validation ul{margin-top:0}.mf-plain-limit{border-left:3px solid var(--accent);padding-left:20px;margin:25px 0}
+.mf-paired-table{min-width:820px;table-layout:fixed}.mf-paired-table th,.mf-paired-table td{width:33.33%;vertical-align:top}.mf-paired-table p{font-size:13px;line-height:1.6}.mf-paired-table th p{font-weight:400}
+.mf-case-name{display:block;text-transform:uppercase;font-size:11px;letter-spacing:.08em;color:var(--muted);margin-bottom:12px}.mf-record-list{margin:0;padding-left:16px;font-size:13px}.mf-record-list li{margin-bottom:10px}.mf-record-list small{color:var(--muted)}
+.mf-json{white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px;line-height:1.55;max-height:420px;overflow-y:auto;background:var(--panel);padding:14px;border:1px solid var(--line)}.mf-native-result{margin-bottom:4px}
+.mf-review .wf-turn p{white-space:pre-wrap}.mf-original{margin-top:64px;border-top:3px solid var(--line);padding-top:42px}.mf-original h2{font-size:clamp(32px,5vw,55px);letter-spacing:-.04em;line-height:1.1}
+#observer-review{margin-top:64px;border-top:3px solid var(--line);padding-top:42px}#observer-review-heading{font-size:clamp(32px,5vw,55px);letter-spacing:-.04em;line-height:1.1}
+.hc-capabilities{grid-template-columns:repeat(3,minmax(0,1fr))}.hc-prefix[open]{padding-bottom:22px}.hc-prefix .wf-turn{margin-top:12px}.hc-section .wf-headline strong{font-size:clamp(36px,5vw,52px)}
+@media(max-width:700px){.hc-capabilities{grid-template-columns:1fr}}
+@media(max-width:600px){.mf-detail-meta{display:block;margin:5px 0 0}.mf-validation{grid-template-columns:1fr;gap:8px}.mf-pipeline{grid-template-columns:1fr}}
+</style><link rel="stylesheet" href="reader-ui.css?v=20261027"><script src="reader-ui.js?v=20261027" defer></script></head><body><header class="masthead"><a class="wordmark" href="index.html#overview"><span class="mark" aria-hidden="true">c<span>·</span>a</span><span>Conversation Agent<span class="wordmark-sub">Research notebook</span></span></a><div class="masthead-right"><button id="theme-toggle" data-reader-theme class="icon-button" type="button" aria-label="Switch to dark theme">◐</button></div></header>
+<nav class="reader-navigation" aria-label="Main navigation"><div class="wrap"><a href="index.html#overview">Harness overview</a><a href="index.html#methods" aria-current="page">Studies &amp; tests</a><a href="index.html#harness">Case explorer</a></div></nav><a class="skip-link" href="#main">Skip to milestone</a>
+<main id="main" class="wrap workflow-study mission-foundation" tabindex="-1">
+
+
+<section id="harness-context" class="mf-review hc-section" aria-labelledby="harness-context-heading">
+<header class="wf-hero"><p class="eyebrow">ENGINEERING FEATURE MILESTONE</p>
+<h1 id="harness-context-heading">A compact task view.<br>Original history on demand.</h1>
+<p class="wf-deck">The Actor now receives one task/progress view, complete recent exchanges and linked older evidence, and can request original history when needed. Two real model continuations demonstrate correction-aware answering and a model-selected read before an answer; authoritative evidence and resumable delivery remain intact.</p>
+<p class="wf-date">2026-11-06 · America/Halifax · Local model: qwen3.5:9b</p>
+<div class="wf-headline"><div><strong>2</strong><p>Real continuations<br><small>Each starts from five authored setup exchanges</small></p></div>
+<div><strong>3</strong><p>Separated responsibilities<br><small>Authority · Reading view · Model action</small></p></div>
+<div class="wf-headline-copy"><p><b>Demonstrated capability</b><br>The Actor uses current task status and selected original dialogue, requests older history when needed, then chooses its own reply.</p><p><b>Evidence scope</b><br>Two authored-prefix demonstrations. No baseline comparison, training result or general interview-quality gain.</p></div></div></header>
+<nav class="wf-jumps" aria-label="Harness context sections"><a href="#context-method">Method</a><a href="#context-process">Process walkthrough</a><a href="#context-capability">Implementation bounds</a><a href="#context-continuations">Full continuations</a><a href="#context-validation">Checks and cost</a><a href="#observer-review">5 Nov observer review</a><a href="#original-snapshot">Original foundation</a></nav>
+
+<section id="context-method" class="wf-section" aria-labelledby="context-method-heading">
+<div class="wf-section-heading"><span>01</span><div><p class="eyebrow">METHOD · SEPARATE AUTHORITY, VIEW AND ACTION</p><h2 id="context-method-heading">What changed, and how the Actor input is built</h2></div></div>
+<p class="wf-lead">Separate what the system knows, what the Actor currently reads, and what the model may request next. Keep original evidence available while making the immediate decision context explicit.</p>
+<div class="wf-table-wrap"><table class="hcm-comparison"><caption>Implementation before and now. This is an architecture comparison, not a measured effectiveness comparison.</caption><thead><tr><th scope="col">Responsibility</th><th scope="col">Earlier implementation</th><th scope="col">Current implementation</th></tr></thead><tbody><tr><th scope="row">Actor input</th><td>Full history plus full source/state structures, with overlapping task and evidence representations.</td><td>One task/progress view, complete recent exchanges and linked older evidence. Selected raw roles appear once.</td></tr><tr><th scope="row">Access to the past</th><td>Earlier dialogue was supplied directly in every full-history Actor request.</td><td>The initial view may omit history. The model can explicitly request original turns, a backward page or a literal match.</td></tr><tr><th scope="row">Fact authority</th><td>The Evidence Store and Projector already owned evidence and derived progress.</td><td>That authority stays intact. The compact view and read results do not become another fact store.</td></tr><tr><th scope="row">Recovery</th><td>Evidence replay and the durable reply outbox were already implemented.</td><td>Context settings, coverage and history-read results are also persisted and checked on resume.</td></tr></tbody></table></div>
+<h3>Three responsibilities, one authoritative evidence state</h3><ol class="hcm-layers"><li><h3>1 · Authoritative evidence</h3><p>Keep original user sources, accepted records and revisions. The Observer proposes evidence; native code validates it. The Projector derives applicability and completion eligibility.</p></li><li><h3>2 · Current reading view</h3><p>Rebuild a compact task/progress view and select original dialogue for this Actor call. Include coverage metadata and source pointers. This view owns no facts.</p></li><li><h3>3 · Model-selected action</h3><p>The Actor chooses a reply or a bounded read of original history. A read changes the next input, not the evidence. The model still chooses how to explain, defer, return or end.</p></li></ol>
+<h3>The deterministic selection algorithm</h3><p>The following steps construct an input view. They do not choose an interview question or decide which reply is best.</p><ol class="hcm-selection"><li><div><h4>Derive current task status</h4><p>Recompute projection from the authoritative snapshot. Merge each requirement’s contract and current state; retain source coordinates and mark invalidated old values explicitly.</p></div></li><li><div><h4>Keep the immediate exchange intact</h4><p>Select the latest three user exchanges with their actual preceding assistant questions and following replies. Add any saved read results from this pending user turn.</p></div></li><li><div><h4>Follow recorded evidence links</h4><p>Find older sources through current records, the previous evidence revision, and current or originally bound prerequisite revisions. This is provenance-based selection, without a semantic relevance model.</p></div></li><li><div><h4>Add whole older exchanges within budget</h4><p>Consider linked sources from newest to oldest. Add whole exchanges within the extra 6,000-character allowance. Do not include neighboring user turns merely because they are adjacent.</p></div></li><li><div><h4>Deduplicate, order and expose gaps</h4><p>Emit selected original roles once in chronological order, with visible IDs and omitted ranges. Recent text is never clipped; an explicit read may return one oversized first exchange. Character targets are not total token guarantees.</p></div></li></ol>
+</section>
+
+<section id="context-process" class="wf-section" aria-labelledby="context-process-heading">
+<div class="wf-section-heading"><span>02</span><div><p class="eyebrow">PROCESS · FOLLOW ONE RECORDED CONTINUATION</p><h2 id="context-process-heading">From a new user request to a recovered original answer</h2></div></div>
+<ol class="hcm-cycle" aria-label="Interview execution cycle"><li><span class="hcm-kind">Original input</span><b>Receive user turn</b><p>Retain the original text and source ID.</p></li><li><span class="hcm-kind">Model decision</span><b>Observe evidence</b><p>The Observer reads the full role history and proposes records.</p></li><li><span class="hcm-kind">Native execution</span><b>Commit and project</b><p>Native checks accept evidence; the Projector recomputes current progress.</p></li><li><span class="hcm-kind">Model decision</span><b>Choose the next move</b><p>The Actor reads the derived view and selects a response or a history read.</p></li><li><span class="hcm-kind">Native execution</span><b>Optional: read and return</b><p>The native reader supplies original text. The Actor runs again with that text; evidence is unchanged. Default limit: two reads per user turn.</p></li><li><span class="hcm-kind">Native execution</span><b>Save and deliver</b><p>An accepted reply enters the outbox. Output is acknowledged separately; saved reads and replies survive interruption.</p></li></ol>
+<p class="wf-note">The history-read branch is optional. The Actor may reply directly; the sequence below shows the one retained continuation where it chose to read.</p>
+<h3>Follow the actual envelope-location continuation</h3><p>Five user/assistant setup exchanges were authored; u6 was fixed in advance. The Observer output, read request and final answer shown here are from the real local model. This is a recorded walkthrough, not a live simulation.</p>
+<div class="hcm-stepper" data-hcm-stepper>
+<div class="hcm-controls" data-hcm-controls hidden role="group" aria-label="Choose a recorded execution step"><button type="button" class="hcm-step-button" data-hcm-step-button data-label="Keep the original user message" aria-pressed="false" aria-controls="context-step-receive"><span>1 · Receive</span><b>Keep the original user message</b></button><button type="button" class="hcm-step-button" data-hcm-step-button data-label="Read the full history for mission evidence" aria-pressed="false" aria-controls="context-step-observe"><span>2 · Observe</span><b>Read the full history for mission evidence</b></button><button type="button" class="hcm-step-button" data-hcm-step-button data-label="Build the first Actor reading view" aria-pressed="false" aria-controls="context-step-actor-input"><span>3 · Select</span><b>Build the first Actor reading view</b></button><button type="button" class="hcm-step-button" data-hcm-step-button data-label="The model requests the missing history" aria-pressed="false" aria-controls="context-step-read"><span>4 · Read</span><b>The model requests the missing history</b></button><button type="button" class="hcm-step-button" data-hcm-step-button data-label="Read the original location, then reply" aria-pressed="false" aria-controls="context-step-answer"><span>5 · Answer</span><b>Read the original location, then reply</b></button><button type="button" class="hcm-step-button" data-hcm-step-button data-label="Save the reply and acknowledge output" aria-pressed="false" aria-controls="context-step-deliver"><span>6 · Deliver</span><b>Save the reply and acknowledge output</b></button></div>
+
+
+<article class="hcm-step-panel" id="context-step-receive" data-hcm-panel aria-labelledby="context-step-title-receive">
+<p class="eyebrow">RECORDED STEP 1</p><h3 id="context-step-title-receive">Keep the original user message</h3>
+<p>The fixed new user input asks for an earlier location and asks for no further question. The delivered history retains all six user turns and the intervening assistant messages.</p><p class="hcm-view-label">Stored original history</p>
+<ol class="hcm-turn-strip" aria-label="User-turn coverage for this stage"><li class="hcm-turn is-visible" data-turn-id="u1" data-included="true"><span class="hcm-turn-id">u1</span><span class="hcm-turn-summary">Own laptop: no failure</span><span class="hcm-turn-status">Included in this view</span></li><li class="hcm-turn is-visible" data-turn-id="u2" data-included="true"><span class="hcm-turn-id">u2</span><span class="hcm-turn-summary">Envelope location</span><span class="hcm-turn-status">Included in this view</span></li><li class="hcm-turn is-visible" data-turn-id="u3" data-included="true"><span class="hcm-turn-id">u3</span><span class="hcm-turn-summary">A few minutes available</span><span class="hcm-turn-status">Included in this view</span></li><li class="hcm-turn is-visible" data-turn-id="u4" data-included="true"><span class="hcm-turn-id">u4</span><span class="hcm-turn-summary">Keep answers brief</span><span class="hcm-turn-status">Included in this view</span></li><li class="hcm-turn is-visible" data-turn-id="u5" data-included="true"><span class="hcm-turn-id">u5</span><span class="hcm-turn-summary">Keep the rest concise</span><span class="hcm-turn-status">Included in this view</span></li><li class="hcm-turn is-visible is-highlighted" data-turn-id="u6" data-included="true"><span class="hcm-turn-id">u6</span><span class="hcm-turn-summary">Repeat the earlier location</span><span class="hcm-turn-status">Included in this view · focus</span></li></ol>
+<div class="hcm-state-action"><div><h4>Authoritative state</h4><p>Evidence-store revision 7: failure = false; recovery is not applicable. No envelope-location field exists in the mission.</p></div><div><h4>Action or input change</h4><p>Store the new source turn u6 before observation.</p></div></div>
+<figure class="hcm-quote"><figcaption>Recorded excerpt or execution note</figcaption><pre>Earlier I told you where I put the envelope. Please repeat the exact location I gave, without asking another question.</pre></figure>
+<details class="wf-details mf-state-details"><summary>Original user text included in this stage</summary>
+<p class="wf-note">This list shows user text for the indicated view. The captured role messages also preserve the selected assistant context. Turn labels above describe the record; an omitted label does not mean its original text was supplied to the Actor.</p>
+<ul class="hcm-source-list"><li><code>u1</code><p>My own laptop has not failed this month.</p></li><li><code>u2</code><p>One unrelated note: I put the envelope inside the blue folder on the hallway shelf.</p></li><li><code>u3</code><p>I have a few minutes for this conversation.</p></li><li><code>u4</code><p>I&#x27;ll answer briefly from now on.</p></li><li><code>u5</code><p>Let&#x27;s keep the rest concise.</p></li><li><code>u6</code><p>Earlier I told you where I put the envelope. Please repeat the exact location I gave, without asking another question.</p></li></ul></details></article>
+<article class="hcm-step-panel" id="context-step-observe" data-hcm-panel aria-labelledby="context-step-title-observe">
+<p class="eyebrow">RECORDED STEP 2</p><h3 id="context-step-title-observe">Read the full history for mission evidence</h3>
+<p>The Observer can see u2, including the location. It proposes no new mission evidence in this call. The location is not smuggled into the Actor through a task field.</p><p class="hcm-view-label">Observer input — full role history</p>
+<ol class="hcm-turn-strip" aria-label="User-turn coverage for this stage"><li class="hcm-turn is-visible" data-turn-id="u1" data-included="true"><span class="hcm-turn-id">u1</span><span class="hcm-turn-summary">Own laptop: no failure</span><span class="hcm-turn-status">Included in this view</span></li><li class="hcm-turn is-visible" data-turn-id="u2" data-included="true"><span class="hcm-turn-id">u2</span><span class="hcm-turn-summary">Envelope location</span><span class="hcm-turn-status">Included in this view</span></li><li class="hcm-turn is-visible" data-turn-id="u3" data-included="true"><span class="hcm-turn-id">u3</span><span class="hcm-turn-summary">A few minutes available</span><span class="hcm-turn-status">Included in this view</span></li><li class="hcm-turn is-visible" data-turn-id="u4" data-included="true"><span class="hcm-turn-id">u4</span><span class="hcm-turn-summary">Keep answers brief</span><span class="hcm-turn-status">Included in this view</span></li><li class="hcm-turn is-visible" data-turn-id="u5" data-included="true"><span class="hcm-turn-id">u5</span><span class="hcm-turn-summary">Keep the rest concise</span><span class="hcm-turn-status">Included in this view</span></li><li class="hcm-turn is-visible" data-turn-id="u6" data-included="true"><span class="hcm-turn-id">u6</span><span class="hcm-turn-summary">Repeat the earlier location</span><span class="hcm-turn-status">Included in this view</span></li></ol>
+<div class="hcm-state-action"><div><h4>Authoritative state</h4><p>Evidence-store revision 7: failure = false; recovery is not applicable. No envelope-location field exists in the mission.</p></div><div><h4>Action or input change</h4><p>Actual Observer output: {&quot;records&quot;: []}</p></div></div>
+
+<details class="wf-details mf-state-details"><summary>Original user text included in this stage</summary>
+<p class="wf-note">This list shows user text for the indicated view. The captured role messages also preserve the selected assistant context. Turn labels above describe the record; an omitted label does not mean its original text was supplied to the Actor.</p>
+<ul class="hcm-source-list"><li><code>u1</code><p>My own laptop has not failed this month.</p></li><li><code>u2</code><p>One unrelated note: I put the envelope inside the blue folder on the hallway shelf.</p></li><li><code>u3</code><p>I have a few minutes for this conversation.</p></li><li><code>u4</code><p>I&#x27;ll answer briefly from now on.</p></li><li><code>u5</code><p>Let&#x27;s keep the rest concise.</p></li><li><code>u6</code><p>Earlier I told you where I put the envelope. Please repeat the exact location I gave, without asking another question.</p></li></ul></details></article>
+<article class="hcm-step-panel" id="context-step-actor-input" data-hcm-panel aria-labelledby="context-step-title-actor-input">
+<p class="eyebrow">RECORDED STEP 3</p><h3 id="context-step-title-actor-input">Build the first Actor reading view</h3>
+<p>u1 is selected through the accepted failure evidence; u4–u6 are the three recent exchanges. u2 and u3 user text are omitted. Coverage metadata exposes this gap. The source history still contains them.</p><p class="hcm-view-label">First Actor input — original user turns included</p>
+<ol class="hcm-turn-strip" aria-label="User-turn coverage for this stage"><li class="hcm-turn is-visible" data-turn-id="u1" data-included="true"><span class="hcm-turn-id">u1</span><span class="hcm-turn-summary">Own laptop: no failure</span><span class="hcm-turn-status">Included in this view</span></li><li class="hcm-turn is-highlighted" data-turn-id="u2" data-included="false"><span class="hcm-turn-id">u2</span><span class="hcm-turn-summary">Envelope location</span><span class="hcm-turn-status">Not included in this view · omitted target</span></li><li class="hcm-turn" data-turn-id="u3" data-included="false"><span class="hcm-turn-id">u3</span><span class="hcm-turn-summary">A few minutes available</span><span class="hcm-turn-status">Not included in this view</span></li><li class="hcm-turn is-visible" data-turn-id="u4" data-included="true"><span class="hcm-turn-id">u4</span><span class="hcm-turn-summary">Keep answers brief</span><span class="hcm-turn-status">Included in this view</span></li><li class="hcm-turn is-visible" data-turn-id="u5" data-included="true"><span class="hcm-turn-id">u5</span><span class="hcm-turn-summary">Keep the rest concise</span><span class="hcm-turn-status">Included in this view</span></li><li class="hcm-turn is-visible" data-turn-id="u6" data-included="true"><span class="hcm-turn-id">u6</span><span class="hcm-turn-summary">Repeat the earlier location</span><span class="hcm-turn-status">Included in this view</span></li></ol>
+<div class="hcm-state-action"><div><h4>Authoritative state</h4><p>Evidence-store revision 7: failure = false; recovery is not applicable. No envelope-location field exists in the mission.</p></div><div><h4>Action or input change</h4><p>271 characters of selected native dialogue. The exact location is absent from this request.</p></div></div>
+<figure class="hcm-quote"><figcaption>Recorded excerpt or execution note</figcaption><pre>Omitted raw turns can contain relevant uncommitted information.</pre></figure>
+<details class="wf-details mf-state-details"><summary>Original user text included in this stage</summary>
+<p class="wf-note">This list shows user text for the indicated view. The captured role messages also preserve the selected assistant context. Turn labels above describe the record; an omitted label does not mean its original text was supplied to the Actor.</p>
+<ul class="hcm-source-list"><li><code>u1</code><p>My own laptop has not failed this month.</p></li><li><code>u4</code><p>I&#x27;ll answer briefly from now on.</p></li><li><code>u5</code><p>Let&#x27;s keep the rest concise.</p></li><li><code>u6</code><p>Earlier I told you where I put the envelope. Please repeat the exact location I gave, without asking another question.</p></li></ul></details></article>
+<article class="hcm-step-panel" id="context-step-read" data-hcm-panel aria-labelledby="context-step-title-read">
+<p class="eyebrow">RECORDED STEP 4</p><h3 id="context-step-title-read">The model requests the missing history</h3>
+<p>The actual Actor chooses a backward page from the newest turn, with a limit of eight exchanges. The native reader returns all six available exchanges in chronological order, including u2. This action neither changes evidence nor delivers a reply.</p><p class="hcm-view-label">Read result — original history returned</p>
+<ol class="hcm-turn-strip" aria-label="User-turn coverage for this stage"><li class="hcm-turn is-visible" data-turn-id="u1" data-included="true"><span class="hcm-turn-id">u1</span><span class="hcm-turn-summary">Own laptop: no failure</span><span class="hcm-turn-status">Included in this view</span></li><li class="hcm-turn is-visible is-highlighted" data-turn-id="u2" data-included="true"><span class="hcm-turn-id">u2</span><span class="hcm-turn-summary">Envelope location</span><span class="hcm-turn-status">Included in this view · focus</span></li><li class="hcm-turn is-visible" data-turn-id="u3" data-included="true"><span class="hcm-turn-id">u3</span><span class="hcm-turn-summary">A few minutes available</span><span class="hcm-turn-status">Included in this view</span></li><li class="hcm-turn is-visible" data-turn-id="u4" data-included="true"><span class="hcm-turn-id">u4</span><span class="hcm-turn-summary">Keep answers brief</span><span class="hcm-turn-status">Included in this view</span></li><li class="hcm-turn is-visible" data-turn-id="u5" data-included="true"><span class="hcm-turn-id">u5</span><span class="hcm-turn-summary">Keep the rest concise</span><span class="hcm-turn-status">Included in this view</span></li><li class="hcm-turn is-visible" data-turn-id="u6" data-included="true"><span class="hcm-turn-id">u6</span><span class="hcm-turn-summary">Repeat the earlier location</span><span class="hcm-turn-status">Included in this view</span></li></ol>
+<div class="hcm-state-action"><div><h4>Authoritative state</h4><p>Evidence-store revision 7: failure = false; recovery is not applicable. No envelope-location field exists in the mission.</p></div><div><h4>Action or input change</h4><pre>{
+  &quot;decision&quot;: &quot;read_history&quot;,
+  &quot;request&quot;: {
+    &quot;mode&quot;: &quot;before&quot;,
+    &quot;before_turn_id&quot;: null,
+    &quot;limit&quot;: 8
+  }
+}</pre></div></div>
+<figure class="hcm-quote"><figcaption>Recorded excerpt or execution note</figcaption><pre>One unrelated note: I put the envelope inside the blue folder on the hallway shelf.</pre></figure>
+<details class="wf-details mf-state-details"><summary>Original user text included in this stage</summary>
+<p class="wf-note">This list shows user text for the indicated view. The captured role messages also preserve the selected assistant context. Turn labels above describe the record; an omitted label does not mean its original text was supplied to the Actor.</p>
+<ul class="hcm-source-list"><li><code>u1</code><p>My own laptop has not failed this month.</p></li><li><code>u2</code><p>One unrelated note: I put the envelope inside the blue folder on the hallway shelf.</p></li><li><code>u3</code><p>I have a few minutes for this conversation.</p></li><li><code>u4</code><p>I&#x27;ll answer briefly from now on.</p></li><li><code>u5</code><p>Let&#x27;s keep the rest concise.</p></li><li><code>u6</code><p>Earlier I told you where I put the envelope. Please repeat the exact location I gave, without asking another question.</p></li></ul></details></article>
+<article class="hcm-step-panel" id="context-step-answer" data-hcm-panel aria-labelledby="context-step-title-answer">
+<p class="eyebrow">RECORDED STEP 5</p><h3 id="context-step-title-answer">Read the original location, then reply</h3>
+<p>The next Actor request contains the read result as original role messages, merged without repeating raw turns. It now includes u2. The model answers the location request and chooses completion.</p><p class="hcm-view-label">Second Actor input — original user turns included</p>
+<ol class="hcm-turn-strip" aria-label="User-turn coverage for this stage"><li class="hcm-turn is-visible" data-turn-id="u1" data-included="true"><span class="hcm-turn-id">u1</span><span class="hcm-turn-summary">Own laptop: no failure</span><span class="hcm-turn-status">Included in this view</span></li><li class="hcm-turn is-visible is-highlighted" data-turn-id="u2" data-included="true"><span class="hcm-turn-id">u2</span><span class="hcm-turn-summary">Envelope location</span><span class="hcm-turn-status">Included in this view · focus</span></li><li class="hcm-turn is-visible" data-turn-id="u3" data-included="true"><span class="hcm-turn-id">u3</span><span class="hcm-turn-summary">A few minutes available</span><span class="hcm-turn-status">Included in this view</span></li><li class="hcm-turn is-visible" data-turn-id="u4" data-included="true"><span class="hcm-turn-id">u4</span><span class="hcm-turn-summary">Keep answers brief</span><span class="hcm-turn-status">Included in this view</span></li><li class="hcm-turn is-visible" data-turn-id="u5" data-included="true"><span class="hcm-turn-id">u5</span><span class="hcm-turn-summary">Keep the rest concise</span><span class="hcm-turn-status">Included in this view</span></li><li class="hcm-turn is-visible" data-turn-id="u6" data-included="true"><span class="hcm-turn-id">u6</span><span class="hcm-turn-summary">Repeat the earlier location</span><span class="hcm-turn-status">Included in this view</span></li></ol>
+<div class="hcm-state-action"><div><h4>Authoritative state</h4><p>Evidence-store revision 7: failure = false; recovery is not applicable. No envelope-location field exists in the mission.</p></div><div><h4>Action or input change</h4><p>408 characters of selected native dialogue; actual decision = complete.</p></div></div>
+<figure class="hcm-quote"><figcaption>Recorded excerpt or execution note</figcaption><pre>You placed the envelope inside the blue folder on the hallway shelf.</pre></figure>
+<details class="wf-details mf-state-details"><summary>Original user text included in this stage</summary>
+<p class="wf-note">This list shows user text for the indicated view. The captured role messages also preserve the selected assistant context. Turn labels above describe the record; an omitted label does not mean its original text was supplied to the Actor.</p>
+<ul class="hcm-source-list"><li><code>u1</code><p>My own laptop has not failed this month.</p></li><li><code>u2</code><p>One unrelated note: I put the envelope inside the blue folder on the hallway shelf.</p></li><li><code>u3</code><p>I have a few minutes for this conversation.</p></li><li><code>u4</code><p>I&#x27;ll answer briefly from now on.</p></li><li><code>u5</code><p>Let&#x27;s keep the rest concise.</p></li><li><code>u6</code><p>Earlier I told you where I put the envelope. Please repeat the exact location I gave, without asking another question.</p></li></ul></details></article>
+<article class="hcm-step-panel" id="context-step-deliver" data-hcm-panel aria-labelledby="context-step-title-deliver">
+<p class="eyebrow">RECORDED STEP 6</p><h3 id="context-step-title-deliver">Save the reply and acknowledge output</h3>
+<p>One new assistant reply is saved with its stable message ID. The CLI records its display acknowledgment after printing. The internal read did not create an extra participant-facing message.</p><p class="hcm-view-label">Saved source history — retained after reply</p>
+<ol class="hcm-turn-strip" aria-label="User-turn coverage for this stage"><li class="hcm-turn is-visible" data-turn-id="u1" data-included="true"><span class="hcm-turn-id">u1</span><span class="hcm-turn-summary">Own laptop: no failure</span><span class="hcm-turn-status">Included in this view</span></li><li class="hcm-turn is-visible" data-turn-id="u2" data-included="true"><span class="hcm-turn-id">u2</span><span class="hcm-turn-summary">Envelope location</span><span class="hcm-turn-status">Included in this view</span></li><li class="hcm-turn is-visible" data-turn-id="u3" data-included="true"><span class="hcm-turn-id">u3</span><span class="hcm-turn-summary">A few minutes available</span><span class="hcm-turn-status">Included in this view</span></li><li class="hcm-turn is-visible" data-turn-id="u4" data-included="true"><span class="hcm-turn-id">u4</span><span class="hcm-turn-summary">Keep answers brief</span><span class="hcm-turn-status">Included in this view</span></li><li class="hcm-turn is-visible" data-turn-id="u5" data-included="true"><span class="hcm-turn-id">u5</span><span class="hcm-turn-summary">Keep the rest concise</span><span class="hcm-turn-status">Included in this view</span></li><li class="hcm-turn is-visible" data-turn-id="u6" data-included="true"><span class="hcm-turn-id">u6</span><span class="hcm-turn-summary">Repeat the earlier location</span><span class="hcm-turn-status">Included in this view</span></li></ol>
+<div class="hcm-state-action"><div><h4>Authoritative state</h4><p>Session completed; task completion eligible. The evidence store remains at revision 7.</p></div><div><h4>Action or input change</h4><p>Reply decision-13: displayed. Read event and context configuration retained for recovery.</p></div></div>
+<figure class="hcm-quote"><figcaption>Recorded excerpt or execution note</figcaption><pre>A display acknowledgment records caller output, not proof that a human read it.</pre></figure>
+<details class="wf-details mf-state-details"><summary>Original user text included in this stage</summary>
+<p class="wf-note">This list shows user text for the indicated view. The captured role messages also preserve the selected assistant context. Turn labels above describe the record; an omitted label does not mean its original text was supplied to the Actor.</p>
+<ul class="hcm-source-list"><li><code>u1</code><p>My own laptop has not failed this month.</p></li><li><code>u2</code><p>One unrelated note: I put the envelope inside the blue folder on the hallway shelf.</p></li><li><code>u3</code><p>I have a few minutes for this conversation.</p></li><li><code>u4</code><p>I&#x27;ll answer briefly from now on.</p></li><li><code>u5</code><p>Let&#x27;s keep the rest concise.</p></li><li><code>u6</code><p>Earlier I told you where I put the envelope. Please repeat the exact location I gave, without asking another question.</p></li></ul></details></article></div>
+<p class="mf-plain-limit">The model read all six available exchanges. This demonstrates access, not precise retrieval or reduced total cost. The 271 → 408 counts cover selected native dialogue characters only, not system context, model tokens or the whole pipeline.</p>
+<h3>How this version was implemented and accepted</h3><div class="hcm-build-process"><article><h4>Identify the input problem</h4><p>The Observer context fix already existed. The remaining issue was overlapping Actor state/history and the lack of an explicit reading budget and history-access action.</p></article><article><h4>Add a derived view and read action</h4><p>Implement context.py, connect read_history to the existing session loop, and expose bounded CLI configuration. Keep compiler, evidence and projection semantics unchanged.</p></article><article><h4>Connect recovery, then inspect behavior</h4><p>Extend engineering checks for selection, read budgets and replay. Continue two authored prefixes with the real model; inspect actual requests, decisions, unchanged evidence and saved replies.</p></article><article><h4>Freeze the usable foundation</h4><p>Retain the 110 passing software checks and five real calls as their original records. Use this fixed harness for subsequent interview-decision research. This method page adds no new experiment.</p></article></div>
+<details class="wf-details"><summary>How this separates later research questions</summary><div class="hcm-build-process hcm-research-bridge"><article><h4>Was the needed information visible?</h4><p>Inspect coverage and the actual Actor input. A context omission and a wrong conversational choice require different explanations.</p></article><article><h4>Did the model request what it needed?</h4><p>Inspect read decisions, returned originals and remaining budget. Read availability does not guarantee that the model will use it well.</p></article><article><h4>With enough context, was the action appropriate?</h4><p>Use real interview decision points and calibrated human preferences to study explanation, deferral, follow-up and ending. This remains planned policy research.</p></article></div></details>
+<details class="wf-details"><summary>Method record and scope</summary><p>Method and process explanation of the existing frozen feature milestone; zero new model calls</p><p class="mf-evidence-hash"><b>Method record SHA-256:</b> <code>6cd266acb312153f9665dd5e69cf9a24f8a10ad5664cc4850ea812b633679b18</code></p><p>The walkthrough describes the already published continuation. Its original conversations, checks, costs and evidence remain below.</p></details>
+</section>
+
+
+<div id="context-capability" class="wf-section"><div class="wf-section-heading"><span>03</span><div><p class="eyebrow">CONTEXT ORGANIZATION</p><h2>Keep the task visible. Let the model ask for the past.</h2></div></div>
+<ol class="wf-timeline mf-pipeline hc-capabilities"><li><b>One task view</b><span>Combine contract and current projection. Keep source coordinates and explicitly marked invalidated values; omit the full sources map and duplicate record table from compact Actor input.</span></li><li><b>Complete recent exchanges</b><span>Retain recent original user messages and their actual assistant questions and replies; emit selected raw roles once in chronological order.</span></li><li><b>Linked older evidence</b><span>Use current sources, prior revisions and dependency relationships to add older exchanges within a character budget. Expose omitted ranges; omission is not evidence of irrelevance.</span></li><li><b>Model-selected readback</b><span>Read user turn IDs, backward pages or literal case-sensitive matches under a per-user read limit. Readback does not write evidence or become a delivered assistant reply.</span></li><li><b>Same authority and recovery</b><span>Observer retains full history. The Evidence Store and Projector semantics stay unchanged. Persist context settings, read results and reply acknowledgments; legacy sessions retain full-context behavior.</span></li></ol>
+<p>The Observer still receives the full role history. The Actor receives one combined task/status view, recent complete exchanges and original dialogue linked to accepted or revised evidence. Coverage metadata identifies omitted history; missing projected evidence is not proof that the user never supplied it.</p>
+<p>History access is a read-only model action, not a fixed question scheduler. It can request user-turn IDs, a backward page or a literal search. The result contains original text; no extra model-written summary is introduced. Reads do not change evidence and are not delivered as participant-facing replies.</p>
+<details class="wf-details"><summary>Default bounds and persistence</summary><p>Recent exchanges: 3. Additional automatic evidence context: 6,000 characters. Explicit read target: 12,000 characters. At most 2 history reads per user turn, separately bounded from reply attempts.</p><p>These are character targets, not token limits. Mandatory recent exchanges and a first oversized whole read can exceed a target. The model can still produce a final reply when its read allowance is exhausted.</p><p>Configuration, context hashes, coverage and read events are saved and checked during replay. Old sessions retain their full-context mode. Previously generated replies remain recoverable without another model generation.</p></details></div>
+
+<div id="context-continuations" class="wf-section"><div class="wf-section-heading"><span>04</span><div><p class="eyebrow">AUTHORED SETUP → REAL MODEL CONTINUATION</p><h2>Two concrete demonstrations, with the setup disclosed.</h2></div></div>
+<p>For each case, all messages in the first 5 user/assistant exchanges were authored. One further user input was also fixed in advance; the following observer proposals, optional history action and final reply came from the real local model. These are continuation fixtures, not complete natural interviews.</p>
+<details class="wf-details mf-conversation hc-conversation"><summary>Correction plus a current explanation request<span class="mf-detail-meta">2 real model calls · 3,479 reported tokens</span></summary><p>Demonstrated in this fixture: the reply first explains failure and then correctly uses the correction to distinguish the participant&#x27;s own laptop from the colleague&#x27;s. It does not ask another interview question or treat the invalidated recovery as a current obligation.</p><details class="wf-details hc-prefix"><summary>5 authored setup exchanges — not model generations</summary><p class="wf-note">Both user and assistant messages in this setup were written for the fixture. They establish the saved conversation from which the real continuation starts.</p><div class="wf-turn user"><div class="wf-turn-label">USER · u1 · AUTHORED SETUP</div><p>Let&#x27;s discuss my device.</p></div><div class="wf-turn assistant"><div class="wf-turn-label">ASSISTANT · AUTHORED SETUP</div><p>Has your own laptop failed in the last month?</p></div><div class="wf-turn user"><div class="wf-turn-label">USER · u2 · AUTHORED SETUP</div><p>Yes. Restarting restored it.</p></div><div class="wf-turn assistant"><div class="wf-turn-label">ASSISTANT · AUTHORED SETUP</div><p>Thank you for explaining.</p></div><div class="wf-turn user"><div class="wf-turn-label">USER · u3 · AUTHORED SETUP</div><p>I meant my colleague&#x27;s laptop, not mine. My own laptop has not failed this month.</p></div><div class="wf-turn assistant"><div class="wf-turn-label">ASSISTANT · AUTHORED SETUP</div><p>Understood; we are discussing your own laptop.</p></div><div class="wf-turn user"><div class="wf-turn-label">USER · u4 · AUTHORED SETUP</div><p>I&#x27;ll answer briefly from now on.</p></div><div class="wf-turn assistant"><div class="wf-turn-label">ASSISTANT · AUTHORED SETUP</div><p>That&#x27;s fine.</p></div><div class="wf-turn user"><div class="wf-turn-label">USER · u5 · AUTHORED SETUP</div><p>Let&#x27;s keep the rest concise.</p></div><div class="wf-turn assistant"><div class="wf-turn-label">ASSISTANT · AUTHORED SETUP</div><p>Of course.</p></div></details><article class="mf-transcript-turn"><h3>Actual continuation</h3><div class="wf-turn user"><div class="wf-turn-label">USER · u6 · AUTHORED NEW INPUT</div><p>Before asking anything else, explain what you mean by failure. Then tell me whether I reported a failure of my own laptop.</p></div><div class="wf-turn assistant"><div class="wf-turn-label">ASSISTANT · ACTUAL MODEL REPLY</div><p>By &#x27;failure&#x27; in this context, I mean any significant malfunction or breakdown that prevented your laptop from functioning as intended (e.g., hardware crash, software corruption, inability to boot). You have not reported such a failure for your own laptop; you only mentioned a colleague&#x27;s laptop issue. Therefore, the answer is no.</p></div></article><div class="mf-turn-state"><span><b>Final session state:</b> completed</span><span><b>Completion eligible:</b> Yes</span><span><b>History reads:</b> 0</span></div><details class="wf-details"><summary>Live actions and engineering checks</summary><details class="wf-details mf-state-details"><summary>Observer · Evidence proposal<span class="mf-detail-meta">Call 1 · 1,313 reported tokens</span></summary><p class="wf-note">Input: 1,263 tokens. Output: 50 tokens. This is the actual structured model output; a read request is internal and is not delivered as conversation.</p><pre class="mf-json">{
+  &quot;records&quot;: [
+    {
+      &quot;requirement_id&quot;: &quot;failure&quot;,
+      &quot;answer_state&quot;: &quot;answered&quot;,
+      &quot;value&quot;: false,
+      &quot;source&quot;: {
+        &quot;turn_id&quot;: &quot;u3&quot;,
+        &quot;quote&quot;: &quot;My own laptop has not failed this month.&quot;
+      }
+    }
+  ]
+}</pre></details><details class="wf-details mf-state-details"><summary>Actor · Choose a reply<span class="mf-detail-meta">Call 1 · 2,166 reported tokens</span></summary><p class="wf-note">Input: 2,090 tokens. Output: 76 tokens. This is the actual structured model output; a read request is internal and is not delivered as conversation.</p><pre class="mf-json">{
+  &quot;records&quot;: [],
+  &quot;message&quot;: &quot;By &#x27;failure&#x27; in this context, I mean any significant malfunction or breakdown that prevented your laptop from functioning as intended (e.g., hardware crash, software corruption, inability to boot). You have not reported such a failure for your own laptop; you only mentioned a colleague&#x27;s laptop issue. Therefore, the answer is no.&quot;,
+  &quot;decision&quot;: &quot;complete&quot;
+}</pre></details><div class="wf-table-wrap"><table class="mf-state-table"><caption>Fixture-specific checks, not an interview-quality score</caption><thead><tr><th scope="col">Check</th><th scope="col">Observed value</th></tr></thead><tbody><tr><th scope="row">observer full native history verified</th><td>true</td></tr><tr><th scope="row">compact actor source pointer only no full sources or duplicate record map</th><td>true</td></tr><tr><th scope="row">exact resume no generation</th><td>true</td></tr><tr><th scope="row">recorded output replay reproduces requests and saved session</th><td>true</td></tr><tr><th scope="row">question short answer and correction preserved</th><td>true</td></tr><tr><th scope="row">own laptop failure false</th><td>true</td></tr><tr><th scope="row">old recovery invalidated</th><td>true</td></tr></tbody></table></div></details><p class="mf-plain-limit">One reviewed continuation; the observer re-proposed unchanged u3 evidence. No population-level quality gain is measured.</p></details><details class="wf-details mf-conversation hc-conversation"><summary>Read older text, then answer the current request<span class="mf-detail-meta">3 real model calls · 5,033 reported tokens</span></summary><p>Demonstrated in this fixture: the actual model chooses a read_history action while the answer is absent from its initial request, receives the exact older u2 text, and answers the current location request without another question.</p><details class="wf-details hc-prefix"><summary>5 authored setup exchanges — not model generations</summary><p class="wf-note">Both user and assistant messages in this setup were written for the fixture. They establish the saved conversation from which the real continuation starts.</p><div class="wf-turn user"><div class="wf-turn-label">USER · u1 · AUTHORED SETUP</div><p>My own laptop has not failed this month.</p></div><div class="wf-turn assistant"><div class="wf-turn-label">ASSISTANT · AUTHORED SETUP</div><p>Thank you.</p></div><div class="wf-turn user"><div class="wf-turn-label">USER · u2 · AUTHORED SETUP</div><p>One unrelated note: I put the envelope inside the blue folder on the hallway shelf.</p></div><div class="wf-turn assistant"><div class="wf-turn-label">ASSISTANT · AUTHORED SETUP</div><p>Understood.</p></div><div class="wf-turn user"><div class="wf-turn-label">USER · u3 · AUTHORED SETUP</div><p>I have a few minutes for this conversation.</p></div><div class="wf-turn assistant"><div class="wf-turn-label">ASSISTANT · AUTHORED SETUP</div><p>We can keep it brief.</p></div><div class="wf-turn user"><div class="wf-turn-label">USER · u4 · AUTHORED SETUP</div><p>I&#x27;ll answer briefly from now on.</p></div><div class="wf-turn assistant"><div class="wf-turn-label">ASSISTANT · AUTHORED SETUP</div><p>That&#x27;s fine.</p></div><div class="wf-turn user"><div class="wf-turn-label">USER · u5 · AUTHORED SETUP</div><p>Let&#x27;s keep the rest concise.</p></div><div class="wf-turn assistant"><div class="wf-turn-label">ASSISTANT · AUTHORED SETUP</div><p>Of course.</p></div></details><article class="mf-transcript-turn"><h3>Actual continuation</h3><div class="wf-turn user"><div class="wf-turn-label">USER · u6 · AUTHORED NEW INPUT</div><p>Earlier I told you where I put the envelope. Please repeat the exact location I gave, without asking another question.</p></div><div class="wf-turn assistant"><div class="wf-turn-label">ASSISTANT · ACTUAL MODEL REPLY</div><p>You placed the envelope inside the blue folder on the hallway shelf.</p></div></article><div class="wf-callout"><h3>The model chose a broad history read.</h3><p>Its first Actor input did not contain the old location. The actual model then requested <code>before(null, 8)</code>, which returned all 6 available user turns with their conversational context. It answered the location from that original text. The evidence store did not change during the read.</p><p>This demonstrates on-demand access. It does not establish targeted retrieval or an efficiency gain.</p></div><div class="mf-turn-state"><span><b>Final session state:</b> completed</span><span><b>Completion eligible:</b> Yes</span><span><b>History reads:</b> 1</span></div><details class="wf-details"><summary>Live actions and engineering checks</summary><details class="wf-details mf-state-details"><summary>Observer · Evidence proposal<span class="mf-detail-meta">Call 1 · 1,172 reported tokens</span></summary><p class="wf-note">Input: 1,166 tokens. Output: 6 tokens. This is the actual structured model output; a read request is internal and is not delivered as conversation.</p><pre class="mf-json">{
+  &quot;records&quot;: []
+}</pre></details><details class="wf-details mf-state-details"><summary>Actor · Read original history<span class="mf-detail-meta">Call 1 · 1,771 reported tokens</span></summary><p class="wf-note">Input: 1,748 tokens. Output: 23 tokens. This is the actual structured model output; a read request is internal and is not delivered as conversation.</p><pre class="mf-json">{
+  &quot;decision&quot;: &quot;read_history&quot;,
+  &quot;request&quot;: {
+    &quot;mode&quot;: &quot;before&quot;,
+    &quot;before_turn_id&quot;: null,
+    &quot;limit&quot;: 8
+  }
+}</pre></details><details class="wf-details mf-state-details"><summary>Actor · Choose a reply<span class="mf-detail-meta">Call 2 · 2,090 reported tokens</span></summary><p class="wf-note">Input: 2,062 tokens. Output: 28 tokens. This is the actual structured model output; a read request is internal and is not delivered as conversation.</p><pre class="mf-json">{
+  &quot;records&quot;: [],
+  &quot;message&quot;: &quot;You placed the envelope inside the blue folder on the hallway shelf.&quot;,
+  &quot;decision&quot;: &quot;complete&quot;
+}</pre></details><div class="wf-table-wrap"><table class="mf-state-table"><caption>Fixture-specific checks, not an interview-quality score</caption><thead><tr><th scope="col">Check</th><th scope="col">Observed value</th></tr></thead><tbody><tr><th scope="row">observer full native history verified</th><td>true</td></tr><tr><th scope="row">compact actor source pointer only no full sources or duplicate record map</th><td>true</td></tr><tr><th scope="row">exact resume no generation</th><td>true</td></tr><tr><th scope="row">recorded output replay reproduces requests and saved session</th><td>true</td></tr><tr><th scope="row">initial actor location absent</th><td>true</td></tr><tr><th scope="row">observer location present</th><td>true</td></tr><tr><th scope="row">readonly full state equality before after read</th><td>true</td></tr></tbody></table></div></details><p class="mf-plain-limit">The chosen before(null,8) action fetched all six currently available user exchanges in this small fixture; this demonstrates access, not efficient targeted retrieval.</p></details></div>
+
+<div id="context-validation" class="wf-section"><div class="wf-section-heading"><span>05</span><div><p class="eyebrow">ENGINEERING CHECKS AND RECORDED COST</p><h2>5 live calls · 8,512 reported tokens</h2></div></div>
+<div class="wf-table-wrap"><table class="mf-records-table"><caption>Only the two real continuations; authored setup messages are not model calls.</caption><thead><tr><th scope="col">Continuation</th><th scope="col">Model calls</th><th scope="col">History reads</th><th scope="col">Input tokens</th><th scope="col">Output tokens</th><th scope="col">Total tokens</th></tr></thead><tbody><tr><th scope="row">Correction plus a current explanation request</th><td>2</td><td>0</td><td>3,353</td><td>126</td><td>3,479</td></tr><tr><th scope="row">Read older text, then answer the current request</th><td>3</td><td>1</td><td>4,976</td><td>57</td><td>5,033</td></tr></tbody></table></div>
+<p>Total input: 8,329 tokens. Total output: 183 tokens. The history-recall case retrieves all six available user turns; no targeted retrieval-efficiency or latency improvement is established.</p>
+<p>The Observer still reads the full history. Compact Actor input therefore does not bound the whole pipeline’s input cost.</p>
+<p>110 of 110 offline checks passed, with zero model calls. They cover software contracts, context selection, bounded reads, recovery and replay; they do not score interview quality. Compiler, evidence-state and projection semantics remain distinct from this Actor input change.</p>
+<details class="wf-details"><summary>Scope, limitations and source binding</summary><p>Authored structured mission; zero live compiler calls for these demonstrations.</p><p>Assistant review of native requests, outputs, source hashes, receipts and exact offline replay; no human preference labels.</p><ul><li>Each case has five authored/scripted prefix user turns and one real-model continuation; the prefix is not a live model dialogue or a human participant session.</li><li>The real inference is qwen3.5:9b on the pinned local digest. There is no baseline comparison or general assistance-quality, training, or cost-saving claim.</li><li>The history read is a broad backward page in this small case, not evidence of optimized search or retrieval precision.</li><li>No hard total-character or total-token guarantee follows from the context character targets: recent text is complete and an explicitly read first exchange may be oversized.</li><li>CLI display acknowledgments are recorded and replay-consistent; they are not proof that a human read the output.</li><li>Quoted text/type/source validation remains mechanical. The two observed responses were reviewed by an assistant, not a blinded human panel.</li><li>Observer still reads full history, so this change does not bound the whole pipeline&#x27;s input cost.</li><li>Older uncommitted facts or intent can be omitted from the first Actor view. Automatic evidence links do not guarantee retention of all relevant semantics; the model must request history when needed.</li><li>There is no summarizer, embedding retriever, attention replacement or weight update. Whether the model chooses the right explanation, deferral, return or ending remains a policy research question.</li></ul><p><b>Next step:</b> Freeze this harness for meeting-directed work: collect real interview decision points, calibrate human preferences, and only then study local preference learning and full-dialogue behavior.</p><p class="mf-evidence-hash"><b>Publication evidence SHA-256:</b> <code>818d823e318fb24830533161bb17a525d70434f431abd9add0335a241108c21b</code></p></details>
+</div></section>
+
+
+<section id="observer-review" class="mf-review" aria-labelledby="observer-review-heading">
+<header class="wf-hero"><p class="eyebrow">CONTEXT DIAGNOSTIC + ENGINEERING FEATURE UPDATE</p>
+<h2 id="observer-review-heading">The observer now sees<br>the conversation.</h2>
+<p class="wf-deck">The observer now sees assistant context and saved replies can be redisplayed without inference. A controlled six-case diagnostic shows improved interpretation in specific cases, with unresolved source-ID and scope errors.</p>
+<p class="wf-date">2026-11-05 · America/Halifax · qwen3.5:9b · No new training</p>
+<div class="wf-headline"><div><strong>6</strong><p>Paired context cases<br><small>Same model, prompt and schema</small></p></div>
+<div><strong>82/82</strong><p>Offline engineering checks<br><small>Not a quality score</small></p></div>
+<div class="wf-headline-copy"><p><b>Capability repaired</b><br>The evidence model receives assistant questions as context. Accepted replies survive interruption and can be redisplayed without inference or another evidence commit.</p><p><b>What remains unresolved</b><br>More context does not guarantee correct source IDs or semantic scope. The failed proposals are shown below.</p></div></div></header>
+<nav class="wf-jumps" aria-label="Observer review sections"><a href="#observer-pairs">Six context pairs</a><a href="#observer-dialogues">New conversations</a><a href="#observer-engineering">Recovery and validation</a><a href="#observer-cost">New call costs</a><a href="#original-snapshot">Original foundation snapshot</a></nav>
+
+<div id="observer-pairs" class="wf-section"><div class="wf-section-heading"><span>01</span><div><p class="eyebrow">CONTROLLED INPUT DIAGNOSTIC</p><h2>Short answers need their question. Context still needs checking.</h2></div></div>
+<p>Each pair uses the same authored checkpoint, source map, mission, current prompt, JSON schema, model digest, temperature and seed. The changed input is visibility of the assistant’s question. “User-only” recreates the missing-context condition; this is not a complete old-versus-new system comparison.</p>
+<p>The reordered option resolves to <code>hybrid</code> with its question, and the refusal narrows to the requested improvement field. The cause case still applies “unknown” to an unrelated failure field. These are specific observations from six development cases, not an aggregate interview-quality result.</p>
+<div class="wf-callout"><h3>Invalid source IDs remain an executable failure.</h3><p><b>3 of 6 with-history proposals</b> cite nonexistent <code>u2</code>, although the source map contains only <code>u1</code>. Across both conditions, <b>5 of 12 proposals</b> have this error. They were rejected; correct-looking values did not become accepted evidence.</p><p>The replacement case also adds unsupported <code>failure=true</code>. Conversely, the cause case’s overly broad unknown assignment passes mechanical checks. Provenance and type checks do not establish meaning.</p></div>
+<div class="wf-table-wrap"><table class="mf-paired-table"><caption>Actual model proposals and native acceptance. Assistant questions are visible only in the right-hand condition; the user answer is unchanged.</caption><thead><tr><th scope="col">Authored question and user answer</th><th scope="col">User-only context</th><th scope="col">Assistant history included</th></tr></thead><tbody><tr><th scope="row"><span class="mf-case-name">yes failure</span><p><b>Assistant:</b> Did your device fail during that incident?</p><p><b>User:</b> Yes.</p></th><td><ul class="mf-record-list"><li><code>failure = true</code><br><small>answered · source u2</small></li></ul><p class="mf-native-result"><b>Rejected by source validation</b><br>Proposed failure=true but cited nonexistent u2; rejected.</p><details class="wf-details mf-state-details"><summary>Exact proposed records</summary><pre class="mf-json">{
+  &quot;records&quot;: [
+    {
+      &quot;requirement_id&quot;: &quot;failure&quot;,
+      &quot;answer_state&quot;: &quot;answered&quot;,
+      &quot;value&quot;: true,
+      &quot;source&quot;: {
+        &quot;turn_id&quot;: &quot;u2&quot;,
+        &quot;quote&quot;: &quot;Yes.&quot;
+      }
+    }
+  ]
+}</pre></details></td><td><ul class="mf-record-list"><li><code>failure = true</code><br><small>answered · source u2</small></li></ul><p class="mf-native-result"><b>Rejected by source validation</b><br>Proposed the requested failure=true but still cited nonexistent u2; rejected.</p><details class="wf-details mf-state-details"><summary>Exact proposed records</summary><pre class="mf-json">{
+  &quot;records&quot;: [
+    {
+      &quot;requirement_id&quot;: &quot;failure&quot;,
+      &quot;answer_state&quot;: &quot;answered&quot;,
+      &quot;value&quot;: true,
+      &quot;source&quot;: {
+        &quot;turn_id&quot;: &quot;u2&quot;,
+        &quot;quote&quot;: &quot;Yes.&quot;
+      }
+    }
+  ]
+}</pre></details></td></tr><tr><th scope="row"><span class="mf-case-name">yes replacement</span><p><b>Assistant:</b> Did you replace the device during that incident?</p><p><b>User:</b> Yes.</p></th><td><ul class="mf-record-list"><li><code>failure = true</code><br><small>answered · source u2</small></li></ul><p class="mf-native-result"><b>Rejected by source validation</b><br>Returned the same failure=true proposal as the other Yes case, with nonexistent u2; rejected.</p><details class="wf-details mf-state-details"><summary>Exact proposed records</summary><pre class="mf-json">{
+  &quot;records&quot;: [
+    {
+      &quot;requirement_id&quot;: &quot;failure&quot;,
+      &quot;answer_state&quot;: &quot;answered&quot;,
+      &quot;value&quot;: true,
+      &quot;source&quot;: {
+        &quot;turn_id&quot;: &quot;u2&quot;,
+        &quot;quote&quot;: &quot;Yes.&quot;
+      }
+    }
+  ]
+}</pre></details></td><td><ul class="mf-record-list"><li><code>failure = true</code><br><small>answered · source u1</small></li><li><code>replacement = true</code><br><small>answered · source u2</small></li></ul><p class="mf-native-result"><b>Rejected by source validation</b><br>Added replacement=true but also unsupported failure=true, and cited nonexistent u2; the whole proposal was rejected.</p><details class="wf-details mf-state-details"><summary>Exact proposed records</summary><pre class="mf-json">{
+  &quot;records&quot;: [
+    {
+      &quot;requirement_id&quot;: &quot;failure&quot;,
+      &quot;answer_state&quot;: &quot;answered&quot;,
+      &quot;value&quot;: true,
+      &quot;source&quot;: {
+        &quot;turn_id&quot;: &quot;u1&quot;,
+        &quot;quote&quot;: &quot;Yes.&quot;
+      }
+    },
+    {
+      &quot;requirement_id&quot;: &quot;replacement&quot;,
+      &quot;answer_state&quot;: &quot;answered&quot;,
+      &quot;value&quot;: true,
+      &quot;source&quot;: {
+        &quot;turn_id&quot;: &quot;u2&quot;,
+        &quot;quote&quot;: &quot;Yes.&quot;
+      }
+    }
+  ]
+}</pre></details></td></tr><tr><th scope="row"><span class="mf-case-name">short number</span><p><b>Assistant:</b> How many people will attend in your group?</p><p><b>User:</b> Three.</p></th><td><ul class="mf-record-list"><li><code>group_size = 3</code><br><small>answered · source u1</small></li></ul><p class="mf-native-result"><b>Accepted mechanically</b><br>Recorded group_size=3 with the valid u1 source.</p><details class="wf-details mf-state-details"><summary>Exact proposed records</summary><pre class="mf-json">{
+  &quot;records&quot;: [
+    {
+      &quot;requirement_id&quot;: &quot;group_size&quot;,
+      &quot;answer_state&quot;: &quot;answered&quot;,
+      &quot;value&quot;: 3,
+      &quot;source&quot;: {
+        &quot;turn_id&quot;: &quot;u1&quot;,
+        &quot;quote&quot;: &quot;Three.&quot;
+      }
+    }
+  ]
+}</pre></details></td><td><ul class="mf-record-list"><li><code>group_size = 3</code><br><small>answered · source u2</small></li></ul><p class="mf-native-result"><b>Rejected by source validation</b><br>Still mapped Three to group_size=3, but cited nonexistent u2; rejected.</p><details class="wf-details mf-state-details"><summary>Exact proposed records</summary><pre class="mf-json">{
+  &quot;records&quot;: [
+    {
+      &quot;requirement_id&quot;: &quot;group_size&quot;,
+      &quot;answer_state&quot;: &quot;answered&quot;,
+      &quot;value&quot;: 3,
+      &quot;source&quot;: {
+        &quot;turn_id&quot;: &quot;u2&quot;,
+        &quot;quote&quot;: &quot;Three.&quot;
+      }
+    }
+  ]
+}</pre></details></td></tr><tr><th scope="row"><span class="mf-case-name">short reordered option</span><p><b>Assistant:</b> Would you prefer in-person attendance, hybrid attendance, or online attendance?</p><p><b>User:</b> The second option.</p></th><td><p><code>records: []</code></p><p class="mf-native-result"><b>Accepted mechanically</b><br>Returned no records; the option was not resolved.</p><details class="wf-details mf-state-details"><summary>Exact proposed records</summary><pre class="mf-json">{
+  &quot;records&quot;: []
+}</pre></details></td><td><ul class="mf-record-list"><li><code>attendance = &quot;hybrid&quot;</code><br><small>answered · source u1</small></li></ul><p class="mf-native-result"><b>Accepted mechanically</b><br>Resolved the assistant&#x27;s second option to hybrid, with a valid user source.</p><details class="wf-details mf-state-details"><summary>Exact proposed records</summary><pre class="mf-json">{
+  &quot;records&quot;: [
+    {
+      &quot;requirement_id&quot;: &quot;attendance&quot;,
+      &quot;answer_state&quot;: &quot;answered&quot;,
+      &quot;value&quot;: &quot;hybrid&quot;,
+      &quot;source&quot;: {
+        &quot;turn_id&quot;: &quot;u1&quot;,
+        &quot;quote&quot;: &quot;The second option.&quot;
+      }
+    }
+  ]
+}</pre></details></td></tr><tr><th scope="row"><span class="mf-case-name">unknown cause</span><p><b>Assistant:</b> Do you know what caused the device failure?</p><p><b>User:</b> I don&#x27;t know.</p></th><td><ul class="mf-record-list"><li><code>failure = null</code><br><small>unknown · source u1</small></li><li><code>replacement = null</code><br><small>unknown · source u1</small></li><li><code>group_size = null</code><br><small>unknown · source u1</small></li><li><code>attendance = null</code><br><small>unknown · source u1</small></li><li><code>root_cause = null</code><br><small>unknown · source u1</small></li><li><code>improvement = null</code><br><small>unknown · source u1</small></li></ul><p class="mf-native-result"><b>Accepted mechanically</b><br>Applied unknown to all six fields, exceeding the question&#x27;s scope. Native completion eligibility became true; this checkpoint has no Actor and did not execute completion.</p><details class="wf-details mf-state-details"><summary>Exact proposed records</summary><pre class="mf-json">{
+  &quot;records&quot;: [
+    {
+      &quot;requirement_id&quot;: &quot;failure&quot;,
+      &quot;answer_state&quot;: &quot;unknown&quot;,
+      &quot;value&quot;: null,
+      &quot;source&quot;: {
+        &quot;turn_id&quot;: &quot;u1&quot;,
+        &quot;quote&quot;: &quot;I don&#x27;t know.&quot;
+      }
+    },
+    {
+      &quot;requirement_id&quot;: &quot;replacement&quot;,
+      &quot;answer_state&quot;: &quot;unknown&quot;,
+      &quot;value&quot;: null,
+      &quot;source&quot;: {
+        &quot;turn_id&quot;: &quot;u1&quot;,
+        &quot;quote&quot;: &quot;I don&#x27;t know.&quot;
+      }
+    },
+    {
+      &quot;requirement_id&quot;: &quot;group_size&quot;,
+      &quot;answer_state&quot;: &quot;unknown&quot;,
+      &quot;value&quot;: null,
+      &quot;source&quot;: {
+        &quot;turn_id&quot;: &quot;u1&quot;,
+        &quot;quote&quot;: &quot;I don&#x27;t know.&quot;
+      }
+    },
+    {
+      &quot;requirement_id&quot;: &quot;attendance&quot;,
+      &quot;answer_state&quot;: &quot;unknown&quot;,
+      &quot;value&quot;: null,
+      &quot;source&quot;: {
+        &quot;turn_id&quot;: &quot;u1&quot;,
+        &quot;quote&quot;: &quot;I don&#x27;t know.&quot;
+      }
+    },
+    {
+      &quot;requirement_id&quot;: &quot;root_cause&quot;,
+      &quot;answer_state&quot;: &quot;unknown&quot;,
+      &quot;value&quot;: null,
+      &quot;source&quot;: {
+        &quot;turn_id&quot;: &quot;u1&quot;,
+        &quot;quote&quot;: &quot;I don&#x27;t know.&quot;
+      }
+    },
+    {
+      &quot;requirement_id&quot;: &quot;improvement&quot;,
+      &quot;answer_state&quot;: &quot;unknown&quot;,
+      &quot;value&quot;: null,
+      &quot;source&quot;: {
+        &quot;turn_id&quot;: &quot;u1&quot;,
+        &quot;quote&quot;: &quot;I don&#x27;t know.&quot;
+      }
+    }
+  ]
+}</pre></details></td><td><ul class="mf-record-list"><li><code>failure = null</code><br><small>unknown · source u1</small></li><li><code>root_cause = null</code><br><small>unknown · source u1</small></li></ul><p class="mf-native-result"><b>Accepted mechanically</b><br>Recorded unknown for root_cause but also incorrectly for failure; accepted mechanically.</p><details class="wf-details mf-state-details"><summary>Exact proposed records</summary><pre class="mf-json">{
+  &quot;records&quot;: [
+    {
+      &quot;requirement_id&quot;: &quot;failure&quot;,
+      &quot;answer_state&quot;: &quot;unknown&quot;,
+      &quot;value&quot;: null,
+      &quot;source&quot;: {
+        &quot;turn_id&quot;: &quot;u1&quot;,
+        &quot;quote&quot;: &quot;I don&#x27;t know.&quot;
+      }
+    },
+    {
+      &quot;requirement_id&quot;: &quot;root_cause&quot;,
+      &quot;answer_state&quot;: &quot;unknown&quot;,
+      &quot;value&quot;: null,
+      &quot;source&quot;: {
+        &quot;turn_id&quot;: &quot;u1&quot;,
+        &quot;quote&quot;: &quot;I don&#x27;t know.&quot;
+      }
+    }
+  ]
+}</pre></details></td></tr><tr><th scope="row"><span class="mf-case-name">refused improvement</span><p><b>Assistant:</b> What would you like improved about the device?</p><p><b>User:</b> I&#x27;d rather not say.</p></th><td><ul class="mf-record-list"><li><code>failure = null</code><br><small>refused · source u1</small></li><li><code>replacement = null</code><br><small>refused · source u1</small></li><li><code>group_size = null</code><br><small>refused · source u1</small></li><li><code>attendance = null</code><br><small>refused · source u1</small></li><li><code>root_cause = null</code><br><small>refused · source u1</small></li><li><code>improvement = null</code><br><small>refused · source u1</small></li></ul><p class="mf-native-result"><b>Accepted mechanically</b><br>Applied refusal to all six fields, exceeding the question&#x27;s scope.</p><details class="wf-details mf-state-details"><summary>Exact proposed records</summary><pre class="mf-json">{
+  &quot;records&quot;: [
+    {
+      &quot;requirement_id&quot;: &quot;failure&quot;,
+      &quot;answer_state&quot;: &quot;refused&quot;,
+      &quot;value&quot;: null,
+      &quot;source&quot;: {
+        &quot;turn_id&quot;: &quot;u1&quot;,
+        &quot;quote&quot;: &quot;I&#x27;d rather not say.&quot;
+      }
+    },
+    {
+      &quot;requirement_id&quot;: &quot;replacement&quot;,
+      &quot;answer_state&quot;: &quot;refused&quot;,
+      &quot;value&quot;: null,
+      &quot;source&quot;: {
+        &quot;turn_id&quot;: &quot;u1&quot;,
+        &quot;quote&quot;: &quot;I&#x27;d rather not say.&quot;
+      }
+    },
+    {
+      &quot;requirement_id&quot;: &quot;group_size&quot;,
+      &quot;answer_state&quot;: &quot;refused&quot;,
+      &quot;value&quot;: null,
+      &quot;source&quot;: {
+        &quot;turn_id&quot;: &quot;u1&quot;,
+        &quot;quote&quot;: &quot;I&#x27;d rather not say.&quot;
+      }
+    },
+    {
+      &quot;requirement_id&quot;: &quot;attendance&quot;,
+      &quot;answer_state&quot;: &quot;refused&quot;,
+      &quot;value&quot;: null,
+      &quot;source&quot;: {
+        &quot;turn_id&quot;: &quot;u1&quot;,
+        &quot;quote&quot;: &quot;I&#x27;d rather not say.&quot;
+      }
+    },
+    {
+      &quot;requirement_id&quot;: &quot;root_cause&quot;,
+      &quot;answer_state&quot;: &quot;refused&quot;,
+      &quot;value&quot;: null,
+      &quot;source&quot;: {
+        &quot;turn_id&quot;: &quot;u1&quot;,
+        &quot;quote&quot;: &quot;I&#x27;d rather not say.&quot;
+      }
+    },
+    {
+      &quot;requirement_id&quot;: &quot;improvement&quot;,
+      &quot;answer_state&quot;: &quot;refused&quot;,
+      &quot;value&quot;: null,
+      &quot;source&quot;: {
+        &quot;turn_id&quot;: &quot;u1&quot;,
+        &quot;quote&quot;: &quot;I&#x27;d rather not say.&quot;
+      }
+    }
+  ]
+}</pre></details></td><td><ul class="mf-record-list"><li><code>improvement = null</code><br><small>refused · source u1</small></li></ul><p class="mf-native-result"><b>Accepted mechanically</b><br>Recorded refused/null only for the requested improvement, with a valid user source.</p><details class="wf-details mf-state-details"><summary>Exact proposed records</summary><pre class="mf-json">{
+  &quot;records&quot;: [
+    {
+      &quot;requirement_id&quot;: &quot;improvement&quot;,
+      &quot;answer_state&quot;: &quot;refused&quot;,
+      &quot;value&quot;: null,
+      &quot;source&quot;: {
+        &quot;turn_id&quot;: &quot;u1&quot;,
+        &quot;quote&quot;: &quot;I&#x27;d rather not say.&quot;
+      }
+    }
+  ]
+}</pre></details></td></tr></tbody></table></div>
+<p class="wf-note">Notes are assistant reviews of these specific outputs. They are neither human ratings nor blinded scores. “Accepted mechanically” describes execution of the proposal, not evidence completeness or semantic correctness.</p></div>
+
+<div id="observer-dialogues" class="wf-section"><div class="wf-section-heading"><span>02</span><div><p class="eyebrow">THREE FIXED-USER SESSIONS</p><h2>Inspect the replies and the state they used.</h2></div></div>
+<p>3 sessions contain 5 fixed user turns. In this run, the device fixture records unknown and refusal separately, the event fixture changes the active branch, and the incomplete interview can withdraw. Some <code>complete</code> actions still invite further conversation in their prose; terminal state is not a quality judgment.</p>
+<details class="wf-details mf-conversation mf-review-conversation"><summary>Device failure, explanation, unknown and refusal<span class="mf-detail-meta">2 user turns · final state completed</span></summary><p class="wf-note">Fixed user inputs with actual local-model replies. Display acknowledgment records the caller’s output operation, not a human reading it.</p><article class="mf-transcript-turn"><h4>Turn 1</h4><div class="wf-turn user"><div class="wf-turn-label">USER · u1</div><p>My laptop failed yesterday. Restarting restored it. What does root cause mean?</p></div><div class="wf-turn assistant"><div class="wf-turn-label">ACTUAL MODEL REPLY</div><p>&#x27;Root cause&#x27; refers to the underlying reason why your device stopped working. For example, if a software update caused the crash, that would be the root cause. If a specific app was running and crashed the system, that app might be the root cause.
+
+Since you haven&#x27;t mentioned what specifically went wrong with your laptop yet, I&#x27;d like to know: do you remember why it failed?</p></div><div class="mf-turn-state"><span><b>Action:</b> respond</span><span><b>Completion eligible:</b> No</span><span><b>Unresolved:</b> root_cause</span></div><details class="wf-details mf-state-details"><summary>Evidence and state for this turn</summary><div class="wf-table-wrap"><table class="mf-state-table"><caption>Derived state after the accepted reply; values are not independent semantic labels.</caption><thead><tr><th scope="col">Requirement</th><th scope="col">Applicability</th><th scope="col">Evidence state</th><th scope="col">Value</th><th scope="col">Invalidated by</th></tr></thead><tbody><tr><th scope="row"><code>failure</code></th><td>applicable</td><td>answered</td><td>true</td><td>—</td></tr><tr><th scope="row"><code>time</code></th><td>applicable</td><td>answered</td><td>&quot;yesterday&quot;</td><td>—</td></tr><tr><th scope="row"><code>recovery</code></th><td>applicable</td><td>answered</td><td>&quot;Restarting&quot;</td><td>—</td></tr><tr><th scope="row"><code>root_cause</code></th><td>applicable</td><td>missing</td><td>null</td><td>—</td></tr><tr><th scope="row"><code>improvement</code></th><td>applicable</td><td>missing</td><td>null</td><td>—</td></tr></tbody></table></div><h5>Actual observer proposals</h5><pre class="mf-json">[
+  {
+    &quot;records&quot;: [
+      {
+        &quot;requirement_id&quot;: &quot;failure&quot;,
+        &quot;answer_state&quot;: &quot;answered&quot;,
+        &quot;value&quot;: true,
+        &quot;source&quot;: {
+          &quot;turn_id&quot;: &quot;u1&quot;,
+          &quot;quote&quot;: &quot;My laptop failed yesterday.&quot;
+        }
+      },
+      {
+        &quot;requirement_id&quot;: &quot;time&quot;,
+        &quot;answer_state&quot;: &quot;answered&quot;,
+        &quot;value&quot;: &quot;yesterday&quot;,
+        &quot;source&quot;: {
+          &quot;turn_id&quot;: &quot;u1&quot;,
+          &quot;quote&quot;: &quot;My laptop failed yesterday.&quot;
+        }
+      },
+      {
+        &quot;requirement_id&quot;: &quot;recovery&quot;,
+        &quot;answer_state&quot;: &quot;answered&quot;,
+        &quot;value&quot;: &quot;Restarting&quot;,
+        &quot;source&quot;: {
+          &quot;turn_id&quot;: &quot;u1&quot;,
+          &quot;quote&quot;: &quot;Restarting restored it.&quot;
+        }
+      }
+    ]
+  }
+]</pre></details></article><article class="mf-transcript-turn"><h4>Turn 2</h4><div class="wf-turn user"><div class="wf-turn-label">USER · u2</div><p>I don&#x27;t know the cause, and I don&#x27;t want to suggest improvements.</p></div><div class="wf-turn assistant"><div class="wf-turn-label">ACTUAL MODEL REPLY</div><p>Understood. I&#x27;ve noted that you don&#x27;t know the cause of the failure and prefer not to discuss improvements.
+
+Is there anything else you&#x27;d like to share about your laptop experience, or is there anything specific you need help with today?</p></div><div class="mf-turn-state"><span><b>Action:</b> complete</span><span><b>Completion eligible:</b> Yes</span><span><b>Unresolved:</b> None</span></div><details class="wf-details mf-state-details"><summary>Evidence and state for this turn</summary><div class="wf-table-wrap"><table class="mf-state-table"><caption>Derived state after the accepted reply; values are not independent semantic labels.</caption><thead><tr><th scope="col">Requirement</th><th scope="col">Applicability</th><th scope="col">Evidence state</th><th scope="col">Value</th><th scope="col">Invalidated by</th></tr></thead><tbody><tr><th scope="row"><code>failure</code></th><td>applicable</td><td>answered</td><td>true</td><td>—</td></tr><tr><th scope="row"><code>time</code></th><td>applicable</td><td>answered</td><td>&quot;yesterday&quot;</td><td>—</td></tr><tr><th scope="row"><code>recovery</code></th><td>applicable</td><td>answered</td><td>&quot;Restarting&quot;</td><td>—</td></tr><tr><th scope="row"><code>root_cause</code></th><td>applicable</td><td>unknown</td><td>null</td><td>—</td></tr><tr><th scope="row"><code>improvement</code></th><td>applicable</td><td>refused</td><td>null</td><td>—</td></tr></tbody></table></div><h5>Actual observer proposals</h5><pre class="mf-json">[
+  {
+    &quot;records&quot;: [
+      {
+        &quot;requirement_id&quot;: &quot;root_cause&quot;,
+        &quot;answer_state&quot;: &quot;unknown&quot;,
+        &quot;value&quot;: null,
+        &quot;source&quot;: {
+          &quot;turn_id&quot;: &quot;u2&quot;,
+          &quot;quote&quot;: &quot;I don&#x27;t know the cause, and I don&#x27;t want to suggest improvements.&quot;
+        }
+      },
+      {
+        &quot;requirement_id&quot;: &quot;improvement&quot;,
+        &quot;answer_state&quot;: &quot;refused&quot;,
+        &quot;value&quot;: null,
+        &quot;source&quot;: {
+          &quot;turn_id&quot;: &quot;u2&quot;,
+          &quot;quote&quot;: &quot;I don&#x27;t know the cause, and I don&#x27;t want to suggest improvements.&quot;
+        }
+      }
+    ]
+  }
+]</pre></details></article></details><details class="wf-details mf-conversation mf-review-conversation"><summary>Event attendance and equipment correction<span class="mf-detail-meta">2 user turns · final state completed</span></summary><p class="wf-note">Fixed user inputs with actual local-model replies. Display acknowledgment records the caller’s output operation, not a human reading it.</p><article class="mf-transcript-turn"><h4>Turn 1</h4><div class="wf-turn user"><div class="wf-turn-label">USER · u1</div><p>There are three of us. We will attend online using our laptops, and we do not need to borrow any workshop equipment.</p></div><div class="wf-turn assistant"><div class="wf-turn-label">ACTUAL MODEL REPLY</div><p>Thanks for sharing that! I&#x27;ve noted that your group consists of three people, you&#x27;ll be attending online using laptops, and no workshop equipment is needed.
+
+Is there anything else you&#x27;d like to add or clarify about your attendance preferences?</p></div><div class="mf-turn-state"><span><b>Action:</b> complete</span><span><b>Completion eligible:</b> Yes</span><span><b>Unresolved:</b> None</span></div><details class="wf-details mf-state-details"><summary>Evidence and state for this turn</summary><div class="wf-table-wrap"><table class="mf-state-table"><caption>Derived state after the accepted reply; values are not independent semantic labels.</caption><thead><tr><th scope="col">Requirement</th><th scope="col">Applicability</th><th scope="col">Evidence state</th><th scope="col">Value</th><th scope="col">Invalidated by</th></tr></thead><tbody><tr><th scope="row"><code>attendance</code></th><td>applicable</td><td>answered</td><td>&quot;online&quot;</td><td>—</td></tr><tr><th scope="row"><code>group_size</code></th><td>applicable</td><td>answered</td><td>3</td><td>—</td></tr><tr><th scope="row"><code>travel</code></th><td>not_applicable</td><td>missing</td><td>null</td><td>—</td></tr><tr><th scope="row"><code>remote_setup</code></th><td>applicable</td><td>answered</td><td>&quot;our laptops&quot;</td><td>—</td></tr><tr><th scope="row"><code>equipment_needed</code></th><td>applicable</td><td>answered</td><td>false</td><td>—</td></tr><tr><th scope="row"><code>equipment_details</code></th><td>not_applicable</td><td>missing</td><td>null</td><td>—</td></tr></tbody></table></div><h5>Actual observer proposals</h5><pre class="mf-json">[
+  {
+    &quot;records&quot;: [
+      {
+        &quot;requirement_id&quot;: &quot;group_size&quot;,
+        &quot;answer_state&quot;: &quot;answered&quot;,
+        &quot;value&quot;: 3,
+        &quot;source&quot;: {
+          &quot;turn_id&quot;: &quot;u1&quot;,
+          &quot;quote&quot;: &quot;There are three of us.&quot;
+        }
+      },
+      {
+        &quot;requirement_id&quot;: &quot;attendance&quot;,
+        &quot;answer_state&quot;: &quot;answered&quot;,
+        &quot;value&quot;: &quot;online&quot;,
+        &quot;source&quot;: {
+          &quot;turn_id&quot;: &quot;u1&quot;,
+          &quot;quote&quot;: &quot;We will attend online&quot;
+        }
+      },
+      {
+        &quot;requirement_id&quot;: &quot;remote_setup&quot;,
+        &quot;answer_state&quot;: &quot;answered&quot;,
+        &quot;value&quot;: &quot;our laptops&quot;,
+        &quot;source&quot;: {
+          &quot;turn_id&quot;: &quot;u1&quot;,
+          &quot;quote&quot;: &quot;using our laptops&quot;
+        }
+      },
+      {
+        &quot;requirement_id&quot;: &quot;equipment_needed&quot;,
+        &quot;answer_state&quot;: &quot;answered&quot;,
+        &quot;value&quot;: false,
+        &quot;source&quot;: {
+          &quot;turn_id&quot;: &quot;u1&quot;,
+          &quot;quote&quot;: &quot;we do not need to borrow any workshop equipment.&quot;
+        }
+      }
+    ]
+  }
+]</pre></details></article><article class="mf-transcript-turn"><h4>Turn 2</h4><div class="wf-turn user"><div class="wf-turn-label">USER · u2</div><p>We have changed our plan to attend in person. All three of us will take the bus. We will need to borrow two microscopes.</p></div><div class="wf-turn assistant"><div class="wf-turn-label">ACTUAL MODEL REPLY</div><p>Got it! So your group of three will now be attending in person, traveling by bus, and you&#x27;ll need to borrow two microscopes. Is there anything else you&#x27;d like to add or clarify about your workshop attendance?</p></div><div class="mf-turn-state"><span><b>Action:</b> complete</span><span><b>Completion eligible:</b> Yes</span><span><b>Unresolved:</b> None</span></div><details class="wf-details mf-state-details"><summary>Evidence and state for this turn</summary><div class="wf-table-wrap"><table class="mf-state-table"><caption>Derived state after the accepted reply; values are not independent semantic labels.</caption><thead><tr><th scope="col">Requirement</th><th scope="col">Applicability</th><th scope="col">Evidence state</th><th scope="col">Value</th><th scope="col">Invalidated by</th></tr></thead><tbody><tr><th scope="row"><code>attendance</code></th><td>applicable</td><td>answered</td><td>&quot;in_person&quot;</td><td>—</td></tr><tr><th scope="row"><code>group_size</code></th><td>applicable</td><td>answered</td><td>3</td><td>—</td></tr><tr><th scope="row"><code>travel</code></th><td>applicable</td><td>answered</td><td>&quot;the bus&quot;</td><td>—</td></tr><tr><th scope="row"><code>remote_setup</code></th><td>not_applicable</td><td>invalidated</td><td>null</td><td>attendance</td></tr><tr><th scope="row"><code>equipment_needed</code></th><td>applicable</td><td>answered</td><td>true</td><td>—</td></tr><tr><th scope="row"><code>equipment_details</code></th><td>applicable</td><td>answered</td><td>&quot;two microscopes&quot;</td><td>—</td></tr></tbody></table></div><h5>Actual observer proposals</h5><pre class="mf-json">[
+  {
+    &quot;records&quot;: [
+      {
+        &quot;requirement_id&quot;: &quot;attendance&quot;,
+        &quot;answer_state&quot;: &quot;answered&quot;,
+        &quot;value&quot;: &quot;in_person&quot;,
+        &quot;source&quot;: {
+          &quot;turn_id&quot;: &quot;u2&quot;,
+          &quot;quote&quot;: &quot;We have changed our plan to attend in person.&quot;
+        }
+      },
+      {
+        &quot;requirement_id&quot;: &quot;group_size&quot;,
+        &quot;answer_state&quot;: &quot;answered&quot;,
+        &quot;value&quot;: 3,
+        &quot;source&quot;: {
+          &quot;turn_id&quot;: &quot;u2&quot;,
+          &quot;quote&quot;: &quot;All three of us will take the bus.&quot;
+        }
+      },
+      {
+        &quot;requirement_id&quot;: &quot;travel&quot;,
+        &quot;answer_state&quot;: &quot;answered&quot;,
+        &quot;value&quot;: &quot;the bus&quot;,
+        &quot;source&quot;: {
+          &quot;turn_id&quot;: &quot;u2&quot;,
+          &quot;quote&quot;: &quot;All three of us will take the bus.&quot;
+        }
+      },
+      {
+        &quot;requirement_id&quot;: &quot;equipment_needed&quot;,
+        &quot;answer_state&quot;: &quot;answered&quot;,
+        &quot;value&quot;: true,
+        &quot;source&quot;: {
+          &quot;turn_id&quot;: &quot;u2&quot;,
+          &quot;quote&quot;: &quot;We will need to borrow two microscopes.&quot;
+        }
+      },
+      {
+        &quot;requirement_id&quot;: &quot;equipment_details&quot;,
+        &quot;answer_state&quot;: &quot;answered&quot;,
+        &quot;value&quot;: &quot;two microscopes&quot;,
+        &quot;source&quot;: {
+          &quot;turn_id&quot;: &quot;u2&quot;,
+          &quot;quote&quot;: &quot;We will need to borrow two microscopes.&quot;
+        }
+      }
+    ]
+  }
+]</pre></details></article></details><details class="wf-details mf-conversation mf-review-conversation"><summary>Withdrawal before information completion<span class="mf-detail-meta">1 user turns · final state withdrawn</span></summary><p class="wf-note">Fixed user inputs with actual local-model replies. Display acknowledgment records the caller’s output operation, not a human reading it.</p><article class="mf-transcript-turn"><h4>Turn 1</h4><div class="wf-turn user"><div class="wf-turn-label">USER · u1</div><p>I do not want to answer any questions. Please stop the interview.</p></div><div class="wf-turn assistant"><div class="wf-turn-label">ACTUAL MODEL REPLY</div><p>I understand you don&#x27;t want to continue. I will stop the interview now.</p></div><div class="mf-turn-state"><span><b>Action:</b> withdraw</span><span><b>Completion eligible:</b> No</span><span><b>Unresolved:</b> used, mode, collaboration, main_goal</span></div><details class="wf-details mf-state-details"><summary>Evidence and state for this turn</summary><div class="wf-table-wrap"><table class="mf-state-table"><caption>Derived state after the accepted reply; values are not independent semantic labels.</caption><thead><tr><th scope="col">Requirement</th><th scope="col">Applicability</th><th scope="col">Evidence state</th><th scope="col">Value</th><th scope="col">Invalidated by</th></tr></thead><tbody><tr><th scope="row"><code>used</code></th><td>applicable</td><td>missing</td><td>null</td><td>—</td></tr><tr><th scope="row"><code>mode</code></th><td>blocked</td><td>missing</td><td>null</td><td>—</td></tr><tr><th scope="row"><code>collaboration</code></th><td>blocked</td><td>missing</td><td>null</td><td>—</td></tr><tr><th scope="row"><code>main_goal</code></th><td>applicable</td><td>missing</td><td>null</td><td>—</td></tr><tr><th scope="row"><code>switching</code></th><td>blocked</td><td>missing</td><td>null</td><td>—</td></tr></tbody></table></div><h5>Actual observer proposals</h5><pre class="mf-json">[
+  {
+    &quot;records&quot;: []
+  }
+]</pre></details></article></details></div>
+
+<div id="observer-engineering" class="wf-section"><div class="wf-section-heading"><span>03</span><div><p class="eyebrow">INPUT AND RECOVERY CAPABILITIES</p><h2>Saved is distinct from shown.</h2></div></div>
+<div class="wf-terms"><div><h3>Complete role context</h3><p>Observer and Actor receive native user/assistant history. Assistant text can explain a short reply; only user text can supply its evidence quote. The redundant system-JSON conversation is removed.</p></div><div><h3>Recoverable reply output</h3><p>A persistent reply ID can be redisplayed from disk without model generation or another commit. The CLI acknowledges output only after a flushed print succeeds. Legacy display status remains unknown.</p></div><div><h3>Separate experimental roles</h3><p>Observer and Actor can use independent generators and models, with stage logs under one CLI call/token budget. This enables a fixed-Observer comparison; no Actor comparison is reported here.</p></div></div>
+<p class="mf-plain-limit">Caller output acknowledgment is not human receipt. A crash after output but before acknowledgment persistence may cause a duplicate display; exactly-once external delivery is not established.</p>
+<details class="wf-details"><summary>82 offline checks and the observed CLI recovery</summary><ul><li>Complete project suite: 82 offline tests passed; no model-quality implication.</li><li>Different assistant questions produce different observer inputs for the same short answer; assistant text remains non-citable.</li><li>Overlapping quotes are rejected; duplicate system-JSON conversation removed while user source text remains.</li><li>A saved reply survives interruption before return; redisplay does not repeat inference or evidence commit.</li><li>Four historical sessions preserve state/history, with legacy display status unknown.</li><li>Independent Observer and Actor generators share the CLI invocation budget and have separate call logs.</li><li>Actual offline CLI redisplay succeeded against an unavailable model endpoint with zero model calls.</li></ul></details>
+<p>The same-value/new-source parent revision rule remains conservative: it invalidates dependent evidence even when the Boolean value is unchanged. Scripted diagnostics preserve that effect. They do not measure how often a model actually repeats a question.</p>
+<p>A valid empty extraction is still accepted, and Actor cannot write evidence in the split pipeline. There is no automatic same-turn re-observation path. Missed extraction and subsequent conversational decisions need separate analysis.</p></div>
+
+<div id="observer-cost" class="wf-section"><div class="wf-section-heading"><span>04</span><div><p class="eyebrow">FOLLOW-UP COST AND LIMITS</p><h2>22 calls · 33,492 reported tokens</h2></div></div>
+<p>This follow-up only: 12 paired Observer calls plus 5 Observer and 5 Actor calls in three end-to-end fixtures. All attempts retained.</p><div class="wf-table-wrap"><table class="mf-records-table"><caption>New diagnostic only; the original milestone’s costs remain separate below.</caption><thead><tr><th scope="col">Stage</th><th scope="col">Calls</th><th scope="col">Input tokens</th><th scope="col">Output tokens</th><th scope="col">Total tokens</th><th scope="col">Wall seconds</th></tr></thead><tbody><tr><th scope="row">Paired observer checkpoints</th><td>12</td><td>12,688</td><td>968</td><td>13,656</td><td>18.61</td></tr><tr><th scope="row">End-to-end observer</th><td>5</td><td>6,363</td><td>676</td><td>7,039</td><td>9.52</td></tr><tr><th scope="row">End-to-end actor</th><td>5</td><td>12,494</td><td>303</td><td>12,797</td><td>6.24</td></tr></tbody></table></div>
+<p class="wf-note">Measured sequential wall time includes cold-load and caching effects. It is not a latency-benefit estimate.</p>
+<details class="wf-details"><summary>Limits and review provenance</summary><ul><li>Six authored checkpoints and three fixed-user scripts, not held-out natural interviews or a human study.</li><li>Paired arms keep the current prompt, schema, model digest, temperature and seed fixed; only assistant-history visibility changes. This is not a whole-version before/after comparison.</li><li>With history, three of the six paired proposals cite nonexistent u2 and are rejected; replacement also adds unsupported failure=true, and the cause case overextends unknown to failure.</li><li>The three end-to-end fixtures handled unknown/refusal, a branch correction and incomplete withdrawal in this run. Some complete actions still invite further conversation; no general policy-quality gain is claimed.</li><li>Accepted empty extraction is not an assurance of completeness, and there is no automatic same-turn re-observation path.</li><li>The conservative same-value/new-source invalidation rule is retained. Scripted diagnostics measure invalidation, not actual repeat-question burden.</li><li>No SFT, DPO or RL, no human preference labels, and no composite interview-quality score.</li></ul><p>Two assistant reviews, neither human nor blinded; one reviewer authored the diagnostic fixtures and runner.</p><p class="mf-evidence-hash"><b>Follow-up publication record SHA-256:</b> <code>c500b56c6f5868f6ab9d8733278d0e39a25bfc91dac1531e3bafeaffda603f31</code></p></details>
+</div></section>
+
+<header id="original-snapshot" class="wf-hero mf-original"><p class="eyebrow">ORIGINAL FOUNDATION SNAPSHOT · RETAINED UNCHANGED EVIDENCE</p>
+<h2>Mission-guided interviews<br>on a typed foundation.</h2>
+<p class="wf-note">The sections below retain the original 5 November foundation record. Its four conversations, 64-test validation and 60-call cost scope are historical snapshots, separate from the follow-up above.</p>
+<p class="wf-deck">Typed questionnaires compile into source-bound information requirements; a deterministic projector derives progress from versioned evidence; the model chooses the next conversational move.</p>
+<p class="wf-date">2026-11-05 · America/Halifax · Local model: Qwen3.5 9B via local Ollama 0.40.12 for the retained final demonstrations; earlier diagnostics also used Qwen2.5 14B.</p>
+<div class="wf-headline"><div><strong>3</strong><p>Compiled questionnaires<br><small>16 typed information requirements</small></p></div>
+<div><strong>4</strong><p>Fixed-user sessions<br><small>9 user turns in the displayed fixtures</small></p></div>
+<div class="wf-headline-copy"><p><b>Demonstrated capability</b><br>Questionnaire contracts feed a persistent evidence store, a deterministic projector and a model-selected conversational move.</p><p><b>Evidence category</b><br>Engineering validation and scripted diagnostics. No measured interview-quality gain or human-user benefit is claimed.</p></div></div></header>
+<nav class="wf-jumps" aria-label="Milestone sections"><a href="#pipeline">How it works</a><a href="#fixtures">Recorded fixtures</a><a href="#conversations">Conversations</a><a href="#compiler">Compiler scope</a><a href="#validation">Validation</a><a href="#cost-and-failures">Cost and failures</a><a href="#limits">Limits</a></nav>
+
+<section id="pipeline" class="wf-section"><div class="wf-section-heading"><span>01</span><div><p class="eyebrow">IMPLEMENTED CAPABILITY</p><h2>Derived progress. Model-selected conversation.</h2></div></div>
+<ol class="wf-timeline mf-pipeline"><li><b>1 · Compile the mission</b><span>The model rewrites questions as information needs. Native code preserves the explicitly authored answer types, requiredness and conditions.</span></li><li><b>2 · Record evidence proposals</b><span>An observation model proposes evidence from delivered user text. Native checks validate IDs, value types, source spans and revision rules before commit.</span></li><li><b>3 · Project current progress</b><span>The projector derives applicable, blocked, satisfied and invalidated items from one authoritative store. It does not choose the next question.</span></li><li><b>4 · Choose the next move</b><span>The conversational model sees the updated mission state and dialogue, then chooses to explain, clarify, follow, defer, revisit, finish or withdraw.</span></li></ol>
+<div class="wf-terms"><div><h3>One reply, several facts</h3><p>A user can volunteer information out of questionnaire order. Several requirements can cite the same delivered reply.</p></div><div><h3>Corrections change eligibility</h3><p>Changing an upstream answer invalidates dependent records. Old evidence is retained for audit and does not silently reappear as current.</p></div><div><h3>Meaning remains a model judgment</h3><p>An exact quote and valid type establish provenance and contract shape. They do not establish that the proposed value follows from the quote.</p></div></div>
+<details class="wf-details"><summary>Capabilities covered by this milestone</summary><ul><li>Compile versioned questionnaire JSON into declarative information requirements while preserving explicit answer types, requiredness and dependencies.</li><li>Commit multiple source-cited facts atomically, retain delivered user text, and reject stale or malformed writes.</li><li>Derive applicable, inactive, blocked and invalidated requirements without selecting a question.</li><li>Use separate model observation and conversation steps; preserve their outputs and native token usage.</li><li>Save and replay sessions, including interrupted observation or a pending conversational reply.</li></ul></details>
+</section>
+
+<section id="fixtures" class="wf-section"><div class="wf-section-heading"><span>02</span><div><p class="eyebrow">RECORDED INTEGRATION FIXTURES</p><h2>What the retained sessions actually exercised</h2></div></div>
+<p>The user turns were fixed in advance, while evidence proposals and conversational replies came from the selected local model. These fixtures exercise the integration; they are not independent natural interviews or a matched effectiveness comparison.</p>
+<div class="wf-callout"><h3>Semantic failures remain, including in a retained final session.</h3><p><b>device-observer-05</b><br>The retained demonstration still records explicit ignorance and an improvements refusal as ordinary answered strings. Its fluent reply does not repair those semantic state errors.</p><p><b>device-observer-06</b><br>Additional interface examples regressed the same development fixture and exhausted retries at turn two; the prompt change was reverted, and the full attempt is retained.</p><p><b>product-observer-01</b><br>After already eligible completion, an explicit stop request receives a completion action rather than withdrawal. The incomplete-withdrawal fixture is a separate demonstration.</p><p>A working pipeline and a completed session are not sufficient evidence of a correct interview. These failures are part of the milestone, not excluded from it.</p></div>
+<div class="wf-table-wrap"><table class="mf-records-table"><caption>Original displayed sessions. “Eligible” is derived contract eligibility, not a semantic-quality score.</caption><thead><tr><th scope="col">Fixture</th><th scope="col">User turns</th><th scope="col">Model calls</th><th scope="col">Reported tokens</th><th scope="col">Final session state</th><th scope="col">Eligible</th></tr></thead><tbody><tr><th scope="row">Device interview: disclosure, explanation and corrections</th><td>4</td><td>8</td><td>17,441</td><td>completed</td><td>Yes</td></tr><tr><th scope="row">Workshop needs: online to in-person attendance</th><td>2</td><td>4</td><td>8,867</td><td>completed</td><td>Yes</td></tr><tr><th scope="row">Product feedback: nested inactive branches</th><td>2</td><td>4</td><td>7,290</td><td>completed</td><td>Yes</td></tr><tr><th scope="row">Withdrawal before requirements are fulfilled</th><td>1</td><td>2</td><td>3,073</td><td>withdrawn</td><td>No</td></tr></tbody></table></div>
+<p class="wf-note">A terminal state does not prove that every response was appropriate. Observation and conversation are separate model calls; bounded repair attempts add calls. The conversations below retain the actual replies and per-turn evidence states.</p></section>
+
+<section id="conversations" class="wf-section"><div class="wf-section-heading"><span>03</span><div><p class="eyebrow">INSPECT THE BEHAVIOR</p><h2>Actual replies alongside derived state</h2></div></div>
+<p>Expand a fixture to read every delivered user turn and model reply. Expand an individual state view to distinguish recorded values from applicability and evidence status.</p>
+<details class="wf-details mf-conversation"><summary>Device interview: disclosure, explanation and corrections <span class="mf-detail-meta">4 user turns · 8 model calls</span></summary><p class="wf-case-meta">Fixed user fixture · device-observer-05 · Final session state: completed.</p><p class="wf-note">The inputs below were fixed in advance. They did not adapt to the model’s replies. Terminal state describes execution, not an independently scored interview-quality outcome.</p><article class="mf-transcript-turn"><h4>Turn 1</h4><div class="wf-turn user"><div class="wf-turn-label">USER · u1</div><p>My laptop failed last Tuesday. Restarting brought it back. What do you mean by root cause?</p></div><div class="wf-turn assistant"><div class="wf-turn-label">ACTUAL MODEL REPLY</div><p>By &#x27;root cause,&#x27; I mean the underlying reason or event that led to your laptop failing—like a software bug, hardware malfunction, overheating, or power surge. Did anything specific happen right before it failed, or do you know what might have caused it?</p></div><div class="mf-turn-state"><span><b>Session state:</b> active</span><span><b>Completion eligible:</b> No</span><span><b>Unresolved required items:</b> root_cause</span></div><details class="wf-details mf-state-details"><summary>Evidence state for this turn</summary><div class="wf-table-wrap"><table class="mf-state-table"><caption>Accepted state and derived applicability after this user turn; semantic support remains a separate judgment.</caption><thead><tr><th scope="col">Requirement</th><th scope="col">Applicability</th><th scope="col">Evidence state</th><th scope="col">Recorded value</th><th scope="col">User source</th></tr></thead><tbody><tr><th scope="row"><code>failure</code></th><td>applicable</td><td>answered</td><td>true</td><td>u1</td></tr><tr><th scope="row"><code>time</code></th><td>applicable</td><td>answered</td><td>last Tuesday</td><td>u1</td></tr><tr><th scope="row"><code>recovery</code></th><td>applicable</td><td>answered</td><td>Restarting</td><td>u1</td></tr><tr><th scope="row"><code>root_cause</code></th><td>applicable</td><td>missing</td><td>—</td><td>—</td></tr><tr><th scope="row"><code>improvement</code></th><td>applicable</td><td>missing</td><td>—</td><td>—</td></tr></tbody></table></div></details></article><article class="mf-transcript-turn"><h4>Turn 2</h4><div class="wf-turn user"><div class="wf-turn-label">USER · u2</div><p>I don&#x27;t know what caused it. I don&#x27;t want to suggest improvements.</p></div><div class="wf-turn assistant"><div class="wf-turn-label">ACTUAL MODEL REPLY</div><p>Understood. Since you&#x27;re not sure about the cause and prefer not to discuss improvements, I&#x27;ll wrap up here. Is there anything else you&#x27;d like to share or ask about?</p></div><div class="mf-turn-state"><span><b>Session state:</b> completed</span><span><b>Completion eligible:</b> Yes</span><span><b>Unresolved required items:</b> None</span></div><details class="wf-details mf-state-details"><summary>Evidence state for this turn</summary><div class="wf-table-wrap"><table class="mf-state-table"><caption>Accepted state and derived applicability after this user turn; semantic support remains a separate judgment.</caption><thead><tr><th scope="col">Requirement</th><th scope="col">Applicability</th><th scope="col">Evidence state</th><th scope="col">Recorded value</th><th scope="col">User source</th></tr></thead><tbody><tr><th scope="row"><code>failure</code></th><td>applicable</td><td>answered</td><td>true</td><td>u1</td></tr><tr><th scope="row"><code>time</code></th><td>applicable</td><td>answered</td><td>last Tuesday</td><td>u1</td></tr><tr><th scope="row"><code>recovery</code></th><td>applicable</td><td>answered</td><td>Restarting</td><td>u1</td></tr><tr><th scope="row"><code>root_cause</code></th><td>applicable</td><td>answered</td><td>unknown</td><td>u2</td></tr><tr><th scope="row"><code>improvement</code></th><td>applicable</td><td>answered</td><td>unknown</td><td>u2</td></tr></tbody></table></div></details></article><article class="mf-transcript-turn"><h4>Turn 3</h4><div class="wf-turn user"><div class="wf-turn-label">USER · u3</div><p>Correction: that failure was two months ago; this laptop has not failed in the past month.</p></div><div class="wf-turn assistant"><div class="wf-turn-label">ACTUAL MODEL REPLY</div><p>Thank you for the correction. Since your laptop hasn&#x27;t failed in the past month, we don&#x27;t need to discuss the cause or recovery of that earlier incident. Is there anything else you&#x27;d like to talk about regarding this device?</p></div><div class="mf-turn-state"><span><b>Session state:</b> completed</span><span><b>Completion eligible:</b> Yes</span><span><b>Unresolved required items:</b> None</span></div><details class="wf-details mf-state-details"><summary>Evidence state for this turn</summary><div class="wf-table-wrap"><table class="mf-state-table"><caption>Accepted state and derived applicability after this user turn; semantic support remains a separate judgment.</caption><thead><tr><th scope="col">Requirement</th><th scope="col">Applicability</th><th scope="col">Evidence state</th><th scope="col">Recorded value</th><th scope="col">User source</th></tr></thead><tbody><tr><th scope="row"><code>failure</code></th><td>applicable</td><td>answered</td><td>false</td><td>u3</td></tr><tr><th scope="row"><code>time</code></th><td>not_applicable</td><td>unknown</td><td>—</td><td>u3</td></tr><tr><th scope="row"><code>recovery</code></th><td>not_applicable</td><td>unknown</td><td>—</td><td>u3</td></tr><tr><th scope="row"><code>root_cause</code></th><td>not_applicable</td><td>unknown</td><td>—</td><td>u3</td></tr><tr><th scope="row"><code>improvement</code></th><td>applicable</td><td>answered</td><td>unknown</td><td>u2</td></tr></tbody></table></div></details></article><article class="mf-transcript-turn"><h4>Turn 4</h4><div class="wf-turn user"><div class="wf-turn-label">USER · u4</div><p>Actually, a different failure happened yesterday. It recovered after I replaced the cable. A technician confirmed the broken cable caused yesterday&#x27;s failure.</p></div><div class="wf-turn assistant"><div class="wf-turn-label">ACTUAL MODEL REPLY</div><p>Thank you for clarifying. So, your laptop failed yesterday due to a broken cable, and replacing the cable restored it. Is there anything else you&#x27;d like to share about this recent failure or any other device issues?</p></div><div class="mf-turn-state"><span><b>Session state:</b> completed</span><span><b>Completion eligible:</b> Yes</span><span><b>Unresolved required items:</b> None</span></div><details class="wf-details mf-state-details"><summary>Evidence state for this turn</summary><div class="wf-table-wrap"><table class="mf-state-table"><caption>Accepted state and derived applicability after this user turn; semantic support remains a separate judgment.</caption><thead><tr><th scope="col">Requirement</th><th scope="col">Applicability</th><th scope="col">Evidence state</th><th scope="col">Recorded value</th><th scope="col">User source</th></tr></thead><tbody><tr><th scope="row"><code>failure</code></th><td>applicable</td><td>answered</td><td>true</td><td>u4</td></tr><tr><th scope="row"><code>time</code></th><td>applicable</td><td>answered</td><td>yesterday</td><td>u4</td></tr><tr><th scope="row"><code>recovery</code></th><td>applicable</td><td>answered</td><td>replaced the cable</td><td>u4</td></tr><tr><th scope="row"><code>root_cause</code></th><td>applicable</td><td>answered</td><td>broken cable</td><td>u4</td></tr><tr><th scope="row"><code>improvement</code></th><td>applicable</td><td>answered</td><td>unknown</td><td>u2</td></tr></tbody></table></div></details></article></details><details class="wf-details mf-conversation"><summary>Workshop needs: online to in-person attendance <span class="mf-detail-meta">2 user turns · 4 model calls</span></summary><p class="wf-case-meta">Fixed user fixture · event-observer-04 · Final session state: completed.</p><p class="wf-note">The inputs below were fixed in advance. They did not adapt to the model’s replies. Terminal state describes execution, not an independently scored interview-quality outcome.</p><article class="mf-transcript-turn"><h4>Turn 1</h4><div class="wf-turn user"><div class="wf-turn-label">USER · u1</div><p>There are three of us. We will attend online using our laptops, and we do not need to borrow any workshop equipment.</p></div><div class="wf-turn assistant"><div class="wf-turn-label">ACTUAL MODEL REPLY</div><p>Got it! I&#x27;ve noted that there are three of you attending online with laptops, and no equipment is needed.
+
+Is there anything else you&#x27;d like to add or discuss about the workshop?</p></div><div class="mf-turn-state"><span><b>Session state:</b> completed</span><span><b>Completion eligible:</b> Yes</span><span><b>Unresolved required items:</b> None</span></div><details class="wf-details mf-state-details"><summary>Evidence state for this turn</summary><div class="wf-table-wrap"><table class="mf-state-table"><caption>Accepted state and derived applicability after this user turn; semantic support remains a separate judgment.</caption><thead><tr><th scope="col">Requirement</th><th scope="col">Applicability</th><th scope="col">Evidence state</th><th scope="col">Recorded value</th><th scope="col">User source</th></tr></thead><tbody><tr><th scope="row"><code>attendance</code></th><td>applicable</td><td>answered</td><td>online</td><td>u1</td></tr><tr><th scope="row"><code>group_size</code></th><td>applicable</td><td>answered</td><td>3</td><td>u1</td></tr><tr><th scope="row"><code>travel</code></th><td>not_applicable</td><td>missing</td><td>—</td><td>—</td></tr><tr><th scope="row"><code>remote_setup</code></th><td>applicable</td><td>answered</td><td>our laptops</td><td>u1</td></tr><tr><th scope="row"><code>equipment_needed</code></th><td>applicable</td><td>answered</td><td>false</td><td>u1</td></tr><tr><th scope="row"><code>equipment_details</code></th><td>not_applicable</td><td>missing</td><td>—</td><td>—</td></tr></tbody></table></div></details></article><article class="mf-transcript-turn"><h4>Turn 2</h4><div class="wf-turn user"><div class="wf-turn-label">USER · u2</div><p>We have changed our plan to attend in person. All three of us will take the bus. We will need to borrow two microscopes.</p></div><div class="wf-turn assistant"><div class="wf-turn-label">ACTUAL MODEL REPLY</div><p>That&#x27;s noted! You&#x27;ve updated your plans to attend in person, travel by bus, and you&#x27;ll need to borrow two microscopes.
+
+Is there anything else you&#x27;d like to add or discuss about the workshop?</p></div><div class="mf-turn-state"><span><b>Session state:</b> completed</span><span><b>Completion eligible:</b> Yes</span><span><b>Unresolved required items:</b> None</span></div><details class="wf-details mf-state-details"><summary>Evidence state for this turn</summary><div class="wf-table-wrap"><table class="mf-state-table"><caption>Accepted state and derived applicability after this user turn; semantic support remains a separate judgment.</caption><thead><tr><th scope="col">Requirement</th><th scope="col">Applicability</th><th scope="col">Evidence state</th><th scope="col">Recorded value</th><th scope="col">User source</th></tr></thead><tbody><tr><th scope="row"><code>attendance</code></th><td>applicable</td><td>answered</td><td>in_person</td><td>u2</td></tr><tr><th scope="row"><code>group_size</code></th><td>applicable</td><td>answered</td><td>3</td><td>u1</td></tr><tr><th scope="row"><code>travel</code></th><td>applicable</td><td>answered</td><td>the bus</td><td>u2</td></tr><tr><th scope="row"><code>remote_setup</code></th><td>not_applicable</td><td>invalidated</td><td>—</td><td>u1</td></tr><tr><th scope="row"><code>equipment_needed</code></th><td>applicable</td><td>answered</td><td>true</td><td>u2</td></tr><tr><th scope="row"><code>equipment_details</code></th><td>applicable</td><td>answered</td><td>two microscopes</td><td>u2</td></tr></tbody></table></div></details></article></details><details class="wf-details mf-conversation"><summary>Product feedback: nested inactive branches <span class="mf-detail-meta">2 user turns · 4 model calls</span></summary><p class="wf-case-meta">Fixed user fixture · product-observer-01 · Final session state: completed.</p><p class="wf-note">The inputs below were fixed in advance. They did not adapt to the model’s replies. Terminal state describes execution, not an independently scored interview-quality outcome.</p><article class="mf-transcript-turn"><h4>Turn 1</h4><div class="wf-turn user"><div class="wf-turn-label">USER · u1</div><p>I have never used this note-taking application. What I most want is to find my notes quickly by searching.</p></div><div class="wf-turn assistant"><div class="wf-turn-label">ACTUAL MODEL REPLY</div><p>Thanks for sharing that. Since you haven&#x27;t used the application, we&#x27;ve noted your primary goal: finding notes quickly through search.
+
+Is there anything else about your experience or expectations with note-taking apps you&#x27;d like to share?</p></div><div class="mf-turn-state"><span><b>Session state:</b> completed</span><span><b>Completion eligible:</b> Yes</span><span><b>Unresolved required items:</b> None</span></div><details class="wf-details mf-state-details"><summary>Evidence state for this turn</summary><div class="wf-table-wrap"><table class="mf-state-table"><caption>Accepted state and derived applicability after this user turn; semantic support remains a separate judgment.</caption><thead><tr><th scope="col">Requirement</th><th scope="col">Applicability</th><th scope="col">Evidence state</th><th scope="col">Recorded value</th><th scope="col">User source</th></tr></thead><tbody><tr><th scope="row"><code>used</code></th><td>applicable</td><td>answered</td><td>false</td><td>u1</td></tr><tr><th scope="row"><code>mode</code></th><td>not_applicable</td><td>missing</td><td>—</td><td>—</td></tr><tr><th scope="row"><code>collaboration</code></th><td>not_applicable</td><td>missing</td><td>—</td><td>—</td></tr><tr><th scope="row"><code>main_goal</code></th><td>applicable</td><td>answered</td><td>find my notes quickly by searching</td><td>u1</td></tr><tr><th scope="row"><code>switching</code></th><td>not_applicable</td><td>missing</td><td>—</td><td>—</td></tr></tbody></table></div></details></article><article class="mf-transcript-turn"><h4>Turn 2</h4><div class="wf-turn user"><div class="wf-turn-label">USER · u2</div><p>I want to stop the interview now.</p></div><div class="wf-turn assistant"><div class="wf-turn-label">ACTUAL MODEL REPLY</div><p>Understood. I&#x27;ll wrap up the interview now.</p></div><div class="mf-turn-state"><span><b>Session state:</b> completed</span><span><b>Completion eligible:</b> Yes</span><span><b>Unresolved required items:</b> None</span></div><details class="wf-details mf-state-details"><summary>Evidence state for this turn</summary><div class="wf-table-wrap"><table class="mf-state-table"><caption>Accepted state and derived applicability after this user turn; semantic support remains a separate judgment.</caption><thead><tr><th scope="col">Requirement</th><th scope="col">Applicability</th><th scope="col">Evidence state</th><th scope="col">Recorded value</th><th scope="col">User source</th></tr></thead><tbody><tr><th scope="row"><code>used</code></th><td>applicable</td><td>answered</td><td>false</td><td>u1</td></tr><tr><th scope="row"><code>mode</code></th><td>not_applicable</td><td>missing</td><td>—</td><td>—</td></tr><tr><th scope="row"><code>collaboration</code></th><td>not_applicable</td><td>missing</td><td>—</td><td>—</td></tr><tr><th scope="row"><code>main_goal</code></th><td>applicable</td><td>answered</td><td>find my notes quickly by searching</td><td>u1</td></tr><tr><th scope="row"><code>switching</code></th><td>not_applicable</td><td>missing</td><td>—</td><td>—</td></tr></tbody></table></div></details></article></details><details class="wf-details mf-conversation"><summary>Withdrawal before requirements are fulfilled <span class="mf-detail-meta">1 user turns · 2 model calls</span></summary><p class="wf-case-meta">Fixed user fixture · withdraw-observer-01 · Final session state: withdrawn.</p><p class="wf-note">The inputs below were fixed in advance. They did not adapt to the model’s replies. Terminal state describes execution, not an independently scored interview-quality outcome.</p><article class="mf-transcript-turn"><h4>Turn 1</h4><div class="wf-turn user"><div class="wf-turn-label">USER · u1</div><p>I do not want to answer any questions. Please stop the interview.</p></div><div class="wf-turn assistant"><div class="wf-turn-label">ACTUAL MODEL REPLY</div><p>I understand you don&#x27;t want to continue. I will stop the interview now.</p></div><div class="mf-turn-state"><span><b>Session state:</b> withdrawn</span><span><b>Completion eligible:</b> No</span><span><b>Unresolved required items:</b> used, mode, collaboration, main_goal</span></div><details class="wf-details mf-state-details"><summary>Evidence state for this turn</summary><div class="wf-table-wrap"><table class="mf-state-table"><caption>Accepted state and derived applicability after this user turn; semantic support remains a separate judgment.</caption><thead><tr><th scope="col">Requirement</th><th scope="col">Applicability</th><th scope="col">Evidence state</th><th scope="col">Recorded value</th><th scope="col">User source</th></tr></thead><tbody><tr><th scope="row"><code>used</code></th><td>applicable</td><td>missing</td><td>—</td><td>—</td></tr><tr><th scope="row"><code>mode</code></th><td>blocked</td><td>missing</td><td>—</td><td>—</td></tr><tr><th scope="row"><code>collaboration</code></th><td>blocked</td><td>missing</td><td>—</td><td>—</td></tr><tr><th scope="row"><code>main_goal</code></th><td>applicable</td><td>missing</td><td>—</td><td>—</td></tr><tr><th scope="row"><code>switching</code></th><td>blocked</td><td>missing</td><td>—</td><td>—</td></tr></tbody></table></div></details></article></details>
+</section>
+
+<section id="compiler" class="wf-section"><div class="wf-section-heading"><span>04</span><div><p class="eyebrow">COMPILER SCOPE</p><h2>Typed source contracts are preserved; meaning still needs review.</h2></div></div>
+<p>The input is a structured questionnaire with explicit answer types and applicability conditions. This version does not infer arbitrary conditions from a PDF or free-form prose. Each source item maps to one information requirement; compound source questions need to be split during authoring.</p>
+<p>The model generates declarative information needs. Native assembly retains the original question, answer contract, requiredness and condition references. Copying the original question or returning a question-mark ending fails a basic form check, which does not prove semantic fidelity.</p>
+<div class="wf-table-wrap"><table class="mf-records-table"><caption>Final compilation artifacts and their recorded interpretation limits</caption><thead><tr><th scope="col">Compilation</th><th scope="col">Requirements</th><th scope="col">Source contract preserved</th><th scope="col">Form check</th><th scope="col">Semantic limitations</th></tr></thead><tbody><tr><th scope="row">compile-device-03</th><td>5</td><td>Yes</td><td>Yes</td><td><ul><li>Declarative form and copied contract checks do not prove semantic equivalence.</li></ul></td></tr><tr><th scope="row">compile-event-02</th><td>6</td><td>Yes</td><td>Yes</td><td><ul><li>Declarative form and copied contract checks do not prove semantic equivalence.</li></ul></td></tr><tr><th scope="row">compile-product-02</th><td>5</td><td>Yes</td><td>Yes</td><td><ul><li>Declarative form and copied contract checks do not prove semantic equivalence.</li></ul></td></tr></tbody></table></div>
+<p class="mf-plain-limit">Unknown, refusal, a negative factual answer and non-applicability remain separate states. A field that permits “unknown” does not turn an unknown parent into a known condition. Completion eligibility is distinct from handling the participant’s current request.</p>
+</section>
+
+<section id="validation" class="wf-section"><div class="wf-section-heading"><span>05</span><div><p class="eyebrow">ENGINEERING VALIDATION</p><h2>Checks for contracts, revisions and replay</h2></div></div>
+<div class="mf-validation"><div><strong>64<span>/64</span></strong><p>Offline checks passed<br><small>Protocol and counterexample tests, not interview-quality scores</small></p></div><div><ul><li><b>Pass:</b> Current production source matches all four final session snapshots</li><li><b>Pass:</b> All four session states and receipts replay exactly</li><li><b>Pass:</b> Three compiled missions preserve their explicit source contracts</li><li><b>Pass:</b> Live branch correction invalidates old remote-setup evidence</li><li><b>Pass:</b> Live withdrawal remains separate from eligible completion</li><li><b>Fail:</b> All model interpretations are semantically correct</li></ul></div></div>
+<p>Saved sessions preserve source turns, observation proposals, conversational decisions and native receipts. Offline replay reconstructs the state and compares it with the saved projection. A pending user turn can resume without adding a duplicate disclosure, and an already accepted observation is not rerun.</p>
+</section>
+
+<section id="cost-and-failures" class="wf-section"><div class="wf-section-heading"><span>06</span><div><p class="eyebrow">COST AND RETAINED FAILURES</p><h2>Earlier attempts remain part of the record.</h2></div></div>
+<div class="wf-table-wrap"><table class="mf-records-table"><caption>Provider-reported model usage, separated by scope</caption><thead><tr><th scope="col">Scope</th><th scope="col">Calls</th><th scope="col">Reported tokens</th></tr></thead><tbody><tr><th scope="row">Final compiled questionnaires</th><td>3</td><td>2,365</td></tr><tr><th scope="row">Displayed fixed-user sessions</th><td>18</td><td>36,671</td></tr><tr><th scope="row">Earlier retained development attempts</th><td>39</td><td>87,083</td></tr><tr><th scope="row">All retained calls in this milestone record</th><td>60</td><td>126,119</td></tr></tbody></table></div>
+<p>These are recorded local-model tokens, not monetary charges. Completed and failed attempts can have different lengths. The totals do not establish an efficiency gain, and reported usage alone cannot prove that no context was truncated.</p>
+<details class="wf-details"><summary>Failed attempts and unresolved behavior</summary><div class="wf-table-wrap"><table class="mf-records-table"><thead><tr><th scope="col">Retained attempt</th><th scope="col">Observed limitation</th></tr></thead><tbody><tr><th scope="row">device-development-01</th><td>Joint policy narrated the user in third person and asked the user to explain the term they had asked about.</td></tr><tr><th scope="row">device-validation-02</th><td>Negative answers were proposed as refused:false; a later stale dependent rewrite was rejected; the run exhausted retries.</td></tr><tr><th scope="row">device-validation-03 / event-validation-01 / event-validation-02</th><td>Joint decisions omitted evidence or mislabeled corrections; fluent replies sometimes claimed to have recorded facts that remained unresolved.</td></tr><tr><th scope="row">device-observer-04</th><td>The observation model repeatedly proposed answered:null. Native type validation rejected every attempt at that turn.</td></tr><tr><th scope="row">device-observer-05</th><td>The retained demonstration still records explicit ignorance and an improvements refusal as ordinary answered strings. Its fluent reply does not repair those semantic state errors.</td></tr><tr><th scope="row">device-observer-06</th><td>Additional interface examples regressed the same development fixture and exhausted retries at turn two; the prompt change was reverted, and the full attempt is retained.</td></tr><tr><th scope="row">product-observer-01</th><td>After already eligible completion, an explicit stop request receives a completion action rather than withdrawal. The incomplete-withdrawal fixture is a separate demonstration.</td></tr></tbody></table></div></details>
+</section>
+
+<section id="limits" class="wf-section wf-conclusion"><p class="eyebrow">WHAT THIS MILESTONE ESTABLISHES</p><h2>A working foundation for the next research comparison.</h2><p>The system connects a versioned questionnaire, evidence-derived progress and model-led conversational decisions. Its next research question is whether this representation helps learning and transfers to unfamiliar questionnaires under information-equivalent controls.</p><ul><li>Explicit typed questionnaire JSON is supported. Arbitrary PDF/prose ingestion and automatic inference of hidden conditions are not implemented.</li><li>One source item becomes one information requirement. Splitting compound questions is an ingestion task, not an automatic capability of this version.</li><li>The source question and native contract remain available. Compiler paraphrases can drift: one device preference was rewritten as an objective improvement, and uncertainty cues were weakened in two summaries.</li><li>Exact quotations and typed values verify provenance and shape, not semantic entailment. The final device run contains accepted semantic errors.</li><li>Progress eligibility does not establish that the participant&#x27;s current request has been answered or that ending is appropriate; the policy decides.</li><li>Revalidating a dependent after a prerequisite correction conservatively requires evidence from the correction turn or later, which may require extra confirmation.</li><li>These are nine fixed fictional user turns in four development fixtures. They are not adaptive user simulation, a held-out benchmark, human preference evaluation, or evidence of a quality improvement.</li><li>Prompts and contracts were adjusted using these fixtures. All earlier attempts and their additional costs remain separate; no SFT, DPO or RL was performed.</li></ul></section>
+<details class="wf-details"><summary>Evidence provenance and review scope</summary><p>Assistant code/source review; no independent human study or blind quality scoring.</p><p>The publication record contains sanitized fixture conversations, measured usage, checks and source bindings. Original failed attempts remain separate. The evidence export is byte-identical to the reviewed publication copy.</p><p class="mf-evidence-hash"><b>Publication evidence SHA-256:</b> <code>c18d66e9ba5d438d2faf13a2f4aaaf9c2953cd2c4343d13596eaae7a40a78137</code></p><p class="wf-note">This page is an engineering feature milestone. It does not replace previous workflow or weight-editing findings, and it does not report a new comparative research gain.</p></details>
+<footer class="wf-footer"><a href="index.html#methods">← All studies and engineering milestones</a><a href="workflow-study.html">Earlier workflow study →</a></footer>
+</main></body></html>

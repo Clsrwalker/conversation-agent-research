@@ -1,0 +1,137 @@
+{
+  "id": "interview-expansion-2026-11-08",
+  "date": "2026-11-08",
+  "timezone": "America/Halifax",
+  "kind": "data_collection_and_refinement_milestone",
+  "counts": {
+    "collected_interviews": 43,
+    "fully_reviewed_interviews": 43,
+    "retained_interviews": 42,
+    "candidates": 1292,
+    "retained": 876,
+    "reference_only": 416
+  },
+  "domains": {
+    "health_professional_practice": {
+      "reviewed_interviews": 7,
+      "retained_interviews": 7,
+      "candidates": 117,
+      "retained": 77,
+      "reference_only": 40
+    },
+    "health_recovery": {
+      "reviewed_interviews": 7,
+      "retained_interviews": 7,
+      "candidates": 240,
+      "retained": 154,
+      "reference_only": 86
+    },
+    "research_innovation_practice": {
+      "reviewed_interviews": 29,
+      "retained_interviews": 28,
+      "candidates": 935,
+      "retained": 645,
+      "reference_only": 290
+    }
+  },
+  "splits": {
+    "train": {
+      "reviewed_interviews": 33,
+      "retained_interviews": 32,
+      "retained": 703,
+      "reference_only": 305
+    },
+    "dev": {
+      "reviewed_interviews": 5,
+      "retained_interviews": 5,
+      "retained": 93,
+      "reference_only": 48
+    },
+    "test": {
+      "reviewed_interviews": 5,
+      "retained_interviews": 5,
+      "retained": 80,
+      "reference_only": 63
+    }
+  },
+  "behavior_counts": {
+    "probe": 138,
+    "transition": 134,
+    "ask": 244,
+    "clarify": 81,
+    "reflect": 23,
+    "revisit": 24,
+    "open_completion": 33,
+    "reassure_scope": 9,
+    "redirect_to_subject": 8,
+    "emotion_response": 2,
+    "invite_addition": 26,
+    "rephrase": 34,
+    "close": 26,
+    "follow_user_topic": 10,
+    "rapport": 2,
+    "acknowledge_uncertainty": 1,
+    "accept_correction": 1,
+    "offer_restart": 1,
+    "check_interview_experience": 1,
+    "reframe_relevance": 10,
+    "narrow_after_scope_signal": 4,
+    "negative_branch_probe": 3,
+    "move_on_after_unknown": 14,
+    "answer_question": 23,
+    "move_on_after_nondisclosure": 1,
+    "explain_process": 7,
+    "offer_skip": 2,
+    "request_short_extension": 1,
+    "ask_background": 5,
+    "skip_covered_question": 4,
+    "explain_scope": 1,
+    "move_on_after_deferral": 2,
+    "move_on_after_decline": 1
+  },
+  "validation": {
+    "download_receipts_verified": 38,
+    "source_documents_reextracted_exactly": 43,
+    "legacy_conversions_verified": 3,
+    "native_missions_recompiled": 3,
+    "information_needs": 41,
+    "strict_prefixes_verified": 1292,
+    "frozen_harness_files_unchanged": 9,
+    "previous_release_artifacts_unchanged": 19,
+    "exact_20_word_overlap_with_previous_500": 0,
+    "manifest_sha256": "1550c5feb365f457a783fa27f0f67d52e6534f4f71b48ea2007b7723dd2b61b9",
+    "byte_identical_export_files": 5
+  },
+  "additional_annotation_model_calls": 0,
+  "training_performed": false,
+  "quality_gain_measured": false,
+  "human_preferences_collected": false,
+  "sources": [
+    {
+      "url": "https://researchdata.bath.ac.uk/1096/",
+      "title": "Bath relapse and recovery interviews and guides",
+      "attribution": "Maike Klein, University of Bath, 2022; DOI 10.15125/BATH-01096",
+      "license": "CC BY 4.0, as recorded by the source repository"
+    },
+    {
+      "url": "https://zenodo.org/records/5070359",
+      "title": "RRING Global Interviews Dataset (WP3)",
+      "attribution": "RRING Project, 2021; DOI 10.5281/zenodo.5070359",
+      "license": "CC BY 4.0"
+    },
+    {
+      "url": "https://zenodo.org/records/7404599",
+      "title": "RRING interview protocol",
+      "attribution": "Chris Foulds and Obehi Sule, 2019; DOI 10.5281/zenodo.7404599",
+      "license": "CC BY 4.0"
+    }
+  ],
+  "limitations": [
+    "One assistant curated the material; there is no independent semantic agreement estimate or human A/B preference study.",
+    "These are published transcripts, potentially edited or translated; source role decisions have not been checked against audio.",
+    "Shared guides and interviewers limit split independence. Sparse deferral, correction and refusal examples do not establish broad coverage.",
+    "No authoritative historical Evidence State, native completion decision or Harness session replay is supplied.",
+    "The new batch has not undergone model tokenizer-budget or training-loader validation. It is a curated data release, not a verified training package.",
+    "No training, reward model, long-horizon optimization or interviewing-quality improvement has been measured."
+  ]
+}

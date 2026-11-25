@@ -1,0 +1,38 @@
+{
+  "id": "mission-foundation-release-2026-11-05",
+  "date": "2026-11-05",
+  "timezone": "America/Halifax",
+  "kind": "grouped_feature_publication_validation",
+  "evidence_sha256": "c18d66e9ba5d438d2faf13a2f4aaaf9c2953cd2c4343d13596eaae7a40a78137",
+  "checks": {
+    "allowlisted_evidence_byte_identical": true,
+    "json_and_js_record_consistent": true,
+    "milestone_numbers_match_source": true,
+    "desktop_and_mobile_layout_visually_inspected": true,
+    "known_semantic_failures_visible": true,
+    "prior_research_preserved": true
+  },
+  "browser": {
+    "date": "2026-11-05",
+    "timezone": "America/Halifax",
+    "http_status": 200,
+    "desktop_viewport": [
+      1440,
+      1000
+    ],
+    "mobile_viewport": [
+      390,
+      844
+    ],
+    "desktop_body_overflow": false,
+    "mobile_body_overflow": false,
+    "conversations": 4,
+    "details_interaction": true,
+    "index_link": true,
+    "page_errors": []
+  },
+  "limits": [
+    "Browser QA used an isolated headless installed Chrome after the shared browser profile was busy; no existing browser was closed.",
+    "Software and presentation checks do not establish assistance quality."
+  ]
+}

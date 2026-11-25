@@ -1,0 +1,21 @@
+{
+  "kind": "held_out_interim_release_validation",
+  "date": "2026-11-05",
+  "timezone": "America/Halifax",
+  "status": "passed",
+  "checks": {
+    "twelve_scored_case_hashes_match": true,
+    "three_arm_counts_and_costs_match_review": true,
+    "site_and_export_identical": true,
+    "partial_12_of_48_explicit": true,
+    "previous_records_retained": true
+  },
+  "hashes": {
+    "heldout_evidence_sha256": "5a621c4849311614cffc2d4a2f239505970ae2cdaecdf85558ec5bf2ad5cd151",
+    "page_sha256": "b6c3a729767ddc2f543fee1205f29d1e20d45cb34e95ea9d8c70f9b4acb832b8"
+  },
+  "limitations": [
+    "No new visual browser inspection was performed.",
+    "Model review is not human gold."
+  ]
+}

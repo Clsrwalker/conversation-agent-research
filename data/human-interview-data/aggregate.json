@@ -1,0 +1,173 @@
+{
+  "id": "human-interview-data-2026-11-08",
+  "date": "2026-11-08",
+  "timezone": "America/Halifax",
+  "kind": "data_collection_and_refinement_milestone",
+  "stage": "Stage 3: human interview data",
+  "source": {
+    "name": "ConvoKit NewsInterview public 500-conversation subset",
+    "form": "Edited published NPR/CNN interview text",
+    "documentation": "https://convokit.cornell.edu/documentation/interview.html",
+    "author_repository": "https://github.com/alex2awesome/news-interview-question-generation",
+    "upstream_repository": "https://github.com/zcgzcgzcg1/MediaSum"
+  },
+  "counts": {
+    "source_interviews": 500,
+    "structurally_excluded": 227,
+    "screened_interviews": 273,
+    "full_continuation_review": 266,
+    "opening_only_rejected_interviews": 7,
+    "individual_decisions_reviewed": 1221,
+    "retained_interviews": 237,
+    "retained_samples": 680,
+    "reference_only": 541,
+    "opening_only_excluded_points": 37,
+    "structural_candidates": 1186,
+    "additional_reviewed_targets": 72
+  },
+  "splits": {
+    "train": {
+      "samples": 551,
+      "interviews": 189,
+      "groups": 176,
+      "tokenized_records": 551,
+      "rejected_records": 0,
+      "sequence_tokens": {
+        "min": 443,
+        "max": 5046,
+        "median": 922,
+        "p95": 1975,
+        "sum": 575975
+      },
+      "supervised_target_tokens": {
+        "min": 2,
+        "max": 87,
+        "median": 20,
+        "p95": 54,
+        "sum": 12605
+      },
+      "prompt_tokens": {
+        "min": 422,
+        "max": 5028,
+        "median": 905,
+        "p95": 1961,
+        "sum": 562268
+      },
+      "boundary_overlap_tokens_masked": 0,
+      "loader_batches": 138,
+      "padding_positions_checked": 197689,
+      "supervised_positions_checked": 12605
+    },
+    "dev": {
+      "samples": 76,
+      "interviews": 26,
+      "groups": 26,
+      "tokenized_records": 76,
+      "rejected_records": 0,
+      "sequence_tokens": {
+        "min": 454,
+        "max": 1557,
+        "median": 850.0,
+        "p95": 1261,
+        "sum": 66195
+      },
+      "supervised_target_tokens": {
+        "min": 5,
+        "max": 74,
+        "median": 22.0,
+        "p95": 55,
+        "sum": 1847
+      },
+      "prompt_tokens": {
+        "min": 433,
+        "max": 1550,
+        "median": 827.5,
+        "p95": 1225,
+        "sum": 64196
+      },
+      "boundary_overlap_tokens_masked": 0,
+      "loader_batches": 19,
+      "padding_positions_checked": 17517,
+      "supervised_positions_checked": 1847
+    },
+    "test": {
+      "samples": 53,
+      "interviews": 22,
+      "groups": 22,
+      "tokenized_records": 53,
+      "rejected_records": 0,
+      "sequence_tokens": {
+        "min": 359,
+        "max": 1541,
+        "median": 748,
+        "p95": 1246,
+        "sum": 42803
+      },
+      "supervised_target_tokens": {
+        "min": 4,
+        "max": 70,
+        "median": 23,
+        "p95": 66,
+        "sum": 1362
+      },
+      "prompt_tokens": {
+        "min": 343,
+        "max": 1502,
+        "median": 716,
+        "p95": 1229,
+        "sum": 41335
+      },
+      "boundary_overlap_tokens_masked": 0,
+      "loader_batches": 14,
+      "padding_positions_checked": 15693,
+      "supervised_positions_checked": 1362
+    }
+  },
+  "behavior_counts": {
+    "ask_for_information": 74,
+    "probe_or_elaborate": 163,
+    "clarify_or_check": 207,
+    "challenge_or_compare": 56,
+    "transition_or_revisit": 44,
+    "reflect_or_look_ahead": 99,
+    "offer_interpretation": 6,
+    "acknowledge_or_build_rapport": 21,
+    "request_source_material": 5,
+    "defer_or_respect_boundary": 0,
+    "close_or_withdraw": 5,
+    "not_assessed": 0
+  },
+  "validation": {
+    "original_spans": 11802,
+    "prefix_checks": 680,
+    "known_linkage_edges": 261,
+    "native_missions": 266,
+    "frozen_runtime_files_unchanged": 9,
+    "rebuild_files_identical": 19,
+    "max_sequence_tokens": 5046,
+    "max_length": 16384,
+    "tokenizer": "Qwen/Qwen3.5-9B",
+    "tokenizer_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+    "source_manifest_sha256": "7800d9bc8809efcb8176c3061e1ed6c01d1d0d39e28702891c11c698a4ec6303"
+  },
+  "curator": "Primary assistant directly reading the source; not human preference annotation or independent semantic review",
+  "additional_annotation_model_calls": 0,
+  "training_performed": false,
+  "quality_gain_measured": false,
+  "rights": "Conflicting source-license evidence; original and derived transcript files stay local for research. This page contains aggregates only.",
+  "method": [
+    "Account for the complete pinned 500-interview archive and freeze whole-conversation groups before annotation.",
+    "Read only the fixed opening, then save an inferred questionnaire and Mission with exact opening evidence.",
+    "Read the continuation directly; retain original next turns supported by the preceding dialogue and fixed Mission. Preserve reasons for reference-only and excluded records.",
+    "Export Mission plus complete prior dialogue as the prompt and the unchanged human next turn as completion. No authoritative Harness State or historical tool actions are invented.",
+    "Verify source spans, prefix boundaries and groups; tokenize and load every row with the real pinned template. Mask everything except original target wording."
+  ],
+  "limitations": [
+    "One edited journalistic source batch; transfer to live user interviews is untested.",
+    "Assistant curation, with no human A/B preferences or independent semantic agreement estimate.",
+    "Missions are inferred from openings, not recovered original questionnaires. Requiredness and branches are unknown.",
+    "Source speaker labels can be wrong; lexical/event grouping may miss aliases or shared events. Hosts overlap across splits; pretraining contamination is unknown.",
+    "No qualified defer/respect-boundary examples. Five natural farewells are not native completion or user-withdrawal labels.",
+    "No model training, reward model, long-horizon optimization or interviewing-quality improvement is established."
+  ]
+}
