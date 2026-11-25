@@ -434,9 +434,14 @@
       "bytes": 1076
     },
     {
+      "path": "data/interview-training/ai-blind-review.json",
+      "sha256": "0c21e6df48737ece7bc5d6f7dd32dc318c228175c2b635607bd27f3e180ba9a1",
+      "bytes": 22905
+    },
+    {
       "path": "data/interview-training/publication-validation.json",
-      "sha256": "d20b49fee255d3cab6fead49a62b8863d7512e9ab94ebae9bebe5d46b24e9800",
-      "bytes": 1526
+      "sha256": "52bdd631b277758a970b85edeb09bcf003b6eda64aa8b55720ff42924c298db9",
+      "bytes": 1910
     },
     {
       "path": "data/interview-training/summary.json",
@@ -2315,8 +2320,8 @@
     },
     {
       "path": "index.html",
-      "sha256": "4118201c9b646b51906de96ccb5ddc56faaf3446ba5c05e1ca2e195acd1a478b",
-      "bytes": 77510
+      "sha256": "971a9408f30567f4b29b935dab64622d0d4113a40e4ed790b6eb873f7f760e43",
+      "bytes": 77614
     },
     {
       "path": "intent-role-separation.html",
@@ -2340,8 +2345,8 @@
     },
     {
       "path": "interview-training.html",
-      "sha256": "673824c4901027a08ada7bb9a0fbdea034d403a761c9d305be81be9103760b43",
-      "bytes": 14235
+      "sha256": "84ecdfb3a89f2f7dbda03c3f7f67704e1e7157ed5872565075bd928dd57a9336",
+      "bytes": 18230
     },
     {
       "path": "latency-data.js",

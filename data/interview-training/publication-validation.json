@@ -6,8 +6,10 @@
   "classification": "engineering_publication_validation_not_model_quality",
   "source_allowlist_sha256": "07792ab8735c919a65cfc35655c57a373d1e6dd326e2ac5014ee23d52297760c",
   "download_sha256": "07792ab8735c919a65cfc35655c57a373d1e6dd326e2ac5014ee23d52297760c",
-  "page_sha256": "673824c4901027a08ada7bb9a0fbdea034d403a761c9d305be81be9103760b43",
-  "builder_sha256": "a49b61a39e01674e674e4084c5080ac4defa1707b434f7b85d444e4ad048aa13",
+  "ai_allowlist_sha256": "0c21e6df48737ece7bc5d6f7dd32dc318c228175c2b635607bd27f3e180ba9a1",
+  "ai_download_sha256": "0c21e6df48737ece7bc5d6f7dd32dc318c228175c2b635607bd27f3e180ba9a1",
+  "page_sha256": "84ecdfb3a89f2f7dbda03c3f7f67704e1e7157ed5872565075bd928dd57a9336",
+  "builder_sha256": "d91b28767ab00de6055d086406c2a238902b458eb94080311885cd4b73cd2957",
   "aggregate_download_byte_identical": true,
   "checkpoint_steps_verified": [
     0,
@@ -16,6 +18,10 @@
   ],
   "matched_dev_cases": 404,
   "generation_outputs": 808,
+  "ai_blind_review_cases": 104,
+  "ai_blind_review_groups": 56,
+  "ai_choice_denominator_includes_all_cases": true,
+  "human_reviewers": 0,
   "native_profile_denominator_per_arm": 55,
   "local_resource_links_checked": [
     "style.css",
@@ -27,6 +33,7 @@
     "index.html#methods",
     "index.html#harness",
     "data/interview-training/summary.json",
+    "data/interview-training/ai-blind-review.json",
     "human-interview-data.html",
     "interview-expansion.html",
     "vista-live-study.html"
